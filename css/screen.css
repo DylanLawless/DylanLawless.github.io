@@ -1,0 +1,297 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  font: 12pt Baskerville;
+  text-align: center;
+}
+/*    font: 12pt Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana; */
+
+h1 {
+  font-size: 150%;
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+body {
+    margin: 1px;
+    /* original 1400px; see A/B tests */
+    max-width: 1100px;
+}
+
+#header {
+    margin-bottom: 15px;
+}
+div#header h1 {
+    display: inline;
+    vertical-align: middle;
+    border-bottom: 1px solid #aaa;
+}
+
+/*
+div#description { font-size: 95%; }
+div#tags, div#page-created, div#last-modified, div#license { font-size: 80%; }
+*/
+
+/* uppercase page title, all section headers; see A/B tests */
+h1, h2, h3, h4, h5 { text-transform: uppercase; }
+
+
+
+h1 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+} /* this is thw space after title 1 */
+
+div#content {
+    margin-left: 200px;
+    padding-left: 0;
+    line-height: 130%; /* see A/B tests */
+}
+
+
+a {
+    color: #303C3C; /* off-black */
+    text-decoration: underline;
+}
+div#content a {
+    /* how we implement grey underlining:
+       http://devhints.wordpress.com/2006/10/24/css-links-with-different-color-underlines/ */
+    text-decoration: none;
+    border-bottom: 1px Solid grey;
+}
+
+/* Set a paragraph indent */
+p { margin-top: -0.2em;
+    margin-bottom: 0 }
+p + p {
+  text-indent: 1.5em;
+  margin-top: 0 }
+
+p.hang { text-indent: -0.44em }
+
+/*
+p {
+  margin: 1em 1;
+} */
+ /* this is the space after paragraph */
+
+a {
+  color: #00a;
+}
+
+a:hover {
+  color: black;
+}
+
+a:visited {
+  color: #a0a;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+  ul.posts li {
+    line-height: 1.75em;
+  }
+
+  ul.posts span {
+    color: #aaa;
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 100%;
+  }
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  font-size: 110%;
+  text-align: justify;
+  width: 42em;
+  margin: 3em auto 2em auto;
+  line-height: 1.2em;
+}
+
+.title {
+  color: #a00;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+  .site .title a {
+    color: #a00;
+    text-decoration: none;
+  }
+
+  .site .title a:hover {
+    color: black;
+  }
+
+  .site .title a.extra {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 1em;
+  }
+
+  .site .title a.extra:hover {
+    color: black;
+  }
+
+  .site .meta {
+    color: #aaa;
+  }
+
+  .site .footer {
+    font-size: 80%;
+    color: #666;
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    overflow: hidden;
+  }
+
+    .site .footer .contact {
+      float: left;
+      margin-right: 3em;
+    }
+
+      .site .footer .contact a {
+        color: #8085C1;
+      }
+
+    .site .footer .rss {
+      margin-top: 1.1em;
+      margin-right: -.2em;
+      float: right;
+    }
+
+      .site .footer .rss img {
+        border: 0;
+      }
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+#post {
+
+}
+
+  /* standard */
+
+div#TOC {
+    /* see A/B tests */
+    float: left;
+    width: 20%;
+    /* see A/B tests */
+    background: #eee;
+    /* Force a margin big enough that
+       bulleted items won't overlap the
+       blue-shaded area of the ToC */
+    margin-right: 20px;
+}
+div#TOC li {
+    list-style-type: none;
+    margin-right: 0px; padding-right: 0px;
+}
+div#TOC ul li ul li {
+    position: relative;
+    left: -15px
+}
+div#TOC ul { margin-left: 0px; padding-left: 0px; }
+div#TOC ul ul { margin-left: 1em; padding-left: 1em; }
+
+  #post pre {
+    border: 1px solid #ddd;
+    background-color: #eef;
+    padding: 0 .4em;
+  }
+
+  #post ul,
+  #post ol {
+    margin-left: 1.35em;
+  }
+
+  #post code {
+    border: 1px solid #ddd;
+    background-color: #eef;
+    font-size: 85%;
+    padding: 0 .2em;
+  }
+
+/*    #post pre code {
+      border: none;
+    }
+*/
+
+pre code {
+    display: block;
+    padding: 8px;
+    margin-bottom: 2em;
+}
+
+p.caption {
+    display: none;
+}
+
+  #post img {
+    max-width: 42em;
+    padding: 1em 0;
+  }
+
+  /* terminal */
+
+  #post pre.terminal {
+    border: 1px solid black;
+    background-color: #333;
+    color: white;
+  }
+
+  #post pre.terminal code {
+    background-color: #333;
+  }
+
+#related {
+  margin-top: 2em;
+}
+
+  #related h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
