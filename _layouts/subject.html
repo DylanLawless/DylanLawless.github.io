@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div id="subject">
+{{ content }}
+</div>
+
+<div id="related">
+  <h2>Related subjects</h2>
+  <ul class="subject">
+    {% for subject in site.related_subjects limit:3 %}
+      <li><span>{{ subject.date | date_to_string }}</span> &raquo; <a href="{{ subject.url }}">{{ subject.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
