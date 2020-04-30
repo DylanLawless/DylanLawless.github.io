@@ -1,5 +1,5 @@
 ---
-layout: staff
+layout: topic
 name: Jane Doe
 position: Developer
 ---
