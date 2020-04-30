@@ -1,0 +1,7 @@
+include: ['_pages']
+
+collections:
+  staff_members:
+    people: true
+    output: true
+    # collections_dir: _pages
