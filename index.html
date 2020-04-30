@@ -4,17 +4,17 @@ title: Dylan
 ---
 
 <div id="home">
+  <h1>Pages one</h1>
+  <ul class="topic">
+    {% for topic in site.topic %}
+      <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
+    {% endfor %}
+  </ul>
+
   <h1>Blog Posts</h1>
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-
-  <h1>Pages one</h1>
-  <ul class="staff">
-    {% for staff_member in site.staff_members %}
-      <li><a href="{{ staff_member.url }}">{{ staff_member.title }}</a></li>
     {% endfor %}
   </ul>
 

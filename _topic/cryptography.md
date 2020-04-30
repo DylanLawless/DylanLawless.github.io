@@ -1,11 +1,10 @@
 ---
-layout: section
+layout: topic
 title: Cryptography2
 created: 28 Feb 2012
 tags: statistics
 status: finished
 ---
-
 {{ page.title }}
 ================
 
@@ -16,7 +15,7 @@ status: finished
 3. [AES is the most important current encryption method](#aes)
 4. [Quantum computing](#quantum)
 5. [Some thoughts](#thoughts)
-6. [Reading list on more advanced topics](#reading)  
+6. [Reading list on more advanced topics](#reading)
 
 <a name="introduction"></a>
 
