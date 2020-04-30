@@ -1,0 +1,30 @@
+# create _layout/page.html
+
+---
+layout: default
+---
+<div id="staff">
+{% for page in site.pages %}
+<h2>{{ page.name }} - {{ page.position }}</h2>
+<p>{{ page.content | markdownify }}</p>
+{% endfor %}
+</div>
+
+# add to inde.html
+
+  <h1>Header</h1>
+  <ul class="page">
+    {% for page in site.pages %}
+      <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+# create page.md in _pages/
+
+---
+layout: page
+name: Jane Doe
+position: Developer
+---
+Jane has worked on Jekyll for the past *five years*.
+testing.
