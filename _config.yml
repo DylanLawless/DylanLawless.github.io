@@ -4,7 +4,7 @@ collections:
         permalink: /topic/:name
       #    people: true
 
-# You can define default values for attributes on topics. This can be useful if all the documents in the collection will share the same layout for example:
+        # You can define default values for attributes on topics. This can be useful if all the documents in the collection will share the same layout for example:
 defaults:
   - scope:
       path: ""
