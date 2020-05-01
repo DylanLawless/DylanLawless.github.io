@@ -4,10 +4,47 @@ title: Dylan
 ---
 
 <div id="home">
+  <h2>Subject titles</h2>
+    <ul class="topic">
+    {% assign sorted_subject = site.topic | group_by: "subject" %}
+      {% for subject in sorted_subject %}
+      - {{ subject.name }}<br />
+      {% endfor %}
+    </ul>
+  
+<div id="Topics">
+    <h1>Topic one</h1>
+  <ul class="topic">
+      {% assign sorted-topic = site.topic | where: "subject","first" %}
+      {% for topic in sorted-topic %}
+      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
+    {% endfor %}
+  </ul>
+
+  <h1>Statistics</h1>
+  <ul class="topic">
+      {% assign sorted-topic = site.topic | where: "subject","cryptography" %}
+      {% for topic in sorted-topic %}
+      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
+    {% endfor %}
+  </ul>
+
+  <h1>Statistics</h1>
+  <ul class="topic">
+      {% assign sorted-topic = site.topic | where: "subject","statistics" %}
+      {% for topic in sorted-topic %}
+      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
+    {% endfor %}
+  </ul>
+
+
+
+<div id="home">
   <h1>Pages one</h1>
   <ul class="topic">
-    {% for topic in site.topic %}
-      <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
+      {% assign sorted-topic = site.topic | where: "subject","second" %}
+      {% for topic in sorted-topic %}
+            <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
     {% endfor %}
   </ul>
 

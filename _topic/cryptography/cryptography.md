@@ -1,9 +1,10 @@
 ---
 layout: topic
-title: Cryptography2
+title: Cryptography
 created: 28 Feb 2012
 tags: statistics
 status: finished
+subject: cryptography
 ---
 {{ page.title }}
 ================
