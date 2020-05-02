@@ -8,18 +8,16 @@ subject: cryptography
 ---
 {{ page.title }}
 ================
-
 <p class="meta">28 Apr 2020</p>
 
+* TOC
+{:toc}
+
+<!--
+cross link and label
 1. [Introduction](#introduction)
-2. [Breaking crypto](#breaking)
-3. [AES is the most important current encryption method](#aes)
-4. [Quantum computing](#quantum)
-5. [Some thoughts](#thoughts)
-6. [Reading list on more advanced topics](#reading)
-
 <a name="introduction"></a>
-
+-->
 # Introduction
 
 Like most of the posts on this blog, this will be a work in progress. Cryptography is a topic which I stumbled upon and really enjoy.
@@ -50,7 +48,8 @@ The only difficulty is when the numbers become quite large.
 
 This video is summed up with the 4 steps. The reason that RSA works is because Step 2, finding the period, takes a very long time:
 
-![rsa](https://dylanlawlessblog.files.wordpress.com/2017/02/rsa.png)
+<!-- ![rsa](https://dylanlawlessblog.files.wordpress.com/2017/02/rsa.png) -->
+<img src="https://dylanlawlessblog.files.wordpress.com/2017/02/rsa.png" width="40%">
 
 Quantum computing is expected to dramatically speed up this step.
 Another good intro video that has some interesting discussion on Diffie-Hellman key exchange was given at the Chaos Communication Congress:
@@ -85,8 +84,9 @@ I first became introduced to the practical application of Fourier transformation
 Of course, you don’t actually have to learn it to do NMR.
 It happens automatically during data analysis but most people in the field surely would still like to know the details.
 Wiki has a great page: [https://en.wikipedia.org/wiki/Fourier_transform](https://en.wikipedia.org/wiki/Fourier_transform)
-![ft](https://dylanlawlessblog.files.wordpress.com/2017/02/ft.png)
-“In NMR an exponentially shaped free induction decay (FID) signal is acquired in the time domain and Fourier-transformed to a Lorentzian line-shape in the frequency domain.”
+
+<img src="https://dylanlawlessblog.files.wordpress.com/2017/02/ft.png" width="50%">  
+"In NMR an exponentially shaped free induction decay (FID) signal is acquired in the time domain and Fourier-transformed to a Lorentzian line-shape in the frequency domain."
 
 The next main point addressed in this video is: Complex roots of unity.
 This is introduced quite well in the video.
@@ -184,3 +184,8 @@ The Quipper Language: programming language for quantum computing
 <!-- 
 ![encrpytdata](https://i.imgur.com/UubXs0H.gif)
 -->
+<small>
+    {% for tag in post.tags %}
+    <a href="/tags/{{ tag }}/">{{ tag }}</a>
+    {% endfor %}
+</small>

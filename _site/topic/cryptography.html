@@ -3,9 +3,13 @@
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <title>Cryptography</title>
-   <meta name="author" content="Dylan page titel" />
+   <meta name="author" content="Dylan page title" />
    <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
    <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
+
+   <!-- include a google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
    <!-- syntax highlighting CSS -->
    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
@@ -33,20 +37,23 @@ var WRInitTime=(new Date()).getTime();
 
   <div id="topic">
 <h1 id="cryptography">Cryptography</h1>
-
 <p class="meta">28 Apr 2020</p>
 
-<ol>
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#breaking">Breaking crypto</a></li>
-  <li><a href="#aes">AES is the most important current encryption method</a></li>
-  <li><a href="#quantum">Quantum computing</a></li>
-  <li><a href="#thoughts">Some thoughts</a></li>
-  <li><a href="#reading">Reading list on more advanced topics</a></li>
-</ol>
+<ul id="markdown-toc">
+  <li><a href="#cryptography" id="markdown-toc-cryptography">Cryptography</a></li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#breaking-crypto" id="markdown-toc-breaking-crypto">Breaking crypto</a></li>
+  <li><a href="#aes-is-the-most-important-current-encryption-method" id="markdown-toc-aes-is-the-most-important-current-encryption-method">AES is the most important current encryption method</a></li>
+  <li><a href="#quantum-computing" id="markdown-toc-quantum-computing">Quantum computing</a></li>
+  <li><a href="#some-thoughts" id="markdown-toc-some-thoughts">Some thoughts</a></li>
+  <li><a href="#reading-list-on-more-advanced-topics" id="markdown-toc-reading-list-on-more-advanced-topics">Reading list on more advanced topics</a></li>
+</ul>
 
-<p><a name="introduction"></a></p>
-
+<!--
+cross link and label
+1. [Introduction](#introduction)
+<a name="introduction"></a>
+-->
 <h1 id="introduction">Introduction</h1>
 
 <p>Like most of the posts on this blog, this will be a work in progress. Cryptography is a topic which I stumbled upon and really enjoy.
@@ -75,7 +82,8 @@ The only difficulty is when the numbers become quite large.
 
 <p>This video is summed up with the 4 steps. The reason that RSA works is because Step 2, finding the period, takes a very long time:</p>
 
-<p><img src="https://dylanlawlessblog.files.wordpress.com/2017/02/rsa.png" alt="rsa" /></p>
+<!-- ![rsa](https://dylanlawlessblog.files.wordpress.com/2017/02/rsa.png) -->
+<p><img src="https://dylanlawlessblog.files.wordpress.com/2017/02/rsa.png" width="40%" /></p>
 
 <p>Quantum computing is expected to dramatically speed up this step.
 Another good intro video that has some interesting discussion on Diffie-Hellman key exchange was given at the Chaos Communication Congress:
@@ -109,8 +117,9 @@ If that is the case you may be more familiar with protein structures than quantu
 I first became introduced to the practical application of Fourier transformation while learning nuclear magnetic resonance (NMR) spectroscopy for protein structuring.
 Of course, you don’t actually have to learn it to do NMR.
 It happens automatically during data analysis but most people in the field surely would still like to know the details.
-Wiki has a great page: <a href="https://en.wikipedia.org/wiki/Fourier_transform">https://en.wikipedia.org/wiki/Fourier_transform</a>
-<img src="https://dylanlawlessblog.files.wordpress.com/2017/02/ft.png" alt="ft" />
+Wiki has a great page: <a href="https://en.wikipedia.org/wiki/Fourier_transform">https://en.wikipedia.org/wiki/Fourier_transform</a></p>
+
+<p><img src="https://dylanlawlessblog.files.wordpress.com/2017/02/ft.png" width="50%" /><br />
 “In NMR an exponentially shaped free induction decay (FID) signal is acquired in the time domain and Fourier-transformed to a Lorentzian line-shape in the frequency domain.”</p>
 
 <p>The next main point addressed in this video is: Complex roots of unity.
@@ -209,6 +218,9 @@ The Quipper Language: programming language for quantum computing<br />
 <!-- 
 ![encrpytdata](https://i.imgur.com/UubXs0H.gif)
 -->
+<p><small></small></p>
+
+<p>&lt;/small&gt;</p>
 
 </div>
 

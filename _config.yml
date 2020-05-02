@@ -1,3 +1,6 @@
+markdown: kramdown
+
+
 collections:
     topic:
         output: true

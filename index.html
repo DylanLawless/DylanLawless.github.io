@@ -13,15 +13,15 @@ title: Dylan
     </ul>
   
 <div id="Topics">
-    <h1>Topic one</h1>
+    <h1>Precision medicine</h1>
   <ul class="topic">
-      {% assign sorted-topic = site.topic | where: "subject","first" %}
+      {% assign sorted-topic = site.topic | where: "subject","Precision medicine" %}
       {% for topic in sorted-topic %}
       <a href="{{ topic.url }}">{{ topic.title }}</a><br />
     {% endfor %}
   </ul>
 
-  <h1>Statistics</h1>
+  <h1>Cryptography</h1>
   <ul class="topic">
       {% assign sorted-topic = site.topic | where: "subject","cryptography" %}
       {% for topic in sorted-topic %}
@@ -40,9 +40,9 @@ title: Dylan
 
 
 <div id="home">
-  <h1>Pages one</h1>
+  <h1>Genomics</h1>
   <ul class="topic">
-      {% assign sorted-topic = site.topic | where: "subject","second" %}
+      {% assign sorted-topic = site.topic | where: "subject","genomics" %}
       {% for topic in sorted-topic %}
             <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
     {% endfor %}
