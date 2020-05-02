@@ -28,3 +28,27 @@ position: Developer
 ---
 Jane has worked on Jekyll for the past *five years*.
 testing.
+
+
+# add a google font in 4 files:
+to use in file css/screen.css
+
+# _layout/default.html
+   <!-- include a google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+# _sass/_variables.scss
+// google web fonts
+$Serif: 'Roboto Slab', serif;
+$SansSerif: 'Roboto', sans-serif;
+$Monospace: 'Roboto Mono', monospace;
+
+# style.scss
+// use whatever Serif font i put in variables
+font-family: $SanSerif; // $helveticaNeue;  
+font-family: $Serif;    // $helvetica; 
+
+# _sass/_highlights.scss
+code {
+  font-family: $Monospace;
+  font-size: 0.8em;
+}
