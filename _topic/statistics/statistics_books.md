@@ -29,3 +29,4 @@ Bayesian Data Analysis
 [https://www.academia.edu/32086149/Bayesian_Data_Analysis_Third_Edition_Gelman.pdf](https://www.academia.edu/32086149/Bayesian_Data_Analysis_Third_Edition_Gelman_.pdf)  
 Doing Bayesian data analysis a tutorial with R and BUGS.pdf  
 [http://www.users.csbsju.edu/~mgass/robert.pdf](http://www.users.csbsju.edu/~mgass/robert.pdf)  
+
