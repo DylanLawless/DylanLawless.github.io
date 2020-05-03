@@ -8,7 +8,7 @@
 
    <!--  -->
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Statistics books</title>
+   <title>Linear regression</title>
    <meta name="author" content="Dylan page title" />
    <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
    <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
@@ -42,28 +42,52 @@ var WRInitTime=(new Date()).getTime();
   </div>
 
   <div id="topic">
-<h1 id="statistics-books">Statistics books</h1>
-<p>Statistical Inference, Casella &amp; Berger<br />
-<a href="https://fsalamri.files.wordpress.com/2015/02/casella_berger_statistical_inference1.pdf">https://fsalamri.files.wordpress.com/2015/02/casella_berger_statistical_inference1.pdf</a><br />
-Advanced Data Analysis from an Elementary Point of View by Cosma Rohilla Shalizi. <br />
-<a href="http://www.stat.cmu.edu/%7Ecshalizi/ADAfaEPoV/">http://www.stat.cmu.edu/%7Ecshalizi/ADAfaEPoV/</a>
-Mathematical statistics and data analysis<br />
-<a href="https://epdf.tips/mathematical-statistics-and-data-analysis65096.html">https://epdf.tips/mathematical-statistics-and-data-analysis65096.html</a><br />
- The Probability and Statistics Cookbook<br />
-<a href="http://statistics.zone">http://statistics.zone</a><br />
- The Elements of Statistical Learning Data Mining, Inference, and Prediction<br />
-<a href="https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print11.pdf">https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print11.pdf</a><br />
-<a href="https://web.stanford.edu/~hastie/ElemStatLearn/">https://web.stanford.edu/~hastie/ElemStatLearn/</a><br />
-Core Statistics, Simon N. Wood<br />
-<a href="https://people.maths.bris.ac.uk/~sw15190/core-statistics.pdf">https://people.maths.bris.ac.uk/~sw15190/core-statistics.pdf</a><br />
-Calculus Made Easy Thompson<br />
-<a href="http://www.gutenberg.org/ebooks/33283?msg=welcome_stranger">http://www.gutenberg.org/ebooks/33283?msg=welcome_stranger</a><br />
- Bayesian Approaches to Clinical Trials and Health-Care Evaluation<br />
-<a href="http://the-eye.eu/public/Books/Medical/texts/Bayesian%20Approaches%20to%20Clinical%20Trials%20and%20HealthCare%20Eval.%20-%20D.%20Spiegelhalter%20%282004%29%20WW.pdf">http://the-eye.eu/public/Books/Medical/texts/Bayesian%20Approaches%20to%20Clinical%20Trials%20and%20HealthCare%20Eval.%20-%20D.%20Spiegelhalter%20%282004%29%20WW.pdf</a><br />
-Bayesian Data Analysis<br />
-<a href="https://www.academia.edu/32086149/Bayesian_Data_Analysis_Third_Edition_Gelman_.pdf">https://www.academia.edu/32086149/Bayesian_Data_Analysis_Third_Edition_Gelman.pdf</a><br />
-Doing Bayesian data analysis a tutorial with R and BUGS.pdf<br />
-<a href="http://www.users.csbsju.edu/~mgass/robert.pdf">http://www.users.csbsju.edu/~mgass/robert.pdf</a></p>
+<h1 id="linear-regression">Linear regression</h1>
+
+<p>This page is being formulated currently by plagerising “An Introduction to Statistical Learning”. If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead.</p>
+
+<h1 id="simple-linear-regression">Simple linear regression</h1>
+
+<p>Predict a quantitative response \(Y\) using a predictor variable \(X\); regressing \(Y\) onto \(X\).
+The <em>intercept</em> and <em>splope</em> are written as \(\beta_0\) and \(\beta_1\), respectively.
+These are unknwon constants and together are knwon as the model <em>coefficients</em> or <em>parameters</em>.
+The simple linear regression is written as</p>
+
+\[Y \approx \beta_0 + \beta_1 X\]
+
+<p>Values that are estimated are labelled with a “hat”, e.g. 
+\(\hat y\) - a prediction of \(Y\) based on \(X = x\).
+With some sample data, one can begin to predict \(Y\) based on the predictor \(X\) using the estimated model coefficients \(\hat \beta_0\) and \(\hat \beta_1\);</p>
+
+\[\hat y \approx \hat\beta_0 + \hat\beta_1 x\]
+
+<p>In this case, the estimated response \(\hat y\) equals the estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) according to a sample of the predictor values (\(x\)).</p>
+
+<h1 id="drawing-the-line">Drawing the line</h1>
+
+<p>The estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) are unknown, therefore we need to get these values to predict \(Y\) based on \(X\).
+A number (\(n\)) of obersevations are made where we measure \(X\) and \(Y\). Measurements could be recorded as: (measure 1, x = 5, y = 10), (measure 2, x = 10, y = 20), and so on up to \(n\) obersavations;</p>
+
+\[(5,10), (10,20),..., (x_n,y_n)\]
+
+\[(x_1,y_1), (x_2,y_2),..., (x_n,y_n)\]
+
+<p>We want to combine each measurment on a plot so that the line drawn through the data fits well and produces coefficient estimates \(\hat \beta_0\) and \(\hat \beta_1\).
+Each measurement (\(i\)) is represented with \(y_i \approx \hat \beta_0 + \hat \beta_1 x_i\) for \(i = 1,2,...,n\).
+The ideal result will be a line that fits all points closely. 
+The measure of <em>closeness</em> has a many topics of interest, but the most common method is to minimise the <em>least squares</em>.</p>
+
+\[RSS = e^2 _1 + e^2 _2 +...+ e^2 _n\]
+
+\[RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+...+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.\]
+
+\[\hat \beta_1  = 
+\frac{ 
+\sum_{i=1}^{n}	(	xi -\bar{x} )	(yi - \bar{y}	)	} 
+{\sum_{i=1}^{n}	(	xi -\bar{x} )^2
+}\]
+
+\[\hat\beta_0 - \bar{y} - \hat\beta_1 \bar{x}\]
 
 
 </div>
