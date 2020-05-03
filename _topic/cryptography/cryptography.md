@@ -19,7 +19,6 @@ cross link and label
 <a name="introduction"></a>
 -->
 # Introduction
-
 Like most of the posts on this blog, this will be a work in progress. Cryptography is a topic which I stumbled upon and really enjoy.
 For the reading list skip to the end of this page.
 There is a long interesting history which would appeal to a casual reader.
