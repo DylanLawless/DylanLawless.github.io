@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <!-- link to MathJax for LaTeX stlye eqn -->
-    <script type="text/javascript" id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-
-   <!--  -->
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>RAG</title>
-   <meta name="author" content="Dylan page title" />
-   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
-   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
-
-   <!-- include a google font -->
-   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-<div class="site">
-  <div class="title">
-    <a href="/">Dylan site title</a>
-    <a class="extra" href="/">home</a>
-  </div>
-
-  <div id="topic">
-<h1 id="rag">RAG</h1>
+I"Ãñ<h1 id="rag">RAG</h1>
 
 <ul id="markdown-toc">
   <li><a href="#rag" id="markdown-toc-rag">RAG</a></li>
@@ -878,7 +834,7 @@ That is, firstly, the number of times a residue mutates in a gene
 Finally, ranking the score of genes for a mutation query \(q\) by;
 \(\mbox{Score}(q,g)=\sum_{r\in q\cap g} \mbox{rf-igf}_{r,g}\) The score of the query (Score(\(q,g\))) equals the mutations (terms) that appear in
 both the query and the gene (\(r\in q\cap g\)). 
-Working out the \(rf-igf\) weight for each of those variants (\({rf.igf}_{r,g}\)) and then summing them (\(\sum\)) to give the score for the specific gene with respect to the query.</p>
+Working out the \(rf-igf\) weight for each of those variants (\({rf.igf}_{r,g_}\)) and then summing them (\(\sum\)) to give the score for the specific gene with respect to the query.</p>
 
 <h2 id="bayesian-probability">Bayesian probability</h2>
 
@@ -894,67 +850,4 @@ This may be found from population genetics data for (i) the rate of two separate
 \(P(E|H)\) would be identified where all variants are functionally validated. 
 This requires a major investment, however the MRF score provides a good approximation.</p>
 
-
-</div>
-
-<div id="related">
-  <h2>Related Topics</h2>
-  <ul class="topics">
-    
-  </ul>
-</div>
-
-
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Dylan footer
-        <br />
-        Postdoc at
-          <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>,
-        <br />
-        dylan@email
-      </p>
-    </div>
-    <div class="contact">
-      <p>
-        <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
-        <a href="https://dylan-lawless.github.io">Resume</a><br />
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/tom-preston-werner">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Banner on top right corner linking to github
-<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
--->
-
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-
-</body>
-</html>
+:ET
