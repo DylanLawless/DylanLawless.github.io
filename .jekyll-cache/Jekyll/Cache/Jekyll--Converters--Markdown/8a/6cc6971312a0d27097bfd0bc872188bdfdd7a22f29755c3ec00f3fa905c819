@@ -1,48 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <!-- link to MathJax for LaTeX stlye eqn -->
-    <script type="text/javascript" id="MathJax-script" async
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-
-   <!--  -->
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>RAG</title>
-   <meta name="author" content="Dylan page title" />
-   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
-   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
-
-   <!-- include a google font -->
-   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-<div class="site">
-  <div class="title">
-    <a href="/">Dylan site title</a>
-    <a class="extra" href="/">home</a>
-  </div>
-
-  <div id="topic">
-<h1 id="rag">RAG</h1>
+I"tS<h1 id="rag">RAG</h1>
 
 <ul id="markdown-toc">
   <li><a href="#rag" id="markdown-toc-rag">RAG</a></li>
@@ -859,12 +815,12 @@ The area under the curve was calculated for density plots to quantify the differ
 The mutation rate can be applied genome wide with a process common in the study of information retrieval; term frequency, inverse document frequency (\(tf-idf\)). 
 In this case the “term” and “document” are replaced by amino acid residue \(r\) and gene \(g\) , respectively such that,</p>
 
-\[{rf-igf}_{r,g} ={rf}_{r,g} \times {igf}_r\]
+<p>[{rf-igf}<em>{r,g} ={rf}</em>{r,g} \times {igf}_r]</p>
 
 <p>We may view each gene as a vector with one component corresponding to each residue mutation in the gene, together with a weight for each component that is given by (1).
 Therefore, we can find the overlap score measure with the \({rf-igf}\) weight of each term in \(g\), for a query \(q\);</p>
 
-\[\mbox{Score}(q,g)=\sum_{r\in q} \mbox{rf-igf}_{r,g}.\]
+<p>[\mbox{Score}(q,g)=\sum_{r\in q} \mbox{rf-igf}_{r,g}.]</p>
 
 <p>In respect to MRF scoring, this information retrieval method might be applied as follows; the \({rf-igf}\) weight of a term is the product of
 its \(rf\) weight and its \(igf\) weight (\({W}_{r,g}={rf}_{r,g} \times \log \frac{N}{{gf}_{r}}\)) or
@@ -964,67 +920,4 @@ This requires a major investment, however the MRF score provides a good approxim
 <li><span id="walter2015broad">Walter, J. E., Rosen, L. B., Csomos, K., Rosenberg, J. M., Mathew, D., Keszei, M., Ujhazi, B., Chen, K., Lee, Y. N., Tirosh, I., &amp; others. (2015). Broad-spectrum antibodies against self-antigens and cytokines in RAG deficiency. <i>The Journal of Clinical Investigation</i>, <i>125</i>(11), 4135–4148.</span></li>
 <li><span id="yu2014human">Yu, X., Almeida, J. R., Darko, S., van der Burg, M., DeRavin, S. S., Malech, H., Gennery, A., Chinn, I., Markert, M. L., Douek, D. C., &amp; others. (2014). Human syndromes of immunodeficiency and dysregulation are characterized by distinct defects in T-cell receptor repertoire development. <i>Journal of Allergy and Clinical Immunology</i>, <i>133</i>(4), 1109–1115.</span></li>
 <li><span id="zhang2005novel">Zhang, J., Quintal, L., Atkinson, A., Williams, B., Grunebaum, E., &amp; Roifman, C. M. (2005). Novel RAG1 mutation in a case of severe combined immunodeficiency. <i>Pediatrics</i>, <i>116</i>(3), e445–e449.</span></li></ol>
-
-</div>
-
-<div id="related">
-  <h2>Related Topics</h2>
-  <ul class="topics">
-    
-  </ul>
-</div>
-
-
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Dylan footer
-        <br />
-        Postdoc at
-          <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>,
-        <br />
-        dylan@email
-      </p>
-    </div>
-    <div class="contact">
-      <p>
-        <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
-        <a href="https://dylan-lawless.github.io">Resume</a><br />
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/tom-preston-werner">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Banner on top right corner linking to github
-<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
--->
-
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-
-</body>
-</html>
+:ET
