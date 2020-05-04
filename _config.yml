@@ -1,6 +1,6 @@
 markdown: kramdown
 
-scholar:
+# scholar:
 
 collections:
     topic:
