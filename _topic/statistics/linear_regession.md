@@ -17,23 +17,21 @@ Predict a quantitative response $$Y$$ using a predictor variable $$X$$; regressi
 The _intercept_ and _splope_ are written as $$\beta_0$$ and $$\beta_1$$, respectively.
 These are unknwon constants and together are knwon as the model _coefficients_ or _parameters_.
 The simple linear regression is written as
-{% endraw %}
 
-$$  
+$$
+\label{eq1}\tag{1} 
 Y \approx \beta_0 + \beta_1 X
 $$
 
-{% raw %}
 Values that are estimated are labelled with a "hat", e.g. 
 $$\hat y$$ - a prediction of $$Y$$ based on $$X = x$$.
 With some sample data, one can begin to predict $$Y$$ based on the predictor $$X$$ using the estimated model coefficients $$\hat \beta_0$$ and $$\hat \beta_1$$;
-{% endraw %}
 
 $$
+\label{eq2}\tag{2} 
 \hat y \approx \hat\beta_0 + \hat\beta_1 x
 $$
 
-{% raw %}
 In this case, the estimated response $$\hat y$$ equals the estimated intercept and slope ($$\hat \beta_0$$ and $$\hat \beta_1$$) according to a sample of the predictor values ($$x$$). 
 {% endraw %}
 
@@ -41,9 +39,9 @@ In this case, the estimated response $$\hat y$$ equals the estimated intercept a
 {% raw %}
 The estimated intercept and slope ($$\hat \beta_0$$ and $$\hat \beta_1$$) are unknown, therefore we need to get these values to predict $$Y$$ based on $$X$$.
 A number ($$n$$) of obersevations are made where we measure $$X$$ and $$Y$$. Measurements could be recorded as: (measure 1, x = 5, y = 10), (measure 2, x = 10, y = 20), and so on up to $$n$$ obersavations; 
-{% endraw %}
 
 $$ 
+\label{eq3}\tag{3} 
 (5,10), (10,20),..., (x_n,y_n)  
 $$ 
 
@@ -51,40 +49,43 @@ $$
 (x_1,y_1), (x_2,y_2),..., (x_n,y_n)
 $$
   
-{% raw %}
 We want to combine each measurment on a plot so that the line drawn through the data fits well and produces coefficient estimates $$\hat \beta_0$$ and $$\hat \beta_1$$.
 Each measurement ($$i$$) is represented with $$y_i \approx \hat \beta_0 + \hat \beta_1 x_i$$ for $$i = 1,2,...,n$$.
 The ideal result will be a line that fits all points closely. 
-The measure of _closeness_ has a many topics of interest, but the most common method is to minimise the _least squares_.
-{% endraw %}
+The measure of _closeness_ has many topics of interest, but the most common method is to minimise the _least squares_.
   
+$$e_i = y_i - \hat y_i$$ represents the $$i$$th _residual_ - the difference between our $$i$$th response according to our model versus the true $$i$$th observed response.
+The _residual sum of squares_ (RSS) is written as
 $$
+\label{eq4}\tag{4} 
 RSS = e^2 _1 + e^2 _2 +...+ e^2 _n
 $$
  
-{% raw %}
-
-{% endraw %}
 $$
 RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+...+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.
 $$
 
-{% raw %}
+The least squares method uses $$ \hat\beta_0 and \hat\beta_1 $$ such that RSS is minimised. The minimisers are as follows
 
-{% endraw %}
 $$
-\hat \beta_1  = 
+\label{eq5}\tag{5} 
+ \hat \beta_1  = 
 \frac{ 
 \sum_{i=1}^{n}	(	xi -\bar{x} )	(yi - \bar{y}	)	} 
 {\sum_{i=1}^{n}	(	xi -\bar{x} )^2
 }
 $$
 
-{% raw %}
-
-{% endraw %}
 $$
 \hat\beta_0 - \bar{y} - \hat\beta_1 \bar{x}
 $$
 
-Testing mathjax for LaTeX. Includes/head should load script to run. 
+where the sample means are
+$$ \bar{y} \equiv \frac{1}{n}\sum_{i=1}^{n} y_i $$
+and
+$$ \bar{x} \equiv \frac{1}{n}\sum_{i=1}^{n} x_i $$
+so the equation above (\ref{eq5}) defines the least squares coefficient estimates for simple linear regression.
+
+{% endraw %}
+
+# Accuracy of the Coefficient Estimates
