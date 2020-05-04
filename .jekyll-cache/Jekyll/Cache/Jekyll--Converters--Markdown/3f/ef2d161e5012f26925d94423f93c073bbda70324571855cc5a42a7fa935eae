@@ -1,4 +1,4 @@
-I"cS<h1 id="rag">RAG</h1>
+I"��<h1 id="rag">RAG</h1>
 
 <ul id="markdown-toc">
   <li><a href="#rag" id="markdown-toc-rag">RAG</a></li>
@@ -100,14 +100,14 @@ receptor).</p>
 
 <h1 id="introduction">Introduction</h1>
 
-<p>Costs associated with genomic investigations continue to reduce <a class="citation" href="#payne2018cost">(Payne et al., 2018)</a> while the richness of data generated increases.
+<p>Costs associated with genomic investigations continue to reduce [payne2018cost] while the richness of data generated increases.
 Globally, the adoption of wide scale genome sequencing implies that all new-born infants may receive screening for pathogenic genetic variants
-in an asymptomatic stage, pre-emptively  <a class="citation" href="#kwan2014newborn">(Kwan et al., 2014)</a>. 
+in an asymptomatic stage, pre-emptively  [kwan2014newborn]. 
 The one dimensionality of individual genomes is now being expanded by the possibility of massive parallel sequencing for somatic variant analysis and by single-cell or lineage-specific genotyping; culminating in a genotype spectrum. 
 In whole blood, virtually every nucleotide position may be mutated across \(10^5\) cells 
-<a class="citation" href="#Liggett208066">(Liggett et al., 2017)</a>. 
+[Liggett208066]. 
 Mapping one’s genotype across multiple cell types and at several periods during a person’s life may soon be feasible 
-<a class="citation" href="#clark2018scnmt">(Clark et al., 2018)</a>. 
+[clark2018scnmt]. 
 Such genotype snapshots might allow for prediction and tracking of somatic, epigenetic, and transcriptomic profiling.</p>
 
 <p>The predictive value of genomic screening highly depends on the computation tools used for data analysis and its correlation with functional assays or prior clinical experience. 
@@ -117,47 +117,47 @@ often require complex functional investigations to confirm their significance.
 There is a need for predictive genomic modelling with aims to provide a reliable guidance for therapeutic intervention for patients harbouring genetic defects for life-threatening disease before the illness becomes clinically significant.</p>
 
 <p>The study of predictive genomics is exemplified by consideration of gene essentiality, accomplished by observing intolerance to loss-of-function variants. 
-Several gene essentiality scoring methods are available for both the coding and non-coding genome  <a class="citation" href="#bartha2017human">(Bartha et al., 2017)</a>. 
+Several gene essentiality scoring methods are available for both the coding and non-coding genome  [bartha2017human]. 
 Approximately 3,000 human genes cannot tolerate the loss of one allele
-<a class="citation" href="#bartha2017human">(Bartha et al., 2017)</a>. 
+[bartha2017human]. 
 The greatest hurdle in monogenic disease is the interpretation of variants of unknown significance while functional validation is a major time and cost investment for laboratories investigating rare disease.</p>
 
 <p>Severe, life-threatening immune diseases are caused by genetic
 variations in almost 300 genes
-<a class="citation" href="#picard2018international">(Picard et al., 2018; Conley &amp; Casanova, 2014)</a> however, only a small percentage of disease causing variants have been characterised using functional studies. 
+[picard2018international conley2014discovery] however, only a small percentage of disease causing variants have been characterised using functional studies. 
 Several robust tools are in common usage for predicting variant pathogenicity.  Compared to methods for pathogenicity prediction, a void remains for predicting mutation probability, essential for efficient pre-emptive validation. 
 Our investigation aims to apply predictive genomics as a tool to identify genetic variants that are most likely to be seen in patient cohorts.</p>
 
 <p>We present the first application of our novel approach of predictive genomics using Recombination activating gene 1 (RAG1) and RAG2 deficiency as a model for a rare primary immunodeficiency (PID) caused by autosomal recessive variants. 
 <em>RAG1</em> and <em>RAG2</em> encode lymphoid-specific proteins that are essential for V(D)J recombination.
-This genetic recombination mechanism is essential for a robust immune response by diversification the T and B cell repertoire in the thymus and bone marrow, respectively  <a class="citation" href="#schatz1989v">(Schatz et al., 1989; Oettinger et al., 1990)</a>.
-Deficiency of RAG1  <a class="citation" href="#mombaerts1992rag">(Mombaerts et al., 1992)</a> and RAG2  <a class="citation" href="#shinkai1992rag">(Shinkai et al., 1992)</a> in mice causes inhibition of B and T cell development. 
-<a class="citation" href="#schwarz1996rag">(Schwarz et al., 1996)</a>
+This genetic recombination mechanism is essential for a robust immune response by diversification the T and B cell repertoire in the thymus and bone marrow, respectively  [schatz1989v oettinger1990rag].
+Deficiency of RAG1  [mombaerts1992rag] and RAG2  [shinkai1992rag] in mice causes inhibition of B and T cell development. 
+[schwarz1996rag ]
 formed the first publication reporting that RAG mutations in humans causes severe combined immunodeficiency (SCID), and deficiency in peripheral B and T cells. 
 Patient studies identified a form of immune dysregulation known as Omenn syndrome
-<a class="citation" href="#de1991restricted">(de Saint-Basile et al., 1991; Rieux-Laucat et al., 1998)</a>. 
+[de1991restricted rieux1998highly]. 
 The patient phenotype includes multi-organ infiltration with oligoclonal, activated T cells. 
 The first reported cases of Omenn syndrome identified infants with hypomophic RAG variants which retained partial recombination activity
-<a class="citation" href="#villa1998partial">(Villa et al., 1998)</a>. 
+[villa1998partial]. 
 RAG deficiency can be measured by in vitro quantification of recombination activity
-<a class="citation" href="#lawless2018prevalence">(Lawless et al., 2018; Lee et al., 2014; Tirosh et al., 2018)</a>.
+[lawless2018prevalence lee2014systematic tirosh2018recombination].
 Hypomorphic <em>RAG1</em> and <em>RAG2</em> mutations, responsible for residual V(D)J recombination activity (on average 5-30%), result in a distinct phenotype of combined immunodeficiency with granuloma and/or autoimmunity (CID-G/A)
-<a class="citation" href="#kwan2014newborn">(Kwan et al., 2014; Walter et al., 2015; Schuetz et al., 2008)</a>.</p>
+[kwan2014newborn walter2015broad schuetz2008immunodeficiency].</p>
 
 <p>Human RAG deficiency has traditionally been identified at very early ages due to the rapid drop of maternally-acquired antibody in the first six months of life. 
 A loss of adequate lymphocyte development quickly results in compromised immune responses. 
 More recently, we have found that RAG deficiency is also found for some adults living with PID
-<a class="citation" href="#lawless2018prevalence">(Lawless et al., 2018)</a>.</p>
+[lawless2018prevalence].</p>
 
 <p><em>RAG1</em> and <em>RAG2</em> are highly conserved genes but disease is only reported with autosomal recessive inheritance. 
 Only 44% of amino acids in RAG1 and RAG2 are reported as mutated on GnomAD and functional validation of candidate variants is difficult 
-<a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a>.
+[lek2016analysis].
 Pre-emptive selection of residues for functional validation is a major challenge; 
 a selection based on low allele frequency alone is infeasible since the majority of each gene is highly conserved. 
 A shortened time between genetic analysis and diagnosis means that treatments may be delivered earlier. 
 RAG deficiency may present with diverse phenotypes and treatment strategies vary. 
 With such tools, early intervention may be prompted. 
-Some patients could benefit from hematopoietic stem cell transplant  <a class="citation" href="#john2016unrelated">(John et al., 2016)</a> when necessary while others may be provided mechanism-based treatment  <a class="citation" href="#casanova2014guidelines">(Casanova et al., 2014)</a>. 
+Some patients could benefit from hematopoietic stem cell transplant  [john2016unrelated] when necessary while others may be provided mechanism-based treatment  [casanova2014guidelines]. 
 Here, we provide a new method for predictive scoring that was validated against
 groups of functional assay values, human disease cases, and population genetics data. 
 We present the list of variants most likely seen as future determinants of RAG deficiency, meriting functional investigation.</p>
@@ -165,24 +165,24 @@ We present the list of variants most likely seen as future determinants of RAG d
 <h1 id="methods">Methods</h1>
 <h2 id="population-genetics-and-data-sources">Population genetics and data sources</h2>
 
-<p>GnomAD (version r2.0.2)  <a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a> was queried for the canonical transcripts of <em>RAG1</em> and <em>RAG2</em> from population genetics data of approximately 146,000 individuals; ENST00000299440 (<em>RAG1</em>) 1586 variants, GRCh37 11:36532259-36614706 and ENST00000311485 (<em>RAG2</em>) 831 variants, GRCh37 11:36597124 - 36619829. 
+<p>GnomAD (version r2.0.2)  [lek2016analysis] was queried for the canonical transcripts of <em>RAG1</em> and <em>RAG2</em> from population genetics data of approximately 146,000 individuals; ENST00000299440 (<em>RAG1</em>) 1586 variants, GRCh37 11:36532259-36614706 and ENST00000311485 (<em>RAG2</em>) 831 variants, GRCh37 11:36597124 - 36619829. 
 Data was filtered to contain the variant effect identifiers: frameshift, inframe deletion, inframe
 insertion, missense, stop lost, or stop gained. 
 Reference transcripts were sourced from Ensembl in the FASTA format amino acid sequence for transcript RAG1-201 ENST00000299440.5 HGNC:9831 and transcript RAG2-201 ENST00000311485.7 HGNC:9832.
 These sequences were converted to their three-letter code format using <em>One to Three</em> from the Sequence Manipulation Suite (SMS2) 
-<a class="citation" href="#stothard2000sequence">(Stothard, 2000)</a>. 
+[stothard2000sequence]. 
 Combined Annotation Dependent Depletion (CADD) scores were sourced from (Nov 2018) and are reported by 
-<a class="citation" href="#kircher2014general">(Kircher et al., 2014)</a>. 
+[kircher2014general ]. 
 The dataset used was “All possibleSNVs” from whole genome data, from which we extracted the data for coding regions of <em>RAG1</em> and <em>RAG2</em>. 
 We used the Human Gene Mutation Database (HGMD) from the Institute of Medical Genetics in Cardiff as a pre-defined source of known RAG deficiency cases (Feb 2019, free access
 version to NM_000448.2.) 
-<a class="citation" href="#stenson2014human">(Stenson et al., 2014)</a>. 
+[stenson2014human]. 
 Data was formatted into CSV and imported into R for combined analysis with PHRED-scaled CADD scores and the main dataframe. 
 The crystal structure render of DNA bound RAG complex was produced with data from RCSB Protein Data Bank
-(3jbw.pdb)  <a class="citation" href="#ru2015molecular">(Ru et al., 2015)</a>. 
+(3jbw.pdb)  [ru2015molecular]. 
 Structures were visualised using the software VMD from the Theoretical and Computational Biophysics Group
-<a class="citation" href="#Humphrey1996vmd">(Humphrey et al., 1996)</a>, imaged with Tachyon rendering 
-<a class="citation" href="#Stone1998Ane">(Stone, 1998)</a>, and colour mapped using our scoring method.</p>
+[Humphrey1996vmd], imaged with Tachyon rendering 
+[Stone1998Ane], and colour mapped using our scoring method.</p>
 
 <h2 id="data-processing">Data processing</h2>
 
@@ -193,7 +193,7 @@ Statistics and calculation steps are listed in order in Supplemental Tables E3-E
 <p>The percentage of conserved residues was calculated (55.99% of amino acids contained no reported variants in RAG1, 55.98% in RAG2 (
 Table E4). 
 Basic protein statistics were generated using canonical reference transcript sequences of <em>RAG1</em> and <em>RAG2</em> with the SMS2 tool <em>Protein Stats</em> 
-<a class="citation" href="#stothard2000sequence">(Stothard, 2000)</a>. 
+[stothard2000sequence]. 
 The resulting pattern percentage value was converted to a frequency (decimal 0-1) based on the number of residues per protein to generate the residue frequency
 (\({R}_{f}\)). 
 The \({R}_{f}\) values were found for both proteins as shown in <strong>Table E5</strong> and summarised in <strong>Table E6</strong>.</p>
@@ -209,7 +209,7 @@ Separate, and overlapping windows could also be used based on genome phase data 
 
 <p>The \({M}_{r}\) and \({R}_{f}\) multiply to give the raw mutation rate residue frequency (MRF) value (**Table E8
 ). 
-This value is also shown in **Tables mrf.assay\%} and 
+This value is also shown in **Tables mrf.assay] and 
 Table:1
 . 
 Our investigation used a Boolean score \(C\) to account for the presence or absence of a mutation in the general population; 0 for any variant existing in the population and 1 for conserved residues.
@@ -272,7 +272,7 @@ FIGURE <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">Fi
 <h2 id="validation-of-mrf-against-functional-data">Validation of MRF against functional data</h2>
 
 <p>The recombination activity of RAG1 and RAG2 was previously measured on known or candidate pathogenic variants
-<a class="citation" href="#lee2014systematic">(Lee et al., 2014; Lawless et al., 2018; Tirosh et al., 2018)</a>.
+[lee2014systematic lawless2018prevalence tirosh2018recombination].
 Briefly, the pathogenicity of variants in <em>RAG1</em> and <em>RAG2</em> was measured functionally <em>in vitro</em> by either expression of RAG1 and RAG2 in
 combination with a recombination substrate plasmid containing recombination signal sequence (RSS) sites which are targeted by RAG complex during normal V(D)J recombination, or Abelson virus-transformed Rag2-/- pro-B cells with an RSS-flanked inverted GFP cassette.
 Recombination events were assessed by quantitative real-time PCR using comparative CT or expression of GFP evaluated by flow cytometry,
@@ -289,12 +289,12 @@ FIGURE <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">me
 
 <p>Variant probability prediction is dependent on population genetics data.
 Our study queried GnomAD 
-<a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a> 
+[lek2016analysis] 
 to identify conserved residues using a Boolean score \(C\) of 0 (present in population) or 1 (conserved). 
 The gene-specific mutation rate \({M}_{r}\) of each residue was calculated from allele frequencies. 
 The gene-specific residue frequency \({R}_{f}\) represented the frequency of a residue occurring per gene, acquired by converting gene residue percentage (from the SMS2 tool
 <em>Protein stats</em>) to a frequency (decimal 0-1) 
-<a class="citation" href="#stothard2000sequence">(Stothard, 2000)</a>.
+[stothard2000sequence].
 Together the values were used to calculate the most probable disease-causing variants which have not yet been identified in patients.
 We termed the resulting score a mutation rate residue frequency, where \(MRF = {C} \times {M}_{r} \times {R}_f\). 
 This score represents the likelihood that a clinically relevant mutation will occur.</p>
@@ -363,8 +363,8 @@ FIGURE RAG_MRF_map
 <h2 id="mrf-scores-select-for-confirmed-variants-in-human-disease">MRF scores select for confirmed variants in human disease</h2>
 
 <p>We have applied MRF scores to known damaging mutations from other extensive reports in cases of human disease
-<a class="citation" href="#schuetz2008immunodeficiency">(Schuetz et al., 2008; Lee et al., 2014; Villa et al., 2001; Abolhassani et al., 2014; Kutukculer et al., 2012; Sobacchi et al., 2006; Villa et al., 1998; Noordzij et al., 2002; Crestani et al., 2014; Dalal et al., 2005; Kuijpers et al., 2011; Gruber et al., 2009; De Ravin et al., 2010; Buchbinder et al., 2015; Felgentreff et al., 2011; Schwarz et al., 1996; Reiff et al., 2013; Corneo et al., 2001; Asai et al., 2011; Kato et al., 2015; Yu et al., 2014; De Villartay et al., 2005; Zhang et al., 2005; Henderson et al., 2013; Avila et al., 2010; Riccetto et al., 2014; Walter et al., 2015; Gomez et al., 2000; Chou et al., 2012)</a>
-[originally compiled by <a class="citation" href="#notarangelo2016human">(Notarangelo et al., 2016)</a>]. 
+[schuetz2008immunodeficiency lee2014systematic villa2001v abolhassani2014hypomorphic kutukculer2012novel sobacchi2006rag villa1998partial noordzij2002immunophenotypic crestani2014rag1 dalal2005evolution kuijpers2011idiopathic gruber2009clinical de2010hypomorphic buchbinder2015identification felgentreff2011clinical schwarz1996rag reiff2013exome corneo2001identical asai2011analysis kato2015rag1 yu2014human de2005novel zhang2005novel henderson2013expanding avila2010highly riccetto2014compound walter2015broad gomez2000mutations chou2012novel]
+[originally compiled by [notarangelo2016human ]]. 
 This dataset compares a total of 44 variants. 
 We expected that functionally damaging variants (resulting in low recombination activity in vitro) that have the highest probability of occurrence would be identified with high MRF scores. 
 MRF prediction correctly identified clinically relevant mutations in <em>RAG1</em> and <em>RAG2</em>
@@ -408,14 +408,14 @@ design of our method.</p>
 Based on the frequency of protein-truncating variants in the general population, 
 <em>RAG1</em> and <em>RAG2</em> are considered to be tolerant to the loss of one allele, as indicated by their low probability of being loss-of-function
 intolerant (pLI) scores of 0.00 and 0.01, respectively 
-<a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a>. 
+[lek2016analysis]. 
 This is particularly important for recessive diseases such as RAG deficiency where most new missense variants will be of unknown significance until functionally validated.</p>
 
 <h2 id="top-candidate-variants-require-validation">Top candidate variants require validation</h2>
 
 <p>Functionally characterising protein activity is both costly and time consuming. 
 RAG1 and RAG2 have now been investigated by multiple functional assays for at least 110 coding variants
-<a class="citation" href="#lee2014systematic">(Lee et al., 2014; Tirosh et al., 2018; Lawless et al., 2018)</a>.
+[lee2014systematic tirosh2018recombination lawless2018prevalence].
 In each case, researchers selected variants in <em>RAG1</em> and <em>RAG2</em> that were potentially damaging or were identified from PID patients as the
 most probable genetic determinant of disease. 
 Functional assays for RAG deficiency in those cases, and generally, measured a loss of recombination activity as a percentage of wild type function (0-100%).</p>
@@ -457,7 +457,7 @@ FIGURE <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">ES
  further
 illustrates the individual variants which have been tested functionally (the coloured <em>recombination activity</em> subset of Fig</p>
 
-<p>FIGURE <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">Figure 3</a>\%}). 
+<p>FIGURE <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">Figure 3</a>]). 
 We compared predicted MRF scores to assay measurements for 71 <em>RAG1</em> and 39 <em>RAG2</em> mutants. 
 Most mutations tested showed severe loss of protein function (bottom panel of
 Supplemental Figure **
@@ -475,11 +475,11 @@ MRF scoring have been tested to date.</p>
 <h2 id="false-positives-in-transib-domains-do-not-negatively-impact-prediction">False positives in <em>Transib</em> domains do not negatively impact prediction</h2>
 
 <p>Adaptive immunity is considered to have evolved through jawed vertebrates after integration of the RAG transposon into an ancestral
-antigen receptor gene  <a class="citation" href="#agrawal1998transposition">(Agrawal et al., 1998; Hiom et al., 1998)</a>. 
+antigen receptor gene  [agrawal1998transposition hiom1998dna]. 
 The <em>Transib</em> transposon is a 600 amino acid core region of RAG1 that targets RSS-like sequences in many invertebrates. 
-A linked <em>RAG1/RAG2</em> was shown in the lower dueterosome (sea urchin), indicating an earlier common ancestor than the invertebrate  <a class="citation" href="#fugmann2006ancient">(Fugmann et al., 2006)</a>, and more
+A linked <em>RAG1/RAG2</em> was shown in the lower dueterosome (sea urchin), indicating an earlier common ancestor than the invertebrate  [fugmann2006ancient], and more
 recently, a recombinatorially active RAG transposon (ProtoRAG) was found in the lower chordate amphioxus (or lancelet); the most basal extant
-chordate and a “living fossil of RAG”  <a class="citation" href="#huang2016discovery">(Huang et al., 2016)</a>.</p>
+chordate and a “living fossil of RAG”  [huang2016discovery].</p>
 
 <p>![False positives in <em>Transib</em> domains do not worsen probability prediction. 
 The <em>Transib</em> domains contain critical conserved protein residues. 
@@ -493,9 +493,9 @@ MRF; mutation rate residue frequency, ns; non-significant.
 <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">Figure 4</a></p>
 
 <p>A set of conserved motifs in core <em>RAG1</em> are shared with the <em>Transib</em> transposase, including the critical DDE residue catalytic triad
-(residues 603, 711, and 965)  <a class="citation" href="#kapitonov2005rag1">(Kapitonov &amp; Jurka, 2005)</a>. 
+(residues 603, 711, and 965)  [kapitonov2005rag1]. 
 Ten <em>RAG1</em> core motifs are conserved amongst a set of diverse species including human
-<a class="citation" href="#kapitonov2005rag1">(Kapitonov &amp; Jurka, 2005)</a>. 
+[kapitonov2005rag1]. 
 This evolutionarily conserved region is considered as most important to protein function. 
 Therefore, we chose this region to determine if MRF scoring would have a negative impact if mutations were falsely predicted as clinically important. 
 To assess the influence of a false positive effect on prediction, the MRF scores for conserved residues in this group were compared to GnomAD allele frequencies.
@@ -514,7 +514,7 @@ motifs remained neutral.</p>
 <h2 id="mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants">MRF predicts RAG deficiency amongst PID patients harbouring rare variants</h2>
 
 <p>We have previously measured the recombination activity of RAG1 and RAG2
-disease-causing variants in several patients  <a class="citation" href="#lawless2018prevalence">(Lawless et al., 2018)</a>.
+disease-causing variants in several patients  [lawless2018prevalence].
 We have compiled our own and other functional assay data from
 @lee2014systematic and @tirosh2018recombination to produce a panel of
 recombination activity measurements for coding variants in both <em>RAG1</em>
@@ -527,7 +527,7 @@ In functional experiments, mutant proteins were assayed for their ability to per
 <p>By gathering confirmed RAG deficiency cases, we compiled the MRF scores for 43 damaging <em>RAG1</em> variants in 77 PID cases and 14 damaging <em>RAG2</em> variants in 21 PID cases (MRF scores spanning over 22 categories). 
 To test our method against a strong control group, we identified coding variants in patients with PID where RAG deficiency due to coding variants has been ruled out as the cause of disease. 
 We obtained <em>RAG1/2</em> variants in 558 PID patients who had their genomes sequenced as part of the NIHR BioResource - Rare Diseases study
-<a class="citation" href="#lawless2018prevalence">(Lawless et al., 2018)</a>. 
+[lawless2018prevalence]. 
 Filtering initially identified 32 variants in 166 people. 
 This set was trimmed to contain only rare variants; 29 variants over 26 MRF scoring categories from 72 cases of
 non-RAG-deficient PID. 
@@ -541,7 +541,7 @@ However, the sample size to date may be too small to significantly measure <em>R
 was inferred in  FIGURE
 FIGURE <a href="RAG\_mrf\_linear\_regression">RAG_mrf_linear_regression</a></p>
 
-<p><a class="citation" href="#altman1995statistics">(Altman &amp; Bland, 1995)</a>. 
+<p>[altman1995statistics]. 
 R source and raw data can be found in supplemental material.</p>
 
 <p>![A linear regression model of RAG1/2 MRF scoring in cases of primary
@@ -559,7 +559,7 @@ Source data and script in supplemental material).
 
 <h2 id="mrf-supplements-pathogenicity-prediction-tools-for-translational-research">MRF supplements pathogenicity prediction tools for translational research</h2>
 
-<p>CADD scoring  <a class="citation" href="#kircher2014general">(Kircher et al., 2014)</a> is an important bioinformatics tool that exemplifies pathogenicity prediction. 
+<p>CADD scoring  [kircher2014general] is an important bioinformatics tool that exemplifies pathogenicity prediction. 
 While CADD is a valuable scoring method, its purpose is not to predict likelihood of variation.
 Similarly, MRF scoring is not a measure of pathogenicity. 
 MRF scoring may be complemented by tools for scoring variant deleteriousness. 
@@ -590,7 +590,7 @@ CADD score was very successful at predicting the pathogenicity of a variant, (a 
 At about the same rate, CADD score also predicted variants as pathogenic that are, to date,
 unreported (as **pink</strong> in **Fig.</p>
 
-<p>FIGURE <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">Figure 7</a>\%}
+<p>FIGURE <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">Figure 7</a>]
 (i)<strong>). 
 Indeed, those unreported variants may very well be pathogenic.
 However, the likelihood of each mutation varies. 
@@ -651,17 +651,17 @@ In the state presented here, MRF scores are used for pre-clinical studies.
 A more advanced development may allow for use in single cases. 
 During clinical investigations using personalised analysis of patient data, further scoring methods may be applied based on disease features. 
 A patient phenotype can contribute a weight based on known genotype correlations separating primary immunodeficiencies or
-autoinflammatory diseases  <a class="citation" href="#picard2018international">(Picard et al., 2018)</a>. 
+autoinflammatory diseases  [picard2018international]. 
 For example, a patient with autoinflammatory features may require a selection that favors genes associated with proinflammatory disease such as <em>MEFV</em> and
 <em>TNFAIP3</em>, whereas a patient with mainly immunodeficiency may have preferential scoring for genes such as <em>BTK</em> and <em>DOCK8</em>. 
 In this way, a check-list of most likely candidates can be confirmed or excluded by whole genome or panel sequencing. 
 However, validation of these expanded implementations requires a deeper consolidation of functional studies than is currently available.</p>
 
-<p><a class="citation" href="#Havrilla220814">(Havrilla et al., 2017)</a>
+<p>[Havrilla220814 ]
 have recently developed a method with similar possible applications for human health mapping constrained coding regions. 
 Their study employed a method that included weighting by sequencing depth.
 Similarly, genome-wide scoring may benefit from mutation significance cut-off, which is applied for tools such as CADD, PolyPhen-2, and SIFT
-<a class="citation" href="#itan2016mutation">(Itan et al., 2016)</a>. 
+[itan2016mutation]. 
 We have not included an adjustment method as our analysis was gene-specific but implementation is advised when calculating genome-wide MRF scores.</p>
 
 <p>The MRF score was developed to identify the top most probable variants that have the potential to cause disease. 
@@ -670,29 +670,29 @@ However, MRF may contribute to disease prediction; a clinician may ask for the l
 Mendelian disease of interest) prior to examination (<em>**</em>).</p>
 
 <p>Predicting the likelihood of discovering novel mutations has implications in genome-wide association studies (GWAS). 
-Variants with low minor allele frequencies have a low discovery rate and low probability of disease association  <a class="citation" href="#kido2018minor">(Kido et al., 2018)</a>, an important
+Variants with low minor allele frequencies have a low discovery rate and low probability of disease association  [kido2018minor], an important
 consideration for rare diseases such as RAG deficiency. 
-An analysis of the NHGRI-EBI catalogue data highlighted diseases whose average risk allele frequency was low  <a class="citation" href="#kido2018minor">(Kido et al., 2018)</a>. 
+An analysis of the NHGRI-EBI catalogue data highlighted diseases whose average risk allele frequency was low  [kido2018minor]. 
 Autoimmune diseases had risk allele frequencies considered low at approximately 0.4. 
 Without a method to rank most probable novel disease-causing variants, it is unlikely that GWAS will identify very rare disease alleles (with frequencies
 &lt;0.001). 
 It is conceivable that a number of rare immune diseases are attributable to polygenic rare variants. 
 However, evidence for low-frequency polygenic compounding mutations will not be available until large, accessible genetics databases are available, exemplified by
-the NIHR BioResource Rare Diseases study  <a class="citation" href="#lawless2018prevalence">(Lawless et al., 2018)</a>. 
+the NIHR BioResource Rare Diseases study  [lawless2018prevalence]. 
 An interesting consideration when predicting probabilities of variant frequency, is that of protective mutations. 
-Disease risk variants are quelled at low frequency by negative selection, while protective variants may drift at higher allele frequencies  <a class="citation" href="#chan2014excess">(Chan et al., 2014)</a>.</p>
+Disease risk variants are quelled at low frequency by negative selection, while protective variants may drift at higher allele frequencies  [chan2014excess].</p>
 
-<p>The cost-effectiveness of genomic diagnostic tests is already outperforming traditional, targeted sequencing  <a class="citation" href="#payne2018cost">(Payne et al., 2018)</a>. 
+<p>The cost-effectiveness of genomic diagnostic tests is already outperforming traditional, targeted sequencing  [payne2018cost]. 
 Even with substantial increases in data sharing capabilities and adoption of clinical genomics, rare diseases due to variants of unknown significance
 and low allele frequencies will remain non-actionable until reliable predictive genomics practices are developed. 
 Bioinformatics as a whole has made staggering advances in the field of genetics 
-<a class="citation" href="#libbrecht2015machine">(Libbrecht &amp; Noble, 2015)</a>. 
-Challenges that remain unsolved, hindering the benefit of national or global genomics databases, include DNA data storage and random access retrieval  <a class="citation" href="#Organick114553">(Organick et al., 2017)</a>, data privacy management 
-<a class="citation" href="#Huang:224980">(Huang et al., 2016)</a>, 
+[libbrecht2015machine]. 
+Challenges that remain unsolved, hindering the benefit of national or global genomics databases, include DNA data storage and random access retrieval  [Organick114553], data privacy management 
+[Huang:224980], 
 and predictive genomics analysis methods.
 Variant filtration in rare disease is based on reference allele frequency, yet the result is not clinically actionable in many cases.
 Development of predictive genomics tools may provide a critical role for single patient studies and timely diagnosis 
-<a class="citation" href="#casanova2014guidelines">(Casanova et al., 2014)</a>.</p>
+[casanova2014guidelines].</p>
 
 <h1 id="conclusion">Conclusion</h1>
 <p>We provide a list of amino acid residues for RAG1 and RAG2 that have not been reported to date, but are most likely to present clinically as RAG
@@ -807,7 +807,7 @@ The “PHRED-scaled” values are used as a normalised and externally comparable
 raw CADD scores. 
 The area under the curve was calculated for density plots to quantify the difference between pathogenic and unreported variants with high scores, above the intersects &gt;0.0409 and &gt;22.84 for MRF and CADD, respectively, using score value (\(x\)) versus density (\(y\)) (Fig. 
  (i-ii)) with
-\(\int_a^b \! f(x) \, \mathrm{d}x \approx\ \left(b-a\right) \left[\frac{f\left(a\right)\ + f\left(b\right)}{2}\right%}.\)</p>
+\(\int_a^b \! f(x) \, \mathrm{d}x \approx\ \left(b-a\right) \left[\frac{f\left(a\right)\ + f\left(b\right)}{2}\right].\)</p>
 
 <h2 id="genome-wide-and-disease-specific-application">Genome-wide and disease-specific application</h2>
 
@@ -815,12 +815,12 @@ The area under the curve was calculated for density plots to quantify the differ
 The mutation rate can be applied genome wide with a process common in the study of information retrieval; term frequency, inverse document frequency (\(tf-idf\)). 
 In this case the “term” and “document” are replaced by amino acid residue \(r\) and gene \(g\) , respectively such that,</p>
 
-\[{rf-igf}_{r,g} ={rf}_{r,g} \times {igf}_r\]
+<p>[{rf-igf}<em>{r,g} ={rf}</em>{r,g} \times {igf}_r]</p>
 
 <p>We may view each gene as a vector with one component corresponding to each residue mutation in the gene, together with a weight for each component that is given by (1).
 Therefore, we can find the overlap score measure with the \({rf-igf}\) weight of each term in \(g\), for a query \(q\);</p>
 
-\[\mbox{Score}(q,g)=\sum_{r\in q} \mbox{rf-igf}_{r,g}.\]
+<p>[\mbox{Score}(q,g)=\sum_{r\in q} \mbox{rf-igf}_{r,g}.]</p>
 
 <p>In respect to MRF scoring, this information retrieval method might be applied as follows; the \({rf-igf}\) weight of a term is the product of
 its \(rf\) weight and its \(igf\) weight (\({W}_{r,g}={rf}_{r,g} \times \log \frac{N}{{gf}_{r}}\)) or
@@ -834,8 +834,7 @@ That is, firstly, the number of times a residue mutates in a gene
 Finally, ranking the score of genes for a mutation query \(q\) by;
 \(\mbox{Score}(q,g)=\sum_{r\in q\cap g} \mbox{rf-igf}_{r,g}\) The score of the query (Score(\(q,g\))) equals the mutations (terms) that appear in
 both the query and the gene (\(r\in q\cap g\)). 
-Working out the \(rf-igf\) weight for each of those variants (\({rf.igf}_{r,g}\)) and then summing them (\(\sum\)) to give the score for the specific gene with respect to the query.
-\(_\)</p>
+Working out the \(rf-igf\) weight for each of those variants (\({rf.igf}_{r,g}\)) and then summing them (\(\sum\)) to give the score for the specific gene with respect to the query.</p>
 
 <h2 id="bayesian-probability">Bayesian probability</h2>
 
@@ -844,80 +843,11 @@ A clinician may ask for the likelihood of RAG deficiency (or any Mendelian disea
 \(P(H|E) = \frac{P(E|H) P(H)}{P(E)}\) where \(P(H)\) is the probability of a patient having RAG deficiency, \(P(E | H)\) is the probability of RAG
 deficiency due to a set of variants that have been pre-emptively assayed, and \(P(E)\) is the probability of having a set of gene variants.</p>
 
-<p>\(P(H)\) is known since the rate of RAG deficiency is estimated at an incidence of 1:181,000  <a class="citation" href="#kumanovics2017estimated">(Kumánovics et al., 2017)</a>, SCID at a rate of 1:330,000  <a class="citation" href="#kwan2014newborn">(Kwan et al., 2014)</a>, and we also recently show the rate of RAG deficiency in adults with PID  <a class="citation" href="#lawless2018prevalence">(Lawless et al., 2018)</a>. 
+<p>\(P(H)\) is known since the rate of RAG deficiency is estimated at an incidence of 1:181,000  [kumanovics2017estimated], SCID at a rate of 1:330,000  [kwan2014newborn], and we also recently show the rate of RAG deficiency in adults with PID  [lawless2018prevalence]. 
 Being a recessive disease, \(P(E)\) must account for biallelic variants and is the most difficult value to determine. 
 This may be found from population genetics data for (i) the rate of two separate, compound heterozygous variants, (ii) the rate of a homozygous variant or potential consanguinity, or (iii) the rate of de novo variation
-<a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a>. 
+[lek2016analysis]. 
 \(P(E|H)\) would be identified where all variants are functionally validated. 
 This requires a major investment, however the MRF score provides a good approximation.</p>
 
-<ol class="bibliography"><li><span id="abolhassani2014hypomorphic">Abolhassani, H., Wang, N., Aghamohammadi, A., Rezaei, N., Lee, Y. N., Frugoni, F., Notarangelo, L. D., Pan-Hammarström, Q., &amp; Hammarström, L. (2014). A hypomorphic recombination-activating gene 1 (RAG1) mutation resulting in a phenotype resembling common variable immunodeficiency. <i>Journal of Allergy and Clinical Immunology</i>, <i>134</i>(6), 1375–1380.</span></li>
-<li><span id="agrawal1998transposition">Agrawal, A., Eastman, Q. M., &amp; Schatz, D. G. (1998). Transposition mediated by RAG1 and RAG2 and its implications for the evolution of the immune system. <i>Nature</i>, <i>394</i>(6695), 744.</span></li>
-<li><span id="altman1995statistics">Altman, D. G., &amp; Bland, J. M. (1995). Statistics notes: Absence of evidence is not evidence of absence. <i>Bmj</i>, <i>311</i>(7003), 485.</span></li>
-<li><span id="asai2011analysis">Asai, E., Wada, T., Sakakibara, Y., Toga, A., Toma, T., Shimizu, T., Nampoothiri, S., Imai, K., Nonoyama, S., Morio, T., &amp; others. (2011). Analysis of mutations and recombination activity in RAG-deficient patients. <i>Clinical Immunology</i>, <i>138</i>(2), 172–177.</span></li>
-<li><span id="avila2010highly">Avila, E. M., Uzel, G., Hsu, A., Milner, J. D., Turner, M. L., Pittaluga, S., Freeman, A. F., &amp; Holland, S. M. (2010). Highly variable clinical phenotypes of hypomorphic RAG1 mutations. <i>Pediatrics</i>, <i>126</i>(5), e1248–e1252.</span></li>
-<li><span id="bartha2017human">Bartha, I., di Iulio, J., Venter, J. C., &amp; Telenti, A. (2017). Human gene essentiality. <i>Nature Reviews Genetics</i>, nrg–2017.</span></li>
-<li><span id="buchbinder2015identification">Buchbinder, D., Baker, R., Lee, Y. N., Ravell, J., Zhang, Y., McElwee, J., Nugent, D., Coonrod, E. M., Durtschi, J. D., Augustine, N. H., &amp; others. (2015). Identification of patients with RAG mutations previously diagnosed with common variable immunodeficiency disorders. <i>Journal of Clinical Immunology</i>, <i>35</i>(2), 119–124.</span></li>
-<li><span id="casanova2014guidelines">Casanova, J.-L., Conley, M. E., Seligman, S. J., Abel, L., &amp; Notarangelo, L. D. (2014). Guidelines for genetic studies in single patients: lessons from primary immunodeficiencies. <i>Journal of Experimental Medicine</i>, jem–20140520.</span></li>
-<li><span id="chan2014excess">Chan, Y., Lim, E. T., Sandholm, N., Wang, S. R., McKnight, A. J., Ripke, S., Daly, M. J., Neale, B. M., Salem, R. M., Hirschhorn, J. N., &amp; others. (2014). An excess of risk-increasing low-frequency variants can be a signal of polygenic inheritance in complex diseases. <i>The American Journal of Human Genetics</i>, <i>94</i>(3), 437–452.</span></li>
-<li><span id="chou2012novel">Chou, J., Hanna-Wakim, R., Tirosh, I., Kane, J., Fraulino, D., Lee, Y. N., Ghanem, S., Mahfouz, I., Mégarbané, A., Lefranc, G., &amp; others. (2012). A novel homozygous mutation in recombination activating gene 2 in 2 relatives with different clinical phenotypes: Omenn syndrome and hyper-IgM syndrome. <i>Journal of Allergy and Clinical Immunology</i>, <i>130</i>(6), 1414–1416.</span></li>
-<li><span id="clark2018scnmt">Clark, S. J., Argelaguet, R., Kapourani, C.-A., Stubbs, T. M., Lee, H. J., Alda-Catalinas, C., Krueger, F., Sanguinetti, G., Kelsey, G., Marioni, J. C., &amp; others. (2018). scNMT-seq enables joint profiling of chromatin accessibility DNA methylation and transcription in single cells. <i>Nature Communications</i>, <i>9</i>(1), 781.</span></li>
-<li><span id="conley2014discovery">Conley, M. E., &amp; Casanova, J.-L. (2014). Discovery of single-gene inborn errors of immunity by next generation sequencing. <i>Current Opinion in Immunology</i>, <i>30</i>, 17–23.</span></li>
-<li><span id="corneo2001identical">Corneo, B., Moshous, D., Güngör, T., Wulffraat, N., Philippet, P., Le Deist, F., Fischer, A., &amp; de Villartay, J.-P. (2001). Identical mutations in RAG1 or RAG2 genes leading to defective V (D) J recombinase activity can cause either TB–severe combined immune deficiency or Omenn syndrome. <i>Blood</i>, <i>97</i>(9), 2772–2776.</span></li>
-<li><span id="crestani2014rag1">Crestani, E., Choo, S., Frugoni, F., Lee, Y. N., Richards, S., Smart, J., &amp; Notarangelo, L. D. (2014). RAG1 reversion mosaicism in a patient with omenn syndrome. <i>Journal of Clinical Immunology</i>, <i>34</i>(5), 551–554.</span></li>
-<li><span id="dalal2005evolution">Dalal, I., Tabori, U., Bielorai, B., Golan, H., Rosenthal, E., Amariglio, N., Rechavi, G., &amp; Toren, A. (2005). Evolution of a TB-SCID into an Omenn syndrome phenotype following parainfluenza 3 virus infection. <i>Clinical Immunology</i>, <i>115</i>(1), 70–73.</span></li>
-<li><span id="de1991restricted">de Saint-Basile, G., Le Deist, F., De Villartay, J. P., Cerf-Bensussan, N., Journet, O., Brousse, N., Griscelli, C., &amp; Fischer, A. (1991). Restricted heterogeneity of T lymphocytes in combined immunodeficiency with hypereosinophilia (Omenn’s syndrome). <i>The Journal of Clinical Investigation</i>, <i>87</i>(4), 1352–1359.</span></li>
-<li><span id="de2005novel">De Villartay, J.-P., Lim, A., Al-Mousa, H., Dupont, S., Déchanet-Merville, J., Coumau-Gatbois, E., Gougeon, M.-L., Lemainque, A., Eidenschenk, C., Jouanguy, E., &amp; others. (2005). A novel immunodeficiency associated with hypomorphic RAG1 mutations and CMV infection. <i>The Journal of Clinical Investigation</i>, <i>115</i>(11), 3291–3299.</span></li>
-<li><span id="de2010hypomorphic">De Ravin, S. S., Cowen, E. W., Zarember, K. A., Whiting-Theobald, N. L., Kuhns, D. B., Sandler, N. G., Douek, D. C., Pittaluga, S., Poliani, P. L., Lee, Y. N., &amp; others. (2010). Hypomorphic Rag mutations can cause destructive midline granulomatous disease. <i>Blood</i>, <i>116</i>(8), 1263–1271.</span></li>
-<li><span id="felgentreff2011clinical">Felgentreff, K., Perez-Becker, R., Speckmann, C., Schwarz, K., Kalwak, K., Markelj, G., Avcin, T., Qasim, W., Davies, E. G., Niehues, T., &amp; others. (2011). Clinical and immunological manifestations of patients with atypical severe combined immunodeficiency. <i>Clinical Immunology</i>, <i>141</i>(1), 73–82.</span></li>
-<li><span id="fugmann2006ancient">Fugmann, S. D., Messier, C., Novack, L. A., Cameron, R. A., &amp; Rast, J. P. (2006). An ancient evolutionary origin of the Rag1/2 gene locus. <i>Proceedings of the National Academy of Sciences of the United States of America</i>, <i>103</i>(10), 3728–3733.</span></li>
-<li><span id="gomez2000mutations">Gomez, C. A., Ptaszek, L. M., Villa, A., Bozzi, F., Sobacchi, C., Brooks, E. G., Notarangelo, L. D., Spanopoulou, E., Pan, Z. Q., Vezzoni, P., &amp; others. (2000). Mutations in conserved regions of the predicted RAG2 kelch repeats block initiation of V (D) J recombination and result in primary immunodeficiencies. <i>Molecular and Cellular Biology</i>, <i>20</i>(15), 5653–5664.</span></li>
-<li><span id="gruber2009clinical">Gruber, T. A., Shah, A. J., Hernandez, M., Crooks, G. M., Abdel-Azim, H., Gupta, S., McKnight, S., White, D., Kapoor, N., &amp; Kohn, D. B. (2009). Clinical and genetic heterogeneity in Omenn syndrome and severe combined immune deficiency. <i>Pediatric Transplantation</i>, <i>13</i>(2), 244–250.</span></li>
-<li><span id="Havrilla220814">Havrilla, J. M., Pedersen, B. S., Layer, R. M., &amp; Quinlan, A. R. (2017). A map of constrained coding regions in the human genome. <i>BioRxiv</i>. https://doi.org/10.1101/220814</span></li>
-<li><span id="henderson2013expanding">Henderson, L. A., Frugoni, F., Hopkins, G., de Boer, H., Pai, S.-Y., Lee, Y. N., Walter, J. E., Hazen, M. M., &amp; Notarangelo, L. D. (2013). Expanding the spectrum of recombination-activating gene 1 deficiency: a family with early-onset autoimmunity. <i>Journal of Allergy and Clinical Immunology</i>, <i>132</i>(4), 969–971.</span></li>
-<li><span id="hiom1998dna">Hiom, K., Melek, M., &amp; Gellert, M. (1998). DNA transposition by the RAG1 and RAG2 proteins: a possible source of oncogenic translocations. <i>Cell</i>, <i>94</i>(4), 463–470.</span></li>
-<li><span id="Huang:224980">Huang, Z., Ayday, E., Lin, H., Aiyar, R. S., Molyneaux, A., Xu, Z., Fellay, J., Steinmetz, L. M., &amp; Hubaux, J.-P. (2016). A privacy-preserving solution for compressed storage and selective retrieval of genomic data. <i>Genome Research</i>, <i>26</i>(12), 10. 1687–1696.</span></li>
-<li><span id="huang2016discovery">Huang, S., Tao, X., Yuan, S., Zhang, Y., Li, P., Beilinson, H. A., Zhang, Y., Yu, W., Pontarotti, P., Escriva, H., &amp; others. (2016). Discovery of an active RAG transposon illuminates the origins of V (D) J recombination. <i>Cell</i>, <i>166</i>(1), 102–114.</span></li>
-<li><span id="Humphrey1996vmd">Humphrey, W., Dalke, A., &amp; Schulten, K. (1996). VMD – Visual Molecular Dynamics. <i>Journal of Molecular Graphics</i>, <i>14</i>, 33–38.</span></li>
-<li><span id="itan2016mutation">Itan, Y., Shang, L., Boisson, B., Ciancanelli, M. J., Markle, J. G., Martinez-Barricarte, R., Scott, E., Shah, I., Stenson, P. D., Gleeson, J., &amp; others. (2016). The mutation significance cutoff: gene-level thresholds for variant predictions. <i>Nature Methods</i>, <i>13</i>(2), 109.</span></li>
-<li><span id="john2016unrelated">John, T., Walter, J. E., Schuetz, C., Chen, K., Abraham, R. S., Bonfim, C., Boyce, T. G., Joshi, A. Y., Kang, E., Carvalho, B. T. C., &amp; others. (2016). Unrelated Hematopoietic Cell Transplantation in a Patient with Combined Immunodeficiency with Granulomatous Disease and Autoimmunity Secondary to RAG Deficiency. <i>Journal of Clinical Immunology</i>, <i>36</i>(7), 725–732.</span></li>
-<li><span id="kapitonov2005rag1">Kapitonov, V. V., &amp; Jurka, J. (2005). RAG1 core and V (D) J recombination signal sequences were derived from Transib transposons. <i>PLoS Biology</i>, <i>3</i>(6), e181.</span></li>
-<li><span id="kato2015rag1">Kato, T., Crestani, E., Kamae, C., Honma, K., Yokosuka, T., Ikegawa, T., Nishida, N., Kanegane, H., Wada, T., Yachie, A., &amp; others. (2015). RAG1 deficiency may present clinically as selective IgA deficiency. <i>Journal of Clinical Immunology</i>, <i>35</i>(3), 280–288.</span></li>
-<li><span id="kircher2014general">Kircher, M., Witten, D. M., Jain, P., O’roak, B. J., Cooper, G. M., &amp; Shendure, J. (2014). A general framework for estimating the relative pathogenicity of human genetic variants. <i>Nature Genetics</i>, <i>46</i>(3), 310.</span></li>
-<li><span id="kido2018minor">Kido, T., Sikora-Wohlfeld, W., Kawashima, M., Kikuchi, S., Kamatani, N., Patwardhan, A., Chen, R., Sirota, M., Kodama, K., Hadley, D., &amp; others. (2018). Are minor alleles more likely to be risk alleles? <i>BMC Medical Genomics</i>, <i>11</i>(1), 3.</span></li>
-<li><span id="kwan2014newborn">Kwan, A., Abraham, R. S., Currier, R., Brower, A., Andruszewski, K., Abbott, J. K., Baker, M., Ballow, M., Bartoshesky, L. E., Bonagura, V. R., &amp; others. (2014). Newborn screening for severe combined immunodeficiency in 11 screening programs in the United States. <i>Jama</i>, <i>312</i>(7), 729–738.</span></li>
-<li><span id="kuijpers2011idiopathic">Kuijpers, T. W., IJspeert, H., van Leeuwen, E. M. M., Jansen, M. H., Hazenberg, M. D., Weijer, K. C., Van Lier, R. A. W., &amp; van der Burg, M. (2011). Idiopathic CD4+ T lymphopenia without autoimmunity or granulomatous disease in the slipstream of RAG mutations. <i>Blood</i>, blood–2011.</span></li>
-<li><span id="kutukculer2012novel">Kutukculer, N., Gulez, N., Karaca, N. E., Aksu, G., &amp; Berdeli, A. (2012). Novel mutatıons and diverse clinical phenotypes in recombınase-activating gene 1 deficiency. <i>Italian Journal of Pediatrics</i>, <i>38</i>(1), 8.</span></li>
-<li><span id="kumanovics2017estimated">Kumánovics, A., Lee, Y. N., Close, D. W., Coonrod, E. M., Ujhazi, B., Chen, K., MacArthur, D. G., Krivan, G., Notarangelo, L. D., &amp; Walter, J. E. (2017). Estimated disease incidence of RAG1/2 mutations: A case report and querying the Exome Aggregation Consortium. <i>Journal of Allergy and Clinical Immunology</i>, <i>139</i>(2), 690–692.</span></li>
-<li><span id="lawless2018prevalence">Lawless, D., Geier, C. B., Farmer, J. R., Allen, H. L., Thwaites, D., Atschekzei, F., Brown, M., Buchbinder, D., Burns, S. O., Butte, M. J., &amp; others. (2018). Prevalence and clinical challenges among adults with primary immunodeficiency and recombination-activating gene deficiency. <i>Journal of Allergy and Clinical Immunology</i>.</span></li>
-<li><span id="lee2014systematic">Lee, Y. N., Frugoni, F., Dobbs, K., Walter, J. E., Giliani, S., Gennery, A. R., Al-Herz, W., Haddad, E., LeDeist, F., Bleesing, J. H., &amp; others. (2014). A systematic analysis of recombination activity and genotype-phenotype correlation in human recombination-activating gene 1 deficiency. <i>Journal of Allergy and Clinical Immunology</i>, <i>133</i>(4), 1099–1108.</span></li>
-<li><span id="lee2016characterization">Lee, Y. N., Frugoni, F., Dobbs, K., Tirosh, I., Du, L., Ververs, F. A., Ru, H., de Bruin, L. O., Adeli, M., Bleesing, J. H., &amp; others. (2016). Characterization of T and B cell repertoire diversity in patients with RAG deficiency. <i>Science Immunology</i>, <i>1</i>(6).</span></li>
-<li><span id="lek2016analysis">Lek, M., Karczewski, K. J., Minikel, E. V., Samocha, K. E., Banks, E., Fennell, T., O’Donnell-Luria, A. H., Ware, J. S., Hill, A. J., Cummings, B. B., &amp; others. (2016). Analysis of protein-coding genetic variation in 60,706 humans. <i>Nature</i>, <i>536</i>(7616), 285.</span></li>
-<li><span id="libbrecht2015machine">Libbrecht, M. W., &amp; Noble, W. S. (2015). Machine learning applications in genetics and genomics. <i>Nature Reviews Genetics</i>, <i>16</i>(6), 321.</span></li>
-<li><span id="Liggett208066">Liggett, L. A., Sharma, A., De, S., &amp; DeGregori, J. (2017). Conserved patterns of somatic mutations in human peripheral blood cells. <i>BioRxiv</i>. https://doi.org/10.1101/208066</span></li>
-<li><span id="mombaerts1992rag">Mombaerts, P., Iacomini, J., Johnson, R. S., Herrup, K., Tonegawa, S., &amp; Papaioannou, V. E. (1992). RAG-1-deficient mice have no mature B and T lymphocytes. <i>Cell</i>, <i>68</i>(5), 869–877.</span></li>
-<li><span id="noordzij2002immunophenotypic">Noordzij, J. G., de Bruin-Versteeg, S., Verkaik, N. S., Vossen, J. M. J. J., de Groot, R., Bernatowska, E., Langerak, A. W., van Gent, D. C., &amp; van Dongen, J. J. M. (2002). The immunophenotypic and immunogenotypic B-cell differentiation arrest in bone marrow of RAG-deficient SCID patients corresponds to residual recombination activities of mutated RAG proteins. <i>Blood</i>, <i>100</i>(6), 2145–2152.</span></li>
-<li><span id="notarangelo2016human">Notarangelo, L. D., Kim, M.-S., Walter, J. E., &amp; Lee, Y. N. (2016). Human RAG mutations: biochemistry and clinical implications. <i>Nature Reviews Immunology</i>, <i>16</i>(4), 234.</span></li>
-<li><span id="oettinger1990rag">Oettinger, M. A., Schatz, D. G., Gorka, C., &amp; Baltimore, D. (1990). RAG-1 and RAG-2, adjacent genes that synergistically activate V (D) J recombination. <i>Science</i>, <i>248</i>(4962), 1517–1523.</span></li>
-<li><span id="Organick114553">Organick, L., Ang, S. D., Chen, Y.-J., Lopez, R., Yekhanin, S., Makarychev, K., Racz, M. Z., Kamath, G., Gopalan, P., Nguyen, B., Takahashi, C., Newman, S., Parker, H.-Y., Rashtchian, C., Stewart, K., Gupta, G., Carlson, R., Mulligan, J., Carmean, D., … Strauss, K. (2017). Scaling up DNA data storage and random access retrieval. <i>BioRxiv</i>. https://doi.org/10.1101/114553</span></li>
-<li><span id="payne2018cost">Payne, K., Gavan, S. P., Wright, S. J., &amp; Thompson, A. J. (2018). Cost-effectiveness analyses of genetic and genomic diagnostic tests. <i>Nature Reviews Genetics</i>.</span></li>
-<li><span id="picard2018international">Picard, C., Gaspar, H. B., Al-Herz, W., Bousfiha, A., Casanova, J.-L., Chatila, T., Crow, Y. J., Cunningham-Rundles, C., Etzioni, A., Franco, J. L., &amp; others. (2018). International Union of Immunological Societies: 2017 Primary Immunodeficiency Diseases Committee report on inborn errors of immunity. <i>Journal of Clinical Immunology</i>, <i>38</i>(1), 96–128.</span></li>
-<li><span id="reiff2013exome">Reiff, A., Bassuk, A. G., Church, J. A., Campbell, E., Bing, X., &amp; Ferguson, P. J. (2013). Exome sequencing reveals RAG1 mutations in a child with autoimmunity and sterile chronic multifocal osteomyelitis evolving into disseminated granulomatous disease. <i>Journal of Clinical Immunology</i>, <i>33</i>(8), 1289–1292.</span></li>
-<li><span id="rieux1998highly">Rieux-Laucat, F., Bahadoran, P., Brousse, N., Selz, F., Fischer, A., Le Deist, F., &amp; De Villartay, J. P. (1998). Highly restricted human T cell repertoire in peripheral blood and tissue-infiltrating lymphocytes in Omenn’s syndrome. <i>The Journal of Clinical Investigation</i>, <i>102</i>(2), 312–321.</span></li>
-<li><span id="riccetto2014compound">Riccetto, A. G. L., Buzolin, M., Fernandes, J. F., Traina, F., Barjas-de-Castro, M. L. R., Silva, M. T. N., Oliveira, J. B., &amp; Vilela, M. M. (2014). Compound Heterozygous RAG2 Mutations Mimicking Hyper IgM Syndrome. <i>Journal of Clinical Immunology</i>, <i>34</i>(1), 7–9.</span></li>
-<li><span id="ru2015molecular">Ru, H., Chambers, M. G., Fu, T.-M., Tong, A. B., Liao, M., &amp; Wu, H. (2015). Molecular mechanism of V (D) J recombination from synaptic RAG1-RAG2 complex structures. <i>Cell</i>, <i>163</i>(5), 1138–1152.</span></li>
-<li><span id="schatz1989v">Schatz, D. G., Oettinger, M. A., &amp; Baltimore, D. (1989). The V (D) J recombination activating gene, Rag-1. <i>Cell</i>, <i>59</i>(6), 1035–1048.</span></li>
-<li><span id="schuetz2008immunodeficiency">Schuetz, C., Huck, K., Gudowius, S., Megahed, M., Feyen, O., Hubner, B., Schneider, D. T., Manfras, B., Pannicke, U., Willemze, R., &amp; others. (2008). An immunodeficiency disease with RAG mutations and granulomas. <i>New England Journal of Medicine</i>, <i>358</i>(19), 2030–2038.</span></li>
-<li><span id="schwarz1996rag">Schwarz, K., Gauss, G. H., Ludwig, L., Pannicke, U., Li, Z., Lindner, D., Friedrich, W., Seger, R. A., Hansen-Hagge, T. E., Desiderio, S., &amp; others. (1996). RAG mutations in human B cell-negative SCID. <i>Science</i>, <i>274</i>(5284), 97–99.</span></li>
-<li><span id="shinkai1992rag">Shinkai, Y., Lam, K.-P., Oltz, E. M., Stewart, V., Mendelsohn, M., Charron, J., Datta, M., Young, F., Stall, A. M., Alt, F. W., &amp; others. (1992). RAG-2-deficient mice lack mature lymphocytes owing to inability to initiate V (D) J rearrangement. <i>Cell</i>, <i>68</i>(5), 855–867.</span></li>
-<li><span id="sobacchi2006rag">Sobacchi, C., Marrella, V., Rucci, F., Vezzoni, P., &amp; Villa, A. (2006). RAG-dependent primary immunodeficiencies. <i>Human Mutation</i>, <i>27</i>(12), 1174–1184.</span></li>
-<li><span id="stenson2014human">Stenson, P. D., Mort, M., Ball, E. V., Shaw, K., Phillips, A. D., &amp; Cooper, D. N. (2014). The Human Gene Mutation Database: building a comprehensive mutation repository for clinical and molecular genetics, diagnostic testing and personalized genomic medicine. <i>Human Genetics</i>, <i>133</i>(1), 1–9.</span></li>
-<li><span id="Stone1998Ane">Stone, J. (1998). <i>An Efficient Library for Parallel Ray Tracing and Animation</i> [Master's thesis]. Computer Science Department, University of Missouri-Rolla.</span></li>
-<li><span id="stothard2000sequence">Stothard, P. (2000). The sequence manipulation suite: JavaScript programs for analyzing and formatting protein and DNA sequences. <i>University of Alberta, Education and Research Archive</i>.</span></li>
-<li><span id="tirosh2018recombination">Tirosh, I., Yamazaki, Y., Frugoni, F., Ververs, F. A., Allenspach, E. J., Zhang, Y., Burns, S., Al-Herz, W., Noroski, L., Walter, J. E., &amp; others. (2018). Recombination activity of human RAG2 mutations and correlation with the clinical phenotype. <i>Journal of Allergy and Clinical Immunology</i>.</span></li>
-<li><span id="villa1998partial">Villa, A., Santagata, S., Bozzi, F., Giliani, S., Frattini, A., Imberti, L., Gatta, L. B., Ochs, H. D., Schwarz, K., Notarangelo, L. D., &amp; others. (1998). Partial V (D) J recombination activity leads to Omenn syndrome. <i>Cell</i>, <i>93</i>(5), 885–896.</span></li>
-<li><span id="villa2001v">Villa, A., Sobacchi, C., Notarangelo, L. D., Bozzi, F., Abinun, M., Abrahamsen, T. G., Arkwright, P. D., Baniyash, M., Brooks, E. G., Conley, M. E., &amp; others. (2001). V (D) J recombination defects in lymphocytes due toRAG mutations: severe immunodeficiency with a spectrum of clinical presentations. <i>Blood</i>, <i>97</i>(1), 81–88.</span></li>
-<li><span id="walter2015broad">Walter, J. E., Rosen, L. B., Csomos, K., Rosenberg, J. M., Mathew, D., Keszei, M., Ujhazi, B., Chen, K., Lee, Y. N., Tirosh, I., &amp; others. (2015). Broad-spectrum antibodies against self-antigens and cytokines in RAG deficiency. <i>The Journal of Clinical Investigation</i>, <i>125</i>(11), 4135–4148.</span></li>
-<li><span id="yu2014human">Yu, X., Almeida, J. R., Darko, S., van der Burg, M., DeRavin, S. S., Malech, H., Gennery, A., Chinn, I., Markert, M. L., Douek, D. C., &amp; others. (2014). Human syndromes of immunodeficiency and dysregulation are characterized by distinct defects in T-cell receptor repertoire development. <i>Journal of Allergy and Clinical Immunology</i>, <i>133</i>(4), 1109–1115.</span></li>
-<li><span id="zhang2005novel">Zhang, J., Quintal, L., Atkinson, A., Williams, B., Grunebaum, E., &amp; Roifman, C. M. (2005). Novel RAG1 mutation in a case of severe combined immunodeficiency. <i>Pediatrics</i>, <i>116</i>(3), e445–e449.</span></li></ol>
 :ET
