@@ -9,6 +9,10 @@ subject: statistics
 {{ page.title }}
 ================
 
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
 This page is being formulated currently by plagerising "An Introduction to Statistical Learning". If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead. 
 
 # Simple linear regression
