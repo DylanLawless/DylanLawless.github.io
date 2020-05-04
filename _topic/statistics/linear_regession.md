@@ -87,3 +87,4 @@ $$
 \hat\beta_0 - \bar{y} - \hat\beta_1 \bar{x}
 $$
 
+Testing mathjax for LaTeX. 
