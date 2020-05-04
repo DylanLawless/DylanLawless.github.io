@@ -166,6 +166,48 @@ And this command ran OK for me to give "output_prefix.recode.vcf"<br/>
 
 This new VCF will now only contain gene regions that are potentially "druggable", or at least included on the FDA list. VCF annotation will be much faster than when annotation the whole genome.
 
+# Notes to help students
+One can rank with highest CADD score being more predicted pathogenic, but we will need to discuss reliability.
+https://cadd.gs.washington.edu/info  
+Polyphen gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.
+
+The indication or warning can be difficult to automate. For the example drug  
+https://www.drugbank.ca/drugs/DB11595  
+the section "Pharmacology" "Indication" has the Indication info.  
+The FDA label is contained as a PDF attachment in the section "REFERENCES" FDA label Download (245 KB).
+
+If I had to automate the process I would add a URL link for each drug:  
+for gene name CD274  
+the drugbank column Drug IDs has these:  
+DB11595; DB11714; DB11945  
+and for each ID you could append the ID onto the drugbank URL to link to the webpage https://www.drugbank.ca/drugs/
+
+You can do this in R with some technical how-to reading, or do it manually for a quick example like this and removing space to create a web URL.  
+URL				Drug IDs  
+https://www.drugbank.ca/drugs/	DB00303  
+https://www.drugbank.ca/drugs/	DB00114  
+https://www.drugbank.ca/drugs/	DB00142  
+https://www.drugbank.ca/drugs/	DB01839  
+https://www.drugbank.ca/drugs/	DB00125  
+
+
+I do not suggest this, but if you had to automate subsection requests for real:  
+- [1] download the whole database (probably a big table sized >100MB) and  
+- [2] for every query (the Drug ID) extract the sections of interest (indication,  Biologic Classification, Description,  FDA label, etc.)  
+- [3] display each section as additional columns in candidate genes table.  
+
+- [1] would be here: https://www.drugbank.ca/releases/latest
+- [2] would be like this: https://www.w3schools.com/xml/default.asp
+Look at example 2, your database request might be something like:
+[get food name = Belgian Waffles, description] or
+[get drug ID = DB11595, indication,  Biologic Classification, Description,  FDA label.]
+- [3] for every line in the gene candidate table, do this query request and output the result into the same row.
+
+The final table would be something that includes colunm headers like:  
+Gene, consequence, variant, amino acid, genome position, CADD, DrugBank ID, Description, Indication, FDA label PDF link, etc.
+
+This table could be ranked based on consequence, CADD score. The top couple of rows then might be converted into a more readable format like a PDF.
+
 # References
 - [https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)
 - [https://www.pharmgkb.org/view/drug-labels.do](https://www.pharmgkb.org/view/drug-labels.do)
