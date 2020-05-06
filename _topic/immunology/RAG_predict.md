@@ -8,12 +8,10 @@ subject: statistics
 ---
 {{ page.title }}
 ================
-
 * TOC
 {:toc}
 
-# Abstract
-## Test
+# Abstract 
 While widespread genome sequencing ushers in a new era of preventive medicine, the tools for predictive genomics are still lacking.
 Time and resource limitations mean that human diseases remain uncharacterised because of an inability to predict clinically relevant genetic variants.
 A strategy of targeting highly conserved protein regions is used commonly in functional studies. 
@@ -49,14 +47,14 @@ Jacques Fellay,
 Jolan E. Walter',
 Sinisa Savic.
 
-# Ethics statement
+#### Ethics statement
 
 The study was performed in accordance with the Declaration of Helsinki.
 The NIHR BioResource projects were approved by Research Ethics
 Committees in the UK and appropriate national ethics authorities in
 non-UK enrolment centres.
 
-# Abbreviations
+#### Abbreviations
 
 BCR (B-cell receptor), CADD (combined annotation dependent depletion),
 CID-G/A (combined immunodeficiency with granuloma and/or autoimmunity),
@@ -313,7 +311,7 @@ Full list of residues and scores available in
 TABLE Table:1
 [Figure_main](https://link.springer.com/article/10.1007/s10875-019-00670-z)
 
-## Table \[Table:1
+Table \[Table:1
  provides all MRF scores for both proteins. 
 Raw data used for calculations and the list of validated residues of RAG1 and RAG2 are available in 
 TABLE **Tables E3 - E8

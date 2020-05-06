@@ -1,0 +1,107 @@
+I"�<h1 id="linear-regression">Linear regression</h1>
+<ul id="markdown-toc">
+  <li><a href="#linear-regression" id="markdown-toc-linear-regression">Linear regression</a></li>
+  <li><a href="#simple-linear-regression" id="markdown-toc-simple-linear-regression">Simple linear regression</a></li>
+  <li><a href="#drawing-the-line" id="markdown-toc-drawing-the-line">Drawing the line</a></li>
+  <li><a href="#accuracy-of-the-coefficient-estimates" id="markdown-toc-accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</a></li>
+</ul>
+
+<p><br />
+This page is being formulated currently by plagerising “An Introduction to Statistical Learning”. If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead.</p>
+
+<h1 id="simple-linear-regression">Simple linear regression</h1>
+
+<p>Predict a quantitative response \(Y\) using a predictor variable \(X\); regressing \(Y\) onto \(X\).
+The <em>intercept</em> and <em>splope</em> are written as \(\beta_0\) and \(\beta_1\), respectively.
+These are unknwon constants and together are knwon as the model <em>coefficients</em> or <em>parameters</em>.
+The simple linear regression is written as</p>
+
+\[\label{eq1}\tag{1} 
+Y \approx \beta_0 + \beta_1 X\]
+
+<p>Values that are estimated are labelled with a “hat”, e.g. 
+\(\hat y\) - a prediction of \(Y\) based on \(X = x\).
+With some sample data, one can begin to predict \(Y\) based on the predictor \(X\) using the estimated model coefficients \(\hat \beta_0\) and \(\hat \beta_1\);</p>
+
+\[\label{eq2}\tag{2} 
+\hat y \approx \hat\beta_0 + \hat\beta_1 x\]
+
+<p>In this case, the estimated response \(\hat y\) equals the estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) according to a sample of the predictor values (\(x\)).</p>
+
+<h1 id="drawing-the-line">Drawing the line</h1>
+
+<p>The estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) are unknown, therefore we need to get these values to predict \(Y\) based on \(X\).
+A number (\(n\)) of obersevations are made where we measure \(X\) and \(Y\). Measurements could be recorded as: (measure 1, x = 5, y = 10), (measure 2, x = 10, y = 20), and so on up to \(n\) obersavations;</p>
+
+\[\label{eq3}\tag{3} 
+(5,10), (10,20),..., (x_n,y_n)\]
+
+\[(x_1,y_1), (x_2,y_2),..., (x_n,y_n)\]
+
+<p>We want to combine each measurment on a plot so that the line drawn through the data fits well and produces coefficient estimates \(\hat \beta_0\) and \(\hat \beta_1\).
+Each measurement (\(i\)) is represented with \(y_i \approx \hat \beta_0 + \hat \beta_1 x_i\) for \(i = 1,2,...,n\).
+The ideal result will be a line that fits all points closely. 
+The measure of <em>closeness</em> has many topics of interest, but the most common method is to minimise the <em>least squares</em>.</p>
+
+<p>\(e_i = y_i - \hat y_i\) represents the \(i\)th <em>residual</em> - the difference between our \(i\)th response according to our model versus the true \(i\)th observed response.
+The <em>residual sum of squares</em> (RSS) is written as
+\(\label{eq4}\tag{4} 
+RSS = e^2 _1 + e^2 _2 +...+ e^2 _n\)</p>
+
+\[RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+...+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.\]
+
+<p>The least squares method uses \(\hat\beta_0 and \hat\beta_1\) such that RSS is minimised. The minimisers are as follows</p>
+
+\[\label{eq5}\tag{5} 
+ \hat \beta_1  = 
+\frac{ 
+\sum_{i=1}^{n}	(	xi -\bar{x} )	(yi - \bar{y}	)	} 
+{\sum_{i=1}^{n}	(	xi -\bar{x} )^2
+}\]
+
+\[\hat\beta_0 - \bar{y} - \hat\beta_1 \bar{x}\]
+
+<p>where the sample means are
+\(\bar{y} \equiv \frac{1}{n}\sum_{i=1}^{n} y_i\)
+and
+\(\bar{x} \equiv \frac{1}{n}\sum_{i=1}^{n} x_i\)
+so the equation above (\ref{eq5}) defines the least squares coefficient estimates for simple linear regression.</p>
+
+<h1 id="accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</h1>
+
+<p>We will want to account for error \(\epsilon\) to draw an accurate line. 
+\(\epsilon\) would be the mean-zero random error for the relationship between \(Y\) and \(X\) for the unknown function \(f\).</p>
+
+\[\label{eq6}\tag{6} 
+Y = \beta_0 + \beta_1 X + \epsilon\]
+
+<p>This equation represents the <em>population regression line</em>.
+We assume that the error term will be independet of \(X\), and the model is a best approximation of the \(X - Y\) relationship.
+Equation 5 shows the least squares regression coefficient estimates to model the <em>least squares line</em>.
+In real data, the population regression line is not observed but from the sample observations we can calculate the least squares line.</p>
+
+<p>We would like to know how closely these two lines could be from our sampled data. 
+The mean of a random variable \(Y\) would be written as \(\mu\).
+If we have \(n\) number of observations of \(Y\) (\(y_1, y_2,...,y_n\)) then we can get the estimate of \(\mu\). 
+So, the estimate \(\hat \mu = \hat y\), where the sample mean is \(\hat y = \frac{1}{n} \sum_{i=1}^{n} y_i\). 
+Obviously the sample mean and true population mean may not be the very same, but they should be close. 
+Similary, we want to know the true \(\beta_0\) and \(\beta_1\) in a linear regression so we will estimate the \(\hat\beat_0\) and \(\hat\beta_1\) as shown in eqn \ref{eq5}, the coefficient estimates that define the least squares line.</p>
+
+<p>Likewise, \(\hat\mu\) is used to estimate \(\mu\) in an unbiased way; each estimate might be over- or underestimated but there is no particular bias in one direction from the random samples. 
+The least squares coefficient estimates for \(\beta_0\) and \(\beta_1\) will also be unbiased. 
+Over a large number of observations the estimate should be very accurate but since we will have a limited number of samples the estimate accuracy estimate should be established. 
+This is gerneally done using the <em>standard error</em>.
+When considering the estimate mean \(\hat\mu\), the formula for SE(\(\hat\mu\)) will be</p>
+
+\[Var( \hat\mu ) = SE( \hat\mu )^2 =\]
+
+<p>$$
+)</p>
+
+\[\label{eq }\tag{ }\]
+
+\[\label{eq }\tag{ }\]
+
+\[\label{eq }\tag{ }\]
+
+:ET

@@ -316,7 +316,7 @@ p.caption {
 */
 
 #markdown-toc ul {
-    list-style: decimal;
+    list-style: indent;
 }
 
 #markdown-toc {

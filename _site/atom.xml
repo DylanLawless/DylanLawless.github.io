@@ -4,13 +4,77 @@
  <title>Tom Preston-Werner</title>
  <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="http://tom.preston-werner.com/"/>
- <updated>2020-05-04T21:52:23+02:00</updated>
+ <updated>2020-05-06T23:25:23+02:00</updated>
  <id>http://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Unnecessary complexity in precision medicine</title>
+   <link href="http://tom.preston-werner.com/2020/05/05/singhgupta_genes.html"/>
+   <updated>2020-05-05T00:00:00+02:00</updated>
+   <id>http://tom.preston-werner.com/2020/05/05/singhgupta_genes</id>
+   <content type="html">&lt;h1 id=&quot;unnecessary-complexity-in-precision-medicine&quot;&gt;Unnecessary complexity in precision medicine&lt;/h1&gt;
+&lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-in-precision-medicine&quot; id=&quot;markdown-toc-unnecessary-complexity-in-precision-medicine&quot;&gt;Unnecessary complexity in precision medicine&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#abstract&quot; id=&quot;markdown-toc-abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#complexity-in-living-systems&quot; id=&quot;markdown-toc-complexity-in-living-systems&quot;&gt;Complexity in living systems&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#is-complexity-necessary&quot; id=&quot;markdown-toc-is-complexity-necessary&quot;&gt;Is complexity necessary?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#evolution-of-complexity-genic-genomic-and-developmental&quot; id=&quot;markdown-toc-evolution-of-complexity-genic-genomic-and-developmental&quot;&gt;Evolution of complexity: genic, genomic, and developmental&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-in-precision-medicine-1&quot; id=&quot;markdown-toc-unnecessary-complexity-in-precision-medicine-1&quot;&gt;Unnecessary complexity in precision medicine&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-and-the-etiology-of-cancer&quot; id=&quot;markdown-toc-unnecessary-complexity-and-the-etiology-of-cancer&quot;&gt;Unnecessary complexity and the etiology of cancer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-beyond-precision-medicine&quot; id=&quot;markdown-toc-unnecessary-complexity-beyond-precision-medicine&quot;&gt;Unnecessary complexity beyond precision medicine&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclusions&quot; id=&quot;markdown-toc-conclusions&quot;&gt;Conclusions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br /&gt;
+Singh_and_Gupta.2020.GenoMed;&lt;br /&gt;
+Singh, R.S., Gupta, B.P. Genes and genomes and unnecessary complexity in precision medicine. npj Genom. Med. 5, 21 (2020). https://doi.org/10.1038/s41525-020-0128-1 Open Access
+&lt;a href=&quot;https://doi.org/10.1038/s41525-020-0128-1&quot;&gt;https://doi.org/10.1038/s41525-020-0128-1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;abstract&quot;&gt;Abstract&lt;/h1&gt;
+
+&lt;p&gt;Risk factors, gene to phenotype, are more complex that anticipated in early genomics. 
+Genotype - phenotype
+Molecular and evolutionary complexity.
+Molecular contigency - chance driven mutation, redundancy, molectular pathway cross-over (shared phenotypes).
+Necessary complexity versus unnecessary - evolutionary baggage due to molecular constraint and blind evolution.&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;“Two individuals bearing the same set of risk factors may not present (or exhibit the symptoms of) the same disease. This is the kind of problem that precision medicine is expected to overcome.”
+From familial studies, we often see that even clear monogenic, dominant disease does not always manifest equally among family members. “The lack of genetic determinism in disease is the result of molecular contingency.”&lt;/p&gt;
+
+&lt;p&gt;An interesting point is made that I haven’t though much about; “Whether evolution is deterministic, i.e., predictable and repeatable, or contingent and unpredictable is an interesting topic in evolutionary biology (ref 1) (for a recent review see ref. 2)”
+Although, this is just a smaller version of a question in physics that I do think about frequently: if every irreducibly small particle/force in the universe could be detected with a mapped trajectory, then we could “see” both forward and reverse in time; causal determinism. Since the particle physics answer will not come anytime soon, a discussion on the evolutionary version is reasonable.&lt;/p&gt;
+
+&lt;p&gt;”..phenotypic evolutionary ‘repeatability’ is common when the founding populations are closely related, perhaps resulting from shared genes and developmental pathways, whereas different outcomes become more likely as historical divergences increase.”&lt;/p&gt;
+
+&lt;p&gt;I believe that in some cases we can produces actionable levels of confidence in mutation prediction to make this a worthwhile endeavour. Knowing that a mutation is likely to occur (and be evolutionarily selected against) and result in disease means that we can prepare a treatment / cure for when it does occur naturally. 
+For example, each nucleotide within each individual cell will have a particular probability for the energy required to mutate. 
+Many factors affect this value; nucleotide type, methylation, DNA/RNA folding, bound proteins, chemical/UV insult, etc. 
+Some of these factors can be estimated based on large studies, and some may never be quantifiable in the real world.
+However, we can at least quantify some values to produce mutation predictor value X and and response Y and therefore quantify estimate coefficients, and therefore predict that mutation 1 is more likely to occur than mutation 2.&lt;/p&gt;
+
+&lt;p&gt;Reference is made to “‘Evolution and Tinkering,’ Jacob (ref 4)” who compares natural selection to a tinkerer as opposed to an engineer.
+Singh and Gupta propose “a theory of molecular complexity, consisting of necessary and unnecessary complexity in living systems”, that “exceedingly high level of unnecessary complexity” is more due to blind evolution rather than randomness of mutation. 
+“Unecessary and unnecessary complexity is relevant to current discussions on genomics and precision medicine.”&lt;/p&gt;
+
+&lt;h1 id=&quot;complexity-in-living-systems&quot;&gt;Complexity in living systems&lt;/h1&gt;
+&lt;h1 id=&quot;is-complexity-necessary&quot;&gt;Is complexity necessary?&lt;/h1&gt;
+&lt;h1 id=&quot;evolution-of-complexity-genic-genomic-and-developmental&quot;&gt;Evolution of complexity: genic, genomic, and developmental&lt;/h1&gt;
+&lt;h1 id=&quot;unnecessary-complexity-in-precision-medicine-1&quot;&gt;Unnecessary complexity in precision medicine&lt;/h1&gt;
+&lt;h1 id=&quot;unnecessary-complexity-and-the-etiology-of-cancer&quot;&gt;Unnecessary complexity and the etiology of cancer&lt;/h1&gt;
+&lt;h1 id=&quot;unnecessary-complexity-beyond-precision-medicine&quot;&gt;Unnecessary complexity beyond precision medicine&lt;/h1&gt;
+&lt;h1 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h1&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Websites for basic genetic variant information</title>
@@ -853,15 +917,9 @@ The Quipper Language: programming language for quantum computing<br />
 
   <h2> - </h2>
   <p><h1 id="rag">RAG</h1>
-
 <ul id="markdown-toc">
   <li><a href="#rag" id="markdown-toc-rag">RAG</a></li>
-  <li><a href="#abstract" id="markdown-toc-abstract">Abstract</a>    <ul>
-      <li><a href="#test" id="markdown-toc-test">Test</a></li>
-    </ul>
-  </li>
-  <li><a href="#ethics-statement" id="markdown-toc-ethics-statement">Ethics statement</a></li>
-  <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
+  <li><a href="#abstract" id="markdown-toc-abstract">Abstract</a></li>
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#methods" id="markdown-toc-methods">Methods</a>    <ul>
       <li><a href="#population-genetics-and-data-sources" id="markdown-toc-population-genetics-and-data-sources">Population genetics and data sources</a></li>
@@ -873,7 +931,6 @@ The Quipper Language: programming language for quantum computing<br />
   </li>
   <li><a href="#results" id="markdown-toc-results">Results</a>    <ul>
       <li><a href="#rag1-and-rag2-conservation-and-mutation-rate-residue-frequency" id="markdown-toc-rag1-and-rag2-conservation-and-mutation-rate-residue-frequency">RAG1 and RAG2 conservation and mutation rate residue frequency</a></li>
-      <li><a href="#table-table1" id="markdown-toc-table-table1">Table [Table:1</a></li>
       <li><a href="#mrf-scores-select-for-confirmed-variants-in-human-disease" id="markdown-toc-mrf-scores-select-for-confirmed-variants-in-human-disease">MRF scores select for confirmed variants in human disease</a></li>
       <li><a href="#top-candidate-variants-require-validation" id="markdown-toc-top-candidate-variants-require-validation">Top candidate variants require validation</a></li>
       <li><a href="#false-positives-in-transib-domains-do-not-negatively-impact-prediction" id="markdown-toc-false-positives-in-transib-domains-do-not-negatively-impact-prediction">False positives in <em>Transib</em> domains do not negatively impact prediction</a></li>
@@ -897,7 +954,6 @@ The Quipper Language: programming language for quantum computing<br />
 </ul>
 
 <h1 id="abstract">Abstract</h1>
-<h2 id="test">Test</h2>
 <p>While widespread genome sequencing ushers in a new era of preventive medicine, the tools for predictive genomics are still lacking.
 Time and resource limitations mean that human diseases remain uncharacterised because of an inability to predict clinically relevant genetic variants.
 A strategy of targeting highly conserved protein regions is used commonly in functional studies. 
@@ -933,14 +989,14 @@ Jacques Fellay,
 Jolan E. Walter’,
 Sinisa Savic.</p>
 
-<h1 id="ethics-statement">Ethics statement</h1>
+<h4 id="ethics-statement">Ethics statement</h4>
 
 <p>The study was performed in accordance with the Declaration of Helsinki.
 The NIHR BioResource projects were approved by Research Ethics
 Committees in the UK and appropriate national ethics authorities in
 non-UK enrolment centres.</p>
 
-<h1 id="abbreviations">Abbreviations</h1>
+<h4 id="abbreviations">Abbreviations</h4>
 
 <p>BCR (B-cell receptor), CADD (combined annotation dependent depletion),
 CID-G/A (combined immunodeficiency with granuloma and/or autoimmunity),
@@ -1196,8 +1252,8 @@ Full list of residues and scores available in
 TABLE Table:1
 <a href="https://link.springer.com/article/10.1007/s10875-019-00670-z">Figure_main</a></p>
 
-<h2 id="table-table1">Table [Table:1</h2>
-<p>provides all MRF scores for both proteins. 
+<p>Table [Table:1
+ provides all MRF scores for both proteins. 
 Raw data used for calculations and the list of validated residues of RAG1 and RAG2 are available in 
 TABLE **Tables E3 - E8
 . 
@@ -2097,8 +2153,15 @@ The resulting file is saved into site.baseurl/equations</p>
 
   <h2> - </h2>
   <p><h1 id="linear-regression">Linear regression</h1>
+<ul id="markdown-toc">
+  <li><a href="#linear-regression" id="markdown-toc-linear-regression">Linear regression</a></li>
+  <li><a href="#simple-linear-regression" id="markdown-toc-simple-linear-regression">Simple linear regression</a></li>
+  <li><a href="#drawing-the-line" id="markdown-toc-drawing-the-line">Drawing the line</a></li>
+  <li><a href="#accuracy-of-the-coefficient-estimates" id="markdown-toc-accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</a></li>
+</ul>
 
-<p>This page is being formulated currently by plagerising “An Introduction to Statistical Learning”. If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead.</p>
+<p><br />
+This page is being formulated currently by plagerising “An Introduction to Statistical Learning”. If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead.</p>
 
 <h1 id="simple-linear-regression">Simple linear regression</h1>
 
@@ -2159,6 +2222,68 @@ and
 so the equation above (\ref{eq5}) defines the least squares coefficient estimates for simple linear regression.</p>
 
 <h1 id="accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</h1>
+
+<p>We will want to account for error \(\epsilon\) to draw an accurate line. 
+\(\epsilon\) would be the mean-zero random error for the relationship between \(Y\) and \(X\) for the unknown function \(f\).</p>
+
+<p>[\label{eq6}\tag{6} 
+Y = \beta_0 + \beta_1 X + \epsilon]</p>
+
+<p>This equation represents the <em>population regression line</em>.
+We assume that the error term will be independet of \(X\), and the model is a best approximation of the \(X - Y\) relationship.
+Equation 5 shows the least squares regression coefficient estimates to model the <em>least squares line</em>.
+In real data, the population regression line is not observed but from the sample observations we can calculate the least squares line.</p>
+
+<p>We would like to know how closely these two lines could be from our sampled data. 
+The mean of a random variable \(Y\) would be written as \(\mu\).
+If we have \(n\) number of observations of \(Y\) (\(y_1, y_2,...,y_n\)) then we can get the estimate of \(\mu\). 
+So, the estimate \(\hat \mu = \hat y\), where the sample mean is \(\hat y = \frac{1}{n} \sum_{i=1}^{n} y_i\). 
+Obviously the sample mean and true population mean may not be the very same, but they should be close. 
+Similary, we want to know the true \(\beta_0\) and \(\beta_1\) in a linear regression so we will estimate the \(\hat\beta_0\) and \(\hat\beta_1\) as shown in eqn \ref{eq5}, the coefficient estimates that define the least squares line.</p>
+
+<p>Likewise, \(\hat\mu\) is used to estimate \(\mu\) in an unbiased way; each estimate might be over- or underestimated but there is no particular bias in one direction from the random samples. 
+The least squares coefficient estimates for \(\beta_0\) and \(\beta_1\) will also be unbiased. 
+Over a large number of observations the estimate should be very accurate but since we will have a limited number of samples the estimate accuracy estimate should be established. 
+This is gerneally done using the <em>standard error</em>.
+When considering the estimate mean \(\hat\mu\), the formula for SE(\(\hat\mu\)) will be</p>
+
+<p>[\label{eq7}\tag{7} 
+Var( \hat\mu ) = SE( \hat\mu )^2 = \frac{\sigma^2}{n}]</p>
+
+<p>\(\sigma\) (sigma) is the standard deviation for every \(y_i\) of \(Y\) (approximately; further reading on Gaussian error assumption and number of observations).
+This SE will shirk with more frequent observations.
+In the same direction we can measure the standard errors for \(\hat\beta_0\) and \(\hat\beta_1\)</p>
+
+<p>[\label{eq8}\tag{8} 
+SE(\hat\beta_0)^2 = \sigma\left[  \frac{1}{n}</p>
+<ul>
+  <li>\frac {\bar x^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 } \right]]</li>
+</ul>
+
+<p>[SE(\hat\beta_1)^2 =  \frac{1}{n}</p>
+<ul>
+  <li>\frac {\sigma^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 }]</li>
+</ul>
+
+<p>and \(\sigma^2 = Var(\epsilon)\). (To be strictly valid, the errors \(\epsilon_i\) for each observation should be uncorrelated with common variance \(\sigma^2\))
+The estimate of \(\sigma\) is the <em>residual standard error</em>, and shown by \(RSE = \sqrt{ \frac{RSS}{(n-2)} }\).</p>
+
+<p>In turn, the SE can be used to calculate the <em>confidence interval</em>.
+A range of values that will contain the true unknown value of the parameter with 95% probability is the 95% confidence interval. 
+This interval for \(\hat\beta_1\) is approximately</p>
+
+<p>[\label{eq9}\tag{9} 
+\hat\beta_1 \pm 2 \cdot SE(\hat\beta_1)]</p>
+
+<p>a 95% chance that the true \(\beta_1\) value is in this range.
+The same fomula is true for \(\beta_0\), swapping terms.</p>
+
+<p>[\label{eq }\tag{ }]</p>
+
+<p>[\label{eq }\tag{ }]</p>
+
+<p>[\label{eq }\tag{ }]</p>
+
 </p>
 
   <h2> - </h2>
