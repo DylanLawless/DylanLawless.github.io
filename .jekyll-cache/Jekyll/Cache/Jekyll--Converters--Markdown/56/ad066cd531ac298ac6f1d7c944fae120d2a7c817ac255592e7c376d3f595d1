@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <!-- link to MathJax for LaTeX stlye eqn -->
-    <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
-   <!--  -->
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Pharmacogenomics for personal medicine</title>
-   <meta name="author" content="Dylan page title" />
-   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
-   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
-
-   <!-- include a google font -->
-   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-<div class="site">
-  <div class="title">
-    <a href="/">Dylan site title</a>
-    <a class="extra" href="/">home</a>
-  </div>
-
-  <div id="topic">
-<h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
+I"��<h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
 <p class="meta">26 Apr 2020</p>
 
 <ul id="markdown-toc">
@@ -60,11 +15,7 @@ var WRInitTime=(new Date()).getTime();
   <li><a href="#optimising-vcf-annotation" id="markdown-toc-optimising-vcf-annotation">Optimising VCF annotation</a></li>
   <li><a href="#how-to-get-coordinates-for-a-gene-list" id="markdown-toc-how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</a></li>
   <li><a href="#extracting-regions-from-a-vcf-using-a-bed-file" id="markdown-toc-extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</a></li>
-  <li><a href="#unknown-variants" id="markdown-toc-unknown-variants">Unknown variants</a></li>
-  <li><a href="#gene-dosage" id="markdown-toc-gene-dosage">Gene dosage</a></li>
-  <li><a href="#drug-indication-1" id="markdown-toc-drug-indication-1">Drug indication</a></li>
-  <li><a href="#a-large-scale-example-summary" id="markdown-toc-a-large-scale-example-summary">A large scale example summary</a></li>
-  <li><a href="#more-questions" id="markdown-toc-more-questions">More questions</a></li>
+  <li><a href="#notes-to-help-students" id="markdown-toc-notes-to-help-students">Notes to help students</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
@@ -99,12 +50,9 @@ Here I tried the first ~1800 variants.</p>
 <p><br />
 And then annotated that extract with <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor.</a>
 The results would be retained by a URL address such as this, for a few days, but will be deleted by the time your read this.<br />
-<br />
-<a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700">http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700</a> <br />
-<br />
-<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.10.png" width="80%" /><br />
-<br />
-Make certain that you use the same reference genome as used on the input data.
+<a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700">http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700</a>
+<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.10.png" width="80%" />
+(Make certain you use the same reference genome as used on the input data).
 The VCF file was made using reference genome GRCh37.
 Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).</p>
 
@@ -202,6 +150,8 @@ A simple sanity test would be useful first:</p>
 I used another command-line method to do this efficienctly:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cut</span> <span class="nt">-f1</span> <span class="nt">-d</span> <span class="s2">","</span> vep_output_file.csv | <span class="nb">uniq</span> <span class="o">&gt;</span> unique.genes.txt
 </code></pre></div></div>
+
+<p>Translation:</p>
 <ul>
   <li>Cut column 1 (f1)</li>
   <li>with a delimiter comma (,)</li>
@@ -209,27 +159,29 @@ I used another command-line method to do this efficienctly:</p>
   <li>then pipe (|) that result into another program (sort) to sort the result in alphabetic order</li>
   <li>pipe (|) again this result into(uniq)</li>
   <li>so that only one unique gene name is output</li>
-  <li>then (&gt;) write the output into the new file “unique.genes.txt”.<br />
-<br />
-Repeat the same type of method on the DrugBank dataset to get a list of the gene names contained in DrugBank into a file called “unique.druggable.txt”
+  <li>then (&gt;) write the output into the new file “unique.genes.txt”.</li>
+</ul>
+
+<p><br /></p>
+
+<p>Repeat the same type of method on the DrugBank dataset to get a list of the gene names contained in DrugBank into a file called “unique.druggable.txt”
 The next command will then compare both lists.
-<br />
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sort </span>unique.genes.txt unique.druggable.txt | <span class="nb">uniq</span> <span class="nt">-c</span> <span class="nt">-i</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'1 '</span>
-</code></pre></div>    </div>
-    <p>This command also used “uniq -c” to count how many times each gen name occurs and then “grep -v ‘1 ‘” meaning ignore genes that are only present 1 time. 
+<br /></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sort </span>unique.genes.txt unique.druggable.txt | <span class="nb">uniq</span> <span class="nt">-c</span> <span class="nt">-i</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'1 '</span>
+</code></pre></div></div>
+<p>This command also used “uniq -c” to count how many times each gen name occurs and then “grep -v ‘1 ‘” meaning ignore genes that are only present 1 time. 
 We want the genes that are present twice, once in each list.
+<br />
 The genes which were in present in both the variant list and DrugBank list are:<br />
-From a 2,000 line VCF file = 
+2,000 vcf lines = 
 <a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a><br />
-From a 10,000 VCF line file = 
+10,000 vcf lines = 
 <a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0008994">TP73</a>.</p>
-  </li>
-</ul>
 
 <h1 id="a-real-example-of-merging-genetic-and-pharmacogenomic-data">A real example of merging genetic and pharmacogenomic data</h1>
 <p>Now that a small example has shown us the logic of the process, we can try a more complex real-world example. 
@@ -257,27 +209,21 @@ I recommending installing R and then installing R studio to edit and run your co
 </span><span class="c1">#///////////////////////////////</span><span class="w">
 
 </span><span class="c1"># Important note:</span><span class="w">
-</span><span class="c1"># The VEP file will start with a header line </span><span class="w">
-</span><span class="c1"># that begins with "#" symbol. But this is being ignored by R.</span><span class="w">
-</span><span class="c1"># Open the file with text edit and remove that symbol.</span><span class="w">
+</span><span class="c1"># The VEP file will start with a header line that begins with "#" symbol. But this is being ignored by R.</span><span class="w">
+</span><span class="c1"># open the file with text edit and remove that symbol.</span><span class="w">
 </span><span class="c1"># Maybe there is an R command to do this on import, whatever is faster.</span><span class="w">
 
-</span><span class="c1"># Split vcf into ~ 10 files. </span><span class="w">
-</span><span class="c1"># file 1 "xaa" was anylised on VEP, </span><span class="w">
-</span><span class="c1"># download the TXT version, </span><span class="w">
-</span><span class="c1"># or unzip my provided example one - cfKJCLRm0eKXsaEG.txt.zip</span><span class="w">
-</span><span class="c1"># https://grch37.ensembl.org/Homo_sapiens/Tools/VEP/</span><span class="w">
+</span><span class="c1"># split vcf into ~ 10 files. file 1 "xaa" was anylised on VEP, download the TXT version, or unzip the one I saved cfKJCLRm0eKXsaEG.txt.zip</span><span class="w">
+</span><span class="c1"># https://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?tl=cfKJCLRm0eKXsaEG-6148791</span><span class="w">
 
-</span><span class="c1"># Import the VEP output</span><span class="w">
 </span><span class="n">vepfile</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.table</span><span class="p">(</span><span class="w">
   </span><span class="n">file</span><span class="o">=</span><span class="s2">"cfKJCLRm0eKXsaEG.txt"</span><span class="p">,</span><span class="w">
   </span><span class="n">na.strings</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">),</span><span class="w">
   </span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="w">
   </span><span class="n">header</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># Import drugbank table</span><span class="w">
-</span><span class="c1"># the "fill=TRUE" is needed because not all </span><span class="w">
-</span><span class="c1"># file lines have the same number of elements.</span><span class="w">
+</span><span class="c1"># import drugbank table</span><span class="w">
+</span><span class="c1"># the "fill=TRUE" is needed because not all file lines have the same number of elements.</span><span class="w">
 </span><span class="n">drugs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.table</span><span class="p">(</span><span class="w">
   </span><span class="n">file</span><span class="o">=</span><span class="s2">"all.txt"</span><span class="p">,</span><span class="w">
   </span><span class="n">na.strings</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">),</span><span class="w">
@@ -290,7 +236,7 @@ I recommending installing R and then installing R studio to edit and run your co
 </span><span class="c1"># However, the gene name column does not have the same name.</span><span class="w">
 </span><span class="c1"># One of them needs to be renamed:</span><span class="w">
 </span><span class="c1"># vepfile="SYMBOL"</span><span class="w">
-</span><span class="c1"># drugs="Gene.Name"</span><span class="w">
+</span><span class="c1"># grugs="Gene.Name"</span><span class="w">
 
 </span><span class="c1"># colnames(df)[colnames(df) == 'oldName'] &lt;- 'newName'</span><span class="w">
 </span><span class="n">colnames</span><span class="p">(</span><span class="n">vepfile</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">vepfile</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"SYMBOL"</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"Gene.Name"</span><span class="w">
@@ -301,31 +247,27 @@ I recommending installing R and then installing R studio to edit and run your co
                 </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Gene.Name"</span><span class="p">,</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 
 
-</span><span class="c1"># Remove empty data "NA"</span><span class="w">
-</span><span class="c1"># Install packeges once (comment out then)</span><span class="w">
-</span><span class="c1"># Load library each time to use "%&gt;%" (command join) and filtering</span><span class="w">
+</span><span class="c1"># remove empty data "NA"</span><span class="w">
+</span><span class="c1"># install packeges once (comment out then)</span><span class="w">
+</span><span class="c1"># load library each time to use "%&gt;%" (command join) and filtering</span><span class="w">
 </span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"tidyr"</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span><span class="w">
 </span><span class="n">install.packages</span><span class="p">(</span><span class="s2">"dplyr"</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
 </span><span class="n">df1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merged</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">drop_na</span><span class="p">(</span><span class="n">Drug.IDs</span><span class="p">)</span><span class="w">
 
-</span><span class="c1"># Make a list of benign variant types that should be removed</span><span class="w">
-</span><span class="n">filter_out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> 
-    </span><span class="s1">'synonymous_variant|UTR|NMD_transcript|non_coding|downstream|upstream|intron|mature_miRNA_variant'</span><span class="w">
+</span><span class="c1"># make a list of benign variants types that should be removed</span><span class="w">
+</span><span class="n">filter_out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'synonymous_variant|UTR|NMD_transcript|non_coding|downstream|upstream|intron|mature_miRNA_variant'</span><span class="w">
 
-</span><span class="c1"># Then filter out anything matching these terms.</span><span class="w">
+</span><span class="c1"># then filter out anything matching these terms.</span><span class="w">
 </span><span class="n">df2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df1</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter_all</span><span class="p">(</span><span class="n">all_vars</span><span class="p">(</span><span class="o">!</span><span class="n">grepl</span><span class="p">(</span><span class="n">filter_out</span><span class="p">,</span><span class="n">.</span><span class="p">)))</span><span class="w">
 
-</span><span class="c1"># Save an output tsv file for Excel, etc.</span><span class="w">
+</span><span class="c1"># save an output tsv file for Excel, etc.</span><span class="w">
 </span><span class="n">write.table</span><span class="p">((</span><span class="n">df2</span><span class="p">),</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s1">'./output.tsv'</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="w">  </span><span class="n">quote</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<p>If you complete this process the output will contain a perfectly merged dataset.
-So in this simple example it takes just 5 minutes to get from a real genome VCF to possibly druggable target genes (see further note on <em>drug indication</em> below).
-The difficulty lies downstream in interpreting which variants can have an effect that would justify the use of the drug.
-Anyone implementing a usable version of this method will incur several obstacles;
-e.g. are non-coding or synonymous variants worth reporting?, genes have multiple transcripts which means one variant can be both coding and non-coding depending on transcript splicing, etc.
+<p>So in this simple example it takes just 5 minutes to get from a real genome VCF to possibly druggable target genes (see further note on <em>drug indication</em> below).
+The difficulty lies downstream in interpreting which variants can have an effect that would justify the use of the drug. Anyone implementing a usable version of this method will incur several obstacles; e.g. are non-coding or synonymous variants worth reporting?, genes have multiple transcripts which means one variant can be both coding and non-coding depending on transcript splicing, etc.
 Other sources of sequence data, including the sequences of Watson and Venter;<br />
 <a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/</a><br />
 23andMe open snp data; <a href="https://opensnp.org/genotypes">https://opensnp.org/genotypes</a>.
@@ -336,9 +278,10 @@ However, this is a good start as a learning experience.</p>
 <h1 id="annotation">Annotation</h1>
 <p><a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> is very useful.
 Note: For a real product, the code can run offline (a perl program with a few local library dependencies).
-The databases/cache that it uses are a bit too large to include on in a user software.
-In the real world you would have to send <em>anonymised</em> packets from the user via an API for accessing the genomic databases hosted on your servers.
-Make sure to check their license to see if you can use oftware and databases in a commercial product.<br />
+However, the databases/cache that it uses are a bit large to include on in a user software.
+It is not important for your project.
+But incase anyone asks, you could send <em>anonymised</em> packets from the user via an API for accessing the genomic databases.
+Make sure to check their license to see if you can use it in a product.<br />
 <a href="http://www.ensembl.org/info/about/legal/code_licence.html">http://www.ensembl.org/info/about/legal/code_licence.html</a></p>
 
 <h1 id="drug-indication">Drug indication</h1>
@@ -350,8 +293,8 @@ The “Labelling Section” listed by FDA might offer the best information.
 For example, if we go and check the Prescribing Information PDF to compare two drugs we see that</p>
 
 <p><br />
-<strong>(1)</strong> One is used to directly block a gene product,<br />
-<strong>(2)</strong> The second warns about use with certain genetic complications.</p>
+<strong>(1)</strong> one is used to directly block a gene product,<br />
+<strong>(2)</strong> the second warns about use with certain genetic complications.</p>
 
 <p><br />
 <strong>Drug 1</strong>: <a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;varApplNo=761034">Atezolizumab</a> (1),<br />
@@ -383,7 +326,7 @@ That is, prepare a list of coordinates for each gene, and select for those regio
 <p>Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:<br />
 <a href="http://www.ensembl.org/info/data/biomart/index.html">http://www.ensembl.org/info/data/biomart/index.html</a><br />
-Then to use the BioMart data mining tool<br />
+The use the BioMart data mining tool<br />
 <a href="http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44">http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44</a><br />
 I actually needed the positions using GRCh37 (rather than 38), so I switched to the old Ensembl using<br />
 <a href="http://www.ensembl.org/info/website/tutorials/grch37.html">http://www.ensembl.org/info/website/tutorials/grch37.html</a><br />
@@ -398,73 +341,45 @@ To set the output type: Attributes -&gt; Gene -&gt; select “gene start”, “
 Select the “Results” button at the top and export.
 The results can be tsv or csv.
 You would have to figure out how to extract the regions from the vcf (sed, grep, awk, R code, etc.).
-When I needed this, I used my own tools which required converting to format like this “X:1-2000”, and ordered by number and alphabetic (some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
+When I needed this, I used my own tools which required converting to format like this “X:1-2000”, and ordered by number and alphabetic* (*some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
 If you use this list to extract regions from a VCF, remember to include all the original VCF header information.</p>
 
 <h1 id="extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</h1>
-<p>The early part of this tutorial shows how old-school command line tools can be used to extract data. 
-Indeed, this may be computationally most efficient but there are some specialised tools that make the process easier in general.
-You can use VCFtools to extract specified regions.<br />
+
+<p>You can use VCFtools to extract specified regions.<br />
 <a href="https://vcftools.github.io/man_latest.html">https://vcftools.github.io/man_latest.html</a><br />
-You could use a list of defined genome position to reduce the size of your dataset. 
-The defined genomic coordinates are generally supplied in a file format called the (BED file](https://en.wikipedia.org/wiki/BED_(file_format))
 Note that sometimes the bed file “chrom” ID - the name of the chromosome (e.g. chr3) does not match if the VCF file uses “3” instead of “chr3”.
 You might need to edit the bed.
-My bed file was like this:<br />
-(tab spaced), ref.bed<br />
-<br />
-chrom    chromStart    chromEnd<br />
-1    3549    13555<br />
-<br />
-And this command ran OK for me to give “output_prefix.recode.vcf”<br /></p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$:</span>~/tools/vcftools_0.1.13/bin <span class="se">\</span>
-./vcftools <span class="se">\</span>
-<span class="nt">--vcf</span> ~/input.vcf <span class="se">\</span>
-<span class="nt">--bed</span> ~/ref.bed <span class="se">\</span>
-<span class="nt">--out</span> output_prefix <span class="se">\</span>
-<span class="nt">--recode</span> <span class="nt">--keep-INFO-all</span>
-</code></pre></div></div>
-<p>This new VCF will now only contain gene regions that are potentially “druggable”, or at least included on the FDA list.
-VCF annotation will be <em>much faster</em> than annotation of the whole genome.</p>
+My bed file was like this: (tab spaced), ref.bed<br />
+chrom   chromStart  chromStart<br />
+1   13549   13555 class=””&gt;<br />
+And this command ran OK for me to give “output_prefix.recode.vcf”<br />
+<code class="highlighter-rouge">$:~/tools/vcftools_0.1.13/bin \</code><br />
+<code class="highlighter-rouge">./vcftools \</code><br />
+<code class="highlighter-rouge">--vcf ~/input.vcf \</code><br />
+<code class="highlighter-rouge">--bed ~/ref.bed \</code><br />
+<code class="highlighter-rouge">--out output_prefix \</code><br />
+<code class="highlighter-rouge">--recode --keep-INFO-all</code></p>
 
-<h1 id="unknown-variants">Unknown variants</h1>
-<p>In the majority of situations you will be stuck with <em>variants of unknown significance</em>.
-In the absence of tailored analysis and interpretation of each invidual variant, one must often rank unknown variants based on a predicted pathogenicity.
-Carefully consider that predictions can be completed wrong and address how such an annotation should be presented. 
-One can rank unknown variants based on PHRED-scaled CADD score, highest being more predicted pathogenic.
+<p>This new VCF will now only contain gene regions that are potentially “druggable”, or at least included on the FDA list. VCF annotation will be much faster than when annotation the whole genome.</p>
+
+<h1 id="notes-to-help-students">Notes to help students</h1>
+<p>One can rank with highest CADD score being more predicted pathogenic, but we will need to discuss reliability.
 https://cadd.gs.washington.edu/info<br />
-<a href="http://genetics.bwh.harvard.edu/pph2/">Polyphen</a> gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.
-See what other pathogenicity prediction tools you can find and estimate how widespread/accepted their usage is.</p>
+Polyphen gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.</p>
 
-<h1 id="gene-dosage">Gene dosage</h1>
-<p>An important cosideration of variant effect depends on gene dosage.
-A <a href="https://en.wikipedia.org/wiki/Dominance_(genetics)">dominant gene</a> may be affected by a single heterozgous variant while a recessive gene may be able to compensate against the negative effect of a heterozyous variant due the presence of a second functional gene copy.
-Therefore, the presence of heterozygous or homozygous allele is an important consideration.
-Some genes may be sensitive to a <a href="https://en.wikipedia.org/wiki/Zygosity">hemizygous</a> effect, low frequency <a href="https://en.wikipedia.org/wiki/Somatic_(biology)">somatic variants</a>,
-<a href="https://en.wikipedia.org/wiki/Mosaic_(genetics)">mosaisism</a>, etc.
-<a href="https://en.wikipedia.org/wiki/SNV_calling_from_NGS_data">SNV calling in NGS</a> is a broad topic, but it is safe to say that at least the allele dosage (generally heterozygous or homozygous) should be included in result summary.
-If possible, when a gene is linked to a specific disease then the <a href="https://en.wikipedia.org/wiki/Heredity">inheritance type</a> associated with that gene-disease should also be included. 
-For example, <a href="https://www.omim.org">https://www.omim.org</a> is a good place to see examles.
-The genetic disease <a href="https://www.omim.org/entry/219700?search=cystic%20fibrosis&amp;highlight=cystic%20fibrosi">cystic fibrosis</a> is shown with an inheritance type AR (autosomal recessive) meaning that damaging variants on both gene alleles are required to cause disease. 
-The gene <em>cftr</em>, which is the genetic determinant of cystic fibrosis, also has an <a href="https://www.omim.org/entry/602421?search=cftr&amp;highlight=cftr">OMIM page <em>cftr</em></a> that also lists AR inheritance.
-An excellent resource for matching gene to disease is the <a href="https://panelapp.genomicsengland.co.uk">https://panelapp.genomicsengland.co.uk</a>.
-Individual genes can be explored, or “panels” of disease-specific gene lists can be explored. For example, here is the “<a href="https://panelapp.genomicsengland.co.uk/panels/545/">Bleeding and platelet disorders</a>” panel. 
-This shows the “Mode of inheritance” and colour-coded confidence in the disease-gene relationship.
-Integrating this type of expert-curated open datasets can be extremely useful.</p>
-
-<h1 id="drug-indication-1">Drug indication</h1>
-<p>The indication or warning can be difficult to automate.
-For the example drug<br />
-<a href="https://www.drugbank.ca/drugs/DB11595">https://www.drugbank.ca/drugs/DB11595</a><br />
+<p>The indication or warning can be difficult to automate. For the example drug<br />
+https://www.drugbank.ca/drugs/DB11595<br />
 the section “Pharmacology” “Indication” has the Indication info.<br />
-The FDA label is contained as a PDF attachment in the section “REFERENCES” FDA label Download (245 KB).
-If I had to automate the process I would add a URL link for each drug:<br />
+The FDA label is contained as a PDF attachment in the section “REFERENCES” FDA label Download (245 KB).</p>
+
+<p>If I had to automate the process I would add a URL link for each drug:<br />
 for gene name CD274<br />
 the drugbank column Drug IDs has these:<br />
 DB11595; DB11714; DB11945<br />
-and for each ID you could append the ID onto the drugbank URL to link to the webpage
-<a href="https://www.drugbank.ca/drugs/">https://www.drugbank.ca/drugs/</a>.
-You can do this in R with some technical how-to reading, or do it manually for a quick example like this and removing space to create a web URL.<br />
+and for each ID you could append the ID onto the drugbank URL to link to the webpage https://www.drugbank.ca/drugs/</p>
+
+<p>You can do this in R with some technical how-to reading, or do it manually for a quick example like this and removing space to create a web URL.<br />
 URL				Drug IDs<br />
 https://www.drugbank.ca/drugs/	DB00303<br />
 https://www.drugbank.ca/drugs/	DB00114<br />
@@ -472,47 +387,25 @@ https://www.drugbank.ca/drugs/	DB00142<br />
 https://www.drugbank.ca/drugs/	DB01839<br />
 https://www.drugbank.ca/drugs/	DB00125</p>
 
-<h1 id="a-large-scale-example-summary">A large scale example summary</h1>
-<p>I do not suggest this for a small project, but if I was to automate subsection requests for real:</p>
+<p>I do not suggest this, but if you had to automate subsection requests for real:</p>
 <ul>
-  <li>[1] Download the whole database (probably a big table sized &gt;100MB) and</li>
-  <li>[2] For every query (the Drug ID) extract the sections of interest (indication,  Biologic Classification, Description,  FDA label, etc.)</li>
-  <li>[3] Display each section as additional columns in candidate genes table.<br />
-<br /></li>
-  <li>[1] Would be here: <a href="https://www.drugbank.ca/releases/latest">https://www.drugbank.ca/releases/latest</a></li>
-  <li>[2] Would be like this: <a href="https://www.w3schools.com/xml/default.asp">https://www.w3schools.com/xml/default.asp</a><br />
+  <li>[1] download the whole database (probably a big table sized &gt;100MB) and</li>
+  <li>[2] for every query (the Drug ID) extract the sections of interest (indication,  Biologic Classification, Description,  FDA label, etc.)</li>
+  <li>
+    <p>[3] display each section as additional columns in candidate genes table.</p>
+  </li>
+  <li>[1] would be here: https://www.drugbank.ca/releases/latest</li>
+  <li>[2] would be like this: https://www.w3schools.com/xml/default.asp
 Look at example 2, your database request might be something like:
 [get food name = Belgian Waffles, description] or
-[get drug ID = DB11595, indication,  Biologic Classification, Description,  FDA label.]
-The database request problem can be tricky to optimise but not especially difficult with some experience in SQL-type management.</li>
-  <li>[3] For every line in the gene candidate table, do this query request and output the result into the same row.<br />
-The final table would be something that includes colunm headers like:<br />
-Gene, consequence, variant, amino acid, genome position, CADD, DrugBank ID, Description, Indication, FDA label PDF link, etc.
-This table could be ranked based on consequence, CADD score.
-The top couple of rows then might be converted into a more readable format like a PDF.</li>
+[get drug ID = DB11595, indication,  Biologic Classification, Description,  FDA label.]</li>
+  <li>[3] for every line in the gene candidate table, do this query request and output the result into the same row.</li>
 </ul>
 
-<h1 id="more-questions">More questions</h1>
+<p>The final table would be something that includes colunm headers like:<br />
+Gene, consequence, variant, amino acid, genome position, CADD, DrugBank ID, Description, Indication, FDA label PDF link, etc.</p>
 
-<p>Q: Do we have to infer that in the future everybody will have his genome sequenced ?<br />
-You do not have to assume this. It may become true. There could be privacy concerns or social problems arising from genetic prejudice, etc.</p>
-
-<p>Q: Before using our algorithm, patient will have to sequence a part of their genome and thus this is a weakness of our algorithm?<br />
-Your tool will provide a service based on genetics.<br />
-Option [1] One has their genetics already and will use it for personal medicine.<br />
-Option [2] they are prescribed a drug and want to only sequence the genes of interest that could affect this drug.<br />
-Option [3] they do not want any genetic info and therefor your product is irrelevant.<br />
-Option [4] they do not want their personal genetics, but are willing to estimate their relatedness to others in a genetic database and therefore calculate a probability of accuracy for this drug-gene information. e.g. both parents are Swiss and therefore based on the population they have probability of X that their genotype is Y.</p>
-
-<p>Q: Is it realistic to assume that it will be feasible based on the fact that the sequencing cost is decreasing ?<br />
-Irrelevant in this case, but yes, whole genome seq is sometimes &lt; 200CHF will likely be common soon.</p>
-
-<p>Q:  We plan to use polyphen and/or sift in order to discriminate between those types of variants. Is that a good idea?<br />
-That is a good start. CADD score is also pretty well known among physicians.
-In my opinion, I do not trust the scores often.
-However, it is common that for processing a large amount of data, such prediction tools are useful in general.
-For example, I might [1] rank first on VEP variant “consequences”; stop mutations with most importance.
-[2] Then rank secondly with these values since you cannot interpret most with consequence = missense variant.</p>
+<p>This table could be ranked based on consequence, CADD score. The top couple of rows then might be converted into a more readable format like a PDF.</p>
 
 <h1 id="references">References</h1>
 <ul>
@@ -523,67 +416,4 @@ For example, I might [1] rank first on VEP variant “consequences”; stop muta
   <li>David R. Adams, M.D., Ph.D.,  and Christine M. Eng, M.D. Next-Generation Sequencing to Diagnose Suspected Genetic Disorders N Engl J Med Oct 2018 doi: 10.1056/NEJMra1711801</li>
 </ul>
 
-
-</div>
-
-<div id="related">
-  <h2>Related Topics</h2>
-  <ul class="topics">
-    
-  </ul>
-</div>
-
-
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Dylan footer
-        <br />
-        Postdoc at
-          <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>,
-        <br />
-        dylan@email
-      </p>
-    </div>
-    <div class="contact">
-      <p>
-        <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
-        <a href="https://dylan-lawless.github.io">Resume</a><br />
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/tom-preston-werner">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Banner on top right corner linking to github
-<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
--->
-
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-
-</body>
-</html>
+:ET

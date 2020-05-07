@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <!-- link to MathJax for LaTeX stlye eqn -->
-    <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
-   <!--  -->
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Pharmacogenomics for personal medicine</title>
-   <meta name="author" content="Dylan page title" />
-   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
-   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
-
-   <!-- include a google font -->
-   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-<div class="site">
-  <div class="title">
-    <a href="/">Dylan site title</a>
-    <a class="extra" href="/">home</a>
-  </div>
-
-  <div id="topic">
-<h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
+I"�<h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
 <p class="meta">26 Apr 2020</p>
 
 <ul id="markdown-toc">
@@ -61,7 +16,6 @@ var WRInitTime=(new Date()).getTime();
   <li><a href="#how-to-get-coordinates-for-a-gene-list" id="markdown-toc-how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</a></li>
   <li><a href="#extracting-regions-from-a-vcf-using-a-bed-file" id="markdown-toc-extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</a></li>
   <li><a href="#unknown-variants" id="markdown-toc-unknown-variants">Unknown variants</a></li>
-  <li><a href="#gene-dosage" id="markdown-toc-gene-dosage">Gene dosage</a></li>
   <li><a href="#drug-indication-1" id="markdown-toc-drug-indication-1">Drug indication</a></li>
   <li><a href="#a-large-scale-example-summary" id="markdown-toc-a-large-scale-example-summary">A large scale example summary</a></li>
   <li><a href="#more-questions" id="markdown-toc-more-questions">More questions</a></li>
@@ -383,7 +337,7 @@ That is, prepare a list of coordinates for each gene, and select for those regio
 <p>Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:<br />
 <a href="http://www.ensembl.org/info/data/biomart/index.html">http://www.ensembl.org/info/data/biomart/index.html</a><br />
-Then to use the BioMart data mining tool<br />
+The use the BioMart data mining tool<br />
 <a href="http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44">http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44</a><br />
 I actually needed the positions using GRCh37 (rather than 38), so I switched to the old Ensembl using<br />
 <a href="http://www.ensembl.org/info/website/tutorials/grch37.html">http://www.ensembl.org/info/website/tutorials/grch37.html</a><br />
@@ -436,29 +390,14 @@ https://cadd.gs.washington.edu/info<br />
 <a href="http://genetics.bwh.harvard.edu/pph2/">Polyphen</a> gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.
 See what other pathogenicity prediction tools you can find and estimate how widespread/accepted their usage is.</p>
 
-<h1 id="gene-dosage">Gene dosage</h1>
-<p>An important cosideration of variant effect depends on gene dosage.
-A <a href="https://en.wikipedia.org/wiki/Dominance_(genetics)">dominant gene</a> may be affected by a single heterozgous variant while a recessive gene may be able to compensate against the negative effect of a heterozyous variant due the presence of a second functional gene copy.
-Therefore, the presence of heterozygous or homozygous allele is an important consideration.
-Some genes may be sensitive to a <a href="https://en.wikipedia.org/wiki/Zygosity">hemizygous</a> effect, low frequency <a href="https://en.wikipedia.org/wiki/Somatic_(biology)">somatic variants</a>,
-<a href="https://en.wikipedia.org/wiki/Mosaic_(genetics)">mosaisism</a>, etc.
-<a href="https://en.wikipedia.org/wiki/SNV_calling_from_NGS_data">SNV calling in NGS</a> is a broad topic, but it is safe to say that at least the allele dosage (generally heterozygous or homozygous) should be included in result summary.
-If possible, when a gene is linked to a specific disease then the <a href="https://en.wikipedia.org/wiki/Heredity">inheritance type</a> associated with that gene-disease should also be included. 
-For example, <a href="https://www.omim.org">https://www.omim.org</a> is a good place to see examles.
-The genetic disease <a href="https://www.omim.org/entry/219700?search=cystic%20fibrosis&amp;highlight=cystic%20fibrosi">cystic fibrosis</a> is shown with an inheritance type AR (autosomal recessive) meaning that damaging variants on both gene alleles are required to cause disease. 
-The gene <em>cftr</em>, which is the genetic determinant of cystic fibrosis, also has an <a href="https://www.omim.org/entry/602421?search=cftr&amp;highlight=cftr">OMIM page <em>cftr</em></a> that also lists AR inheritance.
-An excellent resource for matching gene to disease is the <a href="https://panelapp.genomicsengland.co.uk">https://panelapp.genomicsengland.co.uk</a>.
-Individual genes can be explored, or “panels” of disease-specific gene lists can be explored. For example, here is the “<a href="https://panelapp.genomicsengland.co.uk/panels/545/">Bleeding and platelet disorders</a>” panel. 
-This shows the “Mode of inheritance” and colour-coded confidence in the disease-gene relationship.
-Integrating this type of expert-curated open datasets can be extremely useful.</p>
-
 <h1 id="drug-indication-1">Drug indication</h1>
 <p>The indication or warning can be difficult to automate.
 For the example drug<br />
 <a href="https://www.drugbank.ca/drugs/DB11595">https://www.drugbank.ca/drugs/DB11595</a><br />
 the section “Pharmacology” “Indication” has the Indication info.<br />
-The FDA label is contained as a PDF attachment in the section “REFERENCES” FDA label Download (245 KB).
-If I had to automate the process I would add a URL link for each drug:<br />
+The FDA label is contained as a PDF attachment in the section “REFERENCES” FDA label Download (245 KB).</p>
+
+<p>If I had to automate the process I would add a URL link for each drug:<br />
 for gene name CD274<br />
 the drugbank column Drug IDs has these:<br />
 DB11595; DB11714; DB11945<br />
@@ -473,19 +412,19 @@ https://www.drugbank.ca/drugs/	DB01839<br />
 https://www.drugbank.ca/drugs/	DB00125</p>
 
 <h1 id="a-large-scale-example-summary">A large scale example summary</h1>
-<p>I do not suggest this for a small project, but if I was to automate subsection requests for real:</p>
+<p>I do not suggest this for a small project, but if you had to automate subsection requests for real:</p>
 <ul>
   <li>[1] Download the whole database (probably a big table sized &gt;100MB) and</li>
   <li>[2] For every query (the Drug ID) extract the sections of interest (indication,  Biologic Classification, Description,  FDA label, etc.)</li>
-  <li>[3] Display each section as additional columns in candidate genes table.<br />
-<br /></li>
-  <li>[1] Would be here: <a href="https://www.drugbank.ca/releases/latest">https://www.drugbank.ca/releases/latest</a></li>
-  <li>[2] Would be like this: <a href="https://www.w3schools.com/xml/default.asp">https://www.w3schools.com/xml/default.asp</a><br />
+  <li>
+    <p>[3] Display each section as additional columns in candidate genes table.</p>
+  </li>
+  <li>[1] would be here: <a href="https://www.drugbank.ca/releases/latest">https://www.drugbank.ca/releases/latest</a></li>
+  <li>[2] would be like this: <a href="https://www.w3schools.com/xml/default.asp">https://www.w3schools.com/xml/default.asp</a><br />
 Look at example 2, your database request might be something like:
 [get food name = Belgian Waffles, description] or
-[get drug ID = DB11595, indication,  Biologic Classification, Description,  FDA label.]
-The database request problem can be tricky to optimise but not especially difficult with some experience in SQL-type management.</li>
-  <li>[3] For every line in the gene candidate table, do this query request and output the result into the same row.<br />
+[get drug ID = DB11595, indication,  Biologic Classification, Description,  FDA label.]</li>
+  <li>[3] for every line in the gene candidate table, do this query request and output the result into the same row.<br />
 The final table would be something that includes colunm headers like:<br />
 Gene, consequence, variant, amino acid, genome position, CADD, DrugBank ID, Description, Indication, FDA label PDF link, etc.
 This table could be ranked based on consequence, CADD score.
@@ -523,67 +462,4 @@ For example, I might [1] rank first on VEP variant “consequences”; stop muta
   <li>David R. Adams, M.D., Ph.D.,  and Christine M. Eng, M.D. Next-Generation Sequencing to Diagnose Suspected Genetic Disorders N Engl J Med Oct 2018 doi: 10.1056/NEJMra1711801</li>
 </ul>
 
-
-</div>
-
-<div id="related">
-  <h2>Related Topics</h2>
-  <ul class="topics">
-    
-  </ul>
-</div>
-
-
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Dylan footer
-        <br />
-        Postdoc at
-          <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>,
-        <br />
-        dylan@email
-      </p>
-    </div>
-    <div class="contact">
-      <p>
-        <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
-        <a href="https://dylan-lawless.github.io">Resume</a><br />
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/tom-preston-werner">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Banner on top right corner linking to github
-<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
--->
-
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-
-</body>
-</html>
+:ET

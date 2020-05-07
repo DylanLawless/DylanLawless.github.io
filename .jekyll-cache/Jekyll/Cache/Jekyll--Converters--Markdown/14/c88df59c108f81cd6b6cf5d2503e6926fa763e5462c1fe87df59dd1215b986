@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <!-- link to MathJax for LaTeX stlye eqn -->
-    <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
-   <!--  -->
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Pharmacogenomics for personal medicine</title>
-   <meta name="author" content="Dylan page title" />
-   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
-   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
-
-   <!-- include a google font -->
-   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-<div class="site">
-  <div class="title">
-    <a href="/">Dylan site title</a>
-    <a class="extra" href="/">home</a>
-  </div>
-
-  <div id="topic">
-<h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
+I"�<h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
 <p class="meta">26 Apr 2020</p>
 
 <ul id="markdown-toc">
@@ -383,7 +338,7 @@ That is, prepare a list of coordinates for each gene, and select for those regio
 <p>Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:<br />
 <a href="http://www.ensembl.org/info/data/biomart/index.html">http://www.ensembl.org/info/data/biomart/index.html</a><br />
-Then to use the BioMart data mining tool<br />
+The use the BioMart data mining tool<br />
 <a href="http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44">http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44</a><br />
 I actually needed the positions using GRCh37 (rather than 38), so I switched to the old Ensembl using<br />
 <a href="http://www.ensembl.org/info/website/tutorials/grch37.html">http://www.ensembl.org/info/website/tutorials/grch37.html</a><br />
@@ -477,8 +432,9 @@ https://www.drugbank.ca/drugs/	DB00125</p>
 <ul>
   <li>[1] Download the whole database (probably a big table sized &gt;100MB) and</li>
   <li>[2] For every query (the Drug ID) extract the sections of interest (indication,  Biologic Classification, Description,  FDA label, etc.)</li>
-  <li>[3] Display each section as additional columns in candidate genes table.<br />
-<br /></li>
+  <li>
+    <p>[3] Display each section as additional columns in candidate genes table.</p>
+  </li>
   <li>[1] Would be here: <a href="https://www.drugbank.ca/releases/latest">https://www.drugbank.ca/releases/latest</a></li>
   <li>[2] Would be like this: <a href="https://www.w3schools.com/xml/default.asp">https://www.w3schools.com/xml/default.asp</a><br />
 Look at example 2, your database request might be something like:
@@ -523,67 +479,4 @@ For example, I might [1] rank first on VEP variant “consequences”; stop muta
   <li>David R. Adams, M.D., Ph.D.,  and Christine M. Eng, M.D. Next-Generation Sequencing to Diagnose Suspected Genetic Disorders N Engl J Med Oct 2018 doi: 10.1056/NEJMra1711801</li>
 </ul>
 
-
-</div>
-
-<div id="related">
-  <h2>Related Topics</h2>
-  <ul class="topics">
-    
-  </ul>
-</div>
-
-
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Dylan footer
-        <br />
-        Postdoc at
-          <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>,
-        <br />
-        dylan@email
-      </p>
-    </div>
-    <div class="contact">
-      <p>
-        <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
-        <a href="https://dylan-lawless.github.io">Resume</a><br />
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/tom-preston-werner">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Banner on top right corner linking to github
-<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
--->
-
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-
-</body>
-</html>
+:ET
