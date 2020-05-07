@@ -1,0 +1,289 @@
+I"�W<h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
+<p class="meta">26 Apr 2020</p>
+
+<ul id="markdown-toc">
+  <li><a href="#pharmacogenomics-for-personal-medicine" id="markdown-toc-pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</a></li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#running-a-real-example" id="markdown-toc-running-a-real-example">Running a real example</a></li>
+  <li><a href="#annotation" id="markdown-toc-annotation">Annotation</a></li>
+  <li><a href="#drug-indication" id="markdown-toc-drug-indication">Drug indication</a></li>
+  <li><a href="#optimising-vcf-annotation" id="markdown-toc-optimising-vcf-annotation">Optimising VCF annotation</a></li>
+  <li><a href="#how-to-get-coordinates-for-a-gene-list" id="markdown-toc-how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</a></li>
+  <li><a href="#extracting-regions-from-a-vcf-using-a-bed-file" id="markdown-toc-extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</a></li>
+  <li><a href="#notes-to-help-students" id="markdown-toc-notes-to-help-students">Notes to help students</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+<p>With the popularisation of commercial genetics services, more and more people are now able to “decode” their genetic data.
+Questions that might arise from this information include “do I have potentially disease-causing variants that can be treated with a drug?”, or “am I taking a drug that will be affected by my genetics?”.
+To tackle such questions with an example, we use public data in combination with pharmacogenomics.
+Outside of genotype data (offered by <a href="https://www.23andme.com">23andMe</a> for example), the most common file type will be VCF:
+<a href="https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it">What is a vcf and how should I interpret it?</a>.</p>
+
+<p>Here is a data source with different genetic data files.
+<a href="https://my.pgp-hms.org/public_genetic_data">https://my.pgp-hms.org/public_genetic_data</a>.
+To check that it works OK, I tried a quick version of this challenge.
+I picked the first whole genome VCF file that I saw (hu24385B 2019-04-07.vcf.g_z)
+<a href="https://my.pgp-hms.org/profile/hu24385B">https://my.pgp-hms.org/profile/hu24385B</a>. 
+The VCF has 3,461,639 variants.
+VCF files can contain a large range of information for each variant, however only the first 7 column are strictly neccessary; Chromosome, position, ID, Reference, Alternate, Qulaity, Filter, info. 
+<a href="https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it">The details are explained on this GATK forum post.</a>.
+Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
+Therefore the most common input source may be lacking gene symbols.
+To get the gene names of a single file, the simplest way was is to upload a VCF (or a part of it) to <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> to get the gene symbol (and any other information that you wish).
+<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.45.png" width="80%" /><br />
+<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.58.png" width="80%" /></p>
+
+<p>To reduce the time and output you can limit the options.
+Split the file and run in batches to save time.
+Here I tried the first ~1800 variants.</p>
+
+<p><br />
+<code class="highlighter-rouge">head -2000 56001801068861_WGZ.snp.vcf &gt; test.vcf</code></p>
+
+<p><br />
+And then annotated that extract with <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor.</a>
+The results would be retained by a URL address such as this, for a few days, but will be deleted by the time your read this.<br />
+<a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700">http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700</a>
+<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.10.png" width="80%" />
+(Make certain you use the same reference genome as used on the input data).
+The VCF file was made using reference genome GRCh37.
+Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).</p>
+
+<h1 id="running-a-real-example">Running a real example</h1>
+<p>If you would like to try this using a whole genome using the Ensembl web interface you will need to split your VCF into smaller block first.
+For routine usage the command-line version of VEP and it’s databases should be installed on run locally.
+There are several bioinformatics tools that are commonly used for manipulating genetic file formats such as VCFtools. 
+To get a real understanding of the data type, I inlcude here a method using command line bash to split a VCF file into smaller blocks. 
+A bash script is printed below where I use very mainstream traditional command-line tools to wrangle data, including 
+gunzip 
+to unzip compressed files, 
+wc
+to could lines, 
+cat
+<a href="https://en.wikipedia.org/wiki/Cat_(Unix)">cat</a>
+to print a file, 
+<a href="https://en.wikipedia.org/wiki/Head_(Unix)">head</a>
+to read the top of a file, 
+<a href="https://en.wikipedia.org/wiki/Sed">sed</a>
+to edit lines, 
+<a href="https://en.wikipedia.org/wiki/AWK">awk</a>
+for data extraction, grep</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># VEP accept files of &lt;50MB size.</span>
+<span class="c"># We will split our large VCF into smaller files.</span>
+<span class="c"># Each file requires the same original headers and file extension ".vcf"</span>
+
+<span class="c"># unzip the VCF.gz</span>
+<span class="nb">gunzip </span>56001801068861_WGZ.snp.vcf.gz
+
+<span class="c"># count the number of lines in vcf</span>
+<span class="nb">wc</span> <span class="nt">-l</span> 56001801068861_WGZ.snp.vcf
+
+<span class="c"># how should a vcf file look?</span>
+<span class="c"># https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format</span>
+
+<span class="c"># take a look at the header</span>
+<span class="c"># this VCF has 140 lines of header metadata (beginning with "#")</span>
+<span class="c"># line 141 shows the column headers: CHROM	POS	ID	REF	ALT...</span>
+<span class="c"># line 142 starts with the first variant</span>
+<span class="nb">head</span> <span class="nt">-142</span> 56001801068861_WGZ.snp.vcf
+
+<span class="c"># print the header to a new file for later</span>
+<span class="nb">head</span> <span class="nt">-141</span> 56001801068861_WGZ.snp.vcf <span class="o">&gt;</span> header
+<span class="c"># print everything else (the body) to a new file that we will then split.</span>
+<span class="nb">sed</span> <span class="s1">'1,141d'</span> 56001801068861_WGZ.snp.vcf <span class="o">&gt;</span> body.vcf
+
+<span class="c"># make a new directory for the next step</span>
+<span class="nb">mkdir </span>split_files
+<span class="c"># move the large file inside</span>
+<span class="nb">mv </span>body.vcf split_files/
+<span class="nb">cd </span>split_files
+<span class="c"># now split the body.vcf into smaller files of 200,000 lines each</span>
+<span class="nb">split</span> <span class="nt">-l</span> 150000 body.vcf
+
+<span class="c"># you will now how ~10 files "xaa, xab, etc."</span>
+<span class="c"># add the header back onto all of these files to make them VCFs again.</span>
+<span class="c"># this "for loop" will do the following for each file:</span>
+<span class="c"># print the header and the vcf body to a file with the same name, adding a file extension ".vcf".</span>
+<span class="c"># then remove the vcf body file that does not have the ".vcf" extension</span>
+<span class="c"># leaving you with the original whole genome VCF split into smaller files, each with the same headers.</span>
+<span class="k">for </span>file <span class="k">in</span> ./x<span class="k">*</span> <span class="p">;</span> <span class="k">do </span><span class="nb">cat</span> ../header <span class="nv">$file</span> <span class="o">&gt;&gt;</span> <span class="nv">$file</span>.vcf <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nv">$file</span> <span class="p">;</span> <span class="k">done</span>
+
+<span class="c"># These should be small enough to run on VEP online.</span>
+<span class="c"># you could edit the split command to make a reasonable number of files, uploading &gt;10 is not efficient.</span>
+
+</code></pre></div></div>
+
+<p>From the output I extracted the gene symbols and compared against a list of druggable target genes from 
+<a href="https://www.drugbank.ca">DrugBank</a>
+(because I happen to have their data on hand, FDA may be more reliable).
+A quick list of the unique genes based on the first 2000 variants gives 3 genes:</p>
+
+<p><br />
+<code class="highlighter-rouge">sort unique.genes.txt unique.druggable.txt | uniq -c -i | grep -v '1 '</code><br />
+<br />
+The genes which were in present in both the variant list and DrugBank list are:<br />
+2,000 vcf lines = 
+<a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,
+<a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,
+<a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a><br />
+10,000 vcf lines = 
+<a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,
+<a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,
+<a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a>,
+<a href="https://www.drugbank.ca/bio_entities/BE0008994">TP73</a>.</p>
+
+<p>So in this simple example it takes just 5 minutes to get from a real genome VCF to possibly druggable target genes (see further note on <em>drug indication</em> below).
+The difficulty lies downstream in interpreting which variants can have an effect that would justify the use of the drug. Anyone implementing a usable version of this method will incur several obstacles; e.g. are non-coding or synonymous variants worth reporting?, genes have multiple transcripts which means one variant can be both coding and non-coding depending on transcript splicing, etc.
+Other sources of sequence data, including the sequences of Watson and Venter;<br />
+<a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/</a><br />
+23andMe open snp data; <a href="https://opensnp.org/genotypes">https://opensnp.org/genotypes</a>.
+There are many layers to a this problem to create a usable product.
+For example, how to integrate pharmacodynamics, covariats to drug response, contraindications, variant pathogenicity, etc.
+However, this is a good start as a learning experience.</p>
+
+<h1 id="annotation">Annotation</h1>
+<p><a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> is very useful.
+Note: For a real product, the code can run offline (a perl program with a few local library dependencies).
+However, the databases/cache that it uses are a bit large to include on in a user software.
+It is not important for your project.
+But incase anyone asks, you could send <em>anonymised</em> packets from the user via an API for accessing the genomic databases.
+Make sure to check their license to see if you can use it in a product.<br />
+<a href="http://www.ensembl.org/info/about/legal/code_licence.html">http://www.ensembl.org/info/about/legal/code_licence.html</a></p>
+
+<h1 id="drug-indication">Drug indication</h1>
+<p>My example used <a href="https://www.drugbank.ca">DrugBank</a> for pharmacogenomic information.
+However, it may be safest to use the <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">FDA information</a> as the primary source, but including <a href="https://www.drugbank.ca">DrugBank</a> info is no problem.
+Drugs might be either a treatment for a genetic determinant, or a warning for drug usage in someone who also has a genetic variation that might effect their treatment.
+The “Labelling Section” listed by FDA might offer the best information.
+<a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling </a>
+For example, if we go and check the Prescribing Information PDF to compare two drugs we see that</p>
+
+<p><br />
+<strong>(1)</strong> one is used to directly block a gene product,<br />
+<strong>(2)</strong> the second warns about use with certain genetic complications.</p>
+
+<p><br />
+<strong>Drug 1</strong>: <a href="https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&amp;varApplNo=761034">Atezolizumab</a> (1),<br />
+<strong>Gene</strong>: <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling"><em>CD274</em></a> <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">(PD-L1)</a><br />
+<strong>Labeling</strong>: Indications and Usage<br />
+<strong>PRESCRIBING</strong> <strong>INFORMATION</strong>: TECENTRIQ (Atezolizumab) is a programmed death-ligand 1 (PD-L1) blocking antibody indicated for the treatment of patients with…
+<a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/761034Orig1s000lbl.pdf">linked PDF</a>.<br />
+<strong>Explained</strong>: Genetic disorder and the drug to treat it, exactly what you want.</p>
+
+<p><br />
+<strong>Drug 2</strong>: Avatrombopag (3)<br />
+<strong>Gene</strong>: <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling"><em>PROC</em></a><br />
+<strong>Labeling</strong>: Warnings and Precautions<br />
+<strong>PRESCRIBING INFORMATION</strong>: Thrombotic/Thromboembolic Complications: DOPTELET is a thrombopoietin (TPO) receptor agonist… Monitor platelet counts and for thromboembolic events
+<a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/210238s002lbl.pdf">linked PDF</a>.<br />
+<strong>Explained</strong>: Atezolizumab is used to treat thrombocytopenia (low levels of thrombocytes).<br />
+You <em>do not want to give</em> this to someone who has <a href="https://omim.org/entry/176860?search=proc&amp;highlight=proc"><em>PROC</em></a><a href="https://omim.org/entry/176860?search=proc&amp;highlight=proc"> deficiency</a>;
+their disease is <a href="https://en.wikipedia.org/wiki/Thrombophilia">Thrombophilia</a> (hypercoagulability, or <a href="https://en.wikipedia.org/wiki/Thrombosis">thrombosis</a>).
+With this in mind, perhaps an application doing this job could work two ways.
+(1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
+(2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.</p>
+
+<h1 id="optimising-vcf-annotation">Optimising VCF annotation</h1>
+<p>The slowest part of the method is VCF annotation.
+You can significantly increase the speed by first reducing the input to contain only regions of interst.
+That is, prepare a list of coordinates for each gene, and select for those regions in your input VCF or genotype data before annotation (VEP).</p>
+
+<h1 id="how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</h1>
+<p>Use Biomart.
+Their main server was down when I tried, so I went via Ensembl, data access section:<br />
+<a href="http://www.ensembl.org/info/data/biomart/index.html">http://www.ensembl.org/info/data/biomart/index.html</a><br />
+The use the BioMart data mining tool<br />
+<a href="http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44">http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44</a><br />
+I actually needed the positions using GRCh37 (rather than 38), so I switched to the old Ensembl using<br />
+<a href="http://www.ensembl.org/info/website/tutorials/grch37.html">http://www.ensembl.org/info/website/tutorials/grch37.html</a><br />
+to get to <a href="http://grch37.ensembl.org/index.html">http://grch37.ensembl.org/index.html</a> 
+then the Biomart section<br />
+<a href="http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e">http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e</a></p>
+
+<p>Choose DataBase: Genes 93 Dataset: Human Filter -&gt; Gene -&gt; Input external ref ID list -&gt; (change dropdown) Gene
+Name paste your list.
+e.g. VPS45 PSMB8 BLNK NEFL NLRP7 SMAD4 PSMB9<br />
+To set the output type: Attributes -&gt; Gene -&gt; select “gene start”, “gene stop”, “gene name”, or anything extra.
+Select the “Results” button at the top and export.
+The results can be tsv or csv.
+You would have to figure out how to extract the regions from the vcf (sed, grep, awk, R code, etc.).
+When I needed this, I used my own tools which required converting to format like this “X:1-2000”, and ordered by number and alphabetic* (*some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
+If you use this list to extract regions from a VCF, remember to include all the original VCF header information.</p>
+
+<h1 id="extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</h1>
+
+<p>You can use VCFtools to extract specified regions.<br />
+<a href="https://vcftools.github.io/man_latest.html">https://vcftools.github.io/man_latest.html</a><br />
+Note that sometimes the bed file “chrom” ID - the name of the chromosome (e.g. chr3) does not match if the VCF file uses “3” instead of “chr3”.
+You might need to edit the bed.
+My bed file was like this: (tab spaced), ref.bed<br />
+chrom   chromStart  chromStart<br />
+1   13549   13555 class=””&gt;<br />
+And this command ran OK for me to give “output_prefix.recode.vcf”<br />
+<code class="highlighter-rouge">$:~/tools/vcftools_0.1.13/bin \</code><br />
+<code class="highlighter-rouge">./vcftools \</code><br />
+<code class="highlighter-rouge">--vcf ~/input.vcf \</code><br />
+<code class="highlighter-rouge">--bed ~/ref.bed \</code><br />
+<code class="highlighter-rouge">--out output_prefix \</code><br />
+<code class="highlighter-rouge">--recode --keep-INFO-all</code></p>
+
+<p>This new VCF will now only contain gene regions that are potentially “druggable”, or at least included on the FDA list. VCF annotation will be much faster than when annotation the whole genome.</p>
+
+<h1 id="notes-to-help-students">Notes to help students</h1>
+<p>One can rank with highest CADD score being more predicted pathogenic, but we will need to discuss reliability.
+https://cadd.gs.washington.edu/info<br />
+Polyphen gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.</p>
+
+<p>The indication or warning can be difficult to automate. For the example drug<br />
+https://www.drugbank.ca/drugs/DB11595<br />
+the section “Pharmacology” “Indication” has the Indication info.<br />
+The FDA label is contained as a PDF attachment in the section “REFERENCES” FDA label Download (245 KB).</p>
+
+<p>If I had to automate the process I would add a URL link for each drug:<br />
+for gene name CD274<br />
+the drugbank column Drug IDs has these:<br />
+DB11595; DB11714; DB11945<br />
+and for each ID you could append the ID onto the drugbank URL to link to the webpage https://www.drugbank.ca/drugs/</p>
+
+<p>You can do this in R with some technical how-to reading, or do it manually for a quick example like this and removing space to create a web URL.<br />
+URL				Drug IDs<br />
+https://www.drugbank.ca/drugs/	DB00303<br />
+https://www.drugbank.ca/drugs/	DB00114<br />
+https://www.drugbank.ca/drugs/	DB00142<br />
+https://www.drugbank.ca/drugs/	DB01839<br />
+https://www.drugbank.ca/drugs/	DB00125</p>
+
+<p>I do not suggest this, but if you had to automate subsection requests for real:</p>
+<ul>
+  <li>[1] download the whole database (probably a big table sized &gt;100MB) and</li>
+  <li>[2] for every query (the Drug ID) extract the sections of interest (indication,  Biologic Classification, Description,  FDA label, etc.)</li>
+  <li>
+    <p>[3] display each section as additional columns in candidate genes table.</p>
+  </li>
+  <li>[1] would be here: https://www.drugbank.ca/releases/latest</li>
+  <li>[2] would be like this: https://www.w3schools.com/xml/default.asp
+Look at example 2, your database request might be something like:
+[get food name = Belgian Waffles, description] or
+[get drug ID = DB11595, indication,  Biologic Classification, Description,  FDA label.]</li>
+  <li>[3] for every line in the gene candidate table, do this query request and output the result into the same row.</li>
+</ul>
+
+<p>The final table would be something that includes colunm headers like:<br />
+Gene, consequence, variant, amino acid, genome position, CADD, DrugBank ID, Description, Indication, FDA label PDF link, etc.</p>
+
+<p>This table could be ranked based on consequence, CADD score. The top couple of rows then might be converted into a more readable format like a PDF.</p>
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling</a></li>
+  <li><a href="https://www.pharmgkb.org/view/drug-labels.do">https://www.pharmgkb.org/view/drug-labels.do</a></li>
+  <li>Mary V. Relling &amp; William E. Evans. Pharmacogenomics in the clinic. <em>Nature</em> 2015; 526, 343–350. doi: 10.1038/nature15817</li>
+  <li>Yip VL, Hawcutt DB, Pirmohamed M. Pharmacogenetic Markers of Drug Efficacy and Toxicity. <em>Clin Pharmacol Ther.</em> 2015;98(1):61-70. doi: 10.1002/cpt.135.</li>
+  <li>David R. Adams, M.D., Ph.D.,  and Christine M. Eng, M.D. Next-Generation Sequencing to Diagnose Suspected Genetic Disorders N Engl J Med Oct 2018 doi: 10.1056/NEJMra1711801</li>
+</ul>
+
+:ET
