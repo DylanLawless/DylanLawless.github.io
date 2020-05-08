@@ -1,8 +1,9 @@
-# This is the data for my blog
-
+# This is the data for my webpage
+DylanLawless.github.io
 It is automatically transformed by [Jekyll](http://github.com/mojombo/jekyll)
 into a static site whenever I push this repository to GitHub.
 
+About 50% is still a mirror of posts from the cloned site's author, Tom Preston-Werner.
 I was tired of having my blog posts end up in a database off on some remote
 server. That is backwards. I've lost valuable posts that way. I want to author
 my posts locally in Textile or Markdown. My blog should be easily stylable and
