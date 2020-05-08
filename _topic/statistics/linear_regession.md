@@ -201,7 +201,58 @@ Ttwo related quantities can asses the fit of linear regression; _residual standa
 R^2$$
 statistic. 
 ## Residual Standard Error
+
+Because of the error term $$ 
+\epsilon $$,
+the LR cannot perfectly predict $$ Y $$ from $$ X $$.
+RSE is an estimate of the SD of $$ 
+\epsilon $$.
+
+
+$$
+
+\label{eq12}\tag{12} 
+RSE = \sqrt{
+\frac{1}{n-2} RSS
+}
+=
+\sqrt{
+\frac{1}{n-2}
+\sum_{i=1}^n 
+(y_i - \hat y_i)^2
+}
+
+$$ 
+
+The RSS part is expanded on the right hand side of the equation since:
+$$
+
+RSS = 
+\sum_{i=1}^n 
+(y_i - \hat y_i)^2
+
+$$.
+
+The RSS is a measure of the _lack of fit_ of the model equation \ref{eq6} to
+the dataset.
+The value calculated in eqn \ref{eq12} will become smaller when the estimate and true value become closer; 
+$$ \hat y_1 \approx y_1 $$ for 
+$$ 
+i = 1,2,...,n
+$$, in which case the model will fit the data well.
+
+
+
+
+
 ## $$R^2$$ Statistic
+We use this all the time; it will be worth getting into the discussion from 
+Cosma Rohilla Shalizi in
+[Advanced Data Analysis from an Elementary Point of View](
+http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/)
+_Chapter 2 The Truth about Linear Regression_
+``2.2.1.1 R2: Distraction or Nuisance?''. 
+The short summary following just covers the basic "normal" usage, rather getting into the statistica weeds. 
 
 
 

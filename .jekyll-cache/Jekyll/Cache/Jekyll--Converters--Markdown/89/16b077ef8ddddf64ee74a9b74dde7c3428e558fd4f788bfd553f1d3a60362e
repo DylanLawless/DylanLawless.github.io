@@ -1,4 +1,4 @@
-I"(<h1 id="linear-regression">Linear regression</h1>
+I"�(<h1 id="linear-regression">Linear regression</h1>
 <ul id="markdown-toc">
   <li><a href="#linear-regression" id="markdown-toc-linear-regression">Linear regression</a></li>
   <li><a href="#simple-linear-regression" id="markdown-toc-simple-linear-regression">Simple linear regression</a></li>
@@ -22,15 +22,15 @@ The <em>intercept</em> and <em>splope</em> are written as \(\beta_0\) and \(\bet
 These are unknwon constants and together are knwon as the model <em>coefficients</em> or <em>parameters</em>.
 The simple linear regression is written as</p>
 
-<p>[\label{eq1}\tag{1} 
-Y \approx \beta_0 + \beta_1 X]</p>
+\[\label{eq1}\tag{1} 
+Y \approx \beta_0 + \beta_1 X\]
 
 <p>Values that are estimated are labelled with a “hat”, e.g. 
 \(\hat y\) - a prediction of \(Y\) based on \(X = x\).
 With some sample data, one can begin to predict \(Y\) based on the predictor \(X\) using the estimated model coefficients \(\hat \beta_0\) and \(\hat \beta_1\);</p>
 
-<p>[\label{eq2}\tag{2} 
-\hat y \approx \hat\beta_0 + \hat\beta_1 x]</p>
+\[\label{eq2}\tag{2} 
+\hat y \approx \hat\beta_0 + \hat\beta_1 x\]
 
 <p>In this case, the estimated response \(\hat y\) equals the estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) according to a sample of the predictor values (\(x\)).</p>
 
@@ -39,10 +39,10 @@ With some sample data, one can begin to predict \(Y\) based on the predictor \(X
 <p>The estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) are unknown, therefore we need to get these values to predict \(Y\) based on \(X\).
 A number (\(n\)) of obersevations are made where we measure \(X\) and \(Y\). Measurements could be recorded as: (measure 1, x = 5, y = 10), (measure 2, x = 10, y = 20), and so on up to \(n\) obersavations;</p>
 
-<p>[\label{eq3}\tag{3} 
-(5,10), (10,20),…, (x_n,y_n)]</p>
+\[\label{eq3}\tag{3} 
+(5,10), (10,20),..., (x_n,y_n)\]
 
-<p>[(x_1,y_1), (x_2,y_2),…, (x_n,y_n)]</p>
+\[(x_1,y_1), (x_2,y_2),..., (x_n,y_n)\]
 
 <p>We want to combine each measurment on a plot so that the line drawn through the data fits well and produces coefficient estimates \(\hat \beta_0\) and \(\hat \beta_1\).
 Each measurement (\(i\)) is represented with \(y_i \approx \hat \beta_0 + \hat \beta_1 x_i\) for \(i = 1,2,...,n\).
@@ -54,18 +54,18 @@ The <em>residual sum of squares</em> (RSS) is written as
 \(\label{eq4}\tag{4} 
 RSS = e^2 _1 + e^2 _2 +...+ e^2 _n\)</p>
 
-<p>[RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+…+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.]</p>
+\[RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+...+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.\]
 
 <p>The least squares method uses \(\hat\beta_0 and \hat\beta_1\) such that RSS is minimised. The minimisers are as follows</p>
 
-<p>[\label{eq5}\tag{5} 
+\[\label{eq5}\tag{5} 
  \hat \beta_1  = 
 \frac{ 
 \sum_{i=1}^{n}	(	xi -\bar{x} )	(yi - \bar{y}	)	} 
 {\sum_{i=1}^{n}	(	xi -\bar{x} )^2
-}]</p>
+}\]
 
-<p>[\hat\beta_0 - \bar{y} - \hat\beta_1 \bar{x}]</p>
+\[\hat\beta_0 - \bar{y} - \hat\beta_1 \bar{x}\]
 
 <p>where the sample means are
 \(\bar{y} \equiv \frac{1}{n}\sum_{i=1}^{n} y_i\)
@@ -78,8 +78,8 @@ so the equation above (\ref{eq5}) defines the least squares coefficient estimate
 <p>We will want to account for error \(\epsilon\) to draw an accurate line. 
 \(\epsilon\) would be the mean-zero random error for the relationship between \(Y\) and \(X\) for the unknown function \(f\).</p>
 
-<p>[\label{eq6}\tag{6} 
-Y = \beta_0 + \beta_1 X + \epsilon]</p>
+\[\label{eq6}\tag{6} 
+Y = \beta_0 + \beta_1 X + \epsilon\]
 
 <p>This equation represents the <em>population regression line</em>.
 We assume that the error term will be independet of \(X\), and the model is a best approximation of the \(X - Y\) relationship.
@@ -99,23 +99,21 @@ Over a large number of observations the estimate should be very accurate but sin
 This is gerneally done using the <em>standard error</em>.
 When considering the estimate mean \(\hat\mu\), the formula for SE(\(\hat\mu\)) will be</p>
 
-<p>[\label{eq7}\tag{7} 
-Var( \hat\mu ) = SE( \hat\mu )^2 = \frac{\sigma^2}{n}]</p>
+\[\label{eq7}\tag{7} 
+Var( \hat\mu ) = SE( \hat\mu )^2 = \frac{\sigma^2}{n}\]
 
 <p>\(\sigma\) (sigma) is the standard deviation for every \(y_i\) of \(Y\) (approximately; further reading on Gaussian error assumption and number of observations).
 This SE will shirk with more frequent observations.
 In the same direction we can measure the standard errors for \(\hat\beta_0\) and \(\hat\beta_1\)</p>
 
-<p>[\label{eq8}\tag{8} 
-SE(\hat\beta_0)^2 = \sigma\left[  \frac{1}{n}</p>
-<ul>
-  <li>\frac {\bar x^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 } \right]]</li>
-</ul>
+\[\label{eq8}\tag{8} 
+SE(\hat\beta_0)^2 = \sigma\left[  \frac{1}{n} 
++ 
+\frac {\bar x^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 } \right]\]
 
-<p>[SE(\hat\beta_1)^2 =  \frac{1}{n}</p>
-<ul>
-  <li>\frac {\sigma^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 }]</li>
-</ul>
+\[SE(\hat\beta_1)^2 =  \frac{1}{n} 
++ 
+\frac {\sigma^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 }\]
 
 <p>and \(\sigma^2 = Var(\epsilon)\). (To be strictly valid, the errors \(\epsilon_i\) for each observation should be uncorrelated with common variance \(\sigma^2\))
 The estimate of \(\sigma\) is the <em>residual standard error</em>, and shown by \(RSE = \sqrt{ \frac{RSS}{(n-2)} }\).</p>
@@ -124,8 +122,8 @@ The estimate of \(\sigma\) is the <em>residual standard error</em>, and shown by
 A range of values that will contain the true unknown value of the parameter with 95% probability is the 95% confidence interval. 
 This interval for \(\hat\beta_1\) is approximately</p>
 
-<p>[\label{eq9}\tag{9} 
-\hat\beta_1 \pm 2 \cdot SE(\hat\beta_1)]</p>
+\[\label{eq9}\tag{9} 
+\hat\beta_1 \pm 2 \cdot SE(\hat\beta_1)\]
 
 <p>a 95% chance that the true \(\beta_1\) value is in this range.
 The same fomula is true for \(\beta_0\), swapping terms.</p>
@@ -166,12 +164,28 @@ A very low p-value indicates that it is unlikely that an assocation will be meas
 Ttwo related quantities can asses the fit of linear regression; <em>residual standard error</em> (RSE) and \(R^2\)
 statistic.</p>
 <h2 id="residual-standard-error">Residual Standard Error</h2>
+
+<p>Because of the error term \(\epsilon\),
+the LR cannot perfectly predict \(Y\) from \(X\).
+RSE is an estimate of the SD of \(\epsilon\).</p>
+
+\[\label{eq12}\tag{12} 
+RSE = \sqrt{
+\frac{1}{n-2} RSS
+}
+=
+\sqrt{
+\frac{1}{n-2}
+\sum_{i=1}^n 
+(y_i - \hat y_i)^2
+}\]
+
 <h2 id="r2-statistic">\(R^2\) Statistic</h2>
 
-<p>[\label{eq }\tag{ }]</p>
+\[\label{eq }\tag{ }\]
 
-<p>[\label{eq }\tag{ }]</p>
+\[\label{eq }\tag{ }\]
 
-<p>[\label{eq }\tag{ }]</p>
+\[\label{eq }\tag{ }\]
 
 :ET
