@@ -159,6 +159,53 @@ $$
 a 95% chance that the true $$ \beta_1 $$ value is in this range.
 The same fomula is true for $$ \beta_0 $$, swapping terms.
 
+# SE in hypothesis tests for coefficients
+The SE can be used for a _hypothesis test_ on the corfficients, i.e. testing the _null hypothesis_ and _alternative hypothesis_,  
+$$
+\label{eq10}\tag{10} 
+H_0 - there is not relationship between X and Y
+$$  
+$$ H_0 : \beta_1 = 0 $$
+$$ H_0 - there is not relationship between X and Y $$
+$$ H_a : \beta_1 = 0 $$,
+respectively.
+
+Therefore if $$ \beta_1 = 0 $$, according to
+\ref(eqn 6)
+this equation reduces to 
+$$ Y = \beta+0 + \epsilon $$, and an association is not found between $$ X $$ and $$ Y $$.
+For the null hypothesis to be true (no association) we must determine if the slope $$ \beta_1 $$, or rather our estimate $$ \hat\beta_1 $$ is non-zero.
+If the SE$$ \hat\beta_1 $$ is small then we are confident that $$ \hat\beta_1 $$ is accurate, if for example $$ \beta_1 \neg 0 $$ indicating an 
+$$ X - Y $$ relationship.
+If our estimate SE (SE $$\hat\beta_1$$) is large, then we will need to see a much greater 
+$$ X - Y $$ association before rejecting the null hypothesis (association is true).
+A _t_-statistic is used to measure how many _standard deviations_ (SD) 
+$$ \hat\beta_1 $$ is from 0.
+T-statistic:
+$$ 
+\label{eq11}\tag{11} 
+t = \frac{
+\hat\beta_1 - 0}{
+SE(\hat\beta_1)}
+$$
+No relationship will give _t_-distribution $$ n - 2 $$ degrees of freedom.
+(bell curve shape, for values of n greater than $$ \approx $$ 30 it is similar to normal distribution).
+
+The probability of observing any number equal to |_t_| or larger, assuming $$ 
+\beta_1 = 0 $$, is the _p-value_.
+A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can _reject the null hypothesis_.
+
+# Model accuracy
+After rejecting the null we want to check if the line fits well - does the model fit the data?
+Ttwo related quantities can asses the fit of linear regression; _residual standard error_ (RSE) and $$
+R^2$$
+statistic. 
+## Residual Standard Error
+## $$R^2$$ Statistic
+
+
+
+
 
 
 

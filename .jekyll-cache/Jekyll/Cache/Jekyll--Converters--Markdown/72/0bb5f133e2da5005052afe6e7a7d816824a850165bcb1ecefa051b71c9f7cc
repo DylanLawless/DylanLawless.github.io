@@ -1,9 +1,15 @@
-I"Ž<h1 id="linear-regression">Linear regression</h1>
+I"(<h1 id="linear-regression">Linear regression</h1>
 <ul id="markdown-toc">
   <li><a href="#linear-regression" id="markdown-toc-linear-regression">Linear regression</a></li>
   <li><a href="#simple-linear-regression" id="markdown-toc-simple-linear-regression">Simple linear regression</a></li>
   <li><a href="#drawing-the-line" id="markdown-toc-drawing-the-line">Drawing the line</a></li>
   <li><a href="#accuracy-of-the-coefficient-estimates" id="markdown-toc-accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</a></li>
+  <li><a href="#se-in-hypothesis-tests-for-coefficients" id="markdown-toc-se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</a></li>
+  <li><a href="#model-accuracy" id="markdown-toc-model-accuracy">Model accuracy</a>    <ul>
+      <li><a href="#residual-standard-error" id="markdown-toc-residual-standard-error">Residual Standard Error</a></li>
+      <li><a href="#r2-statistic" id="markdown-toc-r2-statistic">\(R^2\) Statistic</a></li>
+    </ul>
+  </li>
 </ul>
 
 <p><br />
@@ -123,6 +129,44 @@ This interval for \(\hat\beta_1\) is approximately</p>
 
 <p>a 95% chance that the true \(\beta_1\) value is in this range.
 The same fomula is true for \(\beta_0\), swapping terms.</p>
+
+<h1 id="se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</h1>
+<p>The SE can be used for a <em>hypothesis test</em> on the corfficients, i.e. testing the <em>null hypothesis</em> and <em>alternative hypothesis</em>,<br />
+\(\label{eq10}\tag{10} 
+H_0 - there is not relationship between X and Y\)<br />
+\(H_0 : \beta_1 = 0\)
+\(H_0 - there is not relationship between X and Y\)
+\(H_a : \beta_1 = 0\),
+respectively.</p>
+
+<p>Therefore if \(\beta_1 = 0\), according to
+\ref(eqn 6)
+this equation reduces to 
+\(Y = \beta+0 + \epsilon\), and an association is not found between \(X\) and \(Y\).
+For the null hypothesis to be true (no association) we must determine if the slope \(\beta_1\), or rather our estimate \(\hat\beta_1\) is non-zero.
+If the SE\(\hat\beta_1\) is small then we are confident that \(\hat\beta_1\) is accurate, if for example \(\beta_1 \neg 0\) indicating an 
+\(X - Y\) relationship.
+If our estimate SE (SE \(\hat\beta_1\)) is large, then we will need to see a much greater 
+\(X - Y\) association before rejecting the null hypothesis (association is true).
+A <em>t</em>-statistic is used to measure how many <em>standard deviations</em> (SD) 
+\(\hat\beta_1\) is from 0.
+T-statistic:
+\(\label{eq11}\tag{11} 
+t = \frac{
+\hat\beta_1 - 0}{
+SE(\hat\beta_1)}\)
+No relationship will give <em>t</em>-distribution \(n - 2\) degrees of freedom.
+(bell curve shape, for values of n greater than \(\approx\) 30 it is similar to normal distribution).</p>
+
+<p>The probability of observing any number equal to |<em>t</em>| or larger, assuming \(\beta_1 = 0\), is the <em>p-value</em>.
+A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can <em>reject the null hypothesis</em>.</p>
+
+<h1 id="model-accuracy">Model accuracy</h1>
+<p>After rejecting the null we want to check if the line fits well - does the model fit the data?
+Ttwo related quantities can asses the fit of linear regression; <em>residual standard error</em> (RSE) and \(R^2\)
+statistic.</p>
+<h2 id="residual-standard-error">Residual Standard Error</h2>
+<h2 id="r2-statistic">\(R^2\) Statistic</h2>
 
 <p>[\label{eq }\tag{ }]</p>
 
