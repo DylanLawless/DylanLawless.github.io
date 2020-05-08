@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="http://tom.preston-werner.com/"/>
- <updated>2020-05-08T21:03:59+02:00</updated>
+ <updated>2020-05-08T22:03:32+02:00</updated>
  <id>http://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -2778,7 +2778,44 @@ A very low p-value indicates that it is unlikely that an assocation will be meas
 Ttwo related quantities can asses the fit of linear regression; <em>residual standard error</em> (RSE) and \(R^2\)
 statistic.</p>
 <h2 id="residual-standard-error">Residual Standard Error</h2>
+
+<p>Because of the error term \(\epsilon\),
+the LR cannot perfectly predict \(Y\) from \(X\).
+RSE is an estimate of the SD of \(\epsilon\).</p>
+
+<p>[\label{eq12}\tag{12} 
+RSE = \sqrt{
+\frac{1}{n-2} RSS
+}
+=
+\sqrt{
+\frac{1}{n-2}
+\sum_{i=1}^n 
+(y_i - \hat y_i)^2
+}]</p>
+
+<p>The RSS part is expanded on the right hand side of the equation since:
+$$</p>
+
+<p>RSS = 
+\sum_{i=1}^n 
+(y_i - \hat y_i)^2</p>
+
+<p>$$.</p>
+
+<p>The RSS is a measure of the <em>lack of fit</em> of the model equation \ref{eq6} to
+the dataset.
+The value calculated in eqn \ref{eq12} will become smaller when the estimate and true value become closer; 
+\(\hat y_1 \approx y_1\) for 
+\(i = 1,2,...,n\), in which case the model will fit the data well.</p>
+
 <h2 id="r2-statistic">\(R^2\) Statistic</h2>
+<p>We use this all the time; it will be worth getting into the discussion from 
+Cosma Rohilla Shalizi in
+<a href="http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/">Advanced Data Analysis from an Elementary Point of View</a>
+<em>Chapter 2 The Truth about Linear Regression</em>
+``2.2.1.1 R2: Distraction or Nuisance?’’. 
+The short summary following just covers the basic “normal” usage, rather getting into the statistica weeds.</p>
 
 <p>[\label{eq }\tag{ }]</p>
 

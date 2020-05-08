@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <!-- link to MathJax for LaTeX stlye eqn -->
-    <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
-   <!--  -->
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Linear regression</title>
-   <meta name="author" content="Dylan page title" />
-   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
-   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
-
-   <!-- include a google font -->
-   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-<div class="site">
-  <div class="title">
-    <a href="/">Dylan site title</a>
-    <a class="extra" href="/">home</a>
-  </div>
-
-  <div id="topic">
-<h1 id="linear-regression">Linear regression</h1>
+I"*<h1 id="linear-regression">Linear regression</h1>
 <ul id="markdown-toc">
   <li><a href="#linear-regression" id="markdown-toc-linear-regression">Linear regression</a></li>
   <li><a href="#simple-linear-regression" id="markdown-toc-simple-linear-regression">Simple linear regression</a></li>
@@ -67,15 +22,15 @@ The <em>intercept</em> and <em>splope</em> are written as \(\beta_0\) and \(\bet
 These are unknwon constants and together are knwon as the model <em>coefficients</em> or <em>parameters</em>.
 The simple linear regression is written as</p>
 
-\[\label{eq1}\tag{1} 
-Y \approx \beta_0 + \beta_1 X\]
+<p>[\label{eq1}\tag{1} 
+Y \approx \beta_0 + \beta_1 X]</p>
 
 <p>Values that are estimated are labelled with a “hat”, e.g. 
 \(\hat y\) - a prediction of \(Y\) based on \(X = x\).
 With some sample data, one can begin to predict \(Y\) based on the predictor \(X\) using the estimated model coefficients \(\hat \beta_0\) and \(\hat \beta_1\);</p>
 
-\[\label{eq2}\tag{2} 
-\hat y \approx \hat\beta_0 + \hat\beta_1 x\]
+<p>[\label{eq2}\tag{2} 
+\hat y \approx \hat\beta_0 + \hat\beta_1 x]</p>
 
 <p>In this case, the estimated response \(\hat y\) equals the estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) according to a sample of the predictor values (\(x\)).</p>
 
@@ -84,10 +39,10 @@ With some sample data, one can begin to predict \(Y\) based on the predictor \(X
 <p>The estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) are unknown, therefore we need to get these values to predict \(Y\) based on \(X\).
 A number (\(n\)) of obersevations are made where we measure \(X\) and \(Y\). Measurements could be recorded as: (measure 1, x = 5, y = 10), (measure 2, x = 10, y = 20), and so on up to \(n\) obersavations;</p>
 
-\[\label{eq3}\tag{3} 
-(5,10), (10,20),..., (x_n,y_n)\]
+<p>[\label{eq3}\tag{3} 
+(5,10), (10,20),…, (x_n,y_n)]</p>
 
-\[(x_1,y_1), (x_2,y_2),..., (x_n,y_n)\]
+<p>[(x_1,y_1), (x_2,y_2),…, (x_n,y_n)]</p>
 
 <p>We want to combine each measurment on a plot so that the line drawn through the data fits well and produces coefficient estimates \(\hat \beta_0\) and \(\hat \beta_1\).
 Each measurement (\(i\)) is represented with \(y_i \approx \hat \beta_0 + \hat \beta_1 x_i\) for \(i = 1,2,...,n\).
@@ -99,18 +54,18 @@ The <em>residual sum of squares</em> (RSS) is written as
 \(\label{eq4}\tag{4} 
 RSS = e^2 _1 + e^2 _2 +...+ e^2 _n\)</p>
 
-\[RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+...+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.\]
+<p>[RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+…+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.]</p>
 
 <p>The least squares method uses \(\hat\beta_0 and \hat\beta_1\) such that RSS is minimised. The minimisers are as follows</p>
 
-\[\label{eq5}\tag{5} 
+<p>[\label{eq5}\tag{5} 
  \hat \beta_1  = 
 \frac{ 
 \sum_{i=1}^{n}	(	xi -\bar{x} )	(yi - \bar{y}	)	} 
 {\sum_{i=1}^{n}	(	xi -\bar{x} )^2
-}\]
+}]</p>
 
-\[\hat\beta_0 - \bar{y} - \hat\beta_1 \bar{x}\]
+<p>[\hat\beta_0 - \bar{y} - \hat\beta_1 \bar{x}]</p>
 
 <p>where the sample means are
 \(\bar{y} \equiv \frac{1}{n}\sum_{i=1}^{n} y_i\)
@@ -123,8 +78,8 @@ so the equation above (\ref{eq5}) defines the least squares coefficient estimate
 <p>We will want to account for error \(\epsilon\) to draw an accurate line. 
 \(\epsilon\) would be the mean-zero random error for the relationship between \(Y\) and \(X\) for the unknown function \(f\).</p>
 
-\[\label{eq6}\tag{6} 
-Y = \beta_0 + \beta_1 X + \epsilon\]
+<p>[\label{eq6}\tag{6} 
+Y = \beta_0 + \beta_1 X + \epsilon]</p>
 
 <p>This equation represents the <em>population regression line</em>.
 We assume that the error term will be independet of \(X\), and the model is a best approximation of the \(X - Y\) relationship.
@@ -144,21 +99,23 @@ Over a large number of observations the estimate should be very accurate but sin
 This is gerneally done using the <em>standard error</em>.
 When considering the estimate mean \(\hat\mu\), the formula for SE(\(\hat\mu\)) will be</p>
 
-\[\label{eq7}\tag{7} 
-Var( \hat\mu ) = SE( \hat\mu )^2 = \frac{\sigma^2}{n}\]
+<p>[\label{eq7}\tag{7} 
+Var( \hat\mu ) = SE( \hat\mu )^2 = \frac{\sigma^2}{n}]</p>
 
 <p>\(\sigma\) (sigma) is the standard deviation for every \(y_i\) of \(Y\) (approximately; further reading on Gaussian error assumption and number of observations).
 This SE will shirk with more frequent observations.
 In the same direction we can measure the standard errors for \(\hat\beta_0\) and \(\hat\beta_1\)</p>
 
-\[\label{eq8}\tag{8} 
-SE(\hat\beta_0)^2 = \sigma\left[  \frac{1}{n} 
-+ 
-\frac {\bar x^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 } \right]\]
+<p>[\label{eq8}\tag{8} 
+SE(\hat\beta_0)^2 = \sigma\left[  \frac{1}{n}</p>
+<ul>
+  <li>\frac {\bar x^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 } \right]]</li>
+</ul>
 
-\[SE(\hat\beta_1)^2 =  \frac{1}{n} 
-+ 
-\frac {\sigma^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 }\]
+<p>[SE(\hat\beta_1)^2 =  \frac{1}{n}</p>
+<ul>
+  <li>\frac {\sigma^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 }]</li>
+</ul>
 
 <p>and \(\sigma^2 = Var(\epsilon)\). (To be strictly valid, the errors \(\epsilon_i\) for each observation should be uncorrelated with common variance \(\sigma^2\))
 The estimate of \(\sigma\) is the <em>residual standard error</em>, and shown by \(RSE = \sqrt{ \frac{RSS}{(n-2)} }\).</p>
@@ -167,8 +124,8 @@ The estimate of \(\sigma\) is the <em>residual standard error</em>, and shown by
 A range of values that will contain the true unknown value of the parameter with 95% probability is the 95% confidence interval. 
 This interval for \(\hat\beta_1\) is approximately</p>
 
-\[\label{eq9}\tag{9} 
-\hat\beta_1 \pm 2 \cdot SE(\hat\beta_1)\]
+<p>[\label{eq9}\tag{9} 
+\hat\beta_1 \pm 2 \cdot SE(\hat\beta_1)]</p>
 
 <p>a 95% chance that the true \(\beta_1\) value is in this range.
 The same fomula is true for \(\beta_0\), swapping terms.</p>
@@ -214,7 +171,7 @@ statistic.</p>
 the LR cannot perfectly predict \(Y\) from \(X\).
 RSE is an estimate of the SD of \(\epsilon\).</p>
 
-\[\label{eq12}\tag{12} 
+<p>[\label{eq12}\tag{12} 
 RSE = \sqrt{
 \frac{1}{n-2} RSS
 }
@@ -223,7 +180,7 @@ RSE = \sqrt{
 \frac{1}{n-2}
 \sum_{i=1}^n 
 (y_i - \hat y_i)^2
-}\]
+}]</p>
 
 <p>The RSS part is expanded on the right hand side of the equation since:
 $$</p>
@@ -235,86 +192,14 @@ $$</p>
 <p>$$.</p>
 
 <p>The RSS is a measure of the <em>lack of fit</em> of the model equation \ref{eq6} to
-the dataset.
-The value calculated in eqn \ref{eq12} will become smaller when the estimate and true value become closer; 
-\(\hat y_1 \approx y_1\) for 
-\(i = 1,2,...,n\), in which case the model will fit the data well.</p>
+the dataset.</p>
 
 <h2 id="r2-statistic">\(R^2\) Statistic</h2>
-<p>We use this all the time; it will be worth getting into the discussion from 
-Cosma Rohilla Shalizi in
-<a href="http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/">Advanced Data Analysis from an Elementary Point of View</a>
-<em>Chapter 2 The Truth about Linear Regression</em>
-``2.2.1.1 R2: Distraction or Nuisance?’’. 
-The short summary following just covers the basic “normal” usage, rather getting into the statistica weeds.</p>
 
-\[\label{eq }\tag{ }\]
+<p>[\label{eq }\tag{ }]</p>
 
-\[\label{eq }\tag{ }\]
+<p>[\label{eq }\tag{ }]</p>
 
-\[\label{eq }\tag{ }\]
+<p>[\label{eq }\tag{ }]</p>
 
-
-</div>
-
-<div id="related">
-  <h2>Related Topics</h2>
-  <ul class="topics">
-    
-  </ul>
-</div>
-
-
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Dylan footer
-        <br />
-        Postdoc at
-          <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>,
-        <br />
-        dylan@email
-      </p>
-    </div>
-    <div class="contact">
-      <p>
-        <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
-        <a href="https://dylan-lawless.github.io">Resume</a><br />
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/tom-preston-werner">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- Banner on top right corner linking to github
-<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
--->
-
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-
-</body>
-</html>
+:ET
