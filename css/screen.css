@@ -85,11 +85,11 @@ div#content a {
 }
 
 /* Set a paragraph indent */
-p { margin-top: -0.2em;
-    margin-bottom: 0 }
+p { margin-top: 1.0em;
+    margin-bottom: 1 }
 p + p {
   text-indent: 1.5em;
-  margin-top: 0 }
+  margin-top: 1 }
 
 p.hang { text-indent: -0.44em }
 
