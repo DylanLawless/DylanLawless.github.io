@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
  <title>Tom Preston-Werner</title>
- <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
- <link href="http://tom.preston-werner.com/"/>
- <updated>2020-07-25T20:28:28+02:00</updated>
- <id>http://tom.preston-werner.com/</id>
+ <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
+ <link href="https://tom.preston-werner.com/"/>
+ <updated>2020-08-29T13:56:47+02:00</updated>
+ <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Unnecessary complexity in precision medicine</title>
-   <link href="http://tom.preston-werner.com/2020/05/05/singhgupta_genes.html"/>
+   <link href="https://tom.preston-werner.com/2020/05/05/singhgupta_genes.html"/>
    <updated>2020-05-05T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2020/05/05/singhgupta_genes</id>
+   <id>https://tom.preston-werner.com/2020/05/05/singhgupta_genes</id>
    <content type="html">&lt;h1 id=&quot;unnecessary-complexity-in-precision-medicine&quot;&gt;Unnecessary complexity in precision medicine&lt;/h1&gt;
 &lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -78,9 +78,9 @@ Singh and Gupta propose “a theory of molecular complexity, consisting of neces
  
  <entry>
    <title>Websites for basic genetic variant information</title>
-   <link href="http://tom.preston-werner.com/2020/04/27/genetic_mutation_websites.html"/>
+   <link href="https://tom.preston-werner.com/2020/04/27/genetic_mutation_websites.html"/>
    <updated>2020-04-27T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2020/04/27/genetic_mutation_websites</id>
+   <id>https://tom.preston-werner.com/2020/04/27/genetic_mutation_websites</id>
    <content type="html">&lt;h1 id=&quot;websites-for-basic-genetic-variant-information&quot;&gt;Websites for basic genetic variant information&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
@@ -193,9 +193,9 @@ https://www.rstudio.com/resources/cheatsheets/#515&lt;/p&gt;
  
  <entry>
    <title>Test - make a new md file</title>
-   <link href="http://tom.preston-werner.com/2020/04/26/tester.html"/>
+   <link href="https://tom.preston-werner.com/2020/04/26/tester.html"/>
    <updated>2020-04-26T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2020/04/26/tester</id>
+   <id>https://tom.preston-werner.com/2020/04/26/tester</id>
    <content type="html">&lt;h1 id=&quot;test---make-a-new-md-file&quot;&gt;Test - make a new md file&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;10 Nov 2016 - San Francisco&lt;/p&gt;
@@ -295,9 +295,9 @@ take steps to protect yourself. Snyk makes it easy.&lt;/p&gt;
  
  <entry>
    <title>Cryptography</title>
-   <link href="http://tom.preston-werner.com/2020/04/26/cryptography.html"/>
+   <link href="https://tom.preston-werner.com/2020/04/26/cryptography.html"/>
    <updated>2020-04-26T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2020/04/26/cryptography</id>
+   <id>https://tom.preston-werner.com/2020/04/26/cryptography</id>
    <content type="html">&lt;h1 id=&quot;cryptography&quot;&gt;Cryptography&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
@@ -480,9 +480,9 @@ The Quipper Language: programming language for quantum computing&lt;br /&gt;
  
  <entry>
    <title>Snyk - Automatically Scan and Fix Ruby and Nodejs Vulnerabilities</title>
-   <link href="http://tom.preston-werner.com/2016/11/10/snyk.html"/>
+   <link href="https://tom.preston-werner.com/2016/11/10/snyk.html"/>
    <updated>2016-11-10T00:00:00+01:00</updated>
-   <id>http://tom.preston-werner.com/2016/11/10/snyk</id>
+   <id>https://tom.preston-werner.com/2016/11/10/snyk</id>
    <content type="html">&lt;h1 id=&quot;snyk---automatically-scan-and-fix-ruby-and-nodejs-vulnerabilities&quot;&gt;Snyk - Automatically Scan and Fix Ruby and Nodejs Vulnerabilities&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;10 Nov 2016 - San Francisco&lt;/p&gt;
@@ -582,9 +582,9 @@ take steps to protect yourself. Snyk makes it easy.&lt;/p&gt;
  
  <entry>
    <title>Replicated - An Easier Path from SaaS to Enterprise</title>
-   <link href="http://tom.preston-werner.com/2015/06/19/replicated.html"/>
+   <link href="https://tom.preston-werner.com/2015/06/19/replicated.html"/>
    <updated>2015-06-19T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2015/06/19/replicated</id>
+   <id>https://tom.preston-werner.com/2015/06/19/replicated</id>
    <content type="html">&lt;h1 id=&quot;replicated---an-easier-path-from-saas-to-enterprise&quot;&gt;Replicated - An Easier Path from SaaS to Enterprise&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;19 Jun 2015 - San Francisco&lt;/p&gt;
@@ -647,9 +647,9 @@ focusing on what matters the most: your unique and kickass product.&lt;/p&gt;
  
  <entry>
    <title>Farewell GitHub, Hello Immersive Computing</title>
-   <link href="http://tom.preston-werner.com/2014/04/21/farewell-github-hello-immersive-computing.html"/>
+   <link href="https://tom.preston-werner.com/2014/04/21/farewell-github-hello-immersive-computing.html"/>
    <updated>2014-04-21T00:00:00+02:00</updated>
-   <id>http://tom.preston-werner.com/2014/04/21/farewell-github-hello-immersive-computing</id>
+   <id>https://tom.preston-werner.com/2014/04/21/farewell-github-hello-immersive-computing</id>
    <content type="html">&lt;h1 id=&quot;farewell-github-hello-immersive-computing&quot;&gt;Farewell GitHub, Hello Immersive Computing&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;21 Apr 2014 - New York City&lt;/p&gt;
