@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2020-08-29T17:23:10+02:00</updated>
+ <updated>2020-08-29T21:42:24+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -1778,17 +1778,20 @@ This requires a major investment, however the MRF score provides a good approxim
   </li>
   <li><a href="#genomic-analysis" id="markdown-toc-genomic-analysis">Genomic analysis</a></li>
   <li><a href="#sec:routine_analysis" id="markdown-toc-sec:routine_analysis">Routine analysis</a>    <ul>
+      <li><a href="#analysis-workflow-structure" id="markdown-toc-analysis-workflow-structure">Analysis workflow structure.</a></li>
+      <li><a href="#analysis-storage-structure" id="markdown-toc-analysis-storage-structure">Analysis storage structure</a></li>
       <li><a href="#sequence-alignment-to-reference-genome" id="markdown-toc-sequence-alignment-to-reference-genome">Sequence alignment to reference genome</a></li>
       <li><a href="#read-adaptor-trimming" id="markdown-toc-read-adaptor-trimming">Read adaptor trimming</a></li>
       <li><a href="#read-sorting" id="markdown-toc-read-sorting">Read sorting</a></li>
+      <li><a href="#gatk-best-practices" id="markdown-toc-gatk-best-practices">GATK best practices.</a></li>
       <li><a href="#read-deduplication" id="markdown-toc-read-deduplication">Read deduplication</a></li>
       <li><a href="#subsec:text_realtar" id="markdown-toc-subsec:text_realtar">Read realignment and targets</a></li>
       <li><a href="#subsec:text_bsqr" id="markdown-toc-subsec:text_bsqr">Base quality score recalibration</a></li>
       <li><a href="#subsec:text_hc" id="markdown-toc-subsec:text_hc">Haplotype calling</a></li>
       <li><a href="#subsec:text_joint" id="markdown-toc-subsec:text_joint">Cohort joint genotyping</a></li>
-      <li><a href="#tailored-analysis" id="markdown-toc-tailored-analysis">Tailored analysis</a></li>
     </ul>
   </li>
+  <li><a href="#tailored-analysis" id="markdown-toc-tailored-analysis">Tailored analysis</a></li>
   <li><a href="#integrating-databases" id="markdown-toc-integrating-databases">Integrating databases</a>    <ul>
       <li><a href="#subsec:gnomad" id="markdown-toc-subsec:gnomad">Population genetics</a></li>
       <li><a href="#phenotype-genotype-and-function" id="markdown-toc-phenotype-genotype-and-function">Phenotype, genotype, and function</a></li>
@@ -1809,10 +1812,7 @@ This requires a major investment, however the MRF score provides a good approxim
   </li>
   <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
   <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-  <li><a href="#command-line-example-code" id="markdown-toc-command-line-example-code">Command line example code</a>    <ul>
-      <li><a href="#whole-exome-analysis" id="markdown-toc-whole-exome-analysis">Whole exome analysis</a></li>
-    </ul>
-  </li>
+  <li><a href="#command-line-example-code" id="markdown-toc-command-line-example-code">Command line example code</a></li>
 </ul>
 
 <h1 id="abbreviations">Abbreviations</h1>
@@ -1841,7 +1841,7 @@ the analysis plan. A rough overview “infographic” of a next generation
 sequencing study is shown <strong>Figure [fig:NGS]</strong>. The general
 requirements, personnel responsibilities, and cost-breakdown is shown.</p>
 
-<p><img src="bioinfo/NGS" alt="**Whole exome sequencing experiment design.** The general
+<p><strong>Whole exome sequencing experiment design.</strong> The general
 requirements, personnel responsibilities, and cost-breakdown is shown
 for a small NGS study of approximately ten participants. If library
 preparation and sequencing is performed at a dedicated facility then
@@ -1850,7 +1850,13 @@ one critical feature; implementing the bioinformatic methods used in
 this chapter also requires a critical expertise in high-performance
 computing. No methods have been included to demonstrate job scheduling
 and parallelisation across large computer
-clusters.[]{data-label=&quot;fig:NGS&quot;}" /></p>
+clusters.
+<strong>FigureLabel</strong>
+NGS</p>
+
+<p><img src="/images/bioinfo/NGS.png" width="80%" /></p>
+
+<p><em>image_caption</em></p>
 
 <h1 id="exome-sequencing">Exome sequencing</h1>
 <h2 id="sample-preparation">Sample preparation</h2>
@@ -2090,8 +2096,9 @@ dataset.</p>
 <h1 id="sec:routine_analysis">Routine analysis</h1>
 <p>Routine analysis can be summarised in order as raw sequence data quality
 control, read trimming, reference alignment, subsequently followed by
-the GATK best practices for SNV and indels. <strong>Figure
-[fig:analysis_flow]</strong> illustrates the basic analysis workflow
+the GATK best practices for SNV and indels. 
+Figure “analysis flow”
+illustrates the basic analysis workflow
 structure. Proceeding top to bottom, the procedure making up the left
 side of fig. [fig:analysis_flow] contains the procedures for routine
 analysis. Each rectangle box labels a program function, key input and
@@ -2122,21 +2129,33 @@ for intermediate files which are held in /scratch/ directories and not
 backed up. File sizes are represented by colour, dark orange indicating
 large and light yellow indicating small sizes.</p>
 
-<p><img src="bioinfo/analysis_flow" alt="**Analysis workflow structure.** Tools used are shown in square boxes.
+<h2 id="analysis-workflow-structure">Analysis workflow structure.</h2>
+<p>Tools used are shown in square boxes.
 Reference data used secondary to inputs are shown as light boxes with
 curved sides. Key output files are shown by light slanted boxes. Storage
 structure is divided between long-term and short-term storage. The same
 figure key is applied to Fig.
-[fig:analysis_flow_storage].[]{data-label=&quot;fig:analysis_flow&quot;}" /></p>
+[fig:analysis_flow_storage].</p>
 
-<p><img src="bioinfo/analysis_flow_storage" alt="**Analysis workflow storage structure.** Storage structure is divided
+<p><strong>FigureLabel</strong>
+analysis_flow</p>
+
+<p><img src="/images/bioinfo/analysis_flow.pdf" width="80%" /></p>
+
+<p><em>image_caption</em></p>
+
+<h2 id="analysis-storage-structure">Analysis storage structure</h2>
+<p>Storage structure is divided
 between long-term and short-term storage. A /work/ directory is used for
 long-term storage and is backed up routinely. Short-term storage is used
 for intermediate files which are held in /scratch/ directories and not
 backed up. File sizes are represented by colour, dark orange indicating
 large and light yellow indicating small sizes. Figure key is shown in
 Fig.
-[fig:analysis_flow].[]{data-label=&quot;fig:analysis_flow_storage&quot;}" /></p>
+[fig:analysis_flow].
+<strong>FigureLabel</strong>
+analysis_flow_storage
+<img src="/images/bioinfo/analysis_flow_storage.pdf" width="40%" /></p>
 
 <h2 id="sequence-alignment-to-reference-genome">Sequence alignment to reference genome</h2>
 <p>The analysis methods are normally run as a pipeline workflow. The basic
@@ -2195,14 +2214,17 @@ Institute-maintained Genome Analysis Toolkit (GATK). Their standardised
 pipeline is illustrated here in [fig:gatk]; a protocol familiar to
 most bioinformaticians. And example of usage can be seen on page .</p>
 
-<p><img src="bioinfo/gatk" alt="**GATK best practices.** Illustration from
-software.broadinstitute.org. Per-sample variant calling is used to
+<h2 id="gatk-best-practices">GATK best practices.</h2>
+<p>Illustration from software.broadinstitute.org. Per-sample variant calling is used to
 produce a file in GVCF format. GVCFs are consolidated from multiple
 samples into a GenomicsDB datastore. Joint genotyping is carried out,
 and finally, variant quality score recalibration filtering is used to
 produce the final multi-sample callset with the desired balance of
 precision and sensitivity. Further downstream analysis, including
-annotation is not shown.[]{data-label=&quot;fig:gatk&quot;}" /></p>
+annotation is not shown.
+<strong>FigureLabel</strong>
+gatk
+<img src="/images/bioinfo/gatk.png" width="40%" /></p>
 
 <h2 id="read-deduplication">Read deduplication</h2>
 <p>Sequence library preparation may contain a PCR amplification step.
@@ -2305,7 +2327,7 @@ usually more hurdles in determining candidate variants of unknown
 significance. An example of the command line arguments used can be found
 on page .</p>
 
-<h2 id="tailored-analysis">Tailored analysis</h2>
+<h1 id="tailored-analysis">Tailored analysis</h1>
 <p>Routine analysis typically takes up to a week, although it is usually
 performed on a standardised pipeline that can run automatically on a
 high-performance computing platform. A large part of custom filtering
@@ -2329,12 +2351,17 @@ same disease-causing variant; they may have different variants in shared
 gene, or variants among different genes which all contribute to a shared
 pathway that would result in the same end-point phenotype.</p>
 
-<p><img src="bioinfo/string_normal_image" alt="**Shared pathways in candidate genes.** Output of a STRING database
+<p><strong>Shared pathways in candidate genes.</strong> Output of a STRING database
 query for known and predicted protein-protein interactions. These
 interactions include physical and functional associations. (STRING is an
 SIB-run service of the ELIXIR core data open resources for publicly
-funded research).
-[]{data-label=&quot;fig:string_normal_image&quot;}" /></p>
+funded research).</p>
+
+<p><strong>FigureLabel</strong>
+string_normal_image
+<img src="/images/bioinfo/string_normal_image.png" width="40%" /></p>
+
+<p><em>image_caption</em></p>
 
 <p>For example, in <strong>Figure [fig:string_normal_image]</strong> above we see
 that from a group of unrelated people, all of the candidate genes
@@ -2588,18 +2615,21 @@ high-level graphical summary of the concept. <strong>Figure [fig:abstract]</stro
 conveys the theory of the procedures for this method in more detail with
 the major datasets explicitly shown.</p>
 
-<p><img src="net_analysis/method" alt="**Deleterious rare variants in damaged protein pathways in rare
-disease.** A. GATK best practices were used for whole exome analysis
+<p><strong>Deleterious rare variants in damaged protein pathways in rare
+disease.</strong> A. GATK best practices were used for whole exome analysis
 with joint genotyping for cases and controls; 200 in total. Custom
 filtering [@vcfhacks2015Parry] extracted variants of high impact
 consequence (ostensibly loss-of-function (LoF)), present only in cohort
 cases. B. Genes harboring rare predicted LoF variants were grouped based
 on protein-protein interactions [@String2017Szklarczyk] using a Markov
 cluster algorithm [@Enright2002efficienct]. C. Case-control testing was
-performed on each protein pathway cluster.
-[]{data-label=&quot;fig:method&quot;}" /></p>
+performed on each protein pathway cluster.</p>
 
-<p><img src="net_analysis/abstract" alt="**Rare variant analysis and protein pathway significant enrichment.**
+<p><strong>FigureLabel</strong>
+method
+<img src="/images/net_analysis/method.png" width="80%" /></p>
+
+<p><strong>Rare variant analysis and protein pathway significant enrichment.</strong>
 A. DNA is collected and sequenced. B. Routine genomic analysis is
 carried out according to best practices, for both (i) control and (ii)
 case groups of patients. First, all rare variants are output, followed
@@ -2612,7 +2642,10 @@ that carry a threshold level of LoFs and are therefore biologically
 relevant to disease. F. Deleterious variant load per network was tested
 for enrichment in cases, controls, or random sampling. G. Multiple
 testing correction is applied to identify the critical significant
-threshold.[]{data-label=&quot;fig:abstract&quot;}" /></p>
+threshold.
+<strong>FigureLabel</strong>
+abstract
+<img src="/images/net_analysis/abstract.pdf" width="80%" /></p>
 
 <h2 id="exome-analysis">Exome analysis</h2>
 <p>Exome sequencing analyses has been discussed in detail. The rare disease
@@ -2666,11 +2699,14 @@ datasets for (i) all rare variants came from the output of the process
 potential loss-of-function variants is a subset of (i), processed by the
 R script at the step where “damaging variants” are written out to file.</p>
 
-<p><img src="net_analysis/analysis_flow" alt="Analysis workflow structure. Tools used are shown in square boxes.
+<p>Analysis workflow structure. Tools used are shown in square boxes.
 Reference data used secondary to inputs are shown as light boxes with
 curved sides. Key output files are shown by light slanted boxes. Storage
 structure is divided between long-term and short-term
-storage.[]{data-label=&quot;fig:analysis_flow&quot;}" /></p>
+storage.
+<strong>FigureLabel</strong>
+analysis_flow
+<img src="/images/net_analysis/analysis_flow.pdf" width="80%" /></p>
 
 <h2 id="sec:net_construction">Network construction</h2>
 <p>Group-specific gene lists [1 (i-ii) and 2 (i-ii)] were assessed for
@@ -2713,10 +2749,13 @@ However, since nearly every protein has some potential evidence of
 effect on many other proteins, then no clear definable protein pathway
 can be seen.</p>
 
-<p><img src="net_analysis/damage_list_case" alt="**Genes harbouring potentially damaging variants in a disease
-cohort.** A visual representation of PPI occurring in all genes that
+<p><strong>Genes harbouring potentially damaging variants in a disease
+cohort.</strong> A visual representation of PPI occurring in all genes that
 harbour potentially damaging functional variants in a typical disease
-cohort.[]{data-label=&quot;fig:damage_list_case&quot;}" /></p>
+cohort.
+<strong>FigureLabel</strong>
+damage_list_case
+<img src="/images/net_analysis/damage_list_case.png" width="50%" /></p>
 
 <p>To segregate protein pathways and refine the number of genes (nodes) in
 each cluster, the Markov cluster algorithm (MCL) was used
@@ -2767,26 +2806,35 @@ per network against network rank size. <strong>Figure [fig:qqplot_2]</strong>
 shows qqplot for the same data for distribution compared between groups
 after inflation at 2.5.</p>
 
-<p><img src="net_analysis/network_size_inflation_free" alt="**Effect of inflation on network size distribution.** The outcome on
+<p><strong>Effect of inflation on network size distribution.</strong> The outcome on
 network size is demonstrated to compare effect of two inflation
 parameters. An ideal separation of networks should provide an geometric
 decrease in the number of proteins per network regardless of the sample
 group. Inflation parameter 2.5 produced the ideal distribution while
 inflation parameter 3 produced one large, poorly separated network and a
 large increase in single-protein nodes on one group. Binwidth of
-10.[]{data-label=&quot;fig:network_size_inflation&quot;}" /></p>
+10.
+<strong>FigureLabel</strong>
+network_size_inflation
+<img src="/images/net_analysis/network_size_inflation_free.pdf" width="40%" /></p>
 
-<p><img src="net_analysis/cumulative_sum_net_rank" alt="**Cumulative sum of network rank by size**. The effect of inflation on
+<p><strong>Cumulative sum of network rank by size</strong>. The effect of inflation on
 network size distribution could be potentially measured automatically by
 quantifying the cumulative sum of network rank by size and determining
 the best inflation parameter to use. This process would reduce user
-bias.[]{data-label=&quot;fig:cumulative_sum_net_rank&quot;}" /></p>
+bias.
+<strong>FigureLabel</strong>
+cumulative_sum_net_rank
+<img src="/images/net_analysis/cumulative_sum_net_rank.pdf" width="40%" /></p>
 
-<p><img src="net_analysis/qqplot_2" alt="**QQ plot illustrating uniform inflation.** The data presented in
+<p><strong>QQ plot illustrating uniform inflation.</strong> The data presented in
 figure [fig:cumulative_sum_net_rank] is used to produce the
 quantile-quantile plot for the most uniform distribution between the
 case and control groups after all inflation parameters were
-tested.[]{data-label=&quot;fig:qqplot_2&quot;}" /></p>
+tested.
+<strong>FigureLabel</strong>
+qqplot_2
+<img src="/images/net_analysis/qqplot_2.pdf" width="40%" /></p>
 
 <p><strong>Figure [fig:network_size_nodes]</strong> shows the number of proteins per
 network. For example, 235 clusters (470 protein nodes) were seen for
@@ -2796,11 +2844,14 @@ the cases group; naturally the majority of edges appear in large network
 clusters and therefore the frequency of nodes-per-edge increases as
 network sizes decrease.</p>
 
-<p><img src="net_analysis/network_size_nodes" alt="Number of proteins per network for case-driven clustering. The size of
+<p>Number of proteins per network for case-driven clustering. The size of
 protein networks has a geometric distribution that decreases until
 protein (nodes) with no interactions remain; in this cases approximately
 200 out of 400 proteins did not play a major role in a single
-pathway.[]{data-label=&quot;fig:network_size_nodes&quot;}" /></p>
+pathway.
+<strong>FigureLabel</strong>
+network_size_nodes
+<img src="/images/net_analysis/network_size_nodes.pdf" width="40%" /></p>
 
 <h2 id="sec:random_sample">Random sampling</h2>
 <p>With our group-specific gene lists [1 (i-ii) and 2 (i-ii)], prepared
@@ -3030,10 +3081,13 @@ thereafter becomes lighter (orange to yellow) based on the likelihood of
 candidates being identified by manual interpretation of unknown
 candidates.</p>
 
-<p><img src="net_analysis/means_test" alt="**Case and control means test.** The total rare variants per network
+<p><strong>Case and control means test.</strong> The total rare variants per network
 are shown, comparing groups. A test of means was conducted in this test
 dataset and P-values are
-shown.[]{data-label=&quot;fig:means_test&quot;}" /></p>
+shown.
+<strong>FigureLabel</strong>
+means_test
+<img src="/images/net_analysis/means_test.pdf" width="30%" /></p>
 
 <p>[*[6]{}[Z]{}]{}</p>
 
@@ -3163,8 +3217,8 @@ unbiased detection of a protein network, driving disease, based on
 potential loss of function variants.</p>
 
 <h1 id="command-line-example-code">Command line example code</h1>
+<p><strong>Whole exome analysis</strong></p>
 
-<h2 id="whole-exome-analysis">Whole exome analysis</h2>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash </span>
 <span class="c">############################################ </span>
 <span class="c">#### The basic protocol for analysis. </span>
