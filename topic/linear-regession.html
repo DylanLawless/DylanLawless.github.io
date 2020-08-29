@@ -55,6 +55,7 @@ var WRInitTime=(new Date()).getTime();
       <li><a href="#r2-statistic" id="markdown-toc-r2-statistic">\(R^2\) Statistic</a></li>
     </ul>
   </li>
+  <li><a href="#multiple-linear-regression" id="markdown-toc-multiple-linear-regression">Multiple linear regression</a></li>
 </ul>
 
 <p><br />
@@ -174,6 +175,7 @@ This interval for \(\hat\beta_1\) is approximately</p>
 The same fomula is true for \(\beta_0\), swapping terms.</p>
 
 <h1 id="se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</h1>
+
 <p>The SE can be used for a <em>hypothesis test</em> on the corfficients, i.e. testing the <em>null hypothesis</em> and <em>alternative hypothesis</em>,<br />
 \(\label{eq10}\tag{10} 
 H_0 - there is not relationship between X and Y\)<br />
@@ -205,6 +207,7 @@ No relationship will give <em>t</em>-distribution \(n - 2\) degrees of freedom.
 A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can <em>reject the null hypothesis</em>.</p>
 
 <h1 id="model-accuracy">Model accuracy</h1>
+
 <p>After rejecting the null we want to check if the line fits well - does the model fit the data?
 Ttwo related quantities can asses the fit of linear regression; <em>residual standard error</em> (RSE) and \(R^2\)
 statistic.</p>
@@ -247,6 +250,12 @@ Cosma Rohilla Shalizi in
 <em>Chapter 2 The Truth about Linear Regression</em>
 ``2.2.1.1 R2: Distraction or Nuisance?’’. 
 The short summary following just covers the basic “normal” usage, rather getting into the statistica weeds.</p>
+
+<h1 id="multiple-linear-regression">Multiple linear regression</h1>
+
+<p>In a linear regression we use a predictor variable X to predict a quantitative response Y.
+If we want to use more than one variable (\(X_1, X_2, ...\)) 
+that might affect the response Y, then we will use a multiple linear regression.</p>
 
 \[\label{eq }\tag{ }\]
 
