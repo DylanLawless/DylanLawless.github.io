@@ -1,0 +1,46 @@
+I"z<h1 id="pca">PCA</h1>
+<ul id="markdown-toc">
+  <li><a href="#pca" id="markdown-toc-pca">PCA</a></li>
+</ul>
+
+<p><br />
+We will look at principal component analysis (PCA) and singular value decomposition (SVD).</p>
+
+<p>\documentclass{article}
+\usepackage[utf8]{inputenc}</p>
+
+<p>\title{An Introduction to Second-Generation p-Values}
+\author{dylan.lawless }
+\date{July 2020}</p>
+
+<p>\begin{document}
+\maketitle</p>
+
+<p>\noindent Jeffrey D. Blume, Robert A. Greevy, Valerie F. Welty, Jeffrey R. Smith \&amp; William D. Dupont. The American Statistician. 20 Mar 2019 \ https://doi.org/10.1080/00031305.2018.1537893 <br />
+https://www.tandfonline.com/doi/full/10.1080/00031305.2018.1537893</p>
+
+<p>\section*{Terms}
+Second-generation p-value (SGPV) <br />
+False discovery rates (FDRs)</p>
+
+<p>\section{Introduction}
+A little history of the trouble with p-values and attempts to improve.</p>
+
+<p>\section{Evidential Metrics}
+The author suggests what pieces of evidence are required to make a metric:\</p>
+<ol>
+  <li>A numerical assessment of the strength of evidence in a given body of observations\</li>
+  <li>The probability that the numerical assessment will be misleading in a given setting\</li>
+  <li>The probability that an observed assessment—one computed from observed data—is mistaken</li>
+</ol>
+
+<p>\section{3}</p>
+
+<p>\section{4}
+\section{5}
+\section{6}
+\section{7}</p>
+
+<p>\end{document}</p>
+
+:ET

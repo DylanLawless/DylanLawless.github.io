@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <!-- link to MathJax for LaTeX stlye eqn -->
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+   <!--  -->
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Fischer's exact test</title>
+   <meta name="author" content="Dylan page title" />
+   <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
+   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
+
+   <!-- include a google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <a href="/">Dylan site title</a>
+    <a class="extra" href="/">home</a>
+  </div>
+
+  <div id="topic">
+<h1 id="fischers-exact-test">Fischer’s exact test</h1>
+<ul id="markdown-toc">
+  <li><a href="#fischers-exact-test" id="markdown-toc-fischers-exact-test">Fischer’s exact test</a></li>
+</ul>
+
+<p><br />
+https://www.statology.org/fishers-exact-test/
+Statology page</p>
+
+<p>Fisher’s Exact Test is used to determine whether or not there is a significant association between two categorical variables. It is typically used as an alternative to the Chi-Square Test of Independence when one or more of the cell counts in a 2x2 table is less than 5.</p>
+
+<p>Fisher’s Exact Test uses the following null and alternative hypotheses:</p>
+
+<p>H0: (null hypothesis) The two variables are independent.
+H1: (alternative hypothesis) The two variables are not independent.</p>
+
+<p>Suppose we have the following 2x2 table:</p>
+
+<p>Group 1	Group 2	Row Total
+Category 1	a	b	a+b
+Category 2	c	d	c+d
+Column Total	a+c	b+d	a+b+c+d = n</p>
+
+<p>The one-tailed p value for Fisher’s Exact Test is calculated as:</p>
+
+<p>p = (a+b)!(c+d)!(a+c)!(b+d)! / (a!b!c!d!n!)</p>
+
+<p>This produces the same p value as the CDF of the hypergeometric distribution with the following parameters:</p>
+
+<p>population size = n
+population “successes” = a+b
+sample size = a + c
+sample “successes” = a</p>
+
+<p>The two-tailed p value for Fisher’s Exact Test is less straightforward to calculate and can’t be found by simply multiplying the one-tailed p value by two. To find the two-tailed p value, we recommend using the Fisher’s Exact Test Calculator.</p>
+
+<p>Fisher’s Exact Test: Example</p>
+
+<p>Suppose we want to know whether or not gender is associated with political party preference. We take a simple random sample of 25 voters and survey them on their political party preference. The following table shows the results of the survey:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Democrat	Republican	Total Male	4	9	13 Female	8	4	12 Total	12	13	25 Step 1: Define the hypotheses.
+</code></pre></div></div>
+
+<p>We will perform Fisher’s Exact Test using the following hypotheses:</p>
+
+<p>H0: Gender and political party preference are independent.
+H1: Gender and political party preference are not independent.</p>
+
+<p>Step 2: Calculated the two-tailed p value.</p>
+
+<p>We can use the Fisher’s Exact Test Calculator with the following input:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Group1 Group1 Category1	4	9 Category2	8	4
+</code></pre></div></div>
+
+<p>One tailed p value: 0.081178
+Two-tailed p value is 0.115239</p>
+
+<p>Fisher’s Exact test example</p>
+
+<p>The two-tailed p value is 0.115239. Since this value is less than 0.05, we fail to reject the null hypothesis. We do not have sufficient evidence to say that there is any statistically significant association between gender and political party preference.</p>
+
+<p>Additional Resources</p>
+
+<p>Additional Resources</p>
+
+<p>The following tutorials explain how to perform a Fisher’s Exact Test using different statistical programs:</p>
+
+<p>How to Perform Fisher’s Exact Test in R
+https://www.statology.org/fishers-exact-test-in-r/</p>
+
+<p>Fisher’s Exact Test Calculator
+https://www.statology.org/fishers-exact-test-calculator/</p>
+
+
+</div>
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+
+  <div class="footer">
+    <div class="contact">
+      <p>
+        Dylan footer
+        <br />
+        Postdoc at
+          <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>,
+        <br />
+        dylan@email
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
+        <a href="https://dylan-lawless.github.io">Resume</a><br />
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/tom-preston-werner">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Banner on top right corner linking to github
+<a href="http://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
