@@ -159,7 +159,10 @@ $$
 a 95% chance that the true $$ \beta_1 $$ value is in this range.
 The same fomula is true for $$ \beta_0 $$, swapping terms.
 
+{% endraw %}
+
 # SE in hypothesis tests for coefficients
+{% raw %}
 The SE can be used for a _hypothesis test_ on the corfficients, i.e. testing the _null hypothesis_ and _alternative hypothesis_,  
 $$
 \label{eq10}\tag{10} 
@@ -195,7 +198,10 @@ The probability of observing any number equal to |_t_| or larger, assuming $$
 \beta_1 = 0 $$, is the _p-value_.
 A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can _reject the null hypothesis_.
 
+{% endraw %}
+
 # Model accuracy
+{% raw %}
 After rejecting the null we want to check if the line fits well - does the model fit the data?
 Ttwo related quantities can asses the fit of linear regression; _residual standard error_ (RSE) and $$
 R^2$$
@@ -258,39 +264,46 @@ The short summary following just covers the basic "normal" usage, rather getting
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$$
-\label{eq }\tag{ } 
-$$
-
-
-$$
-\label{eq }\tag{ } 
-$$
-
-$$
-\label{eq }\tag{ } 
-$$
 {% endraw %}
+
+
+# Multiple linear regression
+{% raw %}
+In a linear regression we use a predictor variable X to predict a quantitative response Y.
+If we want to use more than one variable ($$ X_1, X_2, ... $$) 
+that might affect the response Y, then we will use a multiple linear regression. 
+
+ 
+
+
+
+
+
+{% endraw %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$$
+\label{eq }\tag{ } 
+$$
+
+
+$$
+\label{eq }\tag{ } 
+$$
+
+$$
+\label{eq }\tag{ } 
+$$
 
