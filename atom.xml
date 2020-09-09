@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2020-08-29T21:42:24+02:00</updated>
+ <updated>2020-09-09T16:46:30+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -479,249 +479,28 @@ The Quipper Language: programming language for quantum computing&lt;br /&gt;
  </entry>
  
  <entry>
-   <title>Snyk - Automatically Scan and Fix Ruby and Nodejs Vulnerabilities</title>
-   <link href="https://tom.preston-werner.com/2016/11/10/snyk.html"/>
-   <updated>2016-11-10T00:00:00+01:00</updated>
-   <id>https://tom.preston-werner.com/2016/11/10/snyk</id>
-   <content type="html">&lt;h1 id=&quot;snyk---automatically-scan-and-fix-ruby-and-nodejs-vulnerabilities&quot;&gt;Snyk - Automatically Scan and Fix Ruby and Nodejs Vulnerabilities&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;10 Nov 2016 - San Francisco&lt;/p&gt;
-
-&lt;p&gt;This is a story about a company called
-&lt;a href=&quot;https://snyk.io/blog/welcome-ruby-users/&quot;&gt;Snyk&lt;/a&gt; (pronounced “sneak”), their
-founder Guy Podjarny, my decision to become one of their advisors, and how they
-are going to help save you from malevolent agents trying to steal your digital
-stuff.&lt;/p&gt;
-
-&lt;p&gt;If you’re anything like me, you’re simultaneously terrified and in awe of the
-increasing commonality of large corporate security breaches. Even big names like
-Ebay, Home Depot, Anthem, JP Morgan Chase, Target, LinkedIn, Dropbox, and Yahoo
-are falling victim to sophisticated attacks. If you spend even a few minutes
-looking into it, you’ll be shocked at how frequently these breaches are
-happening now. The fine folks at Information is Beautiful have an excellent
-interactive visualization of the &lt;a href=&quot;http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/&quot;&gt;World’s Biggest Data
-Breaches&lt;/a&gt;
-over the last twelve years, in case you want to read all the gory details and
-never get a restful night of sleep ever again:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/&quot;&gt;
-  &lt;img src=&quot;/images/posts/2016-11-10/breaches.png&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve used a fair number of emotionally charged words above that might be
-triggering your FUD detectors right about now. But be advised: it’s not paranoia
-when they really are out to get you. If recent, extremely high profile (and
-subsequently weaponized) breaches like those of the Clinton Campaign and the DNC
-aren’t enough to make you want to air gap your entire life, then I envy your
-steely-eyed mettle and implore you to teach me your meditation techniques.&lt;/p&gt;
-
-&lt;p&gt;The fact is, security is hard. And it’s getting harder every day. To win, you
-have to get it right every single time. To lose (and lose big), you only have to
-screw it up once.&lt;/p&gt;
-
-&lt;p&gt;During my years at GitHub, I spent a lot of time assembling a dedicated security
-team, managing security audits and penetration tests, and working to establish a
-culture of security awareness amongst our development team. All of this is
-challenging and expensive, especially for a young company. Even worse, it’s the
-kind of investment that’s totally invisible when it’s working, making it hard to
-sustain until that crucial and terrible moment you end up on the front page of
-Hacker News as the latest victim.&lt;/p&gt;
-
-&lt;p&gt;A year ago I was contemplating this, especially the difficult proposition of
-having developers, furious at work on new features, constantly maintain
-awareness of security vulnerabilities they might be inadvertently weaving into
-the product. Web application developers are generally not security experts, and
-though I would love to live in a world where that wasn’t true, it’s just not a
-realistic expectation. Meanwhile, modern development means an increasing
-reliance on 3rd party code. Even a small Rails app will probably have 300 or
-more gem dependencies after a few months of development. It’s even more in the
-nodejs world. This level of modularization and code reuse, driven by the
-explosion of high quality open source over the last decade, is amazing and I
-absolutely love it, but it comes at a security expense.&lt;/p&gt;
-
-&lt;p&gt;Open source projects are not known for their excellent security records.
-Vulnerabilities like &lt;a href=&quot;http://heartbleed.com/&quot;&gt;Heartbleed&lt;/a&gt; and
-&lt;a href=&quot;https://blog.cloudflare.com/inside-shellshock/&quot;&gt;Shellshock&lt;/a&gt; painfully
-demonstrate the idea that “given enough eyeballs, all bugs are shallow” is
-completely false. In fact, due to a flaw in YAML, Rails had a &lt;a href=&quot;http://blog.codeclimate.com/blog/2013/01/10/rails-remote-code-execution-vulnerability-explained/&quot;&gt;pretty extreme
-remote code execution
-vulnerability&lt;/a&gt;
-for years. If you were running any version of Rails prior to the fix, you were
-vulnerable. This stuff is real, and as responsible developers, we need to be
-more proactive about it.&lt;/p&gt;
-
-&lt;p&gt;Luckily, at the time I was pondering these matters, I ran into Guy Podjarny. As
-a former cofounder of Blaze.io and then CTO of Web Experience at Akamai (which
-acquired Blaze.io), Guy intimately understands the impact of security on today’s
-web developers. He was working on an automated tool to scan and fix security
-vulnerabilities in 3rd party dependencies. I was intrigued. They already had a
-way to scan nodejs projects and look for known security vulnerabilities in the
-dependency tree and automatically upgrade or patch affected libraries. I thought
-this was pretty cool, but it was his vision for what automated security tooling
-could be that sold me on him and his company. I can’t talk much about that
-now, but just know that what Snyk is today is just the tip of what will
-become an intelligent and proactive bodyguard for your entire codebase.&lt;/p&gt;
-
-&lt;p&gt;A few months ago, Snyk released GitHub integration to make it fantastically
-simple to hook up your repos to Snyk and, my favorite feature: the ability to
-monitor your repo for future vulnerabilities and then &lt;strong&gt;automatically submit a
-pull request&lt;/strong&gt; with the suggested package upgrade or hotfix patch (nodejs only for
-now).&lt;/p&gt;
-
-&lt;p&gt;Today, &lt;a href=&quot;https://snyk.io/blog/welcome-ruby-users/&quot;&gt;Snyk announced support for
-Ruby&lt;/a&gt;. Take a look at that blog post,
-it does an awesome job of explaining how simple it is to set up and what the
-generated pull requests look like. It’s totally free for open source projects,
-and extremely cheap insurance for your important projects.&lt;/p&gt;
-
-&lt;p&gt;Make no mistake, 3rd party code is a clear and present danger to your business.
-If you don’t know if you’re vulnerable, then you must assume that you are and
-take steps to protect yourself. Snyk makes it easy.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Replicated - An Easier Path from SaaS to Enterprise</title>
+   <title>Placeholder post</title>
    <link href="https://tom.preston-werner.com/2015/06/19/replicated.html"/>
    <updated>2015-06-19T00:00:00+02:00</updated>
    <id>https://tom.preston-werner.com/2015/06/19/replicated</id>
-   <content type="html">&lt;h1 id=&quot;replicated---an-easier-path-from-saas-to-enterprise&quot;&gt;Replicated - An Easier Path from SaaS to Enterprise&lt;/h1&gt;
+   <content type="html">&lt;h1 id=&quot;placeholder-post&quot;&gt;Placeholder post&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;19 Jun 2015 - San Francisco&lt;/p&gt;
+&lt;p&gt;Placeholder text.&lt;/p&gt;
 
-&lt;p&gt;Over the last year I’ve had a chance to learn a lot more about early stage
-funding and made angel investments in a handful of startups. So far I’ve
-restricted my involvement to companies with ideas in which I have significant
-domain knowledge. I also insist on founders with relentless product focus, a
-fierce desire to help their customers be more awesome, and excellent
-communication skills. I recently met just such a company, with just such
-founders, tackling a problem that has personally caused me much pain.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ViN-qkcovL0&amp;amp;feature=youtu.be&quot;&gt;youtube video link&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;The company is &lt;a href=&quot;http://replicated.com&quot;&gt;Replicated&lt;/a&gt;, and founders Grant Miller
-and Marc Campbell are making it easier to roll out an on-prem Enterprise
-offering based on an existing cloud-based SaaS product.&lt;/p&gt;
+&lt;p&gt;email &lt;a href=&quot;mailto:contact@replicated.bla&quot;&gt;contact@replicated.bla&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;At GitHub, we burned through &lt;strong&gt;a lot&lt;/strong&gt; of developer cycles building our own
-installer (several times), securing the installation environment, coding an
-automated licensing management system, integrating single sign-on services
-(LDAP, Active Directory, CAS, etc, etc), building out a searchable audit system,
-supporting customer-reviewable support bundles (logs and other diagnostic
-output), allowing numerous backup strategies, and countless other
-Enterprise-specific features that were killing our Enterprise deals. All of this
-on top of hiring and building out the necessary sales, support, and accounting
-teams to create a smooth Enterprise experience for our customers.&lt;/p&gt;
+&lt;p&gt;Example weblink
+&lt;a href=&quot;https://snyk.io/blog/welcome-ruby-users/&quot;&gt;Snyk&lt;/a&gt;.
+Video link &lt;a href=&quot;http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/&quot;&gt;World’s Biggest Data
+Breaches&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Replicated provides common Enterprise functionality (much of what I mentioned
-above, and all of it eventually) that you can wrap around your SaaS product,
-resulting in a first-class on-prem product in a fraction of the time. Beyond
-just technology, Replicated will help you understand your Enterprise customers
-through documentation on best practices and insight into the requirements and
-reasons that large companies desire the features they do. Until you can
-empathise with your customer (which is very hard to do as a fast-moving SaaS
-startup), you’ll never build the best product possible.&lt;/p&gt;
-
-&lt;p&gt;Getting into the Enterprise market will always be hard. But by reducing the
-technology burden, Replicated plans to erase much of the pain so you can focus
-on the other human-centric tasks. Not only am I an investor in Replicated, I
-believe in their mission and their founders so much that I’ve joined as an
-advisor. I understand what the uphill slog of the SaaS to Enterprise climb feels
-like, and I’m going to do my best to ensure you don’t have to suffer it as much
-as I did.&lt;/p&gt;
-
-&lt;p&gt;I’m also pleased to announce that Travis CI is now shipping their Enterprise
-product using Replicated. To see what the installation process is like, &lt;a href=&quot;https://www.youtube.com/watch?v=ViN-qkcovL0&amp;amp;feature=youtu.be&quot;&gt;watch
-Grant install Travis CI
-Enterprise&lt;/a&gt; on a
-fresh server in about seven minutes. For a deeper dive, Travis CI has also
-published a blog post covering some of their process in &lt;a href=&quot;http://blog.travis-ci.com/2015-06-19-how-we-improved-travis-ci-installation/&quot;&gt;getting their
-Enterprise installer ready using
-Replicated&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In the coming weeks, you’ll start to see other well-known startups launching (or
-re-launching) Enterprise versions of their SaaS software on top of Replicated.
-If you’re looking to do the same, and want to save yourself a lot of heartache,
-email &lt;a href=&quot;mailto:contact@replicated.com&quot;&gt;contact@replicated.com&lt;/a&gt;, and start
-focusing on what matters the most: your unique and kickass product.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Farewell GitHub, Hello Immersive Computing</title>
-   <link href="https://tom.preston-werner.com/2014/04/21/farewell-github-hello-immersive-computing.html"/>
-   <updated>2014-04-21T00:00:00+02:00</updated>
-   <id>https://tom.preston-werner.com/2014/04/21/farewell-github-hello-immersive-computing</id>
-   <content type="html">&lt;h1 id=&quot;farewell-github-hello-immersive-computing&quot;&gt;Farewell GitHub, Hello Immersive Computing&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;21 Apr 2014 - New York City&lt;/p&gt;
-
-&lt;p&gt;Today is my last day at GitHub. Recent events have given me a lot of time to
-reflect on what’s important to me, and I’ve decided to switch gears and focus on
-building something from scratch again. Since visiting the Oculus VR team at
-their office three months ago, I’ve come to believe that immersive computing
-(aka virtual reality) is poised to rival the personal computer, the web, social
-networking, and mobile devices in its impact. While the timing is more abrupt
-than I had intended, with everything that’s happened, I think now is the right
-time to do this, and I’d like to explain why.&lt;/p&gt;
-
-&lt;p&gt;First, I want to address the serious accusations that were made against me and
-my family over the past month. With every decision I made at GitHub and in every
-interaction I had with employees, I tried to treat people better than they
-expected and to resolve conflict with empathy. Despite that, I’ve made mistakes,
-and I am deeply sorry to anyone who was hurt by those mistakes. It devastates me
-to know that I missed the mark, and I will strive to do better, every day.&lt;/p&gt;
-
-&lt;p&gt;That said, I want to be very clear about one thing: neither my wife, Theresa,
-nor I have ever engaged in gender-based harassment or discrimination. The
-results of GitHub’s independent investigation unequivocally confirm this and we
-are prepared to fight any further false claims on this matter to the full extent
-of the law. I believe in diversity and equality for all people in all
-professions, especially the tech sector. It’s immensely important to me and I
-will continue to do my very best to further that belief.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, the investigation and all the attention surrounding it have me
-concerned that remaining at GitHub would be a distraction for both me and the
-company. I’m incredibly proud of what I’ve helped build at GitHub and I don’t
-want the events of the past month to jeopardize that. I care too much about the
-company and the people here to let that happen. The GitHub team is incredibly
-strong, with fierce vision, and I have no doubt they will continue to
-revolutionize software development for decades to come. Founding and building
-GitHub has been the greatest adventure of my life. I’ve been so lucky to be on
-this journey with such amazing, helpful, talented, and real people. I’m going to
-miss working with such a great team, but I’m also insanely excited about the
-future.&lt;/p&gt;
-
-&lt;p&gt;Since the early days of GitHub, I’ve wanted to create a different kind of
-business. One that was &lt;a href=&quot;http://tom.preston-werner.com/2010/10/18/optimize-for-happiness.html&quot;&gt;Optimized for
-Happiness&lt;/a&gt;
-and built atop a &lt;a href=&quot;https://www.youtube.com/watch?v=i0FzgvYxdvk&quot;&gt;Framework of
-Happiness&lt;/a&gt;. One where great people
-could work on hard problems together to create unbelievably good products. I
-believe I was able to achieve a great deal of success with that model at GitHub,
-even if things didn’t always go perfectly according to plan. All of this has
-been a tremendous learning experience for me.&lt;/p&gt;
-
-&lt;p&gt;Last January I stepped down as CEO and handed that role over to cofounder Chris
-Wanstrath so I could focus on future-facing R&amp;amp;D projects with small teams. This
-kind of rapid, team-based innovation is what I live for. During my time away
-from GitHub I started experimenting with Go, OpenGL, and Unity with an eye
-towards the software side of immersive computing. It felt really good to get
-back into a code editor and challenge the deeply logical and analytical part of
-my brain. I’ve enjoyed the challenges of learning how to lead a company with
-hundreds of people, but it’s very hard for me to deny the allure of coding a
-system that could once again change the course of history.&lt;/p&gt;
-
-&lt;p&gt;I’m telling you this because I think stealth mode is bullshit and if you feel
-the same way I do about immersive computing then I want to talk with you about
-it. For the next few months I’m going to be living in Manhattan. My wife,
-Theresa, is currently participating in Techstars NYC as their very first
-nonprofit. Her startup, &lt;a href=&quot;https://omakasecharity.org/&quot;&gt;The Omakase Charity&lt;/a&gt;,
-helps donors learn about and support nonprofits that are changing the world with
-technology. She’s one of the strongest and most thoughtful women I know, and I’m
-hoping to help her succeed with her mission while I’m here.&lt;/p&gt;
-
-&lt;p&gt;Thank you to everyone that reached out to me over the last month, including the
-generous team at Andreessen Horowitz. Your support has made a huge difference
-and I’m truly excited for what’s next.&lt;/p&gt;
+&lt;p&gt;Embedded image from other source
+&lt;a href=&quot;http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/&quot;&gt;
+  &lt;img src=&quot;/images/posts/2016-11-10/breaches.png&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -3956,6 +3735,207 @@ https://www.rstudio.com/resources/cheatsheets/#515</p>
 [Xfam <a href="pfam.sanger.ac.uk/family/*">Pfam, Rfam, Dfam, Treefam, iPfam, Antifam)</a> http://xfam.org<br />
 [Xfam <a href="pfam.sanger.ac.uk/*">Pfam, Rfam, Dfam, Treefam, iPfam, Antifam)</a> <br />
 [Xfam <a href="xfam.org/*">Pfam, Rfam, Dfam, Treefam, iPfam, Antifam)</a></p>
+</p>
+
+  <h2> - </h2>
+  <p><h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#genome-wide-assocciation-study" id="markdown-toc-genome-wide-assocciation-study">Genome wide assocciation study</a></li>
+  <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
+  <li><a href="#sample-collection-and-genotyping" id="markdown-toc-sample-collection-and-genotyping">Sample collection and genotyping</a></li>
+  <li><a href="#pre-imputation" id="markdown-toc-pre-imputation">Pre-imputation</a></li>
+  <li><a href="#imputation" id="markdown-toc-imputation">Imputation</a>    <ul>
+      <li><a href="#file-formats" id="markdown-toc-file-formats">File formats</a></li>
+      <li><a href="#imputation-services" id="markdown-toc-imputation-services">Imputation services</a></li>
+    </ul>
+  </li>
+  <li><a href="#information-score" id="markdown-toc-information-score">Information score</a></li>
+  <li><a href="#get-snptest-summary-with-impute-information-score" id="markdown-toc-get-snptest-summary-with-impute-information-score">Get snptest summary with impute information score¬</a></li>
+  <li><a href="#imputation-to-plink-format" id="markdown-toc-imputation-to-plink-format">Imputation to Plink format</a></li>
+  <li><a href="#quality-control" id="markdown-toc-quality-control">Quality control</a>    <ul>
+      <li><a href="#relatedness" id="markdown-toc-relatedness">Relatedness</a></li>
+      <li><a href="#missingness" id="markdown-toc-missingness">Missingness</a></li>
+      <li><a href="#genotype" id="markdown-toc-genotype">Genotype</a></li>
+      <li><a href="#hwe" id="markdown-toc-hwe">HWE</a></li>
+    </ul>
+  </li>
+  <li><a href="#phenotypes-and-covariates" id="markdown-toc-phenotypes-and-covariates">Phenotypes and covariates</a></li>
+  <li><a href="#pca" id="markdown-toc-pca">PCA</a></li>
+  <li><a href="#biological-interpretation" id="markdown-toc-biological-interpretation">Biological interpretation</a></li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
+  <li><a href="#command-line-example-code" id="markdown-toc-command-line-example-code">Command line example code</a></li>
+</ul>
+
+<h1 id="abbreviations">Abbreviations</h1>
+<p>BWA (Burrows-Wheeler transformation aligner), 
+GrCh38 (Genome Reference Consortium Human Build 38), 
+VCF (variant call format).</p>
+
+<h1 id="sample-collection-and-genotyping">Sample collection and genotyping</h1>
+
+<h1 id="pre-imputation">Pre-imputation</h1>
+<p>Before imputation with study genotypes, filter the data to remove low-quality variants and samples. 
+Standard GWAS quality control filters are usually sufficient to prepare a dataset for imputation. 
+It may also help to add an imputation-based QC step to the filtering process.</p>
+
+<p><a href="https://academic.oup.com/bfg/article/15/4/298/2412127">Coleman et al. 2016</a></p>
+
+<h1 id="imputation">Imputation</h1>
+<h2 id="file-formats">File formats</h2>
+<p>The file format required depends on the method chosen.
+VCF file is the most common input type (e.g. Sanger imputation).
+Plink format files (bim, bed, fam, or pgen, psam ) can be converted to VCF using Plink.
+VCF may be converted to a gen file (e.g. Impute2).</p>
+
+<p><strong>Example</strong>
+Plink binary files to VCF.
+https://www.cog-genomics.org/plink/1.9</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plink <span class="nt">--bfile</span> binary_fileset <span class="nt">--recode</span> vcf <span class="nt">--out</span> new_vcf
+</code></pre></div></div>
+
+<h2 id="imputation-services">Imputation services</h2>
+<p>Online: Sanger Imputation server
+<a href="https://www.sanger.ac.uk/tool/sanger-imputation-service/">sanger.ac.uk</a>
+is a genotype imputation and phasing service provided by the Wellcome Sanger Institute. 
+You can upload GWAS data in VCF or 23andMe format and receive imputed and phased genomes back. 
+Optional pre-phasing is with EAGLE2 or SHAPEIT2 and imputation is with PBWT into a choice of reference panels including 1000 Genomes Phase 3, UK10K, and the Haplotype Reference Consortium.</p>
+
+<p>Online: Michigan Imputation Server
+<a href="https://imputationserver.sph.umich.edu/index.html#!">imputationserver.sph.umich.edu</a>
+based on 
+<a href="https://pubmed.ncbi.nlm.nih.gov/27571263/">Foreret al. 2016</a>
+.
+Open source, offers methods to build your own server.
+Reference panels: 
+HapMap Release 2.
+1000 Genomes,
+Phase 1 and 3,
+CAAPA,
+African American,
+Haplotype Reference Consortium.</p>
+
+<p>Local software: IMPUTE version 2 (also known as IMPUTE2) is a genotype imputation and haplotype phasing program based on ideas from 
+<a href="https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000529">Howie et al. 2009</a>
+but has features from additional publications.
+From Impute2, the process is summed up as “the most common scenario in which imputation is used: 
+unobserved genotypes (red question marks) in a set of study individuals are imputed (or predicted) using a set of reference haplotypes and genotypes from a SNP chip.</p>
+
+<h1 id="information-score">Information score</h1>
+<p>Since the imputation non-genotyped variants is based on a reference panel that
+may not fully represent the ancestry of a study cohort, a quality score may be 
+desired.
+One tool is SNPTEST
+<a href="https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#info_measures">mathgen.stats.ox.ac.uk</a>.
+From mathgen.stats.ox.ac.uk, the IMPUTE info measure reflects the information in imputed genotypes relative to the information if only the allele frequency were known.</p>
+
+<p>[\text{info} = 1 - \text{mean} (
+\frac {
+\text{ variance in imputed genotype} }
+{ \text{variance if only allele frequency were known} }
+)]</p>
+
+<p>The numerator of this expression is computed over the imputed genotype distribution for each sample. The denominator is computed using the estimated allele frequency</p>
+
+<p>[\theta = \sum_{i} 
+\frac{
+P(g_{i}=1)+2P(g_{i}=2)) }
+{2\sum_{i,g}P(g_{i}=g) }]</p>
+
+<p>and the assumption of Hardy-Weinberg equilibrium.
+The info measure takes the value 1 if all genotypes are completely certain, 
+and the value 0 if the genotype probabilities for each sample are completely uncertain in Hardy-Weinberg proportions 
+(i.e. they equal
+\((1-\theta)^{2}, 2\theta(1-\theta), \theta^{2}).\)
+It is also possible for info to drop below zero.</p>
+
+<p>Info is usually computed as if assuming all samples are diploid and that the genotype probabilities for each sample sum to one. This is what IMPUTE computes, and also what SNPTEST computes when you use a method other than newml.
+Haploid samples, e.g. for males on the X chromosome, will be treated a little differently.
+This can be done with -method newml (maximum likelihood test). 
+Discussion is not warrented here but can be read at
+<a href="https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#info_measures">snptest measures</a> and
+<a href="https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.v2.pdf">snptest.v2.pdf</a>.</p>
+
+<h1 id="get-snptest-summary-with-impute-information-score">Get snptest summary with impute information score¬</h1>
+<p>Here is an example of a script that might get this value for all genotype files.
+The cohort of 1,000 individuals may have data split into 22 files (one per chromosome),
+and each chromosome split into managable sizes of 100,000 SNPs giving maybe 600 individual files in the format:
+Chr1.pos10024053-15008865.impute2.
+The input -data files will be (1) the genotype gen file and (2) the sample list.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use 22 cores to run in parallel</span>
+<span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>1..22<span class="o">}</span>
+<span class="k">do</span>
+›   <span class="k">for </span>file <span class="k">in </span>Chr<span class="nv">$i</span>.<span class="k">*</span>impute2
+›   <span class="k">do</span>
+›   ›   ~/tool/snptest_v2.5.4-beta3_linux_x86_64_dynamic/snptest_v2.5.4-beta3 <span class="se">\</span>
+›   ›   <span class="nt">-data</span> <span class="nv">$file</span> <span class="se">\</span>
+›   ›   Samples_IDs <span class="se">\</span>
+›   ›   <span class="nt">-filetype</span> gen <span class="se">\</span>
+›   ›   <span class="nt">-summary_stats_only</span> <span class="se">\</span>
+›   ›   <span class="nt">-o</span> <span class="nv">$file</span><span class="se">\_</span>snptest
+›   <span class="k">done</span> &amp;
+<span class="k">done
+</span><span class="nb">wait</span>
+</code></pre></div></div>
+<p>The output might look something like this (with only 4 columns shown - the real output would have much more information).
+A threshold will be set to decide what quality will be used for your analysis, 
+e.g. &gt;0.7.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>chr</th>
+      <th>rsid</th>
+      <th>position</th>
+      <th>A1</th>
+      <th>A2</th>
+      <th>info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>rs70998334</td>
+      <td>10027728</td>
+      <td>T</td>
+      <td>TA</td>
+      <td>0.990047</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>rs191096997</td>
+      <td>10027884</td>
+      <td>A</td>
+      <td>G</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="imputation-to-plink-format">Imputation to Plink format</h1>
+<p>File formats output</p>
+
+<h1 id="quality-control">Quality control</h1>
+<h2 id="relatedness">Relatedness</h2>
+<h2 id="missingness">Missingness</h2>
+<h2 id="genotype">Genotype</h2>
+<h2 id="hwe">HWE</h2>
+
+<h1 id="phenotypes-and-covariates">Phenotypes and covariates</h1>
+
+<h1 id="pca">PCA</h1>
+
+<h1 id="biological-interpretation">Biological interpretation</h1>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<h1 id="command-line-example-code">Command line example code</h1>
+<p><strong>Whole exome analysis</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+</code></pre></div></div>
 </p>
 
   <h2> - </h2>
