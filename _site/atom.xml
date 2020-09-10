@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2020-09-10T22:09:02+02:00</updated>
+ <updated>2020-09-10T22:15:12+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -4210,13 +4210,16 @@ I recommending installing R and then installing R studio to edit and run your co
 
 </span><span class="c1"># Make a list of benign variant types that should be removed</span><span class="w">
 </span><span class="n">filter_out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> 
-    </span><span class="s1">'synonymous_variant|UTR|NMD_transcript|non_coding|downstream|upstream|intron|mature_miRNA_variant'</span><span class="w">
+    </span><span class="s1">'synonymous_variant|UTR|NMD_transcript\
+	|non_coding|downstream|upstream\
+	|intron|mature_miRNA_variant'</span><span class="w">
 
 </span><span class="c1"># Then filter out anything matching these terms.</span><span class="w">
 </span><span class="n">df2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df1</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter_all</span><span class="p">(</span><span class="n">all_vars</span><span class="p">(</span><span class="o">!</span><span class="n">grepl</span><span class="p">(</span><span class="n">filter_out</span><span class="p">,</span><span class="n">.</span><span class="p">)))</span><span class="w">
 
 </span><span class="c1"># Save an output tsv file for Excel, etc.</span><span class="w">
-</span><span class="n">write.table</span><span class="p">((</span><span class="n">df2</span><span class="p">),</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s1">'./output.tsv'</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="w">  </span><span class="n">quote</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+</span><span class="n">write.table</span><span class="p">((</span><span class="n">df2</span><span class="p">),</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s1">'./output.tsv'</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="w"> </span><span class="err">\</span><span class="w">
+</span><span class="n">quote</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
 <p>If you complete this process the output will contain a perfectly merged dataset.

@@ -257,13 +257,16 @@ df1 <- merged %>% drop_na(Drug.IDs)
 
 # Make a list of benign variant types that should be removed
 filter_out <- 
-    'synonymous_variant|UTR|NMD_transcript|non_coding|downstream|upstream|intron|mature_miRNA_variant'
+    'synonymous_variant|UTR|NMD_transcript\
+	|non_coding|downstream|upstream\
+	|intron|mature_miRNA_variant'
 
 # Then filter out anything matching these terms.
 df2 <- df1 %>% filter_all(all_vars(!grepl(filter_out,.)))
 
 # Save an output tsv file for Excel, etc.
-write.table((df2), file='./output.tsv', sep="\t",  quote=FALSE, row.names=FALSE)
+write.table((df2), file='./output.tsv', sep="\t", \
+quote=FALSE, row.names=FALSE)
 ```
 
 If you complete this process the output will contain a perfectly merged dataset.
