@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2020-09-09T16:46:30+02:00</updated>
+ <updated>2020-09-10T21:52:47+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -2406,7 +2406,7 @@ performed on each protein pathway cluster.</p>
 
 <p><strong>FigureLabel</strong>
 method
-<img src="/images/net_analysis/method.png" width="80%" /></p>
+<img src="/images/net_analysis/method.png" width="40%" /></p>
 
 <p><strong>Rare variant analysis and protein pathway significant enrichment.</strong>
 A. DNA is collected and sequenced. B. Routine genomic analysis is
@@ -2424,7 +2424,7 @@ testing correction is applied to identify the critical significant
 threshold.
 <strong>FigureLabel</strong>
 abstract
-<img src="/images/net_analysis/abstract.pdf" width="80%" /></p>
+<img src="/images/net_analysis/abstract.pdf" width="40%" /></p>
 
 <h2 id="exome-analysis">Exome analysis</h2>
 <p>Exome sequencing analyses has been discussed in detail. The rare disease
@@ -3239,7 +3239,8 @@ perl ~/variant_effect_predictor/variant_effect_predictor.pl <span class="se">\</
 <span class="nt">-plugin</span> ExAC,~/ref/ExAC/ExAC.r0.3.sites.vep.vcf.gz <span class="se">\</span>
 <span class="nt">-plugin</span> SpliceConsensus <span class="se">\</span>
 <span class="nt">-fasta</span> <span class="se">\</span>
-~/variant_effect_predictor/fasta/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz <span class="se">\</span>
+~/variant_effect_predictor/fasta/<span class="se">\</span>
+Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz <span class="se">\</span>
 <span class="nt">-i</span> ~/geno/genotype.fltd-combinedvars.1pcdbsnp.1pcEVS.exac.vcf <span class="se">\</span>
 <span class="nt">-o</span> ~/geno/genotype.fltd-combinedvars.1pcdbsnp.1pcEVS.exac.vep.vcf <span class="se">\</span>
 <span class="nt">-fork</span> 12 <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -3865,16 +3866,17 @@ The input -data files will be (1) the genotype gen file and (2) the sample list.
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use 22 cores to run in parallel</span>
 <span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>1..22<span class="o">}</span>
+<span class="k">do
+for </span>file <span class="k">in </span>Chr<span class="nv">$i</span>.<span class="k">*</span>impute2
 <span class="k">do</span>
-›   <span class="k">for </span>file <span class="k">in </span>Chr<span class="nv">$i</span>.<span class="k">*</span>impute2
-›   <span class="k">do</span>
-›   ›   ~/tool/snptest_v2.5.4-beta3_linux_x86_64_dynamic/snptest_v2.5.4-beta3 <span class="se">\</span>
-›   ›   <span class="nt">-data</span> <span class="nv">$file</span> <span class="se">\</span>
-›   ›   Samples_IDs <span class="se">\</span>
-›   ›   <span class="nt">-filetype</span> gen <span class="se">\</span>
-›   ›   <span class="nt">-summary_stats_only</span> <span class="se">\</span>
-›   ›   <span class="nt">-o</span> <span class="nv">$file</span><span class="se">\_</span>snptest
-›   <span class="k">done</span> &amp;
+›   ~/tool/snptest_v2.5.4-beta3_<span class="se">\</span>
+linux_x86_64_dynamic/snptest_v2.5.4-beta3 <span class="se">\</span>
+›   <span class="nt">-data</span> <span class="nv">$file</span> <span class="se">\</span>
+›   Samples_IDs <span class="se">\</span>
+›   <span class="nt">-filetype</span> gen <span class="se">\</span>
+›   <span class="nt">-summary_stats_only</span> <span class="se">\</span>
+›   <span class="nt">-o</span> <span class="nv">$file</span><span class="se">\_</span>snptest
+<span class="k">done</span> &amp;
 <span class="k">done
 </span><span class="nb">wait</span>
 </code></pre></div></div>

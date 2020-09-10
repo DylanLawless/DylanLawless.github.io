@@ -170,16 +170,17 @@ The input -data files will be (1) the genotype gen file and (2) the sample list.
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use 22 cores to run in parallel</span>
 <span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>1..22<span class="o">}</span>
+<span class="k">do
+for </span>file <span class="k">in </span>Chr<span class="nv">$i</span>.<span class="k">*</span>impute2
 <span class="k">do</span>
-›   <span class="k">for </span>file <span class="k">in </span>Chr<span class="nv">$i</span>.<span class="k">*</span>impute2
-›   <span class="k">do</span>
-›   ›   ~/tool/snptest_v2.5.4-beta3_linux_x86_64_dynamic/snptest_v2.5.4-beta3 <span class="se">\</span>
-›   ›   <span class="nt">-data</span> <span class="nv">$file</span> <span class="se">\</span>
-›   ›   Samples_IDs <span class="se">\</span>
-›   ›   <span class="nt">-filetype</span> gen <span class="se">\</span>
-›   ›   <span class="nt">-summary_stats_only</span> <span class="se">\</span>
-›   ›   <span class="nt">-o</span> <span class="nv">$file</span><span class="se">\_</span>snptest
-›   <span class="k">done</span> &amp;
+›   ~/tool/snptest_v2.5.4-beta3_<span class="se">\</span>
+linux_x86_64_dynamic/snptest_v2.5.4-beta3 <span class="se">\</span>
+›   <span class="nt">-data</span> <span class="nv">$file</span> <span class="se">\</span>
+›   Samples_IDs <span class="se">\</span>
+›   <span class="nt">-filetype</span> gen <span class="se">\</span>
+›   <span class="nt">-summary_stats_only</span> <span class="se">\</span>
+›   <span class="nt">-o</span> <span class="nv">$file</span><span class="se">\_</span>snptest
+<span class="k">done</span> &amp;
 <span class="k">done
 </span><span class="nb">wait</span>
 </code></pre></div></div>
