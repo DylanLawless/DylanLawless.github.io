@@ -19,10 +19,11 @@
 }
 */
 
+/* font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana; */
 body {
     margin: 1px;
 	background-color: white;
-	font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana;
+	font: 1.3em Baskerville, Arial;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -35,14 +36,15 @@ code {
 		word-wrap: anywhere;
     }
 
+/* font: 1.2em Roboto, Arial, "Lucida Grande", garamond, palatino, verdana; */
 h1 {
   font-size: 100%;
-  font: 1.2em Roboto, Arial, "Lucida Grande", garamond, palatino, verdana;
+  font: 1.2em Roboto, Arial;
 }
 
 h2, h3, h4, h5, h6 {
   font-size: 100%;
-  font: 1.2em Roboto, Arial, "Lucida Grande", garamond, palatino, verdana;
+  font: 1.2em Roboto, Arial;
 }
 
 	
