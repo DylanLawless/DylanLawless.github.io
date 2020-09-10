@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2020-09-10T22:15:12+02:00</updated>
+ <updated>2020-09-10T22:18:44+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -4246,8 +4246,9 @@ Make sure to check their license to see if you can use oftware and databases in 
 <p>My example used <a href="https://www.drugbank.ca">DrugBank</a> for pharmacogenomic information.
 However, it may be safest to use the <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">FDA information</a> as the primary source, but including <a href="https://www.drugbank.ca">DrugBank</a> info is no problem.
 Drugs might be either a treatment for a genetic determinant, or a warning for drug usage in someone who also has a genetic variation that might effect their treatment.
-The “Labelling Section” listed by FDA might offer the best information.
-<a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling </a>
+The “Labelling Section” listed by FDA might offer the best information.</p>
+
+<p><a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/</a>
 For example, if we go and check the Prescribing Information PDF to compare two drugs we see that</p>
 
 <p><br />
@@ -4285,12 +4286,12 @@ That is, prepare a list of coordinates for each gene, and select for those regio
 Their main server was down when I tried, so I went via Ensembl, data access section:<br />
 <a href="http://www.ensembl.org/info/data/biomart/index.html">http://www.ensembl.org/info/data/biomart/index.html</a><br />
 Then to use the BioMart data mining tool<br />
-<a href="http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44">http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44</a><br />
+<a href="http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44">http://www.ensembl.org/biomart/martview/</a><br />
 I actually needed the positions using GRCh37 (rather than 38), so I switched to the old Ensembl using<br />
 <a href="http://www.ensembl.org/info/website/tutorials/grch37.html">http://www.ensembl.org/info/website/tutorials/grch37.html</a><br />
 to get to <a href="http://grch37.ensembl.org/index.html">http://grch37.ensembl.org/index.html</a> 
 then the Biomart section<br />
-<a href="http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e">http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e</a></p>
+<a href="http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e">http://grch37.ensembl.org/biomart/martview/</a></p>
 
 <p>Choose DataBase: Genes 93 Dataset: Human Filter -&gt; Gene -&gt; Input external ref ID list -&gt; (change dropdown) Gene
 Name paste your list.
@@ -4417,7 +4418,7 @@ For example, I might [1] rank first on VEP variant “consequences”; stop muta
 
 <h1 id="references">References</h1>
 <ul>
-  <li><a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling</a></li>
+  <li><a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/science-research-drugs/</a></li>
   <li><a href="https://www.pharmgkb.org/view/drug-labels.do">https://www.pharmgkb.org/view/drug-labels.do</a></li>
   <li>Mary V. Relling &amp; William E. Evans. Pharmacogenomics in the clinic. <em>Nature</em> 2015; 526, 343–350. doi: 10.1038/nature15817</li>
   <li>Yip VL, Hawcutt DB, Pirmohamed M. Pharmacogenetic Markers of Drug Efficacy and Toxicity. <em>Clin Pharmacol Ther.</em> 2015;98(1):61-70. doi: 10.1002/cpt.135.</li>
