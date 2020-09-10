@@ -19,6 +19,8 @@ GrCh38 (Genome Reference Consortium Human Build 38),
 VCF (variant call format).
 
 # Sample collection and genotyping
+A good paper on the "Basic statistical analysis in genetic case-control studies" by [Clarke et al. 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3154648/).
+Genomic control: https://en.wikipedia.org/wiki/Population_structure_(genetics)
 
 # Pre-imputation
 Before imputation with study genotypes, filter the data to remove low-quality variants and samples. 
@@ -28,6 +30,7 @@ It may also help to add an imputation-based QC step to the filtering process.
 [Coleman et al. 2016](https://academic.oup.com/bfg/article/15/4/298/2412127)
 
 # Imputation
+
 ## File formats
 The file format required depends on the method chosen.
 VCF file is the most common input type (e.g. Sanger imputation).
