@@ -294,7 +294,8 @@ My example used [DrugBank](https://www.drugbank.ca) for pharmacogenomic informat
 However, it may be safest to use the [FDA information](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling) as the primary source, but including [DrugBank](https://www.drugbank.ca) info is no problem.
 Drugs might be either a treatment for a genetic determinant, or a warning for drug usage in someone who also has a genetic variation that might effect their treatment.
 The "Labelling Section" listed by FDA might offer the best information.
-[https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling ](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)
+
+[https://www.fda.gov/drugs/](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)
 For example, if we go and check the Prescribing Information PDF to compare two drugs we see that
 
 <br/>
@@ -332,12 +333,12 @@ Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:  
 [http://www.ensembl.org/info/data/biomart/index.html](http://www.ensembl.org/info/data/biomart/index.html)  
 Then to use the BioMart data mining tool  
-[http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44](http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44)  
+[http://www.ensembl.org/biomart/martview/](http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44)  
 I actually needed the positions using GRCh37 (rather than 38), so I switched to the old Ensembl using  
 [http://www.ensembl.org/info/website/tutorials/grch37.html](http://www.ensembl.org/info/website/tutorials/grch37.html)  
 to get to [http://grch37.ensembl.org/index.html](http://grch37.ensembl.org/index.html) 
 then the Biomart section  
-[http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e](http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e)
+[http://grch37.ensembl.org/biomart/martview/](http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e)
 
 Choose DataBase: Genes 93 Dataset: Human Filter -> Gene -> Input external ref ID list -> (change dropdown) Gene
 Name paste your list.
@@ -463,7 +464,7 @@ For example, I might [1] rank first on VEP variant "consequences"; stop mutation
 [2] Then rank secondly with these values since you cannot interpret most with consequence = missense variant. 
 
 # References
-- [https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)
+- [https://www.fda.gov/drugs/science-research-drugs/](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)
 - [https://www.pharmgkb.org/view/drug-labels.do](https://www.pharmgkb.org/view/drug-labels.do)
 - Mary V. Relling & William E. Evans. Pharmacogenomics in the clinic. _Nature_ 2015; 526, 343–350\. doi: 10.1038/nature15817
 - Yip VL, Hawcutt DB, Pirmohamed M. Pharmacogenetic Markers of Drug Efficacy and Toxicity. _Clin Pharmacol Ther._ 2015;98(1):61-70\. doi: 10.1002/cpt.135.
