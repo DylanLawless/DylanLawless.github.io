@@ -121,15 +121,16 @@ The input -data files will be (1) the genotype gen file and (2) the sample list.
 # Use 22 cores to run in parallel
 for i in {1..22}
 do
-›   for file in Chr$i.*impute2
-›   do
-›   ›   ~/tool/snptest_v2.5.4-beta3_linux_x86_64_dynamic/snptest_v2.5.4-beta3 \
-›   ›   -data $file \
-›   ›   Samples_IDs \
-›   ›   -filetype gen \
-›   ›   -summary_stats_only \
-›   ›   -o $file\_snptest
-›   done &
+for file in Chr$i.*impute2
+do
+›   ~/tool/snptest_v2.5.4-beta3_\
+linux_x86_64_dynamic/snptest_v2.5.4-beta3 \
+›   -data $file \
+›   Samples_IDs \
+›   -filetype gen \
+›   -summary_stats_only \
+›   -o $file\_snptest
+done &
 done
 wait
 ```

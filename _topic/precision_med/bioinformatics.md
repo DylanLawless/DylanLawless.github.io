@@ -796,7 +796,7 @@ performed on each protein pathway cluster.
 
 **FigureLabel**
 method
-<img src="{{ site.baseurl }}{% link images/net_analysis/method.png %}" width="80%">
+<img src="{{ site.baseurl }}{% link images/net_analysis/method.png %}" width="40%">
 
 **Rare variant analysis and protein pathway significant enrichment.**
 A. DNA is collected and sequenced. B. Routine genomic analysis is
@@ -814,7 +814,7 @@ testing correction is applied to identify the critical significant
 threshold.
 **FigureLabel**
 abstract
-<img src="{{ site.baseurl }}{% link images/net_analysis/abstract.pdf %}" width="80%">
+<img src="{{ site.baseurl }}{% link images/net_analysis/abstract.pdf %}" width="40%">
 
 ## Exome analysis
 Exome sequencing analyses has been discussed in detail. The rare disease
@@ -1624,7 +1624,8 @@ perl ~/variant_effect_predictor/variant_effect_predictor.pl \
 -plugin ExAC,~/ref/ExAC/ExAC.r0.3.sites.vep.vcf.gz \
 -plugin SpliceConsensus \
 -fasta \
-~/variant_effect_predictor/fasta/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz \
+~/variant_effect_predictor/fasta/\
+Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz \
 -i ~/geno/genotype.fltd-combinedvars.1pcdbsnp.1pcEVS.exac.vcf \
 -o ~/geno/genotype.fltd-combinedvars.1pcdbsnp.1pcEVS.exac.vep.vcf \
 -fork 12 && \
