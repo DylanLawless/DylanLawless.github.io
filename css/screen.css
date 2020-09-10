@@ -22,7 +22,7 @@
 body {
     margin: 1px;
 	background-color: white;
-	font: 2.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana;
+	font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -150,7 +150,7 @@ ul.posts {
 /*********************************/
 
 .site {
-  font-size: 100%;
+  /*font-size: 100%; */
   text-align: justify;
   width: 42em;
   margin: 3em auto 2em auto;
