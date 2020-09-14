@@ -1,4 +1,4 @@
-I"c'<h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
+I"7(<h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
 
 <ul id="markdown-toc">
   <li><a href="#genome-wide-assocciation-study" id="markdown-toc-genome-wide-assocciation-study">Genome wide assocciation study</a></li>
@@ -33,6 +33,8 @@ GrCh38 (Genome Reference Consortium Human Build 38),
 VCF (variant call format).</p>
 
 <h1 id="sample-collection-and-genotyping">Sample collection and genotyping</h1>
+<p>A good paper on the “Basic statistical analysis in genetic case-control studies” by <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3154648/">Clarke et al. 2011</a>.
+Genomic control: https://en.wikipedia.org/wiki/Population_structure_(genetics)</p>
 
 <h1 id="pre-imputation">Pre-imputation</h1>
 <p>Before imputation with study genotypes, filter the data to remove low-quality variants and samples. 
@@ -42,6 +44,7 @@ It may also help to add an imputation-based QC step to the filtering process.</p
 <p><a href="https://academic.oup.com/bfg/article/15/4/298/2412127">Coleman et al. 2016</a></p>
 
 <h1 id="imputation">Imputation</h1>
+
 <h2 id="file-formats">File formats</h2>
 <p>The file format required depends on the method chosen.
 VCF file is the most common input type (e.g. Sanger imputation).
@@ -125,16 +128,17 @@ The input -data files will be (1) the genotype gen file and (2) the sample list.
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use 22 cores to run in parallel</span>
 <span class="k">for </span>i <span class="k">in</span> <span class="o">{</span>1..22<span class="o">}</span>
+<span class="k">do
+for </span>file <span class="k">in </span>Chr<span class="nv">$i</span>.<span class="k">*</span>impute2
 <span class="k">do</span>
-›   <span class="k">for </span>file <span class="k">in </span>Chr<span class="nv">$i</span>.<span class="k">*</span>impute2
-›   <span class="k">do</span>
-›   ›   ~/tool/snptest_v2.5.4-beta3_linux_x86_64_dynamic/snptest_v2.5.4-beta3 <span class="se">\</span>
-›   ›   <span class="nt">-data</span> <span class="nv">$file</span> <span class="se">\</span>
-›   ›   Samples_IDs <span class="se">\</span>
-›   ›   <span class="nt">-filetype</span> gen <span class="se">\</span>
-›   ›   <span class="nt">-summary_stats_only</span> <span class="se">\</span>
-›   ›   <span class="nt">-o</span> <span class="nv">$file</span><span class="se">\_</span>snptest
-›   <span class="k">done</span> &amp;
+›   ~/tool/snptest_v2.5.4-beta3_<span class="se">\</span>
+linux_x86_64_dynamic/snptest_v2.5.4-beta3 <span class="se">\</span>
+›   <span class="nt">-data</span> <span class="nv">$file</span> <span class="se">\</span>
+›   Samples_IDs <span class="se">\</span>
+›   <span class="nt">-filetype</span> gen <span class="se">\</span>
+›   <span class="nt">-summary_stats_only</span> <span class="se">\</span>
+›   <span class="nt">-o</span> <span class="nv">$file</span><span class="se">\_</span>snptest
+<span class="k">done</span> &amp;
 <span class="k">done
 </span><span class="nb">wait</span>
 </code></pre></div></div>

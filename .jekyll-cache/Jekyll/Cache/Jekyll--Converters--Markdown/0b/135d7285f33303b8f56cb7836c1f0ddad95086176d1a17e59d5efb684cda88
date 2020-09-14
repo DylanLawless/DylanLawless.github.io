@@ -1,4 +1,4 @@
-I"0'<h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
+I"-(<h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
 
 <ul id="markdown-toc">
   <li><a href="#genome-wide-assocciation-study" id="markdown-toc-genome-wide-assocciation-study">Genome wide assocciation study</a></li>
@@ -33,6 +33,8 @@ GrCh38 (Genome Reference Consortium Human Build 38),
 VCF (variant call format).</p>
 
 <h1 id="sample-collection-and-genotyping">Sample collection and genotyping</h1>
+<p>A good paper on the “Basic statistical analysis in genetic case-control studies” by <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3154648/">Clarke et al. 2011</a>.
+Genomic control: https://en.wikipedia.org/wiki/Population_structure_(genetics)</p>
 
 <h1 id="pre-imputation">Pre-imputation</h1>
 <p>Before imputation with study genotypes, filter the data to remove low-quality variants and samples. 
@@ -42,6 +44,7 @@ It may also help to add an imputation-based QC step to the filtering process.</p
 <p><a href="https://academic.oup.com/bfg/article/15/4/298/2412127">Coleman et al. 2016</a></p>
 
 <h1 id="imputation">Imputation</h1>
+
 <h2 id="file-formats">File formats</h2>
 <p>The file format required depends on the method chosen.
 VCF file is the most common input type (e.g. Sanger imputation).
@@ -89,18 +92,18 @@ One tool is SNPTEST
 <a href="https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#info_measures">mathgen.stats.ox.ac.uk</a>.
 From mathgen.stats.ox.ac.uk, the IMPUTE info measure reflects the information in imputed genotypes relative to the information if only the allele frequency were known.</p>
 
-<p>[\text{info} = 1 - \text{mean} (
+\[\text{info} = 1 - \text{mean} (
 \frac {
 \text{ variance in imputed genotype} }
 { \text{variance if only allele frequency were known} }
-)]</p>
+)\]
 
 <p>The numerator of this expression is computed over the imputed genotype distribution for each sample. The denominator is computed using the estimated allele frequency</p>
 
-<p>[\theta = \sum_{i} 
+\[\theta = \sum_{i} 
 \frac{
 P(g_{i}=1)+2P(g_{i}=2)) }
-{2\sum_{i,g}P(g_{i}=g) }]</p>
+{2\sum_{i,g}P(g_{i}=g) }\]
 
 <p>and the assumption of Hardy-Weinberg equilibrium.
 The info measure takes the value 1 if all genotypes are completely certain, 
