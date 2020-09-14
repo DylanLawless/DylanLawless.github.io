@@ -1,6 +1,10 @@
 # This is the data for LawlessGenomics
 [lawlessgenomics.com](https://lawlessgenomics.com) hosted via [DylanLawless.github.io](https://dylanlawless.github.io)
 
+Some installs may be required to serve.
+At least requires:
+"gem install jekyll-scholar"
+
 It is automatically transformed by [Jekyll](http://github.com/mojombo/jekyll)
 into a static site whenever I push this repository to GitHub.
 For testing, jekyll serve runs this site locally for testing before pushing (jek.sh). 

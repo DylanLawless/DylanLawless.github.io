@@ -13,22 +13,17 @@ subject: statistics
 
 <br/>
 We will look at principal component analysis (PCA) and singular value decomposition (SVD).
-
 Example: variable 1 and 2 (e.g. gene expression), and 6 observations (6 mice).
-
 One measurement could be plotted on a single line; low values (left) to high values (right).
 You might see a cluster of half the group on one side (low expression) and the rest of the group on the other side of the plot line (high expression).
-
 Measuring two variables (ie. two genes), the sample approach would now make an x/y 2-D graph. You might see one half of the measurement group clustering with low values for both variables (low expression of gene 1 and gene 2).
-
-If we measure 3 genes it would be , of course, a 3-D graph. Higher dimensions cannot be easily graphed.
+If we measure 3 genes it would be, of course, a 3-D graph. Higher dimensions cannot be easily graphed.
 PCA can make the multiple dimension measurements into 2-D graphs and identify what measurements are most valuable for clustering. PCA can also tell us how accurate the 2-D graph is.
 
 We calculate the average value of variable 1 (gene 1) and the average value of variable 2. With the average, we can calculate the center of the data. Once this is done, we no longer need the original values, rather just the relative position on the 2-D graph.
 If the center of the data were a crosshair on the 2-D plots, we will shift the plotted values so the that crosshair rests on the origin (0,0) of the graph. Once the data is centered on the origin we will then fit a line through the origin that best fits the data.
 
 To quantify how well a line is fit to the data, PCA projects the data onto the line.
-
 It can either measure the distance from the data to the line to find the line that minimises distance, or it can find the line that maximises the distance from projected points to the origin.
 Both of these actions are equivalent. i.e. a point at 3,2 has a set distance from the origin (line a).
 The line that we use to separate the whole dataset could be labelled line c.
@@ -75,9 +70,7 @@ Variation for PC1 = Square sum of dist for PC1 divided by n-1 (e.g. 12)
 Variation for PC2 = Square sum of dist for PC2 divided by n-1 (e.g. 3)
 
 The total variation around both PCs is 12+3=15. PC1 accounts for 12/15 = 0.8, 80% of variation around the PCs; PC2 accounts for 20%.
-
 A "scree plot" shows the percentage of variation that each PC accounts for.
-
 For a third variable, center the data, find the best fit line through the origin. The best fit is PC1. But the recipe now has 3 components. Variable 3 (gene 3) might have the most important contribution (e.g. 0.5 part gene 1, 0.1 part gene 2, 0.8 part gene 3). Find PC2, the next best fit line through the origin, that is perpendicular to PC1. This time, gene 1 might be the most important part of PC2. Lastly, PC3 is the best fit line through the origin and perpendicular to PC1 and PC2.
 The PCs can be either the numbers variables or the number of samples - whichever is smallest.
 
