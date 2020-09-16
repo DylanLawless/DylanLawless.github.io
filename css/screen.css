@@ -4,22 +4,6 @@
 /*********************************/
 /*********************************/
 
-/* Global Reset */
-/*
-* {
-  margin: 0;
-  padding: 0;
-}
-*/
-
-/*html, body {
-  height: 100%;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-}
-*/
-
-
 /* font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana; */
 body {
     margin: 1px;
@@ -160,8 +144,8 @@ ul.posts {
   text-align: justify;
   width: 42em;
   max-width: 80%;
-  margin: 3em auto 2em auto;
-  line-height: 1.2em;
+  margin: 2em auto 2em auto;
+  line-height: 1.3em;
 }
 
 .title {
