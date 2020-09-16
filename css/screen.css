@@ -19,16 +19,20 @@
 }
 */
 
+
 /* font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana; */
 body {
     margin: 1px;
 	background-color: white;
-	font: 1.2em Baskerville, Arial;
+	font: 1.25em Baskerville, Arial;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	overflow-wrap:normal;
 }
+
+/* This should allow the page to resize but not fully sure yet. */
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 code {
       font-family: $Monospace;
