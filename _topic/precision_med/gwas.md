@@ -20,7 +20,7 @@ VCF (variant call format).
 
 # Sample collection and genotyping
 A good paper on the "Basic statistical analysis in genetic case-control studies" by [Clarke et al. 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3154648/).
-Genomic control: https://en.wikipedia.org/wiki/Population_structure_(genetics)
+Genomic control: [wiki](https://en.wikipedia.org/wiki/Population_structure_(genetics)
 
 # Pre-imputation
 Before imputation with study genotypes, filter the data to remove low-quality variants and samples. 
