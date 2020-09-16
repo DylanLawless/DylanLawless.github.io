@@ -159,6 +159,7 @@ ul.posts {
   /*font-size: 100%; */
   text-align: justify;
   width: 42em;
+  max-width: 80%;
   margin: 3em auto 2em auto;
   line-height: 1.2em;
 }
