@@ -24,8 +24,8 @@
 body {
     margin: 1px;
 	background-color: white;
-	font: 1.25em Baskerville, Arial;
-	text-align: center;
+	font: 16pt Baskerville, Arial;
+	text-align: justify;
 	display: flex;
 	justify-content: center;
 	overflow-wrap:normal;
