@@ -1,4 +1,4 @@
-I"7(<h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
+I">(<h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
 
 <ul id="markdown-toc">
   <li><a href="#genome-wide-assocciation-study" id="markdown-toc-genome-wide-assocciation-study">Genome wide assocciation study</a></li>
@@ -34,7 +34,7 @@ VCF (variant call format).</p>
 
 <h1 id="sample-collection-and-genotyping">Sample collection and genotyping</h1>
 <p>A good paper on the “Basic statistical analysis in genetic case-control studies” by <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3154648/">Clarke et al. 2011</a>.
-Genomic control: https://en.wikipedia.org/wiki/Population_structure_(genetics)</p>
+Genomic control: [wiki](https://en.wikipedia.org/wiki/Population_structure_(genetics)</p>
 
 <h1 id="pre-imputation">Pre-imputation</h1>
 <p>Before imputation with study genotypes, filter the data to remove low-quality variants and samples. 

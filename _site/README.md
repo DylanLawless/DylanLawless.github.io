@@ -1,17 +1,17 @@
 # This is the data for LawlessGenomics
 [lawlessgenomics.com](https://lawlessgenomics.com) hosted via [DylanLawless.github.io](https://dylanlawless.github.io)
 
-Some installs may be required to serve.
-At least requires:
+Some installs may be required to serve this site locally for testing; 
+e.g. at least requires:
 "gem install jekyll-scholar"
 
-It is automatically transformed by [Jekyll](http://github.com/mojombo/jekyll)
+It is repo automatically transformed by [Jekyll](http://github.com/mojombo/jekyll)
 into a static site whenever I push this repository to GitHub.
 For testing, jekyll serve runs this site locally for testing before pushing (jek.sh). 
-The format of page and blog type structure is built on code from co-creator of GitHub, Tom Preston-Werner.
-This site is built from writings in Markdown and LaTex and rendered as a minimalist source of knowledge without annoying popups, ads, or heavy content.
+The format of pages and blog structure were produced by copying the original code from co-creator of GitHub, Tom Preston-Werner, and then modifying to suit the current requierments for Jekyll. 
+This site is built from writings in Markdown and LaTex and rendered as a minimalist source of knowledge without annoying popups, ads, or heavy content. One piece "analytic data" is recorded using [hit-counter](https://github.com/brentvollebregt/hit-counter).
 
-The data is stored on GitHub and a private backup so that content is not lost and can be pushed from many locations.
+The data is stored on GitHub and in private backups so that content is not lost and can be pushed from many locations.
 
 ## License
 The following directories and their contents are Copyright Dylan Lawless.
@@ -22,5 +22,6 @@ You may not reuse anything therein without my permission (although I am unlikely
 * images/
 
 All other directories and files are MIT Licensed. Feel free to use the HTML and
-CSS as you please. If you a copy this format, a link back to
+CSS as you please. If you a copy the jekyll site generator, a link back to
 http://github.com/mojombo/jekyll would be appreciated by the devolper, but is not required.
+If you copy my pushlished content, a link back to https://lawlessgenomics.com would be appreciated.
