@@ -4,31 +4,19 @@
 /*********************************/
 /*********************************/
 
-/* Global Reset */
-/*
-* {
-  margin: 0;
-  padding: 0;
-}
-*/
-
-/*html, body {
-  height: 100%;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-}
-*/
-
 /* font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana; */
 body {
     margin: 1px;
 	background-color: white;
-	font: 1.2em Baskerville, Arial;
-	text-align: center;
+	font: 16pt Baskerville, Arial;
+	text-align: justify;
 	display: flex;
 	justify-content: center;
 	overflow-wrap:normal;
 }
+
+/* This should allow the page to resize but not fully sure yet. */
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 code {
       font-family: $Monospace;
@@ -155,8 +143,9 @@ ul.posts {
   /*font-size: 100%; */
   text-align: justify;
   width: 42em;
-  margin: 3em auto 2em auto;
-  line-height: 1.2em;
+  max-width: 80%;
+  margin: 2em auto 2em auto;
+  line-height: 1.3em;
 }
 
 .title {
