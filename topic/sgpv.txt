@@ -124,6 +124,7 @@ The author suggests what pieces of evidence are required to make a metric:\\
 		<p>
 		<a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
 		<a href="https://dylan-lawless.github.io">Resume</a><br />
+		<img src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
 	</div>
 	
 <!---
