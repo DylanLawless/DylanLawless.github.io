@@ -18,7 +18,10 @@ BWA (Burrows-Wheeler transformation aligner),
 GrCh38 (Genome Reference Consortium Human Build 38), 
 VCF (variant call format).
 
+# Very basic overview
+Genomewide Association Studies and Assessment of the Risk of Disease, [Manolio N Engl J Med 2010.](https://www.nejm.org/doi/full/10.1056/NEJMra0905980)
 # Benefits and limitations of genome-wide association studies
+
 [Tam et al. 2019](https://pubmed.ncbi.nlm.nih.gov/31068683/)
 [pdf](https://www.gwern.net/docs/genetics/heritable/2019-tam.pdf)
 
