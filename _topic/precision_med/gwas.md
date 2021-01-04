@@ -18,6 +18,10 @@ BWA (Burrows-Wheeler transformation aligner),
 GrCh38 (Genome Reference Consortium Human Build 38), 
 VCF (variant call format).
 
+# Benefits and limitations of genome-wide association studies
+[Tam et al. 2019](https://pubmed.ncbi.nlm.nih.gov/31068683/)
+[pdf](https://www.gwern.net/docs/genetics/heritable/2019-tam.pdf)
+
 # Sample collection and genotyping
 A good paper on the "Basic statistical analysis in genetic case-control studies" by [Clarke et al. 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3154648/).
 Genomic control: [wiki](https://en.wikipedia.org/wiki/Population_structure_(genetics)
