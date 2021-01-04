@@ -13,7 +13,7 @@ subject: Precision medicine
 * TOC
 {:toc}
 
-
+[Martin, A.R.. et al. Clinical use of current polygenic risk scores may exacerbate health disparities. Nature Genetics. 2019; 51: 584-591](https://pubmed.ncbi.nlm.nih.gov/30926966/)
 # QC: base and target cohort
 # Base only
 # Target only
