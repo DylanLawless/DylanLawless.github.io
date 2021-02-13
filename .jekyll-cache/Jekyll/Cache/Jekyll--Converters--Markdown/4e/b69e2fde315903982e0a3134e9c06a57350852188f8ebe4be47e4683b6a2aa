@@ -1,8 +1,10 @@
-I"4(<h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
+I"�+<h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
 
 <ul id="markdown-toc">
   <li><a href="#genome-wide-assocciation-study" id="markdown-toc-genome-wide-assocciation-study">Genome wide assocciation study</a></li>
   <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
+  <li><a href="#very-basic-overview" id="markdown-toc-very-basic-overview">Very basic overview</a></li>
+  <li><a href="#benefits-and-limitations-of-genome-wide-association-studies" id="markdown-toc-benefits-and-limitations-of-genome-wide-association-studies">Benefits and limitations of genome-wide association studies</a></li>
   <li><a href="#sample-collection-and-genotyping" id="markdown-toc-sample-collection-and-genotyping">Sample collection and genotyping</a></li>
   <li><a href="#pre-imputation" id="markdown-toc-pre-imputation">Pre-imputation</a></li>
   <li><a href="#imputation" id="markdown-toc-imputation">Imputation</a>    <ul>
@@ -31,6 +33,13 @@
 <p>BWA (Burrows-Wheeler transformation aligner), 
 GrCh38 (Genome Reference Consortium Human Build 38), 
 VCF (variant call format).</p>
+
+<h1 id="very-basic-overview">Very basic overview</h1>
+<p>Genomewide Association Studies and Assessment of the Risk of Disease, <a href="https://www.nejm.org/doi/full/10.1056/NEJMra0905980">Manolio N Engl J Med 2010.</a></p>
+<h1 id="benefits-and-limitations-of-genome-wide-association-studies">Benefits and limitations of genome-wide association studies</h1>
+
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/31068683/">Tam et al. 2019</a>
+<a href="https://www.gwern.net/docs/genetics/heritable/2019-tam.pdf">pdf</a></p>
 
 <h1 id="sample-collection-and-genotyping">Sample collection and genotyping</h1>
 <p>A good paper on the “Basic statistical analysis in genetic case-control studies” by <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3154648/">Clarke et al. 2011</a>.
