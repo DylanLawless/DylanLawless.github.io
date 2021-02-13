@@ -1,6 +1,6 @@
 ---
 layout: topic
-title: Genomic databases
+title: Reference databases
 created: 13 Feb 2021
 bibliography:
 - '../tail/bibliography.bib'
