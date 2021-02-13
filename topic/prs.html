@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <!-- link to MathJax for LaTeX stlye eqn -->
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+   <!--  -->
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Polygenic risk score</title>
+   <meta name="author" content="LawlessGenomics" />
+   <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
+   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
+
+   <!-- include a google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <img style="margin-bottom:-8px" 
+	src="/images/logos/logo_2.8.png" 
+	alt="Logo image" width="55" height="37.3"/>
+    <a href="/">LawlessGenomics</a>
+    <a class="extra" href="/">Home</a>
+  </div>
+
+  <div id="topic">
+<h1 id="polygenic-risk-score">Polygenic risk score</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#polygenic-risk-score" id="markdown-toc-polygenic-risk-score">Polygenic risk score</a></li>
+  <li><a href="#qc-base-and-target-cohort" id="markdown-toc-qc-base-and-target-cohort">QC: base and target cohort</a></li>
+  <li><a href="#base-only" id="markdown-toc-base-only">Base only</a></li>
+  <li><a href="#target-only" id="markdown-toc-target-only">Target only</a></li>
+  <li><a href="#combined" id="markdown-toc-combined">Combined</a></li>
+  <li><a href="#prs" id="markdown-toc-prs">PRS</a></li>
+  <li><a href="#shrinkage-of-effect-size-estimate" id="markdown-toc-shrinkage-of-effect-size-estimate">Shrinkage of effect size estimate</a></li>
+  <li><a href="#ld-control" id="markdown-toc-ld-control">LD control</a></li>
+  <li><a href="#prs-unit" id="markdown-toc-prs-unit">PRS unit</a></li>
+  <li><a href="#population-structure" id="markdown-toc-population-structure">Population structure</a></li>
+  <li><a href="#multi-prs" id="markdown-toc-multi-prs">Multi PRS</a></li>
+  <li><a href="#plot" id="markdown-toc-plot">Plot</a></li>
+  <li><a href="#assocciation-and-goodness-of-fit" id="markdown-toc-assocciation-and-goodness-of-fit">Assocciation and goodness of fit</a></li>
+  <li><a href="#plotting" id="markdown-toc-plotting">Plotting</a></li>
+  <li><a href="#clinical-application" id="markdown-toc-clinical-application">Clinical application</a></li>
+  <li><a href="#interpret" id="markdown-toc-interpret">Interpret</a></li>
+  <li><a href="#distribution" id="markdown-toc-distribution">Distribution</a></li>
+  <li><a href="#overfitting" id="markdown-toc-overfitting">Overfitting</a></li>
+  <li><a href="#power" id="markdown-toc-power">Power</a></li>
+</ul>
+
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/30926966/">Martin, A.R.. et al. Clinical use of current polygenic risk scores may exacerbate health disparities. Nature Genetics. 2019; 51: 584-591</a></p>
+<h1 id="qc-base-and-target-cohort">QC: base and target cohort</h1>
+<h1 id="base-only">Base only</h1>
+<h1 id="target-only">Target only</h1>
+<h1 id="combined">Combined</h1>
+<h1 id="prs">PRS</h1>
+<h1 id="shrinkage-of-effect-size-estimate">Shrinkage of effect size estimate</h1>
+<h1 id="ld-control">LD control</h1>
+<h1 id="prs-unit">PRS unit</h1>
+<h1 id="population-structure">Population structure</h1>
+<h1 id="multi-prs">Multi PRS</h1>
+<h1 id="plot">Plot</h1>
+<h1 id="assocciation-and-goodness-of-fit">Assocciation and goodness of fit</h1>
+<h1 id="plotting">Plotting</h1>
+<h1 id="clinical-application">Clinical application</h1>
+<h1 id="interpret">Interpret</h1>
+<h1 id="distribution">Distribution</h1>
+<h1 id="overfitting">Overfitting</h1>
+<h1 id="power">Power</h1>
+
+
+</div>
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+
+<div class="footer">
+	<div class="contact">
+	<p>
+	<img src="/images/logos/logo_3.0.png" 
+	alt="Logo image" width="99" height="67.1" />
+	</p>
+	</div>
+	<div class="contact">
+		<p>
+		Built by Dylan Lawless
+		<br />
+		Postdoc at
+		<a href="https://people.epfl.ch/dylan.lawless">EPFL</a>
+		<br />
+		dylan(dot)lawless@epfl(dot)ch
+		</p>
+	</div>
+	
+	<div class="contact">
+		<p>
+		<a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
+		<a href="https://dylan-lawless.github.io">Resume</a><br />
+		<img src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
+	</div>
+	
+<!---
+    <div class="rss">
+      <a href="https://feeds.feedburner.com/tom-preston-werner">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+-->
+	</div>
+</div>
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
