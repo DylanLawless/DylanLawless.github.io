@@ -26,7 +26,7 @@ subject: Precision medicine
 [PopHuman](https://pophuman.uab.cat/?loc=chr6%3A137998001..138396200&amp;tracks=DNA%2Cgene_annotations%2CPi_CEU_10kb%2Ctheta_CEU_10kb%2CTajima_D_CEU_10kb%2Chap_diversity_within_CEU_10kb%2CKelly_ZnS_CEU_10kb%2CDoS_CEU_10kb%2CK_CEU_10kb&amp;highlight=)\
 [Geographic genomic variant browser](https://popgen.uchicago.edu/ggv/?data=%221000genomes%22&amp;chr=1&amp;pos=222087833)\
 [SweGen](https://www.nature.com/articles/ejhg2017130)\
-[FinnGen](https://www.finngen.fi/en)
+[FinnGen](https://www.finngen.fi/en)\
 [LOVD - Open Source DNA variation database system](http://www.lovd.nl/3.0/home)\
 [dbGaP - NCBI](https://www.ncbi.nlm.nih.gov/gap)\
 [dbNSFP - Jpopgen](https://sites.google.com/site/jpopgen/dbNSFP)\
