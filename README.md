@@ -13,6 +13,13 @@ This site is built from writings in Markdown and LaTex and rendered as a minimal
 
 The data is stored on GitHub and in private backups so that content is not lost and can be pushed from many locations.
 
+Bibliography is set to update from my cloud master bib via shell script "update_bib.sh".
+The scholar plugin is used by: plugins/ext.rb (require 'jekyll/scholar').
+With this plugin, no information is required for the biblio in individual file headers.
+Within text citations are used with: {% cite name %}.
+The biblio is printed at end of file with:
+{% bibliography --cited %}.
+
 ## License
 The following directories and their contents are Copyright Dylan Lawless.
 You may not reuse anything therein without my permission (although I am unlikely to complain about non-profit usage):
