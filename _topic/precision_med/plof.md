@@ -16,10 +16,7 @@ subject: Precision medicine
 As reported in "Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program"
 [https://doi.org/10.1038/s41586-021-03205-y](https://doi.org/10.1038/s41586-021-03205-y).
 pLOF variants were identified using Loss Of Function Transcript Effect Estimator (LOFTEE) v.0.3-beta
-<!---
-{% cite KonradLOFTEE %}
-{% cite mclaren2016ensembl %}
---->
+<!-- {% cite KonradLOFTEE %} {% cite mclaren2016ensembl %} -->
 and Variant Effect Predictor (VEP) v.9486.
 The genomic coordinates of coding elements were based on GENCODE v.2915. Only stop-gained, frameshift and splice-site-disturbing variants annotated as high-confidence pLOF variants were used in the analysis. The pLOF variants with allele frequency > 0.5% or within regions masked due to poor accessibility were excluded from analysis (see Supplementary Information 1.5 for details).
 
@@ -33,6 +30,4 @@ We searched for gene sets with fewer rare pLOF variants than expected based on g
 References
 ----------
 
-<!---
-{% bibliography --cited %}
---->
+<!-- {% bibliography --cited %} -->
