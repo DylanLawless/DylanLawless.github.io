@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <!-- link to MathJax for LaTeX stlye eqn -->
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+   <!--  -->
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Putative loss-of-function</title>
+   <meta name="author" content="LawlessGenomics" />
+   <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
+   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
+
+   <!-- include a google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <img style="margin-bottom:-8px" 
+	src="/images/logos/logo_2.8.png" 
+	alt="Logo image" width="55" height="37.3"/>
+    <a href="/">LawlessGenomics</a>
+    <a class="extra" href="/">Home</a>
+  </div>
+
+  <div id="topic">
+<h1 id="putative-loss-of-function">Putative loss-of-function</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#putative-loss-of-function" id="markdown-toc-putative-loss-of-function">Putative loss-of-function</a></li>
+  <li><a href="#identification-of-plof-variants" id="markdown-toc-identification-of-plof-variants">Identification of pLoF variants</a>    <ul>
+      <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
+      <li><a href="#results" id="markdown-toc-results">Results</a></li>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="identification-of-plof-variants">Identification of pLoF variants</h1>
+<h2 id="methods">Methods</h2>
+<p>As reported in “Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program”
+<a href="https://doi.org/10.1038/s41586-021-03205-y">https://doi.org/10.1038/s41586-021-03205-y</a>.
+pLOF variants were identified using Loss Of Function Transcript Effect Estimator (LOFTEE) v.0.3-beta
+<a class="citation" href="#KonradLOFTEE">(Karczewski, 2015)</a>
+and Variant Effect Predictor (VEP) v.9486
+<a class="citation" href="#mclaren2016ensembl">(McLaren et al., 2016)</a>.
+The genomic coordinates of coding elements were based on GENCODE v.2915. Only stop-gained, frameshift and splice-site-disturbing variants annotated as high-confidence pLOF variants were used in the analysis. The pLOF variants with allele frequency &gt; 0.5% or within regions masked due to poor accessibility were excluded from analysis (see Supplementary Information 1.5 for details).</p>
+
+<p>We evaluated the enrichment and depletion of pLOF variants (allele frequency &lt; 0.5%) in gene sets (that is, terms) from Gene Ontology (GO)87,88. For each gene annotated with a particular GO term, we computed the number of pLOF variants per protein-coding base pair, L, and proportion of singletons, S. We then tested for lower or higher mean L and S in a GO term using bootstrapping (1,000,000 samples) with adjustment for the gene length of the protein-coding sequence (CDS): (1) sort all genes by their CDS length in ascending order and divide them into equal-size bins (1,000 genes each); (2) count how many genes from a GO term are in each bin; (3) from each bin, sample with replacement the same number of genes and compute the average L and S; (4) count how many times sampled L and S were lower or higher than observed values. The P values were computed as the proportion of bootstrap samples that exceeded the observed values. The fold change of average L and S was computed as a ratio of observed values to the average of sampled values. We tested all 12,563 GO terms that included more than one gene. The P-value significance threshold was thus ~2 × 10−6. The enrichment and depletion of pLOF variants in public gene databases was tested in a similar way.</p>
+
+<h2 id="results">Results</h2>
+<p>A notable class of variants is the 228,966 putative loss-of-function (pLOF) variants that we observed in 18,493 (95.0%) GENCODE15 genes (Extended Data Table 5 and Supplementary Fig. 12). This class includes the highest proportion of singletons among all of the variant classes that we examined. An average individual carried 2.5 unique pLOF variants. We identified more pLOF variants per individual than in previous surveys based on exome sequencing—an increase that was mainly driven by the identification of additional frameshift variants (Supplementary Table 6) and by a more uniform and complete coverage of protein-coding regions (Supplementary Figs. 13, 14).</p>
+
+<p>We searched for gene sets with fewer rare pLOF variants than expected based on gene size. The gene sets with strong functional constraint included genes that encode DNA- and RNA-binding proteins, spliceosomal complexes, translation initiation machinery and RNA splicing and processing proteins (Supplementary Table 7). Genes associated with human disease in COSMIC17 (31% depletion), the GWAS catalogue18 (around 8% depletion), OMIM19 (4% depletion) and ClinVar20 (4% depletion) all contained fewer rare pLOF variants than expected (each comparison P &lt; 10−4).</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="KonradLOFTEE">Karczewski, K. J. (2015). <i>LOFTEE Loss-Of-Function Transcript Effect Estimator</i>. Karczewski, K. J. et al. loftee. https://github.com/konradjk/loftee</span></li>
+<li><span id="mclaren2016ensembl">McLaren, W., Gil, L., Hunt, S. E., Riat, H. S., Ritchie, G. R. S., Thormann, A., Flicek, P., &amp; Cunningham, F. (2016). The ensembl variant effect predictor. <i>Genome Biology</i>, <i>17</i>(1), 1–14.</span></li></ol>
+
+</div>
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+
+<div class="footer">
+	<div class="contact">
+	<p>
+	<img src="/images/logos/logo_3.0.png" 
+	alt="Logo image" width="99" height="67.1" />
+	</p>
+	</div>
+	<div class="contact">
+		<p>
+		Built by Dylan Lawless
+		<br />
+		Postdoc at
+		<a href="https://people.epfl.ch/dylan.lawless">EPFL</a>
+		<br />
+		dylan(dot)lawless@epfl(dot)ch
+		</p>
+	</div>
+	
+	<div class="contact">
+		<p>
+		<a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
+		<a href="https://dylan-lawless.github.io">Resume</a><br />
+		<img src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
+	</div>
+	
+<!---
+    <div class="rss">
+      <a href="https://feeds.feedburner.com/tom-preston-werner">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+-->
+	</div>
+</div>
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
