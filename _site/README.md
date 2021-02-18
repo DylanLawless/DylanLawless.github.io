@@ -32,3 +32,7 @@ All other directories and files are MIT Licensed. Feel free to use the HTML and
 CSS as you please. If you a copy the jekyll site generator, a link back to
 http://github.com/mojombo/jekyll would be appreciated by the devolper, but is not required.
 If you copy my pushlished content, a link back to https://lawlessgenomics.com would be appreciated.
+
+For git tracking, test:
+`git config merge.conflictstyle diff3`
+

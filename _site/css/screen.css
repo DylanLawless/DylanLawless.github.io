@@ -27,12 +27,12 @@ code {
 /* font: 1.2em Roboto, Arial, "Lucida Grande", garamond, palatino, verdana; */
 h1 {
   font-size: 100%;
-  font: 1.2em Roboto, Arial;
+  font: 1.1em Arial;
 }
 
 h2, h3, h4, h5, h6 {
   font-size: 100%;
-  font: 1.2em Roboto, Arial;
+  font: 1.0em Arial;
 }
 
 	
@@ -51,12 +51,10 @@ div#tags, div#page-created, div#last-modified, div#license { font-size: 80%; }
 */
 
 /* uppercase page title, all section headers; see A/B tests */
-h1, h2, h3, h4, h5 { text-transform: uppercase; }
-
-
+/* h1, h2, h3, h4, h5 { text-transform: uppercase; } */
 
 h1, h2 {
-  margin-top: 1em;
+  margin-top: 0.5em;
   margin-bottom: 0.5em;
 } /* this is thw space after title 1 */
 
