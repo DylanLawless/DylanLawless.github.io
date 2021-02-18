@@ -41,7 +41,7 @@ Now think of genetic data.
 Once gathered, it never chages. 
 It only becomes more powerful when metadata is added. 
 
-Consider another disction from the era of Cold War espionage.
+Consider another distinction from the era of Cold War espionage.
 It was essentially one side versus the other.
 In the year 2021, most nations don't have a direct enemy.
 Therefore, today it is difficult to even summarise data collection in terms of "from whom" or "against what".
@@ -58,21 +58,25 @@ One cannot complain about the rules defined in the game, however those rules sho
 We should keep in mind that our genomic data handlers may unexpectedly decide to share the data with others outside of our control.
 GDPR won't be of much use.
 This anecdote illustrates a pertinent fact for human genomic medicine.
-Unlike most personal data (email address, phone number, physical address, interests, EMEI) you only have one genome sequence.
+Unlike most personal data (email address, phone number, physical address, interests, EMEI),
+you only have one genome sequence.
 Once the online medical database gets leaked, you cannot requrest a new genome seuqnce via email.
 Once it is out, it is out.
 
-In a lecture by NSA technical director of the [information assurance directorate](https://www.nsa.gov/what-we-do/cybersecurity/), Richard George stated that credit card data is worth very little today on _the market_ - health information is the new target of interest, because with that information comes an indivduals identity and the potential to order drugs in their name.
+In a lecture by NSA technical director of the [information assurance directorate](https://www.nsa.gov/what-we-do/cybersecurity/), Richard George stated that credit card data is worth very little today on _"the market"_; 
+health information is the new target of interest, 
+because with that information comes an indivduals' identity and the potential to order drugs in their name.
 With a little more imagination, one can envision the potential for genomic data. 
 Some of the most powerful analysis techniques are still being developed today and we may see a big leap in genomic interpretation in the next decade. 
-Once the analysis protocols are complete, whoever has the biggest database will be the most powerful (and for entrepreneurs, the most profitable if their focus is on the correct questions in human health, etc).
+Once the analysis protocols are complete, whoever has the biggest database will be the most powerful (and for entrepreneurs, the most profitable, if their focus is on the correct questions in human health, etc).
 
 Genomic data is most readily applicable to health. 
 However, it could stretch much further.
-Everyone knows about Google and Facebook - our daily activity categorises us into advertisement groups: 
+Everyone knows about Google and Facebook - 
+our daily activities categorise us into advertisement groups: 
 Male age 25-30, interests, dislikes, how much are we willing to spend, etc.
 It boils down do "how much advertisement costs are required to sell one unit of product?".
-In genomics and health this equates to effect size - what are the odds of disease givin the genotype?
+In genomics and health this equates to effect size - what are the odds of disease given the genotype?
 How about "given the genotype, how risk aversion are we, how impulsive, will we travel abroad or should we see ads for local entertainment"?
 With greater and greater complexity, subtlety, and granularity, this may be possible as long as we can quantify the heritability of complex traits at very low effect sizes. 
 Advertising and insurance risk calculations depend on relatively simple statistical formulas that just need enough data to remain profitable.
