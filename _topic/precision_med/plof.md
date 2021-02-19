@@ -164,10 +164,10 @@ The extract from Table S7 shows the comparison of pLoF versus other rare variant
 The comaprison is basically: 
 Random sampling provides the number of _expected_ variants, which is then compared to the _observed_ number of variants.
 There are four categories used:
-- expeced pLoF
-- oberserved pLoF
+- expected pLoF
+- observed pLoF
 - expected singleton
-- oberserved singleton
+- observed singleton
 
 The top result, DNA-binding genes, showed rare variants (singletons) observed/expected = 1, but pLoF observed/expected = 0.5.
 This comparison is made to show that:
