@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-18T17:11:51+01:00</updated>
+ <updated>2021-02-19T13:46:47+01:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -4628,10 +4628,12 @@ For example, I might [1] rank first on VEP variant “consequences”; stop muta
     </ul>
   </li>
   <li><a href="#published-example" id="markdown-toc-published-example">Published example</a>    <ul>
+      <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
       <li><a href="#results" id="markdown-toc-results">Results</a></li>
-      <li><a href="#references" id="markdown-toc-references">References</a></li>
     </ul>
   </li>
+  <li><a href="#the-future" id="markdown-toc-the-future">The future</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <h1 id="identification-of-plof-variants">Identification of pLoF variants</h1>
@@ -4659,7 +4661,7 @@ An example output is shown here:<br />
 <br />
 An obvious error that can occur is using mismatched genome builds.
 Make certain that you use the same reference genome as used on the input data.
-The Ensembl/VEP website URL should be for the same genome build (grch37, or the default GRCh38).
+The Ensembl/VEP website URL should be for the same genome build (GRCh37, or the default GRCh38).
 Local software and databases will also use the appropriate versions.</p>
 
 <p>In variant annotation, VEP supplies a “consequence” column.
@@ -4696,7 +4698,9 @@ The genomic coordinates of coding elements may be based on <a href="https://www.
 <!-- frankish2019gencode --></p>
 
 <h2 id="gene-ontology-go">Gene Ontology (GO)</h2>
-<p>One of the main uses of <a href="http://geneontology.org">Gene Ontology (GO)</a> is to perform enrichment analysis on gene sets. 
+<p><a href="http://geneontology.org">Gene Ontology (GO)</a> is a valuable database of known gene function and
+can also be used to perform enrichment analysis on gene sets 
+[5, 6].
 For example, given a set of genes that are up-regulated under certain conditions, 
 an enrichment analysis will find which GO terms are over-represented (or under-represented) using annotations for that gene set.
 This discription was taken directly from 
@@ -4716,6 +4720,7 @@ The output table shows the GO process “V(D)J recombination” as the strongest
 <img src="/images/GO_enrich.png" width="100%" /></p>
 
 <h1 id="published-example">Published example</h1>
+<h2 id="methods">Methods</h2>
 <p>In Taliun et al [0], each of these tools are used in their analysis to target variants:</p>
 <ul>
   <li>stop-gained</li>
@@ -4729,44 +4734,148 @@ The output table shows the GO process “V(D)J recombination” as the strongest
   <li>remove pLOF within regions masked due to poor accessibility</li>
 </ul>
 
-<p>These last two additionally ignore variants that are likely of minor consiquence to human health but still pased the basic pLoF filter.</p>
-
-<p>Taliun et al. evaluated enrichment and depletion of pLOF variants 
-(allele frequency &lt; 0.5%) in gene sets (that is, terms) from Gene Ontology (GO)87,88.
+<p>These last two additionally ignore variants that are likely of minor consiquence to human health but still pased the basic pLoF filter. 
+Taliun et al. evaluated enrichment and depletion of pLOF variants 
+(allele frequency &lt; 0.5%) in gene sets (that is, terms) from Gene Ontology (GO) 
+[5, 6].
 For each gene annotated with a particular GO term, 
-they computed the number of pLOF variants per 
-protein-coding base pair, L, 
-and proportion of singletons, S.
-They then tested for lower or higher mean L and S in a GO term 
+they computed the number of pLOF variants per</p>
+<ul>
+  <li>protein-coding base pair, L, and</li>
+  <li>proportion of singletons, S.</li>
+</ul>
+
+<p>They then tested for lower or higher mean L and S in a GO term 
 using bootstrapping (1,000,000 samples) 
 with adjustment for the gene length of the protein-coding sequence (CDS):</p>
 <ol>
-  <li>sort all genes by their CDS length in ascending order and divide them into equal-size bins (1,000 genes each);</li>
-  <li>count how many genes from a GO term are in each bin;</li>
-  <li>from each bin, sample with replacement the same number of genes and compute the average L and S;</li>
-  <li>count how many times sampled L and S were lower or higher than observed values.</li>
+  <li>Sort all genes by CDS length in ascending order and divide them into equal-size bins (1,000 genes each);</li>
+  <li>Count how many genes from a GO term are in each bin;</li>
+  <li>From each bin, sample with replacement the same number of genes and compute the average L and S;</li>
+  <li>Count how many times sampled L and S were lower or higher than observed values.</li>
 </ol>
 
-<p>The P values were computed as the proportion of bootstrap samples that exceeded the observed values. 
+<p>The P-values were computed as the proportion of bootstrap samples that exceeded the observed values. 
 The fold change of average L and S was computed as a ratio of observed values 
 to the average of sampled values. 
-We tested all 12,563 GO terms that included more than one gene. 
-The P-value significance threshold was thus ~2 x 10-6. 
+They tested all 12,563 GO terms that included more than one gene. 
+The P-value significance threshold was thus ~2e-6. 
 The enrichment and depletion of pLOF variants in public gene databases was tested in a similar way.</p>
 
 <h2 id="results">Results</h2>
-<p>A notable class of variants is the 228,966 putative loss-of-function (pLOF) variants that we observed in 18,493 (95.0%) GENCODE15 genes (Extended Data Table 5 and Supplementary Fig. 12). This class includes the highest proportion of singletons among all of the variant classes that we examined. An average individual carried 2.5 unique pLOF variants. We identified more pLOF variants per individual than in previous surveys based on exome sequencing—an increase that was mainly driven by the identification of additional frameshift variants (Supplementary Table 6) and by a more uniform and complete coverage of protein-coding regions (Supplementary Figs. 13, 14).</p>
+<p>Taliun et al. wanted to see if any gene sets had enrichment or depletion of rare pLoF.
+In the first 53,831 TOPMed samples, 
+they detected more than 400 million variants:</p>
+<ul>
+  <li>single-nucleotide variants</li>
+  <li>insertions or deletions</li>
+</ul>
 
-<p>We searched for gene sets with fewer rare pLOF variants than expected based on gene size. The gene sets with strong functional constraint included genes that encode DNA- and RNA-binding proteins, spliceosomal complexes, translation initiation machinery and RNA splicing and processing proteins (Supplementary Table 7). Genes associated with human disease in COSMIC17 (31% depletion), the GWAS catalogue18 (around 8% depletion), OMIM19 (4% depletion) and ClinVar20 (4% depletion) all contained fewer rare pLOF variants than expected (each comparison P &lt; 10−4).</p>
+<p>Many novel variants will have been detected because they include</p>
+<ul>
+  <li>assembly of unmapped reads and</li>
+  <li>customized analysis in highly variable loci.</li>
+</ul>
 
-<h2 id="references">References</h2>
+<p>Among the more than 400 million detected variants,</p>
+<ul>
+  <li>97% have frequencies of less than 1% and</li>
+  <li>46% are singletons that are present in only one individual.</li>
+</ul>
+
+<p>The 46% is pretty suprising but the number of private variant per person is probably not extremely high.
+In clinical exomes we usually expect appoximately &lt;100 novel variants compared to the <em>in-house sequence database</em>.
+We also expect aprrox. &lt;10 de novo variants in the same sample if parents/family were also sequenced. 
+The number will be much larger for non-coding genome, but since SNVs will be largely non-interpretable it is currently ignored for clinical diagnosis.</p>
+
+<p>A notable class of variants is the 
+228,966 putative loss-of-function (pLOF) variants 
+that were observed in 18,493 (95.0%) GENCODE genes 
+(Extended Data Table 5 and Supplementary Fig. 12). 
+This class includes the highest proportion of singletons among all of the variant classes that was examined. 
+An average individual carried 2.5 unique pLOF variants. 
+They identified more pLOF variants per individual than in previous surveys 
+based on exome sequencing; an increase that was mainly driven by</p>
+<ul>
+  <li>identification of additional frameshift variants (Table S6)</li>
+  <li>and more uniform and complete coverage of protein-coding regions (Fig. S13, S14).</li>
+</ul>
+
+<p>It is worth noting that the <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03205-y/MediaObjects/41586_2021_3205_MOESM3_ESM.pdf">referenced figures (S13,14)</a> don’t show specifically pLoF, 
+but rather sequence depth per gene.
+They show that TopMed has better coverage/depth than ExAC, including for known disease genes.
+I would have expected them to show the same results spcifically for pLoF variants to support their statement.</p>
+
+<p>The extract from Table S7 shows the comparison of pLoF versus other rare variants in GO terms (protein pathways). 
+The comaprison is basically: 
+Random sampling provides the number of <em>expected</em> variants, which is then compared to the <em>observed</em> number of variants.
+There are four categories used:</p>
+<ul>
+  <li>expeced pLoF</li>
+  <li>oberserved pLoF</li>
+  <li>expected singleton</li>
+  <li>oberserved singleton</li>
+</ul>
+
+<p>The top result, DNA-binding genes, showed rare variants (singletons) observed/expected = 1, but pLoF observed/expected = 0.5.
+This comparison is made to show that:</p>
+<ul>
+  <li>This biological mechanism cannot tollerate damaging pLoF variants (pLoF/bp).</li>
+  <li>And even though pLoF are usually very rare, 
+this does not account for the lack of observations - 
+rare/novel variants that are non-pLoF are present (proportion of singletons).</li>
+</ul>
+
+<p><img src="/images/plof_enrichment_eg.png" width="100%" /></p>
+
+<p>They searched for gene sets with fewer rare pLOF variants than expected based on gene size. 
+The gene sets with strong functional constraint included genes that encode DNA- and RNA-binding proteins, 
+spliceosomal complexes, 
+translation initiation machinery and 
+RNA splicing and processing proteins (Supplementary Table 7). 
+They found fewer rare pLOF variants than expected (each comparison P &lt; 10−4) for 
+Genes associated with human disease in</p>
+<ul>
+  <li>COSMIC [7] (31% depletion),</li>
+  <li>GWAS catalogue [8] (around 8% depletion),</li>
+  <li>OMIM19 [9] (4% depletion) and</li>
+  <li>ClinVar [10] (4% depletion).</li>
+</ul>
+
+<h1 id="the-future">The future</h1>
+<p>With very large scale genome seuqnceing we will start to assocciation studies for extremely rare variants (eventually there will be no novel SNVs). 
+This provokes a few possibilities.</p>
+<ol>
+  <li>Predicting probably of all SNVs.
+    <ul>
+      <li>CADD predicts <em>pathogenicity</em> for all SNVs but currently I don’t know of any <em>mutation probability</em> projects. Ratio of obs/exp will have valuable insight.</li>
+    </ul>
+  </li>
+  <li>All coding variants will be reported.
+    <ul>
+      <li>functional prediction accuracies can be validated.</li>
+    </ul>
+  </li>
+  <li>Novel non-coding variants will become the new variants of unknown signifigance (VUS). 
+Will we slowly trudge through the same system again or will there be a more sophisticated approach for the non-coding genome in clinical genomics?</li>
+</ol>
+
+<h1 id="references">References</h1>
+<hr />
+
 <!-- curly-percent bibliography --cited curly-percent -->
-<p>[0]  Taliun, Daniel, et al. “Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program.” Nature 590.7845 (2021): 290-299.
-<a href="https://doi.org/10.1038/s41586-021-03205-y">https://doi.org/10.1038/s41586-021-03205-y</a> <br />
-[1] mclaren2016ensembl<br />
-[2] KonradLOFTEE<br />
+<p>[0]  Taliun, Daniel, et al. Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program. Nature 590.7845 (2021): 290-299.
+<a href="https://doi.org/10.1038/s41586-021-03205-y">https://doi.org/10.1038/s41586-021-03205-y</a><br />
+[1] McLaren, W. et al. The Ensembl Variant Effect Predictor. Genome Biol. 17, 122 (2016).<br />
+[2] Karczewski, K. J. et al. loftee. GitHub https://github.com/konradjk/loftee (2015).<br />
 [3] Frankish, A. et al. GENCODE reference annotation for the human and mouse genomes. Nucleic Acids Res. 47 (D1), D766–D773 (2019).<br />
-[4] Povysil, Gundula, et al. “Rare-variant collapsing analyses for complex traits: guidelines and applications.” Nature Reviews Genetics 20.12 (2019): 747-759.\</p>
+[4] Povysil, Gundula, et al. “Rare-variant collapsing analyses for complex traits: guidelines and applications.” Nature Reviews Genetics 20.12 (2019): 747-759.<br />
+[5] The Gene Ontology Consortium. Gene ontology: tool for the unification of biology. Nat. Genet. 25, 25–29 (2000).<br />
+[6] The Gene Ontology Consortium. Expansion of the Gene Ontology knowledgebase and resources. Nucleic Acids Res. 45 (D1), D331–D338 (2017).<br />
+[7] Forbes, S. A. et al. COSMIC: exploring the world’s knowledge of somatic mutations in human cancer. Nucleic Acids Res. 43, D805–D811 (2015).<br />
+[8] Welter, D. et al. The NHGRI GWAS Catalog, a curated resource of SNP–trait associations. Nucleic Acids Res. 42, D1001–D1006 (2014).<br />
+[9] Hamosh, A., Scott, A. F., Amberger, J. S., Bocchini, C. A. &amp; McKusick, V. A. Online Mendelian Inheritance in Man (OMIM), a knowledgebase of human genes and genetic disorders. Nucleic Acids Res. 33, D514–D517 (2005).<br />
+[10] Landrum, M. J. et al. ClinVar: improving access to variant interpretations and supporting evidence. Nucleic Acids Res. 46 (D1), D1062–D1067 (2018).\</p>
 </p>
 
   <h2> - </h2>
