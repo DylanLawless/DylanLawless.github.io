@@ -21,6 +21,7 @@ cross link and label
 <a name="introduction"></a>
 -->
 
+# The prospect of genomic medical espionage
 In the hayday of human source intelligence - think late Cold War - international espionage was realtively easy to understand.
 This consisted of finding people willing to gather information from the enemy and deliver it to you.
 The recruited individuals could be sympathetic to your cause and volunteer, or they could be coerced and remain secret in fear of punishment by the enemy.
@@ -88,3 +89,90 @@ Will it be good or bad once every child gets genome sequncing along with their b
 Predicting the balance of world order is folly, but as they say "history repeats iteslef".
 We can detach from our virtual identities; online presence, daily routines, but we cannot detach from our genetic identidy.
 Unlike fingerprinting, or retinal scan, are we prepared to provide a biometric identity with so much information?
+
+# In the media
+There have been several ransomware attacks on the health industry in recent years.
+These have included public and private research and innovation institutions.
+However, the worst examples of this type of crime were seen during the 2017 WannaCry attack;
+"One of the largest agencies struck by the attack was the National Health Service hospitals in England and Scotland, 
+and up to 70,000 devices – 
+including computers, MRI scanners, blood-storage refrigerators and theatre equipment – 
+may have been affected." [1].
+With the major risks to life caused by attacks on medical institutions, 
+the COVID-19 crisis has prompted a clear messages via
+_the Oxford Statement on the International Law Protections Against Cyber Operations Targeting the Health Care Sector_, 
+and a second statement on _Safeguarding Vaccine Research_ during May and August 2020, respectively [2, 3].
+
+International humanitarian law requires that medical care is respected and protected. 
+COVID-19 illustrates that primary reasearch is just as critical and should have the same protections.
+In general, publically funded research should be open and freely accessable to all (while respecting the privacy of human health data and personal data).
+However, the long and complex process of primary research means that publication or open-sourcing can take a long time. 
+Furthermore, the researchers depend on recognition of their work and are unlikely to publish intermediate results.
+
+It is understandable then that nations who might be more interested in privately succeeding will be interested in stealing any information available.
+Or more likely, this could be seen from private companies that are willing to steal intellectual property (IP).
+For example, for a specific pathogen like SARS-CoV-2 just knowing what amino acid residues your compeditor is most interested in can give you immediate insight that might have taken months to produce. 
+Research project datasets tend to start out broad and move linearly towards a final result. 
+If the actual documentation and code can be read then these critical results will be obvious. 
+However, even just metadata like filenames can provide the key information.
+It is not unreasonable to assume that the researchers will simply name datasets incrementally with the key process used. 
+As an example, in a database you might see files with assending date stamps:
+* data_group1.csv
+* data_group1_pruned.csv
+* data_group1_pruned_significant_hits.csv
+* data_group1_pruned_significant_hits_pR127L.csv
+
+Anyone working on the same problem will understand the routine protocols and know that focusing their research on amino acid p.R127L will give them an advantage. 
+Tackling this problem is one for IP law.
+If it was for something like vaccine research then one might argue about applied ethics - 
+"is it wrong to steal that which should be free ifnormation?" - 
+but that weak arguement is quickly disarmed by the fact that we would want our vaccine to come from the primary rearcher, 
+not the theif who is willing to cut corners. 
+
+It is obvious that protection should be impleted to prevent theft of _public IP_.
+Forthermore, publically funded health research results usally reside alongside private health information that deserves to have strong protections. 
+
+
+I notice that reports of medical espionage in public media are not alway accurately defined. 
+The newstory of a former University Of Florida researcher 
+indicted for scheme to defraud has, 
+in other places, 
+been framed more like someone working under cover for China 
+rather than the more accurate description of 
+someone committing fraud for failing to report overseas funding sources [4].
+There are examples of stolden research IP for personal gain, 
+such as the "hospital researcher sentenced to prison for conspiring to steal trade secrets, sell them in China" [5].
+In this case, after ten years in the field the researcher was accused of 
+"stealing exosome-related trade secrets concerning the research, 
+identification and treatment of a range of pediatric medical conditions" 
+and then "creating and selling exosome isolation kits" for sale via her company in China [5].
+Unlike these examples of personal gain, there have been reports of national medical espionage during to the COVD-19 crisis.
+
+Remaining discussion to be added...
+
+# References
+----------
+
+[1] WannaCry ransomware attack, wikipedia.org\
+[https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact)\
+\
+[2] The Oxford Statement on the International Law Protections Against Cyber Operations Targeting the Health Care Sector\
+[https://www.elac.ox.ac.uk/the-oxford-statement-on-the-international-law-protections-against-cyber-operations-targeting-the-hea](https://www.elac.ox.ac.uk/the-oxford-statement-on-the-international-law-protections-against-cyber-operations-targeting-the-hea)\
+\
+[3] The Second Oxford Statement on International Law Protections of the Healthcare Sector During Covid-19: Safeguarding Vaccine Research\
+[https://www.elac.ox.ac.uk/article/the-second-oxford-statement](https://www.elac.ox.ac.uk/article/the-second-oxford-statement)\
+\
+[4] Former University Of Florida Researcher Indicted For Scheme To Defraud National Institutes Of Health And University Of Florida\
+[http://crweworld.com/fl/trendingnow/news/1871206/former-university-of-florida-researcher-indicted-for-scheme-to-defraud-national-institutes-of-health-and-university-of-florida](http://crweworld.com/fl/trendingnow/news/1871206/former-university-of-florida-researcher-indicted-for-scheme-to-defraud-national-institutes-of-health-and-university-of-florida)\
+\
+[5] Hospital researcher sentenced to prison for conspiring to steal trade secrets, sell them in China\
+[http://crweworld.com/oh/trendingnow/news/1867620/hospital-researcher-sentenced-to-prison-for-conspiring-to-steal-trade-secrets-sell-them-in-china](http://crweworld.com/oh/trendingnow/news/1867620/hospital-researcher-sentenced-to-prison-for-conspiring-to-steal-trade-secrets-sell-them-in-china)\
+\
+Coronavirus: Cyber-spies hunt Covid-19 research, US and UK warn\
+[https://www.bbc.com/news/technology-52551023](https://www.bbc.com/news/technology-52551023)\
+\
+The Cyber Side of Vaccine Nationalism\
+[https://www.cfr.org/blog/cyber-side-vaccine-nationalism](https://www.cfr.org/blog/cyber-side-vaccine-nationalism)\
+\
+Race for Coronavirus Vaccine Pits Spy Against Spy\
+[https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare](https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare)
