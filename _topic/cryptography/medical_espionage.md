@@ -90,7 +90,7 @@ Predicting the balance of world order is folly, but as they say "history repeats
 We can detach from our virtual identities; online presence, daily routines, but we cannot detach from our genetic identidy.
 Unlike fingerprinting, or retinal scan, are we prepared to provide a biometric identity with so much information?
 
-# In the media
+# Ransomware
 There have been several ransomware attacks on the health industry in recent years.
 These have included public and private research and innovation institutions.
 However, the worst examples of this type of crime were seen during the 2017 WannaCry attack;
@@ -98,6 +98,8 @@ However, the worst examples of this type of crime were seen during the 2017 Wann
 and up to 70,000 devices – 
 including computers, MRI scanners, blood-storage refrigerators and theatre equipment – 
 may have been affected." [1].
+
+# Legal safegard
 With the major risks to life caused by attacks on medical institutions, 
 the COVID-19 crisis has prompted a clear messages via
 _the Oxford Statement on the International Law Protections Against Cyber Operations Targeting the Health Care Sector_, 
@@ -109,9 +111,14 @@ In general, publically funded research should be open and freely accessable to a
 However, the long and complex process of primary research means that publication or open-sourcing can take a long time. 
 Furthermore, the researchers depend on recognition of their work and are unlikely to publish intermediate results.
 
-It is understandable then that nations who might be more interested in privately succeeding will be interested in stealing any information available.
-Or more likely, this could be seen from private companies that are willing to steal intellectual property (IP).
-For example, for a specific pathogen like SARS-CoV-2 just knowing what amino acid residues your compeditor is most interested in can give you immediate insight that might have taken months to produce. 
+# Metadata
+It is understandable that nations who might be more interested 
+in privately succeeding will be interested in stealing any information available.
+Or more likely, this could be seen from private companies 
+that are willing to steal intellectual property (IP).
+For example, for a specific pathogen like SARS-CoV-2 just knowing what 
+amino acid residues your compeditor is most interested in can give you immediate 
+insight that might have taken months to produce. 
 Research project datasets tend to start out broad and move linearly towards a final result. 
 If the actual documentation and code can be read then these critical results will be obvious. 
 However, even just metadata like filenames can provide the key information.
@@ -132,7 +139,25 @@ not the theif who is willing to cut corners.
 It is obvious that protection should be impleted to prevent theft of _public IP_.
 Forthermore, publically funded health research results usally reside alongside private health information that deserves to have strong protections. 
 
+# Disinformation
+Disinformation, _dezinformatsiya_, includes the leaking of information that 
+seems valuable but is either a dead-end, or worse, intentionally harmful.
+It is critical to ban the use of disinformation in any research affecting 
+human health or publically funded research.
+It would be better to have instances of valid IP theft than risk any harm.
 
+# Data pollution
+Conversely, data pollution is another potential risk factor.
+Large scale genomics relies on careful curation. 
+Importing incorrect data will pollute analysis and 
+potentially mask true positive results from being found. 
+In the last few years, some commercial genomic services have allowed users to 
+upload their own genomic and personal phenotypic information.
+While most users are just interested in their own results, this has a reasonable large potential for risk - 
+a targetted data submission, randomly shuffling input phenotypic information 
+would weaken the database for assocciation analysis.
+
+# In the media
 I notice that reports of medical espionage in public media are not alway accurately defined. 
 The newstory of a former University Of Florida researcher 
 indicted for scheme to defraud has, 
@@ -150,7 +175,11 @@ Unlike these examples of personal gain, there have been reports of national medi
 
 Remaining discussion to be added...
 
-# How to protect data and promote open-source
+# How to protect data and promote open-source access
+## Projects focused on safe access
+
+## Future methods
+
 
 # References
 ----------
