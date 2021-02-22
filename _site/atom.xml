@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-21T21:00:58+01:00</updated>
+ <updated>2021-02-22T13:14:44+01:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -708,9 +708,6 @@ cross link and label
 1. [Introduction](#introduction)
 <a name="introduction"></a>
 -->
-
-<p>test 
-{cite mclaren2016ensembl}</p>
 
 <h1 id="the-prospect-of-genomic-medical-espionage">The prospect of genomic medical espionage</h1>
 <p>In the hayday of human source intelligence - think late Cold War - international espionage was realtively easy to understand.
