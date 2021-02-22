@@ -180,11 +180,12 @@ Remaining discussion to be added...
 
 ## Future methods
 
+test for ref [1][1]
 
 # References
 ----------
 
-[1] WannaCry ransomware attack, wikipedia.org\
+[1]: WannaCry ransomware attack, wikipedia.org\
 [https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact)\
 \
 [2] The Oxford Statement on the International Law Protections Against Cyber Operations Targeting the Health Care Sector\
