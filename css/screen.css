@@ -8,7 +8,7 @@
 body {
     margin: 1px;
 	background-color: white;
-	font: 16pt Baskerville, Arial;
+	font: 21px Baskerville, Arial;
 	text-align: justify;
 	display: flex;
 	justify-content: center;
@@ -27,12 +27,13 @@ code {
 /* font: 1.2em Roboto, Arial, "Lucida Grande", garamond, palatino, verdana; */
 h1 {
   font-size: 100%;
-  font: 1.1em Arial;
+  font: 1.2em "Open sans", Arial, Baskerville ;
 }
 
 h2, h3, h4, h5, h6 {
   font-size: 100%;
-  font: 1.0em Arial;
+  font: 1.0em "Open sans", Arial;
+  /*border-bottom: 1px dotted #aaaaaa; */
 }
 
 	
@@ -76,7 +77,7 @@ div#content a {
     border-bottom: 1px Solid grey;
 }
 
-/* Set a paragraph indent */
+/* Set a paragraph indent 
 p { margin-top: 1.0em;
     margin-bottom: 1 }
 p + p {
@@ -84,6 +85,7 @@ p + p {
   margin-top: 1 }
 
 p.hang { text-indent: -0.44em }
+*/
 
 /*
 p {

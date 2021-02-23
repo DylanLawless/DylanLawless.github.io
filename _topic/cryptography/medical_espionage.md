@@ -10,10 +10,8 @@ subject: cryptography
 ================
 <p class="meta">13 Feb 2021</p>
 
-<!--
 * TOC
 {:toc}
--->
 
 <!--
 cross link and label
@@ -94,10 +92,10 @@ Unlike fingerprinting, or retinal scan, are we prepared to provide a biometric i
 There have been several ransomware attacks on the health industry in recent years.
 These have included public and private research and innovation institutions.
 However, the worst examples of this type of crime were seen during the 2017 WannaCry attack;
-"One of the largest agencies struck by the attack was the National Health Service hospitals in England and Scotland, 
-and up to 70,000 devices – 
-including computers, MRI scanners, blood-storage refrigerators and theatre equipment – 
-may have been affected." [1].
+> "One of the largest agencies struck by the attack was the National Health Service hospitals in England and Scotland, 
+> and up to 70,000 devices – 
+> including computers, MRI scanners, blood-storage refrigerators and theatre equipment – 
+> may have been affected." [1].
 
 # Legal safegard
 With the major risks to life caused by attacks on medical institutions, 
@@ -180,12 +178,11 @@ Remaining discussion to be added...
 
 ## Future methods
 
-test for ref [1][1]
 
 # References
 ----------
 
-[1]: WannaCry ransomware attack, wikipedia.org\
+[1] WannaCry ransomware attack, wikipedia.org\
 [https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact)\
 \
 [2] The Oxford Statement on the International Law Protections Against Cyber Operations Targeting the Health Care Sector\
