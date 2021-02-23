@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-22T13:17:24+01:00</updated>
+ <updated>2021-02-24T00:38:56+01:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -698,10 +698,22 @@ The Quipper Language: programming language for quantum computing<br />
   <p><h1 id="medical-espionage">Medical espionage</h1>
 <p class="meta">13 Feb 2021</p>
 
-<!--
-* TOC
-{:toc}
--->
+<ul id="markdown-toc">
+  <li><a href="#medical-espionage" id="markdown-toc-medical-espionage">Medical espionage</a></li>
+  <li><a href="#the-prospect-of-genomic-medical-espionage" id="markdown-toc-the-prospect-of-genomic-medical-espionage">The prospect of genomic medical espionage</a></li>
+  <li><a href="#ransomware" id="markdown-toc-ransomware">Ransomware</a></li>
+  <li><a href="#legal-safegard" id="markdown-toc-legal-safegard">Legal safegard</a></li>
+  <li><a href="#metadata" id="markdown-toc-metadata">Metadata</a></li>
+  <li><a href="#disinformation" id="markdown-toc-disinformation">Disinformation</a></li>
+  <li><a href="#data-pollution" id="markdown-toc-data-pollution">Data pollution</a></li>
+  <li><a href="#in-the-media" id="markdown-toc-in-the-media">In the media</a></li>
+  <li><a href="#how-to-protect-data-and-promote-open-source-access" id="markdown-toc-how-to-protect-data-and-promote-open-source-access">How to protect data and promote open-source access</a>    <ul>
+      <li><a href="#projects-focused-on-safe-access" id="markdown-toc-projects-focused-on-safe-access">Projects focused on safe access</a></li>
+      <li><a href="#future-methods" id="markdown-toc-future-methods">Future methods</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
 
 <!--
 cross link and label
@@ -781,11 +793,13 @@ Unlike fingerprinting, or retinal scan, are we prepared to provide a biometric i
 <h1 id="ransomware">Ransomware</h1>
 <p>There have been several ransomware attacks on the health industry in recent years.
 These have included public and private research and innovation institutions.
-However, the worst examples of this type of crime were seen during the 2017 WannaCry attack;
-“One of the largest agencies struck by the attack was the National Health Service hospitals in England and Scotland, 
+However, the worst examples of this type of crime were seen during the 2017 WannaCry attack;</p>
+<blockquote>
+  <p>“One of the largest agencies struck by the attack was the National Health Service hospitals in England and Scotland, 
 and up to 70,000 devices – 
 including computers, MRI scanners, blood-storage refrigerators and theatre equipment – 
-may have been affected.” <a href="WannaCry ransomware attack, wikipedia.org\">1</a>.</p>
+may have been affected.” [1].</p>
+</blockquote>
 
 <h1 id="legal-safegard">Legal safegard</h1>
 <p>With the major risks to life caused by attacks on medical institutions, 
@@ -870,12 +884,11 @@ Unlike these examples of personal gain, there have been reports of national medi
 
 <h2 id="future-methods">Future methods</h2>
 
-<p>test for ref <a href="WannaCry ransomware attack, wikipedia.org\">1</a></p>
-
 <h1 id="references">References</h1>
 <hr />
 
-<p><a href="https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact">https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact</a><br />
+<p>[1] WannaCry ransomware attack, wikipedia.org<br />
+<a href="https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact">https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact</a><br />
 <br />
 [2] The Oxford Statement on the International Law Protections Against Cyber Operations Targeting the Health Care Sector<br />
 <a href="https://www.elac.ox.ac.uk/the-oxford-statement-on-the-international-law-protections-against-cyber-operations-targeting-the-hea">https://www.elac.ox.ac.uk/the-oxford-statement-on-the-international-law-protections-against-cyber-operations-targeting-the-hea</a><br />
