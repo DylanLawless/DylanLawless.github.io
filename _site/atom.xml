@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-24T13:31:18+01:00</updated>
+ <updated>2021-02-24T15:33:15+01:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -242,108 +242,6 @@ https://www.rstudio.com/resources/cheatsheets/#515&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>Test - make a new md file</title>
-   <link href="https://tom.preston-werner.com/2020/04/26/tester.html"/>
-   <updated>2020-04-26T00:00:00+02:00</updated>
-   <id>https://tom.preston-werner.com/2020/04/26/tester</id>
-   <content type="html">&lt;h1 id=&quot;test---make-a-new-md-file&quot;&gt;Test - make a new md file&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;10 Nov 2016 - San Francisco&lt;/p&gt;
-
-&lt;p&gt;This is a story about a company called
-&lt;a href=&quot;https://snyk.io/blog/welcome-ruby-users/&quot;&gt;Snyk&lt;/a&gt; (pronounced “sneak”), their
-founder Guy Podjarny, my decision to become one of their advisors, and how they
-are going to help save you from malevolent agents trying to steal your digital
-stuff.&lt;/p&gt;
-
-&lt;p&gt;If you’re anything like me, you’re simultaneously terrified and in awe of the
-increasing commonality of large corporate security breaches. Even big names like
-Ebay, Home Depot, Anthem, JP Morgan Chase, Target, LinkedIn, Dropbox, and Yahoo
-are falling victim to sophisticated attacks. If you spend even a few minutes
-looking into it, you’ll be shocked at how frequently these breaches are
-happening now. The fine folks at Information is Beautiful have an excellent
-interactive visualization of the &lt;a href=&quot;http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/&quot;&gt;World’s Biggest Data
-Breaches&lt;/a&gt;
-over the last twelve years, in case you want to read all the gory details and
-never get a restful night of sleep ever again:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/&quot;&gt;
-  &lt;img src=&quot;/images/posts/2016-11-10/breaches.png&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve used a fair number of emotionally charged words above that might be
-triggering your FUD detectors right about now. But be advised: it’s not paranoia
-when they really are out to get you. If recent, extremely high profile (and
-subsequently weaponized) breaches like those of the Clinton Campaign and the DNC
-aren’t enough to make you want to air gap your entire life, then I envy your
-steely-eyed mettle and implore you to teach me your meditation techniques.&lt;/p&gt;
-
-&lt;p&gt;The fact is, security is hard. And it’s getting harder every day. To win, you
-have to get it right every single time. To lose (and lose big), you only have to
-screw it up once.&lt;/p&gt;
-
-&lt;p&gt;During my years at GitHub, I spent a lot of time assembling a dedicated security
-team, managing security audits and penetration tests, and working to establish a
-culture of security awareness amongst our development team. All of this is
-challenging and expensive, especially for a young company. Even worse, it’s the
-kind of investment that’s totally invisible when it’s working, making it hard to
-sustain until that crucial and terrible moment you end up on the front page of
-Hacker News as the latest victim.&lt;/p&gt;
-
-&lt;p&gt;A year ago I was contemplating this, especially the difficult proposition of
-having developers, furious at work on new features, constantly maintain
-awareness of security vulnerabilities they might be inadvertently weaving into
-the product. Web application developers are generally not security experts, and
-though I would love to live in a world where that wasn’t true, it’s just not a
-realistic expectation. Meanwhile, modern development means an increasing
-reliance on 3rd party code. Even a small Rails app will probably have 300 or
-more gem dependencies after a few months of development. It’s even more in the
-nodejs world. This level of modularization and code reuse, driven by the
-explosion of high quality open source over the last decade, is amazing and I
-absolutely love it, but it comes at a security expense.&lt;/p&gt;
-
-&lt;p&gt;Open source projects are not known for their excellent security records.
-Vulnerabilities like &lt;a href=&quot;http://heartbleed.com/&quot;&gt;Heartbleed&lt;/a&gt; and
-&lt;a href=&quot;https://blog.cloudflare.com/inside-shellshock/&quot;&gt;Shellshock&lt;/a&gt; painfully
-demonstrate the idea that “given enough eyeballs, all bugs are shallow” is
-completely false. In fact, due to a flaw in YAML, Rails had a &lt;a href=&quot;http://blog.codeclimate.com/blog/2013/01/10/rails-remote-code-execution-vulnerability-explained/&quot;&gt;pretty extreme
-remote code execution
-vulnerability&lt;/a&gt;
-for years. If you were running any version of Rails prior to the fix, you were
-vulnerable. This stuff is real, and as responsible developers, we need to be
-more proactive about it.&lt;/p&gt;
-
-&lt;p&gt;Luckily, at the time I was pondering these matters, I ran into Guy Podjarny. As
-a former cofounder of Blaze.io and then CTO of Web Experience at Akamai (which
-acquired Blaze.io), Guy intimately understands the impact of security on today’s
-web developers. He was working on an automated tool to scan and fix security
-vulnerabilities in 3rd party dependencies. I was intrigued. They already had a
-way to scan nodejs projects and look for known security vulnerabilities in the
-dependency tree and automatically upgrade or patch affected libraries. I thought
-this was pretty cool, but it was his vision for what automated security tooling
-could be that sold me on him and his company. I can’t talk much about that
-now, but just know that what Snyk is today is just the tip of what will
-become an intelligent and proactive bodyguard for your entire codebase.&lt;/p&gt;
-
-&lt;p&gt;A few months ago, Snyk released GitHub integration to make it fantastically
-simple to hook up your repos to Snyk and, my favorite feature: the ability to
-monitor your repo for future vulnerabilities and then &lt;strong&gt;automatically submit a
-pull request&lt;/strong&gt; with the suggested package upgrade or hotfix patch (nodejs only for
-now).&lt;/p&gt;
-
-&lt;p&gt;Today, &lt;a href=&quot;https://snyk.io/blog/welcome-ruby-users/&quot;&gt;Snyk announced support for
-Ruby&lt;/a&gt;. Take a look at that blog post,
-it does an awesome job of explaining how simple it is to set up and what the
-generated pull requests look like. It’s totally free for open source projects,
-and extremely cheap insurance for your important projects.&lt;/p&gt;
-
-&lt;p&gt;Make no mistake, 3rd party code is a clear and present danger to your business.
-If you don’t know if you’re vulnerable, then you must assume that you are and
-take steps to protect yourself. Snyk makes it easy.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>Cryptography</title>
    <link href="https://tom.preston-werner.com/2020/04/26/cryptography.html"/>
    <updated>2020-04-26T00:00:00+02:00</updated>
@@ -525,32 +423,6 @@ The Quipper Language: programming language for quantum computing&lt;br /&gt;
 &lt;!-- 
 ![encrpytdata](https://i.imgur.com/UubXs0H.gif)
 --&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Placeholder post</title>
-   <link href="https://tom.preston-werner.com/2015/06/19/replicated.html"/>
-   <updated>2015-06-19T00:00:00+02:00</updated>
-   <id>https://tom.preston-werner.com/2015/06/19/replicated</id>
-   <content type="html">&lt;h1 id=&quot;placeholder-post&quot;&gt;Placeholder post&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;19 Jun 2015 - San Francisco&lt;/p&gt;
-&lt;p&gt;Placeholder text.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ViN-qkcovL0&amp;amp;feature=youtu.be&quot;&gt;youtube video link&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;email &lt;a href=&quot;mailto:contact@replicated.bla&quot;&gt;contact@replicated.bla&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Example weblink
-&lt;a href=&quot;https://snyk.io/blog/welcome-ruby-users/&quot;&gt;Snyk&lt;/a&gt;.
-Video link &lt;a href=&quot;http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/&quot;&gt;World’s Biggest Data
-Breaches&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Embedded image from other source
-&lt;a href=&quot;http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/&quot;&gt;
-  &lt;img src=&quot;/images/posts/2016-11-10/breaches.png&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
@@ -3752,6 +3624,65 @@ Instead, the included table is a <em>very</em> simpified example of candidate ge
     </tr>
   </tbody>
 </table>
+</p>
+
+  <h2> - </h2>
+  <p><h1 id="conferences">Conferences</h1>
+
+<p>Public conferences attending or participating in:</p>
+
+<p><a href="https://2020.eshg.org">The European Society of Human Genetics (ESHG)</a> - 2020 Berlin</p>
+
+<p><img src="/images/meetings/berlin.jpg" width="80%" /></p>
+
+<p><a href="https://www.epfl.ch/schools/sv/ghi/">Functional genomics seminar series EPFL</a> - 2020 Lausanne</p>
+
+<p><img src="/images/meetings/epfl.jpg" width="80%" /></p>
+
+<p><a href="https://2019.eshg.org">The European Society of Human Genetics (ESHG)</a> - 2019 Sweden</p>
+
+<p><img src="/images/meetings/gothe.jpg" width="80%" /></p>
+
+<p><a href="https://broadinstitute.swoogo.com/ga4gh6thplenary">Global Alliance for Genomics and Health (GA4GH)</a> - 2018 Basel, Switzerland</p>
+
+<p><img src="/images/meetings/basel.jpg" width="80%" /></p>
+
+<p><a href="https://www.genopri.org">International Workshop on Genome Privacy and Security (GenoPri’18)</a> - 2018, Basel, Switzerland</p>
+
+<p><img src="/images/meetings/genopri.jpg" width="80%" /></p>
+
+<p><a href="http://transmartfoundation.org/europe-fall-meeting-2018/">i2b2 tranSMART Academic Users Group Conference</a> 2018 - Geneva, Switzerland</p>
+
+<p><img src="/images/meetings/geneva.jpg" width="80%" /></p>
+
+<p><a href="http://www.cambridgebioresource.group.cam.ac.uk/volunteers/rare">NIHR BioResource Rare Diseases</a> 2018 - Trinity College, Cambridge, UK</p>
+
+<p><img src="/images/meetings/cambridge.jpg" width="80%" /></p>
+
+<p><a href="http://esid2017.kenes.com">European Society for Immunodeficiencies ESID</a> 2017 - Edinburgh, UK
+Autoimmunity &amp; Inflammation in PID</p>
+
+<p><img src="/images/meetings/edinburgh.jpg" width="80%" /></p>
+
+<p><a href="https://medhealth.leeds.ac.uk/events/event/86/combined_northern_and_yorkshire_annual_rheumatology_meeting_national_railway_museum_york">Annual Northern &amp; Yorkshire Rheumatology</a> 2017 - National Railway Museum, York, UK</p>
+
+<p><img src="/images/meetings/york.jpg" width="80%" /></p>
+
+<p><a href="https://coursesandconferences.wellcomegenomecampus.org/Conferences.wt">Immunogenomics of Disease 2017</a> - Wellcome Genome Campus, Cambridge, UK</p>
+
+<p><img src="/images/meetings/embl.jpg" width="80%" /></p>
+
+<p><a href="http://www.cambridgebioresource.group.cam.ac.uk/volunteers/rare">NIHR BioResource Rare Diseases</a> 2016 - Downing College, Cambridge, UK</p>
+
+<p><img src="/images/meetings/downing.jpg" width="80%" /></p>
+
+<p><a href="http://esid.org">European Society for Immunodeficiencies ESID</a> 2016 - Barcelona, Spain</p>
+
+<p><img src="/images/meetings/barcelona.jpg" width="80%" /></p>
+
+<p><a href="http://www.immunology-conference.de">Annual meeting German Society for Immunology</a> 2014 - Bonn, Germany</p>
+
+<p><img src="/images/meetings/bonn.png" width="80%" /></p>
 </p>
 
   <h2> - </h2>

@@ -21,7 +21,7 @@ In the mean time, the formatting may be ugly, the content incomplete, and workin
     </ul>
 -->
 
-  <div id="Topics">
+<div id="Topics">
     <h1>Precision medicine</h1>
   <ul class="topic">
       {% assign sorted-topic = site.topic | where: "subject","Precision medicine" %}
@@ -54,13 +54,11 @@ In the mean time, the formatting may be ugly, the content incomplete, and workin
     {% endfor %}
   </ul>
 
-
-<div id="home">
-  <h1>Genomics</h1>
+  <h1>Public presentation</h1>
   <ul class="topic">
-      {% assign sorted-topic = site.topic | where: "subject","genomics" %}
+      {% assign sorted-topic = site.topic | where: "subject","meetings" %}
       {% for topic in sorted-topic %}
-            <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
+      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
     {% endfor %}
   </ul>
 
