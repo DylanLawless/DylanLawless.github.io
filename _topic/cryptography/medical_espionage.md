@@ -10,10 +10,8 @@ subject: cryptography
 ================
 <p class="meta">13 Feb 2021</p>
 
-<!--
 * TOC
 {:toc}
--->
 
 <!--
 cross link and label
@@ -94,10 +92,10 @@ Unlike fingerprinting, or retinal scan, are we prepared to provide a biometric i
 There have been several ransomware attacks on the health industry in recent years.
 These have included public and private research and innovation institutions.
 However, the worst examples of this type of crime were seen during the 2017 WannaCry attack;
-"One of the largest agencies struck by the attack was the National Health Service hospitals in England and Scotland, 
-and up to 70,000 devices – 
-including computers, MRI scanners, blood-storage refrigerators and theatre equipment – 
-may have been affected." [1].
+> "One of the largest agencies struck by the attack was the National Health Service hospitals in England and Scotland, 
+> and up to 70,000 devices – 
+> including computers, MRI scanners, blood-storage refrigerators and theatre equipment – 
+> may have been affected." [1].
 
 # Legal safegard
 With the major risks to life caused by attacks on medical institutions, 
@@ -177,15 +175,118 @@ Remaining discussion to be added...
 
 # How to protect data and promote open-source access
 ## Projects focused on safe access
+The Global Alliance for Genomics and Health (GA4GH) is leading the effort in
+safe data access. 
+> "GA4GH is a policy-framing and technical standards-setting organization, 
+> seeking to enable responsible genomic data sharing within a human rights framework.
+> Enabling responsible genomic data sharing for the benefit of human health. "
+
+The [driver projects promoted by GA4GH](https://www.ga4gh.org/how-we-work/driver-projects/) 
+are the some of the best real world examples
+today.
+These include projects such as 
+* [Matchmaker Exchange](https://www.matchmakerexchange.org) 
+	+ as a tool to find genetic causes for patients with rare disease.
+* [TOPMed program](https://www.nhlbiwgs.org) 
+	+ very lage scale genome sequence data.
+* [Genomics England](https://www.genomicsengland.co.uk)
+	+ very lage scale genome sequencing for patients in the UK.
+
+All of the projects play an extremely important role in human health and research.
+There are also many other similar initiatives outside of GA4GH which are promoting 
+science collaboration.
+
+## Obstacles to data privacy
+Attending the GA4GH meetings and working as part of some of these projects,
+I am struck by the fact that genomic privacy generally depends on a user trust system,
+and data protection is focused on the end-user stage. 
+I can exemplify the problem with the following simple example:
+
+Every subject relying on genomic analysis must submit a DNA sample alogn with 
+genetic concent, and the data is prepared in several stages;
+1. Sample collection
+2. Sample preperation
+3. Sequencing
+4. Data processing
+5. Data submission
+6. Data access
+7. Reporting
+
+_Problem level [1]_\
+The best systems today use a tracking system where the sample collection will
+produce an anonymised ID in step 1.
+All subsequent steps will therefore be detached from the subject's personal information.
+However, the personal information is not necessarily the valuable info, 
+the genome sequence is (even if anonymised).
+Anyone who has access to the DNA sample can easily sequence the genome for less than 
+$500 US.
+
+_Problem level [2-3]_\
+The sample preperation and sequencing has identical risk as step 1. 
+However, the sample is now likely out of the hands of the primary person responsible.
+It will most likely be in a large scale sequence facility. 
+
+_Problem level [4]_\
+Data processing will become more routine over time.
+The large scale sequencing projects all follow a strict analysis pipeline,
+but since a large majority of proccessing today is for clinical diagnosis, 
+it means that at some stage a researcher will be required to do custom analysis
+on an individual sample. 
+This person is likely to have unrestricted access to all database samples.
+
+_Problem level [5]_\
+The data submission level will consist of anonymous subject IDs again, 
+however it will contain whole genome seuqnces (or processed variant called datasets).
+
+_Problem level [6]_\
+Data access is the step in which nearly every genomic data protection process is
+focused. 
+It is a logical starting position since this is the stage in which researchers 
+will require permissions for accessing large amounts of data for research purposes.
+It has the addition risk in that other medical data is usually also present, 
+typically clinical phenotype data. 
+
+_Problem level [7]_\
+Once a candidate genomic determinant for clinical diagnosis is established,
+the researcher is going to complete a reporting procedure.
+One would imagine that this is a clean, automated, process. 
+However, it is very common for researchers and clinicians to simply email back and
+forth about very sensitive information.
+This is uderstandable and often a patient's life could be saved with a rapid diagnosis.
+
+However, the facts should be clearly stated. 
+Plain text emails, SMS, and other types of communications are collected routinely 
+via national surveillance.
+[Not to be dismissed as conspiracy theory](https://en.wikipedia.org/wiki/List_of_government_mass_surveillance_projects), 
+it is a fact that your private information may be collected without your consent,
+_but_ you _will_ get more expertise in your medical treatment when physicians can communicate with their colleagues via email, etc.
+
+_Problem summary:_\
+Nearly all privacy protocols today are focused on step 6.
+Anyone interested in large scale medical espionage will focus on any of the 
+other, much more readily available, steps 1-5.
+Furthermore, data access at step 6 can be restricted to trusted researchers, 
+but there should be no confusion - humans can always find methods for 
+exporting data from protected access portals [^foot].
+While the privilege of data access is restricted, 
+it is essentially based on trust and 
+recruited patient participants should not be lead to believe otherwise.
+Some very sophisticated methods allow for data analysis of encrypted data, 
+but these are not widely used today and will not be able to replace all of the 
+required methods in the near future.
 
 ## Future methods
+In addition to the highly commendable initiatives for genomic data sharing today,
+there are several options that can be implemented in the future.
 
-test for ref [1][1]
+To be finished..
+
+[^foot]: [A trivial example of data export by hiding data within a "results figure"](https://dylanlawlessblog.wordpress.com/2019/08/08/the-devil-is-in-the-detail/).
 
 # References
 ----------
 
-[1]: WannaCry ransomware attack, wikipedia.org\
+[1] WannaCry ransomware attack, wikipedia.org\
 [https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack#Impact)\
 \
 [2] The Oxford Statement on the International Law Protections Against Cyber Operations Targeting the Health Care Sector\
