@@ -1,0 +1,11 @@
+--2021-02-24 15:25:33--  https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2F1482429303%2Fgendarmenmarkt-square-berlin-germany-BERLIN1222.jpg
+Resolving external-content.duckduckgo.com (external-content.duckduckgo.com)... 40.114.178.124
+Connecting to external-content.duckduckgo.com (external-content.duckduckgo.com)|40.114.178.124|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [image/jpeg]
+Saving to: ‘berlin’
+
+berlin                                 [<=>                                                              ]       0  --.-KB/s               berlin                                 [ <=>                                                             ] 718,83K  --.-KB/s    in 0,1s    
+
+2021-02-24 15:25:34 (4,80 MB/s) - ‘berlin’ saved [736086]
+
