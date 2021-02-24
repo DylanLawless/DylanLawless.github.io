@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-24T00:38:56+01:00</updated>
+ <updated>2021-02-24T02:31:29+01:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -709,6 +709,7 @@ The Quipper Language: programming language for quantum computing<br />
   <li><a href="#in-the-media" id="markdown-toc-in-the-media">In the media</a></li>
   <li><a href="#how-to-protect-data-and-promote-open-source-access" id="markdown-toc-how-to-protect-data-and-promote-open-source-access">How to protect data and promote open-source access</a>    <ul>
       <li><a href="#projects-focused-on-safe-access" id="markdown-toc-projects-focused-on-safe-access">Projects focused on safe access</a></li>
+      <li><a href="#obstacles-to-data-privacy" id="markdown-toc-obstacles-to-data-privacy">Obstacles to data privacy</a></li>
       <li><a href="#future-methods" id="markdown-toc-future-methods">Future methods</a></li>
     </ul>
   </li>
@@ -881,8 +882,126 @@ Unlike these examples of personal gain, there have been reports of national medi
 
 <h1 id="how-to-protect-data-and-promote-open-source-access">How to protect data and promote open-source access</h1>
 <h2 id="projects-focused-on-safe-access">Projects focused on safe access</h2>
+<p>The Global Alliance for Genomics and Health (GA4GH) is leading the effort in
+safe data access.</p>
+<blockquote>
+  <p>“GA4GH is a policy-framing and technical standards-setting organization, 
+seeking to enable responsible genomic data sharing within a human rights framework.
+Enabling responsible genomic data sharing for the benefit of human health. “</p>
+</blockquote>
+
+<p>The <a href="https://www.ga4gh.org/how-we-work/driver-projects/">driver projects promoted by GA4GH</a> 
+are the some of the best real world examples
+today.
+These include projects such as</p>
+<ul>
+  <li><a href="https://www.matchmakerexchange.org">Matchmaker Exchange</a>
+    <ul>
+      <li>as a tool to find genetic causes for patients with rare disease.</li>
+    </ul>
+  </li>
+  <li><a href="https://www.nhlbiwgs.org">TOPMed program</a>
+    <ul>
+      <li>very lage scale genome sequence data.</li>
+    </ul>
+  </li>
+  <li><a href="https://www.genomicsengland.co.uk">Genomics England</a>
+    <ul>
+      <li>very lage scale genome sequencing for patients in the UK.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>All of the projects play an extremely important role in human health and research.
+There are also many other similar initiatives outside of GA4GH which are promoting 
+science collaboration.</p>
+
+<h2 id="obstacles-to-data-privacy">Obstacles to data privacy</h2>
+<p>Attending the GA4GH meetings and working as part of some of these projects,
+I am struck by the fact that genomic privacy generally depends on a user trust system,
+and data protection is focused on the end-user stage. 
+I can exemplify the problem with the following simple example:</p>
+
+<p>Every subject relying on genomic analysis must submit a DNA sample alogn with 
+genetic concent, and the data is prepared in several stages;</p>
+<ol>
+  <li>Sample collection</li>
+  <li>Sample preperation</li>
+  <li>Sequencing</li>
+  <li>Data processing</li>
+  <li>Data submission</li>
+  <li>Data access</li>
+  <li>Reporting</li>
+</ol>
+
+<p><em>Problem level [1]</em><br />
+The best systems today use a tracking system where the sample collection will
+produce an anonymised ID in step 1.
+All subsequent steps will therefore be detached from the subject’s personal information.
+However, the personal information is not necessarily the valuable info, 
+the genome sequence is (even if anonymised).
+Anyone who has access to the DNA sample can easily sequence the genome for less than 
+$500 US.</p>
+
+<p><em>Problem level [2-3]</em><br />
+The sample preperation and sequencing has identical risk as step 1. 
+However, the sample is now likely out of the hands of the primary person responsible.
+It will most likely be in a large scale sequence facility.</p>
+
+<p><em>Problem level [4]</em><br />
+Data processing will become more routine over time.
+The large scale sequencing projects all follow a strict analysis pipeline,
+but since a large majority of proccessing today is for clinical diagnosis, 
+it means that at some stage a researcher will be required to do custom analysis
+on an individual sample. 
+This person is likely to have unrestricted access to all database samples.</p>
+
+<p><em>Problem level [5]</em><br />
+The data submission level will consist of anonymous subject IDs again, 
+however it will contain whole genome seuqnces (or processed variant called datasets).</p>
+
+<p><em>Problem level [6]</em><br />
+Data access is the step in which nearly every genomic data protection process is
+focused. 
+It is a logical starting position since this is the stage in which researchers 
+will require permissions for accessing large amounts of data for research purposes.
+It has the addition risk in that other medical data is usually also present, 
+typically clinical phenotype data.</p>
+
+<p><em>Problem level [7]</em><br />
+Once a candidate genomic determinant for clinical diagnosis is established,
+the researcher is going to complete a reporting procedure.
+One would imagine that this is a clean, automated, process. 
+However, it is very common for researchers and clinicians to simply email back and
+forth about very sensitive information.
+This is uderstandable and often a patient’s life could be saved with a rapid diagnosis.</p>
+
+<p>However, the facts should be clearly stated. 
+Plain text emails, SMS, and other types of communications are collected routinely 
+via national surveillance.
+<a href="https://en.wikipedia.org/wiki/List_of_government_mass_surveillance_projects">Not to be dismissed as conspiracy theory</a>, 
+it is a fact that your private information may be collected without your consent,
+<em>but</em> you <em>will</em> get more expertise in your medical treatment when physicians can communicate with their colleagues via email, etc.</p>
+
+<p><em>Problem summary:</em><br />
+Nearly all privacy protocols today are focused on step 6.
+Anyone interested in large scale medical espionage will focus on any of the 
+other, much more readily available, steps 1-5.
+Furthermore, data access at step 6 can be restricted to trusted researchers, 
+but there should be no confusion - humans can always find methods for 
+exporting data from protected access portals <sup id="fnref:foot" role="doc-noteref"><a href="#fn:foot" class="footnote">1</a></sup>.
+While the privilege of data access is restricted, 
+it is essentially based on trust and 
+recruited patient participants should not be lead to believe otherwise.
+Some very sophisticated methods allow for data analysis of encrypted data, 
+but these are not widely used today and will not be able to replace all of the 
+required methods in the near future.</p>
 
 <h2 id="future-methods">Future methods</h2>
+<p>In addition to the highly commendable initiatives for genomic data sharing today,
+there are several options that can be implemented in the future.</p>
+
+<p>To be finished..</p>
 
 <h1 id="references">References</h1>
 <hr />
@@ -910,6 +1029,13 @@ The Cyber Side of Vaccine Nationalism<br />
 <br />
 Race for Coronavirus Vaccine Pits Spy Against Spy<br />
 <a href="https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare">https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare</a></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:foot" role="doc-endnote">
+      <p><a href="https://dylanlawlessblog.wordpress.com/2019/08/08/the-devil-is-in-the-detail/">A trivial example of data export by hiding data within a “results figure”</a>. <a href="#fnref:foot" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 </p>
 
   <h2> - </h2>
