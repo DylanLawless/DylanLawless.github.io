@@ -4,13 +4,63 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-22T13:17:24+01:00</updated>
+ <updated>2021-02-24T11:38:06+01:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>The devil is in the detail</title>
+   <link href="https://tom.preston-werner.com/2020/08/19/devil_in_detail.html"/>
+   <updated>2020-08-19T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2020/08/19/devil_in_detail</id>
+   <content type="html">&lt;h1 id=&quot;the-devil-is-in-the-detail&quot;&gt;The devil is in the detail&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;19 Aug 2019&lt;/p&gt;
+&lt;p&gt;I was learning some &lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;span style=&quot;color: #800080;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Steganography&quot;&gt;steganography&lt;/a&gt;&lt;/span&gt;&lt;/span&gt; methods for a security project. 
+At the same time, I was writing up a paper with some friends (&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf&quot;&gt;https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf&lt;/a&gt;) and decided to hide a little message in one of the figures.
+The goal was to encode some hidden data and see could we get it back out the other side, after publication.&lt;/p&gt;
+
+&lt;p&gt;It would be a lot of trouble for a master of espionage to have to publish a paper every time a secret message needed to be encoded for public transmission, but maybe it could be done!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/editor_paper_rag.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The secret message was imported into &lt;a href=&quot;https://www.r-project.org&quot;&gt;R&lt;/a&gt; from plain text. 
+It was encoded it into a png file that was a supplemental figure in our paper (from experience, supplemental figures usually get uploaded to a repository that can be downloaded after publication, while main-text figures are often converted in one way or another by the copy editors). 
+Once the figure was released, anyone with the correct decoding algorithm could get back the secret message.&lt;/p&gt;
+
+&lt;p&gt;In this case I used the 
+&lt;a href=&quot;https://github.com/richfitz/stegasaur&quot;&gt;richfitz/stegasaur&lt;/a&gt; package, 
+innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
+The inforation was hidden within the data that makes up the image, and is imperceivable to the naked eye. 
+Even better, the file size was slightly SMALLER than the original (1.9MB to 1.7MB) without noticeable difference in quality. 
+The secret message decoded from the protein structure figure “F_E4_Structure.png” and is printed to the console:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/r_steg_decode.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s an idea, &lt;a href=&quot;https://patents.google.com/patent/US8527779&quot;&gt;steganographic message blocks&lt;/a&gt; seperated across a career worth of publications, 
+that can only be deciphered once all blocks are collected! 
+Who would go to that trouble? 
+Go see what you can find in one Supplementary material png file. 
+&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&quot;&gt;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;r-script&quot;&gt;R script &lt;/h1&gt;
+&lt;p&gt;Try it yourself.
+Find the paper and get Figure E4.
+Download
+&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial&quot;&gt;10875_2019_670_MOESM5_ESM&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; install.packages(&quot;devtools&quot;)
+&amp;gt; install_github(&quot;richfitz/stegasaur&quot;)
+&amp;gt; library(&quot;devtools&quot;)
+&amp;gt; library(ggplot2) 
+&amp;gt; Decode message &amp;lt;- 
+&amp;gt;		stegasaur::decode(&quot;~/10875_2019_670_MOESM5_ESM.png&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Unnecessary complexity in precision medicine</title>
@@ -4857,7 +4907,7 @@ The output table shows the GO process “V(D)J recombination” as the strongest
 
 <p>These last two additionally ignore variants that are likely of minor consiquence to human health but still pased the basic pLoF filter. 
 Taliun et al. evaluated enrichment and depletion of pLOF variants 
-(allele frequency &lt; 0.5%) in gene sets (that is, terms) from Gene Ontology (GO) 
+(allele frequency $&lt;$ 0.5%) in gene sets (that is, terms) from Gene Ontology (GO) 
 [5, 6].
 For each gene annotated with a particular GO term, 
 they computed the number of pLOF variants per</p>
@@ -4905,8 +4955,8 @@ they detected more than 400 million variants:</p>
 </ul>
 
 <p>The 46% is pretty suprising but the number of private variant per person is probably not extremely high.
-In clinical exomes we usually expect appoximately &lt;100 novel variants compared to the <em>in-house sequence database</em>.
-We also expect aprrox. &lt;10 de novo variants in the same sample if parents/family were also sequenced. 
+In clinical exomes we usually expect appoximately $&lt;$100 novel variants compared to the <em>in-house sequence database</em>.
+We also expect aprrox. $&lt;$10 de novo variants in the same sample if parents/family were also sequenced. 
 The number will be much larger for non-coding genome, but since SNVs will be largely non-interpretable it is currently ignored for clinical diagnosis.</p>
 
 <p>A notable class of variants is the 
@@ -4954,7 +5004,7 @@ The gene sets with strong functional constraint included genes that encode DNA- 
 spliceosomal complexes, 
 translation initiation machinery and 
 RNA splicing and processing proteins (Supplementary Table 7). 
-They found fewer rare pLOF variants than expected (each comparison P &lt; 10−4) for 
+They found fewer rare pLOF variants than expected (each comparison P $&lt;$ 10−4) for 
 Genes associated with human disease in</p>
 <ul>
   <li>COSMIC [7] (31% depletion),</li>
