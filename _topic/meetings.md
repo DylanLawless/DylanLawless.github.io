@@ -62,4 +62,4 @@ Autoimmunity & Inflammation in PID
 
 [Annual meeting German Society for Immunology](http://www.immunology-conference.de) 2014 - Bonn, Germany
 
-<img src="{{ site.baseurl }}{% link images/meetings/bonn.png %}" width="80%">
+<img src="{{ site.baseurl }}{% link images/meetings/bonn.jpg %}" width="80%">
