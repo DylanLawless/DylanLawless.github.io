@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <!-- link to MathJax for LaTeX stlye eqn -->
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+   <!--  -->
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Immunogenomics</title>
+   <meta name="author" content="LawlessGenomics" />
+   <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
+   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
+
+   <!-- include a google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <img style="margin-bottom:-8px" 
+	src="/images/logos/logo_2.8.png" 
+	alt="Logo image" width="55" height="37.3"/>
+    <a href="/">LawlessGenomics</a>
+    <a class="extra" href="/">Home</a>
+  </div>
+
+  <div id="topic">
+<h1 id="immunogenomics">Immunogenomics</h1>
+<p class="meta">20 Feb 2021</p>
+
+<ul id="markdown-toc">
+  <li><a href="#immunogenomics" id="markdown-toc-immunogenomics">Immunogenomics</a></li>
+  <li><a href="#the-study-of-rare-immune-disorders" id="markdown-toc-the-study-of-rare-immune-disorders">The study of rare immune disorders.</a></li>
+  <li><a href="#genomic-analysis-protocol" id="markdown-toc-genomic-analysis-protocol">Genomic analysis protocol</a></li>
+  <li><a href="#immune-disorder-genes" id="markdown-toc-immune-disorder-genes">Immune disorder genes</a></li>
+  <li><a href="#primary-immunodeficiency-pid-genes" id="markdown-toc-primary-immunodeficiency-pid-genes">Primary Immunodeficiency (PID) genes</a></li>
+  <li><a href="#autoinflammatory-disease-genes" id="markdown-toc-autoinflammatory-disease-genes">Autoinflammatory disease genes</a></li>
+</ul>
+
+<h1 id="the-study-of-rare-immune-disorders">The study of rare immune disorders.</h1>
+<p><em>Note: in genomic analysis cohort studies a purely statistical approach 
+is preferrable to prevent bias in the initial discovery phase.
+The following pertains to rare disease or single case studies where 
+traditional statistical based assocciations are impossible detect.
+A link to new statistical based approaches for rare disease will also be provided shortly.</em></p>
+
+<p>Our goal is the discovery of rare variants in primary immune deficiency 
+diseases and autoinflammatory disease. 
+There is a long history of advancements in the field of immunology 
+by investigating rare diseases. 
+In a very broad sense immunology can be approached in two ways;</p>
+<ol>
+  <li>Categorically define each protein and signalling mechanism in a pathway or</li>
+  <li>Identify monogenic or complex genetic causes for immune disorders to identify new or known protein functions.</li>
+</ol>
+
+<p>Both of these approaches require <em>a priori</em> knowledge;
+i.e. 
+“what functional experiment will demonstrate the mechanism of the system 
+or protein of interest, 
+and how does a genetic variant explain the phenotype demonstrated by a patient”
+The second method is <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4203950/">discussed carefully by Casanova and Notarangelo</a>.</p>
+
+<p>Novel discovery of rare mutations in immune genes has some hurdles.</p>
+<ul>
+  <li>The patients included for sequencing must be selected carefully.
+The majority of disease-causing mutations identified will be known variants, 
+those that are obviously damaging, etc. and have defined treatments. 
+These must be identified quickly to focus on more significant discoveries.</li>
+  <li>Novel discoveries require functional experimentation to prove mechanism. 
+This can require a major investment for complex studies and therefore ends 
+up itself taking investigation approach number 1 mentioned above.</li>
+</ul>
+
+<p>There are two options for the approach:</p>
+<ul>
+  <li>Small single-case studies that require some functional work along with clinical investigation.
+    <ul>
+      <li>This first option can have very dramatic consequences for understanding 
+protein function - when the phenotype is extremely strong it is easier to identify.</li>
+    </ul>
+  </li>
+  <li>Cohort studies on larger groups of affected patients where the phenotype 
+is not as profound as rare single cases disorders.
+    <ul>
+      <li>This second option is more statistically reliable but the effect sizes tend to 
+be much smaller. Sample sizes are usually also small for rare diseases.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="genomic-analysis-protocol">Genomic analysis protocol</h1>
+<p>The best-practice methods for genomic analysis are discussed in other posts 
+including <a href="/topic/bioinformatics">“Genomic analysis for rare disease”</a>.
+These methods are generally a routine protocol that is performed for every sample, 
+and dependant on the technology used; 
+i.e. genome sequencing with
+illumina short reads, 10x Genomics long reads, RNAseq, Hi-C, etc.</p>
+
+<p>The disease-specific subtleties still often require a highly tailored analysis
+protocol to correctly identify a genetic determinant of disease.
+A simple explanation is seen with disease genes where knowledge about 
+protein function is used for annotation of candidate disease variants</p>
+
+<h1 id="immune-disorder-genes">Immune disorder genes</h1>
+<p>The genes which are most often identified in immune disorders can be separated 
+into those of Primary Immunodeficiency (PID) and Autoinflammatory diseases. 
+Of course there is overlap as many proteins have multiple functions 
+(inhibitory, activation, autoinhibition, etc.). 
+The analysis protcols use serval stages of best-practice clinical genetic 
+annotations accounting for numerous diagnosis criteria including variant consequnce, 
+gene ontology, inheritence, protein domain function, transcription editing, 
+translation modification, etc. 
+A reliable example of a disease gene list can be found on the 
+<a href="https://panelapp.genomicsengland.co.uk/panels/398/">Genomics England panel app Primary immunodeficiency</a>.</p>
+
+<p><img src="/images/ge_panel_app.png" width="100%" /></p>
+
+<p>The (simplified) list that I try to keep updated and close to hand when 
+doing tailored bioinformatic analysis is exmplified in the following table. 
+The analysis pipeline uses a curated and reliable sources to provide
+a data-rich annotation process for candidate variant detection. 
+However, as a repository of whole genome annotation, the information is 
+difficult to illustrate here in a small image. 
+Instead, the included table is a <em>very</em> simpified example of candidate genes in immunogenics.</p>
+
+<hr />
+
+<h1 id="primary-immunodeficiency-pid-genes">Primary Immunodeficiency (PID) genes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>PID genes</th>
+      <th>Disorder</th>
+      <th>inheritance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ACP5</td>
+      <td>Spondyloenchondrodysplasia with immune dysregulation</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>ACTB</td>
+      <td>Baraitser-Winter syndrome 1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ADA</td>
+      <td>Adenosine deaminase (ADA) deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>ADAR</td>
+      <td>Aicardi-Goutieres syndrome 6</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AICDA</td>
+      <td>Immunodeficiency with hyper-IgM, type 2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>AIRE</td>
+      <td>Autoimmune polyendocrinopathy syndrome , type I, with or without reversible metaphyseal dysplasia (APECED)</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>AK2</td>
+      <td>Reticular dysgenesis, AK2 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>AP3B1</td>
+      <td>Hermansky-Pudlak syndrome 2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>APOL1</td>
+      <td>Trypanosomiasis, susceptibility to</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ARVCF</td>
+      <td>DiGeorge syndrome</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ATM</td>
+      <td>Ataxia-telangiectasia</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>BCL10</td>
+      <td>combined immunodeficiency with B cell, T cell, and fibroblast defects</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>BLM</td>
+      <td>Bloom syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>BLNK</td>
+      <td>Agammaglobulinemia 4</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>BTK</td>
+      <td>Agammaglobulinemia, X-linked 1 (XLA)</td>
+      <td>x-linked</td>
+    </tr>
+    <tr>
+      <td>C1QA</td>
+      <td>C1q deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C1QB</td>
+      <td>C1q deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C1QC</td>
+      <td>C1q deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C1R</td>
+      <td>C1r/C1s deficiency, combined</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C1S</td>
+      <td>C1s deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C2</td>
+      <td>C2 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C3</td>
+      <td>C3 deficiency</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>C4A</td>
+      <td>C4a deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C4B</td>
+      <td>C4B deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C5</td>
+      <td>C5 deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>C6</td>
+      <td>C6 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C7</td>
+      <td>C7 deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>C8A</td>
+      <td>C8 deficiency, type I</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C8B</td>
+      <td>C8 deficiency, type II</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C8G</td>
+      <td>Complement factor 8 defect</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>C9</td>
+      <td>C9 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CA2</td>
+      <td>Osteopetrosis, autosomal recessive 3, with renal tubular acidosis</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CARD11</td>
+      <td>Immunodeficiency 11/ CARD11 deficiency; Persistent polyclonal B-cell lymphocytosis</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CARD14</td>
+      <td>Pityriasis rubra pilaris</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CARD9</td>
+      <td>Candidiasis, familial, 2, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CASP10</td>
+      <td>Autoimmune lymphoproliferative syndrome, type II</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>CASP8</td>
+      <td>Immunodeficiency due to CASP8 deficiency</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>CCBE1</td>
+      <td>Hennekam lymphangiectasia-lymphedema syndrome 1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CD19</td>
+      <td>Immunodeficiency, common variable, 3</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD247</td>
+      <td>Immunodeficiency 25</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD27</td>
+      <td>Lymphoproliferative syndrome 2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD28</td>
+      <td>combined immunodeficiency T cell</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CD3D</td>
+      <td>CD3d deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD3E</td>
+      <td>CD3e deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD3G</td>
+      <td>CD3g deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD4</td>
+      <td>OKT4 epitope deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CD40</td>
+      <td>CD40 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD40LG</td>
+      <td>CD40 ligand deficiency</td>
+      <td>x-linked</td>
+    </tr>
+    <tr>
+      <td>CD46</td>
+      <td>Hemolytic uremic syndrome, atypical, susceptibility to, 2</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CD55</td>
+      <td>Hemolysis syndrome</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CD59</td>
+      <td>Hemolytic anemia, CD59-mediated, with or without immune-mediated polyneuropathy</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CD79A</td>
+      <td>Agammaglobulinemia 3</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD79B</td>
+      <td>Agammaglobulinemia 6</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD81</td>
+      <td>Immunodeficiency, common variable, 6</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CD8A</td>
+      <td>CD8 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CDKN2A</td>
+      <td>Neutropenia, severe congenital</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CEBPE</td>
+      <td>Specific granule deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CECR1</td>
+      <td>ADA2 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CFB</td>
+      <td>Complement factor B deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CFD</td>
+      <td>Complement factor D deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CFH</td>
+      <td>Complement factor H deficiency</td>
+      <td>AR and AD</td>
+    </tr>
+    <tr>
+      <td>CFHR1</td>
+      <td>Hemolytic uremic syndrome, atypical, susceptibility to</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CFHR3</td>
+      <td>Hemolytic uremic syndrome, atypical, susceptibility to</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CFI</td>
+      <td>Complement factor I deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CFP</td>
+      <td>Properdin deficiency, X-linked</td>
+      <td>x-linked</td>
+    </tr>
+    <tr>
+      <td>CHD7</td>
+      <td>Charge syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>CIITA</td>
+      <td>Bare lymphocyte syndrome, type II, complementation group A</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CLCN7</td>
+      <td>Osteopetrosis, autosomal recessive</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CLEC7A</td>
+      <td>Candidiasis, familial, 4, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CNBP</td>
+      <td>Myotonic dystrophy 2</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>COLEC11</td>
+      <td>3MC syndrome 2</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>COMT</td>
+      <td>DiGeorge syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>CORO1A</td>
+      <td>Coronin-1A deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CR2</td>
+      <td>Immunodeficiency, common variable, 7</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CSF2RA</td>
+      <td>Surfactant metabolism dysfunction, pulmonary, 4</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CSF3R</td>
+      <td>Severe congenital neutropenia</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>CTLA4</td>
+      <td>Common variable immunodeficiency - Autosomal dominant immune dysregulation syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>CTPS1</td>
+      <td>Immunodeficiency 24</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CTSC</td>
+      <td>Papillon-Lefevre syndrome</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>CXCR4</td>
+      <td>WHIM syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>CYBA</td>
+      <td>Chronic granulomatous disease, autosomal, due to deficiency of CYBA</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>CYBB</td>
+      <td>Chronic granulomatous disease, X-linked</td>
+      <td>x-linked</td>
+    </tr>
+    <tr>
+      <td>DCLRE1B</td>
+      <td>Hoyeraal-Hreidarsson syndrome</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DCLRE1C</td>
+      <td>DCLRE1C (Artemis) deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>DKC1</td>
+      <td>Dyskeratosis congenita, X-linked</td>
+      <td>x-linked</td>
+    </tr>
+    <tr>
+      <td>DNASE1</td>
+      <td>Systemic lupus erythematosus</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>DNMT3B</td>
+      <td>Immunodeficiency-centromeric instability-facial anomalies syndrome 1</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>DOCK8</td>
+      <td>Hyper-IgE recurrent infection syndrome, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>ELANE</td>
+      <td>Neutropenia, severe congenital 1, autosomal dominant</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>ELF4</td>
+      <td>undetermined</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>F12</td>
+      <td>Angioedema, Hereditary, Type III</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>FADD</td>
+      <td>Infections, recurrent, with encephalopathy, hepatic dysfunction, and cardiovasuclar malformations</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FAS</td>
+      <td>Autoimmune lymphoproliferative syndrome, type IA (ALPS-FAS)</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>FASLG</td>
+      <td>Autoimmune lymphoproliferative syndrome, type IB (ALPS-FASG)</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>FCGR1A</td>
+      <td>IgG receptor I, phagocytic, familial deficiency of</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FCGR2A</td>
+      <td>Pseudomonas aeruginosa, susceptibility to chronic infection by, in cystic fibrosis</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FCGR2B</td>
+      <td>Malaria, resistance to</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FCGR3A</td>
+      <td>Immunodeficiency 20</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>FCGR3B</td>
+      <td>Neutropenia, alloimmune neonatal</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FCGRT</td>
+      <td>none reported</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FCN3</td>
+      <td>Immunodeficiency due to ficolin 3 deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>FERMT3</td>
+      <td>Leukocyte adhesion deficiency, type III</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>FOXN1</td>
+      <td>T-cell immunodeficiency, congenital alopecia, and nail dystrophy</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>FOXP3</td>
+      <td>Immunodysregulation, polyendocrinopathy, and enteropathy, X-linked (IPEX)</td>
+      <td>x-linked</td>
+    </tr>
+    <tr>
+      <td>FPR1</td>
+      <td>Periodontitis</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>G6PC3</td>
+      <td>Neutropenia, severe congenital 4, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>G6PD</td>
+      <td>Chronic Granulomatous Disease</td>
+      <td>x-linked</td>
+    </tr>
+    <tr>
+      <td>GATA2</td>
+      <td>Immunodeficiency 21</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>GFI1</td>
+      <td>Neutropenia, severe congenital 2, autosomal dominant</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>GP1BB</td>
+      <td>DiGeorge syndrome/Bernard Soulier syndrome</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>HAX1</td>
+      <td>Neutropenia, severe congenital 3, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>HIRA</td>
+      <td>DiGeorge syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>ICOS</td>
+      <td>Immunodeficiency, common variable, 1</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IFIH1</td>
+      <td>Aicardi-Goutieres syndrome 7</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IFNGR1</td>
+      <td>Immunodeficiency 27A, mycobacteriosis, AR; Immunodeficiency 27B, mycobacteriosis, AD</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>IFNGR2</td>
+      <td>Immunodeficiency 28, mycobacteriosis</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IGAD1</td>
+      <td>Immunoglobulin A deficiency</td>
+      <td>AR and AD</td>
+    </tr>
+    <tr>
+      <td>IGHM</td>
+      <td>Agammaglobulinemia 1</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IGKC</td>
+      <td>Kappa light chain deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IGLL1</td>
+      <td>Agammaglobulinemia 2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IKBKB</td>
+      <td>Immunodeficiency 15</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IKBKG</td>
+      <td>Ectodermal dysplasia, hypohidrotic, with immune deficiency; Ectodermal, dysplasia, anhidrotic, lymphedema and immunodeficiency; Immunodeficiency 33; Immunodeficiency, isolated; Invasive pneumococcal disease, recurrent isolated, 2</td>
+      <td>X-Linked</td>
+    </tr>
+    <tr>
+      <td>IKZF1</td>
+      <td>Leukemia, acute lymphoblastic</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL10</td>
+      <td>Early onset inflammatory bowel disease</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL10RA</td>
+      <td>Inflammatory bowel disease 28, early onset, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL10RB</td>
+      <td>Inflammatory bowel disease 25, early onset, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL12B</td>
+      <td>Immunodeficiency 29, mycobacteriosis</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL12RB1</td>
+      <td>Immunodeficiency 30</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL12RB2</td>
+      <td>Mendelian susceptibility to mycobacterial disease</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL17F</td>
+      <td>Candidiasis, familial, 6, autosomal dominant</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>IL17RA</td>
+      <td>Candidiasis, familial, 5, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL17RC</td>
+      <td>Chronic Mucocutaneous Candidiasis (CMC)</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL18</td>
+      <td>Defects with susceptibility to mycobacterial infection (MSMD)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IL1RN</td>
+      <td>Interleukin 1 receptor antagonist deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IL21</td>
+      <td>Immunodeficiency, common variable, 11</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL21R</td>
+      <td>Immunodeficiency, primary, autosomal recessive, IL21R-related</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL23A</td>
+      <td>Defects with susceptibility to mycobacterial infection (MSMD)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IL2RA</td>
+      <td>Interleukin-2 receptor, alpha chain, deficiency of</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL2RG</td>
+      <td>SCID (x-linked)</td>
+      <td>X-Linked</td>
+    </tr>
+    <tr>
+      <td>IL36RN</td>
+      <td>Psoriasis, generalized pustular</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IL7R</td>
+      <td>IL7Ra deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IRAK4</td>
+      <td>IRAK4 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>IRF3</td>
+      <td>susceptibility to herpes simplex encephalitis</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IRF7</td>
+      <td>IRF7 deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>IRF8</td>
+      <td>Immunodeficiency 32A, mycobacteriosis, autosomal dominant</td>
+      <td>AR and AD</td>
+    </tr>
+    <tr>
+      <td>ISG15</td>
+      <td>susceptibility to mycobacterial infection, enhanced IFN-?/? immunity</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>ITCH</td>
+      <td>Autoimmune disease, multisystem, with facial dysmorphism</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>ITGB2</td>
+      <td>Leukocyte adhesion deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>ITK</td>
+      <td>Lymphoproliferative syndrome 1 (LPFS1)</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>JAGN1</td>
+      <td>severe congeital neutropenia</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>JAK3</td>
+      <td>JAK3 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>KRAS</td>
+      <td>Ras associated lymphoproliferative disease (RALD)</td>
+      <td>AR and somatic</td>
+    </tr>
+    <tr>
+      <td>LAMTOR2</td>
+      <td>Immunodeficiency due to defect in MAPBP-interacting protein</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>LCK</td>
+      <td>Immunodeficiency 22/ LCK deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>LIG1</td>
+      <td>DNA ligase I deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>LIG4</td>
+      <td>LIG4 syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>LPIN2</td>
+      <td>Majeed syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>LRBA</td>
+      <td>Immunodeficiency, common variable, 8, with autoimmunity</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>LRRC8A</td>
+      <td>Agammaglobulinemia 5</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>LYST</td>
+      <td>Chediak-Higashi syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MAGT1</td>
+      <td>Immunodeficiency, X-linked, with magnesium defect, Epstein-Barr virus infection and neoplasia (XMEN)</td>
+      <td>X-Linked</td>
+    </tr>
+    <tr>
+      <td>MALT1</td>
+      <td>Immunodeficiency 12/ MALT1 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MASP1</td>
+      <td>3MC syndrome 1</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MASP2</td>
+      <td>MASP2 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MBL2</td>
+      <td>Chronic infections, due to MBL deficiency</td>
+      <td>AR/het</td>
+    </tr>
+    <tr>
+      <td>MCM4</td>
+      <td>Natural killer cell and glucocorticoid deficiency with DNA repair defect</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MEFV</td>
+      <td>Familial Mediterranean fever, AR; Familial Mediterranean fever, AD</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MKL1</td>
+      <td>immunodeficiency, phagocyte function</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MLPH</td>
+      <td>Griscelli syndrome, type 3</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MPO</td>
+      <td>Myeloperoxidase deficiency</td>
+      <td>AR/het</td>
+    </tr>
+    <tr>
+      <td>MRE11A</td>
+      <td>Ataxia-telangiectasia-like disorder</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MS4A1</td>
+      <td>Immunodeficiency, common variable, 5</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MTHFD1</td>
+      <td>Severe combined immunodeficiency, defect in folate metabolism</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>MVK</td>
+      <td>Hyper-IgD syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MYD88</td>
+      <td>Pyogenic bacterial infections, recurrent, due to MYD88 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>MYO5A</td>
+      <td>Griscelli syndrome, type 1</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NBN</td>
+      <td>Nijmegen breakage syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NCF1</td>
+      <td>Chronic granulomatous disease due to deficiency of NCF-1</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NCF2</td>
+      <td>Chronic granulomatous disease due to deficiency of NCF-2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NCF4</td>
+      <td>Granulomatous disease, chronic, autosomal recessive, cytochrome b-positive, type III</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NFKB1</td>
+      <td>Common variable immunodeficiency (CVID)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>NFKB2</td>
+      <td>Immunodeficiency, common variable, 10</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>NFKBIA</td>
+      <td>Ectodermal dysplasia, anhidrotic, with T-cell immunodeficiency</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>NHEJ1</td>
+      <td>Severe combined immunodeficiency with microcephaly, growth retardation, and sensitivity to ionizing radiation</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NHP2</td>
+      <td>Dyskeratosis congenita, autosomal recessive 2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NLRP12</td>
+      <td>Familial cold autoinflammatory syndrome 2</td>
+      <td>het</td>
+    </tr>
+    <tr>
+      <td>NLRP3</td>
+      <td>CINCA syndrome; Muckle-Wells syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NOD2</td>
+      <td>Blau syndrome</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>NOP10</td>
+      <td>Dyskeratosis congenita, autosomal recessive 1</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>NRAS</td>
+      <td>Autoimmune lymphoproliferative syndrome type IV</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ORAI1</td>
+      <td>Immunodeficiency 9</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>OSTM1</td>
+      <td>Osteopetrosis, autosomal recessive 5</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>PGM3</td>
+      <td>Immunodeficiency 23</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>PIK3CD</td>
+      <td>Immunodeficiency 14</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>PIK3R1</td>
+      <td>Agammaglobulinemia 7, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>PLCG2</td>
+      <td>Autoinflammation, antibody deficiency, and immune dysregulation syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>PMS2</td>
+      <td>Mismatch repair cancer syndrome</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>PNP</td>
+      <td>Immunodeficiency due to purine nucleoside phosphorylase deficiency; Purine nucleoside phosphorylase (PNP) deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>POLE</td>
+      <td>FILS syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>PRF1</td>
+      <td>Hemophagocytic lymphohistiocytosis, familial, 2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>PRKCD</td>
+      <td>Immunodeficiency, common variable, 9; ALPS3</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>PRKDC</td>
+      <td>DNA Pkcs deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>PSMB8</td>
+      <td>Autoinflammation, lipodystrophy, and dermatosis syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>PSTPIP1</td>
+      <td>Pyogenic sterile arthritis, pyoderma gangrenosum, and acne</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>PTPRC</td>
+      <td>CD45 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RAB27A</td>
+      <td>Griscelli syndrome, type 2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RAC2</td>
+      <td>Neutrophil immunodeficiency syndrome</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RAG1</td>
+      <td>RAG1 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RAG2</td>
+      <td>RAG2 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RBCK1</td>
+      <td>Polyglucosan body myopathy, early-onset, with or without immunodeficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RECQL4</td>
+      <td>Rothmund-Thomson syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RFX5</td>
+      <td>Bare lymphocyte syndrome, type II, complementation group C</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RFXANK</td>
+      <td>MHC class II deficiency, complementation group B</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RFXAP</td>
+      <td>Bare lymphocyte syndrome, type II, complementation group D</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RHOH</td>
+      <td>RhoH deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RMRP</td>
+      <td>Cartilage-hair hypoplasia</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RNASEH2A</td>
+      <td>Aicardi-Goutieres syndrome 4</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RNASEH2B</td>
+      <td>Aicardi-Goutieres syndrome 2</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RNASEH2C</td>
+      <td>Aicardi-Goutieres syndrome 3</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RNF168</td>
+      <td>RIDDLE syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RORC</td>
+      <td>Susceptibility to candidasis &amp; Mycobacterial infection</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RPSA</td>
+      <td>Isolated congential asplenia</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>RTEL1</td>
+      <td>Hoyeraal-Hreidarsson syndrome/ Dyskeratosis congenita, autosomal dominant 4; Dyskeratosis congenita, autosomal recessive 5</td>
+      <td>AR and AD</td>
+    </tr>
+    <tr>
+      <td>SAMHD1</td>
+      <td>Aicardi-Goutieres syndrome 5</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>SBDS</td>
+      <td>Shwachman-Bodian-Diamond syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>SEMA3E</td>
+      <td>Charge syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>SERPING1</td>
+      <td>Angioedema, hereditary, types I and II</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>SH2D1A</td>
+      <td>Lymphoproliferative syndrome, X-linked, 1 (XLP1)</td>
+      <td>X-Linked</td>
+    </tr>
+    <tr>
+      <td>SH3BP2</td>
+      <td>Cherubism</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>SLC11A1</td>
+      <td>Mycobacterium tuberculosis, susceptibility to infection by</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>SLC29A3</td>
+      <td>Histiocytosis-lymphadenopathy plus syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>SLC35C1</td>
+      <td>Congenital disorder of glycosylation, type IIc</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>SLC37A4</td>
+      <td>Glycogen storage disease Ib</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>SLC46A1</td>
+      <td>Folate malabsorption, hereditary</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>SMARCAL1</td>
+      <td>Schimke immunoosseous dysplasia</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>SP110</td>
+      <td>Hepatic venoocclusive disease with immunodeficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>SPINK5</td>
+      <td>Netherton syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>STAT1</td>
+      <td>Immunodeficiency 31A, mycobacteriosis, autosomal dominant; Candidiasis, familial, 7</td>
+      <td>AR and AD</td>
+    </tr>
+    <tr>
+      <td>STAT2</td>
+      <td>STAT2 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>STAT3</td>
+      <td>Hyper-IgE recurrent infection syndrome; Autoimmune disease, multisystem, infantile-onset</td>
+      <td>AR/AD</td>
+    </tr>
+    <tr>
+      <td>STAT5A</td>
+      <td>Growth hormone insensitivity with immunodeficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>STAT5B</td>
+      <td>Growth hormone insensitivity with immunodeficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>STIM1</td>
+      <td>Immunodeficiency 10</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>STK4</td>
+      <td>T-cell immunodeficiency, recurrent infections, autoimmunity, and cardiac malformations</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>STX11</td>
+      <td>Hemophagocytic lymphohistiocytosis, familial, 4</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>STXBP2</td>
+      <td>Hemophagocytic lymphohistiocytosis, familial, 5</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TAP1</td>
+      <td>Bare lymphocyte syndrome, type I</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TAP2</td>
+      <td>Bare lymphocyte syndrome, type I, due to TAP2 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TAPBP</td>
+      <td>Bare lymphocyte syndrome, type I</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TAZ</td>
+      <td>Barth syndrome</td>
+      <td>X-Linked</td>
+    </tr>
+    <tr>
+      <td>TBK1</td>
+      <td>Herpes simplex encephalitis, susceptibility to,</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TBX1</td>
+      <td>Di George syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>TCF3</td>
+      <td>E47 TF deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TCIRG1</td>
+      <td>Osteopetrosis, autosomal recessive 1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TCN2</td>
+      <td>Transcobalamin-2 precursor</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TERC</td>
+      <td>Dyskeratosis congenita, autosomal dominant 1</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>TERT</td>
+      <td>Dyskeratosis congenita, autosomal dominant 2, Dyskeratosis congenita, autosomal recessive 4</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>THBD</td>
+      <td>Hemolytic uremic syndrome, atypical, susceptibility to, 6</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TICAM1</td>
+      <td>Encephalopathy, acute, infection-induced, susceptibility to, 6</td>
+      <td>AR and AD</td>
+    </tr>
+    <tr>
+      <td>TINF2</td>
+      <td>Dyskeratosis congenita, autosomal dominant 3</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>TIRAP</td>
+      <td>Pneumococcal disease, invasive, protection against</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TLR3</td>
+      <td>Herpes simplex encephalitis, susceptibility to, 2</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TMC6</td>
+      <td>Epidermodysplasia verruciformis</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TMC8</td>
+      <td>Epidermodysplasia verruciformis</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TMEM173</td>
+      <td>STING-associated vasculopathy, infantile-onset</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TNFRSF11A</td>
+      <td>Osteolysis, familial expansile ; Osteopetrosis, autosomal recessive 7</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TNFRSF13B</td>
+      <td>Immunodeficiency, common variable, 2</td>
+      <td>AR and AD</td>
+    </tr>
+    <tr>
+      <td>TNFRSF13C</td>
+      <td>Immunodeficiency, common variable, 4</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TNFRSF1A</td>
+      <td>Periodic fever, familial</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>TNFRSF4</td>
+      <td>Immunodeficiency 16/ OX40 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TNFSF12</td>
+      <td>Immunodeficiency, common variable with lack of anti-pneumococcal antibody</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TPP2</td>
+      <td>TPP2 deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TRAC</td>
+      <td>Immunodeficiency 7, TCR-alpha/beta deficient</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TRAF3</td>
+      <td>Herpes simplex encephalitis, susceptibility to, 3</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>TRAF3IP2</td>
+      <td>Candidiasis, familial, 8</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TREX1</td>
+      <td>Aicardi-Goutieres syndrome 1, dominant and recessive</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TRNT1</td>
+      <td>congenital sideroblastic anemia with immunodeficiency, fevers, and developmental delay (SIFD)</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TTC37</td>
+      <td>Trichohepatoenteric syndrome 1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TTC7A</td>
+      <td>Multiple intestinal atresia and severe combined immunodeficiency (MINAT)</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>TYK2</td>
+      <td>Immunodeficiency 35</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>UFD1L</td>
+      <td>DiGeorge syndrome</td>
+      <td>AD</td>
+    </tr>
+    <tr>
+      <td>UNC119</td>
+      <td>Immunodeficiency 13/ UNC119 deficiency</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UNC13D</td>
+      <td>Hemophagocytic lymphohistiocytosis, familial, 3</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>UNC93B1</td>
+      <td>Herpes simplex encephalitis, susceptibility to, 1</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>UNG</td>
+      <td>Immunodeficiency with hyper IgM, type 5</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>USB1</td>
+      <td>Poikiloderma with neutropenia</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>VPS13B</td>
+      <td>Cohen syndrome</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>VPS45</td>
+      <td>Neutropenia, severe congenital, 5, autosomal recessive</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>WAS</td>
+      <td>Wiskott-Aldrich syndrome</td>
+      <td>X-Linked</td>
+    </tr>
+    <tr>
+      <td>WIPF1</td>
+      <td>Wiskott-Aldrich syndrome 2</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>WRAP53</td>
+      <td>Dyskeratosis congenita, autosomal recessive 3</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>XIAP</td>
+      <td>Lymphoproliferative syndrome, X-linked, 2 (XLP2)</td>
+      <td>X-Linked</td>
+    </tr>
+    <tr>
+      <td>XRCC4</td>
+      <td>none reported</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ZAP70</td>
+      <td>Zap-70 deficiency</td>
+      <td>AR</td>
+    </tr>
+    <tr>
+      <td>ZBTB24</td>
+      <td>Immunodeficiency-centromeric instability-facial anomalies syndrome-2</td>
+      <td>AR</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h1 id="autoinflammatory-disease-genes">Autoinflammatory disease genes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Autoinflammatory genes</th>
+      <th>Disorder</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ACP5</td>
+      <td>Spondyloenchondrodysplasi a with immune dysregulation</td>
+    </tr>
+    <tr>
+      <td>ACP5</td>
+      <td>Spondyloenchondrodysplasia with immune dysregulation</td>
+    </tr>
+    <tr>
+      <td>ADAR</td>
+      <td>Dyschromatosis symmetrica hereditaria, Aicardi-Goutières syndrome</td>
+    </tr>
+    <tr>
+      <td>Aicardi</td>
+      <td> Goutieres syndromes (AGS) TREX1 (AGS1), RNASEH2B (AGS2), RNASEH2C (AGS3), RNASEH2A (AGS4), SAMHD1 (AGS5), ADAR (AGS6), and IFIH1 (AGS7)</td>
+    </tr>
+    <tr>
+      <td>AP1S3</td>
+      <td>Pustular psoriasis (PSORS15)</td>
+    </tr>
+    <tr>
+      <td>CARD14</td>
+      <td>Familial Psoriasis (PSORS2)</td>
+    </tr>
+    <tr>
+      <td>CECR1</td>
+      <td>Deficiency of Adenosine Deaminase 2 (DADA2) aka Fever with Early Onset Stroke (FEOS)</td>
+    </tr>
+    <tr>
+      <td>DDX58</td>
+      <td>Singleton-Merten syndrome</td>
+    </tr>
+    <tr>
+      <td>ELANE</td>
+      <td>Cyclic Neutropenia</td>
+    </tr>
+    <tr>
+      <td>FOXP3</td>
+      <td>IPEX syndrome</td>
+    </tr>
+    <tr>
+      <td>GCH1</td>
+      <td>Dopa responsive dystonia, Tetrahydrobiopterin deficiency</td>
+    </tr>
+    <tr>
+      <td>Gene</td>
+      <td>Associated phenotypes</td>
+    </tr>
+    <tr>
+      <td>HAX1</td>
+      <td>Severe Congenital Neutropenia</td>
+    </tr>
+    <tr>
+      <td>HTR1A</td>
+      <td>Periodic fever, menstrual cycle</td>
+    </tr>
+    <tr>
+      <td>IFIH1</td>
+      <td>Singleton-Merten syndrome</td>
+    </tr>
+    <tr>
+      <td>IL10</td>
+      <td>Early Onset Inflammatory Bowel Disease (EoIBD25, EOIBD28, and EOIBD with Il10 deficiency)</td>
+    </tr>
+    <tr>
+      <td>IL10RA</td>
+      <td>Early Onset Inflammatory Bowel Disease (EoIBD25, EOIBD28, and EOIBD with Il10 deficiency)</td>
+    </tr>
+    <tr>
+      <td>IL10RB</td>
+      <td>Early Onset Inflammatory Bowel Disease (EoIBD25, EOIBD28, and EOIBD with Il10 deficiency)</td>
+    </tr>
+    <tr>
+      <td>IL1RN</td>
+      <td>Deficiency of Interleukin 1ß (IL1ß) Receptor Antagonist (DIRA) . Osteomyelitis, sterile multifocal, with periostitis and pustulosis</td>
+    </tr>
+    <tr>
+      <td>IL36RN</td>
+      <td>Pustular psoriasis, generalized  - Deficiency of Interleukin 36Receptor Antagonist (DITRA)</td>
+    </tr>
+    <tr>
+      <td>ISG15</td>
+      <td>Immunodeficiency 38 with basal ganglia calcification (IMD38)</td>
+    </tr>
+    <tr>
+      <td>LPIN2</td>
+      <td>Majeed syndrome</td>
+    </tr>
+    <tr>
+      <td>MEFV</td>
+      <td>Familial Mediterranean Fever (FMF)</td>
+    </tr>
+    <tr>
+      <td>MVK</td>
+      <td>Mevalonate Kinase Deficiencies (MKD): Hyper-IgD syndrome (HIDS) and MA</td>
+    </tr>
+    <tr>
+      <td>NEFL</td>
+      <td>Charcot Marie</td>
+    </tr>
+    <tr>
+      <td>NLRC4</td>
+      <td>NLRC4 Macrophage Activation</td>
+    </tr>
+    <tr>
+      <td>NLRP12</td>
+      <td>Familial Cold Autoinflammatory Syndrome 2 (FCAS2)</td>
+    </tr>
+    <tr>
+      <td>NLRP3</td>
+      <td>Cryopyrin Associated Periodic Syndromes (CAPS): MWS, FCAS, CINCA and NOMID</td>
+    </tr>
+    <tr>
+      <td>NLRP7</td>
+      <td>Recurrent hydatidiform mole</td>
+    </tr>
+    <tr>
+      <td>NOD2</td>
+      <td>Blau syndrome, Sarcoidosis, early-onset</td>
+    </tr>
+    <tr>
+      <td>ORAI1</td>
+      <td>Myopathy, tubular aggregate, 2 (TAM2), Immunodeficiency 9 (IMD9)</td>
+    </tr>
+    <tr>
+      <td>PLCG2</td>
+      <td>PLCG2associated Antibody Deficiency &amp; Immune Dysregulation (PLAID) or Familial Atypical Cold Urticaria (FACU) or FCAS3 and APLAID</td>
+    </tr>
+    <tr>
+      <td>PSMB8</td>
+      <td>Chronic Atypical Neutrophilic Dermatosis with Lipodystrophy and Elevated Temperature Syndrome (CANDLE), Nakajo-Nishimura syndrome, Chronic atypical neutrophilic dermatosis with lipodystrophy and elevated temperature syndrome, Autoinflammation, lipodystrophy, and dermatosis syndrome, Joint contractures, muscular atrophy, microcytic anemia, and panniculitis-induced lipodystrophy syndrome</td>
+    </tr>
+    <tr>
+      <td>PSTPIP1</td>
+      <td>Pyogenic Sterile Arthritis, Pyoderma Gangrenosum, and Acne Syndrome (PAPA)</td>
+    </tr>
+    <tr>
+      <td>RBCK1</td>
+      <td>Polyglucosan body myopathy 1 with or without immunodeficiency (PGBM1)</td>
+    </tr>
+    <tr>
+      <td>RNASEH2A</td>
+      <td>Aicardi-Goutières syndrome</td>
+    </tr>
+    <tr>
+      <td>RNASEH2B</td>
+      <td>Aicardi-Goutières syndrome</td>
+    </tr>
+    <tr>
+      <td>RNASEH2C</td>
+      <td>Aicardi-Goutières syndrome</td>
+    </tr>
+    <tr>
+      <td>SAMHD1</td>
+      <td>Aicardi-Goutières syndrome</td>
+    </tr>
+    <tr>
+      <td>SCO2</td>
+      <td>Myopia 6 (MYP6), Cardioencephalomyopathy, fatal infantile, due to cytochrome c oxidase deficiency 1 (CEMCOX1)</td>
+    </tr>
+    <tr>
+      <td>SH3BP2</td>
+      <td>Cherubism</td>
+    </tr>
+    <tr>
+      <td>SLC19A3</td>
+      <td>biotin thiamine responsive basal ganglia disease</td>
+    </tr>
+    <tr>
+      <td>SLC25A19</td>
+      <td>Amish lethal microcephaly</td>
+    </tr>
+    <tr>
+      <td>SLC29A3</td>
+      <td>SLC29A3 Spectrum Disorder, aka H. syndrome; Pigmented Hypertrichosis with Insulin dependent Diabetes Mellitus (IDDM)</td>
+    </tr>
+    <tr>
+      <td>TLR3</td>
+      <td>Human immunodeficiency virus type 1, susceptibility to</td>
+    </tr>
+    <tr>
+      <td>TMEM173</td>
+      <td>STING-associated vasculopathy, infantile-onsent (SAVI)</td>
+    </tr>
+    <tr>
+      <td>TNFAIP3</td>
+      <td>Haploinsufficiency of A20 (HA20), aka Behcet</td>
+    </tr>
+    <tr>
+      <td>TNFRSF11A</td>
+      <td>TNFRSF11A associated hereditary fever disease (TRAPS11)</td>
+    </tr>
+    <tr>
+      <td>TNFRSF1A</td>
+      <td>Periodic fever (Tumor Necrosis Factor (TNF) Associated Periodic Syndrome (TRAPS))</td>
+    </tr>
+    <tr>
+      <td>TPK1</td>
+      <td>Thiamine metabolism dysfunction syndrome 5, episodic encephalopathy type (THMD5)</td>
+    </tr>
+    <tr>
+      <td>TRAF3</td>
+      <td>Herpes simplex encephalitis, susceptibility to</td>
+    </tr>
+    <tr>
+      <td>TREX1</td>
+      <td>Vasculopathy, retinal, with cerebral leukodystrophy, Chilblain lupus, Aicardi-Goutières syndrome</td>
+    </tr>
+    <tr>
+      <td>TRNT1</td>
+      <td>Sideroblastic anemia with B cell immunodeficiency, periodic fevers, and developmental delay (SIFD)</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+
+<div class="footer">
+	<div class="contact">
+	<p>
+	<img src="/images/logos/logo_3.0.png" 
+	alt="Logo image" width="99" height="67.1" />
+	</p>
+	</div>
+	<div class="contact">
+		<p>
+		Built by Dylan Lawless
+		<br />
+		Postdoc at
+		<a href="https://people.epfl.ch/dylan.lawless">EPFL</a>
+		<br />
+		<!--dylan( . )lawless( at )epfl( . )ch-->
+		</p>
+	</div>
+	
+	<div class="contact">
+		<p>
+		<a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
+		<a href="https://dylan-lawless.github.io">Resume</a><br />
+		<img src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
+	</div>
+	
+	</div>
+</div>
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
