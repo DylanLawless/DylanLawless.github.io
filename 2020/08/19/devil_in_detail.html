@@ -9,7 +9,7 @@
 
    <!--  -->
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Placeholder post</title>
+   <title>The devil is in the detail</title>
    <meta name="author" content="LawlessGenomics" />
    <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
    <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
@@ -46,24 +46,48 @@ var WRInitTime=(new Date()).getTime();
   </div>
 
   <div id="post">
-<h1 id="placeholder-post">Placeholder post</h1>
+<h1 id="the-devil-is-in-the-detail">The devil is in the detail</h1>
 
-<p class="meta">19 Jun 2015 - San Francisco</p>
-<p>Placeholder text.</p>
+<p class="meta">19 Aug 2019</p>
+<p>I was learning some <span style="text-decoration: underline;"><span style="color: #800080;"><a href="https://en.wikipedia.org/wiki/Steganography">steganography</a></span></span> methods for a security project. 
+At the same time, I was writing up a paper with some friends (<a href="https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf">https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf</a>) and decided to hide a little message in one of the figures.
+The goal was to encode some hidden data and see could we get it back out the other side, after publication.</p>
 
-<p><a href="https://www.youtube.com/watch?v=ViN-qkcovL0&amp;feature=youtu.be">youtube video link</a></p>
+<p>It would be a lot of trouble for a master of espionage to have to publish a paper every time a secret message needed to be encoded for public transmission, but maybe it could be done!</p>
 
-<p>email <a href="mailto:contact@replicated.bla">contact@replicated.bla</a>.</p>
+<p><img src="/images/posts/editor_paper_rag.png" width="100%" /></p>
 
-<p>Example weblink
-<a href="https://snyk.io/blog/welcome-ruby-users/">Snyk</a>.
-Video link <a href="http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/">World’s Biggest Data
-Breaches</a>.</p>
+<p>The secret message was imported into <a href="https://www.r-project.org">R</a> from plain text. 
+It was encoded it into a png file that was a supplemental figure in our paper (from experience, supplemental figures usually get uploaded to a repository that can be downloaded after publication, while main-text figures are often converted in one way or another by the copy editors). 
+Once the figure was released, anyone with the correct decoding algorithm could get back the secret message.</p>
 
-<p>Embedded image from other source
-<a href="http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/">
-  <img src="/images/posts/2016-11-10/breaches.png" />
-</a></p>
+<p>In this case I used the 
+<a href="https://github.com/richfitz/stegasaur">richfitz/stegasaur</a> package, 
+innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
+The inforation was hidden within the data that makes up the image, and is imperceivable to the naked eye. 
+Even better, the file size was slightly SMALLER than the original (1.9MB to 1.7MB) without noticeable difference in quality. 
+The secret message decoded from the protein structure figure “F_E4_Structure.png” and is printed to the console:</p>
+
+<p><img src="/images/posts/r_steg_decode.png" width="100%" /></p>
+
+<p>Here’s an idea, <a href="https://patents.google.com/patent/US8527779">steganographic message blocks</a> seperated across a career worth of publications, 
+that can only be deciphered once all blocks are collected! 
+Who would go to that trouble? 
+Go see what you can find in one Supplementary material png file. 
+<a href="https://link.springer.com/article/10.1007%2Fs10875-019-00670-z">https://link.springer.com/article/10.1007%2Fs10875-019-00670-z</a></p>
+
+<h1 id="r-script">R script </h1>
+<p>Try it yourself.
+Find the paper and get Figure E4.
+Download
+<a href="https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial">10875_2019_670_MOESM5_ESM</a></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; install.packages("devtools")
+&gt; install_github("richfitz/stegasaur")
+&gt; library("devtools")
+&gt; library(ggplot2) 
+&gt; Decode message &lt;- 
+&gt;		stegasaur::decode("~/10875_2019_670_MOESM5_ESM.png")
+</code></pre></div></div>
 
 </div>
 
@@ -71,11 +95,11 @@ Breaches</a>.</p>
   <h2>Related Posts</h2>
   <ul class="posts">
     
-      <li><span>19 Aug 2020</span> &raquo; <a href="/2020/08/19/devil_in_detail.html">The devil is in the detail</a></li>
-    
       <li><span>05 May 2020</span> &raquo; <a href="/2020/05/05/singhgupta_genes.html">Unnecessary complexity in precision medicine</a></li>
     
       <li><span>27 Apr 2020</span> &raquo; <a href="/2020/04/27/genetic_mutation_websites.html">Websites for basic genetic variant information</a></li>
+    
+      <li><span>26 Apr 2020</span> &raquo; <a href="/2020/04/26/tester.html">Test - make a new md file</a></li>
     
   </ul>
 </div>
