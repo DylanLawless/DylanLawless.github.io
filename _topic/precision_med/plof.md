@@ -102,7 +102,7 @@ In Taliun et al [0], each of these tools are used in their analysis to target va
 
 These last two additionally ignore variants that are likely of minor consiquence to human health but still pased the basic pLoF filter. 
 Taliun et al. evaluated enrichment and depletion of pLOF variants 
-(allele frequency < 0.5%) in gene sets (that is, terms) from Gene Ontology (GO) 
+(allele frequency $<$ 0.5%) in gene sets (that is, terms) from Gene Ontology (GO) 
 [5, 6].
 For each gene annotated with a particular GO term, 
 they computed the number of pLOF variants per 
@@ -140,8 +140,8 @@ Among the more than 400 million detected variants,
 * 46% are singletons that are present in only one individual.
 
 The 46% is pretty suprising but the number of private variant per person is probably not extremely high.
-In clinical exomes we usually expect appoximately <100 novel variants compared to the _in-house sequence database_.
-We also expect aprrox. <10 de novo variants in the same sample if parents/family were also sequenced. 
+In clinical exomes we usually expect appoximately $<$100 novel variants compared to the _in-house sequence database_.
+We also expect aprrox. $<$10 de novo variants in the same sample if parents/family were also sequenced. 
 The number will be much larger for non-coding genome, but since SNVs will be largely non-interpretable it is currently ignored for clinical diagnosis.
 
 A notable class of variants is the 
@@ -183,7 +183,7 @@ The gene sets with strong functional constraint included genes that encode DNA- 
 spliceosomal complexes, 
 translation initiation machinery and 
 RNA splicing and processing proteins (Supplementary Table 7). 
-They found fewer rare pLOF variants than expected (each comparison P < 10−4) for 
+They found fewer rare pLOF variants than expected (each comparison P $<$ 10−4) for 
 Genes associated with human disease in 
 * COSMIC [7] (31% depletion), 
 * GWAS catalogue [8] (around 8% depletion), 
