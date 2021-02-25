@@ -173,7 +173,7 @@ Unlike these examples of personal gain, there have been reports of national medi
 
 Remaining discussion to be added...
 
-# How to protect data and promote open-source access
+# Protecting data and promoting open-source access
 ## Projects focused on safe access
 The Global Alliance for Genomics and Health (GA4GH) is leading the effort in
 safe data access. 
@@ -202,8 +202,8 @@ I am struck by the fact that genomic privacy generally depends on a user trust s
 and data protection is focused on the end-user stage. 
 I can exemplify the problem with the following simple example:
 
-Every subject relying on genomic analysis must submit a DNA sample alogn with 
-genetic concent, and the data is prepared in several stages;
+Every subject relying on genomic analysis must submit a DNA sample along with 
+genetic consent, and the data is prepared in several stages;
 1. Sample collection
 2. Sample preperation
 3. Sequencing
@@ -281,7 +281,7 @@ there are several options that can be implemented in the future.
 
 To be finished..
 
-[^foot]: [A trivial example of data export by hiding data within a "results figure"](https://dylanlawlessblog.wordpress.com/2019/08/08/the-devil-is-in-the-detail/).
+[^foot]: [A trivial example of data export by hiding data within a "results figure"]({{ site.baseurl }}{% link _posts/2019-08-19-devil_in_detail.md %}).
 
 # References
 ----------
