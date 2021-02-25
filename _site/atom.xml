@@ -4,63 +4,13 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-24T15:33:15+01:00</updated>
+ <updated>2021-02-25T21:50:48+01:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
- 
- <entry>
-   <title>The devil is in the detail</title>
-   <link href="https://tom.preston-werner.com/2020/08/19/devil_in_detail.html"/>
-   <updated>2020-08-19T00:00:00+02:00</updated>
-   <id>https://tom.preston-werner.com/2020/08/19/devil_in_detail</id>
-   <content type="html">&lt;h1 id=&quot;the-devil-is-in-the-detail&quot;&gt;The devil is in the detail&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;19 Aug 2019&lt;/p&gt;
-&lt;p&gt;I was learning some &lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;span style=&quot;color: #800080;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Steganography&quot;&gt;steganography&lt;/a&gt;&lt;/span&gt;&lt;/span&gt; methods for a security project. 
-At the same time, I was writing up a paper with some friends (&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf&quot;&gt;https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf&lt;/a&gt;) and decided to hide a little message in one of the figures.
-The goal was to encode some hidden data and see could we get it back out the other side, after publication.&lt;/p&gt;
-
-&lt;p&gt;It would be a lot of trouble for a master of espionage to have to publish a paper every time a secret message needed to be encoded for public transmission, but maybe it could be done!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/editor_paper_rag.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The secret message was imported into &lt;a href=&quot;https://www.r-project.org&quot;&gt;R&lt;/a&gt; from plain text. 
-It was encoded it into a png file that was a supplemental figure in our paper (from experience, supplemental figures usually get uploaded to a repository that can be downloaded after publication, while main-text figures are often converted in one way or another by the copy editors). 
-Once the figure was released, anyone with the correct decoding algorithm could get back the secret message.&lt;/p&gt;
-
-&lt;p&gt;In this case I used the 
-&lt;a href=&quot;https://github.com/richfitz/stegasaur&quot;&gt;richfitz/stegasaur&lt;/a&gt; package, 
-innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
-The inforation was hidden within the data that makes up the image, and is imperceivable to the naked eye. 
-Even better, the file size was slightly SMALLER than the original (1.9MB to 1.7MB) without noticeable difference in quality. 
-The secret message decoded from the protein structure figure “F_E4_Structure.png” and is printed to the console:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/r_steg_decode.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here’s an idea, &lt;a href=&quot;https://patents.google.com/patent/US8527779&quot;&gt;steganographic message blocks&lt;/a&gt; seperated across a career worth of publications, 
-that can only be deciphered once all blocks are collected! 
-Who would go to that trouble? 
-Go see what you can find in one Supplementary material png file. 
-&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&quot;&gt;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;r-script&quot;&gt;R script &lt;/h1&gt;
-&lt;p&gt;Try it yourself.
-Find the paper and get Figure E4.
-Download
-&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial&quot;&gt;10875_2019_670_MOESM5_ESM&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; install.packages(&quot;devtools&quot;)
-&amp;gt; install_github(&quot;richfitz/stegasaur&quot;)
-&amp;gt; library(&quot;devtools&quot;)
-&amp;gt; library(ggplot2) 
-&amp;gt; Decode message &amp;lt;- 
-&amp;gt;		stegasaur::decode(&quot;~/10875_2019_670_MOESM5_ESM.png&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</content>
- </entry>
  
  <entry>
    <title>Unnecessary complexity in precision medicine</title>
@@ -426,6 +376,56 @@ The Quipper Language: programming language for quantum computing&lt;br /&gt;
 </content>
  </entry>
  
+ <entry>
+   <title>The devil is in the detail</title>
+   <link href="https://tom.preston-werner.com/2019/08/19/devil_in_detail.html"/>
+   <updated>2019-08-19T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2019/08/19/devil_in_detail</id>
+   <content type="html">&lt;h1 id=&quot;the-devil-is-in-the-detail&quot;&gt;The devil is in the detail&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;19 Aug 2019&lt;/p&gt;
+&lt;p&gt;I was learning some &lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;span style=&quot;color: #800080;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Steganography&quot;&gt;steganography&lt;/a&gt;&lt;/span&gt;&lt;/span&gt; methods for a security project. 
+At the same time, I was writing up a paper with some friends (&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf&quot;&gt;https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf&lt;/a&gt;) and decided to hide a little message in one of the figures.
+The goal was to encode some hidden data and see could we get it back out the other side, after publication.&lt;/p&gt;
+
+&lt;p&gt;It would be a lot of trouble for a master of espionage to have to publish a paper every time a secret message needed to be encoded for public transmission, but maybe it could be done!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/editor_paper_rag.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The secret message was imported into &lt;a href=&quot;https://www.r-project.org&quot;&gt;R&lt;/a&gt; from plain text. 
+It was encoded it into a png file that was a supplemental figure in our paper (from experience, supplemental figures usually get uploaded to a repository that can be downloaded after publication, while main-text figures are often converted in one way or another by the copy editors). 
+Once the figure was released, anyone with the correct decoding algorithm could get back the secret message.&lt;/p&gt;
+
+&lt;p&gt;In this case I used the 
+&lt;a href=&quot;https://github.com/richfitz/stegasaur&quot;&gt;richfitz/stegasaur&lt;/a&gt; package, 
+innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
+The inforation was hidden within the data that makes up the image, and is imperceivable to the naked eye. 
+Even better, the file size was slightly SMALLER than the original (1.9MB to 1.7MB) without noticeable difference in quality. 
+The secret message decoded from the protein structure figure “F_E4_Structure.png” and is printed to the console:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/r_steg_decode.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s an idea, &lt;a href=&quot;https://patents.google.com/patent/US8527779&quot;&gt;steganographic message blocks&lt;/a&gt; seperated across a career worth of publications, 
+that can only be deciphered once all blocks are collected! 
+Who would go to that trouble? 
+Go see what you can find in one Supplementary material png file. 
+&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&quot;&gt;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;r-script&quot;&gt;R script &lt;/h1&gt;
+&lt;p&gt;Try it yourself.
+Find the paper and get Figure E4.
+Download
+&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial&quot;&gt;10875_2019_670_MOESM5_ESM&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; install.packages(&quot;devtools&quot;)
+&amp;gt; install_github(&quot;richfitz/stegasaur&quot;)
+&amp;gt; library(&quot;devtools&quot;)
+&amp;gt; library(ggplot2) 
+&amp;gt; Decode message &amp;lt;- 
+&amp;gt;		stegasaur::decode(&quot;~/10875_2019_670_MOESM5_ESM.png&quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
 
  <!--
  
@@ -629,7 +629,7 @@ The Quipper Language: programming language for quantum computing<br />
   <li><a href="#disinformation" id="markdown-toc-disinformation">Disinformation</a></li>
   <li><a href="#data-pollution" id="markdown-toc-data-pollution">Data pollution</a></li>
   <li><a href="#in-the-media" id="markdown-toc-in-the-media">In the media</a></li>
-  <li><a href="#how-to-protect-data-and-promote-open-source-access" id="markdown-toc-how-to-protect-data-and-promote-open-source-access">How to protect data and promote open-source access</a>    <ul>
+  <li><a href="#protecting-data-and-promoting-open-source-access" id="markdown-toc-protecting-data-and-promoting-open-source-access">Protecting data and promoting open-source access</a>    <ul>
       <li><a href="#projects-focused-on-safe-access" id="markdown-toc-projects-focused-on-safe-access">Projects focused on safe access</a></li>
       <li><a href="#obstacles-to-data-privacy" id="markdown-toc-obstacles-to-data-privacy">Obstacles to data privacy</a></li>
       <li><a href="#future-methods" id="markdown-toc-future-methods">Future methods</a></li>
@@ -802,7 +802,7 @@ Unlike these examples of personal gain, there have been reports of national medi
 
 <p>Remaining discussion to be added…</p>
 
-<h1 id="how-to-protect-data-and-promote-open-source-access">How to protect data and promote open-source access</h1>
+<h1 id="protecting-data-and-promoting-open-source-access">Protecting data and promoting open-source access</h1>
 <h2 id="projects-focused-on-safe-access">Projects focused on safe access</h2>
 <p>The Global Alliance for Genomics and Health (GA4GH) is leading the effort in
 safe data access.</p>
@@ -844,8 +844,8 @@ I am struck by the fact that genomic privacy generally depends on a user trust s
 and data protection is focused on the end-user stage. 
 I can exemplify the problem with the following simple example:</p>
 
-<p>Every subject relying on genomic analysis must submit a DNA sample alogn with 
-genetic concent, and the data is prepared in several stages;</p>
+<p>Every subject relying on genomic analysis must submit a DNA sample along with 
+genetic consent, and the data is prepared in several stages;</p>
 <ol>
   <li>Sample collection</li>
   <li>Sample preperation</li>
@@ -954,7 +954,7 @@ Race for Coronavirus Vaccine Pits Spy Against Spy<br />
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:foot" role="doc-endnote">
-      <p><a href="https://dylanlawlessblog.wordpress.com/2019/08/08/the-devil-is-in-the-detail/">A trivial example of data export by hiding data within a “results figure”</a>. <a href="#fnref:foot" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+      <p><a href="/2019/08/19/devil_in_detail.html">A trivial example of data export by hiding data within a “results figure”</a>. <a href="#fnref:foot" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -3682,7 +3682,7 @@ Autoimmunity &amp; Inflammation in PID</p>
 
 <p><a href="http://www.immunology-conference.de">Annual meeting German Society for Immunology</a> 2014 - Bonn, Germany</p>
 
-<p><img src="/images/meetings/bonn.png" width="80%" /></p>
+<p><img src="/images/meetings/bonn.jpg" width="80%" /></p>
 </p>
 
   <h2> - </h2>

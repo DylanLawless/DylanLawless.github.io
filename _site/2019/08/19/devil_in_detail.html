@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <!-- link to MathJax for LaTeX stlye eqn -->
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+   <!--  -->
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>The devil is in the detail</title>
+   <meta name="author" content="LawlessGenomics" />
+   <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
+   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
+
+   <!-- include a google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <img style="margin-bottom:-8px" 
+	src="/images/logos/logo_2.8.png" 
+	alt="Logo image" width="55" height="37.3"/>
+    <a href="/">LawlessGenomics</a>
+    <a class="extra" href="/">Home</a>
+  </div>
+
+  <div id="post">
+<h1 id="the-devil-is-in-the-detail">The devil is in the detail</h1>
+
+<p class="meta">19 Aug 2019</p>
+<p>I was learning some <span style="text-decoration: underline;"><span style="color: #800080;"><a href="https://en.wikipedia.org/wiki/Steganography">steganography</a></span></span> methods for a security project. 
+At the same time, I was writing up a paper with some friends (<a href="https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf">https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf</a>) and decided to hide a little message in one of the figures.
+The goal was to encode some hidden data and see could we get it back out the other side, after publication.</p>
+
+<p>It would be a lot of trouble for a master of espionage to have to publish a paper every time a secret message needed to be encoded for public transmission, but maybe it could be done!</p>
+
+<p><img src="/images/posts/editor_paper_rag.png" width="100%" /></p>
+
+<p>The secret message was imported into <a href="https://www.r-project.org">R</a> from plain text. 
+It was encoded it into a png file that was a supplemental figure in our paper (from experience, supplemental figures usually get uploaded to a repository that can be downloaded after publication, while main-text figures are often converted in one way or another by the copy editors). 
+Once the figure was released, anyone with the correct decoding algorithm could get back the secret message.</p>
+
+<p>In this case I used the 
+<a href="https://github.com/richfitz/stegasaur">richfitz/stegasaur</a> package, 
+innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
+The inforation was hidden within the data that makes up the image, and is imperceivable to the naked eye. 
+Even better, the file size was slightly SMALLER than the original (1.9MB to 1.7MB) without noticeable difference in quality. 
+The secret message decoded from the protein structure figure “F_E4_Structure.png” and is printed to the console:</p>
+
+<p><img src="/images/posts/r_steg_decode.png" width="100%" /></p>
+
+<p>Here’s an idea, <a href="https://patents.google.com/patent/US8527779">steganographic message blocks</a> seperated across a career worth of publications, 
+that can only be deciphered once all blocks are collected! 
+Who would go to that trouble? 
+Go see what you can find in one Supplementary material png file. 
+<a href="https://link.springer.com/article/10.1007%2Fs10875-019-00670-z">https://link.springer.com/article/10.1007%2Fs10875-019-00670-z</a></p>
+
+<h1 id="r-script">R script </h1>
+<p>Try it yourself.
+Find the paper and get Figure E4.
+Download
+<a href="https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial">10875_2019_670_MOESM5_ESM</a></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; install.packages("devtools")
+&gt; install_github("richfitz/stegasaur")
+&gt; library("devtools")
+&gt; library(ggplot2) 
+&gt; Decode message &lt;- 
+&gt;		stegasaur::decode("~/10875_2019_670_MOESM5_ESM.png")
+</code></pre></div></div>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>05 May 2020</span> &raquo; <a href="/2020/05/05/singhgupta_genes.html">Unnecessary complexity in precision medicine</a></li>
+    
+      <li><span>27 Apr 2020</span> &raquo; <a href="/2020/04/27/genetic_mutation_websites.html">Websites for basic genetic variant information</a></li>
+    
+      <li><span>26 Apr 2020</span> &raquo; <a href="/2020/04/26/cryptography.html">Cryptography</a></li>
+    
+  </ul>
+</div>
+
+
+
+<div class="footer">
+	<div class="contact">
+	<p>
+	<img src="/images/logos/logo_3.0.png" 
+	alt="Logo image" width="99" height="67.1" />
+	</p>
+	</div>
+	<div class="contact">
+		<p>
+		Built by Dylan Lawless
+		<br />
+		Postdoc at
+		<a href="https://people.epfl.ch/dylan.lawless">EPFL</a>
+		<br />
+		<!--dylan( . )lawless( at )epfl( . )ch-->
+		</p>
+	</div>
+	
+	<div class="contact">
+		<p>
+		<a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
+		<a href="https://dylan-lawless.github.io">Resume</a><br />
+		<img src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
+	</div>
+	
+	</div>
+</div>
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
