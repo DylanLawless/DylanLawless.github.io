@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-25T21:50:48+01:00</updated>
+ <updated>2021-02-26T09:54:42+01:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -384,28 +384,49 @@ The Quipper Language: programming language for quantum computing&lt;br /&gt;
    <content type="html">&lt;h1 id=&quot;the-devil-is-in-the-detail&quot;&gt;The devil is in the detail&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;19 Aug 2019&lt;/p&gt;
-&lt;p&gt;I was learning some &lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;span style=&quot;color: #800080;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Steganography&quot;&gt;steganography&lt;/a&gt;&lt;/span&gt;&lt;/span&gt; methods for a security project. 
-At the same time, I was writing up a paper with some friends (&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf&quot;&gt;https://link.springer.com/content/pdf/10.1007%2Fs10875-019-00670-z.pdf&lt;/a&gt;) and decided to hide a little message in one of the figures.
-The goal was to encode some hidden data and see could we get it back out the other side, after publication.&lt;/p&gt;
+&lt;p&gt;I was learning some &lt;a href=&quot;https://en.wikipedia.org/wiki/Steganography&quot;&gt;steganography&lt;/a&gt; methods for a security project. 
+At the same time, I was writing up a paper with some friends 
+(&lt;a href=&quot;https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf&quot;&gt;https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf&lt;/a&gt;) 
+and decided to hide a little message in one of the figures.
+The goal was to encode some hidden data and see could we get it back out 
+the other side, after publication.&lt;/p&gt;
 
-&lt;p&gt;It would be a lot of trouble for a master of espionage to have to publish a paper every time a secret message needed to be encoded for public transmission, but maybe it could be done!&lt;/p&gt;
+&lt;p&gt;It would be a lot of trouble for a master of espionage to have to publish a 
+paper every time a secret message needed to be encoded for public transmission, 
+but maybe it could be done!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/editor_paper_rag.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/editor_paper_rag.png&quot; width=&quot;101%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The secret message was imported into &lt;a href=&quot;https://www.r-project.org&quot;&gt;R&lt;/a&gt; from plain text. 
-It was encoded it into a png file that was a supplemental figure in our paper (from experience, supplemental figures usually get uploaded to a repository that can be downloaded after publication, while main-text figures are often converted in one way or another by the copy editors). 
-Once the figure was released, anyone with the correct decoding algorithm could get back the secret message.&lt;/p&gt;
+It was encoded into a png file that was to be a supplemental figure in our paper 
+From experience, supplemental figures usually get uploaded to a repository and
+stored in the same format for later downloaded after publication, 
+until main-text figures which are often converted in one way or another by the publisher. 
+Once the figure was released, anyone with the correct decoding algorithm 
+could get back the secret message.&lt;/p&gt;
 
-&lt;p&gt;In this case I used the 
+&lt;p&gt;In this case, I used the 
 &lt;a href=&quot;https://github.com/richfitz/stegasaur&quot;&gt;richfitz/stegasaur&lt;/a&gt; package, 
 innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
-The inforation was hidden within the data that makes up the image, and is imperceivable to the naked eye. 
-Even better, the file size was slightly SMALLER than the original (1.9MB to 1.7MB) without noticeable difference in quality. 
-The secret message decoded from the protein structure figure “F_E4_Structure.png” and is printed to the console:&lt;/p&gt;
+The inforation was hidden within the data that makes up the image, 
+and is imperceivable to the naked eye. 
+Even better, the file size was slightly &lt;em&gt;SMALLER&lt;/em&gt; than the original 
+(1.9MB to 1.7MB) without a noticeable difference in quality. 
+After peer review of the paper, publisher proceessing and publication, 
+the secret message was successfully decoded from the protein structure figure 
+“F_E4_Structure.png” and was printed to the console:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/posts/r_steg_decode.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Here’s an idea, &lt;a href=&quot;https://patents.google.com/patent/US8527779&quot;&gt;steganographic message blocks&lt;/a&gt; seperated across a career worth of publications, 
+&lt;p&gt;This exercise looks like a bit of fun, 
+but was done to demonstrate the unavoidable 
+risks that exist in sensitive data research.&lt;sup id=&quot;fnref:foot&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:foot&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+Today, protected data enclaves are used for processing sensitive data 
+and usually allow summary results or figures to be exported.
+These are therefore basically a trust based system and are otherwise only security theatre.&lt;/p&gt;
+
+&lt;p&gt;Here’s an idea, &lt;a href=&quot;https://patents.google.com/patent/US8527779&quot;&gt;steganographic message blocks&lt;/a&gt; 
+seperated across a career worth of publications, 
 that can only be deciphered once all blocks are collected! 
 Who would go to that trouble? 
 Go see what you can find in one Supplementary material png file. 
@@ -423,6 +444,15 @@ Download
 &amp;gt; Decode message &amp;lt;- 
 &amp;gt;		stegasaur::decode(&quot;~/10875_2019_670_MOESM5_ESM.png&quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;footnote&quot;&gt;Footnote&lt;/h1&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:foot&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;/topic/medical-espionage&quot;&gt;Medical espionage&lt;/a&gt;. &lt;a href=&quot;#fnref:foot&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </content>
  </entry>
  
