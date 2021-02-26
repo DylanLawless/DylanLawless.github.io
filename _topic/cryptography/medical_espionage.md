@@ -171,6 +171,21 @@ identification and treatment of a range of pediatric medical conditions"
 and then "creating and selling exosome isolation kits" for sale via her company in China [5].
 Unlike these examples of personal gain, there have been reports of national medical espionage during to the COVD-19 crisis.
 
+> In November 2020, "Microsoft said at least nine health organisations including Pfizer had been targeted by state-backed organisations in North Korea and Russia" 
+> [as reported by the BBC.](https://www.bbc.com/news/technology-54936886).
+In Feb 2021, 
+a [claim without source and repeated by the BBC](https://en.yna.co.kr/view/AEN20210216008451315) 
+says that the
+> "National Intelligence Service (NIS) unveiled information during a closed-door 
+> session of the National Assembly's intelligence committee stating that
+> North Korea has attempted to hack the servers of a local drug manufacturer 
+> to obtain technology information on the company's coronavirus vaccine and treatment."
+
+Reports like this rarely have published evidence
+and may be nothing but fantansy deamed up by _The Tailor of Panama_ type reporters.
+Regardless, tageted theft is very liekly and one would assume it to be happening
+even when specific reports are unsubstantiated. 
+
 Remaining discussion to be added...
 
 # Protecting data and promoting open-source access
