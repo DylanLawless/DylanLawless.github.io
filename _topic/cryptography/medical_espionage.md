@@ -171,11 +171,14 @@ identification and treatment of a range of pediatric medical conditions"
 and then "creating and selling exosome isolation kits" for sale via her company in China [5].
 Unlike these examples of personal gain, there have been reports of national medical espionage during to the COVD-19 crisis.
 
-[The BBC reported in November 2020 that](https://www.bbc.com/news/technology-54936886)
+[The BBC reported in November 2020](https://www.bbc.com/news/technology-54936886) 
+[6] that
 > "Microsoft said at least nine health organisations including Pfizer had been targeted by state-backed organisations in North Korea and Russia".
 
 In Feb 2021, 
-a [claim without source and repeated by the BBC](https://en.yna.co.kr/view/AEN20210216008451315) 
+a [claim without source by Yonhap news](https://en.yna.co.kr/view/AEN20210216008451315) 
+[7] 
+and repeated by the BBC [8] 
 says that the South Korean
 
 > "National Intelligence Service (NIS) unveiled information during a closed-door 
@@ -185,7 +188,7 @@ says that the South Korean
 
 Reports like this rarely have published evidence
 and may be nothing but fantansy deamed up by _The Tailor of Panama_ type reporters.
-Regardless, tageted theft is very liekly and one would assume it to be happening
+Regardless, targeted theft is very liekly and one would assume it to be happening
 even when specific reports are unsubstantiated. 
 
 Remaining discussion to be added...
@@ -317,6 +320,16 @@ To be finished..
 \
 [5] Hospital researcher sentenced to prison for conspiring to steal trade secrets, sell them in China\
 [http://crweworld.com/oh/trendingnow/news/1867620/hospital-researcher-sentenced-to-prison-for-conspiring-to-steal-trade-secrets-sell-them-in-china](http://crweworld.com/oh/trendingnow/news/1867620/hospital-researcher-sentenced-to-prison-for-conspiring-to-steal-trade-secrets-sell-them-in-china)\
+\
+[6] Coronavirus: North Korea and Russia hackers 'targeting vaccine'.\
+[https://www.bbc.com/news/technology-54936886](https://www.bbc.com/news/technology-54936886)\
+\
+[7]
+N. Korea attempted to steal COVID-19 vaccine, treatment technology via hacking: NIS\
+[https://en.yna.co.kr/view/AEN20210216008451315](https://en.yna.co.kr/view/AEN20210216008451315)\
+\
+[8] North Korea accused of hacking Pfizer for Covid-19 vaccine data.\
+[https://www.bbc.com/news/technology-56084575](https://www.bbc.com/news/technology-56084575)\
 \
 Coronavirus: Cyber-spies hunt Covid-19 research, US and UK warn\
 [https://www.bbc.com/news/technology-52551023](https://www.bbc.com/news/technology-52551023)\
