@@ -19,7 +19,7 @@ predicted loss-of-function (pLoF) variants can be identified using
 Variant Effect Predictor (VEP) [1]
 and Loss Of Function Transcript Effect Estimator (LOFTEE) [2],
 with accurate genomic coordinates from GENCODE [3].
-An erichment of share biological function in affected genes can then be tested using Gene Ontology (GO) [4].
+An enrichment of share biological function in affected genes can then be tested using Gene Ontology (GO) [4].
 
 A note here about the pLoF acronym.
 I believe the "p" was originally for _predicted_ loss-of-function,
@@ -43,9 +43,9 @@ In variant annotation, VEP supplies a "consequence" column.
 Consequences are general and based on translation of genetic code in humans. 
 The Loss-of-function (LoF) consequence is the simplest example (splice, stop mutations).
 For the topic of variant collapsing, used in areas such as burden testing, 
-variant consequence defines which variants can be included in analsys since they are _interpretable_ or of ostensibly _known significance_ [4].
+variant consequence defines which variants can be included in analysis since they are _interpretable_ or of ostensibly _known significance_ [4].
 <!-- povysil2019rare -->
-This could introduce spurious results so it is  best to have a solid criteria for selecting consiqueses of interest. 
+This could introduce spurious results so it is  best to have a solid criteria for selecting consequences of interest. 
 The consequences provided by VEP are too long to discuss in detail. 
 The table from the ensembl website is worth reading:
 [Ensembl Variation - Calculated variant consequences](https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences).\
@@ -76,18 +76,18 @@ can also be used to perform enrichment analysis on gene sets
 [5, 6].
 For example, given a set of genes that are up-regulated under certain conditions, 
 an enrichment analysis will find which GO terms are over-represented (or under-represented) using annotations for that gene set.
-This discription was taken directly from 
+This description was taken directly from 
 [geneontology.org](http://geneontology.org/docs/go-enrichment-analysis/) where a longer explanation is shown. 
 Using the web interface, an example query for 4 genes from the VDJ recombination pathway were queried.
 The output is shown here. 
 The reference database has 20595 IDs. 
-My 4 gene IDs were then tested for all known interacrtions - the number of shared GO terms.
+My 4 gene IDs were then tested for all known interactions - the number of shared GO terms.
 There were 9038 terms checked in total.
-The output table shows the GO process "V(D)J recombination" as the strongest assocciation;
+The output table shows the GO process "V(D)J recombination" as the strongest association;
 * all 4 genes shared this process 
 * for 4 random genes we would expect none to share the same GO process
 
-The fold enrichment and strong P-value indicate a true assocciation of shared biological pathway.\
+The fold enrichment and strong P-value indicate a true association of shared biological pathway.\
 <img src="{{ site.baseurl }}{% link images/GO_enrich.png %}" width="100%">
 
 # Published example
@@ -100,7 +100,7 @@ In Taliun et al [0], each of these tools are used in their analysis to target va
 * remove pLOF with allele frequency > 0.5%
 * remove pLOF within regions masked due to poor accessibility
 
-These last two additionally ignore variants that are likely of minor consiquence to human health but still pased the basic pLoF filter. 
+These last two additionally ignore variants that are likely of minor consequence to human health but still passed the basic pLoF filter. 
 Taliun et al. evaluated enrichment and depletion of pLOF variants 
 (allele frequency $<$ 0.5%) in gene sets (that is, terms) from Gene Ontology (GO) 
 [5, 6].
@@ -139,9 +139,9 @@ Among the more than 400 million detected variants,
 * 97% have frequencies of less than 1% and 
 * 46% are singletons that are present in only one individual.
 
-The 46% is pretty suprising but the number of private variant per person is probably not extremely high.
-In clinical exomes we usually expect appoximately $<$100 novel variants compared to the _in-house sequence database_.
-We also expect aprrox. $<$10 de novo variants in the same sample if parents/family were also sequenced. 
+The 46% is pretty surprising but the number of private variant per person is probably not extremely high.
+In clinical exomes we usually expect approximately $<$100 novel variants compared to the _in-house sequence database_.
+We also expect aprrox. $<$10 _de novo_ variants in the same sample if parents/family were also sequenced. 
 The number will be much larger for non-coding genome, but since SNVs will be largely non-interpretable it is currently ignored for clinical diagnosis.
 
 A notable class of variants is the 
@@ -158,10 +158,10 @@ based on exome sequencing; an increase that was mainly driven by
 It is worth noting that the [referenced figures (S13,14)](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03205-y/MediaObjects/41586_2021_3205_MOESM3_ESM.pdf) don't show specifically pLoF, 
 but rather sequence depth per gene.
 They show that TopMed has better coverage/depth than ExAC, including for known disease genes.
-I would have expected them to show the same results spcifically for pLoF variants to support their statement.
+I would have expected them to show the same results specifically for pLoF variants to support their statement.
 
 The extract from Table S7 shows the comparison of pLoF versus other rare variants in GO terms (protein pathways). 
-The comaprison is basically: 
+The comparison is basically: 
 Random sampling provides the number of _expected_ variants, which is then compared to the _observed_ number of variants.
 There are four categories used:
 - expected pLoF
@@ -171,7 +171,7 @@ There are four categories used:
 
 The top result, DNA-binding genes, showed rare variants (singletons) observed/expected = 1, but pLoF observed/expected = 0.5.
 This comparison is made to show that:
-- This biological mechanism cannot tollerate damaging pLoF variants (pLoF/bp).
+- This biological mechanism cannot tollorate damaging pLoF variants (pLoF/bp).
 - And even though pLoF are usually very rare, 
 this does not account for the lack of observations - 
 rare/novel variants that are non-pLoF are present (proportion of singletons).
@@ -191,13 +191,13 @@ Genes associated with human disease in
 * ClinVar [10] (4% depletion).
 
 # The future
-With very large scale genome seuqnceing we will start to assocciation studies for extremely rare variants (eventually there will be no novel SNVs). 
+With very large scale genome sequencing we will start to association studies for extremely rare variants (eventually there will be no novel SNVs). 
 This provokes a few possibilities.
 1. Predicting probably of all SNVs.
 - CADD predicts _pathogenicity_ for all SNVs but currently I don't know of any _mutation probability_ projects. Ratio of obs/exp will have valuable insight. 
 2. All coding variants will be reported.
 - functional prediction accuracies can be validated.
-3. Novel non-coding variants will become the new variants of unknown signifigance (VUS). 
+3. Novel non-coding variants will become the new variants of unknown significance (VUS). 
 Will we slowly trudge through the same system again or will there be a more sophisticated approach for the non-coding genome in clinical genomics?
 
 # References
