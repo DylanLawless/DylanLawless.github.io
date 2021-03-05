@@ -14,15 +14,23 @@ subject: Precision medicine
 # Stargazer genotyping
 As reported in "Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program" [0],
 <!-- taliun2021sequencing -->
-the star allele nomenclature method is applied to large scale data to screen 
+Taliun et al. use a method of known pharmacogene (PGx) variation annotation 
+that can be adapted for many other drug-gene database applications [0].
+The star allele nomenclature method is applied to large scale data to screen 
 for possible pharmacogenomic interactions.
-This method includes a simple notation for quick recognition of genotypes that 
-are of interest to clinicians prescribing medications.
-Gene-drug interaction labelling should not rely on manual curation and therefore 
+This consists of annotation 
+with a simple notation for quick recognition of 
+allelic variation in genes impacting drug metabolism, disposition and response
+(e.g. of interest to clinicians prescribing medications).
+The [Pharmacogene Variation (PharmVar)](https://www.pharmvar.org) 
+consortium repository is used to label 
+human cytochrome P450 (CYP) genes for known PGx variation.
+
+_Gene-drug interaction labelling should not rely on manual curation and therefore 
 simplifying nomenclature is not advised. 
 Relying on star allele labelling goes against the recommended 
 [HGVS sequence variant nomenclature](http://varnomen.hgvs.org/recommendations/general/),
-but the following protocol for annotation of genomic data is beneficial.
+but the following protocol for annotation of genomic data is beneficial._
 
 ## Methods
 Identification of _CYP2D6_ alleles using
@@ -30,14 +38,17 @@ Identification of _CYP2D6_ alleles using
 genotyping pipeline.
 Details of the Stargazer genotyping pipeline have been described previously [1].
 
-_Background note: Haplotypes are group of alleles that are inherited together from a single parent. They are sequenced from individual DNA strands. These strands can be phased to reconstruct the inheritence pattern._
+_Background note: Haplotypes are group of alleles that are inherited together 
+from a single parent. 
+They are sequenced from individual DNA strands. 
+These strands can be phased to reconstruct the inheritence pattern._
 
 Phased haplotype (from [10Xgenomics.com](https://www.10xgenomics.com)):
 
 <img src="{{ site.baseurl }}{% link images/haplotype.jpeg %}" width="60%">
 
 * GATK-HaplotypeCaller
-	+ SNVs and indels in _CYP2D6_ were assessed from a VCF file generated using GATK-HaplotypeCaller [2].
+	+ SNVs and indels in were assessed from a VCF file generated using GATK-HaplotypeCaller [2].
 * Phase Beagle
 	+ The VCF file was phased using the program [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html) [3] and
 	the 1000 Genomes Project haplotype reference panel.
@@ -81,14 +92,15 @@ From [bredagenetics.com](https://bredagenetics.com/star-allele-nomenclature/) - 
 
 > "By using one single star allele one can identify not just a single variant, but even a group of variants."
 
-CYP2D6 interaction (from [miro.medium.com](miro.medium.com)):
-
-<img src="{{ site.baseurl }}{% link images/CYP2D6.png %}" width="100%">
+A full list of cytochrome P450 (CYP) alleles with star notation can be found via the
+[Pharmacogene Variation (PharmVar)](https://www.pharmvar.org) consortium,
+a central repository for PGx variation that focuses on 
+haplotype structure and allelic variation.
 
 # Published example
-Taliun et al. [0] illustrate variation in CYP2D6.
-A complementary approach to _de novo_ genome assembly
-is to develop approaches that combine multiple types of information including:
+Taliun et al. [0]
+provide a complementary approach to _de novo_ genome assembly
+by developing approaches that combine multiple types of information including:
 * previously observed haplotype variation
 * SNVs
 * indels
@@ -96,14 +108,19 @@ is to develop approaches that combine multiple types of information including:
 * homology information
 to identify and classify haplotypes in interesting regions of the genome.
 
-One such region is around the _CYP2D6_ gene,
-which encodes an enzyme that metabolizes approximately 25% of prescription drugs and
-the activity of which varies substantially among individuals [1,5,6].
+They illustrate this by focusing on 
+one such region around the _CYP2D6_ gene.
+This encodes an enzyme that metabolizes approximately 25% of prescription drugs 
+and the activity of which varies substantially among individuals [1,5,6].
 More than 150 _CYP2D6_ haplotypes have been described,
 some involving a gene conversion with its nearby non-functional
 but highly similar paralogue _CYP2D7_.
 
-Performed _CYP2D6_ haplotype analysis for all 53,831 TOPMed individuals [1,7]
+CYP2D6 interaction (from [miro.medium.com](miro.medium.com)):
+
+<img src="{{ site.baseurl }}{% link images/CYP2D6.png %}" width="50%">
+
+They performed _CYP2D6_ haplotype analysis for all 53,831 TOPMed individuals [1,7]
 Called a total of 99 alleles (66 known and 33 novel) representing:
 * increased function,
 * decreased function and
