@@ -15,7 +15,7 @@ _Note:
 Manual curation of gene-drug interaction is not recommended and therefore 
 simplification of nomenclature is not advised. 
 Relying on star allele labelling goes against the recommended 
-[HGVS sequence variant nomenclature](http://varnomen.hgvs.org/recommendations/general/),
+[HGVS sequence variant nomenclature](http://varnomen.hgvs.org/recommendations/general/).
 The following protocol for is provided as one step in a larger process
 of annotation in genomic analysis._
 
