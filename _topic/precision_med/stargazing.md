@@ -43,7 +43,7 @@ Phased haplotype (from [10Xgenomics.com](https://www.10xgenomics.com)):
 	+ The VCF file was phased using the program [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html) [3] and
 	the 1000 Genomes Project haplotype reference panel.
 
-* Star alleles
+* Star alleles ([described below](## Star alleles))
 	+ Phased SNVs and indels were then matched to star alleles.
 
 In parallel,
@@ -71,13 +71,13 @@ In parallel,
 	copy number plots and
 	a VCF of SNVs and indels that were not used to define star alleles.
 
-## Summary
+## Stargazer summary
 From [Stargazer homepage](https://stargazer.gs.washington.edu/stargazerweb/index.html) - quote:
 
 > "Stargazer is a bioinformatics tool for calling star alleles (haplotypes) in PGx genes using data from NGS or SNP array. Stargazer can accept NGS data from both WGS and TS.
 > Stargazer identifies star alleles by detecting SNVs, indels, and SVs. Stargazer can detect complex SVs including gene deletions, duplications, and hybrids by calculating paralog-specific copy number from read depth."
 
-### Star alleles
+## Star alleles
 From [bredagenetics.com](https://bredagenetics.com/star-allele-nomenclature/) - quote:
 
 > "Genetic variants identifiable as pharmacogenomic markers are described by utilizing a special nomenclature, which is not elsewhere used in genetics. It is the so-called star allele nomenclature. In this nomenclature, alleles aren’t identified by their cDNA or genomic position (as it usually happens with all other genetic variants – see HGVS nomenclature), but through the means of numbers and letters, separated from the gene name by a star (star allele nomenclature). For example: CYP3A5*2 identifies the genetic variant in the CYP3A5 gene at the genomic position g.27289C>A, which leads to the amino acid substitution p.T398N. The star allele nomenclature is thought to be faster and easier for non-specialized professionals in identifying important pharmacogenetic alleles, helping them avoid transcription mistakes which may be more frequent by using the standard HGVS nomenclature."
