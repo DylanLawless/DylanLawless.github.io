@@ -11,6 +11,14 @@ subject: Precision medicine
 * TOC
 {:toc}
 
+_Note:
+Manual curation of gene-drug interaction is not recommended and therefore 
+simplification of nomenclature is not advised. 
+Relying on star allele labelling goes against the recommended 
+[HGVS sequence variant nomenclature](http://varnomen.hgvs.org/recommendations/general/),
+The following protocol for is provided as one step in a larger process
+of annotation in genomic analysis._
+
 # Stargazer genotyping
 As reported in "Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program" [0],
 <!-- taliun2021sequencing -->
@@ -25,12 +33,6 @@ allelic variation in genes impacting drug metabolism, disposition and response
 The [Pharmacogene Variation (PharmVar)](https://www.pharmvar.org) 
 consortium repository is used to label 
 human cytochrome P450 (CYP) genes for known PGx variation.
-
-_Gene-drug interaction labelling should not rely on manual curation and therefore 
-simplifying nomenclature is not advised. 
-Relying on star allele labelling goes against the recommended 
-[HGVS sequence variant nomenclature](http://varnomen.hgvs.org/recommendations/general/),
-but the following protocol for annotation of genomic data is beneficial._
 
 ## Methods
 Identification of _CYP2D6_ alleles using
