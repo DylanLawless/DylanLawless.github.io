@@ -38,32 +38,25 @@ Phased haplotype (from [10Xgenomics.com](https://www.10xgenomics.com)):
 
 * GATK-HaplotypeCaller
 	+ SNVs and indels in _CYP2D6_ were assessed from a VCF file generated using GATK-HaplotypeCaller [2].
-
 * Phase Beagle
 	+ The VCF file was phased using the program [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html) [3] and
 	the 1000 Genomes Project haplotype reference panel.
-
 * Star alleles ([described below](#star-alleles))
 	+ Phased SNVs and indels were then matched to star alleles.
 
 In parallel,
-
 * GATK-DepthOfCoverage
-	+ read depth was calculated from BAM files using GATK-DepthOfCoverage [2].
-
+	+ Read depth was calculated from BAM files using GATK-DepthOfCoverage [2].
 * Copy number
 	+ Read depth was converted to copy number by performing intra-sample normalization [1].
-
-* structural variants
+* Structural variants
 	+ After normalization,
 	structural variants were assessed by testing all possible pairwise combinations
 	of pre-defined copy number profiles
 	against the observed copy number profile of the sample.
-
-* changepoint
+* Changepoint
 	+ For new SVs,
-	breakpoints were statistically inferred using changepoint [4]
-
+	breakpoints were statistically inferred using changepoint [4].
 * Output
 	+ Information regarding new SVs was stored and
 	used to identify subsequent SVs in copy number profiles.
