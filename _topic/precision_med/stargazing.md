@@ -43,7 +43,7 @@ Phased haplotype (from [10Xgenomics.com](https://www.10xgenomics.com)):
 	+ The VCF file was phased using the program [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html) [3] and
 	the 1000 Genomes Project haplotype reference panel.
 
-* Star alleles ([described below](## Star alleles))
+* Star alleles ([described below](#star-alleles))
 	+ Phased SNVs and indels were then matched to star alleles.
 
 In parallel,
