@@ -308,7 +308,7 @@ Christopher Hitchens extemporaneously rebutted with an apt simile to the nuclear
 arguing that some topics they are explicitly political whether or not others lack a recognition of facts:
 
 > "As we sit here, everyone is this room has been made into a front-line soldier; 
-> the nuclear age means that we are all conscripted; we don't have the right to contentious objection anymore. 
+> the nuclear age means that we are all conscripted; we don't have the right to conscientious objection anymore. 
 > We are on the front-line while the soldiers are in the bunkers.
 > That is being done to us whether we like it or not. 
 > We can't then complain of those that are objecting to it that they are politicising it. 
