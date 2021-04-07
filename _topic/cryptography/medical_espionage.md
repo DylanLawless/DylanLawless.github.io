@@ -301,6 +301,26 @@ there are several options that can be implemented in the future.
 
 To be finished..
 
+One may argue that the proposed danger is hyperbolic; 
+that it is a subject for intellectual property rather than political.
+When once ineptly accused of making a topic political,
+Christopher Hitchens extemporaneously rebutted with an apt simile to the nuclear threat at the time (1984), 
+arguing that some topics they are explicitly political whether or not others lack a recognition of facts:
+
+> "As we sit here, everyone is this room has been made into a front-line soldier; 
+> the nuclear age means that we are all conscripted; we don't have the right to contentious objection anymore. 
+> We are on the front-line while the soldiers are in the bunkers.
+> That is being done to us whether we like it or not. 
+> We can't then complain of those that are objecting to it that they are politicising it. 
+> The politicisation has been done. 
+> We are all conscripted. 
+> We might as well be sitting here in uniform." [9]
+
+While the comparison to a nuclear détente is an exaggeration, 
+this problem is not simply a matter of consumer choice. 
+How difficult it is, even to quantify the dangers amongst _experts_ in human genomics. 
+Not even the unit of measurement is known to quantify the declination of risk.
+
 # References
 ----------
 
@@ -328,6 +348,8 @@ N. Korea attempted to steal COVID-19 vaccine, treatment technology via hacking: 
 \
 [8] North Korea accused of hacking Pfizer for Covid-19 vaccine data.\
 [https://www.bbc.com/news/technology-56084575](https://www.bbc.com/news/technology-56084575)\
+\
+[9] Firing line Episode S0629, Recorded on December 11, 1984. Guests: R. (Robert Emmett) Emmett Tyrrell Jr., Christopher Hitchens.\
 \
 Coronavirus: Cyber-spies hunt Covid-19 research, US and UK warn\
 [https://www.bbc.com/news/technology-52551023](https://www.bbc.com/news/technology-52551023)\
