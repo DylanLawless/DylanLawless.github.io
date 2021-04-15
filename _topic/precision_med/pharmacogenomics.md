@@ -17,7 +17,7 @@ With the popularisation of commercial genetics services, more and more people ar
 Questions that might arise from this information include "do I have potentially disease-causing variants that can be treated with a drug?", or "am I taking a drug that will be affected by my genetics?".
 To tackle such questions with an example, we use public data in combination with pharmacogenomics.
 Outside of genotype data (offered by [23andMe](https://www.23andme.com) for example), the most common file type will be VCF:
-[What is a vcf and how should I interpret it?](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it).
+[What is a vcf and how should I interpret it?](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format).
 
 Here is a data source with different genetic data files.
 [https://my.pgp-hms.org/public_genetic_data](https://my.pgp-hms.org/public_genetic_data).
