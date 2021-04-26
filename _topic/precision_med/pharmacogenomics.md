@@ -19,7 +19,10 @@ To tackle such questions with an example, we use public data in combination with
 Outside of genotype data (offered by [23andMe](https://www.23andme.com) for example), the most common file type will be VCF:
 [What is a vcf and how should I interpret it?](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format).
 
-Here is a data source with different genetic data files.
+As an example input, try download Craig Venter's genome VCF:
+[ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz](ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz).
+
+When I wrote this post, I used a data source with different genetic data files;
 [https://my.pgp-hms.org/public_genetic_data](https://my.pgp-hms.org/public_genetic_data).
 To check that it works OK, I tried a quick version of this challenge.
 I picked the first whole genome VCF file that I saw (hu24385B 2019-04-07.vcf.g_z)
