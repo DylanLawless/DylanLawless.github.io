@@ -140,22 +140,22 @@ Results:
 * With misclassification, power is much better with CMC method compared to collapsing method
 	- particularly when with a high frequency of the non-causal variant.
 * Slight (very slight I think) loss of power when _causal_ variants are high frequency compared to collapsing.
- - this scenario is unlikely otherwise single-marker test may be possible to detect.
+	- This scenario is unlikely otherwise single-marker test may be possible to detect.
 
 ## Misclassification
 Two types of miss-classifications are considered: 
 * inclusion of non-functional variants and 
 * exclusion of functional variants.
-* Large section on results of _Excluding Functional Variants_ and _Inclusion of Nonfunctional Variants_.
+* There is a large section on results of _Excluding Functional Variants_ and _Inclusion of Nonfunctional Variants_.
 
-_This section can be read for detail but is probably familiar enough to us to skip._
+_This section can be read for detail but is probably familiar enough for us to skip._
  
 ## Effects of Linkage Disequilibrium (LD)
 A simulation is done in this section:
 * The locus has six variants, with a total allele frequency of 0.05. 
 * Four of the variants have an allele frequency of 0.01 and are on different haplotypes. 
 * Each of the remaining two variants, with allele frequencies of 0.005, is on one of the haplotypes where a variant with allele frequency of 0.01 resides; 
-* there is complete LD between these variants (r 2 z0:5). 
+	- there is complete LD between these variants (r 2 z0:5). 
 * For comparison purposes, a second simulation was carried out, in which all variants were on separate haplotypes.
 * One thousand replicates were generated, and the power was evaluated for an a level of 0.001.
 
