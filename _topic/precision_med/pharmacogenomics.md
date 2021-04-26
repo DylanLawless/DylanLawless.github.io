@@ -281,14 +281,6 @@ There are many layers to a this problem to create a usable product.
 For example, how to integrate pharmacodynamics, covariats to drug response, contraindications, variant pathogenicity, etc.
 However, this is a good start as a learning experience.
 
-# Annotation
-[Variant Effect Predictor](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/) is very useful.
-Note: For a real product, the code can run offline (a perl program with a few local library dependencies).
-The databases/cache that it uses are a bit too large to include on in a user software.
-In the real world you would have to send _anonymised_ packets from the user via an API for accessing the genomic databases hosted on your servers.
-Make sure to check their license to see if you can use oftware and databases in a commercial product.  
-[http://www.ensembl.org/info/about/legal/code_licence.html](http://www.ensembl.org/info/about/legal/code_licence.html) 
-
 # Drug indication
 My example used [DrugBank](https://www.drugbank.ca) for pharmacogenomic information.
 However, it may be safest to use the [FDA information](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling) as the primary source, but including [DrugBank](https://www.drugbank.ca) info is no problem.
@@ -323,12 +315,45 @@ With this in mind, perhaps an application doing this job could work two ways.
 (1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
 (2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.
 
-# Optimising VCF annotation
+# Annotation
+[Variant Effect Predictor (VEP)](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/) is very useful.
+Note: For a real product, the code can run offline (a perl program with a few local library dependencies).
+The databases/cache that it uses are a bit too large to include on in a user software.
+In the real world you would have to send _anonymised_ packets from the user via an API for accessing the genomic databases hosted on your servers.
+Make sure to check their license to see if you can use oftware and databases in a commercial product.  
+[http://www.ensembl.org/info/about/legal/code_licence.html](http://www.ensembl.org/info/about/legal/code_licence.html) 
+
+Running the software:
+
+* Using VEP is a vital part of converting the DNA variant information (genome position and nucleotide change) into annotated variant effects (protein coding change, gene name, predicted pathogenicity).
+* It requires the VEP code to run and requires a copy of the database files (reference genome, gene information, etc.).
+* You can upload a small number of variants to the online VEP web server to do this, or you can download the database and code to run on your own computer/server.
+
+So to process your customer/patient data, you have to choose one of these methods:
+
+1. Customer must upload their entire file to your server that runs VEP (1GB - 30GB per individual genome data).
+2. Customer must download the database and VEP code to run on their own computer (complex and large download for them, not recommended).
+
+Number 1 is better. But sending one large file often has problems.
+If they have a VCF file, you could:
+
+* Break it into small equal sized blocks to upload the data to you. Anonymisation is normal for all internet connections now, but you could just mention that some method of anonymising these blocks is important since someone "hacker" might try to steal information if most of the network data being sent to you contains small VCF format files.
+* You could also run a very small piece of code on the cusotmers software application that could extract just the main parts of the VCF file that you need, instead of sending everything. This is explained in sections 7-9. You could say this, but don't need to actually have working. i.e. the drugbank information only includes a certain number of human genes so perhaps you could just extract these using a list of genome coordinates before processing with VEP.
+
+For the license:
+
+* Anyone is free to download and use VEP code.
+* However, if you modify or reuse the code commercially it might affect the possibility of getting a patent for your product.
+* Your product uses VEP as an intermediate step, so you probably only need to include credit, or other legal info to say you have used it.
+* If there were a reason to prevent you using the software commercially, you might be able to make a simple replacement that could give the minimum outputs that you need - gene name and mutation type. If the topic happened to interest you: https://en.wikipedia.org/wiki/Reverse_engineering#Software
+* As an aside, you could also decide that you don't want to commercialise and offer this tool for free which would prevent bigger companies (like Google) from offering this service in return for harvesting the public's genetic data.
+
+## Optimising VCF annotation
 The slowest part of the method is VCF annotation.
 You can significantly increase the speed by first reducing the input to contain only regions of interst.
 That is, prepare a list of coordinates for each gene, and select for those regions in your input VCF or genotype data before annotation (VEP).
 
-# How to get coordinates for a gene list
+## How to get coordinates for a gene list
 Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:  
 [http://www.ensembl.org/info/data/biomart/index.html](http://www.ensembl.org/info/data/biomart/index.html)  
@@ -343,14 +368,14 @@ then the Biomart section
 Choose DataBase: Genes 93 Dataset: Human Filter -> Gene -> Input external ref ID list -> (change dropdown) Gene
 Name paste your list.
 e.g. VPS45 PSMB8 BLNK NEFL NLRP7 SMAD4 PSMB9  
-To set the output type: Attributes -> Gene -> select “gene start”, “gene stop”, “gene name”, or anything extra.
-Select the “Results” button at the top and export.
+To set the output type: Attributes -> Gene -> select "gene start", "gene stop", "gene name", or anything extra.
+Select the "Results" button at the top and export.
 The results can be tsv or csv.
 You would have to figure out how to extract the regions from the vcf (sed, grep, awk, R code, etc.).
 When I needed this, I used my own tools which required converting to format like this "X:1-2000", and ordered by number and alphabetic (some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
 If you use this list to extract regions from a VCF, remember to include all the original VCF header information.
 
-# Extracting regions from a VCF using a bed file
+## Extracting regions from a VCF using a bed file
 The early part of this tutorial shows how old-school command line tools can be used to extract data. 
 Indeed, this may be computationally most efficient but there are some specialised tools that make the process easier in general.
 You can use VCFtools to extract specified regions.  
