@@ -345,7 +345,7 @@ For the license:
 * Anyone is free to download and use VEP code.
 * However, if you modify or reuse the code commercially it might affect the possibility of getting a patent for your product.
 * Your product uses VEP as an intermediate step, so you probably only need to include credit, or other legal info to say you have used it.
-* If there were a reason to prevent you using the software commercially, you might be able to make a simple replacement that could give the minimum outputs that you need - gene name and mutation type. If the topic happened to interest you: https://en.wikipedia.org/wiki/Reverse_engineering#Software
+* If there were a reason to prevent you using the software commercially, you might be able to make a simple replacement that could give the minimum outputs that you need - gene name and mutation type. If the topic happens to interest you, you can read about [reverse engineering software](https://en.wikipedia.org/wiki/Reverse_engineering#Software).
 * As an aside, you could also decide that you don't want to commercialise and offer this tool for free which would prevent bigger companies (like Google) from offering this service in return for harvesting the public's genetic data.
 
 ## Optimising VCF annotation
