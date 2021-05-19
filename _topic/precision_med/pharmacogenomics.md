@@ -320,10 +320,20 @@ With this in mind, perhaps an application doing this job could work two ways.
 
 # Annotation
 [Variant Effect Predictor (VEP)](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/) is very useful.
-Note: For a real product, the code can run offline (a perl program with a few local library dependencies).
-The databases/cache that it uses are a bit too large to include on in a user software.
-In the real world you would have to send _anonymised_ packets from the user via an API for accessing the genomic databases hosted on your servers.
-Make sure to check their license to see if you can use oftware and databases in a commercial product.  
+During variant annotation, VEP supplies a "consequence" column.
+Consequences are general and based on translation of genetic code in humans. 
+The Loss-of-function (LoF) consequence is the simplest example (splice, stop mutations).
+The variant consequence may be one of the defining criteria by which variants can 
+be included in analysis since they are _interpretable_ or of ostensibly _known significance_.
+_Note: Using this alone could introduce spurious results so it is  best to have a solid criteria 
+for selecting consequences of interest_.
+The consequences provided by VEP are too long to discuss in detail here.
+The table from the ensembl website is worth reading; the HIGH impact variants 
+might be a simple method for selecting candidates:
+[Ensembl Variation - Calculated variant consequences](https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences).\
+<img src="{{ site.baseurl }}{% link images/VEP_consequences.jpg %}" width="100%">
+
+_Note: For a real product, the code should be run offline (a perl program with a few local library dependencies). The databases/cache that it uses are a bit too large to include on in a user software. In the real world you would have to send anonymised packets from the user via an API for accessing the genomic databases hosted on your servers. Make sure to check their license to see if you can use oftware and databases in a commercial product_.
 [http://www.ensembl.org/info/about/legal/code_licence.html](http://www.ensembl.org/info/about/legal/code_licence.html) 
 
 Running the software:
