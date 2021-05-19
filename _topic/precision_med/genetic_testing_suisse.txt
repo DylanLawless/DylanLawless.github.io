@@ -18,6 +18,23 @@ https://www.ga4gh.org/genomic-data-toolkit/regulatory-ethics-toolkit/
 Swiss law contains specific provisions on genetic testing in humans (Federal Act on Human Genetic Testing HGTA).
 
 
+1 federal law on genetic analysis (LAGH), and 3 ordinance which I think cover more details. (OAGH, OAGH-DFI, OACA).
+
+https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html
+
+The details listed individually:
+https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12
+
+Includes allowing "Pharmacogenetic tests performed to determine the effects of
+to determine the effects of a planned therapy".
+
+
+
+
+
+
+
+
 https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html
 
 Le Conseil fédéral
@@ -45,3 +62,10 @@ Description des analyses génétiques qui peuvent être effectuées en fonction 
 Includes: analyse autorisée for
 Analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue.
 
+
+
+
+
+https://www.iso.org/standard/75859.html
+ISO/IEC 23092
+Genomys (EPFL) accred for genomic storage compression (similar to another standard compression method).
