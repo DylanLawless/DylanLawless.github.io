@@ -55,12 +55,17 @@ Make certain that you use the same reference genome as used on the input data.
 The VCF file was made using reference genome GRCh37.
 Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).
 
-# Running a real example
-If you would like to try this using a whole genome using the Ensembl web interface you will need to split your VCF into smaller block first.
-For routine usage the command-line version of VEP and it's databases should be installed on run locally.
-There are several bioinformatics tools that are commonly used for manipulating genetic file formats such as VCFtools. 
-To get a real understanding of the data type, I inlcude here a method using command line bash to split a VCF file into smaller blocks. 
-A bash script is printed below where I use very mainstream traditional command-line tools to wrangle data, including 
+# Preparing an example VCF
+If you would like to try this using a whole genome using the Ensembl web 
+interface you will need to split your VCF into smaller block first.
+For routine usage the command-line version of VEP and it's databases should be 
+installed on run locally.
+There are several bioinformatics tools that are commonly used for manipulating 
+genetic file formats such as VCFtools. 
+To get a real understanding of the data type, I inlcude here a method using 
+command line bash to split a VCF file into smaller blocks. 
+A bash script is printed below where I use very mainstream traditional 
+command-line tools to wrangle data, including 
 [gunzip](https://en.wikipedia.org/wiki/Gzip)
 to unzip compressed files, 
 [wc](https://en.wikipedia.org/wiki/wc_(Unix))
