@@ -67,8 +67,8 @@ div#content {
 
 
 a {
-    color: #c13e3e; /* #303C3C; */ /* off-black */
-    /* text-decoration: underline; */
+    color: #303C3C; /* off-black */
+    text-decoration: underline;
 }
 div#content a {
     /* how we implement grey underlining:
@@ -94,15 +94,15 @@ p {
  /* this is the space after paragraph */
 
 a {
-  color: #000000;
+  color: #c13e3e;
 }
 
 a:hover {
-  color: black;
+  color: #fb6565;
 }
 
 a:visited {
-  color: #333333;
+  color: #267979;
 }
 /* link color 00a, visited color 202020 */
 
