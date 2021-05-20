@@ -579,3 +579,27 @@ SKAT-O
 * The show a method for:
 	- $Q_p$ = (1 - $p$)$Q_{SKAT}$ + $pQ_{burden}$
 	- The resulting optimal test corresponds to a best linear combination of SKAT and burden tests that maximizes power. 
+
+
+# Zhang 2021 ASHG
+[A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity](https://www.sciencedirect.com/science/article/pii/S0002929721001543?dgcid=author)
+
+I have never had a paper so similar to a working project that we are working currently on:
+Basically the only difference is:
+
+	1. the cluster size method (theirs might work better, using total edge weights instead of protein count),
+	2. cluster separation by NHC instead of MCL,
+	3. using KEGG+REACTOME to additionally define the description of the cluster (but this can be done at the end).
+
+Same cohort size. Really nice to see it in ASHG. Will have to do a comparison to per-gene SKAT-O to show the improvement, as they do.
+
+Actually, I surprised to see them apply their own novel clustering method (NHC) without some formal methods paper first - so many already exist, including 10 that can be used with their String data.
+
+Hmm, their main analysis is:
+
+* (a) with PC-adj =
+* glm(Pheno ~ Carrier-status + PCs, family=binomial). 
+	- The information for carrier status is missing, presumably 0/1 resulting in a sort of burden test.
+* (b) without PC-adj = fisher exact test. 
+	- When doing this we got great results with for our earlier tests but thought it might be too simplistic.
+* Using pathway SKAT-O (accounts for frequency/dosage) they got poorer results.
