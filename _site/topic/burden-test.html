@@ -910,25 +910,26 @@ to have little or no effect on phenotype,</li>
 <p>I have never had a paper so similar to a project that we are currently working on.
 Basically the only difference is:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. the cluster size method (theirs might work better, using total edge weights instead of protein count),
-2. cluster separation by NHC instead of MCL,
-3. using KEGG+REACTOME to additionally define the description of the cluster (but this can be done at the end).
-4. The method in main analysis is carrier count instead of SKAT style (we have compared both).
-</code></pre></div></div>
+<ol>
+  <li>the cluster size method (theirs might work better, using total edge weights instead of protein count),</li>
+  <li>cluster separation by NHC instead of MCL,</li>
+  <li>using KEGG+REACTOME to additionally define the description of the cluster (but this can be done at the end).</li>
+  <li>The method in main analysis is carrier count instead of SKAT style (we have compared both).</li>
+</ol>
 
 <p>Same cohort size. Really nice to see it in ASHG. Will have to do a comparison to per-gene SKAT-O to show the improvement, as they do.</p>
 
 <h2 id="problems-with-this-paper-1">Problems with this paper</h2>
 
 <h3 id="cluster-method">Cluster method</h3>
-<p>I surprised to see them apply their own novel clustering method (NHC) without some formal methods paper first - so many already exist, including 10 that can be used with their String data. In theory it sound good but there is no real evidence.</p>
+<p>I surprised to see them apply their own novel clustering method (NHC) without some formal methods paper first - so many already exist, including 10 that can be used with their String data. 
+In theory it sound good but there is no real evidence.</p>
 
 <h3 id="carrier-counts-instead-of-allele-dosage">Carrier counts instead of allele dosage</h3>
 <p>Their main analysis is:</p>
 
 <ul>
-  <li>(a) with PC-adj =</li>
-  <li>glm(Pheno ~ Carrier-status + PCs, family=binomial).
+  <li>(a) with PC-adj = glm(Pheno ~ Carrier-status + PCs, family=binomial).
     <ul>
       <li>The information for carrier status is missing, presumably 0/1 resulting in a sort of burden test.</li>
     </ul>
@@ -941,12 +942,16 @@ Basically the only difference is:</p>
   <li>Using pathway SKAT-O (accounts for frequency/dosage) they got poorer results.</li>
 </ul>
 
-<p>Main problems here: 
-One count per gene (as data$CARRIER in analysis) presumes that any variant (homozygous or heterozyous, compound het, etc) is deleterious in the individual.
+<p>Main problems here:</p>
+
+<p>One count per gene (as data$CARRIER in analysis) presumes that any variant (homozygous or heterozyous, compound het, etc) is deleterious in the individual.
 In restricted to LoF then OK, but missense variants are included in the study (and will usually be the majory of candidates).
 Filters are applied to get a high quality list, but there will still be a majority of missense VUS.</p>
 
-<p>In the section “Application to an HSE cohort (V): Comparison with a burden test on the HSE cohort”, SKAT-O is not a burden test; while their method is actually more similar to a burden test since they are labelling an individual if they carry a qualifying variant in a gene. This is just a terminology error but it indicates that maybe the key differences in pathway testing have not been considered, as written up here in our review._</p>
+<p>In the section “Application to an HSE cohort (V): 
+Comparison with a burden test on the HSE cohort”, SKAT-O is not a burden test; 
+while their method is actually more similar to a burden test since they are labelling an individual if they carry a qualifying variant in a gene. 
+This is just a terminology error but it indicates that maybe the key differences in pathway testing have not been considered, as written up here in our review.</p>
 
 <p>One could argue that only counting once per gene could help prevent problems due to LD.
 Although, the WES/WGS data would have the phasing information included to prune out LD if that was the arguement.

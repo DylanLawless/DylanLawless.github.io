@@ -580,7 +580,6 @@ SKAT-O
 	- $$Q_p$$ = (1 - $$p$$)$$Q_{SKAT}$$ + $$pQ_{burden}$$
 	- The resulting optimal test corresponds to a best linear combination of SKAT and burden tests that maximizes power. 
 
-
 # Zhang 2021 ASHG
 
 [A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity](https://www.sciencedirect.com/science/article/pii/S0002929721001543?dgcid=author)
@@ -588,44 +587,48 @@ SKAT-O
 I have never had a paper so similar to a project that we are currently working on.
 Basically the only difference is:
 
-	1. the cluster size method (theirs might work better, using total edge weights instead of protein count),
-	2. cluster separation by NHC instead of MCL,
-	3. using KEGG+REACTOME to additionally define the description of the cluster (but this can be done at the end).
-	4. The method in main analysis is carrier count instead of SKAT style (we have compared both).
+1. the cluster size method (theirs might work better, using total edge weights instead of protein count),
+2. cluster separation by NHC instead of MCL,
+3. using KEGG+REACTOME to additionally define the description of the cluster (but this can be done at the end).
+4. The method in main analysis is carrier count instead of SKAT style (we have compared both).
 
 Same cohort size. Really nice to see it in ASHG. Will have to do a comparison to per-gene SKAT-O to show the improvement, as they do.
 
 ## Problems with this paper
 
 ### Cluster method
-I surprised to see them apply their own novel clustering method (NHC) without some formal methods paper first - so many already exist, including 10 that can be used with their String data. In theory it sound good but there is no real evidence.
+I surprised to see them apply their own novel clustering method (NHC) without some formal methods paper first - so many already exist, including 10 that can be used with their String data. 
+In theory it sound good but there is no real evidence.
 
 ### Carrier counts instead of allele dosage
 Their main analysis is:
 
-* (a) with PC-adj =
-* glm(Pheno ~ Carrier-status + PCs, family=binomial). 
+* (a) with PC-adj = glm(Pheno ~ Carrier-status + PCs, family=binomial). 
 	- The information for carrier status is missing, presumably 0/1 resulting in a sort of burden test.
 * (b) without PC-adj = fisher exact test. 
 	- When doing this we got great results with for our earlier tests but thought it might be too simplistic.
 * Using pathway SKAT-O (accounts for frequency/dosage) they got poorer results.
 
 Main problems here: 
-One count per gene (as data\$CARRIER in analysis) presumes that any variant (homozygous or heterozyous, compound het, etc) is deleterious in the individual.
-In restricted to LoF then OK, but missense variants are included in the study (and will usually be the majory of candidates).
+
+One count per gene (as data\$CARRIER in analysis) presumes that any variant (homozygous or heterozygous, compound het, etc) is deleterious in the individual.
+In restricted to LoF then OK, but missense variants are included in the study (and will usually be the majority of candidates).
 Filters are applied to get a high quality list, but there will still be a majority of missense VUS.
 
-In the section "Application to an HSE cohort (V): Comparison with a burden test on the HSE cohort", SKAT-O is not a burden test; while their method is actually more similar to a burden test since they are labelling an individual if they carry a qualifying variant in a gene. This is just a terminology error but it indicates that maybe the key differences in pathway testing have not been considered, as written up here in our review._
+In the section "Application to an HSE cohort (V): 
+Comparison with a burden test on the HSE cohort", SKAT-O is not a burden test; 
+while their method is actually more similar to a burden test since they are labelling an individual if they carry a qualifying variant in a gene. 
+This is just a terminology error but it indicates that maybe the key differences in pathway testing have not been considered, as written up here in our review.
 
 One could argue that only counting once per gene could help prevent problems due to LD.
-Although, the WES/WGS data would have the phasing information included to prune out LD if that was the arguement.
+Although, the WES/WGS data would have the phasing information included to prune out LD if that was the argument.
 Basically, I think this is just a simplification rather than an advantage. 
 If SKAT had happened to work better they would have used those results. 
 
 e.g. In Fig 3, TLR3 variants = 7 cases, 1 Hom, 9 Het.
 This seems to amount to a carrier status of 7 in their dataset for the glm and fisher exact.
 
-Thir main analysis:
+Their main analysis:
 
 ```
 # call R command to run pc-adj enrichment
