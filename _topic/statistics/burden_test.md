@@ -417,7 +417,7 @@ Simplified summary:
 * Phenotypes 
 	- quantitative normal distribution
 	- carrier and non-carrier same variance
-	- carriers shifted by $\delta$ SD
+	- carriers shifted by $$\delta$$ SD
 
 ### Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios
 * They propose the ODDs model and use the weight method of Madsen et al. 2009 @madsen2009groupwise.
@@ -429,29 +429,29 @@ Simplified summary:
 
 * i indexes SNPs, 
 * Ci is the reference allele count of SNP i in cases, 
-* and xi ($\xi_i$) is equal to 1 if the frequency of SNP i is below a specified threshold (1% or 5%) 
+* and xi ($$\xi_i$$) is equal to 1 if the frequency of SNP i is below a specified threshold (1% or 5%) 
 * and is equal to 0 otherwise.
 
 * They generalise this for quantitative phenotypes.
-	- add the term: pj ($\pi_j$) - the phenotype of sample j.
+	- add the term: pj ($$\pi_j$$) - the phenotype of sample j.
 	-
 I need to compare these two papers here in more detail 
 (genetic score section).
-I believe @madsen2009groupwise use a more complex $\xi$ term than is inferred:
+I believe @madsen2009groupwise use a more complex $$\xi$$ term than is inferred:
 	- Generic model uses 0/1/2.
 	- Recessive model only homozygous are assigned 1.
 	- Dominant model both het and homo are assigned 1.
 
 ### Weighted Approach
 * Same as @madsen2009groupwise.
-* Also generalise by adding $\pi_j$ for a quantitative phenotype value.
+* Also generalise by adding $$\pi_j$$ for a quantitative phenotype value.
 
 ### Variable-Threshold Approach
 * There exists some (unknown) threshold T for which variants with a minor allele frequency (MAF) below T are substantially more likely to be functional than are variants with an MAF above T. 
 * z-score of a regression across samples of phenotypes versus counts of mutations meeting the allele-frequency threshold T. 
 
-### Cheating Approach to Incorporating $\varphi(p)$ ("phi(p)")
-* Weight variants according to the probability $\varphi(p)$ 
+### Cheating Approach to Incorporating $$\varphi(p)$$ ("phi(p)")
+* Weight variants according to the probability $$\varphi(p)$$ 
 	- that an allele of frequency p is functional, 
 	- as inferred by using the same simulated data used to evaluate power.
 
@@ -525,9 +525,9 @@ Notation:
 * n subjects
 * p variants
 * covariates
-* $y_i$ phenotype for sample i
-* $X_i$ covariats
-* $G_i$ genotypes (0,1,2 general)
+* $$y_i$$ phenotype for sample i
+* $$X_i$$ covariats
+* $$G_i$$ genotypes (0,1,2 general)
 
 ### SKAT Model and Test for Linear SNP Effects
 Eqn 1 and 2:
@@ -539,11 +539,11 @@ Eqn 3:
 
 * variance-component score statistic
 
-*The weight is adjusted based on the MAF
+* The weight is adjusted based on the MAF
 	- if rarer variants are expected to be more likely to have larger effects.
 	- still putting decent nonzero weights for variants with MAF 1%–5%.
 
-* A special case of SKAT arises when the outcome is dichotomous, no covariates are included, and all $W_j$ = 1. 
+* A special case of SKAT arises when the outcome is dichotomous, no covariates are included, and all $$W_j$$ = 1. 
 * Under these conditions, we show in Appendix A that the SKAT test statistic Q is equivalent to the C-alpha test statistic T.
 
 ### Relationship between Linear SKAT and Individual Variant Test Statistics
@@ -577,7 +577,7 @@ SKAT-O
 * They show the SKAT method
 * They show the buden testing methods
 * The show a method for:
-	- $Q_p$ = (1 - $p$)$Q_{SKAT}$ + $pQ_{burden}$
+	- $$Q_p$$ = (1 - $$p$$)$$Q_{SKAT}$$ + $$pQ_{burden}$$
 	- The resulting optimal test corresponds to a best linear combination of SKAT and burden tests that maximizes power. 
 
 
@@ -610,10 +610,48 @@ Their main analysis is:
 	- When doing this we got great results with for our earlier tests but thought it might be too simplistic.
 * Using pathway SKAT-O (accounts for frequency/dosage) they got poorer results.
 
-	_Main problems here: One count per gene (as data$CARRIER in analysis) presumes that any variant (homozygous or heterozyous, compound het, etc) is deleterious in the individual. In restricted to LoF then OK, but missense variants are included in the study (and will usually be the majory of candidates). Filters are applied to get a high quality list, but there will still be a majority of missense VUS._
+Main problems here: 
+One count per gene (as data\$CARRIER in analysis) presumes that any variant (homozygous or heterozyous, compound het, etc) is deleterious in the individual.
+In restricted to LoF then OK, but missense variants are included in the study (and will usually be the majory of candidates).
+Filters are applied to get a high quality list, but there will still be a majority of missense VUS.
 
-	_In the section "Application to an HSE cohort (V): Comparison with a burden test on the HSE cohort", SKAT-O is not a burden test; while their method is actually more similar to a burden test since they are labelling an individual if they carry a qualifying variant in a gene. This is just a terminology error but it indicates that maybe the key differences in pathway testing have not been considered, as written up here in our review._
+In the section "Application to an HSE cohort (V): Comparison with a burden test on the HSE cohort", SKAT-O is not a burden test; while their method is actually more similar to a burden test since they are labelling an individual if they carry a qualifying variant in a gene. This is just a terminology error but it indicates that maybe the key differences in pathway testing have not been considered, as written up here in our review._
 
-	_One could argue that only counting once per gene could help prevent problems due to LD. Although, the WES/WGS data would have the phasing information included to prune out LD if that was the arguement. Basically, I think this is just a simplification rather than an advantage_.
+One could argue that only counting once per gene could help prevent problems due to LD.
+Although, the WES/WGS data would have the phasing information included to prune out LD if that was the arguement.
+Basically, I think this is just a simplification rather than an advantage. 
+If SKAT had happened to work better they would have used those results. 
 
-	_e.g. In Fig 3, TLR3 variants = 7 cases, 1 Hom, 9 Het. This seems to amount to a carrier status of 7 in their dataset for the glm and fisher exact._
+e.g. In Fig 3, TLR3 variants = 7 cases, 1 Hom, 9 Het.
+This seems to amount to a carrier status of 7 in their dataset for the glm and fisher exact.
+
+Thir main analysis:
+
+```
+# call R command to run pc-adj enrichment
+ro.r("data <- read.table('temp_pc.txt', header=T, sep='\t')")
+ro.r("fit <- glm(data$PHENOTYPE ~ data$CARRIER+data$PC1+data$PC2+data$PC3, family='binomial')")
+ro.r("adjusted.pval <- anova(fit, test='LRT')[2, 5]")
+r_pvalue = ro.r("adjusted.pval")
+pvalue = r_pvalue[0]
+pvalue = float('%.3E' % Decimal(pvalue))
+file_out.write(str(pvalue) + '\t')
+
+# pathway enrichment
+this_case_pathway_hit = dict()
+for each_pathway in pathway_gene_set_dict.keys():
+	pathway_gene_set = pathway_gene_set_dict[each_pathway]
+	case_pathway_overlap = this_case_gene_set & pathway_gene_set
+	case_in = len(case_pathway_overlap)
+	case_out = len(this_case_gene_set) - case_in
+	pathway_in = len(pathway_gene_set)
+	pathway_out = len(pathway_genes) - pathway_in
+	if case_in != 0:
+		odd, pvalue = stats.fisher_exact([[case_in, case_out], [pathway_in, pathway_out]], alternative='two-sided')
+		adj_pvalue = pvalue * pathway_size
+		if adj_pvalue < 0.00001:
+			adj_pvalue = float('%.3E' % Decimal(adj_pvalue))
+			this_case_pathway_hit[each_pathway] = adj_pvalue
+
+# They do not show any code with the SKAT paramaters, presumably defaults using R.
+```

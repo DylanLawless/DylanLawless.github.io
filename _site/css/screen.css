@@ -67,8 +67,8 @@ div#content {
 
 
 a {
-    color: #303C3C; /* off-black */
-    text-decoration: underline;
+    color: #c13e3e; /* #303C3C; */ /* off-black */
+    /* text-decoration: underline; */
 }
 div#content a {
     /* how we implement grey underlining:
