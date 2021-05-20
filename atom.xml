@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-02-26T09:54:42+01:00</updated>
+ <updated>2021-05-20T13:59:46+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -420,7 +420,7 @@ the secret message was successfully decoded from the protein structure figure
 
 &lt;p&gt;This exercise looks like a bit of fun, 
 but was done to demonstrate the unavoidable 
-risks that exist in sensitive data research.&lt;sup id=&quot;fnref:foot&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:foot&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+risks that exist in sensitive data research.&lt;sup id=&quot;fnref:foot&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:foot&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
 Today, protected data enclaves are used for processing sensitive data 
 and usually allow summary results or figures to be exported.
 These are therefore basically a trust based system and are otherwise only security theatre.&lt;/p&gt;
@@ -437,7 +437,7 @@ Go see what you can find in one Supplementary material png file.
 Find the paper and get Figure E4.
 Download
 &lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial&quot;&gt;10875_2019_670_MOESM5_ESM&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; install.packages(&quot;devtools&quot;)
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; install.packages(&quot;devtools&quot;)
 &amp;gt; install_github(&quot;richfitz/stegasaur&quot;)
 &amp;gt; library(&quot;devtools&quot;)
 &amp;gt; library(ggplot2) 
@@ -654,7 +654,7 @@ The Quipper Language: programming language for quantum computing<br />
   <li><a href="#medical-espionage" id="markdown-toc-medical-espionage">Medical espionage</a></li>
   <li><a href="#the-prospect-of-genomic-medical-espionage" id="markdown-toc-the-prospect-of-genomic-medical-espionage">The prospect of genomic medical espionage</a></li>
   <li><a href="#ransomware" id="markdown-toc-ransomware">Ransomware</a></li>
-  <li><a href="#legal-safegard" id="markdown-toc-legal-safegard">Legal safegard</a></li>
+  <li><a href="#legal-safeguard" id="markdown-toc-legal-safeguard">Legal safeguard</a></li>
   <li><a href="#metadata" id="markdown-toc-metadata">Metadata</a></li>
   <li><a href="#disinformation" id="markdown-toc-disinformation">Disinformation</a></li>
   <li><a href="#data-pollution" id="markdown-toc-data-pollution">Data pollution</a></li>
@@ -666,6 +666,7 @@ The Quipper Language: programming language for quantum computing<br />
     </ul>
   </li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
+  <li><a href="#footnotes" id="markdown-toc-footnotes">Footnotes</a></li>
 </ul>
 
 <!--
@@ -675,13 +676,13 @@ cross link and label
 -->
 
 <h1 id="the-prospect-of-genomic-medical-espionage">The prospect of genomic medical espionage</h1>
-<p>In the hayday of human source intelligence - think late Cold War - international espionage was realtively easy to understand.
+<p>In the heyday of human source intelligence - think late Cold War - international espionage was relatively easy to understand.
 This consisted of finding people willing to gather information from the enemy and deliver it to you.
 The recruited individuals could be sympathetic to your cause and volunteer, or they could be coerced and remain secret in fear of punishment by the enemy.
 Any reader of Le Carre will immediately envision the tangled web that this can ultimately produce; 
 running agents, dead drops, double agents proving chicken-feed information to handlers to gain their trust! 
 All very dramatic and palpable.
-The other examples of intelligence data collection may be less tangibile without experience; 
+The other examples of intelligence data collection may be less tangible without experience; 
 geospatial,
 measurement and signature,
 open-source,
@@ -692,21 +693,21 @@ or financial.
 The information gathered can be powerful but each is a “one-hit”. 
 If the target changes, then the old data may not be useful again.
 Now think of genetic data. 
-Once gathered, it never chages. 
+Once gathered, it never changes. 
 It only becomes more powerful when metadata is added.</p>
 
 <p>Consider another distinction from the era of Cold War espionage.
 It was essentially one side versus the other.
 In the year 2021, most nations don’t have a direct enemy.
 Therefore, today it is difficult to even summarise data collection in terms of “from whom” or “against what”.
-Between 2013 and today, the revelation of global communications interception has shown that the easiest approach for intellegence data collection is just to gather everything and then figure out who the enemy is later.
+Between 2013 and today, the revelation of global communications interception has shown that the easiest approach for intelligence data collection is just to gather everything and then figure out who the enemy is later.
 I don’t have a clear example of how this relates to medical or genomic data, but I do keep in mind that the data holder can decide at any time in the future what genotypes they determine are of interest.
 Policy makers will be very slow to recognise that an <em>a priori</em> usage plan is paramount to genomic data protection.</p>
 
-<p>I heard about a meeting between two national intellegence groups (e.g. nation A and nation B).
+<p>I heard about a meeting between two national intelligence groups (e.g. nation A and nation B).
 Nation A wanted to discuss corporate espionage.
-Nation B put it off as long as possible until finally explaing that in nation A, yes, national espionage is commendable to protect their country while corporate espionage is frowned upon.
-However, for nation B any kind of intellegence that benefits the country is heroic.
+Nation B put it off as long as possible until finally explaining that in nation A, yes, national espionage is commendable to protect their country while corporate espionage is frowned upon.
+However, for nation B any kind of intelligence that benefits the country is heroic.
 Nation B freely acknowledges that anything worth stealing from A, will be stolen.
 One cannot complain about the rules defined in the game, however those rules should not be forgotten just because nation A does not recognise them as readily.
 We should keep in mind that our genomic data handlers may unexpectedly decide to share the data with others outside of our control.
@@ -714,12 +715,12 @@ GDPR won’t be of much use.
 This anecdote illustrates a pertinent fact for human genomic medicine.
 Unlike most personal data (email address, phone number, physical address, interests, EMEI),
 you only have one genome sequence.
-Once the online medical database gets leaked, you cannot requrest a new genome seuqnce via email.
+Once the online medical database gets leaked, you cannot request a new genome sequence via email.
 Once it is out, it is out.</p>
 
 <p>In a lecture by NSA technical director of the <a href="https://www.nsa.gov/what-we-do/cybersecurity/">information assurance directorate</a>, Richard George stated that credit card data is worth very little today on <em>“the market”</em>; 
 health information is the new target of interest, 
-because with that information comes an indivduals’ identity and the potential to order drugs in their name.
+because with that information comes an individuals’ identity and the potential to order drugs in their name.
 With a little more imagination, one can envision the potential for genomic data. 
 Some of the most powerful analysis techniques are still being developed today and we may see a big leap in genomic interpretation in the next decade. 
 Once the analysis protocols are complete, whoever has the biggest database will be the most powerful (and for entrepreneurs, the most profitable, if their focus is on the correct questions in human health, etc).</p>
@@ -738,9 +739,9 @@ It is almost certain that much more esoteric applications are on the way.
 It is extremely unlikely that legal protections on genomic data will be available before the open market dictates the trajectory.</p>
 
 <p>Will there even be a need for medical espionage when Illunima, Google, BGI, etc. start offering free genome sequencing?
-Will it be good or bad once every child gets genome sequncing along with their birth certificate?
-Predicting the balance of world order is folly, but as they say “history repeats iteslef”.
-We can detach from our virtual identities; online presence, daily routines, but we cannot detach from our genetic identidy.
+Will it be good or bad once every child gets genome sequencing along with their birth certificate?
+Predicting the balance of world order is folly, but as they say “history repeats itslef”.
+We can detach from our virtual identities; online presence, daily routines, but we cannot detach from our genetic identity.
 Unlike fingerprinting, or retinal scan, are we prepared to provide a biometric identity with so much information?</p>
 
 <h1 id="ransomware">Ransomware</h1>
@@ -754,15 +755,15 @@ including computers, MRI scanners, blood-storage refrigerators and theatre equip
 may have been affected.” [1].</p>
 </blockquote>
 
-<h1 id="legal-safegard">Legal safegard</h1>
+<h1 id="legal-safeguard">Legal safeguard</h1>
 <p>With the major risks to life caused by attacks on medical institutions, 
 the COVID-19 crisis has prompted a clear messages via
 <em>the Oxford Statement on the International Law Protections Against Cyber Operations Targeting the Health Care Sector</em>, 
 and a second statement on <em>Safeguarding Vaccine Research</em> during May and August 2020, respectively [2, 3].</p>
 
 <p>International humanitarian law requires that medical care is respected and protected. 
-COVID-19 illustrates that primary reasearch is just as critical and should have the same protections.
-In general, publically funded research should be open and freely accessable to all (while respecting the privacy of human health data and personal data).
+COVID-19 illustrates that primary research is just as critical and should have the same protections.
+In general, publicly funded research should be open and freely accessible to all (while respecting the privacy of human health data and personal data).
 However, the long and complex process of primary research means that publication or open-sourcing can take a long time. 
 Furthermore, the researchers depend on recognition of their work and are unlikely to publish intermediate results.</p>
 
@@ -772,13 +773,13 @@ in privately succeeding will be interested in stealing any information available
 Or more likely, this could be seen from private companies 
 that are willing to steal intellectual property (IP).
 For example, for a specific pathogen like SARS-CoV-2 just knowing what 
-amino acid residues your compeditor is most interested in can give you immediate 
+amino acid residues your competitor is most interested in can give you immediate 
 insight that might have taken months to produce. 
 Research project datasets tend to start out broad and move linearly towards a final result. 
 If the actual documentation and code can be read then these critical results will be obvious. 
 However, even just metadata like filenames can provide the key information.
 It is not unreasonable to assume that the researchers will simply name datasets incrementally with the key process used. 
-As an example, in a database you might see files with assending date stamps:</p>
+As an example, in a database you might see files with ascending date stamps:</p>
 <ul>
   <li>data_group1.csv</li>
   <li>data_group1_pruned.csv</li>
@@ -789,18 +790,18 @@ As an example, in a database you might see files with assending date stamps:</p>
 <p>Anyone working on the same problem will understand the routine protocols and know that focusing their research on amino acid p.R127L will give them an advantage. 
 Tackling this problem is one for IP law.
 If it was for something like vaccine research then one might argue about applied ethics - 
-“is it wrong to steal that which should be free ifnormation?” - 
-but that weak arguement is quickly disarmed by the fact that we would want our vaccine to come from the primary rearcher, 
-not the theif who is willing to cut corners.</p>
+“is it wrong to steal that which should be free information?” - 
+but that weak argument is quickly disarmed by the fact that we would want our vaccine to come from the primary researcher, 
+not the thief who is willing to cut corners.</p>
 
-<p>It is obvious that protection should be impleted to prevent theft of <em>public IP</em>.
-Forthermore, publically funded health research results usally reside alongside private health information that deserves to have strong protections.</p>
+<p>It is obvious that protection should be implemented to prevent theft of <em>public IP</em>.
+Furthermore, publicly funded health research results usually reside alongside private health information that deserves to have strong protections.</p>
 
 <h1 id="disinformation">Disinformation</h1>
 <p>Disinformation, <em>dezinformatsiya</em>, includes the leaking of information that 
 seems valuable but is either a dead-end, or worse, intentionally harmful.
 It is critical to ban the use of disinformation in any research affecting 
-human health or publically funded research.
+human health or publicly funded research.
 It would be better to have instances of valid IP theft than risk any harm.</p>
 
 <h1 id="data-pollution">Data pollution</h1>
@@ -811,24 +812,48 @@ potentially mask true positive results from being found.
 In the last few years, some commercial genomic services have allowed users to 
 upload their own genomic and personal phenotypic information.
 While most users are just interested in their own results, this has a reasonable large potential for risk - 
-a targetted data submission, randomly shuffling input phenotypic information 
-would weaken the database for assocciation analysis.</p>
+a targeted data submission, randomly shuffling input phenotypic information 
+would weaken the database for association analysis.</p>
 
 <h1 id="in-the-media">In the media</h1>
-<p>I notice that reports of medical espionage in public media are not alway accurately defined. 
-The newstory of a former University Of Florida researcher 
+<p>I notice that reports of medical espionage in public media are not always accurately defined. 
+The news story of a former University Of Florida researcher 
 indicted for scheme to defraud has, 
 in other places, 
 been framed more like someone working under cover for China 
 rather than the more accurate description of 
 someone committing fraud for failing to report overseas funding sources [4].
-There are examples of stolden research IP for personal gain, 
+There are examples of stolen research IP for personal gain, 
 such as the “hospital researcher sentenced to prison for conspiring to steal trade secrets, sell them in China” [5].
 In this case, after ten years in the field the researcher was accused of 
 “stealing exosome-related trade secrets concerning the research, 
 identification and treatment of a range of pediatric medical conditions” 
 and then “creating and selling exosome isolation kits” for sale via her company in China [5].
 Unlike these examples of personal gain, there have been reports of national medical espionage during to the COVD-19 crisis.</p>
+
+<p><a href="https://www.bbc.com/news/technology-54936886">The BBC reported in November 2020</a> 
+[6] that</p>
+<blockquote>
+  <p>“Microsoft said at least nine health organisations including Pfizer had been targeted by state-backed organisations in North Korea and Russia”.</p>
+</blockquote>
+
+<p>In Feb 2021, 
+a <a href="https://en.yna.co.kr/view/AEN20210216008451315">claim without source by Yonhap news</a> 
+[7] 
+and repeated by the BBC [8] 
+says that the South Korean</p>
+
+<blockquote>
+  <p>“National Intelligence Service (NIS) unveiled information during a closed-door 
+session of the National Assembly’s intelligence committee stating that
+North Korea has attempted to hack the servers of a local drug manufacturer 
+to obtain technology information on the company’s coronavirus vaccine and treatment.”</p>
+</blockquote>
+
+<p>Reports like this rarely include published evidence
+and may be nothing but fantasy dreamed up by <em>The Tailor of Panama</em> type reporters.
+Regardless, targeted theft is very likely and one would assume it to be happening
+even when specific reports are unsubstantiated.</p>
 
 <p>Remaining discussion to be added…</p>
 
@@ -854,12 +879,12 @@ These include projects such as</p>
   </li>
   <li><a href="https://www.nhlbiwgs.org">TOPMed program</a>
     <ul>
-      <li>very lage scale genome sequence data.</li>
+      <li>very large scale genome sequence data.</li>
     </ul>
   </li>
   <li><a href="https://www.genomicsengland.co.uk">Genomics England</a>
     <ul>
-      <li>very lage scale genome sequencing for patients in the UK.</li>
+      <li>very large scale genome sequencing for patients in the UK.</li>
     </ul>
   </li>
 </ul>
@@ -878,7 +903,7 @@ I can exemplify the problem with the following simple example:</p>
 genetic consent, and the data is prepared in several stages;</p>
 <ol>
   <li>Sample collection</li>
-  <li>Sample preperation</li>
+  <li>Sample preparation</li>
   <li>Sequencing</li>
   <li>Data processing</li>
   <li>Data submission</li>
@@ -896,21 +921,21 @@ Anyone who has access to the DNA sample can easily sequence the genome for less 
 $500 US.</p>
 
 <p><em>Problem level [2-3]</em><br />
-The sample preperation and sequencing has identical risk as step 1. 
+The sample preparation and sequencing has identical risk as step 1. 
 However, the sample is now likely out of the hands of the primary person responsible.
 It will most likely be in a large scale sequence facility.</p>
 
 <p><em>Problem level [4]</em><br />
 Data processing will become more routine over time.
 The large scale sequencing projects all follow a strict analysis pipeline,
-but since a large majority of proccessing today is for clinical diagnosis, 
+but since a large majority of processing today is for clinical diagnosis, 
 it means that at some stage a researcher will be required to do custom analysis
 on an individual sample. 
 This person is likely to have unrestricted access to all database samples.</p>
 
 <p><em>Problem level [5]</em><br />
 The data submission level will consist of anonymous subject IDs again, 
-however it will contain whole genome seuqnces (or processed variant called datasets).</p>
+however it will contain whole genome sequences (or processed variant called datasets).</p>
 
 <p><em>Problem level [6]</em><br />
 Data access is the step in which nearly every genomic data protection process is
@@ -926,7 +951,7 @@ the researcher is going to complete a reporting procedure.
 One would imagine that this is a clean, automated, process. 
 However, it is very common for researchers and clinicians to simply email back and
 forth about very sensitive information.
-This is uderstandable and often a patient’s life could be saved with a rapid diagnosis.</p>
+This is understandable and often a patient’s life could be saved with a rapid diagnosis.</p>
 
 <p>However, the facts should be clearly stated. 
 Plain text emails, SMS, and other types of communications are collected routinely 
@@ -941,7 +966,7 @@ Anyone interested in large scale medical espionage will focus on any of the
 other, much more readily available, steps 1-5.
 Furthermore, data access at step 6 can be restricted to trusted researchers, 
 but there should be no confusion - humans can always find methods for 
-exporting data from protected access portals <sup id="fnref:foot" role="doc-noteref"><a href="#fn:foot" class="footnote">1</a></sup>.
+exporting data from protected access portals <sup id="fnref:foot" role="doc-noteref"><a href="#fn:foot" class="footnote" rel="footnote">1</a></sup>.
 While the privilege of data access is restricted, 
 it is essentially based on trust and 
 recruited patient participants should not be lead to believe otherwise.
@@ -954,6 +979,28 @@ required methods in the near future.</p>
 there are several options that can be implemented in the future.</p>
 
 <p>To be finished..</p>
+
+<p>One may argue that the proposed danger is hyperbolic; 
+that it is a subject for intellectual property rather than political.
+When once ineptly accused of making a topic political,
+Christopher Hitchens extemporaneously rebutted with an apt simile to the nuclear threat at the time (1984), 
+arguing that some topics they are explicitly political whether or not others lack a recognition of facts:</p>
+
+<blockquote>
+  <p>“As we sit here, everyone is this room has been made into a front-line soldier; 
+the nuclear age means that we are all conscripted; we don’t have the right to conscientious objection anymore. 
+We are on the front-line while the soldiers are in the bunkers.
+That is being done to us whether we like it or not. 
+We can’t then complain of those that are objecting to it that they are politicising it. 
+The politicisation has been done. 
+We are all conscripted. 
+We might as well be sitting here in uniform.” [9]</p>
+</blockquote>
+
+<p>While the comparison to a nuclear détente is an exaggeration, 
+this problem is not simply a matter of consumer choice. 
+How difficult it is, even to quantify the dangers amongst <em>experts</em> in human genomics. 
+Not even the unit of measurement is known to quantify the declination of risk.</p>
 
 <h1 id="references">References</h1>
 <hr />
@@ -973,6 +1020,18 @@ there are several options that can be implemented in the future.</p>
 [5] Hospital researcher sentenced to prison for conspiring to steal trade secrets, sell them in China<br />
 <a href="http://crweworld.com/oh/trendingnow/news/1867620/hospital-researcher-sentenced-to-prison-for-conspiring-to-steal-trade-secrets-sell-them-in-china">http://crweworld.com/oh/trendingnow/news/1867620/hospital-researcher-sentenced-to-prison-for-conspiring-to-steal-trade-secrets-sell-them-in-china</a><br />
 <br />
+[6] Coronavirus: North Korea and Russia hackers ‘targeting vaccine’.<br />
+<a href="https://www.bbc.com/news/technology-54936886">https://www.bbc.com/news/technology-54936886</a><br />
+<br />
+[7]
+N. Korea attempted to steal COVID-19 vaccine, treatment technology via hacking: NIS<br />
+<a href="https://en.yna.co.kr/view/AEN20210216008451315">https://en.yna.co.kr/view/AEN20210216008451315</a><br />
+<br />
+[8] North Korea accused of hacking Pfizer for Covid-19 vaccine data.<br />
+<a href="https://www.bbc.com/news/technology-56084575">https://www.bbc.com/news/technology-56084575</a><br />
+<br />
+[9] Firing line Episode S0629, Recorded on December 11, 1984. Guests: R. (Robert Emmett) Emmett Tyrrell Jr., Christopher Hitchens.<br />
+<br />
 Coronavirus: Cyber-spies hunt Covid-19 research, US and UK warn<br />
 <a href="https://www.bbc.com/news/technology-52551023">https://www.bbc.com/news/technology-52551023</a><br />
 <br />
@@ -981,6 +1040,9 @@ The Cyber Side of Vaccine Nationalism<br />
 <br />
 Race for Coronavirus Vaccine Pits Spy Against Spy<br />
 <a href="https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare">https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare</a></p>
+
+<h1 id="footnotes">Footnotes</h1>
+
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:foot" role="doc-endnote">
@@ -1920,9 +1982,9 @@ protein function is used for annotation of candidate disease variants</p>
 into those of Primary Immunodeficiency (PID) and Autoinflammatory diseases. 
 Of course there is overlap as many proteins have multiple functions 
 (inhibitory, activation, autoinhibition, etc.). 
-The analysis protcols use serval stages of best-practice clinical genetic 
-annotations accounting for numerous diagnosis criteria including variant consequnce, 
-gene ontology, inheritence, protein domain function, transcription editing, 
+The analysis protcols use several stages of best-practice clinical genetic 
+annotations accounting for numerous diagnosis criteria including variant consequence, 
+gene ontology, inheritance, protein domain function, transcription editing, 
 translation modification, etc. 
 A reliable example of a disease gene list can be found on the 
 <a href="https://panelapp.genomicsengland.co.uk/panels/398/">Genomics England panel app Primary immunodeficiency</a>.</p>
@@ -1930,12 +1992,14 @@ A reliable example of a disease gene list can be found on the
 <p><img src="/images/ge_panel_app.png" width="100%" /></p>
 
 <p>The (simplified) list that I try to keep updated and close to hand when 
-doing tailored bioinformatic analysis is exmplified in the following table. 
+doing tailored bioinformatic analysis is exemplified in the following table. 
 The analysis pipeline uses a curated and reliable sources to provide
 a data-rich annotation process for candidate variant detection. 
 However, as a repository of whole genome annotation, the information is 
 difficult to illustrate here in a small image. 
-Instead, the included table is a <em>very</em> simpified example of candidate genes in immunogenics.</p>
+Instead, the included table is a <em>very</em> simplified example of candidate genes in immunogenomics. 
+<em>Note that candidate gene approaches are not recommended, this list is an example 
+of known functions that are applied to results after unbiased significance testing.</em></p>
 
 <hr />
 
@@ -5793,7 +5857,7 @@ http://www.gettinggeneticsdone.com/2017/02/staying-current-in-bioinformatics-gen
 Essentially it boils down to the journals, Twitter, some expert blogs, and several genomics communities.
 The journals and other sites I like to follow are detailed here.
 When all directed into a single feed I think it produces an essential resource for most genetics/bioinformatics scientists.
-Literature of Interest - In this post I show the use of Feedly to condense all the litereature that I follow into a single source and allow the option to view by category.</p>
+Literature of Interest - In this post I show the use of Feedly to condense all the literature that I follow into a single source and allow the option to view by category.</p>
 
 <p>In this post I have started to gather some of the resources I like to use and topics that I find interesting.
 Some other links tagged on at the end:<br />
@@ -6225,17 +6289,19 @@ e.g. &gt;0.7.</p>
 <ul id="markdown-toc">
   <li><a href="#pharmacogenomics-for-personal-medicine" id="markdown-toc-pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</a></li>
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#running-a-real-example" id="markdown-toc-running-a-real-example">Running a real example</a></li>
+  <li><a href="#preparing-an-example-vcf" id="markdown-toc-preparing-an-example-vcf">Preparing an example VCF</a></li>
   <li><a href="#comparing-annotated-genetic-data-to-drug-lists" id="markdown-toc-comparing-annotated-genetic-data-to-drug-lists">Comparing annotated genetic data to drug lists</a>    <ul>
       <li><a href="#small-example-check-of-gene-list-versus-drug-gene-list" id="markdown-toc-small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</a></li>
     </ul>
   </li>
   <li><a href="#a-real-example-of-merging-genetic-and-pharmacogenomic-data" id="markdown-toc-a-real-example-of-merging-genetic-and-pharmacogenomic-data">A real example of merging genetic and pharmacogenomic data</a></li>
-  <li><a href="#annotation" id="markdown-toc-annotation">Annotation</a></li>
   <li><a href="#drug-indication" id="markdown-toc-drug-indication">Drug indication</a></li>
-  <li><a href="#optimising-vcf-annotation" id="markdown-toc-optimising-vcf-annotation">Optimising VCF annotation</a></li>
-  <li><a href="#how-to-get-coordinates-for-a-gene-list" id="markdown-toc-how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</a></li>
-  <li><a href="#extracting-regions-from-a-vcf-using-a-bed-file" id="markdown-toc-extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</a></li>
+  <li><a href="#annotation" id="markdown-toc-annotation">Annotation</a>    <ul>
+      <li><a href="#optimising-vcf-annotation" id="markdown-toc-optimising-vcf-annotation">Optimising VCF annotation</a></li>
+      <li><a href="#how-to-get-coordinates-for-a-gene-list" id="markdown-toc-how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</a></li>
+      <li><a href="#extracting-regions-from-a-vcf-using-a-bed-file" id="markdown-toc-extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</a></li>
+    </ul>
+  </li>
   <li><a href="#unknown-variants" id="markdown-toc-unknown-variants">Unknown variants</a></li>
   <li><a href="#gene-dosage" id="markdown-toc-gene-dosage">Gene dosage</a></li>
   <li><a href="#drug-indication-1" id="markdown-toc-drug-indication-1">Drug indication</a></li>
@@ -6249,9 +6315,12 @@ e.g. &gt;0.7.</p>
 Questions that might arise from this information include “do I have potentially disease-causing variants that can be treated with a drug?”, or “am I taking a drug that will be affected by my genetics?”.
 To tackle such questions with an example, we use public data in combination with pharmacogenomics.
 Outside of genotype data (offered by <a href="https://www.23andme.com">23andMe</a> for example), the most common file type will be VCF:
-<a href="https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it">What is a vcf and how should I interpret it?</a>.</p>
+<a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format">What is a vcf and how should I interpret it?</a>.</p>
 
-<p>Here is a data source with different genetic data files.
+<p>As an example input, try download Craig Venter’s genome VCF:
+<a href="ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz">ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz</a>.</p>
+
+<p>When I wrote this post, I used a data source with different genetic data files;
 <a href="https://my.pgp-hms.org/public_genetic_data">https://my.pgp-hms.org/public_genetic_data</a>.
 To check that it works OK, I tried a quick version of this challenge.
 I picked the first whole genome VCF file that I saw (hu24385B 2019-04-07.vcf.g_z)
@@ -6270,7 +6339,7 @@ Split the file and run in batches to save time.
 Here I tried the first ~1800 variants.</p>
 
 <p><br />
-<code class="highlighter-rouge">head -2000 56001801068861_WGZ.snp.vcf &gt; test.vcf</code></p>
+<code class="language-plaintext highlighter-rouge">head -2000 56001801068861_WGZ.snp.vcf &gt; test.vcf</code></p>
 
 <p><br />
 And then annotated that extract with <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor.</a>
@@ -6284,12 +6353,17 @@ Make certain that you use the same reference genome as used on the input data.
 The VCF file was made using reference genome GRCh37.
 Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).</p>
 
-<h1 id="running-a-real-example">Running a real example</h1>
-<p>If you would like to try this using a whole genome using the Ensembl web interface you will need to split your VCF into smaller block first.
-For routine usage the command-line version of VEP and it’s databases should be installed on run locally.
-There are several bioinformatics tools that are commonly used for manipulating genetic file formats such as VCFtools. 
-To get a real understanding of the data type, I inlcude here a method using command line bash to split a VCF file into smaller blocks. 
-A bash script is printed below where I use very mainstream traditional command-line tools to wrangle data, including 
+<h1 id="preparing-an-example-vcf">Preparing an example VCF</h1>
+<p>If you would like to try this using a whole genome using the Ensembl web 
+interface you will need to split your VCF into smaller block first.
+For routine usage the command-line version of VEP and it’s databases should be 
+installed on run locally.
+There are several bioinformatics tools that are commonly used for manipulating 
+genetic file formats such as VCFtools. 
+To get a real understanding of the data type, I inlcude here a method using 
+command line bash to split a VCF file into smaller blocks. 
+A bash script is printed below where I use very mainstream traditional 
+command-line tools to wrangle data, including 
 <a href="https://en.wikipedia.org/wiki/Gzip">gunzip</a>
 to unzip compressed files, 
 <a href="https://en.wikipedia.org/wiki/wc_(Unix)">wc</a>
@@ -6307,61 +6381,61 @@ which is not used here but it fits well with these other tools - for text search
 Creating a file containing the code below and ending with the filename extension with “.sh” will allow it to be run by your terminal, in this case using the bash language.
 I encourage you to read each line and figure out what should happen. If it makes sense then it is reasonable to swap such a manual method with a more efficient specialised tool.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-<span class="c"># VEP accept files of &lt;50MB size.</span>
-<span class="c"># We will split our large VCF into smaller files.</span>
-<span class="c"># Each file requires the same original </span>
-<span class="c"># headers and file extension ".vcf"</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+# VEP accept files of &lt;50MB size.
+# We will split our large VCF into smaller files.
+# Each file requires the same original 
+# headers and file extension ".vcf"
 
-<span class="c"># Unzip the VCF.gz</span>
-<span class="nb">gunzip </span>56001801068861_WGZ.snp.vcf.gz
+# Unzip the VCF.gz
+gunzip 56001801068861_WGZ.snp.vcf.gz
 
-<span class="c"># Count the number of lines in vcf</span>
-<span class="nb">wc</span> <span class="nt">-l</span> 56001801068861_WGZ.snp.vcf
+# Count the number of lines in vcf
+wc -l 56001801068861_WGZ.snp.vcf
 
-<span class="c"># How should a vcf file look?</span>
-<span class="c"># See the links posted in this tutorial above</span>
+# How should a vcf file look?
+# See the links posted in this tutorial above
 
-<span class="c"># Take a look at the header</span>
-<span class="c"># This VCF has 140 lines of header metadata (beginning with "#")</span>
-<span class="c"># Line 141 shows the column headers: CHROM	POS	ID	REF	ALT...</span>
-<span class="c"># Line 142 starts with the first variant</span>
-<span class="nb">head</span> <span class="nt">-142</span> 56001801068861_WGZ.snp.vcf
+# Take a look at the header
+# This VCF has 140 lines of header metadata (beginning with "#")
+# Line 141 shows the column headers: CHROM	POS	ID	REF	ALT...
+# Line 142 starts with the first variant
+head -142 56001801068861_WGZ.snp.vcf
 
-<span class="c"># Print the header to a new file for later</span>
-<span class="nb">head</span> <span class="nt">-141</span> 56001801068861_WGZ.snp.vcf <span class="o">&gt;</span> header
-<span class="c"># Print everything else (the body) to </span>
-<span class="c"># a new file that we will then split.</span>
-<span class="nb">sed</span> <span class="s1">'1,141d'</span> 56001801068861_WGZ.snp.vcf <span class="o">&gt;</span> body.vcf
+# Print the header to a new file for later
+head -141 56001801068861_WGZ.snp.vcf &gt; header
+# Print everything else (the body) to 
+# a new file that we will then split.
+sed '1,141d' 56001801068861_WGZ.snp.vcf &gt; body.vcf
 
-<span class="c"># Make a new directory for the next step</span>
-<span class="nb">mkdir </span>split_files
-<span class="c"># Move the large file inside</span>
-<span class="nb">mv </span>body.vcf split_files/
-<span class="nb">cd </span>split_files
-<span class="c"># Now split the body.vcf into smaller </span>
-<span class="c"># files of 200,000 lines each</span>
-<span class="nb">split</span> <span class="nt">-l</span> 150000 body.vcf
+# Make a new directory for the next step
+mkdir split_files
+# Move the large file inside
+mv body.vcf split_files/
+cd split_files
+# Now split the body.vcf into smaller 
+# files of 200,000 lines each
+split -l 150000 body.vcf
 
-<span class="c"># You will now how ~10 files "xaa, xab, etc."</span>
-<span class="c"># Add the header back onto all of these files to make them VCFs again.</span>
-<span class="c"># This "for loop" will do the following for each file:</span>
-<span class="c"># Print the header and the vcf body to </span>
-<span class="c"># a file with the same name, </span>
-<span class="c"># adding a file extension ".vcf".</span>
-<span class="c"># Then remove the vcf body file that </span>
-<span class="c"># does not have the ".vcf" extension</span>
-<span class="c"># leaving you with the original whole genome VCF split</span>
-<span class="c"># into smaller files, each with the same headers.</span>
+# You will now how ~10 files "xaa, xab, etc."
+# Add the header back onto all of these files to make them VCFs again.
+# This "for loop" will do the following for each file:
+# Print the header and the vcf body to 
+# a file with the same name, 
+# adding a file extension ".vcf".
+# Then remove the vcf body file that 
+# does not have the ".vcf" extension
+# leaving you with the original whole genome VCF split
+# into smaller files, each with the same headers.
 
-<span class="k">for </span>file <span class="k">in</span> ./x<span class="k">*</span> <span class="p">;</span> 
-    <span class="k">do </span><span class="nb">cat</span> ../header <span class="nv">$file</span> <span class="o">&gt;&gt;</span> <span class="nv">$file</span>.vcf <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nv">$file</span> <span class="p">;</span>
-<span class="k">done</span>
+for file in ./x* ; 
+    do cat ../header $file &gt;&gt; $file.vcf &amp;&amp; rm $file ;
+done
 
-<span class="c"># These should be small enough to run on VEP online.</span>
-<span class="c"># You could edit the split command to make a </span>
-<span class="c"># reasonable number of files, </span>
-<span class="c"># uploading &gt;10 is not efficient.</span>
+# These should be small enough to run on VEP online.
+# You could edit the split command to make a 
+# reasonable number of files, 
+# uploading &gt;10 is not efficient.
 
 </code></pre></div></div>
 
@@ -6512,14 +6586,6 @@ There are many layers to a this problem to create a usable product.
 For example, how to integrate pharmacodynamics, covariats to drug response, contraindications, variant pathogenicity, etc.
 However, this is a good start as a learning experience.</p>
 
-<h1 id="annotation">Annotation</h1>
-<p><a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> is very useful.
-Note: For a real product, the code can run offline (a perl program with a few local library dependencies).
-The databases/cache that it uses are a bit too large to include on in a user software.
-In the real world you would have to send <em>anonymised</em> packets from the user via an API for accessing the genomic databases hosted on your servers.
-Make sure to check their license to see if you can use oftware and databases in a commercial product.<br />
-<a href="http://www.ensembl.org/info/about/legal/code_licence.html">http://www.ensembl.org/info/about/legal/code_licence.html</a></p>
-
 <h1 id="drug-indication">Drug indication</h1>
 <p>My example used <a href="https://www.drugbank.ca">DrugBank</a> for pharmacogenomic information.
 However, it may be safest to use the <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">FDA information</a> as the primary source, but including <a href="https://www.drugbank.ca">DrugBank</a> info is no problem.
@@ -6554,12 +6620,63 @@ With this in mind, perhaps an application doing this job could work two ways.
 (1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
 (2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.</p>
 
-<h1 id="optimising-vcf-annotation">Optimising VCF annotation</h1>
+<h1 id="annotation">Annotation</h1>
+<p><a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor (VEP)</a> is very useful.
+During variant annotation, VEP supplies a “consequence” column.
+Consequences are general and based on translation of genetic code in humans. 
+The Loss-of-function (LoF) consequence is the simplest example (splice, stop mutations).
+The variant consequence may be one of the defining criteria by which variants can 
+be included in analysis since they are <em>interpretable</em> or of ostensibly <em>known significance</em>.
+<em>Note: Using this alone could introduce spurious results so it is  best to have a solid criteria 
+for selecting consequences of interest</em>.
+The consequences provided by VEP are too long to discuss in detail here.
+The table from the ensembl website is worth reading; the HIGH impact variants 
+might be a simple method for selecting candidates:
+<a href="https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences">Ensembl Variation - Calculated variant consequences</a>.<br />
+<img src="/images/VEP_consequences.jpg" width="100%" /></p>
+
+<p><em>Note: For a real product, the code should be run offline (a perl program with a few local library dependencies). The databases/cache that it uses are a bit too large to include on in a user software. In the real world you would have to send anonymised packets from the user via an API for accessing the genomic databases hosted on your servers. Make sure to check their license to see if you can use oftware and databases in a commercial product</em>.
+<a href="http://www.ensembl.org/info/about/legal/code_licence.html">http://www.ensembl.org/info/about/legal/code_licence.html</a></p>
+
+<p>Running the software:</p>
+
+<ul>
+  <li>Using VEP is a vital part of converting the DNA variant information (genome position and nucleotide change) into annotated variant effects (protein coding change, gene name, predicted pathogenicity).</li>
+  <li>It requires the VEP code to run and requires a copy of the database files (reference genome, gene information, etc.).</li>
+  <li>You can upload a small number of variants to the online VEP web server to do this, or you can download the database and code to run on your own computer/server.</li>
+</ul>
+
+<p>So to process your customer/patient data, you have to choose one of these methods:</p>
+
+<ol>
+  <li>Customer must upload their entire file to your server that runs VEP (1GB - 30GB per individual genome data).</li>
+  <li>Customer must download the database and VEP code to run on their own computer (complex and large download for them, not recommended).</li>
+</ol>
+
+<p>Number 1 is better. But sending one large file often has problems.
+If they have a VCF file, you could:</p>
+
+<ul>
+  <li>Break it into small equal sized blocks to upload the data to you. Anonymisation is normal for all internet connections now, but you could just mention that some method of anonymising these blocks is important since someone “hacker” might try to steal information if most of the network data being sent to you contains small VCF format files.</li>
+  <li>You could also run a very small piece of code on the cusotmers software application that could extract just the main parts of the VCF file that you need, instead of sending everything. This is explained in sections 7-9. You could say this, but don’t need to actually have working. i.e. the drugbank information only includes a certain number of human genes so perhaps you could just extract these using a list of genome coordinates before processing with VEP.</li>
+</ul>
+
+<p>For the license:</p>
+
+<ul>
+  <li>Anyone is free to download and use VEP code.</li>
+  <li>However, if you modify or reuse the code commercially it might affect the possibility of getting a patent for your product.</li>
+  <li>Your product uses VEP as an intermediate step, so you probably only need to include credit, or other legal info to say you have used it.</li>
+  <li>If there were a reason to prevent you using the software commercially, you might be able to make a simple replacement that could give the minimum outputs that you need - gene name and mutation type. If the topic happens to interest you, you can read about <a href="https://en.wikipedia.org/wiki/Reverse_engineering#Software">reverse engineering software</a>.</li>
+  <li>As an aside, you could also decide that you don’t want to commercialise and offer this tool for free which would prevent bigger companies (like Google) from offering this service in return for harvesting the public’s genetic data.</li>
+</ul>
+
+<h2 id="optimising-vcf-annotation">Optimising VCF annotation</h2>
 <p>The slowest part of the method is VCF annotation.
 You can significantly increase the speed by first reducing the input to contain only regions of interst.
 That is, prepare a list of coordinates for each gene, and select for those regions in your input VCF or genotype data before annotation (VEP).</p>
 
-<h1 id="how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</h1>
+<h2 id="how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</h2>
 <p>Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:<br />
 <a href="http://www.ensembl.org/info/data/biomart/index.html">http://www.ensembl.org/info/data/biomart/index.html</a><br />
@@ -6581,7 +6698,7 @@ You would have to figure out how to extract the regions from the vcf (sed, grep,
 When I needed this, I used my own tools which required converting to format like this “X:1-2000”, and ordered by number and alphabetic (some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
 If you use this list to extract regions from a VCF, remember to include all the original VCF header information.</p>
 
-<h1 id="extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</h1>
+<h2 id="extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</h2>
 <p>The early part of this tutorial shows how old-school command line tools can be used to extract data. 
 Indeed, this may be computationally most efficient but there are some specialised tools that make the process easier in general.
 You can use VCFtools to extract specified regions.<br />
@@ -6734,7 +6851,7 @@ predicted loss-of-function (pLoF) variants can be identified using
 Variant Effect Predictor (VEP) [1]
 and Loss Of Function Transcript Effect Estimator (LOFTEE) [2],
 with accurate genomic coordinates from GENCODE [3].
-An erichment of share biological function in affected genes can then be tested using Gene Ontology (GO) [4].</p>
+An enrichment of share biological function in affected genes can then be tested using Gene Ontology (GO) [4].</p>
 
 <p>A note here about the pLoF acronym.
 I believe the “p” was originally for <em>predicted</em> loss-of-function,
@@ -6758,9 +6875,9 @@ Local software and databases will also use the appropriate versions.</p>
 Consequences are general and based on translation of genetic code in humans. 
 The Loss-of-function (LoF) consequence is the simplest example (splice, stop mutations).
 For the topic of variant collapsing, used in areas such as burden testing, 
-variant consequence defines which variants can be included in analsys since they are <em>interpretable</em> or of ostensibly <em>known significance</em> [4].
+variant consequence defines which variants can be included in analysis since they are <em>interpretable</em> or of ostensibly <em>known significance</em> [4].
 <!-- povysil2019rare -->
-This could introduce spurious results so it is  best to have a solid criteria for selecting consiqueses of interest. 
+This could introduce spurious results so it is  best to have a solid criteria for selecting consequences of interest. 
 The consequences provided by VEP are too long to discuss in detail. 
 The table from the ensembl website is worth reading:
 <a href="https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences">Ensembl Variation - Calculated variant consequences</a>.<br />
@@ -6793,20 +6910,20 @@ can also be used to perform enrichment analysis on gene sets
 [5, 6].
 For example, given a set of genes that are up-regulated under certain conditions, 
 an enrichment analysis will find which GO terms are over-represented (or under-represented) using annotations for that gene set.
-This discription was taken directly from 
+This description was taken directly from 
 <a href="http://geneontology.org/docs/go-enrichment-analysis/">geneontology.org</a> where a longer explanation is shown. 
 Using the web interface, an example query for 4 genes from the VDJ recombination pathway were queried.
 The output is shown here. 
 The reference database has 20595 IDs. 
-My 4 gene IDs were then tested for all known interacrtions - the number of shared GO terms.
+My 4 gene IDs were then tested for all known interactions - the number of shared GO terms.
 There were 9038 terms checked in total.
-The output table shows the GO process “V(D)J recombination” as the strongest assocciation;</p>
+The output table shows the GO process “V(D)J recombination” as the strongest association;</p>
 <ul>
   <li>all 4 genes shared this process</li>
   <li>for 4 random genes we would expect none to share the same GO process</li>
 </ul>
 
-<p>The fold enrichment and strong P-value indicate a true assocciation of shared biological pathway.<br />
+<p>The fold enrichment and strong P-value indicate a true association of shared biological pathway.<br />
 <img src="/images/GO_enrich.png" width="100%" /></p>
 
 <h1 id="published-example">Published example</h1>
@@ -6824,7 +6941,7 @@ The output table shows the GO process “V(D)J recombination” as the strongest
   <li>remove pLOF within regions masked due to poor accessibility</li>
 </ul>
 
-<p>These last two additionally ignore variants that are likely of minor consiquence to human health but still pased the basic pLoF filter. 
+<p>These last two additionally ignore variants that are likely of minor consequence to human health but still passed the basic pLoF filter. 
 Taliun et al. evaluated enrichment and depletion of pLOF variants 
 (allele frequency $&lt;$ 0.5%) in gene sets (that is, terms) from Gene Ontology (GO) 
 [5, 6].
@@ -6873,9 +6990,9 @@ they detected more than 400 million variants:</p>
   <li>46% are singletons that are present in only one individual.</li>
 </ul>
 
-<p>The 46% is pretty suprising but the number of private variant per person is probably not extremely high.
-In clinical exomes we usually expect appoximately $&lt;$100 novel variants compared to the <em>in-house sequence database</em>.
-We also expect aprrox. $&lt;$10 de novo variants in the same sample if parents/family were also sequenced. 
+<p>The 46% is pretty surprising but the number of private variant per person is probably not extremely high.
+In clinical exomes we usually expect approximately $&lt;$100 novel variants compared to the <em>in-house sequence database</em>.
+We also expect aprrox. $&lt;$10 <em>de novo</em> variants in the same sample if parents/family were also sequenced. 
 The number will be much larger for non-coding genome, but since SNVs will be largely non-interpretable it is currently ignored for clinical diagnosis.</p>
 
 <p>A notable class of variants is the 
@@ -6894,10 +7011,10 @@ based on exome sequencing; an increase that was mainly driven by</p>
 <p>It is worth noting that the <a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03205-y/MediaObjects/41586_2021_3205_MOESM3_ESM.pdf">referenced figures (S13,14)</a> don’t show specifically pLoF, 
 but rather sequence depth per gene.
 They show that TopMed has better coverage/depth than ExAC, including for known disease genes.
-I would have expected them to show the same results spcifically for pLoF variants to support their statement.</p>
+I would have expected them to show the same results specifically for pLoF variants to support their statement.</p>
 
 <p>The extract from Table S7 shows the comparison of pLoF versus other rare variants in GO terms (protein pathways). 
-The comaprison is basically: 
+The comparison is basically: 
 Random sampling provides the number of <em>expected</em> variants, which is then compared to the <em>observed</em> number of variants.
 There are four categories used:</p>
 <ul>
@@ -6910,7 +7027,7 @@ There are four categories used:</p>
 <p>The top result, DNA-binding genes, showed rare variants (singletons) observed/expected = 1, but pLoF observed/expected = 0.5.
 This comparison is made to show that:</p>
 <ul>
-  <li>This biological mechanism cannot tollerate damaging pLoF variants (pLoF/bp).</li>
+  <li>This biological mechanism cannot tollorate damaging pLoF variants (pLoF/bp).</li>
   <li>And even though pLoF are usually very rare, 
 this does not account for the lack of observations - 
 rare/novel variants that are non-pLoF are present (proportion of singletons).</li>
@@ -6933,7 +7050,7 @@ Genes associated with human disease in</p>
 </ul>
 
 <h1 id="the-future">The future</h1>
-<p>With very large scale genome seuqnceing we will start to assocciation studies for extremely rare variants (eventually there will be no novel SNVs). 
+<p>With very large scale genome sequencing we will start to association studies for extremely rare variants (eventually there will be no novel SNVs). 
 This provokes a few possibilities.</p>
 <ol>
   <li>Predicting probably of all SNVs.
@@ -6946,7 +7063,7 @@ This provokes a few possibilities.</p>
       <li>functional prediction accuracies can be validated.</li>
     </ul>
   </li>
-  <li>Novel non-coding variants will become the new variants of unknown signifigance (VUS). 
+  <li>Novel non-coding variants will become the new variants of unknown significance (VUS). 
 Will we slowly trudge through the same system again or will there be a more sophisticated approach for the non-coding genome in clinical genomics?</li>
 </ol>
 
@@ -7016,6 +7133,1167 @@ Will we slowly trudge through the same system again or will there be a more soph
 </p>
 
   <h2> - </h2>
+  <p><h1 id="pharmacogenomic-stargazing">Pharmacogenomic stargazing</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#pharmacogenomic-stargazing" id="markdown-toc-pharmacogenomic-stargazing">Pharmacogenomic stargazing</a></li>
+  <li><a href="#stargazer-genotyping" id="markdown-toc-stargazer-genotyping">Stargazer genotyping</a>    <ul>
+      <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
+      <li><a href="#stargazer-summary" id="markdown-toc-stargazer-summary">Stargazer summary</a></li>
+      <li><a href="#star-alleles" id="markdown-toc-star-alleles">Star alleles</a></li>
+    </ul>
+  </li>
+  <li><a href="#published-example" id="markdown-toc-published-example">Published example</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<p><em>Note:
+Manual curation of gene-drug interaction is not recommended and therefore 
+simplification of nomenclature is not advised. 
+Relying on star allele labelling goes against the recommended 
+<a href="http://varnomen.hgvs.org/recommendations/general/">HGVS sequence variant nomenclature</a>.
+The following protocol for is provided as one step in a larger process
+of annotation in genomic analysis.</em></p>
+
+<h1 id="stargazer-genotyping">Stargazer genotyping</h1>
+<p>As reported in “Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program” [0],
+<!-- taliun2021sequencing -->
+Taliun et al. use a method of known pharmacogene (PGx) variation annotation 
+that can be adapted for many other drug-gene database applications [0].
+The star allele nomenclature method is applied to large scale data to screen 
+for possible pharmacogenomic interactions.
+This consists of annotation 
+with a simple notation for quick recognition of 
+allelic variation in genes impacting drug metabolism, disposition and response
+(e.g. of interest to clinicians prescribing medications).
+The <a href="https://www.pharmvar.org">Pharmacogene Variation (PharmVar)</a> 
+consortium repository is used to label 
+human cytochrome P450 (CYP) genes for known PGx variation.</p>
+
+<h2 id="methods">Methods</h2>
+<p>Identification of <em>CYP2D6</em> alleles using
+<a href="https://stargazer.gs.washington.edu/stargazerweb/index.html">Stargazer’s</a>
+genotyping pipeline.
+Details of the Stargazer genotyping pipeline have been described previously [1].</p>
+
+<p><em>Background note: Haplotypes are group of alleles that are inherited together 
+from a single parent. 
+They are sequenced from individual DNA strands. 
+These strands can be phased to reconstruct the inheritence pattern.</em></p>
+
+<p>Phased haplotype (from <a href="https://www.10xgenomics.com">10Xgenomics.com</a>):</p>
+
+<p><img src="/images/haplotype.jpeg" width="60%" /></p>
+
+<ul>
+  <li>GATK-HaplotypeCaller
+    <ul>
+      <li>SNVs and indels in were assessed from a VCF file generated using GATK-HaplotypeCaller [2].</li>
+    </ul>
+  </li>
+  <li>Phase Beagle
+    <ul>
+      <li>The VCF file was phased using the program <a href="https://faculty.washington.edu/browning/beagle/beagle.html">Beagle</a> [3] and
+  the 1000 Genomes Project haplotype reference panel.</li>
+    </ul>
+  </li>
+  <li>Star alleles (<a href="#star-alleles">described below</a>)
+    <ul>
+      <li>Phased SNVs and indels were then matched to star alleles.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In parallel,</p>
+<ul>
+  <li>GATK-DepthOfCoverage
+    <ul>
+      <li>Read depth was calculated from BAM files using GATK-DepthOfCoverage [2].</li>
+    </ul>
+  </li>
+  <li>Copy number
+    <ul>
+      <li>Read depth was converted to copy number by performing intra-sample normalization [1].</li>
+    </ul>
+  </li>
+  <li>Structural variants
+    <ul>
+      <li>After normalization,
+  structural variants were assessed by testing all possible pairwise combinations
+  of pre-defined copy number profiles
+  against the observed copy number profile of the sample.</li>
+    </ul>
+  </li>
+  <li>Changepoint
+    <ul>
+      <li>For new SVs,
+  breakpoints were statistically inferred using changepoint [4].</li>
+    </ul>
+  </li>
+  <li>Output
+    <ul>
+      <li>Information regarding new SVs was stored and
+  used to identify subsequent SVs in copy number profiles.</li>
+      <li>Output data included individual diplotypes,
+  copy number plots and
+  a VCF of SNVs and indels that were not used to define star alleles.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="stargazer-summary">Stargazer summary</h2>
+<p>From <a href="https://stargazer.gs.washington.edu/stargazerweb/index.html">Stargazer homepage</a> - quote:</p>
+
+<blockquote>
+  <p>“Stargazer is a bioinformatics tool for calling star alleles (haplotypes) in PGx genes using data from NGS or SNP array. Stargazer can accept NGS data from both WGS and TS.
+“ Stargazer identifies star alleles by detecting SNVs, indels, and SVs. Stargazer can detect complex SVs including gene deletions, duplications, and hybrids by calculating paralog-specific copy number from read depth.”</p>
+</blockquote>
+
+<h2 id="star-alleles">Star alleles</h2>
+<p>From <a href="https://bredagenetics.com/star-allele-nomenclature/">bredagenetics.com</a> - quote:</p>
+
+<blockquote>
+  <p>“Genetic variants identifiable as pharmacogenomic markers are described by utilizing a special nomenclature, which is not elsewhere used in genetics. It is the so-called star allele nomenclature. In this nomenclature, alleles aren’t identified by their cDNA or genomic position (as it usually happens with all other genetic variants – see HGVS nomenclature), but through the means of numbers and letters, separated from the gene name by a star (star allele nomenclature). For example: CYP3A5*2 identifies the genetic variant in the CYP3A5 gene at the genomic position g.27289C&gt;A, which leads to the amino acid substitution p.T398N. The star allele nomenclature is thought to be faster and easier for non-specialized professionals in identifying important pharmacogenetic alleles, helping them avoid transcription mistakes which may be more frequent by using the standard HGVS nomenclature.</p>
+</blockquote>
+
+<blockquote>
+  <p>“Alleles are marked with a star (*).</p>
+</blockquote>
+
+<blockquote>
+  <p>“A patient with ultrarapid drug metabolism harbors double or multiple copies of an allele with normal or increased functionality, whereas patients with intermediate or poor drug metabolism have one or more alleles with reduced functionality (these alleles are typically consistent with inactivating mutations or large gene deletions). The term extensive metabolizer is used instead to describe those individuals with two standard copies of the normally functional allele. Extensive metabolizers are therefore carrying the wild-type allele, also called consensus allele, which corresponds to the allele *1 in the star allele nomenclature. The numbers *2, *3, *4 and so on represent alleles with altered functionality which may lead to profiles of increased or reduced drug metabolism.</p>
+</blockquote>
+
+<blockquote>
+  <p>“By using one single star allele one can identify not just a single variant, but even a group of variants.”</p>
+</blockquote>
+
+<p>A full list of cytochrome P450 (CYP) alleles with star notation can be found via the
+<a href="https://www.pharmvar.org">Pharmacogene Variation (PharmVar)</a> consortium,
+a central repository for PGx variation that focuses on 
+haplotype structure and allelic variation.</p>
+
+<h1 id="published-example">Published example</h1>
+<p>Taliun et al. [0]
+provide a complementary approach to <em>de novo</em> genome assembly
+by developing approaches that combine multiple types of information including:</p>
+<ul>
+  <li>previously observed haplotype variation</li>
+  <li>SNVs</li>
+  <li>indels</li>
+  <li>copy number and</li>
+  <li>homology information
+to identify and classify haplotypes in interesting regions of the genome.</li>
+</ul>
+
+<p>They illustrate this by focusing on 
+one such region around the <em>CYP2D6</em> gene.
+This encodes an enzyme that metabolizes approximately 25% of prescription drugs 
+and the activity of which varies substantially among individuals [1,5,6].
+More than 150 <em>CYP2D6</em> haplotypes have been described,
+some involving a gene conversion with its nearby non-functional
+but highly similar paralogue <em>CYP2D7</em>.</p>
+
+<p>CYP2D6 interaction (from <a href="miro.medium.com">miro.medium.com</a>):</p>
+
+<p><img src="/images/CYP2D6.png" width="50%" /></p>
+
+<p>They performed <em>CYP2D6</em> haplotype analysis for all 53,831 TOPMed individuals [1,7]
+Called a total of 99 alleles (66 known and 33 novel) representing:</p>
+<ul>
+  <li>increased function,</li>
+  <li>decreased function and</li>
+  <li>loss of function (Supplementary Table 12).</li>
+</ul>
+
+<p>Nineteen known alleles and
+all novel alleles
+were defined by structural variants,
+including complex CYP2D6-CYP2D7 hybrids and
+extensive copy number variation,
+which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
+
+<p><a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03205-y/MediaObjects/41586_2021_3205_MOESM3_ESM.pdf">figures (S27)</a> 
+<img src="/images/FigS27.png" width="100%" /></p>
+
+<blockquote>
+  <p>Supplementary Figure 27. Examples of CYP2D6 star alleles (haplotypes) with structural variation detected by the Stargazer program. Each panel displays Stargazer’s copy number profile (left) and allele fraction profile (right) for an individual sample (N=6). Also shown are CYP2D6 diplotypes and phenotype predictions from Stargazer. Gray dots indicate the sample’s per-base copy number estimates computed from read depth. The navy solid line and the cyan dashed line represent copy number profiles for each haplotype. The red line represents the copy number profile for both haplotypes combined. Navy dots and cyan dots indicate allele fraction estimates computed from allelic read depth for each haplotype. More examples can be found in the Database of Pharmacogenomic Structural Variants or DPSV \url{https://stargazer.gs.washington.edu/stargazerweb/res/dpsv.html}</p>
+</blockquote>
+
+<p><a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03205-y/MediaObjects/41586_2021_3205_MOESM3_ESM.pdf">figures (S28)</a> 
+<img src="/images/FigS28.png" width="100%" /></p>
+
+<blockquote>
+  <p>Supplementary Figure 28. Summary of CYP2D6 haplotype analysis using the Stargazer program. Population-specific frequencies for (A) common CYP2D6 star alleles, (B) haplotype activity, (C) SV-defined haplotypes, and (D) predicted metabolism phenotypes. Abbreviations: hAS, haplotype activity score; dAS, diplotype activity score; N, number; SV, structural variation; del, whole gene deletion; hyb, CYP2D6/CYP2D7 hybrid.</p>
+</blockquote>
+
+<h1 id="references">References</h1>
+<!-- curly-percent bibliography --cited curly-percent -->
+<p>[0]  Taliun, Daniel, et al. Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program. Nature 590.7845 (2021): 290-299.
+<a href="https://doi.org/10.1038/s41586-021-03205-y">https://doi.org/10.1038/s41586-021-03205-y</a>\</p>
+
+<p>[1] Lee, S.-B. et al. Stargazer: a software tool for calling star alleles from next-generation sequencing data using CYP2D6 as a model. Genet. Med. 21, 361–372 (2019).
+<a href="https://doi.org/10.1038/s41436-018-0054-0">https://doi.org/10.1038/s41436-018-0054-0</a></p>
+
+<p>[2] McKenna, A. et al. The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. Genome Res. 20, 1297–1303 (2010).
+<a href="https://www.genome.org/cgi/doi/10.1101/gr.107524.110">https://www.genome.org/cgi/doi/10.1101/gr.107524.110</a></p>
+
+<p>[3] Browning, S. R. &amp; Browning, B. L. Rapid and accurate haplotype phasing and missing-data inference for whole-genome association studies by use of localized haplotype clustering. Am. J. Hum. Genet. 81, 1084–1097 (2007).</p>
+
+<p>[4] Killick, R. &amp; Eckley, I. A. changepoint: an R package for changepoint analysis. J. Stat. Softw. 58, 1–19 (2014).
+<a href="https://eprints.lancs.ac.uk/id/eprint/51975/">https://eprints.lancs.ac.uk/id/eprint/51975/</a></p>
+
+<p>[5] Zhou, S.-F. Polymorphism of human cytochrome P450 2D6 and its clinical significance: part I. Clin. Pharmacokinet. 48, 689–723 (2009).</p>
+
+<p>[6] Crews, K. R. et al. Clinical Pharmacogenetics Implementation Consortium guidelines for cytochrome P450 2D6 genotype and codeine therapy: 2014 update. Clin. Pharmacol. Ther. 95, 376–382 (2014).</p>
+
+<p>[7] Lee, S.-B., Wheeler, M. M., Thummel, K. E. &amp; Nickerson, D. A. Calling star alleles with Stargazer in 28 pharmacogenes with whole genome sequences. Clin. Pharmacol. Ther. 106, 1328–1337 (2019).</p>
+
+</p>
+
+  <h2> - </h2>
+  <p><h1 id="burden-testing-with-variant-collapse">Burden testing with variant collapse</h1>
+<ul id="markdown-toc">
+  <li><a href="#burden-testing-with-variant-collapse" id="markdown-toc-burden-testing-with-variant-collapse">Burden testing with variant collapse</a></li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ul>
+      <li><a href="#to-do" id="markdown-toc-to-do">To do</a></li>
+    </ul>
+  </li>
+  <li><a href="#main-papers-in-order" id="markdown-toc-main-papers-in-order">Main papers in order</a>    <ul>
+      <li><a href="#major-classes-of-tests" id="markdown-toc-major-classes-of-tests">Major Classes of Tests</a></li>
+      <li><a href="#burden-tests-so-far" id="markdown-toc-burden-tests-so-far">Burden Tests So Far</a>        <ul>
+          <li><a href="#tests" id="markdown-toc-tests">Tests</a></li>
+          <li><a href="#power-of-burden-tests-depends-on" id="markdown-toc-power-of-burden-tests-depends-on">Power of burden tests depends on</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#li-and-leal-2008" id="markdown-toc-li-and-leal-2008">Li and Leal 2008</a>    <ul>
+      <li><a href="#background" id="markdown-toc-background">Background</a></li>
+      <li><a href="#genetic-model" id="markdown-toc-genetic-model">Genetic model</a></li>
+      <li><a href="#single-marker-test" id="markdown-toc-single-marker-test">Single-marker test</a></li>
+      <li><a href="#multiple-marker-test" id="markdown-toc-multiple-marker-test">Multiple-marker test</a></li>
+      <li><a href="#basic-collapsing-method" id="markdown-toc-basic-collapsing-method">Basic collapsing method</a></li>
+      <li><a href="#cmc-method" id="markdown-toc-cmc-method">CMC method</a></li>
+      <li><a href="#power-of-cmc-method" id="markdown-toc-power-of-cmc-method">Power of CMC method</a></li>
+      <li><a href="#misclassification" id="markdown-toc-misclassification">Misclassification</a></li>
+      <li><a href="#effects-of-linkage-disequilibrium-ld" id="markdown-toc-effects-of-linkage-disequilibrium-ld">Effects of Linkage Disequilibrium (LD)</a></li>
+      <li><a href="#evaluation-of-type-i-error-rate" id="markdown-toc-evaluation-of-type-i-error-rate">Evaluation of Type I Error Rate</a></li>
+      <li><a href="#problems-with-this-paper" id="markdown-toc-problems-with-this-paper">Problems with this paper</a></li>
+    </ul>
+  </li>
+  <li><a href="#madsen-and-browning-2009" id="markdown-toc-madsen-and-browning-2009">Madsen and Browning 2009</a>    <ul>
+      <li><a href="#background-1" id="markdown-toc-background-1">Background</a></li>
+      <li><a href="#main-theory" id="markdown-toc-main-theory">Main theory</a></li>
+      <li><a href="#methods" id="markdown-toc-methods">Methods</a>        <ul>
+          <li><a href="#weighted-sum-method" id="markdown-toc-weighted-sum-method">Weighted-Sum Method</a></li>
+          <li><a href="#power-simulations" id="markdown-toc-power-simulations">Power simulations</a></li>
+        </ul>
+      </li>
+      <li><a href="#encode-data" id="markdown-toc-encode-data">ENCODE data</a></li>
+      <li><a href="#results" id="markdown-toc-results">Results</a>        <ul>
+          <li><a href="#proportion-of-variants-containing-mutations" id="markdown-toc-proportion-of-variants-containing-mutations">Proportion of Variants Containing Mutations</a></li>
+        </ul>
+      </li>
+      <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
+      <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+    </ul>
+  </li>
+  <li><a href="#price-2010" id="markdown-toc-price-2010">Price 2010</a>    <ul>
+      <li><a href="#methods-1" id="markdown-toc-methods-1">Methods</a>        <ul>
+          <li><a href="#simulation-framework" id="markdown-toc-simulation-framework">Simulation Framework</a></li>
+          <li><a href="#weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios" id="markdown-toc-weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios">Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios</a></li>
+          <li><a href="#fixed-threshold-approach" id="markdown-toc-fixed-threshold-approach">Fixed-Threshold Approach</a></li>
+          <li><a href="#weighted-approach" id="markdown-toc-weighted-approach">Weighted Approach</a></li>
+          <li><a href="#variable-threshold-approach" id="markdown-toc-variable-threshold-approach">Variable-Threshold Approach</a></li>
+          <li><a href="#cheating-approach-to-incorporating-varphip-phip" id="markdown-toc-cheating-approach-to-incorporating-varphip-phip">Cheating Approach to Incorporating \(\varphi(p)\) (“phi(p)”)</a></li>
+          <li><a href="#incorporation-of-computational-predictions-of-functional-effects" id="markdown-toc-incorporation-of-computational-predictions-of-functional-effects">Incorporation of Computational Predictions of Functional Effects</a></li>
+          <li><a href="#application-to-empirical-data-sets" id="markdown-toc-application-to-empirical-data-sets">Application to Empirical Data Sets</a></li>
+        </ul>
+      </li>
+      <li><a href="#results-and-discussion" id="markdown-toc-results-and-discussion">Results and Discussion</a></li>
+    </ul>
+  </li>
+  <li><a href="#neale-2011" id="markdown-toc-neale-2011">Neale 2011</a>    <ul>
+      <li><a href="#c-alpha-tests" id="markdown-toc-c-alpha-tests">C-alpha tests</a></li>
+    </ul>
+  </li>
+  <li><a href="#skat" id="markdown-toc-skat">SKAT</a>    <ul>
+      <li><a href="#introduction-1" id="markdown-toc-introduction-1">Introduction</a></li>
+      <li><a href="#methods-2" id="markdown-toc-methods-2">Methods</a>        <ul>
+          <li><a href="#sequencing-kernel-association-test" id="markdown-toc-sequencing-kernel-association-test">Sequencing Kernel Association Test</a></li>
+          <li><a href="#skat-model-and-test-for-linear-snp-effects" id="markdown-toc-skat-model-and-test-for-linear-snp-effects">SKAT Model and Test for Linear SNP Effects</a></li>
+          <li><a href="#relationship-between-linear-skat-and-individual-variant-test-statistics" id="markdown-toc-relationship-between-linear-skat-and-individual-variant-test-statistics">Relationship between Linear SKAT and Individual Variant Test Statistics</a></li>
+          <li><a href="#accommodating-epistatic-effects-and-prior-information-under-the-skat" id="markdown-toc-accommodating-epistatic-effects-and-prior-information-under-the-skat">Accommodating Epistatic Effects and Prior Information under the SKAT</a></li>
+        </ul>
+      </li>
+      <li><a href="#skat-is-a-generalization-of-the-c-alpha-test" id="markdown-toc-skat-is-a-generalization-of-the-c-alpha-test">SKAT Is a Generalization of the C-Alpha Test</a></li>
+    </ul>
+  </li>
+  <li><a href="#lee-2012" id="markdown-toc-lee-2012">Lee 2012</a>    <ul>
+      <li><a href="#introduction-2" id="markdown-toc-introduction-2">Introduction</a></li>
+      <li><a href="#methods-3" id="markdown-toc-methods-3">Methods</a></li>
+    </ul>
+  </li>
+  <li><a href="#zhang-2021-ashg" id="markdown-toc-zhang-2021-ashg">Zhang 2021 ASHG</a>    <ul>
+      <li><a href="#problems-with-this-paper-1" id="markdown-toc-problems-with-this-paper-1">Problems with this paper</a>        <ul>
+          <li><a href="#cluster-method" id="markdown-toc-cluster-method">Cluster method</a></li>
+          <li><a href="#carrier-counts-instead-of-allele-dosage" id="markdown-toc-carrier-counts-instead-of-allele-dosage">Carrier counts instead of allele dosage</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>In this series I will go over methods and theory for gene burden testing.
+I am publishing this live as I work since there are several heavy papers to get through.
+<!--For the working writeup see: pri_net_manuscript/pre_print_md/detailed_methods/statistics.md--></p>
+
+<h2 id="to-do">To do</h2>
+
+<p>Running code on test data: Remake the gVCF as BP_RESOLUTION to list a site for every position. 
+Filter: If variants are MAF &gt;0.1 in gnomAD then run a filter to remove variants that are not sequenced in controls.
+Justification: If we ran that filter for every singleton it would remove the very rare variants that would have been a true positive if it had been sequenced in the controls.</p>
+
+<h1 id="main-papers-in-order">Main papers in order</h1>
+
+<ul>
+  <li>Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data.
+@li2008methods</li>
+  <li>A groupwise association test for rare mutations using a weighted sum statistic.
+@madsen2009groupwise</li>
+  <li>An evaluation of statistical approaches to rare variant analysis in genetic association studies.
+@morris2010evaluation</li>
+  <li>Pooled association tests for rare variants in exon-resequencing studies.
+@price2010pooled</li>
+  <li>Testing for an unusual distribution of rare variants.
+@neale2011testing</li>
+  <li>Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test.
+@wulee2011rare</li>
+  <li>Optimal tests for rare variant effects in sequencing association studies.
+@Lee2012Optimal</li>
+  <li>Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies.
+@Lee2012Optimalunified</li>
+  <li>Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants.
+@IonitaLaza2013Sequence</li>
+</ul>
+
+<h2 id="major-classes-of-tests">Major Classes of Tests</h2>
+
+<ul>
+  <li>Burden/Collapsing tests</li>
+  <li>Supervised/Adaptive Burden/Collapsing tests</li>
+  <li>Variance component (similarity) based tests</li>
+  <li>Omnibus tests: hedge against difference scenarios</li>
+</ul>
+
+<h2 id="burden-tests-so-far">Burden Tests So Far</h2>
+
+<h3 id="tests">Tests</h3>
+
+<ul>
+  <li>Binary Collapsing: CAST</li>
+  <li>CMC</li>
+  <li>Count Collapsing: MZ (GRANVIL)</li>
+  <li>Weighted Sum Test</li>
+</ul>
+
+<h3 id="power-of-burden-tests-depends-on">Power of burden tests depends on</h3>
+
+<ul>
+  <li>Number of associated variants</li>
+  <li>Number of non-associated variants</li>
+  <li>Direction of the effects.</li>
+  <li>Powerful if most variants are causal and have effects in the same direction.</li>
+</ul>
+
+<h1 id="li-and-leal-2008">Li and Leal 2008</h1>
+<ul>
+  <li>
+    <p>Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
+@li2008methods</p>
+  </li>
+  <li>The collapsing method, which involves collapsing genotypes across variants and applying a univariate test, is powerful for analyzing rare variants.</li>
+  <li>The multivariate analysis is robust against inclusion of non-causal variants.</li>
+  <li>Both methods are superior to analyzing each variant individually with univariate tests.</li>
+  <li>Combined Multivariate and Collapsing (CMC) method unifies the advantages of both collapsing and multiple-marker tests.</li>
+</ul>
+
+<h2 id="background">Background</h2>
+
+<p>Genotype phenotype association may be tested by:</p>
+
+<ul>
+  <li>A single market test (i.e. GWAS) may use standard univariate statistical tests
+(e.g., chi-squared test, Fisher’s exact test, or Cochran Armitage test for trend) 
+and with the family-wise error rate (FWER) controlled by a multiple-comparison correction (e.g., Bonferroni, permutation).</li>
+  <li>A multiple-marker test,
+    <ul>
+      <li>which tests multiple variant sites simultaneously with the use of multivariate methods,</li>
+      <li>such as the Fisher product method,</li>
+      <li>Hotelling’s T test 
+or logistic regression.</li>
+    </ul>
+  </li>
+  <li>Collapsing variants can increase power.</li>
+  <li>Classification of variants can be a major problem.</li>
+  <li>If classified correct power of causal detection is higher than single- and multiple-marker testing.</li>
+  <li>If miss-classified, non-functional variants could introduce error.</li>
+</ul>
+
+<h2 id="genetic-model">Genetic model</h2>
+
+<ul>
+  <li>In a locus M variants can independently cause disease.</li>
+  <li>A = allele</li>
+  <li>1-M = allele label</li>
+  <li>p = allele frequency</li>
+  <li>Gk = 0/1/2 genotype</li>
+  <li>Fki = penertance of geno for ith variant.</li>
+  <li>Relative risk of each variant i in models: additive, multiplicative, dominant, and recessive.</li>
+  <li>Prevalence of disease caused by each individual variant is calculated.</li>
+  <li>Prevalence of disease caused by entire locus can therefore be calculated.</li>
+  <li>Total prevalence can be approximated by the sum of the individual prev.</li>
+  <li>Same pheno can be due to different causal variants.</li>
+  <li>The proportion of cases as a result of variant i can be ascertained.</li>
+  <li>These cases are members of group i.</li>
+  <li>There is a total of M groups.</li>
+  <li>For group i the frequency of variant i can also be produced for 0,1,2.</li>
+  <li>Then, the expected freq of genotype G at variant i across all M groups of cases can be found.</li>
+  <li>Controls expected genotype freq at i variant can be found.</li>
+  <li>The expected freqs are used to calculate the power to detect assoc in this study.</li>
+  <li>Their focus is the omnibus test, which provides an association test of the entire locus and is not focused on any specific variant within the locus.</li>
+</ul>
+
+<h2 id="single-marker-test">Single-marker test</h2>
+
+<ul>
+  <li>One approach of association studies is to test each variant site individually with the use of a univariate test and assess the significance of the <em>omnibus test</em> (chi-squared test or F test) after correction for multiple comparisons.</li>
+  <li>For univariate tests, a contingency table can be constructed to compare genotype frequencies at each variant site in cases and controls.</li>
+  <li>Because an observation of individuals that are homozygous for the high-risk rare allele is extremely rare, AA genotypes are collapsed with Aa genotypes, and a table is constructed.</li>
+  <li>For an equal number of cases and controls, the classical Pearson chi-squared statistic for testing equal genotype frequencies in cases and controls is used.</li>
+</ul>
+
+<h2 id="multiple-marker-test">Multiple-marker test</h2>
+
+<p>Another option is to test all variants simultaneously by multivariate test</p>
+
+<ul>
+  <li>e.g. Fisher product method, Hotelling’s T-squared test, or multiple logistic regression.</li>
+  <li>(This is not the same as one regression run for every single variant with multiple covariates, as done in GWAS sometimes).</li>
+  <li>The authors give an example using Xiong et. al.,  (2002). Generalized T2 test for genome association studies. Am. J. Hum. Genet.</li>
+  <li><em>Note: Hotellings T-squared tests the differences between the (multivariate) means of different populations, where tests for univariate problems would make use of a t-test. The distribution is named for Harold Hotelling, who developed it as a generalization of Student’s t-distribution.</em></li>
+  <li>Rejecting the null hypothesis would indicate that at least one of the variants is assocciated with disease.</li>
+</ul>
+
+<h2 id="basic-collapsing-method">Basic collapsing method</h2>
+
+<p>Since variants are expected to be very rare, 
+genotypes across all variants are collapsed.
+An individual is coded once if they have any one variant for the locus.</p>
+
+<ul>
+  <li>1 = rare variants present.</li>
+  <li>0 = no rare variants.
+The classic Pearson chi-squared statistic can be used to test the summed proportion of variants in cases vs controls. 
+The power can be calculated as shown by the authors.</li>
+</ul>
+
+<h2 id="cmc-method">CMC method</h2>
+
+<p>Unified method that combines collapsing and multivariate testing.</p>
+
+<ul>
+  <li>Markers are divided into subgroups (e.g. allele frequency).</li>
+  <li>Within group, markers are collapsed.</li>
+  <li>A multivariate test is then used (Hotelling’s T-squared).</li>
+</ul>
+
+<p>e.g. M markers in a locus are split into K groups.
+There are n markers in group g, and so on for each group.
+The multivariate test is done where for each group, the  individuals are coded with either 1 (a carrier of one or more variants) or 0 (wild-type).</p>
+
+<h2 id="power-of-cmc-method">Power of CMC method</h2>
+
+<p>Results:</p>
+
+<ul>
+  <li>Freq below 0.01 collapsed.</li>
+  <li>Freq above 0.01 not collapsed.</li>
+  <li>With misclassification, power is much better with CMC method compared to collapsing method
+    <ul>
+      <li>particularly when with a high frequency of the non-causal variant.</li>
+    </ul>
+  </li>
+  <li>Slight (very slight I think) loss of power when <em>causal</em> variants are high frequency compared to collapsing.
+    <ul>
+      <li>This scenario is unlikely otherwise single-marker test may be possible to detect.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="misclassification">Misclassification</h2>
+
+<p>Two types of miss-classifications are considered:</p>
+
+<ul>
+  <li>inclusion of non-functional variants and</li>
+  <li>exclusion of functional variants.</li>
+  <li>There is a large section on results of <em>Excluding Functional Variants</em> and <em>Inclusion of Nonfunctional Variants</em>.</li>
+</ul>
+
+<p><em>This section can be read for detail but is probably familiar enough for us to skip.</em></p>
+
+<h2 id="effects-of-linkage-disequilibrium-ld">Effects of Linkage Disequilibrium (LD)</h2>
+
+<p>A simulation is done in this section:</p>
+
+<ul>
+  <li>The locus has six variants, with a total allele frequency of 0.05.</li>
+  <li>Four of the variants have an allele frequency of 0.01 and are on different haplotypes.</li>
+  <li>Each of the remaining two variants, with allele frequencies of 0.005, is on one of the haplotypes where a variant with allele frequency of 0.01 resides;
+    <ul>
+      <li>there is complete LD between these variants (r 2 z0:5).</li>
+    </ul>
+  </li>
+  <li>For comparison purposes, a second simulation was carried out, in which all variants were on separate haplotypes.</li>
+  <li>One thousand replicates were generated, and the power was evaluated for an a level of 0.001.</li>
+</ul>
+
+<p>Results:</p>
+
+<ul>
+  <li>In the presence of LD, the power for the single-marker test, Hotelling’s T2 test, and the collapsing method is
+    <ul>
+      <li>0.075, 0.63, and 0.85, respectively.</li>
+    </ul>
+  </li>
+  <li>Data generated with each variant on a separate haplotype, the corresponding powers are
+    <ul>
+      <li>0.011, 0.451, and 0.737, respectively.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="evaluation-of-type-i-error-rate">Evaluation of Type I Error Rate</h2>
+
+<ul>
+  <li>Simulation was used to generate data under the null hypothesis of no association between variants and disease status.</li>
+  <li>This process was repeated for 5000 replicates.</li>
+  <li>It was then evaluated whether or not each replicate had a p value % 0.05.</li>
+  <li>The type I error rate was estimated by the proportion of replicates with a p value below 0.05.</li>
+  <li>A type I error rate above 0.05 signifies a higher false-positive rate, and conversely, a type I error rate below 0.05 indicates a conservative test.</li>
+</ul>
+
+<p>Result:</p>
+
+<ul>
+  <li>Hotelling’s T2 test and the collapsing method:
+    <ul>
+      <li><em>well controlled and slightly conservative.</em></li>
+    </ul>
+  </li>
+  <li>Logistic regression for multiple-marker test and the likelihood-ratio test performed on the basis of an asymptotic chi-squared distribution:
+    <ul>
+      <li><em>not well controlled.</em></li>
+      <li><em>The inflation increases with decreasing allele frequencies.</em></li>
+    </ul>
+  </li>
+  <li>CMC method, with multivariate Hotelling’s T2 test or logistic regression:
+    <ul>
+      <li><em>well controlled</em>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="problems-with-this-paper">Problems with this paper</h2>
+
+<ul>
+  <li>The main problem with collapsing method is when single individuals have more than one causal variant being only counted as “1”. This more likely to occur for our protein-pathway collapse than a single gene/locus collapse.</li>
+  <li>Reason 1: dosage is not counted. Someone may have homozygous and only counts for 1 rather than 2 (or some other weight).</li>
+  <li>Reason 2: someone with more than one variant is only counted as 1 (if it is in the same allele frequency group for collapse). This may be rare in a single gene but is more likely in a protein network collapse. Usually it would be OK particularly if the second variant is in LD with the first and therefore <em>should</em> only be counted once.</li>
+  <li>CMC code - maf threshold: In the R code, those variants with minor allele frequency below the specified maf threshold are collapsed into a single super variant. Can we group data into several frequency groups or is one <em>above/below</em> threshold only possible?</li>
+</ul>
+
+<h1 id="madsen-and-browning-2009">Madsen and Browning 2009</h1>
+
+<ul>
+  <li>A groupwise association test for rare mutations using a weighted sum statistic
+@madsen2009groupwise</li>
+</ul>
+
+<h2 id="background-1">Background</h2>
+
+<ul>
+  <li>
+    <p>CAST: Cohort allelic sums test - an existing grouping method in which the number of individuals with one or more mutations in a group (e.g. gene) is compared between affected and unaffected individuals.</p>
+  </li>
+  <li>Cites three papers:
+    <ul>
+      <li>[Cohen JC, Kiss RS, Pertsemlidis A, Marcel YL, McPherson R, et al. (2004) Multiple rare alleles contribute to low plasma levels of HDL cholesterol. Science 305: 869–872.]</li>
+      <li>[Li and Leal 2008]</li>
+      <li>[Morgenthaler S, Thilly WG (2007) A strategy to discover genes that carry multi- allelic or mono-allelic risk for common diseases: A cohort allelic sums test (CAST). Mutation Research/Fundamental and Molecular Mechanisms of Mutagenesis 615: 28–56.]</li>
+    </ul>
+  </li>
+  <li>
+    <p>CMC: Combined Multivariate and Collapsing - the alternative method for grouping variants.
+All rare variants are collapsed, 
+as in the CAST method, 
+and the collapsed variants are treated as a single common variant which is analysed together with the other common variants using multivariate analysis. 
+In the CMC version used in [Li and Leal], 
+rare variants are defined as those having a minor allele frequency (MAF) of at most 1%.</p>
+  </li>
+  <li>
+    <p>In this study, they presume a group of candidate functional variants.</p>
+  </li>
+  <li>Propose a weighted-sum method in which mutations are
+    <ul>
+      <li>grouped according to function (e.g. gene),</li>
+      <li>and each individual is scored by a weighted sum of the mutation counts.</li>
+    </ul>
+  </li>
+  <li>To test for an excess of mutations in affected individuals, they use permutation of disease status among affected and unaffected individuals.
+    <ul>
+      <li>Using permutation adjusts for the weighting of the mutations and the requirement that a mutation must be observed to be included in the study.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><em>Note that permutation of disease status results in correct type I error even in the presence of LD [Cheverud 2001, Churchill 1994], 
+although relatively low LD is expected between rare variants [Li and Leal 2008, Pritchard 2001,2001].</em></p>
+
+<h2 id="main-theory">Main theory</h2>
+
+<ul>
+  <li>
+    <p>The weighted-sum method deviates from the CAST method [5,27]:
+weighting the variants differently when determining the genetic load of an individual. 
+By weighting the signals from each mutation, 
+the weighted sum method accentuates mutations that
+are rare in the unaffected individuals, 
+so that the test is not completely dominated by common mutations.</p>
+  </li>
+  <li>In the CAST method,
+    <ul>
+      <li>common variants have a high impact on the group signal,</li>
+      <li>and if many common mutations are present in a group, 
+almost all individuals will have one or more mutations.</li>
+      <li>To avoid this effect a threshold on the mutation-frequencies may be used,
+as suggested in the CMC method [Li and Leal 2008].</li>
+      <li>May be difficulty to select biological meaningful threshold, affecting test outcome.</li>
+    </ul>
+  </li>
+  <li>In the weighted-sum method,
+    <ul>
+      <li>include mutations of all frequencies,</li>
+      <li>but mutations are weighted according to their frequency in the unaffected individuals.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="methods">Methods</h2>
+<h3 id="weighted-sum-method">Weighted-Sum Method</h3>
+<p>Compares the number of mutations in a group of variants between case/control. 
+Designed to identify an excess of mutations in case, compared to controls. 
+Each variant belongs to a group (gene, pathway, etc.) and, 
+for a group with L variants, the method is comprised of the following steps:</p>
+
+<ul>
+  <li>(A)
+    <ul>
+      <li>For each variant, choose ALT/minor allele</li>
+      <li>define number in cases/controls.</li>
+      <li>calculate the weight for a variant.</li>
+      <li>It is used to down-weight mutation counts in constructing the weighted-sum score; see (B) and (C) below</li>
+    </ul>
+  </li>
+  <li>Eqn 1: Weight
+    <ul>
+      <li>qi = ( ((no. mut allele in control) + 1)/(2(no. controls) +2) )</li>
+      <li>Wi = root (total samples x qi(1-qi))</li>
+      <li>For 10 case (7 mut), 10 control (5 mut),
+weight for variant is 0.447</li>
+    </ul>
+  </li>
+  <li>Mutation freq of controls is used so that true signal in cases is not deflated by using to total number.</li>
+  <li>A drawback when variance of scaled mut-freq, hence loss of power when mutation freq is high.</li>
+  <li>
+    <p>The <em>one</em> and <em>two</em> to the numerator and denominator, respectively, avoids zero estimates - used on next steps.</p>
+  </li>
+  <li>(B)
+    <ul>
+      <li>Genetic score of each individual calculated.</li>
+      <li>j - Genetic score of individual.</li>
+      <li>Iij - number of mutations for variant i in individual j.</li>
+      <li>Generic model uses 0/1/2.</li>
+      <li>Recessive model only homozygous are assigned 1.</li>
+      <li>Dominant model both het and homo are assigned 1.</li>
+    </ul>
+  </li>
+  <li>(C)
+    <ul>
+      <li>All sample combined are ranked according to genetic scores.</li>
+      <li>The sum of ranks for cases is calculated.</li>
+      <li>Under null-hypothesis, normal distribution of random variables using a ranking procedure equivalent to that in Wilcoxon test.</li>
+    </ul>
+  </li>
+  <li>(D)
+    <ul>
+      <li>Case/control status is permuted</li>
+      <li>steps (A)-(C) repeated k times to sampled X1,..Xk.</li>
+    </ul>
+  </li>
+  <li>(E)
+    <ul>
+      <li>The average and sample standard deviation of X1,…,Xk are calculated and standardized score-sum is found (z).</li>
+      <li>Under the null hypothesis, this has an approximately standard normal distribution.</li>
+      <li>Thus, a p-value for association test can be obtained by comparing z in the quantiles of standard normal.</li>
+    </ul>
+  </li>
+  <li>
+    <p>An alternative p-value calculation is also provided using a standard permutation with a stopping rule (slighly slower for their power similations). That also gives uniform (0,1) distributed p-value, which might be useful for further analysis.</p>
+  </li>
+  <li>Permutation of case/control labels maintains the LD structure.</li>
+</ul>
+
+<h3 id="power-simulations">Power simulations</h3>
+<p>Comparison of:</p>
+
+<ul>
+  <li>Weighted-sum method,</li>
+  <li>CAST,</li>
+  <li>CMC,</li>
+  <li>and variant-by-variant methods,</li>
+</ul>
+
+<p>For each set of parameters,</p>
+
+<ul>
+  <li>100 datasets are simulated,</li>
+  <li>the four methods are applied,</li>
+  <li>and the proportions of significant outcomes used as the power estimates.</li>
+</ul>
+
+<p>To mimic a genome wide study of about 20,000 fairly independent human genes, 
+we calculate a p-value for each gene, 
+and use a significance threshold of 0.05/20000 = 2.561026 in all power simulations.</p>
+
+<p>Genetic Models:</p>
+
+<ul>
+  <li>Recessive, Additive and Dominant models:
+    <ul>
+      <li>the disease-related variants act independently,</li>
+    </ul>
+  </li>
+  <li>Recessive-Set model:
+    <ul>
+      <li>outcome of a mutation at one variant depends on the presence of a mutation at another variant.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Frequency spectra:</p>
+
+<ul>
+  <li>Wright’s formula used to sample the unaffected population frequency spectrum of the mutations at each variant
+for the Recessive, Additive and Dominant models. 
+e.g. <em>The mutation probability is calculated such that the probability (pM) that a haplotype contains at least one disease-risk mutation is fixed in unaffected individuals</em>.</li>
+</ul>
+
+<p>A method for sampling is provided and ignored in this summary.</p>
+
+<p>A method is provided to compare models with damaging variants and benign variants.</p>
+
+<p>NB. Tested Variants.</p>
+
+<ul>
+  <li>The mutation probabilities (p) can be very low for some of the sampled variants.
+This means that some variants contain no mutations in any of the sampled individuals, and these variants are hence omitted in the tests.
+    <h2 id="encode-data">ENCODE data</h2>
+    <p>The method was tested on rare variants with the frequency-spectrum of a naturally occurring population using the ENCODE resequencing data.</p>
+  </li>
+</ul>
+
+<h2 id="results">Results</h2>
+
+<h3 id="proportion-of-variants-containing-mutations">Proportion of Variants Containing Mutations</h3>
+<p>The mutation frequencies are sampled according to Wright’s formula, 
+and hence mutations are very rare for some variants. 
+Using 1000 affected and 1000 unaffected individuals, 
+mutations are on average observed at only 49.4% of the variants (sd: 4.9%). 
+This level is in concordance with the level from human resequencing studies.</p>
+
+<p>Skipping the section: Power under Varying Model Parameters.</p>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>Analysis of pathways can be done in two different ways. 
+One way is to use the pathway as a group, and run the test on the entire pathway. 
+On the other hand, for large pathways, it may be beneficial to use a method that allows a gene with a strong signal to have a high impact on the combined pathway test-statistic (T). 
+If a pathway contains G non-overlapping genes, a method to do this is to use the weighted-sum method on each gene, and combine the resulting p-values (p1,…,pG) with the Fisher product test statistic.</p>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Weight based on frequency of variat in the controls.</li>
+  <li>Sum of ranks in cases.</li>
+  <li>Case/control labels permuted n times, mean, SD, standardised score-sum found (z).</li>
+  <li>p-value for association test obtained by comparing z in the quantiles of standard normal.</li>
+  <li>Alternative p-value using a standard permutation with a stopping rule gives uniform (0,1) distributed p-value, which might be useful for further analysis.</li>
+</ul>
+
+<h1 id="price-2010">Price 2010</h1>
+
+<ul>
+  <li>Pooled association tests for rare variants in exon-resequencing studies.
+@price2010pooled</li>
+  <li>The approach is based on the regression of
+    <ul>
+      <li>phenotypic values</li>
+      <li>on individuals’ genotype scores</li>
+      <li>subject to a variable allele-frequency threshold,</li>
+      <li>incorporating computational predictions of the functional effects of missense variants.</li>
+    </ul>
+  </li>
+  <li>Statistical significance is assessed by permutation testing with variable thresholds.</li>
+</ul>
+
+<h2 id="methods-1">Methods</h2>
+
+<h3 id="simulation-framework">Simulation Framework</h3>
+<p>Simplified summary:</p>
+
+<ul>
+  <li>Model of European ancestry to recapitulate the site-frequency spectrum of non-synonymous human SNPs.</li>
+  <li>9kb for 10K individuals.</li>
+  <li>Missense only.</li>
+  <li>Phenotypes
+    <ul>
+      <li>quantitative normal distribution</li>
+      <li>carrier and non-carrier same variance</li>
+      <li>carriers shifted by \(\delta\) SD</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios">Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios</h3>
+<ul>
+  <li>They propose the ODDs model and use the weight method of Madsen et al. 2009 @madsen2009groupwise.
+    <ul>
+      <li>Based on the frequency in controls.</li>
+      <li>Relationship between log odds ratio and allele frequency the same as Madsen 2009.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="fixed-threshold-approach">Fixed-Threshold Approach</h3>
+<ul>
+  <li>
+    <p>For dichotomous phenotypes they calculate a score as per @madsen2009groupwise.</p>
+  </li>
+  <li>i indexes SNPs,</li>
+  <li>Ci is the reference allele count of SNP i in cases,</li>
+  <li>and xi (\(\xi_i\)) is equal to 1 if the frequency of SNP i is below a specified threshold (1% or 5%)</li>
+  <li>
+    <p>and is equal to 0 otherwise.</p>
+  </li>
+  <li>They generalise this for quantitative phenotypes.
+    <ul>
+      <li>add the term: pj (\(\pi_j\)) - the phenotype of sample j.
+  -
+I need to compare these two papers here in more detail 
+(genetic score section).
+I believe @madsen2009groupwise use a more complex \(\xi\) term than is inferred:</li>
+      <li>Generic model uses 0/1/2.</li>
+      <li>Recessive model only homozygous are assigned 1.</li>
+      <li>Dominant model both het and homo are assigned 1.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="weighted-approach">Weighted Approach</h3>
+<ul>
+  <li>Same as @madsen2009groupwise.</li>
+  <li>Also generalise by adding \(\pi_j\) for a quantitative phenotype value.</li>
+</ul>
+
+<h3 id="variable-threshold-approach">Variable-Threshold Approach</h3>
+<ul>
+  <li>There exists some (unknown) threshold T for which variants with a minor allele frequency (MAF) below T are substantially more likely to be functional than are variants with an MAF above T.</li>
+  <li>z-score of a regression across samples of phenotypes versus counts of mutations meeting the allele-frequency threshold T.</li>
+</ul>
+
+<h3 id="cheating-approach-to-incorporating-varphip-phip">Cheating Approach to Incorporating \(\varphi(p)\) (“phi(p)”)</h3>
+<ul>
+  <li>Weight variants according to the probability \(\varphi(p)\)
+    <ul>
+      <li>that an allele of frequency p is functional,</li>
+      <li>as inferred by using the same simulated data used to evaluate power.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="incorporation-of-computational-predictions-of-functional-effects">Incorporation of Computational Predictions of Functional Effects</h3>
+<ul>
+  <li>Tested if incorporation of PolyPhen-2 scores improves statistical test.</li>
+  <li>To asses, simulated PolyPhen-2 predictions of damaging and neutral mutations.</li>
+</ul>
+
+<h3 id="application-to-empirical-data-sets">Application to Empirical Data Sets</h3>
+<p>Applied to some real data.</p>
+
+<h2 id="results-and-discussion">Results and Discussion</h2>
+<ul>
+  <li>Skipping this.</li>
+  <li>The methods are an improvement.</li>
+  <li>As useful as @madsen2009groupwise.</li>
+  <li>and additionaly adds a method for the quantitative variable.</li>
+</ul>
+
+<h1 id="neale-2011">Neale 2011</h1>
+
+<ul>
+  <li>Testing for an unusual distribution of rare variants.
+@neale2011testing</li>
+</ul>
+
+<h2 id="c-alpha-tests">C-alpha tests</h2>
+<ul>
+  <li>They propose here the C-alpha test statistic as a novel approach for testing for
+    <ul>
+      <li>the presence of this mixture of effects across a set of rare variants.</li>
+    </ul>
+  </li>
+  <li>Unlike existing burden tests, C-alpha, by testing the variance rather than the mean, maintains consistent power when the target set contains both risk and protective variants.</li>
+</ul>
+
+<h1 id="skat">SKAT</h1>
+
+<p>Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test
+@wulee2011rare</p>
+
+<h2 id="introduction-1">Introduction</h2>
+
+<ul>
+  <li>They propose the sequence kernel association test (SKAT),
+    <ul>
+      <li>regression method to test for</li>
+      <li>association between genetic variants (common and rare)</li>
+      <li>in a region</li>
+      <li>and a continuous or dichotomous trait</li>
+      <li>while easily adjusting for covariates.</li>
+    </ul>
+  </li>
+  <li>As a score-based variance-component test, SKAT can
+    <ul>
+      <li>quickly calculate p values analytically by</li>
+      <li>fitting the null model containing only the covariates,</li>
+      <li>and so can easily be applied to genome-wide data.</li>
+    </ul>
+  </li>
+  <li>A limitation for previous burden tests is that they implicitly assume that 
+all rare variants influence the phenotype in the same direction 
+and with the same magnitude of effect (after incorporating known weights).</li>
+  <li>However, one would expect most variants (common or rare) within a sequenced region 
+to have little or no effect on phenotype,</li>
+  <li>whereas some variants are protective and others deleterious,</li>
+  <li>and the magnitude of each variant’s effect is likely to vary (e.g., rarer variants might have larger effects).</li>
+  <li>Collapsing across all variants is likely to introduce substantial noise.</li>
+  <li>Burden tests require either specification of thresholds for collapsing</li>
+  <li>or the use of permutation to estimate the threshold.</li>
+</ul>
+
+<h2 id="methods-2">Methods</h2>
+
+<h3 id="sequencing-kernel-association-test">Sequencing Kernel Association Test</h3>
+<p>*SKAT is a supervised test 
+	- for the joint effects of multiple variants 
+	- in a region 
+	- on a phenotype. 
+	-</p>
+<ul>
+  <li>For each region, SKAT analytically calculates a p value for association while adjusting for covariates.</li>
+  <li>Adjustments for multiple comparisons are necessary for analyzing multiple regions,</li>
+  <li>for example with the Bonferroni correction or FDR control.</li>
+</ul>
+
+<p>Notation:</p>
+
+<ul>
+  <li>n subjects</li>
+  <li>p variants</li>
+  <li>covariates</li>
+  <li>\(y_i\) phenotype for sample i</li>
+  <li>\(X_i\) covariats</li>
+  <li>\(G_i\) genotypes (0,1,2 general)</li>
+</ul>
+
+<h3 id="skat-model-and-test-for-linear-snp-effects">SKAT Model and Test for Linear SNP Effects</h3>
+<p>Eqn 1 and 2:</p>
+
+<ul>
+  <li>linear regression and</li>
+  <li>logistic regression</li>
+</ul>
+
+<p>Eqn 3:</p>
+
+<ul>
+  <li>
+    <p>variance-component score statistic</p>
+  </li>
+  <li>The weight is adjusted based on the MAF
+    <ul>
+      <li>if rarer variants are expected to be more likely to have larger effects.</li>
+      <li>still putting decent nonzero weights for variants with MAF 1%–5%.</li>
+    </ul>
+  </li>
+  <li>A special case of SKAT arises when the outcome is dichotomous, no covariates are included, and all \(W_j\) = 1.</li>
+  <li>Under these conditions, we show in Appendix A that the SKAT test statistic Q is equivalent to the C-alpha test statistic T.</li>
+</ul>
+
+<h3 id="relationship-between-linear-skat-and-individual-variant-test-statistics">Relationship between Linear SKAT and Individual Variant Test Statistics</h3>
+<ul>
+  <li>One needs to fit the null model only a single time to be able to compute the Sj for all individual variants j as well as all regions to be tested.</li>
+  <li>Similarly, if multiple regions are under consideration, then the same mb0 can be used to compute the SKAT Q statistics for each region.</li>
+</ul>
+
+<h3 id="accommodating-epistatic-effects-and-prior-information-under-the-skat">Accommodating Epistatic Effects and Prior Information under the SKAT</h3>
+<p>Ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework.</p>
+
+<p>They replace Gi’b by a more flexible function f(Gi) in the linear and logistic models (1) and (2) where f(Gi) allows for rare variant by rare variant and common variant by rare-variant interactions</p>
+
+<h2 id="skat-is-a-generalization-of-the-c-alpha-test">SKAT Is a Generalization of the C-Alpha Test</h2>
+
+<ul>
+  <li>The recently proposed the C-alpha test has advantages over burden tests in that
+    <ul>
+      <li>it explicitly models the possibility that minor alleles can be deleterious or protective.</li>
+    </ul>
+  </li>
+  <li>However, it does not currently allow for the analysis of quantitative outcomes or the inclusion of covariates and p value calculation requires permutation.</li>
+  <li>They demonstrate that for a dichotomous trait in the absence of covariates,
+    <ul>
+      <li>the C-alpha test statistic is equivalent to the SKAT statistic with unweighted linear kernel,</li>
+      <li>which is the same as the kernel machine test in Wu et al.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="lee-2012">Lee 2012</h1>
+<h2 id="introduction-2">Introduction</h2>
+<p>SKAT-O</p>
+
+<ul>
+  <li>
+    <p>Optimal tests for rare variant effects in sequencing association studies.
+@Lee2012Optimal</p>
+  </li>
+  <li>
+    <p>A class of tests that include burden tests and SKAT as special cases, and derive an optimal test within this class that maximizes power.</p>
+  </li>
+</ul>
+
+<h2 id="methods-3">Methods</h2>
+<ul>
+  <li>They show the SKAT method</li>
+  <li>They show the buden testing methods</li>
+  <li>The show a method for:
+    <ul>
+      <li>\(Q_p\) = (1 - \(p\))\(Q_{SKAT}\) + \(pQ_{burden}\)</li>
+      <li>The resulting optimal test corresponds to a best linear combination of SKAT and burden tests that maximizes power.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="zhang-2021-ashg">Zhang 2021 ASHG</h1>
+
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0002929721001543?dgcid=author">A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity</a></p>
+
+<p>I have never had a paper so similar to a project that we are currently working on.
+Basically the only difference is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. the cluster size method (theirs might work better, using total edge weights instead of protein count),
+2. cluster separation by NHC instead of MCL,
+3. using KEGG+REACTOME to additionally define the description of the cluster (but this can be done at the end).
+4. The method in main analysis is carrier count instead of SKAT style (we have compared both).
+</code></pre></div></div>
+
+<p>Same cohort size. Really nice to see it in ASHG. Will have to do a comparison to per-gene SKAT-O to show the improvement, as they do.</p>
+
+<h2 id="problems-with-this-paper-1">Problems with this paper</h2>
+
+<h3 id="cluster-method">Cluster method</h3>
+<p>I surprised to see them apply their own novel clustering method (NHC) without some formal methods paper first - so many already exist, including 10 that can be used with their String data. In theory it sound good but there is no real evidence.</p>
+
+<h3 id="carrier-counts-instead-of-allele-dosage">Carrier counts instead of allele dosage</h3>
+<p>Their main analysis is:</p>
+
+<ul>
+  <li>(a) with PC-adj =</li>
+  <li>glm(Pheno ~ Carrier-status + PCs, family=binomial).
+    <ul>
+      <li>The information for carrier status is missing, presumably 0/1 resulting in a sort of burden test.</li>
+    </ul>
+  </li>
+  <li>(b) without PC-adj = fisher exact test.
+    <ul>
+      <li>When doing this we got great results with for our earlier tests but thought it might be too simplistic.</li>
+    </ul>
+  </li>
+  <li>Using pathway SKAT-O (accounts for frequency/dosage) they got poorer results.</li>
+</ul>
+
+<p>Main problems here: 
+One count per gene (as data$CARRIER in analysis) presumes that any variant (homozygous or heterozyous, compound het, etc) is deleterious in the individual.
+In restricted to LoF then OK, but missense variants are included in the study (and will usually be the majory of candidates).
+Filters are applied to get a high quality list, but there will still be a majority of missense VUS.</p>
+
+<p>In the section “Application to an HSE cohort (V): Comparison with a burden test on the HSE cohort”, SKAT-O is not a burden test; while their method is actually more similar to a burden test since they are labelling an individual if they carry a qualifying variant in a gene. This is just a terminology error but it indicates that maybe the key differences in pathway testing have not been considered, as written up here in our review._</p>
+
+<p>One could argue that only counting once per gene could help prevent problems due to LD.
+Although, the WES/WGS data would have the phasing information included to prune out LD if that was the arguement.
+Basically, I think this is just a simplification rather than an advantage. 
+If SKAT had happened to work better they would have used those results.</p>
+
+<p>e.g. In Fig 3, TLR3 variants = 7 cases, 1 Hom, 9 Het.
+This seems to amount to a carrier status of 7 in their dataset for the glm and fisher exact.</p>
+
+<p>Thir main analysis:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># call R command to run pc-adj enrichment
+ro.r("data &lt;- read.table('temp_pc.txt', header=T, sep='\t')")
+ro.r("fit &lt;- glm(data$PHENOTYPE ~ data$CARRIER+data$PC1+data$PC2+data$PC3, family='binomial')")
+ro.r("adjusted.pval &lt;- anova(fit, test='LRT')[2, 5]")
+r_pvalue = ro.r("adjusted.pval")
+pvalue = r_pvalue[0]
+pvalue = float('%.3E' % Decimal(pvalue))
+file_out.write(str(pvalue) + '\t')
+
+# pathway enrichment
+this_case_pathway_hit = dict()
+for each_pathway in pathway_gene_set_dict.keys():
+	pathway_gene_set = pathway_gene_set_dict[each_pathway]
+	case_pathway_overlap = this_case_gene_set &amp; pathway_gene_set
+	case_in = len(case_pathway_overlap)
+	case_out = len(this_case_gene_set) - case_in
+	pathway_in = len(pathway_gene_set)
+	pathway_out = len(pathway_genes) - pathway_in
+	if case_in != 0:
+		odd, pvalue = stats.fisher_exact([[case_in, case_out], [pathway_in, pathway_out]], alternative='two-sided')
+		adj_pvalue = pvalue * pathway_size
+		if adj_pvalue &lt; 0.00001:
+			adj_pvalue = float('%.3E' % Decimal(adj_pvalue))
+			this_case_pathway_hit[each_pathway] = adj_pvalue
+
+# They do not show any code with the SKAT paramaters, presumably defaults using R.
+</code></pre></div></div>
+</p>
+
+  <h2> - </h2>
   <p><h1 id="fischers-exact-test">Fischer’s exact test</h1>
 <ul id="markdown-toc">
   <li><a href="#fischers-exact-test" id="markdown-toc-fischers-exact-test">Fischer’s exact test</a></li>
@@ -7056,7 +8334,7 @@ sample “successes” = a</p>
 
 <p>Suppose we want to know whether or not gender is associated with political party preference. We take a simple random sample of 25 voters and survey them on their political party preference. The following table shows the results of the survey:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Democrat	Republican	Total Male	4	9	13 Female	8	4	12 Total	12	13	25 Step 1: Define the hypotheses.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Democrat	Republican	Total Male	4	9	13 Female	8	4	12 Total	12	13	25 Step 1: Define the hypotheses.
 </code></pre></div></div>
 
 <p>We will perform Fisher’s Exact Test using the following hypotheses:</p>
@@ -7068,7 +8346,7 @@ H1: Gender and political party preference are not independent.</p>
 
 <p>We can use the Fisher’s Exact Test Calculator with the following input:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Group1 Group1 Category1	4	9 Category2	8	4
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Group1 Group1 Category1	4	9 Category2	8	4
 </code></pre></div></div>
 
 <p>One tailed p value: 0.081178

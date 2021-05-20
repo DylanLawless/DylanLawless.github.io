@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <!-- link to MathJax for LaTeX stlye eqn -->
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+   <!--  -->
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Pharmacogenomic stargazing</title>
+   <meta name="author" content="LawlessGenomics" />
+   <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
+   <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
+
+   <!-- include a google font -->
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!-- Typekit -->
+   <script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="site">
+  <div class="title">
+    <img style="margin-bottom:-8px" 
+	src="/images/logos/logo_2.8.png" 
+	alt="Logo image" width="55" height="37.3"/>
+    <a href="/">LawlessGenomics</a>
+    <a class="extra" href="/">Home</a>
+  </div>
+
+  <div id="topic">
+<h1 id="pharmacogenomic-stargazing">Pharmacogenomic stargazing</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#pharmacogenomic-stargazing" id="markdown-toc-pharmacogenomic-stargazing">Pharmacogenomic stargazing</a></li>
+  <li><a href="#stargazer-genotyping" id="markdown-toc-stargazer-genotyping">Stargazer genotyping</a>    <ul>
+      <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
+      <li><a href="#stargazer-summary" id="markdown-toc-stargazer-summary">Stargazer summary</a></li>
+      <li><a href="#star-alleles" id="markdown-toc-star-alleles">Star alleles</a></li>
+    </ul>
+  </li>
+  <li><a href="#published-example" id="markdown-toc-published-example">Published example</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<p><em>Note:
+Manual curation of gene-drug interaction is not recommended and therefore 
+simplification of nomenclature is not advised. 
+Relying on star allele labelling goes against the recommended 
+<a href="http://varnomen.hgvs.org/recommendations/general/">HGVS sequence variant nomenclature</a>.
+The following protocol for is provided as one step in a larger process
+of annotation in genomic analysis.</em></p>
+
+<h1 id="stargazer-genotyping">Stargazer genotyping</h1>
+<p>As reported in “Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program” [0],
+<!-- taliun2021sequencing -->
+Taliun et al. use a method of known pharmacogene (PGx) variation annotation 
+that can be adapted for many other drug-gene database applications [0].
+The star allele nomenclature method is applied to large scale data to screen 
+for possible pharmacogenomic interactions.
+This consists of annotation 
+with a simple notation for quick recognition of 
+allelic variation in genes impacting drug metabolism, disposition and response
+(e.g. of interest to clinicians prescribing medications).
+The <a href="https://www.pharmvar.org">Pharmacogene Variation (PharmVar)</a> 
+consortium repository is used to label 
+human cytochrome P450 (CYP) genes for known PGx variation.</p>
+
+<h2 id="methods">Methods</h2>
+<p>Identification of <em>CYP2D6</em> alleles using
+<a href="https://stargazer.gs.washington.edu/stargazerweb/index.html">Stargazer’s</a>
+genotyping pipeline.
+Details of the Stargazer genotyping pipeline have been described previously [1].</p>
+
+<p><em>Background note: Haplotypes are group of alleles that are inherited together 
+from a single parent. 
+They are sequenced from individual DNA strands. 
+These strands can be phased to reconstruct the inheritence pattern.</em></p>
+
+<p>Phased haplotype (from <a href="https://www.10xgenomics.com">10Xgenomics.com</a>):</p>
+
+<p><img src="/images/haplotype.jpeg" width="60%" /></p>
+
+<ul>
+  <li>GATK-HaplotypeCaller
+    <ul>
+      <li>SNVs and indels in were assessed from a VCF file generated using GATK-HaplotypeCaller [2].</li>
+    </ul>
+  </li>
+  <li>Phase Beagle
+    <ul>
+      <li>The VCF file was phased using the program <a href="https://faculty.washington.edu/browning/beagle/beagle.html">Beagle</a> [3] and
+  the 1000 Genomes Project haplotype reference panel.</li>
+    </ul>
+  </li>
+  <li>Star alleles (<a href="#star-alleles">described below</a>)
+    <ul>
+      <li>Phased SNVs and indels were then matched to star alleles.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In parallel,</p>
+<ul>
+  <li>GATK-DepthOfCoverage
+    <ul>
+      <li>Read depth was calculated from BAM files using GATK-DepthOfCoverage [2].</li>
+    </ul>
+  </li>
+  <li>Copy number
+    <ul>
+      <li>Read depth was converted to copy number by performing intra-sample normalization [1].</li>
+    </ul>
+  </li>
+  <li>Structural variants
+    <ul>
+      <li>After normalization,
+  structural variants were assessed by testing all possible pairwise combinations
+  of pre-defined copy number profiles
+  against the observed copy number profile of the sample.</li>
+    </ul>
+  </li>
+  <li>Changepoint
+    <ul>
+      <li>For new SVs,
+  breakpoints were statistically inferred using changepoint [4].</li>
+    </ul>
+  </li>
+  <li>Output
+    <ul>
+      <li>Information regarding new SVs was stored and
+  used to identify subsequent SVs in copy number profiles.</li>
+      <li>Output data included individual diplotypes,
+  copy number plots and
+  a VCF of SNVs and indels that were not used to define star alleles.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="stargazer-summary">Stargazer summary</h2>
+<p>From <a href="https://stargazer.gs.washington.edu/stargazerweb/index.html">Stargazer homepage</a> - quote:</p>
+
+<blockquote>
+  <p>“Stargazer is a bioinformatics tool for calling star alleles (haplotypes) in PGx genes using data from NGS or SNP array. Stargazer can accept NGS data from both WGS and TS.
+“ Stargazer identifies star alleles by detecting SNVs, indels, and SVs. Stargazer can detect complex SVs including gene deletions, duplications, and hybrids by calculating paralog-specific copy number from read depth.”</p>
+</blockquote>
+
+<h2 id="star-alleles">Star alleles</h2>
+<p>From <a href="https://bredagenetics.com/star-allele-nomenclature/">bredagenetics.com</a> - quote:</p>
+
+<blockquote>
+  <p>“Genetic variants identifiable as pharmacogenomic markers are described by utilizing a special nomenclature, which is not elsewhere used in genetics. It is the so-called star allele nomenclature. In this nomenclature, alleles aren’t identified by their cDNA or genomic position (as it usually happens with all other genetic variants – see HGVS nomenclature), but through the means of numbers and letters, separated from the gene name by a star (star allele nomenclature). For example: CYP3A5*2 identifies the genetic variant in the CYP3A5 gene at the genomic position g.27289C&gt;A, which leads to the amino acid substitution p.T398N. The star allele nomenclature is thought to be faster and easier for non-specialized professionals in identifying important pharmacogenetic alleles, helping them avoid transcription mistakes which may be more frequent by using the standard HGVS nomenclature.</p>
+</blockquote>
+
+<blockquote>
+  <p>“Alleles are marked with a star (*).</p>
+</blockquote>
+
+<blockquote>
+  <p>“A patient with ultrarapid drug metabolism harbors double or multiple copies of an allele with normal or increased functionality, whereas patients with intermediate or poor drug metabolism have one or more alleles with reduced functionality (these alleles are typically consistent with inactivating mutations or large gene deletions). The term extensive metabolizer is used instead to describe those individuals with two standard copies of the normally functional allele. Extensive metabolizers are therefore carrying the wild-type allele, also called consensus allele, which corresponds to the allele *1 in the star allele nomenclature. The numbers *2, *3, *4 and so on represent alleles with altered functionality which may lead to profiles of increased or reduced drug metabolism.</p>
+</blockquote>
+
+<blockquote>
+  <p>“By using one single star allele one can identify not just a single variant, but even a group of variants.”</p>
+</blockquote>
+
+<p>A full list of cytochrome P450 (CYP) alleles with star notation can be found via the
+<a href="https://www.pharmvar.org">Pharmacogene Variation (PharmVar)</a> consortium,
+a central repository for PGx variation that focuses on 
+haplotype structure and allelic variation.</p>
+
+<h1 id="published-example">Published example</h1>
+<p>Taliun et al. [0]
+provide a complementary approach to <em>de novo</em> genome assembly
+by developing approaches that combine multiple types of information including:</p>
+<ul>
+  <li>previously observed haplotype variation</li>
+  <li>SNVs</li>
+  <li>indels</li>
+  <li>copy number and</li>
+  <li>homology information
+to identify and classify haplotypes in interesting regions of the genome.</li>
+</ul>
+
+<p>They illustrate this by focusing on 
+one such region around the <em>CYP2D6</em> gene.
+This encodes an enzyme that metabolizes approximately 25% of prescription drugs 
+and the activity of which varies substantially among individuals [1,5,6].
+More than 150 <em>CYP2D6</em> haplotypes have been described,
+some involving a gene conversion with its nearby non-functional
+but highly similar paralogue <em>CYP2D7</em>.</p>
+
+<p>CYP2D6 interaction (from <a href="miro.medium.com">miro.medium.com</a>):</p>
+
+<p><img src="/images/CYP2D6.png" width="50%" /></p>
+
+<p>They performed <em>CYP2D6</em> haplotype analysis for all 53,831 TOPMed individuals [1,7]
+Called a total of 99 alleles (66 known and 33 novel) representing:</p>
+<ul>
+  <li>increased function,</li>
+  <li>decreased function and</li>
+  <li>loss of function (Supplementary Table 12).</li>
+</ul>
+
+<p>Nineteen known alleles and
+all novel alleles
+were defined by structural variants,
+including complex CYP2D6-CYP2D7 hybrids and
+extensive copy number variation,
+which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
+
+<p><a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03205-y/MediaObjects/41586_2021_3205_MOESM3_ESM.pdf">figures (S27)</a> 
+<img src="/images/FigS27.png" width="100%" /></p>
+
+<blockquote>
+  <p>Supplementary Figure 27. Examples of CYP2D6 star alleles (haplotypes) with structural variation detected by the Stargazer program. Each panel displays Stargazer’s copy number profile (left) and allele fraction profile (right) for an individual sample (N=6). Also shown are CYP2D6 diplotypes and phenotype predictions from Stargazer. Gray dots indicate the sample’s per-base copy number estimates computed from read depth. The navy solid line and the cyan dashed line represent copy number profiles for each haplotype. The red line represents the copy number profile for both haplotypes combined. Navy dots and cyan dots indicate allele fraction estimates computed from allelic read depth for each haplotype. More examples can be found in the Database of Pharmacogenomic Structural Variants or DPSV \url{https://stargazer.gs.washington.edu/stargazerweb/res/dpsv.html}</p>
+</blockquote>
+
+<p><a href="https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03205-y/MediaObjects/41586_2021_3205_MOESM3_ESM.pdf">figures (S28)</a> 
+<img src="/images/FigS28.png" width="100%" /></p>
+
+<blockquote>
+  <p>Supplementary Figure 28. Summary of CYP2D6 haplotype analysis using the Stargazer program. Population-specific frequencies for (A) common CYP2D6 star alleles, (B) haplotype activity, (C) SV-defined haplotypes, and (D) predicted metabolism phenotypes. Abbreviations: hAS, haplotype activity score; dAS, diplotype activity score; N, number; SV, structural variation; del, whole gene deletion; hyb, CYP2D6/CYP2D7 hybrid.</p>
+</blockquote>
+
+<h1 id="references">References</h1>
+<!-- curly-percent bibliography --cited curly-percent -->
+<p>[0]  Taliun, Daniel, et al. Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program. Nature 590.7845 (2021): 290-299.
+<a href="https://doi.org/10.1038/s41586-021-03205-y">https://doi.org/10.1038/s41586-021-03205-y</a>\</p>
+
+<p>[1] Lee, S.-B. et al. Stargazer: a software tool for calling star alleles from next-generation sequencing data using CYP2D6 as a model. Genet. Med. 21, 361–372 (2019).
+<a href="https://doi.org/10.1038/s41436-018-0054-0">https://doi.org/10.1038/s41436-018-0054-0</a></p>
+
+<p>[2] McKenna, A. et al. The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. Genome Res. 20, 1297–1303 (2010).
+<a href="https://www.genome.org/cgi/doi/10.1101/gr.107524.110">https://www.genome.org/cgi/doi/10.1101/gr.107524.110</a></p>
+
+<p>[3] Browning, S. R. &amp; Browning, B. L. Rapid and accurate haplotype phasing and missing-data inference for whole-genome association studies by use of localized haplotype clustering. Am. J. Hum. Genet. 81, 1084–1097 (2007).</p>
+
+<p>[4] Killick, R. &amp; Eckley, I. A. changepoint: an R package for changepoint analysis. J. Stat. Softw. 58, 1–19 (2014).
+<a href="https://eprints.lancs.ac.uk/id/eprint/51975/">https://eprints.lancs.ac.uk/id/eprint/51975/</a></p>
+
+<p>[5] Zhou, S.-F. Polymorphism of human cytochrome P450 2D6 and its clinical significance: part I. Clin. Pharmacokinet. 48, 689–723 (2009).</p>
+
+<p>[6] Crews, K. R. et al. Clinical Pharmacogenetics Implementation Consortium guidelines for cytochrome P450 2D6 genotype and codeine therapy: 2014 update. Clin. Pharmacol. Ther. 95, 376–382 (2014).</p>
+
+<p>[7] Lee, S.-B., Wheeler, M. M., Thummel, K. E. &amp; Nickerson, D. A. Calling star alleles with Stargazer in 28 pharmacogenes with whole genome sequences. Clin. Pharmacol. Ther. 106, 1328–1337 (2019).</p>
+
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+<div class="footer">
+	<div class="contact">
+	<p>
+	<img src="/images/logos/logo_3.0.png" 
+	alt="Logo image" width="99" height="67.1" />
+	</p>
+	</div>
+	<div class="contact">
+		<p>
+		Built by Dylan Lawless
+		<br />
+		Postdoc at
+		<a href="https://people.epfl.ch/dylan.lawless">EPFL</a>
+		<br />
+		<!--dylan( . )lawless( at )epfl( . )ch-->
+		</p>
+	</div>
+	
+	<div class="contact">
+		<p>
+		<a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">google scholar</a><br />
+		<a href="https://dylan-lawless.github.io">Resume</a><br />
+		<img src="https://hitcounter.pythonanywhere.com/count/tag.svg" alt="Hits">
+	</div>
+	
+	</div>
+</div>
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

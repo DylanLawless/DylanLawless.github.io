@@ -52,17 +52,19 @@ var WRInitTime=(new Date()).getTime();
 <ul id="markdown-toc">
   <li><a href="#pharmacogenomics-for-personal-medicine" id="markdown-toc-pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</a></li>
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#running-a-real-example" id="markdown-toc-running-a-real-example">Running a real example</a></li>
+  <li><a href="#preparing-an-example-vcf" id="markdown-toc-preparing-an-example-vcf">Preparing an example VCF</a></li>
   <li><a href="#comparing-annotated-genetic-data-to-drug-lists" id="markdown-toc-comparing-annotated-genetic-data-to-drug-lists">Comparing annotated genetic data to drug lists</a>    <ul>
       <li><a href="#small-example-check-of-gene-list-versus-drug-gene-list" id="markdown-toc-small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</a></li>
     </ul>
   </li>
   <li><a href="#a-real-example-of-merging-genetic-and-pharmacogenomic-data" id="markdown-toc-a-real-example-of-merging-genetic-and-pharmacogenomic-data">A real example of merging genetic and pharmacogenomic data</a></li>
-  <li><a href="#annotation" id="markdown-toc-annotation">Annotation</a></li>
   <li><a href="#drug-indication" id="markdown-toc-drug-indication">Drug indication</a></li>
-  <li><a href="#optimising-vcf-annotation" id="markdown-toc-optimising-vcf-annotation">Optimising VCF annotation</a></li>
-  <li><a href="#how-to-get-coordinates-for-a-gene-list" id="markdown-toc-how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</a></li>
-  <li><a href="#extracting-regions-from-a-vcf-using-a-bed-file" id="markdown-toc-extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</a></li>
+  <li><a href="#annotation" id="markdown-toc-annotation">Annotation</a>    <ul>
+      <li><a href="#optimising-vcf-annotation" id="markdown-toc-optimising-vcf-annotation">Optimising VCF annotation</a></li>
+      <li><a href="#how-to-get-coordinates-for-a-gene-list" id="markdown-toc-how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</a></li>
+      <li><a href="#extracting-regions-from-a-vcf-using-a-bed-file" id="markdown-toc-extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</a></li>
+    </ul>
+  </li>
   <li><a href="#unknown-variants" id="markdown-toc-unknown-variants">Unknown variants</a></li>
   <li><a href="#gene-dosage" id="markdown-toc-gene-dosage">Gene dosage</a></li>
   <li><a href="#drug-indication-1" id="markdown-toc-drug-indication-1">Drug indication</a></li>
@@ -76,9 +78,12 @@ var WRInitTime=(new Date()).getTime();
 Questions that might arise from this information include “do I have potentially disease-causing variants that can be treated with a drug?”, or “am I taking a drug that will be affected by my genetics?”.
 To tackle such questions with an example, we use public data in combination with pharmacogenomics.
 Outside of genotype data (offered by <a href="https://www.23andme.com">23andMe</a> for example), the most common file type will be VCF:
-<a href="https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it">What is a vcf and how should I interpret it?</a>.</p>
+<a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format">What is a vcf and how should I interpret it?</a>.</p>
 
-<p>Here is a data source with different genetic data files.
+<p>As an example input, try download Craig Venter’s genome VCF:
+<a href="ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz">ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz</a>.</p>
+
+<p>When I wrote this post, I used a data source with different genetic data files;
 <a href="https://my.pgp-hms.org/public_genetic_data">https://my.pgp-hms.org/public_genetic_data</a>.
 To check that it works OK, I tried a quick version of this challenge.
 I picked the first whole genome VCF file that I saw (hu24385B 2019-04-07.vcf.g_z)
@@ -97,7 +102,7 @@ Split the file and run in batches to save time.
 Here I tried the first ~1800 variants.</p>
 
 <p><br />
-<code class="highlighter-rouge">head -2000 56001801068861_WGZ.snp.vcf &gt; test.vcf</code></p>
+<code class="language-plaintext highlighter-rouge">head -2000 56001801068861_WGZ.snp.vcf &gt; test.vcf</code></p>
 
 <p><br />
 And then annotated that extract with <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor.</a>
@@ -111,12 +116,17 @@ Make certain that you use the same reference genome as used on the input data.
 The VCF file was made using reference genome GRCh37.
 Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).</p>
 
-<h1 id="running-a-real-example">Running a real example</h1>
-<p>If you would like to try this using a whole genome using the Ensembl web interface you will need to split your VCF into smaller block first.
-For routine usage the command-line version of VEP and it’s databases should be installed on run locally.
-There are several bioinformatics tools that are commonly used for manipulating genetic file formats such as VCFtools. 
-To get a real understanding of the data type, I inlcude here a method using command line bash to split a VCF file into smaller blocks. 
-A bash script is printed below where I use very mainstream traditional command-line tools to wrangle data, including 
+<h1 id="preparing-an-example-vcf">Preparing an example VCF</h1>
+<p>If you would like to try this using a whole genome using the Ensembl web 
+interface you will need to split your VCF into smaller block first.
+For routine usage the command-line version of VEP and it’s databases should be 
+installed on run locally.
+There are several bioinformatics tools that are commonly used for manipulating 
+genetic file formats such as VCFtools. 
+To get a real understanding of the data type, I inlcude here a method using 
+command line bash to split a VCF file into smaller blocks. 
+A bash script is printed below where I use very mainstream traditional 
+command-line tools to wrangle data, including 
 <a href="https://en.wikipedia.org/wiki/Gzip">gunzip</a>
 to unzip compressed files, 
 <a href="https://en.wikipedia.org/wiki/wc_(Unix)">wc</a>
@@ -134,61 +144,61 @@ which is not used here but it fits well with these other tools - for text search
 Creating a file containing the code below and ending with the filename extension with “.sh” will allow it to be run by your terminal, in this case using the bash language.
 I encourage you to read each line and figure out what should happen. If it makes sense then it is reasonable to swap such a manual method with a more efficient specialised tool.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-<span class="c"># VEP accept files of &lt;50MB size.</span>
-<span class="c"># We will split our large VCF into smaller files.</span>
-<span class="c"># Each file requires the same original </span>
-<span class="c"># headers and file extension ".vcf"</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+# VEP accept files of &lt;50MB size.
+# We will split our large VCF into smaller files.
+# Each file requires the same original 
+# headers and file extension ".vcf"
 
-<span class="c"># Unzip the VCF.gz</span>
-<span class="nb">gunzip </span>56001801068861_WGZ.snp.vcf.gz
+# Unzip the VCF.gz
+gunzip 56001801068861_WGZ.snp.vcf.gz
 
-<span class="c"># Count the number of lines in vcf</span>
-<span class="nb">wc</span> <span class="nt">-l</span> 56001801068861_WGZ.snp.vcf
+# Count the number of lines in vcf
+wc -l 56001801068861_WGZ.snp.vcf
 
-<span class="c"># How should a vcf file look?</span>
-<span class="c"># See the links posted in this tutorial above</span>
+# How should a vcf file look?
+# See the links posted in this tutorial above
 
-<span class="c"># Take a look at the header</span>
-<span class="c"># This VCF has 140 lines of header metadata (beginning with "#")</span>
-<span class="c"># Line 141 shows the column headers: CHROM	POS	ID	REF	ALT...</span>
-<span class="c"># Line 142 starts with the first variant</span>
-<span class="nb">head</span> <span class="nt">-142</span> 56001801068861_WGZ.snp.vcf
+# Take a look at the header
+# This VCF has 140 lines of header metadata (beginning with "#")
+# Line 141 shows the column headers: CHROM	POS	ID	REF	ALT...
+# Line 142 starts with the first variant
+head -142 56001801068861_WGZ.snp.vcf
 
-<span class="c"># Print the header to a new file for later</span>
-<span class="nb">head</span> <span class="nt">-141</span> 56001801068861_WGZ.snp.vcf <span class="o">&gt;</span> header
-<span class="c"># Print everything else (the body) to </span>
-<span class="c"># a new file that we will then split.</span>
-<span class="nb">sed</span> <span class="s1">'1,141d'</span> 56001801068861_WGZ.snp.vcf <span class="o">&gt;</span> body.vcf
+# Print the header to a new file for later
+head -141 56001801068861_WGZ.snp.vcf &gt; header
+# Print everything else (the body) to 
+# a new file that we will then split.
+sed '1,141d' 56001801068861_WGZ.snp.vcf &gt; body.vcf
 
-<span class="c"># Make a new directory for the next step</span>
-<span class="nb">mkdir </span>split_files
-<span class="c"># Move the large file inside</span>
-<span class="nb">mv </span>body.vcf split_files/
-<span class="nb">cd </span>split_files
-<span class="c"># Now split the body.vcf into smaller </span>
-<span class="c"># files of 200,000 lines each</span>
-<span class="nb">split</span> <span class="nt">-l</span> 150000 body.vcf
+# Make a new directory for the next step
+mkdir split_files
+# Move the large file inside
+mv body.vcf split_files/
+cd split_files
+# Now split the body.vcf into smaller 
+# files of 200,000 lines each
+split -l 150000 body.vcf
 
-<span class="c"># You will now how ~10 files "xaa, xab, etc."</span>
-<span class="c"># Add the header back onto all of these files to make them VCFs again.</span>
-<span class="c"># This "for loop" will do the following for each file:</span>
-<span class="c"># Print the header and the vcf body to </span>
-<span class="c"># a file with the same name, </span>
-<span class="c"># adding a file extension ".vcf".</span>
-<span class="c"># Then remove the vcf body file that </span>
-<span class="c"># does not have the ".vcf" extension</span>
-<span class="c"># leaving you with the original whole genome VCF split</span>
-<span class="c"># into smaller files, each with the same headers.</span>
+# You will now how ~10 files "xaa, xab, etc."
+# Add the header back onto all of these files to make them VCFs again.
+# This "for loop" will do the following for each file:
+# Print the header and the vcf body to 
+# a file with the same name, 
+# adding a file extension ".vcf".
+# Then remove the vcf body file that 
+# does not have the ".vcf" extension
+# leaving you with the original whole genome VCF split
+# into smaller files, each with the same headers.
 
-<span class="k">for </span>file <span class="k">in</span> ./x<span class="k">*</span> <span class="p">;</span> 
-    <span class="k">do </span><span class="nb">cat</span> ../header <span class="nv">$file</span> <span class="o">&gt;&gt;</span> <span class="nv">$file</span>.vcf <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nv">$file</span> <span class="p">;</span>
-<span class="k">done</span>
+for file in ./x* ; 
+    do cat ../header $file &gt;&gt; $file.vcf &amp;&amp; rm $file ;
+done
 
-<span class="c"># These should be small enough to run on VEP online.</span>
-<span class="c"># You could edit the split command to make a </span>
-<span class="c"># reasonable number of files, </span>
-<span class="c"># uploading &gt;10 is not efficient.</span>
+# These should be small enough to run on VEP online.
+# You could edit the split command to make a 
+# reasonable number of files, 
+# uploading &gt;10 is not efficient.
 
 </code></pre></div></div>
 
@@ -339,14 +349,6 @@ There are many layers to a this problem to create a usable product.
 For example, how to integrate pharmacodynamics, covariats to drug response, contraindications, variant pathogenicity, etc.
 However, this is a good start as a learning experience.</p>
 
-<h1 id="annotation">Annotation</h1>
-<p><a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> is very useful.
-Note: For a real product, the code can run offline (a perl program with a few local library dependencies).
-The databases/cache that it uses are a bit too large to include on in a user software.
-In the real world you would have to send <em>anonymised</em> packets from the user via an API for accessing the genomic databases hosted on your servers.
-Make sure to check their license to see if you can use oftware and databases in a commercial product.<br />
-<a href="http://www.ensembl.org/info/about/legal/code_licence.html">http://www.ensembl.org/info/about/legal/code_licence.html</a></p>
-
 <h1 id="drug-indication">Drug indication</h1>
 <p>My example used <a href="https://www.drugbank.ca">DrugBank</a> for pharmacogenomic information.
 However, it may be safest to use the <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">FDA information</a> as the primary source, but including <a href="https://www.drugbank.ca">DrugBank</a> info is no problem.
@@ -381,12 +383,63 @@ With this in mind, perhaps an application doing this job could work two ways.
 (1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
 (2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.</p>
 
-<h1 id="optimising-vcf-annotation">Optimising VCF annotation</h1>
+<h1 id="annotation">Annotation</h1>
+<p><a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor (VEP)</a> is very useful.
+During variant annotation, VEP supplies a “consequence” column.
+Consequences are general and based on translation of genetic code in humans. 
+The Loss-of-function (LoF) consequence is the simplest example (splice, stop mutations).
+The variant consequence may be one of the defining criteria by which variants can 
+be included in analysis since they are <em>interpretable</em> or of ostensibly <em>known significance</em>.
+<em>Note: Using this alone could introduce spurious results so it is  best to have a solid criteria 
+for selecting consequences of interest</em>.
+The consequences provided by VEP are too long to discuss in detail here.
+The table from the ensembl website is worth reading; the HIGH impact variants 
+might be a simple method for selecting candidates:
+<a href="https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences">Ensembl Variation - Calculated variant consequences</a>.<br />
+<img src="/images/VEP_consequences.jpg" width="100%" /></p>
+
+<p><em>Note: For a real product, the code should be run offline (a perl program with a few local library dependencies). The databases/cache that it uses are a bit too large to include on in a user software. In the real world you would have to send anonymised packets from the user via an API for accessing the genomic databases hosted on your servers. Make sure to check their license to see if you can use oftware and databases in a commercial product</em>.
+<a href="http://www.ensembl.org/info/about/legal/code_licence.html">http://www.ensembl.org/info/about/legal/code_licence.html</a></p>
+
+<p>Running the software:</p>
+
+<ul>
+  <li>Using VEP is a vital part of converting the DNA variant information (genome position and nucleotide change) into annotated variant effects (protein coding change, gene name, predicted pathogenicity).</li>
+  <li>It requires the VEP code to run and requires a copy of the database files (reference genome, gene information, etc.).</li>
+  <li>You can upload a small number of variants to the online VEP web server to do this, or you can download the database and code to run on your own computer/server.</li>
+</ul>
+
+<p>So to process your customer/patient data, you have to choose one of these methods:</p>
+
+<ol>
+  <li>Customer must upload their entire file to your server that runs VEP (1GB - 30GB per individual genome data).</li>
+  <li>Customer must download the database and VEP code to run on their own computer (complex and large download for them, not recommended).</li>
+</ol>
+
+<p>Number 1 is better. But sending one large file often has problems.
+If they have a VCF file, you could:</p>
+
+<ul>
+  <li>Break it into small equal sized blocks to upload the data to you. Anonymisation is normal for all internet connections now, but you could just mention that some method of anonymising these blocks is important since someone “hacker” might try to steal information if most of the network data being sent to you contains small VCF format files.</li>
+  <li>You could also run a very small piece of code on the cusotmers software application that could extract just the main parts of the VCF file that you need, instead of sending everything. This is explained in sections 7-9. You could say this, but don’t need to actually have working. i.e. the drugbank information only includes a certain number of human genes so perhaps you could just extract these using a list of genome coordinates before processing with VEP.</li>
+</ul>
+
+<p>For the license:</p>
+
+<ul>
+  <li>Anyone is free to download and use VEP code.</li>
+  <li>However, if you modify or reuse the code commercially it might affect the possibility of getting a patent for your product.</li>
+  <li>Your product uses VEP as an intermediate step, so you probably only need to include credit, or other legal info to say you have used it.</li>
+  <li>If there were a reason to prevent you using the software commercially, you might be able to make a simple replacement that could give the minimum outputs that you need - gene name and mutation type. If the topic happens to interest you, you can read about <a href="https://en.wikipedia.org/wiki/Reverse_engineering#Software">reverse engineering software</a>.</li>
+  <li>As an aside, you could also decide that you don’t want to commercialise and offer this tool for free which would prevent bigger companies (like Google) from offering this service in return for harvesting the public’s genetic data.</li>
+</ul>
+
+<h2 id="optimising-vcf-annotation">Optimising VCF annotation</h2>
 <p>The slowest part of the method is VCF annotation.
 You can significantly increase the speed by first reducing the input to contain only regions of interst.
 That is, prepare a list of coordinates for each gene, and select for those regions in your input VCF or genotype data before annotation (VEP).</p>
 
-<h1 id="how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</h1>
+<h2 id="how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</h2>
 <p>Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:<br />
 <a href="http://www.ensembl.org/info/data/biomart/index.html">http://www.ensembl.org/info/data/biomart/index.html</a><br />
@@ -408,7 +461,7 @@ You would have to figure out how to extract the regions from the vcf (sed, grep,
 When I needed this, I used my own tools which required converting to format like this “X:1-2000”, and ordered by number and alphabetic (some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
 If you use this list to extract regions from a VCF, remember to include all the original VCF header information.</p>
 
-<h1 id="extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</h1>
+<h2 id="extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</h2>
 <p>The early part of this tutorial shows how old-school command line tools can be used to extract data. 
 Indeed, this may be computationally most efficient but there are some specialised tools that make the process easier in general.
 You can use VCFtools to extract specified regions.<br />
