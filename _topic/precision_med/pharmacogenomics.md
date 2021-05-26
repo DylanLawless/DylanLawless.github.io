@@ -83,7 +83,7 @@ which is not used here but it fits well with these other tools - for text search
 Creating a file containing the code below and ending with the filename extension with ".sh" will allow it to be run by your terminal, in this case using the bash language.
 I encourage you to read each line and figure out what should happen. If it makes sense then it is reasonable to swap such a manual method with a more efficient specialised tool. 
 
-```
+``` bash
 #!/bin/bash
 # VEP accept files of <50MB size.
 # We will split our large VCF into smaller files.

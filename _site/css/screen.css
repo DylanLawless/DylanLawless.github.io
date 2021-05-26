@@ -1,20 +1,11 @@
 /*********************************/
-/*********************************/
 /* Common */
 /*********************************/
-/*********************************/
 
-/* This should allow the page to resize but not fully sure yet. */
-/* <meta name="viewport" content="width=device-width, initial-scale=1"> */
-
-/* font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana; */
-/* font: 21px Baskerville, Arial; */
-/* font-family: Baskerville,'Helvetica Neue', Arial; */
-/* margin: 1px; */
 body {
 	background-color: white;
 	font-family: Baskerville;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	position: relative;
 	text-align: justify;
 	display: flex;
@@ -29,18 +20,15 @@ code {
 	word-wrap: break-word;
     }
 
-/* font: 1.2rem Roboto, Arial, "Lucida Grande", garamond, palatino, verdana; */
-/* font-size: 100%; */
 h1 {
-  font: 1.5rem 'Helvetica';
+  font: 1.5rem 'Didot';
 }
 
-/* font-size: 100%; */
 h2, h3, h4, h5, h6 {
-  font: 1.5rem 'Helvetica';
+  font: 1.5rem 'Didot';
+  font-style: italic;
 }
 
-	
 #header {
     margin-bottom: 1rem;
 }
@@ -50,53 +38,22 @@ div#header h1 {
     border-bottom: 1rem solid #aaa;
 }
 
-/*
-div#description { font-size: 95%; }
-div#tags, div#page-created, div#last-modified, div#license { font-size: 80%; }
-*/
-
-/* uppercase page title, all section headers; see A/B tests */
-/* h1, h2, h3, h4, h5 { text-transform: uppercase; } */
-
+/* Space after title 1 */
 h1, h2 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-} /* this is thw space after title 1 */
-
-/* test
-div#content {
-    margin-left: 200px;
-    padding-left: 0;
-    line-height: 130%; 
-}
-*/
+} 
 
 a {
     color: #303C3C; /* off-black */
     text-decoration: underline;
 }
+
+/* Grey underlining */
 div#content a {
-    /* how we implement grey underlining:
-       http://devhints.wordpress.com/2006/10/24/css-links-with-different-color-underlines/ */
     text-decoration: none;
     border-bottom: 1px Solid grey;
 }
-
-/* Set a paragraph indent 
-p { margin-top: 1.0em;
-    margin-bottom: 1 }
-p + p {
-  text-indent: 1.5em;
-  margin-top: 1 }
-
-p.hang { text-indent: -0.44em }
-*/
-
-/*
-p {
-  margin: 1em 1;
-} */
- /* this is the space after paragraph */
 
 a {
   color: #c13e3e;
@@ -109,7 +66,6 @@ a:hover {
 a:visited {
   color: #267979;
 }
-/* link color 00a, visited color 202020 */
 
 table {
   font-size: inherit;
@@ -117,46 +73,21 @@ table {
 }
 
 /*********************************/
-/*********************************/
-/* Home
-/*********************************/
-/*********************************/
-/*
-ul.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
-}
-
-  ul.posts li {
-    line-height: 1.75em;
-  }
-
-  ul.posts span {
-    color: #aaa;
-    font-family: Baskerville, Monaco, "Courier New", monospace;
-    font-size: 100%;
-  }
-  */
-
-/*********************************/
-/*********************************/
 /* Site
-/*********************************/
 /*********************************/
 
 /*  text-align: justify; */
-
 .site {
   text-align: left;
   width: 50rem;
-  max-width: 85%;
+  max-width: 90%;
   margin: 1rem auto 1rem auto;
   line-height: 2rem;
 }
 
 .title {
   color: #a00;
-  font-size: 150%;
+  font-size: 120%;
   font-weight: medium;
   margin-bottom: 1rem;
 }
@@ -212,105 +143,8 @@ ul.posts {
       }
 
 /*********************************/
-/*********************************/
-/* Posts
-/*********************************/
-/*********************************/
-
-#post {
-
-}
-
-  /*  
-
-div#TOC {
-    float: left;
-    width: 20%;
-    background: #eee;
-    margin-right: 20px; /* Force a margin big enough that bulleted items won't overlap the blue-shaded area of the ToC */
-/*} */
-/* div#TOC li {
-    list-style-type: none;
-    margin-right: 0px; padding-right: 0px;
-}
-div#TOC ul li ul li {
-    position: relative;
-    left: -15px
-}
-div#TOC ul { margin-left: 0px; padding-left: 0px; }
-div#TOC ul ul { margin-left: 1em; padding-left: 1em; }
-*/
-
-
-/*  #post pre {
-    border: 1px solid #ddd;
-    background-color: #eef;
-    padding: 0 .4em;
-  }
-  */
-/*
-  #post ul,
-  #post ol {
-    margin-left: 1.35em;
-  }
-  */
-
-
-/*    #post pre code {
-      border: none;
-    }
-*/
-
-/*
-pre code {
-    display: block;
-    padding: 8px;
-    margin-bottom: 2em;
-}
-*/
-
-p.caption {
-    display: none;
-}
-
-  #post img {
-    max-width: 80%;
-    padding: 1rem 0;
-  }
-
-  /* terminal */
-/*
-  #post pre.terminal {
-    border: 1px solid black;
-    background-color: #333;
-    color: white;
-  }
-
-  #post pre.terminal code {
-    background-color: #333;
-  }
-
-#related {
-  margin-top: 2em;
-}
-
-  #related h2 {
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-*/
-/*********************************/
-/*********************************/
 /* Table of contents */
 /*********************************/
-/*********************************/
-
-/* "Contents header of TOC
-#markdown-toc::before {
-    content: "Contents";
-    font-weight: bold;
-}
-*/
 
 #markdown-toc ul {
     list-style: indent;
@@ -324,3 +158,4 @@ p.caption {
     display: inline-block;
     background: #eee;
 }
+
