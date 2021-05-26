@@ -6,6 +6,8 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
    <!--  -->
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -144,61 +146,61 @@ which is not used here but it fits well with these other tools - for text search
 Creating a file containing the code below and ending with the filename extension with “.sh” will allow it to be run by your terminal, in this case using the bash language.
 I encourage you to read each line and figure out what should happen. If it makes sense then it is reasonable to swap such a manual method with a more efficient specialised tool.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
-# VEP accept files of &lt;50MB size.
-# We will split our large VCF into smaller files.
-# Each file requires the same original 
-# headers and file extension ".vcf"
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># VEP accept files of &lt;50MB size.</span>
+<span class="c"># We will split our large VCF into smaller files.</span>
+<span class="c"># Each file requires the same original </span>
+<span class="c"># headers and file extension ".vcf"</span>
 
-# Unzip the VCF.gz
-gunzip 56001801068861_WGZ.snp.vcf.gz
+<span class="c"># Unzip the VCF.gz</span>
+<span class="nb">gunzip </span>56001801068861_WGZ.snp.vcf.gz
 
-# Count the number of lines in vcf
-wc -l 56001801068861_WGZ.snp.vcf
+<span class="c"># Count the number of lines in vcf</span>
+<span class="nb">wc</span> <span class="nt">-l</span> 56001801068861_WGZ.snp.vcf
 
-# How should a vcf file look?
-# See the links posted in this tutorial above
+<span class="c"># How should a vcf file look?</span>
+<span class="c"># See the links posted in this tutorial above</span>
 
-# Take a look at the header
-# This VCF has 140 lines of header metadata (beginning with "#")
-# Line 141 shows the column headers: CHROM	POS	ID	REF	ALT...
-# Line 142 starts with the first variant
-head -142 56001801068861_WGZ.snp.vcf
+<span class="c"># Take a look at the header</span>
+<span class="c"># This VCF has 140 lines of header metadata (beginning with "#")</span>
+<span class="c"># Line 141 shows the column headers: CHROM	POS	ID	REF	ALT...</span>
+<span class="c"># Line 142 starts with the first variant</span>
+<span class="nb">head</span> <span class="nt">-142</span> 56001801068861_WGZ.snp.vcf
 
-# Print the header to a new file for later
-head -141 56001801068861_WGZ.snp.vcf &gt; header
-# Print everything else (the body) to 
-# a new file that we will then split.
-sed '1,141d' 56001801068861_WGZ.snp.vcf &gt; body.vcf
+<span class="c"># Print the header to a new file for later</span>
+<span class="nb">head</span> <span class="nt">-141</span> 56001801068861_WGZ.snp.vcf <span class="o">&gt;</span> header
+<span class="c"># Print everything else (the body) to </span>
+<span class="c"># a new file that we will then split.</span>
+<span class="nb">sed</span> <span class="s1">'1,141d'</span> 56001801068861_WGZ.snp.vcf <span class="o">&gt;</span> body.vcf
 
-# Make a new directory for the next step
-mkdir split_files
-# Move the large file inside
-mv body.vcf split_files/
-cd split_files
-# Now split the body.vcf into smaller 
-# files of 200,000 lines each
-split -l 150000 body.vcf
+<span class="c"># Make a new directory for the next step</span>
+<span class="nb">mkdir </span>split_files
+<span class="c"># Move the large file inside</span>
+<span class="nb">mv </span>body.vcf split_files/
+<span class="nb">cd </span>split_files
+<span class="c"># Now split the body.vcf into smaller </span>
+<span class="c"># files of 200,000 lines each</span>
+<span class="nb">split</span> <span class="nt">-l</span> 150000 body.vcf
 
-# You will now how ~10 files "xaa, xab, etc."
-# Add the header back onto all of these files to make them VCFs again.
-# This "for loop" will do the following for each file:
-# Print the header and the vcf body to 
-# a file with the same name, 
-# adding a file extension ".vcf".
-# Then remove the vcf body file that 
-# does not have the ".vcf" extension
-# leaving you with the original whole genome VCF split
-# into smaller files, each with the same headers.
+<span class="c"># You will now how ~10 files "xaa, xab, etc."</span>
+<span class="c"># Add the header back onto all of these files to make them VCFs again.</span>
+<span class="c"># This "for loop" will do the following for each file:</span>
+<span class="c"># Print the header and the vcf body to </span>
+<span class="c"># a file with the same name, </span>
+<span class="c"># adding a file extension ".vcf".</span>
+<span class="c"># Then remove the vcf body file that </span>
+<span class="c"># does not have the ".vcf" extension</span>
+<span class="c"># leaving you with the original whole genome VCF split</span>
+<span class="c"># into smaller files, each with the same headers.</span>
 
-for file in ./x* ; 
-    do cat ../header $file &gt;&gt; $file.vcf &amp;&amp; rm $file ;
-done
+<span class="k">for </span>file <span class="k">in</span> ./x<span class="k">*</span> <span class="p">;</span> 
+    <span class="k">do </span><span class="nb">cat</span> ../header <span class="nv">$file</span> <span class="o">&gt;&gt;</span> <span class="nv">$file</span>.vcf <span class="o">&amp;&amp;</span> <span class="nb">rm</span> <span class="nv">$file</span> <span class="p">;</span>
+<span class="k">done</span>
 
-# These should be small enough to run on VEP online.
-# You could edit the split command to make a 
-# reasonable number of files, 
-# uploading &gt;10 is not efficient.
+<span class="c"># These should be small enough to run on VEP online.</span>
+<span class="c"># You could edit the split command to make a </span>
+<span class="c"># reasonable number of files, </span>
+<span class="c"># uploading &gt;10 is not efficient.</span>
 
 </code></pre></div></div>
 
