@@ -6,7 +6,7 @@ body {
 	text-align: justify;
 	display: flex;
 	justify-content: center;
-	overflow-wrap:normal;
+	overflow-wrap: anywhere;
 	color: #303c3c;
 }
 
