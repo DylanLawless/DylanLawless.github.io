@@ -944,8 +944,8 @@ In theory it sound good but there is no real evidence.</p>
 
 <p>Main problems here:</p>
 
-<p>One count per gene (as data$CARRIER in analysis) presumes that any variant (homozygous or heterozyous, compound het, etc) is deleterious in the individual.
-In restricted to LoF then OK, but missense variants are included in the study (and will usually be the majory of candidates).
+<p>One count per gene (as data$CARRIER in analysis) presumes that any variant (homozygous or heterozygous, compound het, etc) is deleterious in the individual.
+In restricted to LoF then OK, but missense variants are included in the study (and will usually be the majority of candidates).
 Filters are applied to get a high quality list, but there will still be a majority of missense VUS.</p>
 
 <p>In the section “Application to an HSE cohort (V): 
@@ -954,41 +954,42 @@ while their method is actually more similar to a burden test since they are labe
 This is just a terminology error but it indicates that maybe the key differences in pathway testing have not been considered, as written up here in our review.</p>
 
 <p>One could argue that only counting once per gene could help prevent problems due to LD.
-Although, the WES/WGS data would have the phasing information included to prune out LD if that was the arguement.
+Although, the WES/WGS data would have the phasing information included to prune out LD if that was the argument.
 Basically, I think this is just a simplification rather than an advantage. 
 If SKAT had happened to work better they would have used those results.</p>
 
 <p>e.g. In Fig 3, TLR3 variants = 7 cases, 1 Hom, 9 Het.
 This seems to amount to a carrier status of 7 in their dataset for the glm and fisher exact.</p>
 
-<p>Thir main analysis:</p>
+<p>Their main analysis:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># call R command to run pc-adj enrichment
-ro.r("data &lt;- read.table('temp_pc.txt', header=T, sep='\t')")
-ro.r("fit &lt;- glm(data$PHENOTYPE ~ data$CARRIER+data$PC1+data$PC2+data$PC3, family='binomial')")
-ro.r("adjusted.pval &lt;- anova(fit, test='LRT')[2, 5]")
-r_pvalue = ro.r("adjusted.pval")
-pvalue = r_pvalue[0]
-pvalue = float('%.3E' % Decimal(pvalue))
-file_out.write(str(pvalue) + '\t')
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># call R command to run pc-adj enrichment</span>
+ro.r<span class="o">(</span><span class="s2">"data &lt;- read.table('temp_pc.txt', header=T, sep='</span><span class="se">\t</span><span class="s2">')"</span><span class="o">)</span>
+ro.r<span class="o">(</span><span class="s2">"fit &lt;- glm(data</span><span class="nv">$PHENOTYPE</span><span class="s2"> ~ data</span><span class="nv">$CARRIER</span><span class="s2">+data</span><span class="nv">$PC1</span><span class="s2">+data</span><span class="nv">$PC2</span><span class="s2">+data</span><span class="nv">$PC3</span><span class="s2">, family='binomial')"</span><span class="o">)</span>
+ro.r<span class="o">(</span><span class="s2">"adjusted.pval &lt;- anova(fit, test='LRT')[2, 5]"</span><span class="o">)</span>
+r_pvalue <span class="o">=</span> ro.r<span class="o">(</span><span class="s2">"adjusted.pval"</span><span class="o">)</span>
+pvalue <span class="o">=</span> r_pvalue[0]
+pvalue <span class="o">=</span> float<span class="o">(</span><span class="s1">'%.3E'</span> % Decimal<span class="o">(</span>pvalue<span class="o">))</span>
+file_out.write<span class="o">(</span>str<span class="o">(</span>pvalue<span class="o">)</span> + <span class="s1">'\t'</span><span class="o">)</span>
 
-# pathway enrichment
-this_case_pathway_hit = dict()
-for each_pathway in pathway_gene_set_dict.keys():
-	pathway_gene_set = pathway_gene_set_dict[each_pathway]
-	case_pathway_overlap = this_case_gene_set &amp; pathway_gene_set
-	case_in = len(case_pathway_overlap)
-	case_out = len(this_case_gene_set) - case_in
-	pathway_in = len(pathway_gene_set)
-	pathway_out = len(pathway_genes) - pathway_in
-	if case_in != 0:
-		odd, pvalue = stats.fisher_exact([[case_in, case_out], [pathway_in, pathway_out]], alternative='two-sided')
-		adj_pvalue = pvalue * pathway_size
-		if adj_pvalue &lt; 0.00001:
-			adj_pvalue = float('%.3E' % Decimal(adj_pvalue))
-			this_case_pathway_hit[each_pathway] = adj_pvalue
+<span class="c"># pathway enrichment</span>
+this_case_pathway_hit <span class="o">=</span> dict<span class="o">()</span>
+<span class="k">for </span>each_pathway <span class="k">in </span>pathway_gene_set_dict.keys<span class="o">()</span>:
+	pathway_gene_set <span class="o">=</span> pathway_gene_set_dict[each_pathway]
+	case_pathway_overlap <span class="o">=</span> this_case_gene_set &amp; pathway_gene_set
+	case_in <span class="o">=</span> len<span class="o">(</span>case_pathway_overlap<span class="o">)</span>
+	case_out <span class="o">=</span> len<span class="o">(</span>this_case_gene_set<span class="o">)</span> - case_in
+	pathway_in <span class="o">=</span> len<span class="o">(</span>pathway_gene_set<span class="o">)</span>
+	pathway_out <span class="o">=</span> len<span class="o">(</span>pathway_genes<span class="o">)</span> - pathway_in
+	<span class="k">if </span>case_in <span class="o">!=</span> 0:
+		odd, pvalue <span class="o">=</span> stats.fisher_exact<span class="o">([[</span>case_in, case_out], 
+		<span class="o">[</span>pathway_in, pathway_out]], <span class="nv">alternative</span><span class="o">=</span><span class="s1">'two-sided'</span><span class="o">)</span>
+		adj_pvalue <span class="o">=</span> pvalue <span class="k">*</span> pathway_size
+		<span class="k">if </span>adj_pvalue &lt; 0.00001:
+			adj_pvalue <span class="o">=</span> float<span class="o">(</span><span class="s1">'%.3E'</span> % Decimal<span class="o">(</span>adj_pvalue<span class="o">))</span>
+			this_case_pathway_hit[each_pathway] <span class="o">=</span> adj_pvalue
 
-# They do not show any code with the SKAT paramaters, presumably defaults using R.
+<span class="c"># They do not show any code with the SKAT paramaters, presumably defaults using R.</span>
 </code></pre></div></div>
 
 </div>
