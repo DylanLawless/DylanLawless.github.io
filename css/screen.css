@@ -1,32 +1,36 @@
-/*********************************/
 /* Common */
-/*********************************/
-
 body {
-	background-color: white;
 	font-family: Baskerville;
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	position: relative;
 	text-align: justify;
 	display: flex;
 	justify-content: center;
 	overflow-wrap:normal;
+	color: #303c3c;
 }
 
 code {
-	display: block; 
-    font-family: $Monospace;
-    font-size: 1.0rem;
+	display: block;
+	background: #ececec;
+	font-family: monospace;
+	white-space: pre-wrap;
+	max-width: 100%;
+	min-width: 100px;
 	word-wrap: break-word;
-    }
+	font-size: 80%;
+	line-height: 1.4rem;
+}
 
 h1 {
   font: 1.5rem 'Didot';
+  color: black;
 }
 
 h2, h3, h4, h5, h6 {
   font: 1.5rem 'Didot';
   font-style: italic;
+  color: black;
 }
 
 #header {
@@ -72,14 +76,11 @@ table {
   font: 100%;
 }
 
-/*********************************/
-/* Site
-/*********************************/
-
+/* Site */
 /*  text-align: justify; */
 .site {
   text-align: left;
-  width: 50rem;
+  width: 45rem;
   max-width: 90%;
   margin: 1rem auto 1rem auto;
   line-height: 2rem;
@@ -142,10 +143,7 @@ table {
         border: 0;
       }
 
-/*********************************/
 /* Table of contents */
-/*********************************/
-
 #markdown-toc ul {
     list-style: indent;
 }
