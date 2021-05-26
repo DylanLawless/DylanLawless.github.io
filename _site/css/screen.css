@@ -27,7 +27,7 @@ code {
 	display: block; 
     font-family: $Monospace;
     font-size: 1.0rem;
-	word-wrap: anywhere;
+	word-wrap: break-word;
     }
 
 /* 
