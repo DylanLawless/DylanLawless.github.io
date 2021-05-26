@@ -630,7 +630,7 @@ This seems to amount to a carrier status of 7 in their dataset for the glm and f
 
 Their main analysis:
 
-```
+``` bash
 # call R command to run pc-adj enrichment
 ro.r("data <- read.table('temp_pc.txt', header=T, sep='\t')")
 ro.r("fit <- glm(data$PHENOTYPE ~ data$CARRIER+data$PC1+data$PC2+data$PC3, family='binomial')")
@@ -650,7 +650,8 @@ for each_pathway in pathway_gene_set_dict.keys():
 	pathway_in = len(pathway_gene_set)
 	pathway_out = len(pathway_genes) - pathway_in
 	if case_in != 0:
-		odd, pvalue = stats.fisher_exact([[case_in, case_out], [pathway_in, pathway_out]], alternative='two-sided')
+		odd, pvalue = stats.fisher_exact([[case_in, case_out], 
+		[pathway_in, pathway_out]], alternative='two-sided')
 		adj_pvalue = pvalue * pathway_size
 		if adj_pvalue < 0.00001:
 			adj_pvalue = float('%.3E' % Decimal(adj_pvalue))

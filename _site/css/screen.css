@@ -4,41 +4,73 @@
 /*********************************/
 /*********************************/
 
+/* This should allow the page to resize but not fully sure yet. */
+/* <meta name="viewport" content="width=device-width, initial-scale=1"> */
+
 /* font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana; */
+/* font: 21px Baskerville, Arial; */
+/* font-family: Baskerville,'Helvetica Neue', Arial; */
+/* margin: 1px; */
 body {
-    margin: 1px;
 	background-color: white;
-	font: 21px Baskerville, Arial;
+	font-family: Baskerville;
+	font-size: 1.3rem;
+	position: relative;
 	text-align: justify;
 	display: flex;
 	justify-content: center;
 	overflow-wrap:normal;
+  position: relative;
 }
-
-/* This should allow the page to resize but not fully sure yet. */
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 code {
-      font-family: $Monospace;
-        font-size: 0.8em;
-		word-wrap: anywhere;
+	display: block; 
+    font-family: $Monospace;
+    font-size: 1.0rem;
+	word-wrap: anywhere;
     }
 
-/* font: 1.2em Roboto, Arial, "Lucida Grande", garamond, palatino, verdana; */
+/* 
+p {
+  line-height: 1.5;
+    margin: 1.875rem 0;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 800;
+  line-height: 1.1;
+  }
+  h1 {
+    font-size: 2.25rem;
+}
+h2 {
+  font-size: 1.875rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.125rem;
+  }
+  h1, h2, h3, h4 {
+    margin-top: 1.25rem;
+}
+*/ 
+
+/* font: 1.2rem Roboto, Arial, "Lucida Grande", garamond, palatino, verdana; */
+/* font-size: 100%; */
 h1 {
-  font-size: 100%;
-  font: 1.2em "Open sans", Arial, Baskerville ;
+  font: 1.3rem 'Helvetica';
 }
 
+/* font-size: 100%; */
 h2, h3, h4, h5, h6 {
-  font-size: 100%;
-  font: 1.0em "Open sans", Arial;
-  /*border-bottom: 1px dotted #aaaaaa; */
+  font: 1.2rem 'Helvetica';
 }
 
 	
-	#header {
-	    margin-bottom: 15px;
+#header {
+    margin-bottom: 15px;
 }
 div#header h1 {
     display: inline;
