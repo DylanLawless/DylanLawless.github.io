@@ -5,7 +5,7 @@
 /*********************************/
 
 /* This should allow the page to resize but not fully sure yet. */
- <meta name="viewport" content="width=device-width, initial-scale=1">
+/* <meta name="viewport" content="width=device-width, initial-scale=1"> */
 
 /* font: 1.3em Baskerville, Trebuchet, Georgia, Arial, "Lucida Grande", garamond, palatino, verdana; */
 /* font: 21px Baskerville, Arial; */
@@ -14,13 +14,12 @@
 body {
 	background-color: white;
 	font-family: Baskerville;
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	position: relative;
 	text-align: justify;
 	display: flex;
 	justify-content: center;
 	overflow-wrap:normal;
-  position: relative;
 }
 
 code {
@@ -30,52 +29,25 @@ code {
 	word-wrap: break-word;
     }
 
-/* 
-p {
-  line-height: 1.5;
-    margin: 1.875rem 0;
-}
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 800;
-  line-height: 1.1;
-  }
-  h1 {
-    font-size: 2.25rem;
-}
-h2 {
-  font-size: 1.875rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-}
-h4 {
-  font-size: 1.125rem;
-  }
-  h1, h2, h3, h4 {
-    margin-top: 1.25rem;
-}
-*/ 
-
 /* font: 1.2rem Roboto, Arial, "Lucida Grande", garamond, palatino, verdana; */
 /* font-size: 100%; */
 h1 {
-  font: 1.3rem 'Helvetica';
+  font: 1.5rem 'Helvetica';
 }
 
 /* font-size: 100%; */
 h2, h3, h4, h5, h6 {
-  font: 1.2rem 'Helvetica';
+  font: 1.5rem 'Helvetica';
 }
 
 	
 #header {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 div#header h1 {
     display: inline;
     vertical-align: middle;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1rem solid #aaa;
 }
 
 /*
@@ -87,16 +59,17 @@ div#tags, div#page-created, div#last-modified, div#license { font-size: 80%; }
 /* h1, h2, h3, h4, h5 { text-transform: uppercase; } */
 
 h1, h2 {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 } /* this is thw space after title 1 */
 
+/* test
 div#content {
     margin-left: 200px;
     padding-left: 0;
-    line-height: 130%; /* see A/B tests */
+    line-height: 130%; 
 }
-
+*/
 
 a {
     color: #303C3C; /* off-black */
@@ -171,20 +144,21 @@ ul.posts {
 /*********************************/
 /*********************************/
 
+/*  text-align: justify; */
+
 .site {
-  /*font-size: 100%; */
-  text-align: justify;
-  width: 42em;
-  max-width: 80%;
-  margin: 2em auto 2em auto;
-  line-height: 1.3em;
+  text-align: left;
+  width: 50rem;
+  max-width: 85%;
+  margin: 1rem auto 1rem auto;
+  line-height: 2rem;
 }
 
 .title {
   color: #a00;
   font-size: 150%;
   font-weight: medium;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
   .site .title a {
@@ -199,7 +173,7 @@ ul.posts {
   .site .title a.extra {
     color: #aaa;
     text-decoration: none;
-    margin-left: 1em;
+    margin-left: 1rem;
   }
 
   .site .title a.extra:hover {
@@ -214,13 +188,13 @@ ul.posts {
     font-size: 80%;
     color: #666;
     border-top: 4px solid #eee;
-    margin-top: 2em;
+    margin-top: 2rem;
     overflow: hidden;
   }
 
     .site .footer .contact {
       float: left;
-      margin-right: 3em;
+      margin-right: 3rem;
     }
 
       .site .footer .contact a {
@@ -228,8 +202,8 @@ ul.posts {
       }
 
     .site .footer .rss {
-      margin-top: 1.1em;
-      margin-right: -.2em;
+      margin-top: 1.1rem;
+      margin-right: -.2rem;
       float: right;
     }
 
@@ -301,7 +275,7 @@ p.caption {
 
   #post img {
     max-width: 80%;
-    padding: 1em 0;
+    padding: 1rem 0;
   }
 
   /* terminal */
@@ -344,8 +318,8 @@ p.caption {
 
 #markdown-toc {
     border: 2px solid #333333;
-    padding: 1.5em; /* top */
-    padding-left: 2.5em;
+    padding: 1.5rem; /* top */
+    padding-left: 2.5rem;
     list-style: decimal;
     display: inline-block;
     background: #eee;
