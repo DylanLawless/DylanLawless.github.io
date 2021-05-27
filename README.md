@@ -26,27 +26,42 @@ Within text citations are used with: {% cite name %}.
 The biblio is printed at end of file with:
 {% bibliography --cited %}.
 
-# Rake deploy
+# Rake deploy pre-build before hosting
 Plugins (scholar) cannot be run on GitHub pages, therefore the site is run by using the \_site directory as the root as described by [davidensinger.com](http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/).
 
 To allow this to work, two branches are created:
-* source
-* master
+* _source_
+* _master_
 
 Normally, GH pages looks for the _master_ branch. 
-It will build the website project from the \_root directory and compile the website itself in safe-mode,
-recreating its own version of the \_site directory which is produced when you run Jekyll locally.
+It will build the website project from the \_root directory and compile the website itself in safe-mode.
+It would create its own version of the \_site subdirectory, as is produced when you run Jekyll locally.
 
 Since we run plugins that GH pages does not use (scholar citations), the build would fail.
 All writing is done from the _source_ branch. 
 This contains the complete website data.
 This branch is compiled by Jekyll locally and the resulting output is in \_site.
 
-Then on the _master_ branch, we force the \_site/ subdirectory to be project root.
+Then on the _master_ branch, we force the \_site subdirectory to act as the project root.
 GH pages will host the pre-compiled site for us. 
 If we no longer want this and prefer GH-pages to compile, 
 we can go back to a single branch converting _source_ to be _master_.
 
+**Normal version**
+* branch _master_ 
+	- \_root &rarr; GH pages build &rarr; host site.
+	- \_site &rarr; ignored by GH pages.
+
+**Modified version**
+* branch _source_ 
+	- \_root &rarr; jekyll local build &rarr; \_site.
+* branch _master_
+	- \_site &rarr; GH pages no build &rarr; host site.
+
+**Protocol**
+
+The Rakefile contains the final version of this description.
+The steps are outlined here for clarity.
 For the inital set up, we must create the source branch:
 ```
 git branch -a
@@ -62,7 +77,7 @@ Check out a new master branch:
 ```
 git checkout -b master
 ```
-Force the \_site/ subdirectory to be project root:
+Force the \_site subdirectory to be project root:
 ```
 git filter-branch --subdirectory-filter _site/ -f
 ```
@@ -74,6 +89,8 @@ Push all branches to origin:
 ```
 git push --all origin
 ```
+
+**Rakefile**
 
 The rake file is used as follows:
 
