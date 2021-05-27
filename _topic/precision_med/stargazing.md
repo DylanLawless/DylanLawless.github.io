@@ -21,9 +21,9 @@ of annotation in genomic analysis._
 
 # Stargazer genotyping
 As reported in "Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program" [0],
-<!-- taliun2021sequencing -->
+{% cite taliun2021sequencing }
 Taliun et al. use a method of known pharmacogene (PGx) variation annotation 
-that can be adapted for many other drug-gene database applications [0].
+that can be adapted for many other drug-gene database applications.
 The star allele nomenclature method is applied to large scale data to screen 
 for possible pharmacogenomic interactions.
 This consists of annotation 
@@ -38,7 +38,8 @@ human cytochrome P450 (CYP) genes for known PGx variation.
 Identification of _CYP2D6_ alleles using
 [Stargazer's](https://stargazer.gs.washington.edu/stargazerweb/index.html)
 genotyping pipeline.
-Details of the Stargazer genotyping pipeline have been described previously [1].
+Details of the Stargazer genotyping pipeline have been described previously
+{% cite lee2019stargazer %}.
 
 _Background note: Haplotypes are group of alleles that are inherited together 
 from a single parent. 
@@ -50,18 +51,18 @@ Phased haplotype (from [10Xgenomics.com](https://www.10xgenomics.com)):
 <img src="{{ site.baseurl }}{% link images/haplotype.jpeg %}" width="60%">
 
 * GATK-HaplotypeCaller
-	+ SNVs and indels in were assessed from a VCF file generated using GATK-HaplotypeCaller [2].
+	+ SNVs and indels in were assessed from a VCF file generated using GATK-HaplotypeCaller {% cite mckenna2010genome %}.
 * Phase Beagle
-	+ The VCF file was phased using the program [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html) [3] and
+	+ The VCF file was phased using the program [Beagle](https://faculty.washington.edu/browning/beagle/beagle.html) {% cite browning2007rapid %} and
 	the 1000 Genomes Project haplotype reference panel.
 * Star alleles ([described below](#star-alleles))
 	+ Phased SNVs and indels were then matched to star alleles.
 
 In parallel,
 * GATK-DepthOfCoverage
-	+ Read depth was calculated from BAM files using GATK-DepthOfCoverage [2].
+	+ Read depth was calculated from BAM files using GATK-DepthOfCoverage {% cite mckenna2010genome %}.
 * Copy number
-	+ Read depth was converted to copy number by performing intra-sample normalization [1].
+	+ Read depth was converted to copy number by performing intra-sample normalization {% cite lee2019stargazer %}.
 * Structural variants
 	+ After normalization,
 	structural variants were assessed by testing all possible pairwise combinations
@@ -69,7 +70,7 @@ In parallel,
 	against the observed copy number profile of the sample.
 * Changepoint
 	+ For new SVs,
-	breakpoints were statistically inferred using changepoint [4].
+	breakpoints were statistically inferred using changepoint {% cite killick2014changepoint %}.
 * Output
 	+ Information regarding new SVs was stored and
 	used to identify subsequent SVs in copy number profiles.
@@ -100,7 +101,8 @@ a central repository for PGx variation that focuses on
 haplotype structure and allelic variation.
 
 # Published example
-Taliun et al. [0]
+Taliun et al.
+{% cite taliun2021sequencing }
 provide a complementary approach to _de novo_ genome assembly
 by developing approaches that combine multiple types of information including:
 * previously observed haplotype variation
@@ -113,7 +115,10 @@ to identify and classify haplotypes in interesting regions of the genome.
 They illustrate this by focusing on 
 one such region around the _CYP2D6_ gene.
 This encodes an enzyme that metabolizes approximately 25% of prescription drugs 
-and the activity of which varies substantially among individuals [1,5,6].
+and the activity of which varies substantially among individuals 
+{% cite lee2019stargazer %}
+{% cite zhou2009polymorphism %}
+{% cite crews2014clinical %}.
 More than 150 _CYP2D6_ haplotypes have been described,
 some involving a gene conversion with its nearby non-functional
 but highly similar paralogue _CYP2D7_.
@@ -122,7 +127,9 @@ CYP2D6 interaction (from [miro.medium.com](miro.medium.com)):
 
 <img src="{{ site.baseurl }}{% link images/CYP2D6.png %}" width="50%">
 
-They performed _CYP2D6_ haplotype analysis for all 53,831 TOPMed individuals [1,7]
+They performed _CYP2D6_ haplotype analysis for all 53,831 TOPMed individuals 
+{% cite lee2019stargazer %}
+{% cite lee2019calling %}.
 Called a total of 99 alleles (66 known and 33 novel) representing:
 * increased function,
 * decreased function and
@@ -146,24 +153,4 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).
 > Supplementary Figure 28. Summary of CYP2D6 haplotype analysis using the Stargazer program. Population-specific frequencies for (A) common CYP2D6 star alleles, (B) haplotype activity, (C) SV-defined haplotypes, and (D) predicted metabolism phenotypes. Abbreviations: hAS, haplotype activity score; dAS, diplotype activity score; N, number; SV, structural variation; del, whole gene deletion; hyb, CYP2D6/CYP2D7 hybrid.
 
 # References
-<!-- curly-percent bibliography --cited curly-percent -->
-[0]  Taliun, Daniel, et al. Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program. Nature 590.7845 (2021): 290-299.
-[https://doi.org/10.1038/s41586-021-03205-y](https://doi.org/10.1038/s41586-021-03205-y)\
-
-[1] Lee, S.-B. et al. Stargazer: a software tool for calling star alleles from next-generation sequencing data using CYP2D6 as a model. Genet. Med. 21, 361–372 (2019).
-[https://doi.org/10.1038/s41436-018-0054-0](https://doi.org/10.1038/s41436-018-0054-0)
-
-[2] McKenna, A. et al. The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. Genome Res. 20, 1297–1303 (2010).
-[https://www.genome.org/cgi/doi/10.1101/gr.107524.110](https://www.genome.org/cgi/doi/10.1101/gr.107524.110)
-
-[3] Browning, S. R. & Browning, B. L. Rapid and accurate haplotype phasing and missing-data inference for whole-genome association studies by use of localized haplotype clustering. Am. J. Hum. Genet. 81, 1084–1097 (2007).
-
-[4] Killick, R. & Eckley, I. A. changepoint: an R package for changepoint analysis. J. Stat. Softw. 58, 1–19 (2014).
-[https://eprints.lancs.ac.uk/id/eprint/51975/](https://eprints.lancs.ac.uk/id/eprint/51975/)
-
-[5] Zhou, S.-F. Polymorphism of human cytochrome P450 2D6 and its clinical significance: part I. Clin. Pharmacokinet. 48, 689–723 (2009).
-
-[6] Crews, K. R. et al. Clinical Pharmacogenetics Implementation Consortium guidelines for cytochrome P450 2D6 genotype and codeine therapy: 2014 update. Clin. Pharmacol. Ther. 95, 376–382 (2014).
-
-[7] Lee, S.-B., Wheeler, M. M., Thummel, K. E. & Nickerson, D. A. Calling star alleles with Stargazer in 28 pharmacogenes with whole genome sequences. Clin. Pharmacol. Ther. 106, 1328–1337 (2019).
-
+{% bibliography --cited %}

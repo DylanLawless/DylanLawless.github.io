@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-05-27T16:13:49+02:00</updated>
+ <updated>2021-05-27T16:46:09+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -7138,7 +7138,6 @@ Will we slowly trudge through the same system again or will there be a more soph
 <ul id="markdown-toc">
   <li><a href="#pharmacogenomic-stargazing" id="markdown-toc-pharmacogenomic-stargazing">Pharmacogenomic stargazing</a></li>
   <li><a href="#stargazer-genotyping" id="markdown-toc-stargazer-genotyping">Stargazer genotyping</a>    <ul>
-      <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
       <li><a href="#stargazer-summary" id="markdown-toc-stargazer-summary">Stargazer summary</a></li>
       <li><a href="#star-alleles" id="markdown-toc-star-alleles">Star alleles</a></li>
     </ul>
@@ -7157,24 +7156,7 @@ of annotation in genomic analysis.</em></p>
 
 <h1 id="stargazer-genotyping">Stargazer genotyping</h1>
 <p>As reported in “Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program” [0],
-<!-- taliun2021sequencing -->
-Taliun et al. use a method of known pharmacogene (PGx) variation annotation 
-that can be adapted for many other drug-gene database applications [0].
-The star allele nomenclature method is applied to large scale data to screen 
-for possible pharmacogenomic interactions.
-This consists of annotation 
-with a simple notation for quick recognition of 
-allelic variation in genes impacting drug metabolism, disposition and response
-(e.g. of interest to clinicians prescribing medications).
-The <a href="https://www.pharmvar.org">Pharmacogene Variation (PharmVar)</a> 
-consortium repository is used to label 
-human cytochrome P450 (CYP) genes for known PGx variation.</p>
-
-<h2 id="methods">Methods</h2>
-<p>Identification of <em>CYP2D6</em> alleles using
-<a href="https://stargazer.gs.washington.edu/stargazerweb/index.html">Stargazer’s</a>
-genotyping pipeline.
-Details of the Stargazer genotyping pipeline have been described previously [1].</p>
+(missing reference).</p>
 
 <p><em>Background note: Haplotypes are group of alleles that are inherited together 
 from a single parent. 
@@ -7188,12 +7170,12 @@ These strands can be phased to reconstruct the inheritence pattern.</em></p>
 <ul>
   <li>GATK-HaplotypeCaller
     <ul>
-      <li>SNVs and indels in were assessed from a VCF file generated using GATK-HaplotypeCaller [2].</li>
+      <li>SNVs and indels in were assessed from a VCF file generated using GATK-HaplotypeCaller <a class="citation" href="#mckenna2010genome">(McKenna et al., 2010)</a>.</li>
     </ul>
   </li>
   <li>Phase Beagle
     <ul>
-      <li>The VCF file was phased using the program <a href="https://faculty.washington.edu/browning/beagle/beagle.html">Beagle</a> [3] and
+      <li>The VCF file was phased using the program <a href="https://faculty.washington.edu/browning/beagle/beagle.html">Beagle</a> <a class="citation" href="#browning2007rapid">(Browning &amp; Browning, 2007)</a> and
   the 1000 Genomes Project haplotype reference panel.</li>
     </ul>
   </li>
@@ -7208,12 +7190,12 @@ These strands can be phased to reconstruct the inheritence pattern.</em></p>
 <ul>
   <li>GATK-DepthOfCoverage
     <ul>
-      <li>Read depth was calculated from BAM files using GATK-DepthOfCoverage [2].</li>
+      <li>Read depth was calculated from BAM files using GATK-DepthOfCoverage <a class="citation" href="#mckenna2010genome">(McKenna et al., 2010)</a>.</li>
     </ul>
   </li>
   <li>Copy number
     <ul>
-      <li>Read depth was converted to copy number by performing intra-sample normalization [1].</li>
+      <li>Read depth was converted to copy number by performing intra-sample normalization <a class="citation" href="#lee2019stargazer">(Lee et al., 2019)</a>.</li>
     </ul>
   </li>
   <li>Structural variants
@@ -7227,7 +7209,7 @@ These strands can be phased to reconstruct the inheritence pattern.</em></p>
   <li>Changepoint
     <ul>
       <li>For new SVs,
-  breakpoints were statistically inferred using changepoint [4].</li>
+  breakpoints were statistically inferred using changepoint <a class="citation" href="#killick2014changepoint">(Killick &amp; Eckley, 2014)</a>.</li>
     </ul>
   </li>
   <li>Output
@@ -7274,22 +7256,10 @@ a central repository for PGx variation that focuses on
 haplotype structure and allelic variation.</p>
 
 <h1 id="published-example">Published example</h1>
-<p>Taliun et al. [0]
-provide a complementary approach to <em>de novo</em> genome assembly
-by developing approaches that combine multiple types of information including:</p>
-<ul>
-  <li>previously observed haplotype variation</li>
-  <li>SNVs</li>
-  <li>indels</li>
-  <li>copy number and</li>
-  <li>homology information
-to identify and classify haplotypes in interesting regions of the genome.</li>
-</ul>
-
-<p>They illustrate this by focusing on 
-one such region around the <em>CYP2D6</em> gene.
-This encodes an enzyme that metabolizes approximately 25% of prescription drugs 
-and the activity of which varies substantially among individuals [1,5,6].
+<p>Taliun et al.
+(missing reference)
+<a class="citation" href="#zhou2009polymorphism">(Zhou, 2009)</a>
+<a class="citation" href="#crews2014clinical">(Crews et al., 2014)</a>.
 More than 150 <em>CYP2D6</em> haplotypes have been described,
 some involving a gene conversion with its nearby non-functional
 but highly similar paralogue <em>CYP2D7</em>.</p>
@@ -7298,7 +7268,9 @@ but highly similar paralogue <em>CYP2D7</em>.</p>
 
 <p><img src="/images/CYP2D6.png" width="50%" /></p>
 
-<p>They performed <em>CYP2D6</em> haplotype analysis for all 53,831 TOPMed individuals [1,7]
+<p>They performed <em>CYP2D6</em> haplotype analysis for all 53,831 TOPMed individuals 
+<a class="citation" href="#lee2019stargazer">(Lee et al., 2019)</a>
+<a class="citation" href="#lee2019calling">(Lee et al., 2019)</a>.
 Called a total of 99 alleles (66 known and 33 novel) representing:</p>
 <ul>
   <li>increased function,</li>
@@ -7328,27 +7300,13 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
 </blockquote>
 
 <h1 id="references">References</h1>
-<!-- curly-percent bibliography --cited curly-percent -->
-<p>[0]  Taliun, Daniel, et al. Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program. Nature 590.7845 (2021): 290-299.
-<a href="https://doi.org/10.1038/s41586-021-03205-y">https://doi.org/10.1038/s41586-021-03205-y</a>\</p>
-
-<p>[1] Lee, S.-B. et al. Stargazer: a software tool for calling star alleles from next-generation sequencing data using CYP2D6 as a model. Genet. Med. 21, 361–372 (2019).
-<a href="https://doi.org/10.1038/s41436-018-0054-0">https://doi.org/10.1038/s41436-018-0054-0</a></p>
-
-<p>[2] McKenna, A. et al. The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. Genome Res. 20, 1297–1303 (2010).
-<a href="https://www.genome.org/cgi/doi/10.1101/gr.107524.110">https://www.genome.org/cgi/doi/10.1101/gr.107524.110</a></p>
-
-<p>[3] Browning, S. R. &amp; Browning, B. L. Rapid and accurate haplotype phasing and missing-data inference for whole-genome association studies by use of localized haplotype clustering. Am. J. Hum. Genet. 81, 1084–1097 (2007).</p>
-
-<p>[4] Killick, R. &amp; Eckley, I. A. changepoint: an R package for changepoint analysis. J. Stat. Softw. 58, 1–19 (2014).
-<a href="https://eprints.lancs.ac.uk/id/eprint/51975/">https://eprints.lancs.ac.uk/id/eprint/51975/</a></p>
-
-<p>[5] Zhou, S.-F. Polymorphism of human cytochrome P450 2D6 and its clinical significance: part I. Clin. Pharmacokinet. 48, 689–723 (2009).</p>
-
-<p>[6] Crews, K. R. et al. Clinical Pharmacogenetics Implementation Consortium guidelines for cytochrome P450 2D6 genotype and codeine therapy: 2014 update. Clin. Pharmacol. Ther. 95, 376–382 (2014).</p>
-
-<p>[7] Lee, S.-B., Wheeler, M. M., Thummel, K. E. &amp; Nickerson, D. A. Calling star alleles with Stargazer in 28 pharmacogenes with whole genome sequences. Clin. Pharmacol. Ther. 106, 1328–1337 (2019).</p>
-
+<ol class="bibliography"><li><span id="mckenna2010genome">McKenna, A., Hanna, M., Banks, E., Sivachenko, A., Cibulskis, K., Kernytsky, A., Garimella, K., Altshuler, D., Gabriel, S., Daly, M., &amp; others. (2010). The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. <i>Genome Research</i>, <i>20</i>(9), 1297–1303.</span></li>
+<li><span id="browning2007rapid">Browning, S. R., &amp; Browning, B. L. (2007). Rapid and accurate haplotype phasing and missing-data inference for whole-genome association studies by use of localized haplotype clustering. <i>The American Journal of Human Genetics</i>, <i>81</i>(5), 1084–1097.</span></li>
+<li><span id="lee2019stargazer">Lee, S.-been, Wheeler, M. M., Patterson, K., McGee, S., Dalton, R., Woodahl, E. L., Gaedigk, A., Thummel, K. E., &amp; Nickerson, D. A. (2019). Stargazer: a software tool for calling star alleles from next-generation sequencing data using CYP2D6 as a model. <i>Genetics in Medicine</i>, <i>21</i>(2), 361–372.</span></li>
+<li><span id="killick2014changepoint">Killick, R., &amp; Eckley, I. (2014). changepoint: An R package for changepoint analysis. <i>Journal of Statistical Software</i>, <i>58</i>(3), 1–19.</span></li>
+<li><span id="zhou2009polymorphism">Zhou, S.-F. (2009). Polymorphism of human cytochrome P450 2D6 and its clinical significance. <i>Clinical Pharmacokinetics</i>, <i>48</i>(12), 761–804.</span></li>
+<li><span id="crews2014clinical">Crews, K. R., Gaedigk, A., Dunnenberger, H. M., Leeder, J. S., Klein, T. E., Caudle, K. E., Haidar, C. E., Shen, D. D., Callaghan, J. T., Sadhasivam, S., &amp; others. (2014). Clinical Pharmacogenetics Implementation Consortium guidelines for cytochrome P450 2D6 genotype and codeine therapy: 2014 update. <i>Clinical Pharmacology &amp; Therapeutics</i>, <i>95</i>(4), 376–382.</span></li>
+<li><span id="lee2019calling">Lee, S.-been, Wheeler, M. M., Thummel, K. E., &amp; Nickerson, D. A. (2019). Calling star alleles with stargazer in 28 pharmacogenes with whole genome sequences. <i>Clinical Pharmacology &amp; Therapeutics</i>, <i>106</i>(6), 1328–1337.</span></li></ol>
 </p>
 
   <h2> - </h2>
@@ -7472,7 +7430,7 @@ Justification: If we ran that filter for every singleton it would remove the ver
   <li>Testing for an unusual distribution of rare variants.
 (missing reference).</li>
   <li>Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test.
-<a class="citation" href="#wulee2011rare">(Wu et al., 2011)</a>.</li>
+(missing reference).</li>
   <li>Optimal tests for rare variant effects in sequencing association studies.
 <a class="citation" href="#Lee2012Optimal">(Lee et al., 2012)</a>.</li>
   <li>Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies.
@@ -8068,7 +8026,7 @@ I need to compare these two papers here in more detail
 <h1 id="skat">SKAT</h1>
 
 <p>Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test
-<a class="citation" href="#wulee2011rare">(Wu et al., 2011)</a></p>
+(missing reference)</p>
 
 <h2 id="introduction-1">Introduction</h2>
 
@@ -8296,7 +8254,6 @@ this_case_pathway_hit <span class="o">=</span> dict<span class="o">()</span>
 <ol class="bibliography"><li><span id="li2008methods">Li, B., &amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. <i>The American Journal of Human Genetics</i>, <i>83</i>(3), 311–321.</span></li>
 <li><span id="morris2010evaluation">Morris, A. P., &amp; Zeggini, E. (2010). An evaluation of statistical approaches to rare variant analysis in genetic association studies. <i>Genetic Epidemiology</i>, <i>34</i>(2), 188–193.</span></li>
 <li><span id="price2010pooled">Price, A. L., Kryukov, G. V., de Bakker, P. I. W., Purcell, S. M., Staples, J., Wei, L.-J., &amp; Sunyaev, S. R. (2010). Pooled association tests for rare variants in exon-resequencing studies. <i>The American Journal of Human Genetics</i>, <i>86</i>(6), 832–838.</span></li>
-<li><span id="wulee2011rare">Wu, M. C., Lee, S., Cai, T., Li, Y., Boehnke, M., &amp; Lin, X. (2011). Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test. <i>The American Journal of Human Genetics</i>, <i>89</i>(1), 82–93. https://doi.org/https://doi.org/10.1016/j.ajhg.2011.05.029</span></li>
 <li><span id="Lee2012Optimal">Lee, S., Wu, M. C., &amp; Lin, X. (2012). Optimal tests for rare variant effects in sequencing association studies. <i>Biostatistics</i>, <i>13</i>(4), 762–775. https://doi.org/10.1093/biostatistics/kxs014</span></li>
 <li><span id="Lee2012Optimalunified">Lee, S., Emond, M. J., Bamshad, M. J., Barnes, K. C., Rieder, M. J., Nickerson, D. A., Christiani, D. C., Wurfel, M. M., &amp; Lin, X. (2012). Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies. <i>The American Journal of Human Genetics</i>, <i>91</i>(2), 224–237. https://doi.org/https://doi.org/10.1016/j.ajhg.2012.06.007</span></li>
 <li><span id="IonitaLaza2013Sequence">Ionita-Laza, I., Lee, S., Makarov, V., Buxbaum, J. D., &amp; Lin, X. (2013). Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants. <i>The American Journal of Human Genetics</i>, <i>92</i>(6), 841–853. https://doi.org/https://doi.org/10.1016/j.ajhg.2013.04.015</span></li>
