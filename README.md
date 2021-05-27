@@ -7,8 +7,9 @@ e.g. at least requires:
 
 It is repo automatically transformed by [Jekyll](http://github.com/mojombo/jekyll)
 into a static site whenever this repository pushed to GitHub.
-For testing, jekyll serve runs this site locally for testing before pushing (jek.sh). 
-The format of pages and blog structure were produced by expanding the original 
+Jekyll serve runs this site locally for testing and building before pushing 
+(jek.sh and rake commit_deploy). 
+The format of pages and blog structure were produced by expanding on the original 
 code from co-creator of GitHub, Tom Preston-Werner, 
 and then modifying to suit the current requierments for Jekyll. 
 This site is built from writings in Markdown and LaTex and rendered as a 
