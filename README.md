@@ -20,7 +20,50 @@ Within text citations are used with: {% cite name %}.
 The biblio is printed at end of file with:
 {% bibliography --cited %}.
 
-## License
+# Rake deploy
+Plugins (scholar) cannot be run on GitHub pages, therefore the site is run by using the \_site directory as the root as described by [davidensinger.com](http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/).
+
+The following tasks are automated by putting them in a rake file.
+
+Delete master branch:
+```
+git branch -D master
+```
+Check out a new master branch:
+```
+git checkout -b master
+```
+Force the \_site/ subdirectory to be project root:
+```
+git filter-branch --subdirectory-filter _site/ -f
+```
+Checkout the source branch:
+```
+git checkout source
+```
+Push all branches to origin:
+```
+git push --all origin
+```
+
+The rake file is used as follows:
+
+List the tasks from the Rakefile
+```
+rake -T
+```
+
+Run these individually
+```
+rake preview
+```
+
+The normal protocol is to run the tasks in order with one command
+```
+rake commit_deploy
+```
+
+# License
 The following directories and their contents are Copyright Dylan Lawless.
 You may not reuse anything therein without my permission (although I am unlikely to complain about non-profit usage):
 
