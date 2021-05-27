@@ -139,6 +139,7 @@ var WRInitTime=(new Date()).getTime();
       </li>
     </ul>
   </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <h1 id="introduction">Introduction</h1>
@@ -156,24 +157,24 @@ Justification: If we ran that filter for every singleton it would remove the ver
 <h1 id="main-papers-in-order">Main papers in order</h1>
 
 <ul>
-  <li>Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data.
-@li2008methods</li>
+  <li>Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
+<a class="citation" href="#li2008methods">(Li &amp; Leal, 2008)</a>.</li>
   <li>A groupwise association test for rare mutations using a weighted sum statistic.
-@madsen2009groupwise</li>
+(missing reference).</li>
   <li>An evaluation of statistical approaches to rare variant analysis in genetic association studies.
-@morris2010evaluation</li>
+<a class="citation" href="#morris2010evaluation">(Morris &amp; Zeggini, 2010)</a>.</li>
   <li>Pooled association tests for rare variants in exon-resequencing studies.
-@price2010pooled</li>
+<a class="citation" href="#price2010pooled">(Price et al., 2010)</a>.</li>
   <li>Testing for an unusual distribution of rare variants.
-@neale2011testing</li>
+(missing reference).</li>
   <li>Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test.
-@wulee2011rare</li>
+<a class="citation" href="#wulee2011rare">(Wu et al., 2011)</a>.</li>
   <li>Optimal tests for rare variant effects in sequencing association studies.
-@Lee2012Optimal</li>
+<a class="citation" href="#Lee2012Optimal">(Lee et al., 2012)</a>.</li>
   <li>Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies.
-@Lee2012Optimalunified</li>
+<a class="citation" href="#Lee2012Optimalunified">(Lee et al., 2012)</a>.</li>
   <li>Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants.
-@IonitaLaza2013Sequence</li>
+<a class="citation" href="#IonitaLaza2013Sequence">(Ionita-Laza et al., 2013)</a></li>
 </ul>
 
 <h2 id="major-classes-of-tests">Major Classes of Tests</h2>
@@ -209,7 +210,7 @@ Justification: If we ran that filter for every singleton it would remove the ver
 <ul>
   <li>
     <p>Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
-@li2008methods</p>
+<a class="citation" href="#li2008methods">(Li &amp; Leal, 2008)</a></p>
   </li>
   <li>The collapsing method, which involves collapsing genotypes across variants and applying a univariate test, is powerful for analyzing rare variants.</li>
   <li>The multivariate analysis is robust against inclusion of non-causal variants.</li>
@@ -417,7 +418,7 @@ The multivariate test is done where for each group, the  individuals are coded w
 
 <ul>
   <li>A groupwise association test for rare mutations using a weighted sum statistic
-@madsen2009groupwise</li>
+<a class="citation" href="#madsen2009groupwise">(Madsen &amp; Browning, 2009)</a></li>
 </ul>
 
 <h2 id="background-1">Background</h2>
@@ -645,7 +646,7 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
 
 <ul>
   <li>Pooled association tests for rare variants in exon-resequencing studies.
-@price2010pooled</li>
+<a class="citation" href="#price2010pooled">(Price et al., 2010)</a></li>
   <li>The approach is based on the regression of
     <ul>
       <li>phenotypic values</li>
@@ -676,20 +677,14 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
 </ul>
 
 <h3 id="weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios">Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios</h3>
-<ul>
-  <li>They propose the ODDs model and use the weight method of Madsen et al. 2009 @madsen2009groupwise.
-    <ul>
-      <li>Based on the frequency in controls.</li>
-      <li>Relationship between log odds ratio and allele frequency the same as Madsen 2009.</li>
-    </ul>
-  </li>
-</ul>
+<p>(missing reference)
+	- Based on the frequency in controls.
+	- Relationship between log odds ratio and allele frequency the same as Madsen 2009.</p>
 
 <h3 id="fixed-threshold-approach">Fixed-Threshold Approach</h3>
+<p>(missing reference)</p>
+
 <ul>
-  <li>
-    <p>For dichotomous phenotypes they calculate a score as per @madsen2009groupwise.</p>
-  </li>
   <li>i indexes SNPs,</li>
   <li>Ci is the reference allele count of SNP i in cases,</li>
   <li>and xi (\(\xi_i\)) is equal to 1 if the frequency of SNP i is below a specified threshold (1% or 5%)</li>
@@ -702,7 +697,7 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
   -
 I need to compare these two papers here in more detail 
 (genetic score section).
-I believe @madsen2009groupwise use a more complex \(\xi\) term than is inferred:</li>
+(missing reference)</li>
       <li>Generic model uses 0/1/2.</li>
       <li>Recessive model only homozygous are assigned 1.</li>
       <li>Dominant model both het and homo are assigned 1.</li>
@@ -711,8 +706,8 @@ I believe @madsen2009groupwise use a more complex \(\xi\) term than is inferred:
 </ul>
 
 <h3 id="weighted-approach">Weighted Approach</h3>
+<p>(missing reference)</p>
 <ul>
-  <li>Same as @madsen2009groupwise.</li>
   <li>Also generalise by adding \(\pi_j\) for a quantitative phenotype value.</li>
 </ul>
 
@@ -744,8 +739,8 @@ I believe @madsen2009groupwise use a more complex \(\xi\) term than is inferred:
 <h2 id="results-and-discussion">Results and Discussion</h2>
 <ul>
   <li>Skipping this.</li>
-  <li>The methods are an improvement.</li>
-  <li>As useful as @madsen2009groupwise.</li>
+  <li>The methods are an improvement.
+(missing reference)</li>
   <li>and additionaly adds a method for the quantitative variable.</li>
 </ul>
 
@@ -753,7 +748,7 @@ I believe @madsen2009groupwise use a more complex \(\xi\) term than is inferred:
 
 <ul>
   <li>Testing for an unusual distribution of rare variants.
-@neale2011testing</li>
+(missing reference)</li>
 </ul>
 
 <h2 id="c-alpha-tests">C-alpha tests</h2>
@@ -769,7 +764,7 @@ I believe @madsen2009groupwise use a more complex \(\xi\) term than is inferred:
 <h1 id="skat">SKAT</h1>
 
 <p>Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test
-@wulee2011rare</p>
+<a class="citation" href="#wulee2011rare">(Wu et al., 2011)</a></p>
 
 <h2 id="introduction-1">Introduction</h2>
 
@@ -886,7 +881,7 @@ to have little or no effect on phenotype,</li>
 <ul>
   <li>
     <p>Optimal tests for rare variant effects in sequencing association studies.
-@Lee2012Optimal</p>
+<a class="citation" href="#Lee2012Optimal">(Lee et al., 2012)</a></p>
   </li>
   <li>
     <p>A class of tests that include burden tests and SKAT as special cases, and derive an optimal test within this class that maximizes power.</p>
@@ -993,6 +988,15 @@ this_case_pathway_hit <span class="o">=</span> dict<span class="o">()</span>
 
 <span class="c"># They do not show any code with the SKAT paramaters, presumably defaults using R.</span>
 </code></pre></div></div>
+<h1 id="references">References</h1>
+<ol class="bibliography"><li><span id="li2008methods">Li, B., &amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. <i>The American Journal of Human Genetics</i>, <i>83</i>(3), 311–321.</span></li>
+<li><span id="morris2010evaluation">Morris, A. P., &amp; Zeggini, E. (2010). An evaluation of statistical approaches to rare variant analysis in genetic association studies. <i>Genetic Epidemiology</i>, <i>34</i>(2), 188–193.</span></li>
+<li><span id="price2010pooled">Price, A. L., Kryukov, G. V., de Bakker, P. I. W., Purcell, S. M., Staples, J., Wei, L.-J., &amp; Sunyaev, S. R. (2010). Pooled association tests for rare variants in exon-resequencing studies. <i>The American Journal of Human Genetics</i>, <i>86</i>(6), 832–838.</span></li>
+<li><span id="wulee2011rare">Wu, M. C., Lee, S., Cai, T., Li, Y., Boehnke, M., &amp; Lin, X. (2011). Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test. <i>The American Journal of Human Genetics</i>, <i>89</i>(1), 82–93. https://doi.org/https://doi.org/10.1016/j.ajhg.2011.05.029</span></li>
+<li><span id="Lee2012Optimal">Lee, S., Wu, M. C., &amp; Lin, X. (2012). Optimal tests for rare variant effects in sequencing association studies. <i>Biostatistics</i>, <i>13</i>(4), 762–775. https://doi.org/10.1093/biostatistics/kxs014</span></li>
+<li><span id="Lee2012Optimalunified">Lee, S., Emond, M. J., Bamshad, M. J., Barnes, K. C., Rieder, M. J., Nickerson, D. A., Christiani, D. C., Wurfel, M. M., &amp; Lin, X. (2012). Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies. <i>The American Journal of Human Genetics</i>, <i>91</i>(2), 224–237. https://doi.org/https://doi.org/10.1016/j.ajhg.2012.06.007</span></li>
+<li><span id="IonitaLaza2013Sequence">Ionita-Laza, I., Lee, S., Makarov, V., Buxbaum, J. D., &amp; Lin, X. (2013). Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants. <i>The American Journal of Human Genetics</i>, <i>92</i>(6), 841–853. https://doi.org/https://doi.org/10.1016/j.ajhg.2013.04.015</span></li>
+<li><span id="madsen2009groupwise">Madsen, B. E., &amp; Browning, S. R. (2009). A groupwise association test for rare mutations using a weighted sum statistic. <i>PLoS Genet</i>, <i>5</i>(2), e1000384.</span></li></ol>
 
 </div>
 

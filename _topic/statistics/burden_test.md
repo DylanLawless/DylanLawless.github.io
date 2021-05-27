@@ -25,24 +25,24 @@ Justification: If we ran that filter for every singleton it would remove the ver
 
 # Main papers in order
 
-* Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data.
-@li2008methods
+* Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
+{% cite li2008methods %}.
 * A groupwise association test for rare mutations using a weighted sum statistic.
-@madsen2009groupwise
+{% cite madsen2010groupwise %}.
 * An evaluation of statistical approaches to rare variant analysis in genetic association studies.
-@morris2010evaluation 
+{% cite morris2010evaluation  %}.
 * Pooled association tests for rare variants in exon-resequencing studies.
-@price2010pooled 
+{% cite price2010pooled  %}.
 * Testing for an unusual distribution of rare variants.
-@neale2011testing
+{% cite neale2011testing %}.
 * Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test.
-@wulee2011rare
+{% cite wulee2011rare %}.
 * Optimal tests for rare variant effects in sequencing association studies.
-@Lee2012Optimal 
+{% cite Lee2012Optimal %}.
 * Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies.
-@Lee2012Optimalunified 
+{% cite Lee2012Optimalunified %}.
 * Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants.
-@IonitaLaza2013Sequence 
+{% cite IonitaLaza2013Sequence  %}
 
 ## Major Classes of Tests
 
@@ -69,7 +69,7 @@ Justification: If we ran that filter for every singleton it would remove the ver
 
 # Li and Leal 2008
 * Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
-@li2008methods
+{% cite li2008methods %}
 
 * The collapsing method, which involves collapsing genotypes across variants and applying a univariate test, is powerful for analyzing rare variants.
 * The multivariate analysis is robust against inclusion of non-causal variants. 
@@ -224,7 +224,7 @@ Result:
 # Madsen and Browning 2009
 
 * A groupwise association test for rare mutations using a weighted sum statistic
-@madsen2009groupwise
+{% cite madsen2009groupwise %}
 
 ## Background
 
@@ -398,7 +398,7 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
 # Price 2010
 
 * Pooled association tests for rare variants in exon-resequencing studies.
-@price2010pooled
+{% cite price2010pooled %}
 * The approach is based on the regression of 
 	- phenotypic values 
 	- on individuals' genotype scores 
@@ -420,12 +420,12 @@ Simplified summary:
 	- carriers shifted by $$\delta$$ SD
 
 ### Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios
-* They propose the ODDs model and use the weight method of Madsen et al. 2009 @madsen2009groupwise.
+{% cite madsen2009groupwise. %}
 	- Based on the frequency in controls.
 	- Relationship between log odds ratio and allele frequency the same as Madsen 2009.
 
 ### Fixed-Threshold Approach
-* For dichotomous phenotypes they calculate a score as per @madsen2009groupwise.
+{% cite madsen2009groupwise. %}
 
 * i indexes SNPs, 
 * Ci is the reference allele count of SNP i in cases, 
@@ -437,13 +437,13 @@ Simplified summary:
 	-
 I need to compare these two papers here in more detail 
 (genetic score section).
-I believe @madsen2009groupwise use a more complex $$\xi$$ term than is inferred:
+{% cite madsen2009groupwise use a more complex $$\xi$$ term than is inferred: %}
 	- Generic model uses 0/1/2.
 	- Recessive model only homozygous are assigned 1.
 	- Dominant model both het and homo are assigned 1.
 
 ### Weighted Approach
-* Same as @madsen2009groupwise.
+{% cite madsen2009groupwise. %}
 * Also generalise by adding $$\pi_j$$ for a quantitative phenotype value.
 
 ### Variable-Threshold Approach
@@ -465,13 +465,13 @@ Applied to some real data.
 ## Results and Discussion
 * Skipping this.
 * The methods are an improvement.
-* As useful as @madsen2009groupwise.
+{% cite madsen2009groupwise. %}
 * and additionaly adds a method for the quantitative variable.
 
 # Neale 2011
 
 * Testing for an unusual distribution of rare variants.
-@neale2011testing
+{% cite neale2011testing %}
 
 ## C-alpha tests
 * They propose here the C-alpha test statistic as a novel approach for testing for 
@@ -481,7 +481,7 @@ Applied to some real data.
 # SKAT
 
 Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test
-@wulee2011rare
+{% cite wulee2011rare %}
 
 ## Introduction
 
@@ -569,7 +569,7 @@ They replace Gi’b by a more flexible function f(Gi) in the linear and logistic
 SKAT-O
 
 * Optimal tests for rare variant effects in sequencing association studies.
-@Lee2012Optimal 
+{% cite Lee2012Optimal  %}
 
 * A class of tests that include burden tests and SKAT as special cases, and derive an optimal test within this class that maximizes power. 
 
@@ -659,3 +659,5 @@ for each_pathway in pathway_gene_set_dict.keys():
 
 # They do not show any code with the SKAT paramaters, presumably defaults using R.
 ```
+# References 
+{% bibliography --cited %}
