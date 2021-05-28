@@ -4,13 +4,259 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-05-27T19:14:19+02:00</updated>
+ <updated>2021-05-28T16:54:22+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Historical review of rare immune pathway analysis</title>
+   <link href="https://tom.preston-werner.com/2021/05/28/pathway_analysis.html"/>
+   <updated>2021-05-28T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2021/05/28/pathway_analysis</id>
+   <content type="html">&lt;h1 id=&quot;historical-review-of-rare-immune-pathway-analysis&quot;&gt;Historical review of rare immune pathway analysis&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;28 May 2021&lt;/p&gt;
+&lt;h1 id=&quot;itan--casanova-contributions&quot;&gt;Itan &amp;amp; Casanova contributions&lt;/h1&gt;
+
+&lt;p&gt;We are tackling this problem of protein pathway analysis from the viewpoint of 
+rare immune disease and infection.
+Historically, several topics in bioinformatic and functional analysis have 
+been required before we could achieve our current position of 
+statistically-robust genetic discovery for rare disease:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Candidate variant select for individual genomes&lt;/li&gt;
+  &lt;li&gt;Compiling reliable cohorts of patients with shared phenotypes&lt;/li&gt;
+  &lt;li&gt;Protein-protein interactions&lt;/li&gt;
+  &lt;li&gt;Variant collapse&lt;/li&gt;
+  &lt;li&gt;Protein pathway analysis&lt;/li&gt;
+  &lt;li&gt;Functional validation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Therefore, a historical review of the timeline is beneficial to illustrate the 
+technical successes that allow us to reliably produce candidate variants by
+genome sequencing and to validate statistically-driven results by &lt;em&gt;“traditional”&lt;/em&gt;
+functional validation. 
+These steps [1, 2 and 6 in our list] are exemplified by the following 
+historical review. 
+The complete list of steps 1-6 are touched on, 
+but full validation of each step is the culmination of what we are currently 
+working on and will be explicitly reviewed when we have completed our study.&lt;/p&gt;
+
+&lt;p&gt;As one of the leaders in this field, Casanova lab has provided a lot of insider
+history to the story in a great twitter thread
+&lt;a href=&quot;https://twitter.com/casanova_lab/status/1397539593608695808&quot;&gt;https://twitter.com/casanova_lab/status/1397539593608695808&lt;/a&gt;.
+The literature for discussion is first listed here to facilitate downloading 
+but sources are referenced as usual throughout.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;2013 PNAS. The human gene connectome as a map of short cuts for morbid allele discovery.
+&lt;a class=&quot;citation&quot; href=&quot;#itan2013human&quot;&gt;(Itan et al., 2013)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/23509278/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/23509278/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2014 BMC Gen. HGCS: an online tool for prioritizing disease-causing gene variants by biological distance.
+&lt;a class=&quot;citation&quot; href=&quot;#itan2014hgcs&quot;&gt;(Itan et al., 2014)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/24694260/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/24694260/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2015 Front. Novel primary immunodeficiency candidate genes predicted by the human gene connectome.
+&lt;a class=&quot;citation&quot; href=&quot;#itan2015novel&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/25883595/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/25883595/&lt;/a&gt;,&lt;/p&gt;
+
+&lt;p&gt;2015 PNAS. The human gene damage index as a gene-level approach to prioritizing exome variants.
+&lt;a class=&quot;citation&quot; href=&quot;#itan2015human&quot;&gt;(Itan et al., 2015)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26483451/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26483451/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2016 NatMet. The mutation significance cutoff: gene-level thresholds for variant predictions.
+&lt;a class=&quot;citation&quot; href=&quot;#itan2016mutation&quot;&gt;(Itan et al., 2016)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26820543/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26820543/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2015 PNAS. Can the impact of human genetic variations be predicted?
+&lt;a class=&quot;citation&quot; href=&quot;#itan2015can&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26351682/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26351682/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2018 Bioinf. PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations.
+&lt;a class=&quot;citation&quot; href=&quot;#zhang2018popviz&quot;&gt;(Zhang et al., 2018)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/30535305/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/30535305/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2019 PNAS. Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis.
+&lt;a class=&quot;citation&quot; href=&quot;#maffucci2019blacklisting&quot;&gt;(Maffucci et al., 2019)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/30591557/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/30591557/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2019 NAR. SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data.
+&lt;a class=&quot;citation&quot; href=&quot;#zhang2019seqtailor&quot;&gt;(Zhang et al., 2019)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/31045209/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/31045209/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;2020 Hum Gen. The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity?
+&lt;a class=&quot;citation&quot; href=&quot;#casanova2020human&quot;&gt;(Casanova &amp;amp; Abel, 2020)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/32462426/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/32462426/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2021 JCI. Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency.
+&lt;a class=&quot;citation&quot; href=&quot;#bastard2021herpes&quot;&gt;(Bastard et al., 2021)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/32960813/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/32960813/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2021 JCI. TLR3 controls constitutive IFN-β antiviral immunity in human fibroblasts and cortical neurons.
+&lt;a class=&quot;citation&quot; href=&quot;#gao2021tlr3&quot;&gt;(Gao et al., 2021)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/33393505/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/33393505/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2021 AJHG. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity
+&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;
+&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/34015270/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/34015270/&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;To date, the main paper that implements protein pathway analysis for rare 
+immune disease is that by
+Peng Zhang and 
+Yuval Itan &lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The history begins with determining methods for candidate variant selection - 
+the main challenge in human genomics, 
+especially for individual patients who can benefit from precision medicine. 
+Over the last decade, we have reached a point where we can now reasonably 
+discern individual candidate-causal variants from the background noise of 
+genomic variability.&lt;/p&gt;
+
+&lt;p&gt;From the authors’ perspective, the project began around 2011 and its first 
+step was concluded in 2013 with 
+Yuval Itan’s
+first “Human Gene Connectome” paper 
+while he was a post-doc with Casanova lab. 
+&lt;a class=&quot;citation&quot; href=&quot;#itan2013human&quot;&gt;(Itan et al., 2013)&lt;/a&gt;.
+This software connected genes like streets in a map, 
+based on their physiological relatedness.
+It was soon followed by methodological development 
+&lt;a class=&quot;citation&quot; href=&quot;#itan2014hgcs&quot;&gt;(Itan et al., 2014)&lt;/a&gt;
+and application to inborn errors of immunity 
+&lt;a class=&quot;citation&quot; href=&quot;#itan2015novel&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
+or both 
+&lt;a class=&quot;citation&quot; href=&quot;#itan2015human&quot;&gt;(Itan et al., 2015)&lt;/a&gt;,
+and a couple of necessary detours 
+&lt;a class=&quot;citation&quot; href=&quot;#itan2016mutation&quot;&gt;(Itan et al., 2016)&lt;/a&gt;
+and 
+&lt;a class=&quot;citation&quot; href=&quot;#maffucci2019blacklisting&quot;&gt;(Maffucci et al., 2019)&lt;/a&gt;.
+A review was also written by two of the main authors during the same period
+&lt;a class=&quot;citation&quot; href=&quot;#itan2015can&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When Peng Zhang joined the Casanova lab as post-doc, 
+Yuval Itan had started his own lab. 
+However, the pair worked together to continue producing the papers on variant
+interpretation and data processing
+&lt;a class=&quot;citation&quot; href=&quot;#zhang2018popviz&quot;&gt;(Zhang et al., 2018)&lt;/a&gt;
+and
+&lt;a class=&quot;citation&quot; href=&quot;#zhang2019seqtailor&quot;&gt;(Zhang et al., 2019)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After completing this period of work, 
+they renamed “Human Gene Connectome II” the 
+“Network-based Heterogeneity Clustering”.
+At this point, their aims were defined as being generally indistinguishable 
+from ours. 
+That is, &lt;em&gt;“the detection of physiological homogeneity in a cohort of patients 
+sharing a clinical phenotype but with high genetic heterogeneity - 
+a hallmark of severe infectious diseases”&lt;/em&gt; (Casanova via twitter), 
+as presented in their next paper on this topic
+&lt;a class=&quot;citation&quot; href=&quot;#casanova2020human&quot;&gt;(Casanova &amp;amp; Abel, 2020)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Shen-Ying Zhang came on board as senior author on the next two papers.
+With an excellent database of immune disorders and infections, 
+the team could gradually build their software.
+Exomes from patients with HSV-1 encephalitis were used for testing successive 
+versions in
+&lt;a class=&quot;citation&quot; href=&quot;#bastard2021herpes&quot;&gt;(Bastard et al., 2021)&lt;/a&gt; 
+and 
+&lt;a class=&quot;citation&quot; href=&quot;#gao2021tlr3&quot;&gt;(Gao et al., 2021)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Quoting Casanova &lt;em&gt;“When they were capable of detecting the known TLR3-IFN needles in the HSE stack, they installed camp 1, rested a bit and reported to me on the radio, while I was watching them from the basecamp with binoculars. I encouraged them to push for the final ascent and they did.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;With the same goal as our own - 
+producing unbiased methods for detection of biologically-connected causal 
+genetic variation - 
+they found new gene variants that interact via the TLR3-IFN protein pathway,
+in individual patients. 
+Shen-Ying Zhang found them to be biochemically deleterious, 
+an important factor for validation of genetic-first aproaches. 
+In this case, Zhang &lt;em&gt;et al&lt;/em&gt; get as close to the &lt;em&gt;“gold-standard”&lt;/em&gt; 
+as anyone to date.&lt;/p&gt;
+
+&lt;p&gt;The functional validation of candidate variants in disease then provided a proof-of-principle indication that they could detect physiological homogeneity in the midst of genetic heterogeneity 
+&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Quoting Casanova 
+&lt;em&gt;“A computational approach for detecting physiological homogeneity in the midst of genetic heterogeity.
+That was terrific!”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;An aside on what I call the &lt;em&gt;“gold-standard”&lt;/em&gt; for our field should be:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Unbiased statistical detection of a genetic phenomenon.&lt;/li&gt;
+    &lt;li&gt;Validation by functional models under systematic control.&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;Part [1] Depends on patient cohorts that are large enough to detect the effect based on the phenotype strength - difficult for &lt;em&gt;rare disease&lt;/em&gt;.&lt;br /&gt;
+Part [2] Depends on independently testing biological mechanisms.&lt;/p&gt;
+
+  &lt;p&gt;This second step generally consists of two hurdles:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;If the same researchers perform (1) genetic stats and (2) functional work, 
+there is a bias that is difficult to avoid when trying to functionally 
+validate statistically positive results.&lt;/li&gt;
+    &lt;li&gt;If the statistical genetic associations happen to contain a false positive 
+for something like severe rare immune disease, 
+the sensitive functional models may detect a damaging response. 
+One might find a truly damaging biological mechanism, 
+but if the statistical genetic association is not correct then this 
+biological mechanism should not be deemed causal; 
+back-tracking at this stage would be very difficult due to self-imposed bias.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;Ideally, in the future we hope to see a separation of the two steps 
+(stat genetics and wet-lab) such that each are performed independently. 
+The wet-lab would also ideally focus their routines on a particular protein 
+pathway/system with SOPs that improve accuracy and precision 
+(e.g. clinical diagnostics labs, clinical trials) rather than setting up 
+models for each new study.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Returning to our historical review, 
+we have been producing our protocols similarly in parallel.
+With patient cohorts of comparable sizes and phenotypes we will soon 
+have a complementary validation of protocols.
+However, great care is also being taken to test and select the most reliable 
+statistical methods for association testing - 
+an improvement to the fine work by
+&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Best practices in candidate variant selection protocols are basically 
+standardised as of 2021, 
+so the main remaining task is standardisation of the protein-pathway 
+annotation and association testing methods - 
+steps which we will soon be ready to publish after peer-review.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;itan2013human&quot;&gt;Itan, Y., Zhang, S.-Y., Vogt, G., Abhyankar, A., Herman, M., Nitschke, P., Fried, D., Quintana-Murci, L., Abel, L., &amp;amp; Casanova, J.-L. (2013). The human gene connectome as a map of short cuts for morbid allele discovery. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;110&lt;/i&gt;(14), 5558–5563.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;itan2014hgcs&quot;&gt;Itan, Y., Mazel, M., Mazel, B., Abhyankar, A., Nitschke, P., Quintana-Murci, L., Boisson-Dupuis, S., Boisson, B., Abel, L., Zhang, S.-Y., &amp;amp; others. (2014). HGCS: an online tool for prioritizing disease-causing gene variants by biological distance. &lt;i&gt;BMC Genomics&lt;/i&gt;, &lt;i&gt;15&lt;/i&gt;(1), 1–8.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;itan2015novel&quot;&gt;Itan, Y., &amp;amp; Casanova, J.-L. (2015). Novel primary immunodeficiency candidate genes predicted by the human gene connectome. &lt;i&gt;Frontiers in Immunology&lt;/i&gt;, &lt;i&gt;6&lt;/i&gt;, 142.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;itan2015human&quot;&gt;Itan, Y., Shang, L., Boisson, B., Patin, E., Bolze, A., Moncada-Vélez, M., Scott, E., Ciancanelli, M. J., Lafaille, F. G., Markle, J. G., &amp;amp; others. (2015). The human gene damage index as a gene-level approach to prioritizing exome variants. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;112&lt;/i&gt;(44), 13615–13620.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;itan2016mutation&quot;&gt;Itan, Y., Shang, L., Boisson, B., Ciancanelli, M. J., Markle, J. G., Martinez-Barricarte, R., Scott, E., Shah, I., Stenson, P. D., Gleeson, J., &amp;amp; others. (2016). The mutation significance cutoff: gene-level thresholds for variant predictions. &lt;i&gt;Nature Methods&lt;/i&gt;, &lt;i&gt;13&lt;/i&gt;(2), 109–110.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;itan2015can&quot;&gt;Itan, Y., &amp;amp; Casanova, J.-L. (2015). Can the impact of human genetic variations be predicted? &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;112&lt;/i&gt;(37), 11426–11427.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;zhang2018popviz&quot;&gt;Zhang, P., Bigio, B., Rapaport, F., Zhang, S.-Y., Casanova, J.-L., Abel, L., Boisson, B., &amp;amp; Itan, Y. (2018). PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations. &lt;i&gt;Bioinformatics&lt;/i&gt;, &lt;i&gt;34&lt;/i&gt;(24), 4307–4309.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;maffucci2019blacklisting&quot;&gt;Maffucci, P., Bigio, B., Rapaport, F., Cobat, A., Borghesi, A., Lopez, M., Patin, E., Bolze, A., Shang, L., Bendavid, M., &amp;amp; others. (2019). Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;116&lt;/i&gt;(3), 950–959.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;zhang2019seqtailor&quot;&gt;Zhang, P., Boisson, B., Stenson, P. D., Cooper, D. N., Casanova, J.-L., Abel, L., &amp;amp; Itan, Y. (2019). SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data. &lt;i&gt;Nucleic Acids Research&lt;/i&gt;, &lt;i&gt;47&lt;/i&gt;(W1), W623–W631.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;casanova2020human&quot;&gt;Casanova, J.-L., &amp;amp; Abel, L. (2020). &lt;i&gt;The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity?&lt;/i&gt; Springer.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;bastard2021herpes&quot;&gt;Bastard, P., Manry, J., Chen, J., Rosain, J., Seeleuthner, Y., AbuZaitun, O., Lorenzo, L., Khan, T., Hasek, M., Hernandez, N., &amp;amp; others. (2021). Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency. &lt;i&gt;The Journal of Clinical Investigation&lt;/i&gt;, &lt;i&gt;131&lt;/i&gt;(1).&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;gao2021tlr3&quot;&gt;Gao, D., Ciancanelli, M. J., Zhang, P., Harschnitz, O., Bondet, V., Hasek, M., Chen, J., Mu, X., Itan, Y., Cobat, A., &amp;amp; others. (2021). TLR3 controls constitutive IFN-βantiviral immunity in human fibroblasts and cortical neurons. &lt;i&gt;The Journal of Clinical Investigation&lt;/i&gt;, &lt;i&gt;131&lt;/i&gt;(1).&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;zhang2021computational&quot;&gt;Zhang, P., Cobat, A., Lee, Y.-S., Wu, Y., Bayrak, C. S., Boccon-Gibod, C., Matuozzo, D., Lorenzo, L., Jain, A., Boucherit, S., &amp;amp; others. (2021). A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Unnecessary complexity in precision medicine</title>
@@ -7319,11 +7565,7 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
   </li>
   <li><a href="#main-papers-in-order" id="markdown-toc-main-papers-in-order">Main papers in order</a>    <ul>
       <li><a href="#major-classes-of-tests" id="markdown-toc-major-classes-of-tests">Major Classes of Tests</a></li>
-      <li><a href="#burden-tests-so-far" id="markdown-toc-burden-tests-so-far">Burden Tests So Far</a>        <ul>
-          <li><a href="#tests" id="markdown-toc-tests">Tests</a></li>
-          <li><a href="#power-of-burden-tests-depends-on" id="markdown-toc-power-of-burden-tests-depends-on">Power of burden tests depends on</a></li>
-        </ul>
-      </li>
+      <li><a href="#burden-tests-so-far" id="markdown-toc-burden-tests-so-far">Burden Tests So Far</a></li>
     </ul>
   </li>
   <li><a href="#li-and-leal-2008" id="markdown-toc-li-and-leal-2008">Li and Leal 2008</a>    <ul>
@@ -7343,32 +7585,15 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
   <li><a href="#madsen-and-browning-2009" id="markdown-toc-madsen-and-browning-2009">Madsen and Browning 2009</a>    <ul>
       <li><a href="#background-1" id="markdown-toc-background-1">Background</a></li>
       <li><a href="#main-theory" id="markdown-toc-main-theory">Main theory</a></li>
-      <li><a href="#methods" id="markdown-toc-methods">Methods</a>        <ul>
-          <li><a href="#weighted-sum-method" id="markdown-toc-weighted-sum-method">Weighted-Sum Method</a></li>
-          <li><a href="#power-simulations" id="markdown-toc-power-simulations">Power simulations</a></li>
-        </ul>
-      </li>
+      <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
       <li><a href="#encode-data" id="markdown-toc-encode-data">ENCODE data</a></li>
-      <li><a href="#results" id="markdown-toc-results">Results</a>        <ul>
-          <li><a href="#proportion-of-variants-containing-mutations" id="markdown-toc-proportion-of-variants-containing-mutations">Proportion of Variants Containing Mutations</a></li>
-        </ul>
-      </li>
+      <li><a href="#results" id="markdown-toc-results">Results</a></li>
       <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
       <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
     </ul>
   </li>
   <li><a href="#price-2010" id="markdown-toc-price-2010">Price 2010</a>    <ul>
-      <li><a href="#methods-1" id="markdown-toc-methods-1">Methods</a>        <ul>
-          <li><a href="#simulation-framework" id="markdown-toc-simulation-framework">Simulation Framework</a></li>
-          <li><a href="#weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios" id="markdown-toc-weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios">Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios</a></li>
-          <li><a href="#fixed-threshold-approach" id="markdown-toc-fixed-threshold-approach">Fixed-Threshold Approach</a></li>
-          <li><a href="#weighted-approach" id="markdown-toc-weighted-approach">Weighted Approach</a></li>
-          <li><a href="#variable-threshold-approach" id="markdown-toc-variable-threshold-approach">Variable-Threshold Approach</a></li>
-          <li><a href="#cheating-approach-to-incorporating-varphip-phip" id="markdown-toc-cheating-approach-to-incorporating-varphip-phip">Cheating Approach to Incorporating \(\varphi(p)\) (“phi(p)”)</a></li>
-          <li><a href="#incorporation-of-computational-predictions-of-functional-effects" id="markdown-toc-incorporation-of-computational-predictions-of-functional-effects">Incorporation of Computational Predictions of Functional Effects</a></li>
-          <li><a href="#application-to-empirical-data-sets" id="markdown-toc-application-to-empirical-data-sets">Application to Empirical Data Sets</a></li>
-        </ul>
-      </li>
+      <li><a href="#methods-1" id="markdown-toc-methods-1">Methods</a></li>
       <li><a href="#results-and-discussion" id="markdown-toc-results-and-discussion">Results and Discussion</a></li>
     </ul>
   </li>
@@ -7378,13 +7603,7 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
   </li>
   <li><a href="#skat" id="markdown-toc-skat">SKAT</a>    <ul>
       <li><a href="#introduction-1" id="markdown-toc-introduction-1">Introduction</a></li>
-      <li><a href="#methods-2" id="markdown-toc-methods-2">Methods</a>        <ul>
-          <li><a href="#sequencing-kernel-association-test" id="markdown-toc-sequencing-kernel-association-test">Sequencing Kernel Association Test</a></li>
-          <li><a href="#skat-model-and-test-for-linear-snp-effects" id="markdown-toc-skat-model-and-test-for-linear-snp-effects">SKAT Model and Test for Linear SNP Effects</a></li>
-          <li><a href="#relationship-between-linear-skat-and-individual-variant-test-statistics" id="markdown-toc-relationship-between-linear-skat-and-individual-variant-test-statistics">Relationship between Linear SKAT and Individual Variant Test Statistics</a></li>
-          <li><a href="#accommodating-epistatic-effects-and-prior-information-under-the-skat" id="markdown-toc-accommodating-epistatic-effects-and-prior-information-under-the-skat">Accommodating Epistatic Effects and Prior Information under the SKAT</a></li>
-        </ul>
-      </li>
+      <li><a href="#methods-2" id="markdown-toc-methods-2">Methods</a></li>
       <li><a href="#skat-is-a-generalization-of-the-c-alpha-test" id="markdown-toc-skat-is-a-generalization-of-the-c-alpha-test">SKAT Is a Generalization of the C-Alpha Test</a></li>
     </ul>
   </li>
@@ -7393,12 +7612,13 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
       <li><a href="#methods-3" id="markdown-toc-methods-3">Methods</a></li>
     </ul>
   </li>
-  <li><a href="#zhang-2021-ashg" id="markdown-toc-zhang-2021-ashg">Zhang 2021 ASHG</a>    <ul>
-      <li><a href="#problems-with-this-paper-1" id="markdown-toc-problems-with-this-paper-1">Problems with this paper</a>        <ul>
-          <li><a href="#cluster-method" id="markdown-toc-cluster-method">Cluster method</a></li>
-          <li><a href="#carrier-counts-instead-of-allele-dosage" id="markdown-toc-carrier-counts-instead-of-allele-dosage">Carrier counts instead of allele dosage</a></li>
-        </ul>
-      </li>
+  <li><a href="#protein-pathway-analysis" id="markdown-toc-protein-pathway-analysis">Protein pathway analysis</a>    <ul>
+      <li><a href="#zhang-2021-ashg" id="markdown-toc-zhang-2021-ashg">Zhang 2021 ASHG</a></li>
+      <li><a href="#problems-with-this-paper-1" id="markdown-toc-problems-with-this-paper-1">Problems with this paper</a></li>
+    </ul>
+  </li>
+  <li><a href="#itan--casanova-contributions" id="markdown-toc-itan--casanova-contributions">Itan &amp; Casanova contributions</a>    <ul>
+      <li><a href="#historical-review" id="markdown-toc-historical-review">Historical review</a></li>
     </ul>
   </li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
@@ -7413,7 +7633,7 @@ I am publishing this live as I work since there are several heavy papers to get 
 <h2 id="to-do">To do</h2>
 
 <p>Running code on test data: Remake the gVCF as BP_RESOLUTION to list a site for every position. 
-Filter: If variants are MAF &gt;0.1 in gnomAD then run a filter to remove variants that are not sequenced in controls.
+Filter: If variants are MAF &gt;1.1 in gnomAD then run a filter to remove variants that are not sequenced in controls.
 Justification: If we ran that filter for every singleton it would remove the very rare variants that would have been a true positive if it had been sequenced in the controls.</p>
 
 <h1 id="main-papers-in-order">Main papers in order</h1>
@@ -8162,9 +8382,13 @@ to have little or no effect on phenotype,</li>
   </li>
 </ul>
 
-<h1 id="zhang-2021-ashg">Zhang 2021 ASHG</h1>
+<h1 id="protein-pathway-analysis">Protein pathway analysis</h1>
+<h2 id="zhang-2021-ashg">Zhang 2021 ASHG</h2>
 
-<p><a href="https://www.sciencedirect.com/science/article/pii/S0002929721001543?dgcid=author">A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity</a></p>
+<p>Zhang et al. provide and excellent example of the same problem that we are
+assessing. 
+<a class="citation" href="#zhang2021computational">(Zhang et al., 2021)</a>
+<a href="https://www.sciencedirect.com/science/article/pii/S0002929721001543?dgcid=author">A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity</a></p>
 
 <p>I have never had a paper so similar to a project that we are currently working on.
 Basically the only difference is:</p>
@@ -8248,16 +8472,252 @@ this_case_pathway_hit <span class="o">=</span> dict<span class="o">()</span>
 			adj_pvalue <span class="o">=</span> float<span class="o">(</span><span class="s1">'%.3E'</span> % Decimal<span class="o">(</span>adj_pvalue<span class="o">))</span>
 			this_case_pathway_hit[each_pathway] <span class="o">=</span> adj_pvalue
 
-<span class="c"># They do not show any code with the SKAT paramaters, presumably defaults using R.</span>
+<span class="c"># They do not show any code with the SKAT parameters, presumably defaults using R.</span>
 </code></pre></div></div>
+
+<h1 id="itan--casanova-contributions">Itan &amp; Casanova contributions</h1>
+<h2 id="historical-review">Historical review</h2>
+
+<p>We are tackling this problem of protein pathway analysis from the viewpoint of 
+rare immune disease and infection.
+Historically, several topics in bioinformatic and functional analysis have 
+been required before we could achieve our current position of 
+statistically-robust genetic discovery for rare disease:</p>
+
+<ol>
+  <li>Candidate variant select for individual genomes</li>
+  <li>Compiling reliable cohorts of patients with shared phenotypes</li>
+  <li>Protein-protein interactions</li>
+  <li>Variant collapse</li>
+  <li>Protein pathway analysis</li>
+  <li>Functional validation</li>
+</ol>
+
+<p>Therefore, a historical review of the timeline is beneficial to illustrate the 
+technical successes that allow us to reliably produce candidate variants by
+genome sequencing and to validate statistically-driven results by <em>“traditional”</em>
+functional validation. 
+These steps [1, 2 and 6 in our list] are exemplified by the following 
+historical review. 
+The complete list of steps 1-6 are touched on, 
+but full validation of each step is the culmination of what we are currently 
+working on and will be explicitly reviewed when we have completed our study.</p>
+
+<p>As one of the leaders in this field, Casanova lab has provided a lot of insider
+history to the story in a great twitter thread
+<a href="https://twitter.com/casanova_lab/status/1397539593608695808">https://twitter.com/casanova_lab/status/1397539593608695808</a>.
+The literature for discussion is first listed here to facilitate downloading 
+but sources are referenced as usual throughout.</p>
+
+<hr />
+
+<p>2013 PNAS. The human gene connectome as a map of short cuts for morbid allele discovery.
+<a class="citation" href="#itan2013human">(Itan et al., 2013)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/23509278/">https://pubmed.ncbi.nlm.nih.gov/23509278/</a></p>
+
+<p>2014 BMC Gen. HGCS: an online tool for prioritizing disease-causing gene variants by biological distance.
+<a class="citation" href="#itan2014hgcs">(Itan et al., 2014)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/24694260/">https://pubmed.ncbi.nlm.nih.gov/24694260/</a></p>
+
+<p>2015 Front. Novel primary immunodeficiency candidate genes predicted by the human gene connectome.
+<a class="citation" href="#itan2015novel">(Itan &amp; Casanova, 2015)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/25883595/">https://pubmed.ncbi.nlm.nih.gov/25883595/</a>,</p>
+
+<p>2015 PNAS. The human gene damage index as a gene-level approach to prioritizing exome variants.
+<a class="citation" href="#itan2015human">(Itan et al., 2015)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/26483451/">https://pubmed.ncbi.nlm.nih.gov/26483451/</a></p>
+
+<p>2016 NatMet. The mutation significance cutoff: gene-level thresholds for variant predictions.
+<a class="citation" href="#itan2016mutation">(Itan et al., 2016)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/26820543/">https://pubmed.ncbi.nlm.nih.gov/26820543/</a></p>
+
+<p>2015 PNAS. Can the impact of human genetic variations be predicted?
+<a class="citation" href="#itan2015can">(Itan &amp; Casanova, 2015)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/26351682/">https://pubmed.ncbi.nlm.nih.gov/26351682/</a></p>
+
+<p>2018 Bioinf. PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations.
+<a class="citation" href="#zhang2018popviz">(Zhang et al., 2018)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/30535305/">https://pubmed.ncbi.nlm.nih.gov/30535305/</a></p>
+
+<p>2019 PNAS. Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis.
+<a class="citation" href="#maffucci2019blacklisting">(Maffucci et al., 2019)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/30591557/">https://pubmed.ncbi.nlm.nih.gov/30591557/</a></p>
+
+<p>2019 NAR. SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data.
+<a class="citation" href="#zhang2019seqtailor">(Zhang et al., 2019)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/31045209/">https://pubmed.ncbi.nlm.nih.gov/31045209/</a>.</p>
+
+<p>2020 Hum Gen. The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity?
+<a class="citation" href="#casanova2020human">(Casanova &amp; Abel, 2020)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/32462426/">https://pubmed.ncbi.nlm.nih.gov/32462426/</a></p>
+
+<p>2021 JCI. Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency.
+<a class="citation" href="#bastard2021herpes">(Bastard et al., 2021)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/32960813/">https://pubmed.ncbi.nlm.nih.gov/32960813/</a></p>
+
+<p>2021 JCI. TLR3 controls constitutive IFN-β antiviral immunity in human fibroblasts and cortical neurons.
+<a class="citation" href="#gao2021tlr3">(Gao et al., 2021)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/33393505/">https://pubmed.ncbi.nlm.nih.gov/33393505/</a></p>
+
+<p>2021 AJHG. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity
+<a class="citation" href="#zhang2021computational">(Zhang et al., 2021)</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/34015270/">https://pubmed.ncbi.nlm.nih.gov/34015270/</a></p>
+
+<hr />
+
+<p>To date, the main paper that implements protein pathway analysis for rare 
+immune disease is that by
+Peng Zhang and 
+Yuval Itan <a class="citation" href="#zhang2021computational">(Zhang et al., 2021)</a>.</p>
+
+<p>The history begins with determining methods for candidate variant selection - 
+the main challenge in human genomics, 
+especially for individual patients who can benefit from precision medicine. 
+Over the last decade, we have reached a point where we can now reasonably 
+discern individual candidate-causal variants from the background noise of 
+genomic variability.</p>
+
+<p>From the authors’ perspective, the project began around 2011 and its first 
+step was concluded in 2013 with 
+Yuval Itan’s
+first “Human Gene Connectome” paper 
+while he was a post-doc with Casanova lab. 
+<a class="citation" href="#itan2013human">(Itan et al., 2013)</a>.
+This software connected genes like streets in a map, 
+based on their physiological relatedness.
+It was soon followed by methodological development 
+<a class="citation" href="#itan2014hgcs">(Itan et al., 2014)</a>
+and application to inborn errors of immunity 
+<a class="citation" href="#itan2015novel">(Itan &amp; Casanova, 2015)</a>
+or both 
+<a class="citation" href="#itan2015human">(Itan et al., 2015)</a>,
+and a couple of necessary detours 
+<a class="citation" href="#itan2016mutation">(Itan et al., 2016)</a>
+and 
+<a class="citation" href="#maffucci2019blacklisting">(Maffucci et al., 2019)</a>.
+A review was also written by two of the main authors during the same period
+<a class="citation" href="#itan2015can">(Itan &amp; Casanova, 2015)</a>.</p>
+
+<p>When Peng Zhang joined the Casanova lab as post-doc, 
+Yuval Itan had started his own lab. 
+However, the pair worked together to continue producing the papers on variant
+interpretation and data processing
+<a class="citation" href="#zhang2018popviz">(Zhang et al., 2018)</a>
+and
+<a class="citation" href="#zhang2019seqtailor">(Zhang et al., 2019)</a>.</p>
+
+<p>After completing this period of work, 
+they renamed “Human Gene Connectome II” the 
+“Network-based Heterogeneity Clustering”.
+At this point, their aims were defined as being generally indistinguishable 
+from ours. 
+That is, <em>“the detection of physiological homogeneity in a cohort of patients 
+sharing a clinical phenotype but with high genetic heterogeneity - 
+a hallmark of severe infectious diseases”</em> (Casanova via twitter), 
+as presented in their next paper on this topic
+<a class="citation" href="#casanova2020human">(Casanova &amp; Abel, 2020)</a>.</p>
+
+<p>Shen-Ying Zhang came on board as senior author on the next two papers.
+With an excellent database of immune disorders and infections, 
+the team could gradually build their software.
+Exomes from patients with HSV-1 encephalitis were used for testing successive 
+versions in
+<a class="citation" href="#bastard2021herpes">(Bastard et al., 2021)</a> 
+and 
+<a class="citation" href="#gao2021tlr3">(Gao et al., 2021)</a>.</p>
+
+<p>Quoting Casanova <em>“When they were capable of detecting the known TLR3-IFN needles in the HSE stack, they installed camp 1, rested a bit and reported to me on the radio, while I was watching them from the basecamp with binoculars. I encouraged them to push for the final ascent and they did.”</em></p>
+
+<p>With the same goal as our own - 
+producing unbiased methods for detection of biologically-connected causal 
+genetic variation - 
+they found new gene variants that interact via the TLR3-IFN protein pathway,
+in individual patients. 
+Shen-Ying Zhang found them to be biochemically deleterious, 
+an important factor for validation of genetic-first aproaches. 
+In this case, Zhang <em>et al</em> get as close to the <em>“gold-standard”</em> 
+as anyone to date.</p>
+
+<p>The functional validation of candidate variants in disease then provided a proof-of-principle indication that they could detect physiological homogeneity in the midst of genetic heterogeneity 
+<a class="citation" href="#zhang2021computational">(Zhang et al., 2021)</a>.</p>
+
+<p>Quoting Casanova 
+<em>“A computational approach for detecting physiological homogeneity in the midst of genetic heterogeity.
+That was terrific!”</em>.</p>
+
+<hr />
+
+<blockquote>
+  <p>An aside on what I call the <em>“gold-standard”</em> for our field should be:</p>
+  <ol>
+    <li>Unbiased statistical detection of a genetic phenomenon.</li>
+    <li>Validation by functional models under systematic control.</li>
+  </ol>
+
+  <p>Part [1] Depends on patient cohorts that are large enough to detect the effect based on the phenotype strength - difficult for <em>rare disease</em>.<br />
+Part [2] Depends on independently testing biological mechanisms.</p>
+
+  <p>This second step generally consists of two hurdles:</p>
+  <ul>
+    <li>If the same researchers perform (1) genetic stats and (2) functional work, 
+there is a bias that is difficult to avoid when trying to functionally 
+validate statistically positive results.</li>
+    <li>If the statistical genetic associations happen to contain a false positive 
+for something like severe rare immune disease, 
+the sensitive functional models may detect a damaging response. 
+One might find a truly damaging biological mechanism, 
+but if the statistical genetic association is not correct then this 
+biological mechanism should not be deemed causal; 
+back-tracking at this stage would be very difficult due to self-imposed bias.</li>
+  </ul>
+
+  <p>Ideally, in the future we hope to see a separation of the two steps 
+(stat genetics and wet-lab) such that each are performed independently. 
+The wet-lab would also ideally focus their routines on a particular protein 
+pathway/system with SOPs that improve accuracy and precision 
+(e.g. clinical diagnostics labs, clinical trials) rather than setting up 
+models for each new study.</p>
+</blockquote>
+
+<hr />
+
+<p>Returning to our historical review, 
+we have been producing our protocols similarly in parallel.
+With patient cohorts of comparable sizes and phenotypes we will soon 
+have a complementary validation of protocols.
+However, great care is also being taken to test and select the most reliable 
+statistical methods for association testing - 
+an improvement to the fine work by
+<a class="citation" href="#zhang2021computational">(Zhang et al., 2021)</a>.</p>
+
+<p>Best practices in candidate variant selection protocols are basically 
+standardised as of 2021, 
+so the main remaining task is standardisation of the protein-pathway 
+annotation and association testing methods - 
+steps which we will soon be ready to publish after peer-review.</p>
+
 <h1 id="references">References</h1>
+
 <ol class="bibliography"><li><span id="li2008methods">Li, B., &amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. <i>The American Journal of Human Genetics</i>, <i>83</i>(3), 311–321.</span></li>
 <li><span id="morris2010evaluation">Morris, A. P., &amp; Zeggini, E. (2010). An evaluation of statistical approaches to rare variant analysis in genetic association studies. <i>Genetic Epidemiology</i>, <i>34</i>(2), 188–193.</span></li>
 <li><span id="price2010pooled">Price, A. L., Kryukov, G. V., de Bakker, P. I. W., Purcell, S. M., Staples, J., Wei, L.-J., &amp; Sunyaev, S. R. (2010). Pooled association tests for rare variants in exon-resequencing studies. <i>The American Journal of Human Genetics</i>, <i>86</i>(6), 832–838.</span></li>
 <li><span id="Lee2012Optimal">Lee, S., Wu, M. C., &amp; Lin, X. (2012). Optimal tests for rare variant effects in sequencing association studies. <i>Biostatistics</i>, <i>13</i>(4), 762–775. https://doi.org/10.1093/biostatistics/kxs014</span></li>
 <li><span id="Lee2012Optimalunified">Lee, S., Emond, M. J., Bamshad, M. J., Barnes, K. C., Rieder, M. J., Nickerson, D. A., Christiani, D. C., Wurfel, M. M., &amp; Lin, X. (2012). Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies. <i>The American Journal of Human Genetics</i>, <i>91</i>(2), 224–237. https://doi.org/https://doi.org/10.1016/j.ajhg.2012.06.007</span></li>
 <li><span id="IonitaLaza2013Sequence">Ionita-Laza, I., Lee, S., Makarov, V., Buxbaum, J. D., &amp; Lin, X. (2013). Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants. <i>The American Journal of Human Genetics</i>, <i>92</i>(6), 841–853. https://doi.org/https://doi.org/10.1016/j.ajhg.2013.04.015</span></li>
-<li><span id="madsen2009groupwise">Madsen, B. E., &amp; Browning, S. R. (2009). A groupwise association test for rare mutations using a weighted sum statistic. <i>PLoS Genet</i>, <i>5</i>(2), e1000384.</span></li></ol>
+<li><span id="madsen2009groupwise">Madsen, B. E., &amp; Browning, S. R. (2009). A groupwise association test for rare mutations using a weighted sum statistic. <i>PLoS Genet</i>, <i>5</i>(2), e1000384.</span></li>
+<li><span id="zhang2021computational">Zhang, P., Cobat, A., Lee, Y.-S., Wu, Y., Bayrak, C. S., Boccon-Gibod, C., Matuozzo, D., Lorenzo, L., Jain, A., Boucherit, S., &amp; others. (2021). A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity. <i>The American Journal of Human Genetics</i>.</span></li>
+<li><span id="itan2013human">Itan, Y., Zhang, S.-Y., Vogt, G., Abhyankar, A., Herman, M., Nitschke, P., Fried, D., Quintana-Murci, L., Abel, L., &amp; Casanova, J.-L. (2013). The human gene connectome as a map of short cuts for morbid allele discovery. <i>Proceedings of the National Academy of Sciences</i>, <i>110</i>(14), 5558–5563.</span></li>
+<li><span id="itan2014hgcs">Itan, Y., Mazel, M., Mazel, B., Abhyankar, A., Nitschke, P., Quintana-Murci, L., Boisson-Dupuis, S., Boisson, B., Abel, L., Zhang, S.-Y., &amp; others. (2014). HGCS: an online tool for prioritizing disease-causing gene variants by biological distance. <i>BMC Genomics</i>, <i>15</i>(1), 1–8.</span></li>
+<li><span id="itan2015novel">Itan, Y., &amp; Casanova, J.-L. (2015). Novel primary immunodeficiency candidate genes predicted by the human gene connectome. <i>Frontiers in Immunology</i>, <i>6</i>, 142.</span></li>
+<li><span id="itan2015human">Itan, Y., Shang, L., Boisson, B., Patin, E., Bolze, A., Moncada-Vélez, M., Scott, E., Ciancanelli, M. J., Lafaille, F. G., Markle, J. G., &amp; others. (2015). The human gene damage index as a gene-level approach to prioritizing exome variants. <i>Proceedings of the National Academy of Sciences</i>, <i>112</i>(44), 13615–13620.</span></li>
+<li><span id="itan2016mutation">Itan, Y., Shang, L., Boisson, B., Ciancanelli, M. J., Markle, J. G., Martinez-Barricarte, R., Scott, E., Shah, I., Stenson, P. D., Gleeson, J., &amp; others. (2016). The mutation significance cutoff: gene-level thresholds for variant predictions. <i>Nature Methods</i>, <i>13</i>(2), 109–110.</span></li>
+<li><span id="itan2015can">Itan, Y., &amp; Casanova, J.-L. (2015). Can the impact of human genetic variations be predicted? <i>Proceedings of the National Academy of Sciences</i>, <i>112</i>(37), 11426–11427.</span></li>
+<li><span id="zhang2018popviz">Zhang, P., Bigio, B., Rapaport, F., Zhang, S.-Y., Casanova, J.-L., Abel, L., Boisson, B., &amp; Itan, Y. (2018). PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations. <i>Bioinformatics</i>, <i>34</i>(24), 4307–4309.</span></li>
+<li><span id="maffucci2019blacklisting">Maffucci, P., Bigio, B., Rapaport, F., Cobat, A., Borghesi, A., Lopez, M., Patin, E., Bolze, A., Shang, L., Bendavid, M., &amp; others. (2019). Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis. <i>Proceedings of the National Academy of Sciences</i>, <i>116</i>(3), 950–959.</span></li>
+<li><span id="zhang2019seqtailor">Zhang, P., Boisson, B., Stenson, P. D., Cooper, D. N., Casanova, J.-L., Abel, L., &amp; Itan, Y. (2019). SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data. <i>Nucleic Acids Research</i>, <i>47</i>(W1), W623–W631.</span></li>
+<li><span id="casanova2020human">Casanova, J.-L., &amp; Abel, L. (2020). <i>The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity?</i> Springer.</span></li>
+<li><span id="bastard2021herpes">Bastard, P., Manry, J., Chen, J., Rosain, J., Seeleuthner, Y., AbuZaitun, O., Lorenzo, L., Khan, T., Hasek, M., Hernandez, N., &amp; others. (2021). Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency. <i>The Journal of Clinical Investigation</i>, <i>131</i>(1).</span></li>
+<li><span id="gao2021tlr3">Gao, D., Ciancanelli, M. J., Zhang, P., Harschnitz, O., Bondet, V., Hasek, M., Chen, J., Mu, X., Itan, Y., Cobat, A., &amp; others. (2021). TLR3 controls constitutive IFN-βantiviral immunity in human fibroblasts and cortical neurons. <i>The Journal of Clinical Investigation</i>, <i>131</i>(1).</span></li></ol>
 </p>
 
   <h2> - </h2>

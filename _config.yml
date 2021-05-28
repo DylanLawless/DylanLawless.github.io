@@ -1,6 +1,6 @@
 markdown: kramdown
 kramdown: 
-  toc_levels: "1,2,3"
+  toc_levels: "1,2"
 
 # references jekyll-scholar
 scholar:

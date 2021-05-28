@@ -1,5 +1,6 @@
 #!/bin/bash
-bundle exec jekyll serve --incremental &
+# bundle exec jekyll serve --incremental &
+bundle exec jekyll serve &
 # jekyll serve &
 sleep 3
 
