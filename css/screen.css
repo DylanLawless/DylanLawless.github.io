@@ -1,7 +1,7 @@
 /* Common */
 body {
 	font-family: Baskerville;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	position: relative;
 	text-align: justify;
 	display: flex;
@@ -23,12 +23,12 @@ code {
 }
 
 h1 {
-  font: 1.6rem 'Didot';
+  font: 1.4rem 'Didot';
   color: black;
 }
 
 h2, h3, h4, h5, h6 {
-  font: 1.5rem 'Didot';
+  font: 1.3rem 'Didot';
   font-style: italic;
   color: black;
 }
@@ -89,7 +89,7 @@ table {
   width: 45rem;
   max-width: 90%;
   margin: 1rem auto 1rem auto;
-  line-height: 2.0rem;
+  line-height: 1.8rem;
 }
 
 .title {
