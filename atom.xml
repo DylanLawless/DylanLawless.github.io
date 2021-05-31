@@ -4,13 +4,52 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-05-31T17:52:14+02:00</updated>
+ <updated>2021-05-31T18:40:08+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Weeknotes</title>
+   <link href="https://tom.preston-werner.com/2021/05/31/weeknotes.html"/>
+   <updated>2021-05-31T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2021/05/31/weeknotes</id>
+   <content type="html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;31 May 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Testing toy code for viral infection data.&lt;/li&gt;
+  &lt;li&gt;Testing LD pruning in viral genomes.&lt;/li&gt;
+  &lt;li&gt;Writing results on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;International collaboration call on host-pathogen interaction, hosted in &lt;a href=&quot;https://www.vanderbilt.edu&quot;&gt;Vanderbilt&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Website CSS building.&lt;/li&gt;
+  &lt;li&gt;Implementing Rake for webdev.&lt;/li&gt;
+  &lt;li&gt;Tech4Growth &lt;a href=&quot;https://tech4growth.ch&quot;&gt;workshop&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/34015270/&quot;&gt;Zhang et al., 2021 AJHG&lt;/a&gt;. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Sergei Loznitsa’s monumental &lt;a href=&quot;https://www.imdb.com/title/tt10203842/&quot;&gt;State Funeral&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Yazz Ahmed - &lt;a href=&quot;https://www.youtube.com/watch?v=6kKYzuvxsZo&quot;&gt;Polyhymnia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Floating Points, Pharoah Sanders &amp;amp; The London Symphony Orchestra - &lt;a href=&quot;https://www.youtube.com/watch?v=Mn8x0QbN4f8&amp;amp;t=571s&quot;&gt;Promises&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Historical review of rare immune pathway analysis</title>
