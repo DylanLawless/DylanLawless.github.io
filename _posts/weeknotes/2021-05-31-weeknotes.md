@@ -1,11 +1,9 @@
 ---
-
 layout: post
 title: Weeknotes
 created: 31 May 2021
 tags: weeknotes
 status: finished
-
 ---
 
 {{ page.title }}
@@ -26,7 +24,7 @@ https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusL
 3. Tech4Growth [workshop](https://tech4growth.ch).
 
 # Reading
-1. The Honourable Schoolboy, John le Carré.
+1. [The Honourable Schoolboy](https://en.wikipedia.org/wiki/The_Honourable_Schoolboy), John le Carré.
 2. [Zhang et al., 2021 AJHG](https://pubmed.ncbi.nlm.nih.gov/34015270/). A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity.
 
 # Other media

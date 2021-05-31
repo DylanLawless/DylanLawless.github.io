@@ -361,5 +361,5 @@ Race for Coronavirus Vaccine Pits Spy Against Spy\
 [https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare](https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare)
 
 # Footnotes
-[^foot]: [A trivial example of data export by hiding data within a "results figure"]({{ site.baseurl }}{% link _posts/2019-08-19-devil_in_detail.md %}).
+[^foot]: [A trivial example of data export by hiding data within a "results figure"]({{ site.baseurl }}{% link _posts/blogpost/2019-08-19-devil_in_detail.md %}).
 
