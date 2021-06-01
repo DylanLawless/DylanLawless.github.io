@@ -22,110 +22,79 @@ This site is under live development; some placeholder pages are included for tes
 
 <!--
 <div id="home">
-  <h2>Subject titles</h2>
-    <ul class="topic">
-    {% assign sorted_subject = site.topic | group_by: "subject" %}
-      {% for subject in sorted_subject %}
-      - {{ subject.name }}<br />
-      {% endfor %}
-    </ul>
+	<h2>Subject titles</h2>
+		<ul class="topic">
+		{% assign sorted_subject = site.topic | group_by: "subject" %}
+			{% for subject in sorted_subject %}
+			- {{ subject.name }}<br />
+			{% endfor %}
+		</ul>
 -->
 
 <div id="Topics">
-    <h1>Precision medicine</h1>
-  <ul class="topic">
-      {% assign sorted-topic = site.topic | where: "subject","Precision medicine" %}
-      {% for topic in sorted-topic %}
-      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
-    {% endfor %}
-  </ul>
+<h1>Precision medicine</h1>
+<ul class="topic">
+	{% assign sorted-topic = site.topic | where: "subject","Precision medicine" %}
+	{% for topic in sorted-topic %}
+	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+	{% endfor %}
+</ul>
 
-  <h1>Intelligence topics</h1>
-  <ul class="topic">
-      {% assign sorted-topic = site.topic | where: "subject","cryptography" %}
-      {% for topic in sorted-topic %}
-      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
-    {% endfor %}
-  </ul>
+<h1>Intelligence topics</h1>
+<ul class="topic">
+	{% assign sorted-topic = site.topic | where: "subject","cryptography" %}
+	{% for topic in sorted-topic %}
+	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+	{% endfor %}
+</ul>
 
-  <h1>Statistics</h1>
-  <ul class="topic">
-      {% assign sorted-topic = site.topic | where: "subject","statistics" %}
-      {% for topic in sorted-topic %}
-      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
-    {% endfor %}
-  </ul>
+<h1>Statistics</h1>
+<ul class="topic">
+	{% assign sorted-topic = site.topic | where: "subject","statistics" %}
+	{% for topic in sorted-topic %}
+	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+	{% endfor %}
+</ul>
 
-  <h1>Immunology</h1>
-  <ul class="topic">
-      {% assign sorted-topic = site.topic | where: "subject","immunology" %}
-      {% for topic in sorted-topic %}
-      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
-    {% endfor %}
-  </ul>
+<h1>Immunology</h1>
+<ul class="topic">
+	{% assign sorted-topic = site.topic | where: "subject","immunology" %}
+	{% for topic in sorted-topic %}
+	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+	{% endfor %}
+</ul>
 
-  <h1>Public presentation</h1>
-  <ul class="topic">
-      {% assign sorted-topic = site.topic | where: "subject","meetings" %}
-      {% for topic in sorted-topic %}
-      <a href="{{ topic.url }}">{{ topic.title }}</a><br />
-    {% endfor %}
-  </ul>
+<h1>Public presentation</h1>
+<ul class="topic">
+	{% assign sorted-topic = site.topic | where: "subject","meetings" %}
+	{% for topic in sorted-topic %}
+	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+	{% endfor %}
+</ul>
 
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-    {% if post.path contains 'blogpost' %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% endif %}
-    {% endfor %}
-  </ul>
+<h1>Blog Posts</h1>
+<ul class="posts">
+	{% for post in site.posts %}
+	{% if post.path contains 'blogpost' %}
+		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endif %}
+	{% endfor %}
+</ul>
 
-  <h1>Weeknotes</h1>
-  {% for post in site.posts %}
-    {% if post.path contains 'weeknotes' %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+<!--
+	<h1>Weeknotes</h1>
+	{% for post in site.posts %}
+		{% if post.path contains 'weeknotes' %}
+			<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
 	{% endif %}
 	{% endfor %} 
-  </ul>
+	</ul>
+-->
 
-  <h1>Highlighted Media</h1>
-  <ul class="posts">
-    <li><span>27 Aug 2020</span> &raquo; <a href="https://ashpublications.org/blood/pages/blood_podcast">Podcast: Blood Journal complete TET2 deficiency by Spegarova, Lawless et al. </a></li>
-    <li><span>27 Aug 2020</span> &raquo; <a href="https://ashpublications.org/blood/article/136/9/1018/463418/Human-TET2-bridges-cancer-and-immunity">Featured: Human TET2 bridges cancer and immunity, Zhang and Casanova.</a></li>
-    <li><span>21 Feb 2019</span> &raquo; <a href="https://ashpublications.org/blood/article/133/8/773/260583/RAGs-usurp-cellular-factors-for-both-breaking-and">Featured: RAGs usurp cellular factors for both breaking and repairing. </a></li>
-  </ul>
+<h1>Highlighted Media</h1>
+<ul class="posts">
+	<li><span>27 Aug 2020</span> &raquo; <a href="https://ashpublications.org/blood/pages/blood_podcast">Podcast: Blood Journal complete TET2 deficiency by Spegarova, Lawless et al. </a></li>
+	<li><span>27 Aug 2020</span> &raquo; <a href="https://ashpublications.org/blood/article/136/9/1018/463418/Human-TET2-bridges-cancer-and-immunity">Featured: Human TET2 bridges cancer and immunity, Zhang and Casanova.</a></li>
+	<li><span>21 Feb 2019</span> &raquo; <a href="https://ashpublications.org/blood/article/133/8/773/260583/RAGs-usurp-cellular-factors-for-both-breaking-and">Featured: RAGs usurp cellular factors for both breaking and repairing. </a></li>
+</ul>
 
- <!-- 
-  <h1>Other Interviews, Talks, Etc</h1>
-  <ul class="posts">
-    <li><span>12 Sep 2013</span> &raquo; <a href="http://www.youtube.com/watch?v=k2vJNNAQZlg">Video: Fox Business News interview</a></li>
-    <li><span>02 Sep 2013</span> &raquo; <a href="http://www.wired.com/wiredenterprise/2013/09/github-for-anything/all/">Article: WIRED - GitHub Is Going Mainstream</a></li>
-    <li><span>25 Jul 2013</span> &raquo; <a href="http://www.youtube.com/watch?v=7DoB0SCUtOk&list=SP055Epbe6d5aclKNAa8msO1VvDOJ8sYlS&index=23">Video: O'Reilly Media - OSCON 2013 Interview</a></li>
-    <li><span>28 Dec 2012</span> &raquo; <a href="http://bits.blogs.nytimes.com/2012/12/28/github-has-big-dreams-for-open-source-software-and-more/">Article: NYTimes - Dreams of ‘Open’ Everything</a></li>
-    <li><span>20 Oct 2012</span> &raquo; <a href="http://www.youtube.com/watch?v=P9jjDpWzsUI">Video: Startup School 2012 - People, Product, Philosophy</a></li>
-    <li><span>27 Sep 2012</span> &raquo; <a href="http://www.youtube.com/watch?v=Ln-B_fs9QMY&feature=youtu.be">Video (Panel): Orrick - How to Build a Great Startup Culture</a></li>
-    <li><span>18 Jun 2012</span> &raquo; <a href="http://gigaom.com/cloud/10-innovators-changing-the-game-for-internet-infrastructure/7/">Article: GigaOm - 10 Innovators Changing the Game for Internet Infrastructure</a></li>
-    <li><span>02 Dec 2011</span> &raquo; <a href="http://vimeo.com/35640883">Video: Northern Lights Conference - Leveling Up</a></li>
-    <li><span>12 Nov 2011</span> &raquo; <a href="http://speakerdeck.com/u/mojombo/p/github-flavored-ruby">Slides: RubyConf Uruguay - GitHub Flavored Ruby</a></li>
-    <li><span>09 Nov 2011</span> &raquo; <a href="http://speakerdeck.com/u/mojombo/p/optimizing-for-happiness">Slides: RubyConf Argentina - Optimizing For Happiness</a></li>
-    <li><span>14 Apr 2011</span> &raquo; <a href="http://skillsmatter.com/podcast/agile-testing/optimizing-for-happiness">Video: ACCU Conference - Optimizing For Happiness</a></li>
-    <li><span>09 Apr 2011</span> &raquo; <a href="http://blogs.sitepoint.com/podcast-107-social-coding-with-githubs-tom-preston-werner/">SitePoint Podcast: Social Coding with GitHub’s Tom Preston-Werner</a></li>
-    <li><span>10 Feb 2011</span> &raquo; <a href="http://sea.ucar.edu/event/unlocking-secrets-git">Video: NCAR SEA: Unlocking the Secrets of Git</a></li>
-  </ul>
-
-         <h1>Noteworthy Open Source Projects and Specifications</h1>
-  <ul class="posts">
-    <li><a href="http://github.com/jekyll/jekyll/">Jekyll:</a> A simple, blog aware, static site generator (used for this site).</li>
-    <li><a href="http://semver.org">Semantic Versioning:</a> A meaningful method for incrementing version numbers.</li>
-    <li><a href="http://github.com/toml-lang/toml">TOML:</a> Tom's Obvious, Minimal Language.</li>
-    <li><a href="http://github.com/mojombo/god/">God:</a> Ruby process monitoring framework with easy extensibility.</li>
-    <li><a href="http://github.com/mojombo/chronic/">Chronic:</a> Ruby natural language date/time parser.</li>
-    <li><a href="http://tomdoc.org">TomDoc:</a> Code documentation for humans.</li>
-    <li><a href="http://github.com/mojombo/proxymachine/">ProxyMachine:</a> Layer 7 routing proxy in Ruby with Event Machine.</li>
-    <li><a href="http://github.com/github/gollum/">Gollum:</a> A simple, Git-powered wiki with a sweet API and local frontend.</li>
-    <li><a href="http://github.com/mojombo/grit/">Grit:</a> Object oriented Ruby bindings for Git (used by GitHub).</li>
-    <li><a href="http://github.com/mojombo/ernie/">Ernie:</a> Ruby/Erlang Hybrid BERT-RPC server.</li>
-  </ul>
-</div>
- -->
