@@ -29,7 +29,7 @@ I picked the first whole genome VCF file that I saw (hu24385B 2019-04-07.vcf.g_z
 [https://my.pgp-hms.org/profile/hu24385B](https://my.pgp-hms.org/profile/hu24385B). 
 The VCF has 3,461,639 variants.
 VCF files can contain a large range of information for each variant, however only the first 7 column are strictly neccessary; Chromosome, position, ID, Reference, Alternate, Qulaity, Filter, info. 
-[The details are explained on this GATK forum post.](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it).
+[The details are explained on this GATK forum post](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it).
 Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
 Therefore the most common input source may be lacking gene symbols.
 To get the gene names of a single file, the simplest way was is to upload a VCF (or a part of it) to [Variant Effect Predictor](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/) to get the gene symbol (and any other information that you wish).
@@ -69,7 +69,7 @@ command-line tools to wrangle data, including
 [gunzip](https://en.wikipedia.org/wiki/Gzip)
 to unzip compressed files, 
 [wc](https://en.wikipedia.org/wiki/wc_(Unix))
-to could lines, 
+to count lines, 
 [cat](https://en.wikipedia.org/wiki/Cat_(Unix))
 to print a file, 
 [head](https://en.wikipedia.org/wiki/Head_(Unix))
