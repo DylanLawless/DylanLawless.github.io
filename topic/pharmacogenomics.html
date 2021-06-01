@@ -74,6 +74,8 @@ var WRInitTime=(new Date()).getTime();
   <li><a href="#gene-dosage" id="markdown-toc-gene-dosage">Gene dosage</a></li>
   <li><a href="#drug-indication-1" id="markdown-toc-drug-indication-1">Drug indication</a></li>
   <li><a href="#a-large-scale-example-summary" id="markdown-toc-a-large-scale-example-summary">A large scale example summary</a></li>
+  <li><a href="#funding-strategy" id="markdown-toc-funding-strategy">Funding strategy</a></li>
+  <li><a href="#legal-requirements" id="markdown-toc-legal-requirements">Legal requirements</a></li>
   <li><a href="#more-questions" id="markdown-toc-more-questions">More questions</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
@@ -215,11 +217,13 @@ A simple sanity test would be useful first:</p>
 
 <h2 id="small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</h2>
 <p>From the VEP output I extracted the gene symbols column and compared against a list of druggable target genes from 
-<a href="https://www.drugbank.ca">DrugBank</a>
+<a href="https://www.drugbank.ca">DrugBank</a> 
 (because I happen to have their data on hand, FDA may be more reliable).
 I used another command-line method to do this efficienctly:</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cut</span> <span class="nt">-f1</span> <span class="nt">-d</span> <span class="s2">","</span> vep_output_file.csv | <span class="nb">uniq</span> <span class="o">&gt;</span> unique.genes.txt
 </code></pre></div></div>
+
 <ul>
   <li>Cut column 1 (f1)</li>
   <li>with a delimiter comma (,)</li>
@@ -231,13 +235,16 @@ I used another command-line method to do this efficienctly:</p>
 <br />
 Repeat the same type of method on the DrugBank dataset to get a list of the gene names contained in DrugBank into a file called “unique.druggable.txt”
 The next command will then compare both lists.
-<br />
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sort </span>unique.genes.txt unique.druggable.txt | <span class="nb">uniq</span> <span class="nt">-c</span> <span class="nt">-i</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'1 '</span>
-</code></pre></div>    </div>
-    <p>This command also used “uniq -c” to count how many times each gen name occurs and then “grep -v ‘1 ‘” meaning ignore genes that are only present 1 time. 
+<br /></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sort </span>unique.genes.txt unique.druggable.txt | <span class="nb">uniq</span> <span class="nt">-c</span> <span class="nt">-i</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'1 '</span>
+</code></pre></div></div>
+
+<p>This command also used “uniq -c” to count how many times each gen name occurs and then “grep -v ‘1 ‘” meaning ignore genes that are only present 1 time. 
 We want the genes that are present twice, once in each list.
-The genes which were in present in both the variant list and DrugBank list are:<br />
-From a 2,000 line VCF file = 
+The genes which were in present in both the variant list and DrugBank list are:
+From a 2,000 line VCF file:
 <a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a><br />
@@ -246,8 +253,6 @@ From a 10,000 VCF line file =
 <a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0008994">TP73</a>.</p>
-  </li>
-</ul>
 
 <h1 id="a-real-example-of-merging-genetic-and-pharmacogenomic-data">A real example of merging genetic and pharmacogenomic data</h1>
 <p>Now that a small example has shown us the logic of the process, we can try a more complex real-world example. 
@@ -489,6 +494,7 @@ And this command ran OK for me to give “output_prefix.recode.vcf”<br /></p>
 <span class="nt">--out</span> output_prefix <span class="se">\</span>
 <span class="nt">--recode</span> <span class="nt">--keep-INFO-all</span>
 </code></pre></div></div>
+
 <p>This new VCF will now only contain gene regions that are potentially “druggable”, or at least included on the FDA list.
 VCF annotation will be <em>much faster</em> than annotation of the whole genome.</p>
 
@@ -557,6 +563,134 @@ This table could be ranked based on consequence, CADD score.
 The top couple of rows then might be converted into a more readable format like a PDF.</li>
 </ul>
 
+<h1 id="funding-strategy">Funding strategy</h1>
+<p>University-based start-ups ususally follow a plan with three or four funding stages before coming to market. 
+It is also possible to get investors from day 1, but it is more usual to follow 
+the steps outlined here.
+It is also possible to partner with early investors for their guidance rather 
+than for financial investment.</p>
+
+<h3 id="example-funding-stages">Example funding stages:</h3>
+
+<ul>
+  <li>A - Fundamental research (e.g. SNSF)</li>
+  <li>B - Tech development (gap between the basic research and usable product)</li>
+  <li>C - Product development (e.g. industry, Innosuisse funding)</li>
+</ul>
+
+<h3 id="example-funding-sources-per-stage">Example funding sources per stage:</h3>
+
+<ol>
+  <li>[A] Ignite grant
+    <ul>
+      <li><a href="https://www.epfl.ch/innovation/startup/grants/ignition-grants/">https://www.epfl.ch/innovation/startup/grants/ignition-grants/</a></li>
+      <li>30K - 6 month, salary/consumables</li>
+    </ul>
+  </li>
+  <li>[A] Innogrant
+    <ul>
+      <li>&lt;https://www.epfl.ch/innovation/startup/grants/innogrants/</li>
+      <li>100K - 1 year, salary for startup founder.</li>
+    </ul>
+  </li>
+  <li>[B] BRIDGE Proof of concept
+    <ul>
+      <li><a href="https://www.bridge.ch/en/proof-of-concept/">https://www.bridge.ch/en/proof-of-concept/</a></li>
+      <li>130K - 1 year</li>
+    </ul>
+  </li>
+  <li>[B] BRIDGE Discovery
+    <ul>
+      <li><a href="https://www.bridge.ch/en/discovery/">https://www.bridge.ch/en/discovery/</a></li>
+      <li>(alternative to Proof of concept, more for experienced researchers).</li>
+    </ul>
+  </li>
+  <li>[C] Innosuisse
+    <ul>
+      <li>Federal funding for startups of social benefit, etc.</li>
+      <li><a href="https://www.innosuisse.ch/inno/en/home/start-and-grow-your-business/startup-coaching.html">https://www.innosuisse.ch/inno/en/home/start-and-grow-your-business/startup-coaching.html</a></li>
+    </ul>
+  </li>
+  <li>[C] Other investors, venture capital, or investing from big companies like J&amp;J, Pfizer, &amp;c. For example, in a recent J&amp;J meeting the start-up-related experts discussed how they work with startups.</li>
+</ol>
+<p><a href="https://advancesindrugdiscovery.splashthat.com">https://advancesindrugdiscovery.splashthat.com</a>
+Basically, the “innovation” department experts help you to figure out what stage you are at. You can contact them as soon as you can disclose your tech non-confidentially (either you have patent protection or do not need it). If you were taking this path you would probably have competed steps 1-4.</p>
+
+<h1 id="legal-requirements">Legal requirements</h1>
+<h3 id="swiss-law">Swiss law</h3>
+<p>I include both the English and French translations here as the original source does not always include full English translation. 
+Swiss law contains specific provisions on genetic testing in humans.
+The Federal Council is divided into <a href="https://www.admin.ch/gov/fr/accueil.html">7 departments</a> and one chancellory. 
+Each department contains their relevant offices (usually fewer than 10). 
+For our interests, the governing hierarchy order is as follows:</p>
+
+<ul>
+  <li>Le Conseil fédéral</li>
+  <li>The Federal Council
+    <ul>
+      <li>Département fédéral de l’intérieur (DFI),</li>
+      <li>Federal Department of Home Affair (FDHI),
+        <ul>
+          <li>Office fédéral de la santé publique (OFSP).</li>
+          <li>Federal Office of Public Health (FOPH).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>This office is then responsible for their relevant ordinances as organised under internal law:
+<a href="https://www.fedlex.admin.ch/en/cc/internal-law/8">https://www.fedlex.admin.ch/en/cc/internal-law/8</a>.
+A direct weblink to our area of interest is available on <a href="https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html">Législation Analyses génétiques</a>, 
+but it is useful to view the legal framework in context instead of abstractly.</p>
+
+<ul>
+  <li>Internal law (1-9 sec)</li>
+  <li>Droite interne (1-9 sec)</li>
+  <li>Sec 8..: (81-86 subsections) Health - Employment - Social security</li>
+  <li>Sec 8..: (81-86 subsections) Santé - Travail - Sécurité sociale</li>
+  <li>Sec 81.: Health: (810-819 subsubsections)</li>
+  <li>Sec 81.: Santé: (810-819 subsubsections)</li>
+  <li>Sec 810: Medicine and human dignity</li>
+  <li>Sec 810: Médecine et dignité humaine</li>
+  <li>Sec 810.1: Procréation médicalement assistée et génie génétique dans le domaine humain</li>
+  <li>Sec 810.1: Medically assisted reproduction and genetic engineering in the human field</li>
+  <li>Sec 810.12: Federal Act of 8 October 2004 on Human Genetic Testing (HGTA)</li>
+  <li>Sec 810.12: Loi fédérale du 8 octobre 2004 sur l’analyse génétique humaine (LAGH)<br />
+This contains section (810.12) contains 10 sections with 44 articles covering the initial regulations.</li>
+</ul>
+
+<p>Three ordinance then include further details (with several sections, articles, or annexes each):</p>
+
+<ul>
+  <li>Sec 810.122.1: Ordonnance du 14 février 2007 sur l’analyse génétique humaine (OAGH)</li>
+  <li>Sec 810.122.1: Ordinance of 14 February 2007 on Human Genetic Analysis (OAGH)</li>
+  <li>Sec 810.122.122: Ordonnance du DFI du 14 février 2007 sur l’analyse génétique humaine (OAGH-DFI)</li>
+  <li>Sec 810.122.122: Ordinance of the Federal Department of Home Affairs of February 14, 2007 on Human Genetic Analysis (OAGH-DFI)</li>
+  <li>Sec 810.122.2: Ordonnance du 14 février 2007 sur l’établissement de profils d’ADN en matière civile et administrative (OACA).</li>
+  <li>Sec 810.122.2: Ordinance of February 14, 2007 on DNA profiling in civil and administrative matters (OACA).</li>
+</ul>
+
+<p>The details are then listed individually at:
+<a href="https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12">https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12</a>
+and as stated, includes authorisation of “Pharmacogenetic tests performed to determine the effects of a planned therapy”, 
+“analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue”.</p>
+
+<h3 id="accreditation">Accreditation</h3>
+<p><a href="https://www.iso.org/standard/56115.html">ISO 15189</a> is a commonly sought standard accreditation for genetic analysis labs, 
+which is carried out by recognized accreditation services like <a href="https://www.finas.fi/Sivut/default.aspx">FINAS</a>.
+Here it is mentioned for the Geneva health 2030 genome center for clinical grade sequencing:
+<a href="https://www.health2030genome.ch/dna-sequencing-platform/">https://www.health2030genome.ch/dna-sequencing-platform/</a>.
+Other additional ISO accreditation standard concern 
+<a href="https://www.iso.org/search.html?q=Genomic%20information%20representation&amp;hPP=10&amp;idx=all_en&amp;p=0&amp;hFR%5Bcategory%5D%5B0%5D=standard">Genomic information representation</a>,
+including
+<a href="https://www.iso.org/standard/75859.html">23092-4 Reference software</a> or 
+<a href="https://www.iso.org/standard/79882.html">23092 Transport and storage of genomic information</a>.</p>
+
+<p>GA4GH provides other information about many <a href="https://www.ga4gh.org/genomic-data-toolkit/regulatory-ethics-toolkit/">legal and ethic topics</a>.
+BlueprintGenomics is a good example company for comparison:
+<a href="https://blueprintgenetics.com/certifications/">https://blueprintgenetics.com/certifications/</a>.</p>
+
 <h1 id="more-questions">More questions</h1>
 
 <p>Q: Do we have to infer that in the future everybody will have his genome sequenced ?<br />
@@ -570,7 +704,7 @@ Option [3] they do not want any genetic info and therefor your product is irrele
 Option [4] they do not want their personal genetics, but are willing to estimate their relatedness to others in a genetic database and therefore calculate a probability of accuracy for this drug-gene information. e.g. both parents are Swiss and therefore based on the population they have probability of X that their genotype is Y.</p>
 
 <p>Q: Is it realistic to assume that it will be feasible based on the fact that the sequencing cost is decreasing ?<br />
-Irrelevant in this case, but yes, whole genome seq is sometimes &lt; 200CHF will likely be common soon.</p>
+Irrelevant in this case, but yes, whole genome seq is sometimes below 200CHF will likely be common soon.</p>
 
 <p>Q:  We plan to use polyphen and/or sift in order to discriminate between those types of variants. Is that a good idea?<br />
 That is a good start. CADD score is also pretty well known among physicians.
