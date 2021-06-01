@@ -150,12 +150,14 @@ A simple sanity test would be useful first:
 
 ## Small example check of gene list versus drug-gene list
 From the VEP output I extracted the gene symbols column and compared against a list of druggable target genes from 
-[DrugBank](https://www.drugbank.ca)
+[DrugBank](https://www.drugbank.ca) 
 (because I happen to have their data on hand, FDA may be more reliable).
 I used another command-line method to do this efficienctly:
-```bash
+
+``` bash
 cut -f1 -d "," vep_output_file.csv | uniq > unique.genes.txt
-```  
+```
+
 - Cut column 1 (f1) 
 - with a delimiter comma (,) 
 - from the vep output csv file (or tsv, or text file)
@@ -167,13 +169,15 @@ cut -f1 -d "," vep_output_file.csv | uniq > unique.genes.txt
 Repeat the same type of method on the DrugBank dataset to get a list of the gene names contained in DrugBank into a file called "unique.druggable.txt"
 The next command will then compare both lists.
 <br/>
+
 ``` bash
 sort unique.genes.txt unique.druggable.txt | uniq -c -i | grep -v '1 '
-```  
+```
+
 This command also used "uniq -c" to count how many times each gen name occurs and then "grep -v '1 '" meaning ignore genes that are only present 1 time. 
 We want the genes that are present twice, once in each list.
-The genes which were in present in both the variant list and DrugBank list are:  
-From a 2,000 line VCF file = 
+The genes which were in present in both the variant list and DrugBank list are:
+From a 2,000 line VCF file:
 [GABRD](https://www.drugbank.ca/bio_entities/BE0003599),
 [PRKCZ](https://www.drugbank.ca/bio_entities/BE0004895),
 [SCNN1D](https://www.drugbank.ca/bio_entities/BE0000495)  
@@ -409,14 +413,15 @@ chrom    chromStart    chromEnd
 1    3549    13555  
 <br/>
 And this command ran OK for me to give "output_prefix.recode.vcf"<br/>
-```bash
+``` bash
 $:~/tools/vcftools_0.1.13/bin \
 ./vcftools \
 --vcf ~/input.vcf \
 --bed ~/ref.bed \
 --out output_prefix \
 --recode --keep-INFO-all
-```   
+```
+
 This new VCF will now only contain gene regions that are potentially "druggable", or at least included on the FDA list.
 VCF annotation will be _much faster_ than annotation of the whole genome.
 
@@ -484,6 +489,108 @@ Gene, consequence, variant, amino acid, genome position, CADD, DrugBank ID, Desc
 This table could be ranked based on consequence, CADD score.
 The top couple of rows then might be converted into a more readable format like a PDF.
 
+# Funding strategy
+University-based start-ups ususally follow a plan with three or four funding stages before coming to market. 
+It is also possible to get investors from day 1, but it is more usual to follow 
+the steps outlined here.
+It is also possible to partner with early investors for their guidance rather 
+than for financial investment.
+
+### Example funding stages:
+
+* A - Fundamental research (e.g. SNSF)
+* B - Tech development (gap between the basic research and usable product)
+* C - Product development (e.g. industry, Innosuisse funding)
+
+### Example funding sources per stage:
+
+1. [A] Ignite grant
+	- <https://www.epfl.ch/innovation/startup/grants/ignition-grants/>
+	- 30K - 6 month, salary/consumables
+
+2. [A] Innogrant
+	- <https://www.epfl.ch/innovation/startup/grants/innogrants/
+	- 100K - 1 year, salary for startup founder.
+
+3. [B] BRIDGE Proof of concept
+	- <https://www.bridge.ch/en/proof-of-concept/>
+	- 130K - 1 year
+
+4. [B] BRIDGE Discovery 
+	- <https://www.bridge.ch/en/discovery/>
+	- (alternative to Proof of concept, more for experienced researchers).
+
+5. [C] Innosuisse 
+	- Federal funding for startups of social benefit, etc. 
+	- <https://www.innosuisse.ch/inno/en/home/start-and-grow-your-business/startup-coaching.html>
+
+6. [C] Other investors, venture capital, or investing from big companies like J&J, Pfizer, &c. For example, in a recent J&J meeting the start-up-related experts discussed how they work with startups. 
+<https://advancesindrugdiscovery.splashthat.com>
+Basically, the "innovation" department experts help you to figure out what stage you are at. You can contact them as soon as you can disclose your tech non-confidentially (either you have patent protection or do not need it). If you were taking this path you would probably have competed steps 1-4. 
+
+# Legal requirements
+### Swiss law
+I include both the English and French translations here as the original source does not always include full English translation. 
+Swiss law contains specific provisions on genetic testing in humans.
+The Federal Council is divided into [7 departments](https://www.admin.ch/gov/fr/accueil.html) and one chancellory. 
+Each department contains their relevant offices (usually fewer than 10). 
+For our interests, the governing hierarchy order is as follows:
+
+* Le Conseil fédéral
+* The Federal Council
+	-  Département fédéral de l'intérieur (DFI), 
+	- Federal Department of Home Affair (FDHI),
+		- Office fédéral de la santé publique (OFSP).
+		- Federal Office of Public Health (FOPH).
+
+This office is then responsible for their relevant ordinances as organised under internal law: 
+<https://www.fedlex.admin.ch/en/cc/internal-law/8>.
+A direct weblink to our area of interest is available on [Législation Analyses génétiques](https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html), 
+but it is useful to view the legal framework in context instead of abstractly.
+
+* Internal law (1-9 sec)
+* Droite interne (1-9 sec)
+* Sec 8..: (81-86 subsections) Health - Employment - Social security 
+* Sec 8..: (81-86 subsections) Santé - Travail - Sécurité sociale
+* Sec 81.: Health: (810-819 subsubsections)
+* Sec 81.: Santé: (810-819 subsubsections)
+* Sec 810: Medicine and human dignity
+* Sec 810: Médecine et dignité humaine
+* Sec 810.1: Procréation médicalement assistée et génie génétique dans le domaine humain
+* Sec 810.1: Medically assisted reproduction and genetic engineering in the human field
+* Sec 810.12: Federal Act of 8 October 2004 on Human Genetic Testing (HGTA)
+* Sec 810.12: Loi fédérale du 8 octobre 2004 sur l'analyse génétique humaine (LAGH)\
+This contains section (810.12) contains 10 sections with 44 articles covering the initial regulations.
+
+Three ordinance then include further details (with several sections, articles, or annexes each):
+
+* Sec 810.122.1: Ordonnance du 14 février 2007 sur l'analyse génétique humaine (OAGH)
+* Sec 810.122.1: Ordinance of 14 February 2007 on Human Genetic Analysis (OAGH)
+* Sec 810.122.122: Ordonnance du DFI du 14 février 2007 sur l'analyse génétique humaine (OAGH-DFI)
+* Sec 810.122.122: Ordinance of the Federal Department of Home Affairs of February 14, 2007 on Human Genetic Analysis (OAGH-DFI)
+* Sec 810.122.2: Ordonnance du 14 février 2007 sur l'établissement de profils d'ADN en matière civile et administrative (OACA).
+* Sec 810.122.2: Ordinance of February 14, 2007 on DNA profiling in civil and administrative matters (OACA).
+
+The details are then listed individually at:
+<https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12>
+and as stated, includes authorisation of "Pharmacogenetic tests performed to determine the effects of a planned therapy", 
+"analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue".
+
+### Accreditation
+[ISO 15189](https://www.iso.org/standard/56115.html) is a commonly sought standard accreditation for genetic analysis labs, 
+which is carried out by recognized accreditation services like [FINAS](https://www.finas.fi/Sivut/default.aspx).
+Here it is mentioned for the Geneva health 2030 genome center for clinical grade sequencing:
+<https://www.health2030genome.ch/dna-sequencing-platform/>.
+Other additional ISO accreditation standard concern 
+[Genomic information representation](https://www.iso.org/search.html?q=Genomic%20information%20representation&hPP=10&idx=all_en&p=0&hFR%5Bcategory%5D%5B0%5D=standard),
+including
+[23092-4 Reference software](https://www.iso.org/standard/75859.html) or 
+[23092 Transport and storage of genomic information](https://www.iso.org/standard/79882.html).
+
+GA4GH provides other information about many [legal and ethic topics](https://www.ga4gh.org/genomic-data-toolkit/regulatory-ethics-toolkit/).
+BlueprintGenomics is a good example company for comparison:
+<https://blueprintgenetics.com/certifications/>.
+
 # More questions
 
 Q: Do we have to infer that in the future everybody will have his genome sequenced ?  
@@ -497,7 +604,7 @@ Option [3] they do not want any genetic info and therefor your product is irrele
 Option [4] they do not want their personal genetics, but are willing to estimate their relatedness to others in a genetic database and therefore calculate a probability of accuracy for this drug-gene information. e.g. both parents are Swiss and therefore based on the population they have probability of X that their genotype is Y.  
 
 Q: Is it realistic to assume that it will be feasible based on the fact that the sequencing cost is decreasing ?  
-Irrelevant in this case, but yes, whole genome seq is sometimes < 200CHF will likely be common soon.
+Irrelevant in this case, but yes, whole genome seq is sometimes below 200CHF will likely be common soon.
 
 Q:  We plan to use polyphen and/or sift in order to discriminate between those types of variants. Is that a good idea?  
 That is a good start. CADD score is also pretty well known among physicians.
