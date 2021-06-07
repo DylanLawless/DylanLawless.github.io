@@ -877,6 +877,180 @@ so the main remaining task is standardisation of the protein-pathway
 annotation and association testing methods - 
 steps which we will soon be ready to publish after peer-review.
 
+# Burden test power calculation
+
+``` R
+This code seems to work
+# This script tests then the minimum number of heterozygous mutations that can exist in a test set to reach significance.
+
+# Required inputs, can be modified to read data variable
+# SAMPLES (equal case and control)
+# SNPs (the number of SNPs in the test pathway, can modify to loop every pathway)
+# CMC settings may need adjustment to match your model
+
+library(AssotesteR)
+
+# Pathway size of 5 SNPs
+# 100 case and 100 controls
+
+# for (SNPs in 1:3) {
+ for (SNPs in 10) {
+
+  SAMPLES = 100
+  TOTAL = SAMPLES*SNPs
+
+for(i in 1:TOTAL) {
+  # cases
+    val_1 <- replicate(i,0)
+    x <- (TOTAL-i)
+    val_2 <- replicate(x,0)
+    
+    # cases
+    val_3 <- replicate(i,0)
+    y <- (TOTAL-i)
+    val_4 <- replicate(y,1)
+
+    # combine
+    mat1.data <-  (c(val_1, val_2, val_3, val_4))
+    
+    # contols then cases
+    genotype <- matrix(mat1.data,nrow=(SAMPLES*2),ncol=SNPs,byrow=TRUE)
+    #print(genotype)
+    
+    stat <- matrix(genotype, dimnames=list(t(outer(colnames(genotype), rownames(genotype), FUN=paste)), NULL))
+    print(paste("for", 
+                SAMPLES, "cases and ",
+                SAMPLES, "controls:"))
+    print(paste("with", SNPs, "candidate pathway SNPs"))
+    print(paste(sum(stat),
+                 "mutations per", TOTAL, "total nucleotides in cases"))
+    print(paste(
+                 "0 mutation per", TOTAL, "total nucleotides in controls."
+                 ))
+
+    # number of cases
+    cases = SAMPLES
+    
+    # number of controls
+    controls = SAMPLES
+    
+    # total (cases + controls)
+    total = cases + controls
+    
+    # phenotype vector
+    phenotype = c(rep(0,controls), rep(1,cases))
+    #print(phenotype)
+    
+    #mycmc = CMC(phenotype, genotype, maf=0.0000001, perm=100)
+    #print(mycmc)
+    myskat = SKAT(phenotype, genotype, kernel = "linear")
+    print(myskat["asym.pval"])
+}
+}
+```
+
+However, I am filling up SNPs columns so that all cases get the variant mutation. 
+I believe SKAT will give a better score to 5 unique variants rather than 5 shared variants.
+Therefore, I am currently revising the code.
+
+``` R
+# SKAT: Sequence Kernel Association Test 
+# 
+# [1] "for 100 cases and  100 controls:"
+# [1] "with 5 candidate pathway SNPs"
+# [1] "18 mutations per 500 total nucleotides in cases"
+# [1] "0 mutation per 500 total nucleotides in controls."
+# $asym.pval
+# [1] 0.04799332
+# 
+# 
+# [1] "for 100 cases and  100 controls:"
+# [1] "with 10 candidate pathway SNPs"
+# [1] "36 mutations per 1000 total nucleotides in cases"
+# [1] "0 mutation per 1000 total nucleotides in controls."
+# $asym.pval
+# [1] 0.04799332
+```
+You can view to genotype matrix constructions by uncommenting 
+``` R
+ # print(genotype).
+```
+
+Exmple:
+``` R
+[198,]    0    0    0    0    0
+[199,]    0    0    0    0    0
+[200,]    0    0    0    1    1
+[1] "for 100 cases and  100 controls:"
+[1] "with 5 candidate pathway SNPs"
+[1] "2 mutations per 500 total nucleotides in cases"
+[1] "0 mutation per 500 total nucleotides in controls."
+$asym.pval
+[1] 0.3165047
+```
+
+I will instead try to construct the test set with uniq variants rather than shared. I only realised the problem at the end.
+An example of what we want instead is - checking the P-value and combinations of variants. 
+Then we will find the real minimum variant count required to pass significance:
+
+``` R 
+# With a small test set
+# 2 case, 2 control, 4 positions
+# 1 control SNP, 3 case SNP
+
+cases = 2
+controls = 2
+phenotype = c(rep(0,controls), rep(1,cases))
+
+x <- expand.grid(c(0,1),c(0,1),c(0,1), c(0,1))
+geno1 <- x[c(1,2, 3,4),c(1:4)]
+geno2 <- x[c(1,2, 9,13),c(1:4)]
+geno3 <- x[c(1,2, 1,14),c(1:4)]
+geno4 <- x[c(1,2, 1,15),c(1:4)]
+
+geno1
+(SKAT(phenotype, geno1, kernel = "linear")["asym.pval"])
+geno2
+(SKAT(phenotype, geno2, kernel = "linear")["asym.pval"])
+geno3
+(SKAT(phenotype, geno3, kernel = "linear")["asym.pval"])
+geno4
+(SKAT(phenotype, geno3, kernel = "linear")["asym.pval"])
+
+
+# > geno1
+#   Var1 Var2 Var3 Var4
+# 1    0    0    0    0
+# 2    1    0    0    0
+# 3    0    1    0    0
+# 4    1    1    0    0
+# $asym.pval [1] 0.0619688
+# 
+# > geno2
+#    Var1 Var2 Var3 Var4
+# 1     0    0    0    0
+# 2     1    0    0    0
+# 9     0    0    0    1
+# 13    0    0    1    1
+# $asym.pval [1] 0.0311075
+# 
+# > geno3
+#     Var1 Var2 Var3 Var4
+# 1      0    0    0    0
+# 2      1    0    0    0
+# 1.1    0    0    0    0
+# 14     1    0    1    1
+# $asym.pval [1] 0.0311075
+# 
+# > geno4
+#     Var1 Var2 Var3 Var4
+# 1      0    0    0    0
+# 2      1    0    0    0
+# 1.1    0    0    0    0
+# 15     0    1    1    1
+# $asym.pval [1] 0.0311075
+```
+
 # References 
 
 {% bibliography --cited %}

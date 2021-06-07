@@ -26,8 +26,12 @@ https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusL
 # Reading
 1. [The Honourable Schoolboy](https://en.wikipedia.org/wiki/The_Honourable_Schoolboy), John le Carré.
 2. [Zhang et al., 2021 AJHG](https://pubmed.ncbi.nlm.nih.gov/34015270/). A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity.
+3. Accelerating Genomic Data Generation and Facilitating Genomic Data Access Using Decentralization, Privacy-Preserving Technologies and Equitable Compensation. [Nublua, George Church et al](https://nebula.org/blog/wp-content/uploads/2019/05/Accelerating-Genomic-Data-Generation-and-Facilitating-Genomic-Data-Access.pdf). (See podcast below for related talk on smart contracts).
 
 # Other media
 1. Sergei Loznitsa's monumental [State Funeral](https://www.imdb.com/title/tt10203842/).
 2. Yazz Ahmed - [Polyhymnia](https://www.youtube.com/watch?v=6kKYzuvxsZo)
-3. Floating Points, Pharoah Sanders & The London Symphony Orchestra - [Promises](https://www.youtube.com/watch?v=Mn8x0QbN4f8&t=571s)
+3. Floating Points, Pharoah Sanders & The London Symphony Orchestra - [Promises](https://www.youtube.com/watch?v=Mn8x0QbN4f8&t=571s).
+4. Ana Vidović - [in concert](https://www.youtube.com/watch?v=e26zZ83Oh6Y).
+5. Podcast - Lex Fridman Podcast, [#181 – Sergey Nazarov: Chainlink, Smart Contracts, and Oracle Networks](https://lexfridman.com/sergey-nazarov/)
+

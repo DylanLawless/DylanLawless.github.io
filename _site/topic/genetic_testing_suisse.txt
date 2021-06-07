@@ -1,60 +1,71 @@
-### Swiss law
-I include both the English and French translations here as the original source does not always include full English translation. 
-Swiss law contains specific provisions on genetic testing in humans.
-The Federal Council is divided into [7 departments](https://www.admin.ch/gov/fr/accueil.html) and one chancellory. 
-Each department contains their relevant offices (usually <10). 
-For our interests, the governing hierarchy order is as follows:
 
-* Le Conseil fédéral
-* The Federal Council
-	-  Département fédéral de l'intérieur (DFI), 
-	- Federal Department of Home Affair,
-		- Office fédéral de la santé publique (OFSP).
-		- Federal Office of Public Health (FOPH).
+Good work. I think you are correct about ISO 15189. I believe an actual board is responsible for coming and doing inspections to provide certification of compliance.
 
-This office is then responsible for their relevant ordinances as organised under internal law: 
-<https://www.fedlex.admin.ch/en/cc/internal-law/8>.
-A direct weblink to our area of interest is available on [Législation Analyses génétiques](https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html], 
-but it is useful to view the legal framework in context instead of abstractly.
-
-* Internal law (1-9 sec)
-* Droite interne (1-9 sec)
-* Sec 8..: (81-86 subsections) Health - Employment - Social security 
-* Sec 8..: (81-86 subsections) Santé - Travail - Sécurité sociale
-* Sec 81.: Health: (810-819 subsubsections)
-* Sec 81.: Santé: (810-819 subsubsections)
-* Sec 810: Medicine and human dignity
-* Sec 810: Médecine et dignité humaine
-* Sec 810.1: Procréation médicalement assistée et génie génétique dans le domaine humain
-* Sec 810.1: Medically assisted reproduction and genetic engineering in the human field
-* Sec 810.12: Federal Act of 8 October 2004 on Human Genetic Testing (HGTA)
-* Sec 810.12: Loi fédérale du 8 octobre 2004 sur l'analyse génétique humaine (LAGH)\
-This contains section (810.12) contains 10 sections with 44 articles covering the initial regulations.\
-
-Three ordinance include further details (with several sections, articles, or annexes each):
-
-* Sec 810.122.1: Ordonnance du 14 février 2007 sur l'analyse génétique humaine (OAGH)
-* Sec 810.122.1: Ordinance of 14 February 2007 on Human Genetic Analysis (OAGH)
-* Sec 810.122.122: Ordonnance du DFI du 14 février 2007 sur l'analyse génétique humaine (OAGH-DFI)
-* Sec 810.122.122: Ordinance of the Federal Department of Home Affairs of February 14, 2007 on Human Genetic Analysis (OAGH-DFI)
-* Sec 810.122.2: Ordonnance du 14 février 2007 sur l'établissement de profils d'ADN en matière civile et administrative (OACA).
-* Sec 810.122.2: Ordinance of February 14, 2007 on DNA profiling in civil and administrative matters (OACA).
-
-The details are then listed individually at:
-<https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12>
-and as stated, includes authorisation of "Pharmacogenetic tests performed to determine the effects of a planned therapy", 
-"analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue".
-
-### Accreditation
-ISO 15189 is a commonly sought standard accreditation for genetic analysis labs, 
-which carried by recognized accreditation services like (FINAS)[https://www.finas.fi/Sivut/default.aspx].
 Here it is mentioned for the Geneva health 2030 genome center for clinical grade sequencing:
-<https://www.health2030genome.ch/dna-sequencing-platform/>.
-Other additional ISO accreditation standard concern Genomic information representation](https://www.iso.org/search.html?q=Genomic%20information%20representation&hPP=10&idx=all_en&p=0&hFR%5Bcategory%5D%5B0%5D=standard),
-including
-[23092-4 Reference software](https://www.iso.org/standard/75859.html) or 
-[23092 Transport and storage of genomic information](https://www.iso.org/standard/79882.html).
+https://www.health2030genome.ch/dna-sequencing-platform/
 
-GA4GH provides other information about many [legal and ethic topics](https://www.ga4gh.org/genomic-data-toolkit/regulatory-ethics-toolkit/).
-BlueprintGenomics is a good example company for comparison:
-<https://blueprintgenetics.com/certifications/>.
+I do not know the exact requirements for interpreting sequencing results. (Research-grade does not require this, only clinical-grade). This page links to le conseil fédéral, in the section Counselling centers in Switzerland:
+https://www.sakk.ch/en/patients/genetic-counseling 
+
+BlueprintGenomics is a good example company:
+https://blueprintgenetics.com/certifications/
+
+GA4GH provides loads other info about of legal/ethic/etc. if you want some other ideas. 
+https://www.ga4gh.org/genomic-data-toolkit/regulatory-ethics-toolkit/
+
+
+
+Swiss law contains specific provisions on genetic testing in humans (Federal Act on Human Genetic Testing HGTA).
+
+
+1 federal law on genetic analysis (LAGH), and 3 ordinance which I think cover more details. (OAGH, OAGH-DFI, OACA).
+
+https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html
+
+The details listed individually:
+https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12
+
+Includes allowing "Pharmacogenetic tests performed to determine the effects of
+to determine the effects of a planned therapy".
+
+
+
+
+
+
+
+
+https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html
+
+Le Conseil fédéral
+ DFI
+ OFSP
+ Office fédéral de la santé publiqueOffice fédéral de la santé publique.
+
+The ordonnance is in:
+Section: Accueil - Recueil systématique - Droit interne - 8 Santé - Travail - Sécurité sociale - 81 Santé.
+
+
+810.122.122
+Ordonnance du DFI
+sur l’analyse génétique humaine
+(OAGH-DFI)
+du 14 février 2007 (Etat le 1er janvier 2017)
+
+Le Département fédéral de l’intérieur (DFI),
+
+vu l’art. 11, al. 2, de l’ordonnance du 14 février 2007 sur l’analyse génétique humaine1,
+
+
+Description des analyses génétiques qui peuvent être effectuées en fonction du diplôme
+
+Includes: analyse autorisée for
+Analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue.
+
+
+
+
+
+https://www.iso.org/standard/75859.html
+ISO/IEC 23092
+Genomys (EPFL) accred for genomic storage compression (similar to another standard compression method).

@@ -556,20 +556,20 @@ but it is useful to view the legal framework in context instead of abstractly.
 * Sec 81.: Santé: (810-819 subsubsections)
 * Sec 810: Medicine and human dignity
 * Sec 810: Médecine et dignité humaine
-* Sec 810.1: Procréation médicalement assistée et génie génétique dans le domaine humain
 * Sec 810.1: Medically assisted reproduction and genetic engineering in the human field
+* Sec 810.1: Procréation médicalement assistée et génie génétique dans le domaine humain
 * Sec 810.12: Federal Act of 8 October 2004 on Human Genetic Testing (HGTA)
 * Sec 810.12: Loi fédérale du 8 octobre 2004 sur l'analyse génétique humaine (LAGH)\
 This contains section (810.12) contains 10 sections with 44 articles covering the initial regulations.
 
 Three ordinance then include further details (with several sections, articles, or annexes each):
 
-* Sec 810.122.1: Ordonnance du 14 février 2007 sur l'analyse génétique humaine (OAGH)
 * Sec 810.122.1: Ordinance of 14 February 2007 on Human Genetic Analysis (OAGH)
-* Sec 810.122.122: Ordonnance du DFI du 14 février 2007 sur l'analyse génétique humaine (OAGH-DFI)
+* Sec 810.122.1: Ordonnance du 14 février 2007 sur l'analyse génétique humaine (OAGH)
 * Sec 810.122.122: Ordinance of the Federal Department of Home Affairs of February 14, 2007 on Human Genetic Analysis (OAGH-DFI)
-* Sec 810.122.2: Ordonnance du 14 février 2007 sur l'établissement de profils d'ADN en matière civile et administrative (OACA).
-* Sec 810.122.2: Ordinance of February 14, 2007 on DNA profiling in civil and administrative matters (OACA).
+* Sec 810.122.122: Ordonnance du DFI du 14 février 2007 sur l'analyse génétique humaine (OAGH-DFI)
+* Sec 810.122.2: Ordinance of February 14, 2007 on DNA profiling in civil and administrative matters (OACA)
+* Sec 810.122.2: Ordonnance du 14 février 2007 sur l'établissement de profils d'ADN en matière civile et administrative (OACA)
 
 The details are then listed individually at:
 <https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12>
