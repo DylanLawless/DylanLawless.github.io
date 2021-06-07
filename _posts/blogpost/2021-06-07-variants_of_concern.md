@@ -69,15 +69,14 @@ All other amino acid changes use their correct symbol.
 # Files
 
 1. README.md
-2. [sarscov2\_vaccine\_sequences\_nucleotide.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/sarscov2\_vaccine\_sequences\_nucleotide.md)
-3. [sarscov2\_vaccine\_sequences\_translated.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/sarscov2\_vaccine\_sequences\_translated.md)
-4. [reference\_sequence\_NC\_045512.2.21563-25384.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/seference\_sequence\_NC\_045512.2.21563-25384.md)
-5. [variants\_of\_concern\_to\_vaccine.fa](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/sariants\_of\_concern\_to\_vaccine.fa)
-6. [variants\_of\_concern.xlsx](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/sariants\_of\_concern.xlsx)
-7. [variants\_of\_concern.csv](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/sariants\_of\_concern.csv)
-8. [variants\_of\_concern\_to\_vaccine.fa](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/sariants\_of\_concern\_to\_vaccine.fa)
-9. [variants\_of\_concern\_to\_vaccine.praln](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/sariants\_of\_concern\_to\_vaccine.praln)
-10. [variants\_of\_concern\_to\_vaccine.pdf](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/render/sariants\_of\_concern\_to\_vaccine.pdf)
+2. [sarscov2_vaccine_sequences_nucleotide.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_nucleotide.md)
+3. [sarscov2_vaccine_sequences_translated.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_translated.md)
+4. [reference_sequence_NC_045512.2.21563-25384.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/reference_sequence_NC_045512.2.21563-25384.md)
+5. [variants_of_concern.xlsx](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx)
+6. [variants_of_concern.csv](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv)
+7. [variants_of_concern_to_vaccine.fa](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa)
+8. [variants_of_concern_to_vaccine.praln](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln)
+9. [variants_of_concern_to_vaccine.pdf](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.pdf)
 
 # Vaccine sequences and amino acid translations
 The vaccine nucleotide sequence data
@@ -85,12 +84,12 @@ for vaccines BNT-162b2 and mRNA-1273 (sourced from [NAalytics](https://github.co
 was converted to text and slightly formatted to select the coding sequences,
 as shown in file:
 
-2. sarscov2\_vaccine\_sequences\_nucleotide.md.
+[2] sarscov2\_vaccine\_sequences\_nucleotide.md.
 
 The nucleotide sequences were then translated into amino acid coding sequences,
 as shown in file:
 
-3. sarscov2\_vaccine\_sequences\_translated.md.
+[3] sarscov2\_vaccine\_sequences\_translated.md.
 
 The nucleotide sequence was translated via <https://web.expasy.org/translate/>.
 
@@ -102,7 +101,7 @@ The reference data was sourced from:
 via <https://www.ncbi.nlm.nih.gov/nuccore/NC_045512>,
 as shown in file:
 
-4. reference\_sequence\_NC\_045512.2.21563-25384.md.
+[4] reference\_sequence\_NC\_045512.2.21563-25384.md.
 
 # Vaccine Multiple Sequence Alignment
 The amino acid sequences of the coding region from each of the vaccine sequences 
@@ -124,8 +123,9 @@ This dataset includes:
 
 The reformatted tables are presented in files:
 
-5. variants\_of\_concern.xlsx
-6. variants\_of\_concern.csv
+[5] variants\_of\_concern.xlsx
+
+[6] variants\_of\_concern.csv
 
 There are currently no VOHC. 
 VOC (but not VOI) were presented in the final visualisation.
@@ -138,7 +138,7 @@ This data was then added to the multiple sequence alignment file to allow for
 aligned annotations,
 as shown in file:
 
-8. variants\_of\_concern\_to\_vaccine.fa
+[7] variants\_of\_concern\_to\_vaccine.fa
 
 The file contains the list the variants-of-concern for five Sars-CoV-2 strains,
 1 reference sequence, and
@@ -162,10 +162,10 @@ Instead, only the variants-of-concern are annotated for the strain sequences.
 The final illustration was made using <https://www.snapgene.com> software.
 The snapgene-software formatted output can be loaded with the file:
 
-9. variants_of_concern_to_vaccine.praln
+[8] variants_of_concern_to_vaccine.praln
 
 The final PDF version is shown in file:
 
-10. variants\_of\_concern\_to\_vaccine.pdf
+[9] variants\_of\_concern\_to\_vaccine.pdf
 
 [Open PDF visualisation - variants_of_concern.pdf](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.pdf)
