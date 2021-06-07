@@ -4,13 +4,224 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-06-01T15:55:10+02:00</updated>
+ <updated>2021-06-07T09:45:37+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Weeknotes</title>
+   <link href="https://tom.preston-werner.com/2021/06/07/weeknotes.html"/>
+   <updated>2021-06-07T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2021/06/07/weeknotes</id>
+   <content type="html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;7 June 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+
+&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+
+&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Advanced-Level-Statistics-Francis/dp/0859508137&quot;&gt;Advanced level statistics&lt;/a&gt;, A. Francis. A good read on basic fundamentals but not a prefered over other modern textbooks with R code.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Oliver Nelson - &lt;a href=&quot;https://www.youtube.com/watch?v=k-zaI8lLrQA&quot;&gt;The Blues And The Abstract Truth 1961&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Podcast - BBC, In Our Time with Melvyn Bragg, &lt;a href=&quot;https://www.bbc.co.uk/programmes/b0435jyv&quot;&gt;Photosynthesis&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>SARS-CoV-2 variants of concern</title>
+   <link href="https://tom.preston-werner.com/2021/06/07/variants_of_concern.html"/>
+   <updated>2021-06-07T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2021/06/07/variants_of_concern</id>
+   <content type="html">&lt;h1 id=&quot;sars-cov-2-variants-of-concern&quot;&gt;SARS-CoV-2 variants of concern&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;07 June 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;variants-of-concern-aligned-to-vaccine-coding-sequences&quot;&gt;Variants of concern aligned to vaccine coding sequences&lt;/h1&gt;
+
+&lt;p&gt;This work has not been peer reviewed.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.pdf&quot;&gt;Open PDF visualisation - variants_of_concern.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Variants of concern for five SARS-CoV-2 strains 
+(&lt;a href=&quot;https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html&quot;&gt;CDC 4 Jun 2021&lt;/a&gt;)
+are illustrated against the 
+translated amino acid sequences of the vaccines; Moderna mRNA-1273 and 
+Pfizer/BioNTech BNT-162b2, and reference sequence NC_045512.&lt;/p&gt;
+
+&lt;p&gt;The variants are shown here, illustrated on the protein structure;
+&lt;a href=&quot;https://www.rcsb.org/structure/6ZOX&quot;&gt;6ZOX.pdb DOI: 10.2210/pdb6ZOX/pdb&lt;/a&gt;
+&lt;em&gt;Structure of Disulphide-stabilized SARS-CoV-2 Spike Protein Trimer (x2 disulphide-bond mutant, G413C, V987C, single Arg S1/S2 cleavage site),&lt;/em&gt;
+provided by Xiong et al., 2020 &lt;a href=&quot;https://www.nature.com/articles/s41594-020-0478-5&quot;&gt;10.1038/s41594-020-0478-5&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/renders/6zox_voc_20210604_front.jpg&quot;&gt;6zox_voc_20210604_front.jpg&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/renders/6zox_voc_20210604_side.jpg&quot;&gt;6zox_voc_20210604_side.jpg&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/pdb/renders/6zox_voc_20210604_top.jpg&quot;&gt;6zox_voc_20210604_top.jpg&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/6zox_voc_20210604_front.jpg&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Visual alignment is shown against translated coding sequence for spike glycoprotein,
+illustrated here via 
+&lt;a href=&quot;https://nextstrain.org/sars-cov-2&quot;&gt;nextstrain.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/nextstrain_spike.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Variants of Concern B.1.1.7&lt;/li&gt;
+  &lt;li&gt;Variants of Concern B.1.351&lt;/li&gt;
+  &lt;li&gt;Variants of Concern B.1.427&lt;/li&gt;
+  &lt;li&gt;Variants of Concern B.1.429&lt;/li&gt;
+  &lt;li&gt;Variants of Concern P.1&lt;/li&gt;
+  &lt;li&gt;Ref NC_045512.2.21563-25384&lt;/li&gt;
+  &lt;li&gt;mRNA-1273 vaccine translated&lt;/li&gt;
+  &lt;li&gt;BNT-162b2 vaccine translated&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The assemblies of putative SARS-CoV-2 spike encoding mRNA sequences for vaccines BNT-162b2 and mRNA-1273 have been provided by NAalytics; 
+&lt;a href=&quot;https://github.com/NAalytics/Assemblies-of-putative-SARS-CoV2-spike-encoding-mRNA-sequences-for-vaccines-BNT-162b2-and-mRNA-1273&quot;&gt;Assemblies-of-putative-SARS-CoV2-spike-encoding-mRNA-sequences-for-vaccines-BNT-162b2-and-mRNA-1273&lt;/a&gt;.
+Their experimental sequence information for the RNA components of the initial 
+Moderna (&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/32756549/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/32756549/&lt;/a&gt;) 
+and Pfizer/BioNTech (&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/33301246/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/33301246/&lt;/a&gt;) 
+COVID-19 vaccines, allowed them to produce a working assembly of the former 
+and a confirmation of previously reported sequence information for the latter RNA.&lt;/p&gt;
+
+&lt;p&gt;From this data:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The translated amino acid sequences for both vaccines were derived.&lt;/li&gt;
+  &lt;li&gt;These were aligned to the SARS-CoV-2 reference amino acid sequence of spike glycoprotein.&lt;/li&gt;
+  &lt;li&gt;Known of variants-of-concern were then annotated and visualised.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For visual simplicity, an X symbol was used to illustrate amino acid deletions.
+All other amino acid changes use their correct symbol.&lt;/p&gt;
+
+&lt;h1 id=&quot;files&quot;&gt;Files&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;README.md&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_nucleotide.md&quot;&gt;sarscov2_vaccine_sequences_nucleotide.md&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_translated.md&quot;&gt;sarscov2_vaccine_sequences_translated.md&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/reference_sequence_NC_045512.2.21563-25384.md&quot;&gt;reference_sequence_NC_045512.2.21563-25384.md&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx&quot;&gt;variants_of_concern.xlsx&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv&quot;&gt;variants_of_concern.csv&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa&quot;&gt;variants_of_concern_to_vaccine.fa&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln&quot;&gt;variants_of_concern_to_vaccine.praln&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.pdf&quot;&gt;variants_of_concern_to_vaccine.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;vaccine-sequences-and-amino-acid-translations&quot;&gt;Vaccine sequences and amino acid translations&lt;/h1&gt;
+&lt;p&gt;The vaccine nucleotide sequence data
+for vaccines BNT-162b2 and mRNA-1273 (sourced from &lt;a href=&quot;https://github.com/NAalytics/Assemblies-of-putative-SARS-CoV2-spike-encoding-mRNA-sequences-for-vaccines-BNT-162b2-and-mRNA-1273&quot;&gt;NAalytics&lt;/a&gt;.
+was converted to text and slightly formatted to select the coding sequences,
+as shown in file:&lt;/p&gt;
+
+&lt;p&gt;[2] sarscov2_vaccine_sequences_nucleotide.md.&lt;/p&gt;
+
+&lt;p&gt;The nucleotide sequences were then translated into amino acid coding sequences,
+as shown in file:&lt;/p&gt;
+
+&lt;p&gt;[3] sarscov2_vaccine_sequences_translated.md.&lt;/p&gt;
+
+&lt;p&gt;The nucleotide sequence was translated via &lt;a href=&quot;https://web.expasy.org/translate/&quot;&gt;https://web.expasy.org/translate/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;reference-genome-sequence&quot;&gt;Reference genome sequence&lt;/h1&gt;
+&lt;p&gt;The reference data was sourced from:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genome&lt;/li&gt;
+  &lt;li&gt;NCBI Reference Sequence: NC_045512.2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;via &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/nuccore/NC_045512&quot;&gt;https://www.ncbi.nlm.nih.gov/nuccore/NC_045512&lt;/a&gt;,
+as shown in file:&lt;/p&gt;
+
+&lt;p&gt;[4] reference_sequence_NC_045512.2.21563-25384.md.&lt;/p&gt;
+
+&lt;h1 id=&quot;vaccine-multiple-sequence-alignment&quot;&gt;Vaccine Multiple Sequence Alignment&lt;/h1&gt;
+&lt;p&gt;The amino acid sequences of the coding region from each of the vaccine sequences 
+and the reference sequence were used for multiple sequence alignment
+via &lt;a href=&quot;https://www.ebi.ac.uk/Tools/msa/clustalo/&quot;&gt;https://www.ebi.ac.uk/Tools/msa/clustalo/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Variants of concern were then formatted to be used for annotation on the 
+aligned sequences.&lt;/p&gt;
+
+&lt;h1 id=&quot;variants-of-concern&quot;&gt;Variants of concern&lt;/h1&gt;
+&lt;p&gt;SARS-CoV-2 Variant Classifications and Definitions were derived from
+&lt;a href=&quot;https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html&quot;&gt;https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This dataset includes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Variants of Interest (VOI)&lt;/li&gt;
+  &lt;li&gt;Variants of Concern (VOC)&lt;/li&gt;
+  &lt;li&gt;Variants of High Consequence (VOHC)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The reformatted tables are presented in files:&lt;/p&gt;
+
+&lt;p&gt;[5] variants_of_concern.xlsx&lt;/p&gt;
+
+&lt;p&gt;[6] variants_of_concern.csv&lt;/p&gt;
+
+&lt;p&gt;There are currently no VOHC. 
+VOC (but not VOI) were presented in the final visualisation.&lt;/p&gt;
+
+&lt;h1 id=&quot;aligned-variants-of-concern-to-vaccine&quot;&gt;Aligned variants of concern to vaccine&lt;/h1&gt;
+
+&lt;p&gt;The variants of concern were formatted such that one pseudo-fasta format entry 
+contains the amino acid change for each strain. 
+This data was then added to the multiple sequence alignment file to allow for
+aligned annotations,
+as shown in file:&lt;/p&gt;
+
+&lt;p&gt;[7] variants_of_concern_to_vaccine.fa&lt;/p&gt;
+
+&lt;p&gt;The file contains the list the variants-of-concern for five Sars-CoV-2 strains,
+1 reference sequence, and
+2 vaccine sequences:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Variants of Concern B.1.1.7&lt;/li&gt;
+  &lt;li&gt;Variants of Concern B.1.351&lt;/li&gt;
+  &lt;li&gt;Variants of Concern B.1.427&lt;/li&gt;
+  &lt;li&gt;Variants of Concern B.1.429&lt;/li&gt;
+  &lt;li&gt;Variants of Concern P.1&lt;/li&gt;
+  &lt;li&gt;Ref NC_045512.2:21563-25384&lt;/li&gt;
+  &lt;li&gt;mRNA-1273 vaccine translated&lt;/li&gt;
+  &lt;li&gt;BNT-162b2 vaccine translated&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;other-notes&quot;&gt;Other notes&lt;/h1&gt;
+&lt;p&gt;Different strains will contain benign variants.
+Typically, full sequences are used for alignment. 
+However, this can be visually distracting.
+Instead, only the variants-of-concern are annotated for the strain sequences.&lt;/p&gt;
+
+&lt;p&gt;The final illustration was made using &lt;a href=&quot;https://www.snapgene.com&quot;&gt;https://www.snapgene.com&lt;/a&gt; software.
+The snapgene-software formatted output can be loaded with the file:&lt;/p&gt;
+
+&lt;p&gt;[8] variants_of_concern_to_vaccine.praln&lt;/p&gt;
+
+&lt;p&gt;The final PDF version is shown in file:&lt;/p&gt;
+
+&lt;p&gt;[9] variants_of_concern_to_vaccine.pdf&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.pdf&quot;&gt;Open PDF visualisation - variants_of_concern.pdf&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Weeknotes</title>
@@ -40,14 +251,18 @@
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/34015270/&quot;&gt;Zhang et al., 2021 AJHG&lt;/a&gt;. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity.&lt;/li&gt;
+  &lt;li&gt;Accelerating Genomic Data Generation and Facilitating Genomic Data Access Using Decentralization, Privacy-Preserving Technologies and Equitable Compensation. &lt;a href=&quot;https://nebula.org/blog/wp-content/uploads/2019/05/Accelerating-Genomic-Data-Generation-and-Facilitating-Genomic-Data-Access.pdf&quot;&gt;Nublua, George Church et al&lt;/a&gt;. (See podcast below for related talk on smart contracts).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;Sergei Loznitsa’s monumental &lt;a href=&quot;https://www.imdb.com/title/tt10203842/&quot;&gt;State Funeral&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Yazz Ahmed - &lt;a href=&quot;https://www.youtube.com/watch?v=6kKYzuvxsZo&quot;&gt;Polyhymnia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Floating Points, Pharoah Sanders &amp;amp; The London Symphony Orchestra - &lt;a href=&quot;https://www.youtube.com/watch?v=Mn8x0QbN4f8&amp;amp;t=571s&quot;&gt;Promises&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Floating Points, Pharoah Sanders &amp;amp; The London Symphony Orchestra - &lt;a href=&quot;https://www.youtube.com/watch?v=Mn8x0QbN4f8&amp;amp;t=571s&quot;&gt;Promises&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Ana Vidović - &lt;a href=&quot;https://www.youtube.com/watch?v=e26zZ83Oh6Y&quot;&gt;in concert&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Podcast - Lex Fridman Podcast, &lt;a href=&quot;https://lexfridman.com/sergey-nazarov/&quot;&gt;#181 – Sergey Nazarov: Chainlink, Smart Contracts, and Oracle Networks&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+
 </content>
  </entry>
  
@@ -7794,6 +8009,7 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
       <li><a href="#historical-review" id="markdown-toc-historical-review">Historical review</a></li>
     </ul>
   </li>
+  <li><a href="#burden-test-power-calculation" id="markdown-toc-burden-test-power-calculation">Burden test power calculation</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
@@ -8869,6 +9085,175 @@ so the main remaining task is standardisation of the protein-pathway
 annotation and association testing methods - 
 steps which we will soon be ready to publish after peer-review.</p>
 
+<h1 id="burden-test-power-calculation">Burden test power calculation</h1>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">This</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">seems</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">work</span><span class="w">
+</span><span class="c1"># This script tests then the minimum number of heterozygous mutations that can exist in a test set to reach significance.</span><span class="w">
+
+</span><span class="c1"># Required inputs, can be modified to read data variable</span><span class="w">
+</span><span class="c1"># SAMPLES (equal case and control)</span><span class="w">
+</span><span class="c1"># SNPs (the number of SNPs in the test pathway, can modify to loop every pathway)</span><span class="w">
+</span><span class="c1"># CMC settings may need adjustment to match your model</span><span class="w">
+
+</span><span class="n">library</span><span class="p">(</span><span class="n">AssotesteR</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Pathway size of 5 SNPs</span><span class="w">
+</span><span class="c1"># 100 case and 100 controls</span><span class="w">
+
+</span><span class="c1"># for (SNPs in 1:3) {</span><span class="w">
+ </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">SNPs</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+  </span><span class="n">SAMPLES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="w">
+  </span><span class="n">TOTAL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SAMPLES</span><span class="o">*</span><span class="n">SNPs</span><span class="w">
+
+</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">TOTAL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="c1"># cases</span><span class="w">
+    </span><span class="n">val_1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">replicate</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">TOTAL</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="w">
+    </span><span class="n">val_2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">replicate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">0</span><span class="p">)</span><span class="w">
+    
+    </span><span class="c1"># cases</span><span class="w">
+    </span><span class="n">val_3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">replicate</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">TOTAL</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="w">
+    </span><span class="n">val_4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">replicate</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="m">1</span><span class="p">)</span><span class="w">
+
+    </span><span class="c1"># combine</span><span class="w">
+    </span><span class="n">mat1.data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="n">val_1</span><span class="p">,</span><span class="w"> </span><span class="n">val_2</span><span class="p">,</span><span class="w"> </span><span class="n">val_3</span><span class="p">,</span><span class="w"> </span><span class="n">val_4</span><span class="p">))</span><span class="w">
+    
+    </span><span class="c1"># contols then cases</span><span class="w">
+    </span><span class="n">genotype</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="n">mat1.data</span><span class="p">,</span><span class="n">nrow</span><span class="o">=</span><span class="p">(</span><span class="n">SAMPLES</span><span class="o">*</span><span class="m">2</span><span class="p">),</span><span class="n">ncol</span><span class="o">=</span><span class="n">SNPs</span><span class="p">,</span><span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+    </span><span class="c1">#print(genotype)</span><span class="w">
+    
+    </span><span class="n">stat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="n">genotype</span><span class="p">,</span><span class="w"> </span><span class="n">dimnames</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">outer</span><span class="p">(</span><span class="n">colnames</span><span class="p">(</span><span class="n">genotype</span><span class="p">),</span><span class="w"> </span><span class="n">rownames</span><span class="p">(</span><span class="n">genotype</span><span class="p">),</span><span class="w"> </span><span class="n">FUN</span><span class="o">=</span><span class="n">paste</span><span class="p">)),</span><span class="w"> </span><span class="kc">NULL</span><span class="p">))</span><span class="w">
+    </span><span class="n">print</span><span class="p">(</span><span class="n">paste</span><span class="p">(</span><span class="s2">"for"</span><span class="p">,</span><span class="w"> 
+                </span><span class="n">SAMPLES</span><span class="p">,</span><span class="w"> </span><span class="s2">"cases and "</span><span class="p">,</span><span class="w">
+                </span><span class="n">SAMPLES</span><span class="p">,</span><span class="w"> </span><span class="s2">"controls:"</span><span class="p">))</span><span class="w">
+    </span><span class="n">print</span><span class="p">(</span><span class="n">paste</span><span class="p">(</span><span class="s2">"with"</span><span class="p">,</span><span class="w"> </span><span class="n">SNPs</span><span class="p">,</span><span class="w"> </span><span class="s2">"candidate pathway SNPs"</span><span class="p">))</span><span class="w">
+    </span><span class="n">print</span><span class="p">(</span><span class="n">paste</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">stat</span><span class="p">),</span><span class="w">
+                 </span><span class="s2">"mutations per"</span><span class="p">,</span><span class="w"> </span><span class="n">TOTAL</span><span class="p">,</span><span class="w"> </span><span class="s2">"total nucleotides in cases"</span><span class="p">))</span><span class="w">
+    </span><span class="n">print</span><span class="p">(</span><span class="n">paste</span><span class="p">(</span><span class="w">
+                 </span><span class="s2">"0 mutation per"</span><span class="p">,</span><span class="w"> </span><span class="n">TOTAL</span><span class="p">,</span><span class="w"> </span><span class="s2">"total nucleotides in controls."</span><span class="w">
+                 </span><span class="p">))</span><span class="w">
+
+    </span><span class="c1"># number of cases</span><span class="w">
+    </span><span class="n">cases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SAMPLES</span><span class="w">
+    
+    </span><span class="c1"># number of controls</span><span class="w">
+    </span><span class="n">controls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SAMPLES</span><span class="w">
+    
+    </span><span class="c1"># total (cases + controls)</span><span class="w">
+    </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cases</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">controls</span><span class="w">
+    
+    </span><span class="c1"># phenotype vector</span><span class="w">
+    </span><span class="n">phenotype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">controls</span><span class="p">),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">cases</span><span class="p">))</span><span class="w">
+    </span><span class="c1">#print(phenotype)</span><span class="w">
+    
+    </span><span class="c1">#mycmc = CMC(phenotype, genotype, maf=0.0000001, perm=100)</span><span class="w">
+    </span><span class="c1">#print(mycmc)</span><span class="w">
+    </span><span class="n">myskat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SKAT</span><span class="p">(</span><span class="n">phenotype</span><span class="p">,</span><span class="w"> </span><span class="n">genotype</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"linear"</span><span class="p">)</span><span class="w">
+    </span><span class="n">print</span><span class="p">(</span><span class="n">myskat</span><span class="p">[</span><span class="s2">"asym.pval"</span><span class="p">])</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>However, I am filling up SNPs columns so that all cases get the variant mutation. 
+I believe SKAT will give a better score to 5 unique variants rather than 5 shared variants.
+Therefore, I am currently revising the code.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># SKAT: Sequence Kernel Association Test </span><span class="w">
+</span><span class="c1"># </span><span class="w">
+</span><span class="c1"># [1] "for 100 cases and  100 controls:"</span><span class="w">
+</span><span class="c1"># [1] "with 5 candidate pathway SNPs"</span><span class="w">
+</span><span class="c1"># [1] "18 mutations per 500 total nucleotides in cases"</span><span class="w">
+</span><span class="c1"># [1] "0 mutation per 500 total nucleotides in controls."</span><span class="w">
+</span><span class="c1"># $asym.pval</span><span class="w">
+</span><span class="c1"># [1] 0.04799332</span><span class="w">
+</span><span class="c1"># </span><span class="w">
+</span><span class="c1"># </span><span class="w">
+</span><span class="c1"># [1] "for 100 cases and  100 controls:"</span><span class="w">
+</span><span class="c1"># [1] "with 10 candidate pathway SNPs"</span><span class="w">
+</span><span class="c1"># [1] "36 mutations per 1000 total nucleotides in cases"</span><span class="w">
+</span><span class="c1"># [1] "0 mutation per 1000 total nucleotides in controls."</span><span class="w">
+</span><span class="c1"># $asym.pval</span><span class="w">
+</span><span class="c1"># [1] 0.04799332</span><span class="w">
+</span></code></pre></div></div>
+<p>You can view to genotype matrix constructions by uncommenting</p>
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="c1"># print(genotype).</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Exmple:</p>
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="m">198</span><span class="p">,]</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">
+</span><span class="p">[</span><span class="m">199</span><span class="p">,]</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">
+</span><span class="p">[</span><span class="m">200</span><span class="p">,]</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">    </span><span class="m">1</span><span class="w">    </span><span class="m">1</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s2">"for 100 cases and  100 controls:"</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s2">"with 5 candidate pathway SNPs"</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s2">"2 mutations per 500 total nucleotides in cases"</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="s2">"0 mutation per 500 total nucleotides in controls."</span><span class="w">
+</span><span class="o">$</span><span class="n">asym.pval</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">0.3165047</span><span class="w">
+</span></code></pre></div></div>
+
+<p>I will instead try to construct the test set with uniq variants rather than shared. I only realised the problem at the end.
+An example of what we want instead is - checking the P-value and combinations of variants. 
+Then we will find the real minimum variant count required to pass significance:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># With a small test set</span><span class="w">
+</span><span class="c1"># 2 case, 2 control, 4 positions</span><span class="w">
+</span><span class="c1"># 1 control SNP, 3 case SNP</span><span class="w">
+
+</span><span class="n">cases</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="n">controls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="n">phenotype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">controls</span><span class="p">),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">cases</span><span class="p">))</span><span class="w">
+
+</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">expand.grid</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">))</span><span class="w">
+</span><span class="n">geno1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)]</span><span class="w">
+</span><span class="n">geno2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="m">13</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)]</span><span class="w">
+</span><span class="n">geno3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="m">14</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)]</span><span class="w">
+</span><span class="n">geno4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="m">15</span><span class="p">),</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">)]</span><span class="w">
+
+</span><span class="n">geno1</span><span class="w">
+</span><span class="p">(</span><span class="n">SKAT</span><span class="p">(</span><span class="n">phenotype</span><span class="p">,</span><span class="w"> </span><span class="n">geno1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"linear"</span><span class="p">)[</span><span class="s2">"asym.pval"</span><span class="p">])</span><span class="w">
+</span><span class="n">geno2</span><span class="w">
+</span><span class="p">(</span><span class="n">SKAT</span><span class="p">(</span><span class="n">phenotype</span><span class="p">,</span><span class="w"> </span><span class="n">geno2</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"linear"</span><span class="p">)[</span><span class="s2">"asym.pval"</span><span class="p">])</span><span class="w">
+</span><span class="n">geno3</span><span class="w">
+</span><span class="p">(</span><span class="n">SKAT</span><span class="p">(</span><span class="n">phenotype</span><span class="p">,</span><span class="w"> </span><span class="n">geno3</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"linear"</span><span class="p">)[</span><span class="s2">"asym.pval"</span><span class="p">])</span><span class="w">
+</span><span class="n">geno4</span><span class="w">
+</span><span class="p">(</span><span class="n">SKAT</span><span class="p">(</span><span class="n">phenotype</span><span class="p">,</span><span class="w"> </span><span class="n">geno3</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"linear"</span><span class="p">)[</span><span class="s2">"asym.pval"</span><span class="p">])</span><span class="w">
+
+
+</span><span class="c1"># &gt; geno1</span><span class="w">
+</span><span class="c1">#   Var1 Var2 Var3 Var4</span><span class="w">
+</span><span class="c1"># 1    0    0    0    0</span><span class="w">
+</span><span class="c1"># 2    1    0    0    0</span><span class="w">
+</span><span class="c1"># 3    0    1    0    0</span><span class="w">
+</span><span class="c1"># 4    1    1    0    0</span><span class="w">
+</span><span class="c1"># $asym.pval [1] 0.0619688</span><span class="w">
+</span><span class="c1"># </span><span class="w">
+</span><span class="c1"># &gt; geno2</span><span class="w">
+</span><span class="c1">#    Var1 Var2 Var3 Var4</span><span class="w">
+</span><span class="c1"># 1     0    0    0    0</span><span class="w">
+</span><span class="c1"># 2     1    0    0    0</span><span class="w">
+</span><span class="c1"># 9     0    0    0    1</span><span class="w">
+</span><span class="c1"># 13    0    0    1    1</span><span class="w">
+</span><span class="c1"># $asym.pval [1] 0.0311075</span><span class="w">
+</span><span class="c1"># </span><span class="w">
+</span><span class="c1"># &gt; geno3</span><span class="w">
+</span><span class="c1">#     Var1 Var2 Var3 Var4</span><span class="w">
+</span><span class="c1"># 1      0    0    0    0</span><span class="w">
+</span><span class="c1"># 2      1    0    0    0</span><span class="w">
+</span><span class="c1"># 1.1    0    0    0    0</span><span class="w">
+</span><span class="c1"># 14     1    0    1    1</span><span class="w">
+</span><span class="c1"># $asym.pval [1] 0.0311075</span><span class="w">
+</span><span class="c1"># </span><span class="w">
+</span><span class="c1"># &gt; geno4</span><span class="w">
+</span><span class="c1">#     Var1 Var2 Var3 Var4</span><span class="w">
+</span><span class="c1"># 1      0    0    0    0</span><span class="w">
+</span><span class="c1"># 2      1    0    0    0</span><span class="w">
+</span><span class="c1"># 1.1    0    0    0    0</span><span class="w">
+</span><span class="c1"># 15     0    1    1    1</span><span class="w">
+</span><span class="c1"># $asym.pval [1] 0.0311075</span><span class="w">
+</span></code></pre></div></div>
+
 <h1 id="references">References</h1>
 
 <ol class="bibliography"><li><span id="li2008methods">Li, B., &amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. <i>The American Journal of Human Genetics</i>, <i>83</i>(3), 311–321.</span></li>
@@ -9316,6 +9701,149 @@ Bayesian Data Analysis<br />
 <a href="https://www.academia.edu/32086149/Bayesian_Data_Analysis_Third_Edition_Gelman_.pdf">https://www.academia.edu/32086149/Bayesian_Data_Analysis_Third_Edition_Gelman.pdf</a><br />
 Doing Bayesian data analysis a tutorial with R and BUGS.pdf<br />
 <a href="http://www.users.csbsju.edu/~mgass/robert.pdf">http://www.users.csbsju.edu/~mgass/robert.pdf</a></p>
+
+</p>
+
+  <h2> - </h2>
+  <p><h1 id="zero-inflated-negative-binomial-regression">Zero-inflated negative binomial regression</h1>
+<ul id="markdown-toc">
+  <li><a href="#zero-inflated-negative-binomial-regression" id="markdown-toc-zero-inflated-negative-binomial-regression">Zero-inflated negative binomial regression</a></li>
+  <li><a href="#zero-inflated-negative-binomial-regression-1" id="markdown-toc-zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</a></li>
+  <li><a href="#analysis-methods-you-might-consider" id="markdown-toc-analysis-methods-you-might-consider">Analysis methods you might consider</a></li>
+</ul>
+
+<h1 id="zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</h1>
+
+<p>Zero-inflated negative binomial regression (zinbr) is for modeling count variables with excessive zeros and it is usually for overdispersed count outcome variables.</p>
+
+<p>The excess zeros are generated by a process that can be explained separately from the count values. The excess zeros can be modeled independently.</p>
+
+<p>We have data on 250 groups that went to a park. 
+Fish count - how many fish a group caught
+Child count - how many children were in the group, 
+Person count  - many people were in the group, 
+Camper binary - whether or not they brought a camper to the park.</p>
+
+<p>In addition to predicting the number of fish caught, 
+there is interest in predicting the existence of excess zeros, i.e., the probability that a group caught zero fish.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">zinb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"https://stats.idre.ucla.edu/stat/data/fish.csv"</span><span class="p">)</span><span class="w">
+</span><span class="n">zinb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">within</span><span class="p">(</span><span class="n">zinb</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">nofish</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">nofish</span><span class="p">)</span><span class="w">
+  </span><span class="n">livebait</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">livebait</span><span class="p">)</span><span class="w">
+  </span><span class="n">camper</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">camper</span><span class="p">)</span><span class="w">
+</span><span class="p">})</span><span class="w">
+
+</span><span class="n">summary</span><span class="p">(</span><span class="n">zinb</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>A zero-inflated model assumes that zero outcome is due to two different processes.</p>
+
+<ul>
+  <li>a subject has gone fishing vs.</li>
+  <li>not gone fishing.</li>
+</ul>
+
+<p>If gone fishing = count process.
+If not gone fishing = the only outcome possible is zero.</p>
+
+<p>The two parts of the a zero-inflated model are</p>
+<ol>
+  <li>Binary model
+    <ul>
+      <li>usually a logit model: models which of the two processes the zero outcome is associated with.</li>
+    </ul>
+  </li>
+  <li>Count model
+    <ul>
+      <li>in this case, a negative binomial model: models the count process.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>The expected count is expressed as a combination of the two processes.</p>
+
+<p>Taking the example of fishing again:</p>
+
+<p>$
+E(n_{\text{fish caught}} = k) = P(\text{not gone fishing}) * 0 + P(\text{gone fishing}) * E(y = k | \text{gone fishing})
+$</p>
+
+<h3 id="a-negative-binomial-model">A negative binomial model.</h3>
+<p>There are multiple parameterizations of the negative binomial model, 
+we focus on NB2. 
+The negative binomial probability density function is:</p>
+
+<p>$
+PDF(y; p, r) = \frac{(y_i + r – 1)!}{y_i!(r-1)!}p_{i}^{r}(1 – p_i)^{y_i}
+$
+where  (p) is the probability of (r) successes.</p>
+
+<p>From this we can derive the likelihood function, which is given by:
+$
+L(\mu; y, \alpha) = \prod_{i=1}^{n}exp\left(y_i ln\left(\frac{\alpha\mu_i}{1 +\alpha\mu_i}\right)-\frac{1}{\alpha}ln(1 + \alpha\mu_i) + ln\Gamma(y_i + \frac{1}{\alpha})-ln\Gamma(y_i + 1) – ln\Gamma(\frac{1}{\alpha})\right)
+$</p>
+
+<p>here we find the likelihood of the expected value, 
+\(\mu\) (mu)
+ given the data and 
+\(\alpha\) (alpha)
+which allows for dispersion. 
+Typically, this would be expressed as a log likelihood, denoted by
+\(\mathcal{L}\)
+(script L)
+(<a href="https://stats.stackexchange.com/questions/284816/why-do-people-use-mathcall-thetax-for-likelihood-instead-of-px-theta">sidenote</a>):</p>
+
+<p>$
+\mathcal{L}(\mu; y, \alpha) = \sum_{i=1}^{n}y_i ln\left(\frac{\alpha\mu_i}{1 + \alpha\mu_i}\right)-\frac{1}{\alpha}ln(1 + \alpha\mu_i) + ln\Gamma(y_i + \frac{1}{\alpha})-ln\Gamma(y_i + 1) – ln\Gamma(\frac{1}{\alpha})
+$</p>
+
+<p>which can be expressed in terms of our model by replacing
+\(\mu_i\)
+with 
+\(exp(x_i'\beta)\).</p>
+
+<p>Turning to the zero-inflated negative binomial model, 
+the expression of the likelihood function depends on whether the observed value is a zero or greater than zero. 
+From the logistic model of 
+\(y_i &gt; 1\) versus \(y = 0\):</p>
+
+<p>$p = \frac{1}{1 + e^{-x_i’\beta}}$ 
+and 
+$1 - p = \frac{1}{1 + e^{x_i’\beta}}$ then</p>
+
+<p>$
+\mathcal{L} = \left{ \begin{array}{ll} \sum_{i=1}^{n} \left[ ln(p_{i}) + (1 – p_i)\left(\frac{1}{1 + \alpha\mu_{i}}\right)^{\frac{1}{\alpha}} \right] &amp;\mbox{if } y_{i} = 0 <br />
+\sum_{i=1}^{n} \left[ ln(p_{i}) + ln\Gamma\left(\frac{1}{\alpha} + y_i\right) – ln\Gamma(y_i + 1) – ln\Gamma\left(\frac{1}{\alpha}\right) + \left(\frac{1}{\alpha}\right)ln\left(\frac{1}{1 + \alpha\mu_{i}}\right) + y_iln\left(1 – \frac{1}{1 + \alpha\mu_{i}}\right) \right] &amp;\mbox{if } y_{i} &gt; 0 \end{array} \right. ] ]
+$</p>
+
+<p>Finally, note that R does not estimate 
+\(\alpha\)
+ but its inverse:
+ \(\theta\).</p>
+
+<p>Now let’s build up our model. 
+We are going to use the variables</p>
+<ul>
+  <li>child and</li>
+  <li>camper 
+to model the count in the part of negative binomial model and the</li>
+  <li>variable persons 
+in the logit part of the model.
+We use the pscl to run a zero-inflated negative binomial regression. We begin by estimating the model with the variables of interest.</li>
+</ul>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">zeroinfl</span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">camper</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">persons</span><span class="p">,</span><span class="w">
+  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zinb</span><span class="p">,</span><span class="w"> </span><span class="n">dist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"negbin"</span><span class="p">,</span><span class="w"> </span><span class="n">EM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+  </span><span class="n">summary</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h1 id="analysis-methods-you-might-consider">Analysis methods you might consider</h1>
+<p>Some other methods that you might use.</p>
+
+<p>OLS Regression – You could try to analyze these data using OLS regression. However, count data are highly non-normal and are not well estimated by OLS regression.
+Zero-inflated Poisson Regression – Zero-inflated Poisson regression does better when the data is not overdispersed, i.e. when variance is not much larger than the mean.
+Ordinary Count Models – Poisson or negative binomial models might be more appropriate if there are not excess zeros.</p>
 
 </p>
 
