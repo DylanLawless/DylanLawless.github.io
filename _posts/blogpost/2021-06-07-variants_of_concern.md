@@ -55,22 +55,22 @@ provided by Xiong et al., 2020 [10.1038/s41594-020-0478-5](https://www.nature.co
 * [6zox_voc_20210604_side.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg)
 * [6zox_voc_20210604_top.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg)
 
-![](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_stage.gif)
+<img src="{{ site.baseurl }}{% link images/posts/6zox_voc_20210604_stage.gif %}" width="100%">
 
 Two of the defining genetic features that are different between vaccines are seen here, 
 * the S glycoprotein furin cleavage modification region (p.682-685)
 
-![](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/images/snapshot_furin_cleavage_region.png)
+<img src="{{ site.baseurl }}{% link images/posts/snapshot_furin_cleavage_region.png %}" width="100%">
 
 * the S glycoprotein stabilization modification region (p.986-987)
 
-![](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/images/snapshot_stabilizing_region_PP.png)
+<img src="{{ site.baseurl }}{% link images/posts/snapshot_stabilizing_region_PP.png %}" width="100%">
 
 Visual alignment is shown against translated coding sequence for spike glycoprotein,
 illustrated here via 
 
 [nextstrain.org](https://nextstrain.org/sars-cov-2).
-![](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/images/nextstrain_spike.png)
+<img src="{{ site.baseurl }}{% link images/posts/nextstrain_spike.png %}" width="100%">
 
 Fasta sequences are included for:
 
@@ -286,7 +286,7 @@ The file contains the list the variants-of-concern for five Sars-CoV-2 strains,
 * Sputnik V alleged unmodified YP_009724390.1
 * AZD1222 alleged unmodified YP_009724390.1
 
-<img src="https://static01.nyt.com/newsgraphics/2020/04/02/virus-genome/assetshttps://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/images/coronavirus-cutaway-600.png" width="20%"/>
+<img src="{{ site.baseurl }}{% link images/posts/coronavirus-cutaway-600.png %}" width="20%">
 
 Different strains will contain benign variants.
 Typically, full sequences are used for alignment. 
@@ -309,30 +309,30 @@ Other files that are not listed contain intermediate data.
 
 - [README.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2#readme)
 
-- :lock: [reference\_sequence\_NC\_045512.2.21563-25384.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_NC_045512.2.21563-25384.md)
-- :lock: [reference\_sequence\_MN908947.3.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_MN908947.3.md)
+- [reference\_sequence\_NC\_045512.2.21563-25384.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_NC_045512.2.21563-25384.md)
+- [reference\_sequence\_MN908947.3.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_MN908947.3.md)
 
-- :syringe: [sarscov2\_vaccine\_sequence\_translated\_mRNA-1273.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_mRNA-1273.md)
-- :syringe: [sarscov2\_vaccine\_sequence\_translated\_BNT-162b2.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_BNT-162b2.md)
-- :syringe: [sarscov2\_vaccine\_sequence\_translated\_NVX-CoV2373.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md)
-- :syringe: [sarscov2\_vaccine\_sequence\_translated\_Ad26.COV2-S.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Ad26.COV2-S.md)
-- :syringe: [sarscov2\_vaccine\_sequence\_translated\_AZD1222.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_AZD1222.md)
-- :syringe: [sarscov2\_vaccine\_sequence\_translated\_NVX-CoV2373.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md)
-- :syringe: [sarscov2\_vaccine\_sequence\_translated\_Sputnik-V.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Sputnik-V.md)
+- [sarscov2\_vaccine\_sequence\_translated\_mRNA-1273.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_mRNA-1273.md)
+- [sarscov2\_vaccine\_sequence\_translated\_BNT-162b2.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_BNT-162b2.md)
+- [sarscov2\_vaccine\_sequence\_translated\_NVX-CoV2373.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md)
+- [sarscov2\_vaccine\_sequence\_translated\_Ad26.COV2-S.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Ad26.COV2-S.md)
+- [sarscov2\_vaccine\_sequence\_translated\_AZD1222.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_AZD1222.md)
+- [sarscov2\_vaccine\_sequence\_translated\_NVX-CoV2373.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md)
+- [sarscov2\_vaccine\_sequence\_translated\_Sputnik-V.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Sputnik-V.md)
 
-- :heavy_exclamation_mark: :open_file_folder: [variants\_of\_concern.xlsx](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx)
-- :heavy_exclamation_mark: :open_file_folder: [variants\_of\_concern.csv](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv)
-- :heavy_exclamation_mark: :page_facing_up: [variants\_of\_concern\_to\_vaccine.fa](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa)
-- :heavy_exclamation_mark: :page_facing_up: [variants\_of\_concern\_to\_vaccine.praln](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln)
-- :bangbang: :ledger: [variants\_of\_concern\_to\_vaccine.pdf](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf)
+- [variants\_of\_concern.xlsx](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx)
+- [variants\_of\_concern.csv](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv)
+- [variants\_of\_concern\_to\_vaccine.fa](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa)
+- [variants\_of\_concern\_to\_vaccine.praln](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln)
+- [variants\_of\_concern\_to\_vaccine.pdf](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf)
 
-- :floppy_disk: [Protein structure, original structure file](pdb/6zox.pdb)
-- :floppy_disk: [Protein structure, VMD visualisation state 6zox_voc_20210604_stage.vmd](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/6zox_voc_20210604_stage.vmd)
-- :camera: [Protein structure with variants of concern 6zox_voc_20210604_front.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_front.jpg)
-- :camera: [Protein structure with variants of concern 6zox_voc_20210604_side.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg)
-- :camera: [Protein structure with variants of concern 6zox_voc_20210604_top.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg)
+- [Protein structure, original structure file](pdb/6zox.pdb)
+- [Protein structure, VMD visualisation state 6zox_voc_20210604_stage.vmd](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/6zox_voc_20210604_stage.vmd)
+- [Protein structure with variants of concern 6zox_voc_20210604_front.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_front.jpg)
+- [Protein structure with variants of concern 6zox_voc_20210604_side.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg)
+- [Protein structure with variants of concern 6zox_voc_20210604_top.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg)
 
 ## Other notes
-- :pencil: [notes.md](notes.md)
+- [notes.md](notes.md)
 
-![](https://static01.nyt.com/newsgraphics/2020/04/02/virus-genome/assetshttps://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/images/ribosome-600.png)
+<img src="{{ site.baseurl }}{% link images/posts/ribosome-600.png %}" width="100%">
