@@ -22,3 +22,4 @@ status: finished
 # Other media
 1. Oliver Nelson - [The Blues And The Abstract Truth 1961](https://www.youtube.com/watch?v=k-zaI8lLrQA).
 2. Podcast - BBC, In Our Time with Melvyn Bragg, [Photosynthesis](https://www.bbc.co.uk/programmes/b0435jyv)
+3. Adam Curtis documentary: [Cant Get You Out of My Head E01](https://www.youtube.com/watch?v=hqX1J-1LyzA&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=1)
