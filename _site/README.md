@@ -129,3 +129,60 @@ If you copy my pushlished content, a link back to https://lawlessgenomics.com wo
 For git tracking, test:
 `git config merge.conflictstyle diff3`
 
+# Cloning and keys
+Since I work with others and use different accounts, machines, emails, here are some notes incase you or I need them.
+
+To push to multiple github accounts with different keys,
+and different machines, these settings can be used.
+Instead of a global git config, local configs are used for each repo.
+Here is the example with two of my repos.
+The custom usernames for the local repo is shown (but custom email is removed to prevent spam).
+[Create your ssh keys as per github recommendation](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). 
+In the .ssh directory, the config file will assign the key to each git repository that you clone based on the Host that you use. i.e. custom instead of the default:
+
+* git clone git@custom.github.com:accout/repo.git
+* git clone git@github.com:accout/repo.git
+
+``` bash 
+## Set up the ssh config file
+cd ~/.ssh/config
+
+## set such that Host and User are custom
+# lawlessgenomics repo
+Host dylanlawless.github.com
+  HostName github.com
+  User DylanLawless
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/key1_rsa
+  IdentitiesOnly yes
+
+# sarscov2 repo
+Host sarscov2voc.github.com
+  HostName github.com
+  User sars-cov-2-voc
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/key2_rsa
+  IdentitiesOnly yes
+
+```
+
+Then clone your repo using the custom Host instead of the default provided by github when you use button "clone/ssh/copy".
+
+``` bash
+# Clone using the correct Host as per config
+git clone git@dylanlawless.github.com:DylanLawless/DylanLawless.github.io.git
+
+# Set the local user here (instead of global, i.e. /Users/user/.gitconfig)
+cd "the clone repo dir"
+git config user.email personemail@addess.com
+git config user.name DylanLawless
+
+# Clone using the correct Host as per config
+git clone git@sarscov2voc.github.com:sars-cov-2-voc/SARS-CoV-2-VOC.github.io.git
+
+cd "the clone repo dir"
+git config user.email someotheremail@address.com
+git config user.name sars-cov-2-voc
+```
+
+You should now be able to pull and push from that repo without the ["incorrect user" problems](https://stackoverflow.com/questions/4665337/git-pushing-to-remote-github-repository-as-wrong-user).
