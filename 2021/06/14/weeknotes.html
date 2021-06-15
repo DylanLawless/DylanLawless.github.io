@@ -23,7 +23,7 @@
 
    <!--  -->
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>The devil is in the detail</title>
+   <title>Weeknotes</title>
    <meta name="author" content="LawlessGenomics" />
    <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" />
    <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
@@ -60,78 +60,20 @@ var WRInitTime=(new Date()).getTime();
   </div>
 
   <div id="post">
-<h1 id="the-devil-is-in-the-detail">The devil is in the detail</h1>
+<h1 id="weeknotes">Weeknotes</h1>
 
-<p class="meta">19 Aug 2019</p>
-<p>I was learning some <a href="https://en.wikipedia.org/wiki/Steganography">steganography</a> methods for a security project. 
-At the same time, I was writing up a paper with some friends 
-(<a href="https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf">https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf</a>) 
-and decided to hide a little message in one of the figures.
-The goal was to encode some hidden data and see could we get it back out 
-the other side, after publication.</p>
+<p class="meta">14 June 2021</p>
 
-<p>It would be a lot of trouble for a master of espionage to have to publish a 
-paper every time a secret message needed to be encoded for public transmission, 
-but maybe it could be done!</p>
+<h1 id="work">Work</h1>
 
-<p><img src="/images/posts/editor_paper_rag.png" width="101%" /></p>
+<h1 id="personal">Personal</h1>
 
-<p>The secret message was imported into <a href="https://www.r-project.org">R</a> from plain text. 
-It was encoded into a png file that was to be a supplemental figure in our paper 
-From experience, supplemental figures usually get uploaded to a repository and
-stored in the same format for later downloaded after publication, 
-until main-text figures which are often converted in one way or another by the publisher. 
-Once the figure was released, anyone with the correct decoding algorithm 
-could get back the secret message.</p>
+<h1 id="reading">Reading</h1>
 
-<p>In this case, I used the 
-<a href="https://github.com/richfitz/stegasaur">richfitz/stegasaur</a> package, 
-innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
-The inforation was hidden within the data that makes up the image, 
-and is imperceivable to the naked eye. 
-Even better, the file size was slightly <em>SMALLER</em> than the original 
-(1.9MB to 1.7MB) without a noticeable difference in quality. 
-After peer review of the paper, publisher proceessing and publication, 
-the secret message was successfully decoded from the protein structure figure 
-“F_E4_Structure.png” and was printed to the console:</p>
-
-<p><img src="/images/posts/r_steg_decode.png" width="100%" /></p>
-
-<p>This exercise looks like a bit of fun, 
-but was done to demonstrate the unavoidable 
-risks that exist in sensitive data research.<sup id="fnref:foot" role="doc-noteref"><a href="#fn:foot" class="footnote" rel="footnote">1</a></sup>
-Today, protected data enclaves are used for processing sensitive data 
-and usually allow summary results or figures to be exported.
-These are therefore basically a trust based system and are otherwise only security theatre.</p>
-
-<p>Here’s an idea, <a href="https://patents.google.com/patent/US8527779">steganographic message blocks</a> 
-seperated across a career worth of publications, 
-that can only be deciphered once all blocks are collected! 
-Who would go to that trouble? 
-Go see what you can find in one Supplementary material png file. 
-<a href="https://link.springer.com/article/10.1007%2Fs10875-019-00670-z">https://link.springer.com/article/10.1007%2Fs10875-019-00670-z</a></p>
-
-<h1 id="r-script">R script </h1>
-<p>Try it yourself.
-Find the paper and get Figure E4.
-Download
-<a href="https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial">10875_2019_670_MOESM5_ESM</a></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; install.packages("devtools")
-&gt; install_github("richfitz/stegasaur")
-&gt; library("devtools")
-&gt; library(ggplot2) 
-&gt; Decode message &lt;- 
-&gt;		stegasaur::decode("~/10875_2019_670_MOESM5_ESM.png")
-</code></pre></div></div>
-<h1 id="footnote">Footnote</h1>
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:foot" role="doc-endnote">
-      <p><a href="/topic/medical-espionage">Medical espionage</a>. <a href="#fnref:foot" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+<h1 id="other-media">Other media</h1>
+<ol>
+  <li>Adam Curtis documentary: <a href="https://www.youtube.com/watch?v=xanSAr83w-k&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=2">Cant Get You Out of My Head E02</a></li>
+</ol>
 
 </div>
 
@@ -139,11 +81,11 @@ Download
   <h2>Related Posts</h2>
   <ul class="posts">
     
-      <li><span>14 Jun 2021</span> &raquo; <a href="/2021/06/14/weeknotes.html">Weeknotes</a></li>
-    
       <li><span>07 Jun 2021</span> &raquo; <a href="/2021/06/07/weeknotes.html">Weeknotes</a></li>
     
       <li><span>07 Jun 2021</span> &raquo; <a href="/2021/06/07/variants_of_concern.html">SARS-CoV-2 variants of concern</a></li>
+    
+      <li><span>31 May 2021</span> &raquo; <a href="/2021/05/31/weeknotes.html">Weeknotes</a></li>
     
   </ul>
 </div>

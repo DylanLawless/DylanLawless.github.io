@@ -4,13 +4,35 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-06-13T23:37:09+02:00</updated>
+ <updated>2021-06-15T09:03:21+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Weeknotes</title>
+   <link href="https://tom.preston-werner.com/2021/06/14/weeknotes.html"/>
+   <updated>2021-06-14T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2021/06/14/weeknotes</id>
+   <content type="html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;14 June 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+
+&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+
+&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+
+&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=xanSAr83w-k&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=2&quot;&gt;Cant Get You Out of My Head E02&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Weeknotes</title>
