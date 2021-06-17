@@ -1,11 +1,10 @@
 #!/bin/bash
-# Use the config_build for _config.yml
-# uses scholar plugin
-cp ./build/config_build.yml _config.yml
-sleep 1
+# Use the config_test for _config.yml
+# remove scholar plugin
+cp ./build/config_test.yml _config.yml
 
-# bundle exec jekyll serve --incremental &
-bundle exec jekyll serve &
+bundle exec jekyll serve --incremental &
+# bundle exec jekyll serve &
 # jekyll serve &
 sleep 3
 

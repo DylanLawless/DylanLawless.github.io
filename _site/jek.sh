@@ -1,4 +1,9 @@
 #!/bin/bash
+# Use the config_build for _config.yml
+# uses scholar plugin
+cp ./build/config_build.yml _config.yml
+sleep 1
+
 # bundle exec jekyll serve --incremental &
 bundle exec jekyll serve &
 # jekyll serve &
