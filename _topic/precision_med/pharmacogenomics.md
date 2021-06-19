@@ -33,8 +33,10 @@ VCF files can contain a large range of information for each variant, however onl
 Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
 Therefore the most common input source may be lacking gene symbols.
 To get the gene names of a single file, the simplest way was is to upload a VCF (or a part of it) to [Variant Effect Predictor](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/) to get the gene symbol (and any other information that you wish).
-<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.45.png" width="80%">  
-<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.58.png" width="80%">
+
+<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.45.png" width="100%">  
+
+<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.58.png" width="100%">
 
 To reduce the time and output you can limit the options.
 Split the file and run in batches to save time.
@@ -49,7 +51,7 @@ The results would be retained by a URL address such as this, for a few days, but
 <br/>
 [http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700)   
 <br/>
-<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.10.png" width="80%">  
+<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.10.png" width="100%">  
 <br/>
 Make certain that you use the same reference genome as used on the input data.
 The VCF file was made using reference genome GRCh37.
