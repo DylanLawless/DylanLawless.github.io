@@ -10,6 +10,120 @@ body {
 	color: #303c3c;
 	}
 
+/* Custom, smallest */ 
+    @media only screen and (max-width : 320px) {
+.subjects { margin-top: 2.5rem ; }
+body {
+	font-size: 1.0rem;
+	line-height: 1.2rem;
+	color:purple;
+	}
+	h1 { 
+	font: 1.2rem 'Didot';
+	color: black;
+	}
+	h2, h3, h4, h5, h6 {
+		font: 1.0rem 'Didot';
+		font-style: italic;
+		color: black;
+		}
+    }
+
+/* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+.subjects { margin-top: 2.5rem ; }
+body {
+	font-size: 1.0rem;
+	line-height: 1.2rem;
+	color:purple;
+	}
+	h1 { 
+	font: 1.2rem 'Didot';
+	color: black;
+	}
+	h2, h3, h4, h5, h6 {
+		font: 1.0rem 'Didot';
+		font-style: italic;
+		color: black;
+		}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+.subjects { margin-top: 2.5rem ; }
+body {
+	font-size: 1.1rem;
+	line-height: 1.4rem;
+	color:red;
+	}
+	h1 { 
+	font: 1.3rem 'Didot';
+	color: black;
+	}
+	h2, h3, h4, h5, h6 {
+		font: 1.1rem 'Didot';
+		font-style: italic;
+		color: black;
+		}
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+.subjects { margin-top: 3rem ; }
+body {
+	font-size: 1.3rem;
+	line-height: 1.6rem;
+	color:blue;
+	}
+	h1 { 
+	font: 1.4rem 'Didot';
+	color: black;
+	}
+	h2, h3, h4, h5, h6 {
+		font: 1.3em 'Didot';
+		font-style: italic;
+		color: black;
+	}
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+.subjects { margin-top: 4rem ; }
+body {
+	font-size: 1.4rem;
+	line-height: 1.7rem;
+	color:green;
+	}
+	h1 { 
+	font: 1.6rem 'Didot';
+	color: black;
+	}
+	h2, h3, h4, h5, h6 {
+		font: 1.4rem 'Didot';
+		font-style: italic;
+		color: black;
+	}
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+.subjects { margin-top: 4rem ; }
+body {
+	font-size: 1.5rem;
+	line-height: 1.8rem;
+	color:grey;
+	}
+	h1 { 
+	font: 1.7rem 'Didot';
+	color: black;
+	}
+	h2, h3, h4, h5, h6 {
+		font: 1.5rem 'Didot';
+		font-style: italic;
+		color: black;
+	}
+    }
+
 /* Navbar icon */
 /* https://css.gg/menu */
 .gg-menu {
@@ -134,21 +248,6 @@ code {
 	line-height: 1.4rem;
 	}
 
-h1 {
-	font: 1.4rem 'Didot';
-	color: black;
-	}
-
-h2, h3, h4, h5, h6 {
-	font: 1.3rem 'Didot';
-	font-style: italic;
-	color: black;
-	}
-
-.subjects {
-	margin-top: 4rem ;
-	margin-bottom: 1rem ;
-	}
 
 ul {
 	list-style-position: inside;
@@ -204,21 +303,19 @@ table {
 	font: 100%;
 	}
 
-/* Site */
-/*  text-align: justify; */
 .site {
 	text-align: left;
 	width: 45rem;
 	max-width: 90%;
 	margin: 1rem auto 1rem auto;
-	line-height: 1.6rem;
+	/* line-height: 1.6rem; */
 	}
 
 .title {
 	color: #a00;
-	font-size: 120%;
+	font-size: 150%;
 	font-weight: medium;
-	margin-bottom: 1rem;
+	margin-bottom: 3rem;
 	}
 
 .site .title a {
