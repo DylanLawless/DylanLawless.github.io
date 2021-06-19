@@ -1,4 +1,4 @@
-/* Common */
+/* Body */
 body {
 	font-family: Baskerville;
 	font-size: 1.3rem;
@@ -10,13 +10,8 @@ body {
 	color: #303c3c;
 	}
 
-
-
-/* ------------------------------------------------------------------------- */
-/* Navbar icon
-/* Menu icon made from css rather than a png 
-/* https://css.gg/menu
-/* ------------------------------------------------------------------------- */
+/* Navbar icon */
+/* https://css.gg/menu */
 .gg-menu {
 	transform: scale(var(--ggs,1))
 	}
@@ -47,9 +42,7 @@ body {
 	top: -6px;
 	}
 
-/* ------------------------------------------------------------------------- */
 /* Navbar main settings */
-/* ------------------------------------------------------------------------- */
 .nav-container {
 	width: 100%;
 	/* background: grey; */
@@ -103,10 +96,7 @@ nav {
 		}
 	}
 
-/* ------------------------------------------------------------------------- */
 /* Navbar menu styling */
-/* ------------------------------------------------------------------------- */
-
 .right-menu a {
 	padding: 0px 0;
 	margin-left: 0px;
@@ -155,6 +145,16 @@ h2, h3, h4, h5, h6 {
 	color: black;
 	}
 
+.subjects {
+	margin-top: 4rem ;
+	margin-bottom: 1rem ;
+	}
+
+ul {
+	list-style-position: inside;
+	padding-left: 0;
+}
+
 #header {
 	margin-bottom: 1rem;
 	}
@@ -196,7 +196,7 @@ a:hover {
 	}
 
 a:visited {
-	color: #267979;
+	color: #732525;
 	}
 
 table {

@@ -32,74 +32,92 @@ This site is under live development; some placeholder pages are included for tes
 -->
 
 <div id="Topics">
-<h1>Precision medicine</h1>
-<ul class="topic">
-	{% assign sorted-topic = site.topic | where: "subject","Precision medicine" %}
-	{% for topic in sorted-topic %}
-	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
-	{% endfor %}
-</ul>
+	<div class="subjects">
+		<h1>Precision medicine</h1>
+		<ul class="topic">
+		{% assign sorted-topic = site.topic | where: "subject","Precision medicine" %}
+		{% for topic in sorted-topic %}
+		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+		{% endfor %}
+		</ul>
+	</div>
 
-<h1>Intelligence topics</h1>
-<ul class="topic">
-	{% assign sorted-topic = site.topic | where: "subject","cryptography" %}
-	{% for topic in sorted-topic %}
-	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
-	{% endfor %}
-</ul>
+	<div class="subjects">
+		<h1>Intelligence topics</h1>
+		<ul class="topic">
+		{% assign sorted-topic = site.topic | where: "subject","cryptography" %}
+		{% for topic in sorted-topic %}
+		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+		{% endfor %}
+		</ul>
+	</div>
 
-<h1>Statistics</h1>
-<ul class="topic">
-	{% assign sorted-topic = site.topic | where: "subject","statistics" %}
-	{% for topic in sorted-topic %}
-	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
-	{% endfor %}
-</ul>
+	<div class="subjects">
+		<h1>Statistics</h1>
+		<ul class="topic">
+		{% assign sorted-topic = site.topic | where: "subject","statistics" %}
+		{% for topic in sorted-topic %}
+		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+		{% endfor %}
+		</ul>
+	</div>
 
-<h1>Immunology</h1>
-<ul class="topic">
-	{% assign sorted-topic = site.topic | where: "subject","immunology" %}
-	{% for topic in sorted-topic %}
-	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
-	{% endfor %}
-</ul>
+	<div class="subjects">
+		<h1>Immunology</h1>
+		<ul class="topic">
+		{% assign sorted-topic = site.topic | where: "subject","immunology" %}
+		{% for topic in sorted-topic %}
+		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+		{% endfor %}
+		</ul>
+	</div>
 
-<h1>SARS-CoV-2</h1>
-<ul class="topic">
-	<a href="https://sarscov2variants.com">SARS-CoV-2 variants of concern to vaccine</a>
-</ul>
+	<div class="subjects">
+		<h1>SARS-CoV-2</h1>
+		<ul class="topic">
+		<a href="https://sarscov2variants.com">SARS-CoV-2 variants of concern to vaccine</a>
+		</ul>
+	</div>
 
-<h1>Public presentation</h1>
-<ul class="topic">
-	{% assign sorted-topic = site.topic | where: "subject","meetings" %}
-	{% for topic in sorted-topic %}
-	<a href="{{ topic.url }}">{{ topic.title }}</a><br />
-	{% endfor %}
-</ul>
+	<div class="subjects">
+		<h1>Public presentation</h1>
+		<ul class="topic">
+		{% assign sorted-topic = site.topic | where: "subject","meetings" %}
+		{% for topic in sorted-topic %}
+		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+		{% endfor %}
+		</ul>
+	</div>
 
-<h1>Blog Posts</h1>
-<ul class="posts">
-	{% for post in site.posts %}
-	{% if post.path contains 'blogpost' %}
-		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endif %}
-	{% endfor %}
-</ul>
+	<div class="subjects">
+		<h1>Blog Posts</h1>
+		<ul class="posts">
+		{% for post in site.posts %}
+		{% if post.path contains 'blogpost' %}
+		<li><span>{{ post.date | date_to_string }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+		{% endif %}
+		{% endfor %}
+		</ul>
+	</div>
 
 <!--
-<h1>Weeknotes</h1>
-{% for post in site.posts %}
-	{% if post.path contains 'weeknotes' %}
-		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endif %}
-{% endfor %} 
-</ul>
+	<div class="subjects">
+		<h1>Weeknotes</h1>
+		{% for post in site.posts %}
+			{% if post.path contains 'weeknotes' %}
+				<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+		{% endif %}
+		{% endfor %} 
+		</ul>
+	</div>
 -->
 
-<h1>Highlighted Media</h1>
-<ul class="posts">
-	<li><span>27 Aug 2020</span> &raquo; <a href="https://ashpublications.org/blood/pages/blood_podcast">Podcast: Blood Journal complete TET2 deficiency by Spegarova, Lawless et al. </a></li>
-	<li><span>27 Aug 2020</span> &raquo; <a href="https://ashpublications.org/blood/article/136/9/1018/463418/Human-TET2-bridges-cancer-and-immunity">Featured: Human TET2 bridges cancer and immunity, Zhang and Casanova.</a></li>
-	<li><span>21 Feb 2019</span> &raquo; <a href="https://ashpublications.org/blood/article/133/8/773/260583/RAGs-usurp-cellular-factors-for-both-breaking-and">Featured: RAGs usurp cellular factors for both breaking and repairing. </a></li>
-</ul>
+	<div class="subjects">
+		<h1>Highlighted Media</h1>
+		<ul class="posts">
+			<li><span>27 Aug 2020</span> <a href="https://ashpublications.org/blood/pages/blood_podcast">Podcast: Blood Journal complete TET2 deficiency by Spegarova, Lawless et al. </a></li>
+			<li><span>27 Aug 2020</span> <a href="https://ashpublications.org/blood/article/136/9/1018/463418/Human-TET2-bridges-cancer-and-immunity">Featured: Human TET2 bridges cancer and immunity, Zhang and Casanova.</a></li>
+			<li><span>21 Feb 2019</span> <a href="https://ashpublications.org/blood/article/133/8/773/260583/RAGs-usurp-cellular-factors-for-both-breaking-and">Featured: RAGs usurp cellular factors for both breaking and repairing. </a></li>
+		</ul>
+	</div>
 
