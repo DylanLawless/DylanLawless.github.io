@@ -15,7 +15,7 @@ body {
 .subjects { margin-top: 2.5rem ; }
 body {
 	font-family: 'Garamond';
-	font-size: 1.0rem;
+	font-size: 0.8rem;
 	line-height: 1.4rem;
 	}
 	h1 { 
@@ -57,7 +57,7 @@ body {
 	line-height: 1.7rem;
 	}
 	h1 { 
-	font: 1.3rem 'Didot';
+	font: 1.2rem 'Didot';
 	color: black;
 	}
 	h2, h3, h4, h5, h6 {

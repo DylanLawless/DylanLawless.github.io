@@ -1,0 +1,20 @@
+---
+permalink: "/weeknotes/"
+layout: default
+title: Weeknotes
+---
+
+A summary of topics that I find intesting during the week.
+The work section only includes general topics so that sensitive information is not released preemptively. 
+The reading list here excludes my normal daily academic reading, which would be tedious to include. 
+This typically consists of 2-5 papers read in detail per week and 0-10 papers skimmed per day; abstract, figures, results, or for related citations &c.
+
+<div>
+	{% for post in site.posts %}
+		{% if post.path contains 'weeknotes' %}
+			<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endif %}
+	{% endfor %} 
+	</ul>
+</div>
+
