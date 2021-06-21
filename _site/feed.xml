@@ -1,774 +1,670 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-19T23:55:43+02:00</updated><id>/feed.xml</id><entry><title type="html">Weeknotes</title><link href="/2021/06/14/weeknotes.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-14T00:00:00+02:00</published><updated>2021-06-14T00:00:00+02:00</updated><id>/2021/06/14/weeknotes</id><content type="html" xml:base="/2021/06/14/weeknotes.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-21T11:31:57+02:00</updated><id>/feed.xml</id><entry><title type="html">Weeknotes</title><link href="/2021/06/14/weeknotes_3.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-14T00:00:00+02:00</published><updated>2021-06-14T00:00:00+02:00</updated><id>/2021/06/14/weeknotes_3</id><content type="html" xml:base="/2021/06/14/weeknotes_3.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;14 June 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+# Work
+1. Using RCy3 to programmatically control Cytoscape for downloading STRINGdb in analysis.
+2. Writing up paper on protein network analysis.
+3. Writing paper on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
 
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+# Personal 
+1. Spent time in [Robella Val-de-Travers, Neuchâtel](https://goo.gl/maps/TVz7B33HcDRy6FDF8)
+2. Rewrote most CSS on my website as learning for online classes.
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+# Reading
+1. [The Honourable Schoolboy](https://en.wikipedia.org/wiki/The_Honourable_Schoolboy), John le Carré.
+2. [Bowden et al., 2021 ](https://www.medrxiv.org/content/10.1101/2021.05.04.21256612v1.full.pdf), The Triangulation WIthin A STudy (TWIST) framework for causal inference within Pharmacogenetic research.
+3. Reread [Povysil et al., 2019](https://www.nature.com/articles/s41576-019-0177-4), Rare-variant collapsing analyses for complex traits: guidelines and applications.
 
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=xanSAr83w-k&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=2&quot;&gt;Cant Get You Out of My Head E02&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/07/weeknotes.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/weeknotes</id><content type="html" xml:base="/2021/06/07/weeknotes.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+# Other media
+1. Adam Curtis documentary: [Cant Get You Out of My Head E02](https://www.youtube.com/watch?v=xanSAr83w-k&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=2)
+2. Lex Fridman Podcast: [#192 Charles Hoskinson: Cardano](https://lexfridman.com/charles-hoskinson/)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/07/weeknotes_2.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/weeknotes_2</id><content type="html" xml:base="/2021/06/07/weeknotes_2.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;7 June 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+# Work
+1. Writing methods on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
+2. Genetic variance in viral clades.
+2. Creating toy datasets for testing code.
+3. Wrote code for power calcualtions with PPI network pathways and define the smallest testable sets (cohort sizes).
 
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+# Reading
+1. [The Honourable Schoolboy](https://en.wikipedia.org/wiki/The_Honourable_Schoolboy), John le Carré.
+2. [Advanced level statistics](https://www.amazon.com/Advanced-Level-Statistics-Francis/dp/0859508137), A. Francis. A good read on basic fundamentals but not a prefered over other modern textbooks with R code.
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Advanced-Level-Statistics-Francis/dp/0859508137&quot;&gt;Advanced level statistics&lt;/a&gt;, A. Francis. A good read on basic fundamentals but not a prefered over other modern textbooks with R code.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Oliver Nelson - &lt;a href=&quot;https://www.youtube.com/watch?v=k-zaI8lLrQA&quot;&gt;The Blues And The Abstract Truth 1961&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Podcast - BBC, In Our Time with Melvyn Bragg, &lt;a href=&quot;https://www.bbc.co.uk/programmes/b0435jyv&quot;&gt;Photosynthesis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=hqX1J-1LyzA&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=1&quot;&gt;Cant Get You Out of My Head E01&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">SARS-CoV-2 variants of concern</title><link href="/2021/06/07/variants_of_concern.html" rel="alternate" type="text/html" title="SARS-CoV-2 variants of concern" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/variants_of_concern</id><content type="html" xml:base="/2021/06/07/variants_of_concern.html">&lt;h1 id=&quot;sars-cov-2-variants-of-concern&quot;&gt;SARS-CoV-2 variants of concern&lt;/h1&gt;
+# Other media
+1. Oliver Nelson - [The Blues And The Abstract Truth 1961](https://www.youtube.com/watch?v=k-zaI8lLrQA).
+2. Podcast - BBC, In Our Time with Melvyn Bragg, [Photosynthesis](https://www.bbc.co.uk/programmes/b0435jyv)
+3. Adam Curtis documentary: [Cant Get You Out of My Head E01](https://www.youtube.com/watch?v=hqX1J-1LyzA&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=1)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">SARS-CoV-2 variants of concern</title><link href="/2021/06/07/variants_of_concern.html" rel="alternate" type="text/html" title="SARS-CoV-2 variants of concern" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/variants_of_concern</id><content type="html" xml:base="/2021/06/07/variants_of_concern.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;07 June 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;variants-of-concern-aligned-to-vaccine-coding-sequences&quot;&gt;Variants of concern aligned to vaccine coding sequences&lt;/h1&gt;
+# Variants of concern aligned to vaccine coding sequences
 
-&lt;p&gt;This work has not been peer reviewed.&lt;/p&gt;
+This work has not been peer reviewed.
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf&quot;&gt;Open PDF visualisation - variants_of_concern_to_vaccine.pdf&lt;/a&gt;&lt;/p&gt;
+[Open PDF visualisation - variants_of_concern_to_vaccine.pdf](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf)
 
-&lt;h2 id=&quot;aims-and-results&quot;&gt;Aims and results&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;To produce standardized alignments of vaccine sequences.&lt;/li&gt;
-  &lt;li&gt;Determine which are at risk to emerging variants.&lt;/li&gt;
-&lt;/ul&gt;
+## Aims and results
+* To produce standardized alignments of vaccine sequences.
+* Determine which are at risk to emerging variants.
 
-&lt;p&gt;From the data presented within:&lt;/p&gt;
+From the data presented within:
 
-&lt;ol&gt;
-  &lt;li&gt;The translated amino acid sequences for all vaccines were derived.&lt;/li&gt;
-  &lt;li&gt;These were aligned to the SARS-CoV-2 reference amino acid sequences of spike glycoprotein.&lt;/li&gt;
-  &lt;li&gt;Known variants-of-concern were then annotated and visualised.&lt;/li&gt;
-&lt;/ol&gt;
+1. The translated amino acid sequences for all vaccines were derived.
+2. These were aligned to the SARS-CoV-2 reference amino acid sequences of spike glycoprotein.
+3. Known variants-of-concern were then annotated and visualised.
 
-&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;Variants-of-concern for five SARS-CoV-2 strains 
-(&lt;a href=&quot;https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html&quot;&gt;CDC 4 Jun 2021&lt;/a&gt;)
+## Overview
+Variants-of-concern for five SARS-CoV-2 strains 
+([CDC 4 Jun 2021](https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html))
 are illustrated against the 
-translated amino acid sequences of the vaccines;&lt;/p&gt;
+translated amino acid sequences of the vaccines; 
 
-&lt;ul&gt;
-  &lt;li&gt;Moderna mRNA-1273&lt;/li&gt;
-  &lt;li&gt;Pfizer/BioNTech BNT-162b2&lt;/li&gt;
-  &lt;li&gt;Janssen/Johnson &amp;amp; Johnson Ad26.COV2-S&lt;/li&gt;
-  &lt;li&gt;Novavax NVX-CoV2373&lt;/li&gt;
-  &lt;li&gt;Curevac CVnCoV&lt;/li&gt;
-  &lt;li&gt;Sputnik V&lt;/li&gt;
-  &lt;li&gt;AstraZeneca AZD1222&lt;/li&gt;
-&lt;/ul&gt;
+* Moderna mRNA-1273
+* Pfizer/BioNTech BNT-162b2
+* Janssen/Johnson &amp; Johnson Ad26.COV2-S
+* Novavax NVX-CoV2373
+* Curevac CVnCoV
+* Sputnik V
+* AstraZeneca AZD1222
 
-&lt;p&gt;and reference genome sequences;&lt;/p&gt;
+and reference genome sequences;
 
-&lt;ul&gt;
-  &lt;li&gt;QHD43416.1 [MN908947.3] and&lt;/li&gt;
-  &lt;li&gt;YP_009724390.1 [NC_045512.2].&lt;/li&gt;
-&lt;/ul&gt;
+* QHD43416.1 [MN908947.3] and
+* YP\_009724390.1 [NC\_045512.2].
 
-&lt;p&gt;The variants-of-concern are shown here, illustrated on the protein structure;
-&lt;a href=&quot;https://www.rcsb.org/structure/6ZOX&quot;&gt;6ZOX.pdb DOI: 10.2210/pdb6ZOX/pdb&lt;/a&gt;
-&lt;em&gt;Structure of Disulphide-stabilized SARS-CoV-2 Spike Protein Trimer (x2 disulphide-bond mutant, G413C, V987C, single Arg S1/S2 cleavage site),&lt;/em&gt;
-provided by Xiong et al., 2020 &lt;a href=&quot;https://www.nature.com/articles/s41594-020-0478-5&quot;&gt;10.1038/s41594-020-0478-5&lt;/a&gt;.&lt;/p&gt;
+The variants-of-concern are shown here, illustrated on the protein structure;
+[6ZOX.pdb DOI: 10.2210/pdb6ZOX/pdb](https://www.rcsb.org/structure/6ZOX)
+_Structure of Disulphide-stabilized SARS-CoV-2 Spike Protein Trimer (x2 disulphide-bond mutant, G413C, V987C, single Arg S1/S2 cleavage site),_
+provided by Xiong et al., 2020 [10.1038/s41594-020-0478-5](https://www.nature.com/articles/s41594-020-0478-5).
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_front.jpg&quot;&gt;6zox_voc_20210604_front.jpg&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg&quot;&gt;6zox_voc_20210604_side.jpg&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg&quot;&gt;6zox_voc_20210604_top.jpg&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+* [6zox_voc_20210604_front.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_front.jpg)
+* [6zox_voc_20210604_side.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg)
+* [6zox_voc_20210604_top.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg)
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/6zox_voc_20210604_stage.gif&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;{{ site.baseurl }}{% link images/posts/6zox_voc_20210604_stage.gif %}&quot; width=&quot;100%&quot;&gt;
 
-&lt;p&gt;Two of the defining genetic features that are different between vaccines are seen here,&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;the S glycoprotein furin cleavage modification region (p.682-685)&lt;/li&gt;
-&lt;/ul&gt;
+Two of the defining genetic features that are different between vaccines are seen here, 
+* the S glycoprotein furin cleavage modification region (p.682-685)
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/snapshot_furin_cleavage_region.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;{{ site.baseurl }}{% link images/posts/snapshot_furin_cleavage_region.png %}&quot; width=&quot;100%&quot;&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;the S glycoprotein stabilization modification region (p.986-987)&lt;/li&gt;
-&lt;/ul&gt;
+* the S glycoprotein stabilization modification region (p.986-987)
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/snapshot_stabilizing_region_PP.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;{{ site.baseurl }}{% link images/posts/snapshot_stabilizing_region_PP.png %}&quot; width=&quot;100%&quot;&gt;
 
-&lt;p&gt;Visual alignment is shown against translated coding sequence for spike glycoprotein,
-illustrated here via&lt;/p&gt;
+Visual alignment is shown against translated coding sequence for spike glycoprotein,
+illustrated here via 
 
-&lt;p&gt;&lt;a href=&quot;https://nextstrain.org/sars-cov-2&quot;&gt;nextstrain.org&lt;/a&gt;.
-&lt;img src=&quot;/images/posts/nextstrain_spike.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+[nextstrain.org](https://nextstrain.org/sars-cov-2).
+&lt;img src=&quot;{{ site.baseurl }}{% link images/posts/nextstrain_spike.png %}&quot; width=&quot;100%&quot;&gt;
 
-&lt;p&gt;Fasta sequences are included for:&lt;/p&gt;
+Fasta sequences are included for:
 
-&lt;ul&gt;
-  &lt;li&gt;Variants of Concern B.1.1.7&lt;/li&gt;
-  &lt;li&gt;Variants of Concern B.1.351&lt;/li&gt;
-  &lt;li&gt;Variants of Concern B.1.427&lt;/li&gt;
-  &lt;li&gt;Variants of Concern B.1.429&lt;/li&gt;
-  &lt;li&gt;Variants of Concern P.1&lt;/li&gt;
-  &lt;li&gt;Ref QHD43416.1 [MN908947.3]&lt;/li&gt;
-  &lt;li&gt;Ref YP_009724390.1 [NC_045512.2]&lt;/li&gt;
-  &lt;li&gt;mRNA-1273 vaccine translated&lt;/li&gt;
-  &lt;li&gt;BNT-162b2 vaccine translated&lt;/li&gt;
-  &lt;li&gt;Ad26.COV2-S vaccine translated&lt;/li&gt;
-  &lt;li&gt;NVX-CoV2373 vaccine translated&lt;/li&gt;
-  &lt;li&gt;Sputnik V alleged unmodified YP_009724390.1&lt;/li&gt;
-  &lt;li&gt;AZD1222 alleged unmodified YP_009724390.1&lt;/li&gt;
-&lt;/ul&gt;
+* Variants of Concern B.1.1.7
+* Variants of Concern B.1.351
+* Variants of Concern B.1.427
+* Variants of Concern B.1.429
+* Variants of Concern P.1
+* Ref QHD43416.1 [MN908947.3]
+* Ref YP\_009724390.1 [NC\_045512.2]
+* mRNA-1273 vaccine translated
+* BNT-162b2 vaccine translated
+* Ad26.COV2-S vaccine translated
+* NVX-CoV2373 vaccine translated
+* Sputnik V alleged unmodified YP_009724390.1
+* AZD1222 alleged unmodified YP_009724390.1
 
-&lt;h2 id=&quot;reference-genome-sequence&quot;&gt;Reference genome sequence&lt;/h2&gt;
-&lt;p&gt;The two reference sequences that are used by vaccine developers are;&lt;/p&gt;
+## Reference genome sequence
+The two reference sequences that are used by vaccine developers are;
 
-&lt;ul&gt;
-  &lt;li&gt;Complete genome DNA and translated coding sequences:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2&quot;&gt;NC_045512.2&lt;/a&gt;,&lt;/li&gt;
-      &lt;li&gt;Protein ID for spike glycoprotein &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/protein/YP_009724390.1&quot;&gt;YP_009724390.1&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;Date: 18-JUL-2020&lt;/li&gt;
-      &lt;li&gt;This the same translated protein sequence as that is referred to based on genomic coordinates &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/nuccore/NC_045512&quot;&gt;NC_045512.2:21563-25384 translated GU280_gp02&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Complete genome DNA and translated coding sequences:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.ncbi.nlm.nih.gov/nuccore/mn908947.3&quot;&gt;MN908947.3&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Protein ID for spike glycoprotein &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/protein/QHD43416.1&quot;&gt;QHD43416.1&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Date: 18-MAR-2020&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+* Complete genome DNA and translated coding sequences:
+	- [NC\_045512.2](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2), 
+	- Protein ID for spike glycoprotein [YP\_009724390.1](https://www.ncbi.nlm.nih.gov/protein/YP_009724390.1).
+	- Date: 18-JUL-2020 
+	- This the same translated protein sequence as that is referred to based on genomic coordinates [NC_045512.2:21563-25384 translated GU280_gp02](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512)
 
-&lt;p&gt;Both reference sequences are provided in files:&lt;/p&gt;
+* Complete genome DNA and translated coding sequences:
+	- [MN908947.3](https://www.ncbi.nlm.nih.gov/nuccore/mn908947.3)
+	- Protein ID for spike glycoprotein [QHD43416.1](https://www.ncbi.nlm.nih.gov/protein/QHD43416.1)
+	- Date: 18-MAR-2020
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_NC_045512.2.21563-25384.md&quot;&gt;reference_sequence_NC_045512.2.21563-25384.md&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_MN908947.3.md&quot;&gt;reference_sequence_MN908947.3.md&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+Both reference sequences are provided in files:
 
-&lt;h2 id=&quot;vaccine-sequence-reproduction&quot;&gt;Vaccine sequence reproduction&lt;/h2&gt;
-&lt;p&gt;The sequences for vaccines have been reproduced by careful reconstruction based on&lt;/p&gt;
+- [reference\_sequence\_NC\_045512.2.21563-25384.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_NC_045512.2.21563-25384.md)
+- [reference\_sequence\_MN908947.3.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_MN908947.3.md)
 
-&lt;ol&gt;
-  &lt;li&gt;The authors’ reported reference sequence and&lt;/li&gt;
-  &lt;li&gt;The description of the genetic modifications used during vaccine development.&lt;/li&gt;
-&lt;/ol&gt;
+## Vaccine sequence reproduction
+The sequences for vaccines have been reproduced by careful reconstruction based on 
 
-&lt;p&gt;The primary sources are provided in each case, along with a detailed description of the genetic variants provided by authors.
-Additionally, the correct &lt;a href=&quot;https://varnomen.hgvs.org/recommendations&quot;&gt;HGVS-recommended nomenclature&lt;/a&gt; has been used for more reliable reproduction than some of the primary sources.&lt;/p&gt;
+1. The authors&apos; reported reference sequence and 
+2. The description of the genetic modifications used during vaccine development. 
 
-&lt;p&gt;&lt;strong&gt;For visual simplicity, an X symbol was used to illustrate amino acid deletions&lt;/strong&gt;.
-All other amino acid changes use their correct symbol.&lt;/p&gt;
+The primary sources are provided in each case, along with a detailed description of the genetic variants provided by authors.
+Additionally, the correct [HGVS-recommended nomenclature](https://varnomen.hgvs.org/recommendations) has been used for more reliable reproduction than some of the primary sources.
 
-&lt;p&gt;For vaccines BNT-162b2 and mRNA-1273, the assemblies have also been sourced from &lt;a href=&quot;https://github.com/NAalytics/Assemblies-of-putative-SARS-CoV2-spike-encoding-mRNA-sequences-for-vaccines-BNT-162b2-and-mRNA-1273&quot;&gt;NAalytics&lt;/a&gt;.
+**For visual simplicity, an X symbol was used to illustrate amino acid deletions**.
+All other amino acid changes use their correct symbol.
+
+For vaccines BNT-162b2 and mRNA-1273, the assemblies have also been sourced from [NAalytics](https://github.com/NAalytics/Assemblies-of-putative-SARS-CoV2-spike-encoding-mRNA-sequences-for-vaccines-BNT-162b2-and-mRNA-1273).
 This data matches the vaccine sequences that have been reproduced here based on primary literature.
 Briefly, 
 their experimental sequence information from the initial 
-Moderna (&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/32756549/&quot;&gt;Corbett Nature 2020 Oct&lt;/a&gt;)
-and Pfizer/BioNTech (&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/33301246/&quot;&gt;Polack NEJM 2020 Dec&lt;/a&gt;)
+Moderna ([Corbett Nature 2020 Oct](https://pubmed.ncbi.nlm.nih.gov/32756549/))
+and Pfizer/BioNTech ([Polack NEJM 2020 Dec](https://pubmed.ncbi.nlm.nih.gov/33301246/))
 COVID-19 vaccines, allowed them to produce a working assembly of the former 
 and a confirmation of previously reported sequence information for the latter RNA.
 Their data was sourced and formatted to select the coding sequences.
 The nucleotide sequences were then translated into amino acid coding sequences
-using &lt;a href=&quot;https://web.expasy.org/translate/&quot;&gt;https://web.expasy.org/translate/&lt;/a&gt;,
-as shown in files:&lt;/p&gt;
+using &lt;https://web.expasy.org/translate/&gt;,
+as shown in files:
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_mRNA-1273.md&quot;&gt;sarscov2_vaccine_sequence_translated_mRNA-1273.md&lt;/a&gt;
-&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_BNT-162b2.md&quot;&gt;sarscov2_vaccine_sequence_translated_BNT-162b2.md&lt;/a&gt;&lt;/p&gt;
+[sarscov2\_vaccine\_sequence\_translated\_mRNA-1273.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_mRNA-1273.md)
+[sarscov2\_vaccine\_sequence\_translated\_BNT-162b2.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_BNT-162b2.md)
 
-&lt;h2 id=&quot;covid-19-vaccine-sequences-summarised&quot;&gt;Covid-19 vaccine sequences summarised&lt;/h2&gt;
-&lt;p&gt;The correct &lt;a href=&quot;https://varnomen.hgvs.org/recommendations/protein/variant/delins/&quot;&gt;HGVS standard notation is used&lt;/a&gt;.&lt;/p&gt;
+## Covid-19 vaccine sequences summarised
+The correct [HGVS standard notation is used](https://varnomen.hgvs.org/recommendations/protein/variant/delins/).
 
-&lt;ul&gt;
-  &lt;li&gt;mRNA-1273
-    &lt;ul&gt;
-      &lt;li&gt;Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)&lt;/li&gt;
-      &lt;li&gt;Delivery: Lipid-nanoparticle&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;BNT162b2
-    &lt;ul&gt;
-      &lt;li&gt;Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)&lt;/li&gt;
-      &lt;li&gt;Delivery: Lipid-nanoparticle&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Ad26.COV2-S
-    &lt;ul&gt;
-      &lt;li&gt;Genetics: p.[Arg682Ser;p.Arg685Gln]				- furin cleavage x2 (SRAG)&lt;/li&gt;
-      &lt;li&gt;Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)&lt;/li&gt;
-      &lt;li&gt;Delivery: Adenovirus vector (Ad26)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;NVX-CoV2373
-    &lt;ul&gt;
-      &lt;li&gt;Genetics: p.[Arg682_Arg683delinsGlnGln;Arg685Gln]	- furin cleavage x3 (GGAG)&lt;/li&gt;
-      &lt;li&gt;Genetics: p.(Lys986_Val987delinsProPro)				- stabilizing x2 (PP)&lt;/li&gt;
-      &lt;li&gt;Delivery: Lipid-nanoparticle, baculovirus expression cultured in Sf9&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sputnik V
-    &lt;ul&gt;
-      &lt;li&gt;Genetics: “unmodified” full-length S-protein&lt;/li&gt;
-      &lt;li&gt;Genetics: No reference sequence found&lt;/li&gt;
-      &lt;li&gt;Delivery: Adenovirus vectors (Ad26 dose 1) and (Ad5 dose 2)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Incomplete others:&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;CVnCoV
-    &lt;ul&gt;
-      &lt;li&gt;Genetics: modified S protein.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;AZD1222
-    &lt;ul&gt;
-      &lt;li&gt;Genetics: Unmodified S protein&lt;/li&gt;
-      &lt;li&gt;Genetics: No reference sequence found&lt;/li&gt;
-      &lt;li&gt;Adenovirus vector (ChAdOx1).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;CoronaVac
-    &lt;ul&gt;
-      &lt;li&gt;a preparation of inactivated SARS-CoV-2 virions.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+* mRNA-1273
+	- Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)
+	- Delivery: Lipid-nanoparticle
 
-&lt;h2 id=&quot;covid-19-vaccine-details&quot;&gt;Covid-19 vaccine details&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;BioNTech/Pfizer: BNT162b2
-    &lt;ul&gt;
-      &lt;li&gt;Modified mRNA-in-lipid-nanoparticle vaccine&lt;/li&gt;
-      &lt;li&gt;Expressing a modified S protein.&lt;/li&gt;
-      &lt;li&gt;Stabiliazation by proline substitutions p.K986P, p.V987P.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Moderna: mRNA-1273
-    &lt;ul&gt;
-      &lt;li&gt;Modified mRNA-in-lipid-nanoparticle vaccine&lt;/li&gt;
-      &lt;li&gt;Expressing a modified S protein.&lt;/li&gt;
-      &lt;li&gt;Stabiliazation by proline substitutions p.K986P, p.V987P.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Janssen/Johnson &amp;amp; Johnson: Ad26.COV2-S aka JNJ-78436735
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.biorxiv.org/content/10.1101/2020.07.30.227470v1&quot;&gt;Pre-prindt&lt;/a&gt;, &lt;a href=&quot;https://www.nature.com/articles/s41541-020-00243-x&quot;&gt;Published&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;Adenovirus serotype 26 (Ad26) viral vector vaccine&lt;/li&gt;
-      &lt;li&gt;Expressing a modified S protein.&lt;/li&gt;
-      &lt;li&gt;S protein of SARS-CoV-2 corresponding to positions 21,536–25,384 in SARS-CoV-2 isolate Wuhan-Hu-1 (genome MN908947 (18-MAR-2020))&lt;a href=&quot;https://www.nature.com/articles/s41541-020-00243-x&quot;&gt;Published&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;For Ad26.S.PP, the two stabilising variants p.(Lys986_Val987delinsProPro) are included as well as two mutations in the furin cleavage site that preserve the prefusion conformation and blocks shedding of S1.&lt;/li&gt;
-      &lt;li&gt;The furin cleavage site was abolished by amino acid changes p.R682S and p.R685G.&lt;/li&gt;
-      &lt;li&gt;Stabiliazation by proline substitutions p.K986P, p.V987P.&lt;/li&gt;
-      &lt;li&gt;The correct &lt;a href=&quot;https://varnomen.hgvs.org/recommendations/protein/variant/delins/&quot;&gt;HGVS standard notation&lt;/a&gt; should be: p.[Arg682Ser;p.Arg685Gln] and p.(Lys986_Val987delinsProPro).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Novavax: NVX-CoV2373
-    &lt;ul&gt;
-      &lt;li&gt;A protein subunit vaccine containing a doubly modified S protein, with adjuvant.&lt;/li&gt;
-      &lt;li&gt;Part of a 27.2nm nanoparticle.&lt;/li&gt;
-      &lt;li&gt;S protein of SARS-CoV-2 corresponding to GenBank MN908947 nucleotides 21563-25384 &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7584426/&quot;&gt;as published&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;Contains the modified S protein with the two Proline substitutions, K986P and V987P. Additionally, three amino acids are changed (682-RRAR-685 to 682-QQAQ-685) to protect the protein against proteases.&lt;/li&gt;
-      &lt;li&gt;The authors failed to write the correct &lt;a href=&quot;https://varnomen.hgvs.org/recommendations/protein/variant/delins/&quot;&gt;HGVS standard notation&lt;/a&gt;: p.[Arg682_Arg683delinsGlnGln;Arg685Gln] and p.(Lys986_Val987delinsProPro),
-a simple list would even be better: p.R682Q, p.R683Q, p.R685Q, p.K986P, and p.V987P.&lt;/li&gt;
-      &lt;li&gt;Saponin-based Matrix-M adjuvent.&lt;/li&gt;
-      &lt;li&gt;Protein expression by a baculovirus in an Sf9 insect infection culture.&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.biorxiv.org/content/10.1101/2020.06.29.178509v1.full.pdf&quot;&gt;https://www.biorxiv.org/content/10.1101/2020.06.29.178509v1.full.pdf&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Delivery in lipid nanoparticle&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Gamaleya Research Institute of Epidemiology and Microbiology: Sputnik V
-    &lt;ul&gt;
-      &lt;li&gt;aka Гам-КОВИД-Вак (Gam-COVID-Vac).&lt;/li&gt;
-      &lt;li&gt;Two differnt adenovirus viral vectors.&lt;/li&gt;
-      &lt;li&gt;Uses two different adenovirus serotypes; &lt;a href=&quot;https://sputnikvaccine.com/about-vaccine/&quot;&gt;recombinant Ad26 (dose 1) and recombinant Ad5 (dose 2)&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;Both carrying the gene for Spike glycoprotein (rAd26-S and rAd5-S).&lt;/li&gt;
-      &lt;li&gt;Antigen insert is an “unmodified” full-length S-protein (no reference sequence).&lt;/li&gt;
-      &lt;li&gt;Produced in HEK293 cell line.&lt;/li&gt;
-      &lt;li&gt;No reference sequence found&lt;/li&gt;
-      &lt;li&gt;The first major paper [Logunov et al Lancet. 2020] is this clinical trial of frozen and lyophilised vaccine. It mentions previous unpublished pre-clinical trials. &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7471804/&quot;&gt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7471804/&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Curevac: CVnCoV
-    &lt;ul&gt;
-      &lt;li&gt;Unmodified mRNA-in-lipid-nanoparticle vaccine&lt;/li&gt;
-      &lt;li&gt;Expressing a modified S protein.&lt;/li&gt;
-      &lt;li&gt;Based on genome from first isolate &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2&quot;&gt;NC_045512.2&lt;/a&gt;, Spike glycoprotein &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/protein/YP_009724390.1&quot;&gt;YP_009724390.1&lt;/a&gt;.&lt;/li&gt;
-      &lt;li&gt;full-length S featuring K986P and V987P mutations.&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/33863911/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/33863911/&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Oxford/AstraZeneca: AZD1222 (formerly ChAdOx1 nCoV-19)
-    &lt;ul&gt;
-      &lt;li&gt;A viral vector vaccine&lt;/li&gt;
-      &lt;li&gt;Viral vector (ChAdOx1 - chimpanzee adenovirus Oxford 1, &lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/22808149/&quot;&gt;as published&lt;/a&gt;)&lt;/li&gt;
-      &lt;li&gt;Expressing the unmodified S protein.&lt;/li&gt;
-      &lt;li&gt;No reference sequence found&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.thelancet.com/retrieve/pii/S0140673620316044&quot;&gt;Folegatti et al, Lancet July 2020&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+* BNT162b2
+	- Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)
+	- Delivery: Lipid-nanoparticle
 
-&lt;h2 id=&quot;vaccine-multiple-sequence-alignment&quot;&gt;Vaccine Multiple Sequence Alignment&lt;/h2&gt;
-&lt;p&gt;The amino acid sequences of the coding region from each of the vaccine sequences 
+* Ad26.COV2-S
+	- Genetics: p.[Arg682Ser;p.Arg685Gln]				- furin cleavage x2 (SRAG)
+	- Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)
+	- Delivery: Adenovirus vector (Ad26)
+
+* NVX-CoV2373
+	- Genetics: p.[Arg682_Arg683delinsGlnGln;Arg685Gln]	- furin cleavage x3 (GGAG)
+	- Genetics: p.(Lys986_Val987delinsProPro)				- stabilizing x2 (PP)
+	- Delivery: Lipid-nanoparticle, baculovirus expression cultured in Sf9
+
+* Sputnik V
+	- Genetics: &quot;unmodified&quot; full-length S-protein 
+	- Genetics: No reference sequence found
+	- Delivery: Adenovirus vectors (Ad26 dose 1) and (Ad5 dose 2)
+
+* Incomplete others:
+
+* CVnCoV
+	- Genetics: modified S protein.
+
+* AZD1222
+	- Genetics: Unmodified S protein
+	- Genetics: No reference sequence found
+	- Adenovirus vector (ChAdOx1).
+
+* CoronaVac
+	- a preparation of inactivated SARS-CoV-2 virions.
+
+## Covid-19 vaccine details
+* BioNTech/Pfizer: BNT162b2
+	- Modified mRNA-in-lipid-nanoparticle vaccine
+	- Expressing a modified S protein.
+	- Stabiliazation by proline substitutions p.K986P, p.V987P.
+
+* Moderna: mRNA-1273
+	- Modified mRNA-in-lipid-nanoparticle vaccine
+	- Expressing a modified S protein.
+	- Stabiliazation by proline substitutions p.K986P, p.V987P.
+
+* Janssen/Johnson &amp; Johnson: Ad26.COV2-S aka JNJ-78436735
+	- [Pre-prindt](https://www.biorxiv.org/content/10.1101/2020.07.30.227470v1), [Published](https://www.nature.com/articles/s41541-020-00243-x).
+	- Adenovirus serotype 26 (Ad26) viral vector vaccine
+	- Expressing a modified S protein.
+	- S protein of SARS-CoV-2 corresponding to positions 21,536–25,384 in SARS-CoV-2 isolate Wuhan-Hu-1 (genome MN908947 (18-MAR-2020))[Published](https://www.nature.com/articles/s41541-020-00243-x).
+	- For Ad26.S.PP, the two stabilising variants p.(Lys986_Val987delinsProPro) are included as well as two mutations in the furin cleavage site that preserve the prefusion conformation and blocks shedding of S1.  
+	- The furin cleavage site was abolished by amino acid changes p.R682S and p.R685G.
+	- Stabiliazation by proline substitutions p.K986P, p.V987P.
+	- The correct [HGVS standard notation](https://varnomen.hgvs.org/recommendations/protein/variant/delins/) should be: p.[Arg682Ser;p.Arg685Gln] and p.(Lys986_Val987delinsProPro).
+
+* Novavax: NVX-CoV2373
+	- A protein subunit vaccine containing a doubly modified S protein, with adjuvant.
+	- Part of a 27.2nm nanoparticle. 
+	- S protein of SARS-CoV-2 corresponding to GenBank MN908947 nucleotides 21563-25384 [as published](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7584426/).
+	- Contains the modified S protein with the two Proline substitutions, K986P and V987P. Additionally, three amino acids are changed (682-RRAR-685 to 682-QQAQ-685) to protect the protein against proteases.
+	- The authors failed to write the correct [HGVS standard notation](https://varnomen.hgvs.org/recommendations/protein/variant/delins/): p.[Arg682_Arg683delinsGlnGln;Arg685Gln] and p.(Lys986_Val987delinsProPro),
+a simple list would even be better: p.R682Q, p.R683Q, p.R685Q, p.K986P, and p.V987P.
+	- Saponin-based Matrix-M adjuvent.
+	- Protein expression by a baculovirus in an Sf9 insect infection culture.
+	- &lt;https://www.biorxiv.org/content/10.1101/2020.06.29.178509v1.full.pdf&gt;
+	- Delivery in lipid nanoparticle
+
+* Gamaleya Research Institute of Epidemiology and Microbiology: Sputnik V 
+	- aka Гам-КОВИД-Вак (Gam-COVID-Vac).
+	- Two differnt adenovirus viral vectors.
+	- Uses two different adenovirus serotypes; [recombinant Ad26 (dose 1) and recombinant Ad5 (dose 2)](https://sputnikvaccine.com/about-vaccine/).
+	- Both carrying the gene for Spike glycoprotein (rAd26-S and rAd5-S).
+	- Antigen insert is an &quot;unmodified&quot; full-length S-protein (no reference sequence).
+	- Produced in HEK293 cell line.
+	- No reference sequence found
+	- The first major paper [Logunov et al Lancet. 2020] is this clinical trial of frozen and lyophilised vaccine. It mentions previous unpublished pre-clinical trials. &lt;https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7471804/&gt;
+
+* Curevac: CVnCoV
+	- Unmodified mRNA-in-lipid-nanoparticle vaccine
+	- Expressing a modified S protein.
+	- Based on genome from first isolate [NC\_045512.2](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2), Spike glycoprotein [YP\_009724390.1](https://www.ncbi.nlm.nih.gov/protein/YP_009724390.1).
+	- full-length S featuring K986P and V987P mutations.
+	- &lt;https://pubmed.ncbi.nlm.nih.gov/33863911/&gt;
+
+* Oxford/AstraZeneca: AZD1222 (formerly ChAdOx1 nCoV-19)
+	- A viral vector vaccine 
+	- Viral vector (ChAdOx1 - chimpanzee adenovirus Oxford 1, [as published](https://pubmed.ncbi.nlm.nih.gov/22808149/))
+	- Expressing the unmodified S protein.
+	- No reference sequence found
+	- [Folegatti et al, Lancet July 2020](http://www.thelancet.com/retrieve/pii/S0140673620316044)
+
+
+## Vaccine Multiple Sequence Alignment
+The amino acid sequences of the coding region from each of the vaccine sequences 
 and the reference sequence were used for multiple sequence alignment
-via &lt;a href=&quot;https://www.ebi.ac.uk/Tools/msa/clustalo/&quot;&gt;https://www.ebi.ac.uk/Tools/msa/clustalo/&lt;/a&gt;.&lt;/p&gt;
+via &lt;https://www.ebi.ac.uk/Tools/msa/clustalo/&gt;.
 
-&lt;p&gt;Variants-of-concern were then formatted to be used for annotation on the 
-aligned sequences.&lt;/p&gt;
+Variants-of-concern were then formatted to be used for annotation on the 
+aligned sequences.
 
-&lt;h2 id=&quot;variants-of-concern&quot;&gt;Variants of concern&lt;/h2&gt;
-&lt;p&gt;SARS-CoV-2 Variant Classifications and Definitions were derived from
-&lt;a href=&quot;https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html&quot;&gt;https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html&lt;/a&gt;&lt;/p&gt;
+## Variants of concern
+SARS-CoV-2 Variant Classifications and Definitions were derived from 
+&lt;https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html&gt;
 
-&lt;p&gt;This dataset includes:&lt;/p&gt;
+This dataset includes:
 
-&lt;ul&gt;
-  &lt;li&gt;Variants of Interest (VOI)&lt;/li&gt;
-  &lt;li&gt;Variants of Concern (VOC)&lt;/li&gt;
-  &lt;li&gt;Variants of High Consequence (VOHC)&lt;/li&gt;
-&lt;/ul&gt;
+* Variants of Interest (VOI)
+* Variants of Concern (VOC)
+* Variants of High Consequence (VOHC)
 
-&lt;p&gt;The reformatted tables are presented in files:&lt;/p&gt;
+The reformatted tables are presented in files:
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx&quot;&gt;variants_of_concern.xlsx&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv&quot;&gt;variants_of_concern.csv&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+- [variants\_of\_concern.xlsx](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx)
+- [variants\_of\_concern.csv](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv)
 
-&lt;p&gt;There are currently no VOHC. 
-VOC (but not VOI) were presented in the final visualisation.&lt;/p&gt;
+There are currently no VOHC. 
+VOC (but not VOI) were presented in the final visualisation.
 
-&lt;h2 id=&quot;aligned-variants-of-concern-to-vaccine&quot;&gt;Aligned variants-of-concern to vaccine&lt;/h2&gt;
+## Aligned variants-of-concern to vaccine
 
-&lt;p&gt;The variants of concern were formatted such that one pseudo-fasta format entry 
+The variants of concern were formatted such that one pseudo-fasta format entry 
 contains the amino acid change for each strain. 
 This data was then added to the multiple sequence alignment file to allow for
 aligned annotations,
-as shown in file:&lt;/p&gt;
+as shown in file:
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa&quot;&gt;variants_of_concern_to_vaccine.fa&lt;/a&gt;&lt;/p&gt;
+[variants\_of\_concern\_to\_vaccine.fa](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa)
 
-&lt;p&gt;The file contains the list the variants-of-concern for five Sars-CoV-2 strains,
+The file contains the list the variants-of-concern for five Sars-CoV-2 strains,
 2 reference sequence, and
-6 vaccine sequences:&lt;/p&gt;
+6 vaccine sequences:
 
-&lt;ul&gt;
-  &lt;li&gt;Variants of Concern B.1.1.7&lt;/li&gt;
-  &lt;li&gt;Variants of Concern B.1.351&lt;/li&gt;
-  &lt;li&gt;Variants of Concern B.1.427&lt;/li&gt;
-  &lt;li&gt;Variants of Concern B.1.429&lt;/li&gt;
-  &lt;li&gt;Variants of Concern P.1&lt;/li&gt;
-  &lt;li&gt;Ref QHD43416.1 [MN908947.3]&lt;/li&gt;
-  &lt;li&gt;Ref YP_009724390.1 [NC_045512.2]&lt;/li&gt;
-  &lt;li&gt;mRNA-1273 vaccine translated&lt;/li&gt;
-  &lt;li&gt;BNT-162b2 vaccine translated&lt;/li&gt;
-  &lt;li&gt;Ad26.COV2-S vaccine translated&lt;/li&gt;
-  &lt;li&gt;NVX-CoV2373 vaccine translated&lt;/li&gt;
-  &lt;li&gt;Sputnik V alleged unmodified YP_009724390.1&lt;/li&gt;
-  &lt;li&gt;AZD1222 alleged unmodified YP_009724390.1&lt;/li&gt;
-&lt;/ul&gt;
+* Variants of Concern B.1.1.7
+* Variants of Concern B.1.351
+* Variants of Concern B.1.427
+* Variants of Concern B.1.429
+* Variants of Concern P.1
+* Ref QHD43416.1 [MN908947.3]
+* Ref YP\_009724390.1 [NC\_045512.2]
+* mRNA-1273 vaccine translated
+* BNT-162b2 vaccine translated
+* Ad26.COV2-S vaccine translated
+* NVX-CoV2373 vaccine translated
+* Sputnik V alleged unmodified YP_009724390.1
+* AZD1222 alleged unmodified YP_009724390.1
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/coronavirus-cutaway-600.png&quot; width=&quot;20%&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;{{ site.baseurl }}{% link images/posts/coronavirus-cutaway-600.png %}&quot; width=&quot;20%&quot;&gt;
 
-&lt;p&gt;Different strains will contain benign variants.
+Different strains will contain benign variants.
 Typically, full sequences are used for alignment. 
 However, this can be visually distracting.
-Instead, only the variants-of-concern are annotated for the strain sequences.&lt;/p&gt;
+Instead, only the variants-of-concern are annotated for the strain sequences. 
 
-&lt;p&gt;The final illustration was made using &lt;a href=&quot;https://www.snapgene.com&quot;&gt;https://www.snapgene.com&lt;/a&gt; software.
-The snapgene-software formatted output can be loaded with the file:&lt;/p&gt;
+The final illustration was made using &lt;https://www.snapgene.com&gt; software.
+The snapgene-software formatted output can be loaded with the file:
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln&quot;&gt;variants_of_concern_to_vaccine.praln&lt;/a&gt;&lt;/p&gt;
+[variants\_of\_concern\_to\_vaccine.praln](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln)
 
-&lt;p&gt;The final PDF version is shown in file:
-&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf&quot;&gt;Open PDF visualisation&lt;/a&gt;
-&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf&quot;&gt;variants_of_concern_to_vaccine.pdf&lt;/a&gt;&lt;/p&gt;
+The final PDF version is shown in file:
+[Open PDF visualisation](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf)
+[variants\_of\_concern\_to\_vaccine.pdf](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf)
 
-&lt;h2 id=&quot;main-files&quot;&gt;Main files&lt;/h2&gt;
+## Main files
 
-&lt;p&gt;The main files that might interst you are listed here together.
-Other files that are not listed contain intermediate data.&lt;/p&gt;
+The main files that might interst you are listed here together.
+Other files that are not listed contain intermediate data.
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2#readme&quot;&gt;README.md&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_NC_045512.2.21563-25384.md&quot;&gt;reference_sequence_NC_045512.2.21563-25384.md&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_MN908947.3.md&quot;&gt;reference_sequence_MN908947.3.md&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_mRNA-1273.md&quot;&gt;sarscov2_vaccine_sequence_translated_mRNA-1273.md&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_BNT-162b2.md&quot;&gt;sarscov2_vaccine_sequence_translated_BNT-162b2.md&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md&quot;&gt;sarscov2_vaccine_sequence_translated_NVX-CoV2373.md&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Ad26.COV2-S.md&quot;&gt;sarscov2_vaccine_sequence_translated_Ad26.COV2-S.md&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_AZD1222.md&quot;&gt;sarscov2_vaccine_sequence_translated_AZD1222.md&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md&quot;&gt;sarscov2_vaccine_sequence_translated_NVX-CoV2373.md&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Sputnik-V.md&quot;&gt;sarscov2_vaccine_sequence_translated_Sputnik-V.md&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx&quot;&gt;variants_of_concern.xlsx&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv&quot;&gt;variants_of_concern.csv&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa&quot;&gt;variants_of_concern_to_vaccine.fa&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln&quot;&gt;variants_of_concern_to_vaccine.praln&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf&quot;&gt;variants_of_concern_to_vaccine.pdf&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;pdb/6zox.pdb&quot;&gt;Protein structure, original structure file&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/6zox_voc_20210604_stage.vmd&quot;&gt;Protein structure, VMD visualisation state 6zox_voc_20210604_stage.vmd&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_front.jpg&quot;&gt;Protein structure with variants of concern 6zox_voc_20210604_front.jpg&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg&quot;&gt;Protein structure with variants of concern 6zox_voc_20210604_side.jpg&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg&quot;&gt;Protein structure with variants of concern 6zox_voc_20210604_top.jpg&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+- [README.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2#readme)
 
-&lt;h2 id=&quot;other-notes&quot;&gt;Other notes&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;notes.md&quot;&gt;notes.md&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+- [reference\_sequence\_NC\_045512.2.21563-25384.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_NC_045512.2.21563-25384.md)
+- [reference\_sequence\_MN908947.3.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_MN908947.3.md)
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/ribosome-600.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="immunology" /><summary type="html">SARS-CoV-2 variants of concern</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/05/31/weeknotes.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-05-31T00:00:00+02:00</published><updated>2021-05-31T00:00:00+02:00</updated><id>/2021/05/31/weeknotes</id><content type="html" xml:base="/2021/05/31/weeknotes.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+- [sarscov2\_vaccine\_sequence\_translated\_mRNA-1273.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_mRNA-1273.md)
+- [sarscov2\_vaccine\_sequence\_translated\_BNT-162b2.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_BNT-162b2.md)
+- [sarscov2\_vaccine\_sequence\_translated\_NVX-CoV2373.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md)
+- [sarscov2\_vaccine\_sequence\_translated\_Ad26.COV2-S.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Ad26.COV2-S.md)
+- [sarscov2\_vaccine\_sequence\_translated\_AZD1222.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_AZD1222.md)
+- [sarscov2\_vaccine\_sequence\_translated\_NVX-CoV2373.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md)
+- [sarscov2\_vaccine\_sequence\_translated\_Sputnik-V.md](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Sputnik-V.md)
+
+- [variants\_of\_concern.xlsx](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx)
+- [variants\_of\_concern.csv](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv)
+- [variants\_of\_concern\_to\_vaccine.fa](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa)
+- [variants\_of\_concern\_to\_vaccine.praln](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln)
+- [variants\_of\_concern\_to\_vaccine.pdf](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf)
+
+- [Protein structure, original structure file](pdb/6zox.pdb)
+- [Protein structure, VMD visualisation state 6zox_voc_20210604_stage.vmd](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/6zox_voc_20210604_stage.vmd)
+- [Protein structure with variants of concern 6zox_voc_20210604_front.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_front.jpg)
+- [Protein structure with variants of concern 6zox_voc_20210604_side.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg)
+- [Protein structure with variants of concern 6zox_voc_20210604_top.jpg](https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg)
+
+## Other notes
+- [notes.md](notes.md)
+
+&lt;img src=&quot;{{ site.baseurl }}{% link images/posts/ribosome-600.png %}&quot; width=&quot;100%&quot;&gt;</content><author><name></name></author><category term="immunology" /><summary type="html">SARS-CoV-2 variants of concern</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/05/31/weeknotes_1.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-05-31T00:00:00+02:00</published><updated>2021-05-31T00:00:00+02:00</updated><id>/2021/05/31/weeknotes_1</id><content type="html" xml:base="/2021/05/31/weeknotes_1.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;31 May 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Testing toy code for viral infection data.&lt;/li&gt;
-  &lt;li&gt;Testing LD pruning in viral genomes.&lt;/li&gt;
-  &lt;li&gt;Writing results on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;International collaboration call on host-pathogen interaction, hosted in &lt;a href=&quot;https://www.vanderbilt.edu&quot;&gt;Vanderbilt&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
+# Work
+1. Testing toy code for viral infection data.
+2. Testing LD pruning in viral genomes.
+3. Writing results on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
+4. International collaboration call on host-pathogen interaction, hosted in [Vanderbilt](https://www.vanderbilt.edu).
+5. Swiss Genomics Forum 2021 &lt;https://www.health2030genome.ch/swiss-genomics-forum/&gt;. Good talk from Nicholas Katsanis &lt;https://www.rescindotherapeutics.com/about&gt; and panel discussion.
 
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Website CSS building.&lt;/li&gt;
-  &lt;li&gt;Implementing Rake for webdev.&lt;/li&gt;
-  &lt;li&gt;Tech4Growth &lt;a href=&quot;https://tech4growth.ch&quot;&gt;workshop&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
+# Personal 
+1. Website CSS building.
+2. Implementing Rake for webdev.
+3. Tech4Growth [workshop](https://tech4growth.ch).
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/34015270/&quot;&gt;Zhang et al., 2021 AJHG&lt;/a&gt;. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity.&lt;/li&gt;
-  &lt;li&gt;Accelerating Genomic Data Generation and Facilitating Genomic Data Access Using Decentralization, Privacy-Preserving Technologies and Equitable Compensation. &lt;a href=&quot;https://nebula.org/blog/wp-content/uploads/2019/05/Accelerating-Genomic-Data-Generation-and-Facilitating-Genomic-Data-Access.pdf&quot;&gt;Nublua, George Church et al&lt;/a&gt;. (See podcast below for related talk on smart contracts).&lt;/li&gt;
-&lt;/ol&gt;
+# Reading
+1. [The Honourable Schoolboy](https://en.wikipedia.org/wiki/The_Honourable_Schoolboy), John le Carré.
+2. [Zhang et al., 2021 AJHG](https://pubmed.ncbi.nlm.nih.gov/34015270/). A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity.
+3. Accelerating Genomic Data Generation and Facilitating Genomic Data Access Using Decentralization, Privacy-Preserving Technologies and Equitable Compensation. [Nublua, George Church et al](https://nebula.org/blog/wp-content/uploads/2019/05/Accelerating-Genomic-Data-Generation-and-Facilitating-Genomic-Data-Access.pdf). (See podcast below for related talk on smart contracts).
 
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Sergei Loznitsa’s monumental &lt;a href=&quot;https://www.imdb.com/title/tt10203842/&quot;&gt;State Funeral&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Yazz Ahmed - &lt;a href=&quot;https://www.youtube.com/watch?v=6kKYzuvxsZo&quot;&gt;Polyhymnia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Floating Points, Pharoah Sanders &amp;amp; The London Symphony Orchestra - &lt;a href=&quot;https://www.youtube.com/watch?v=Mn8x0QbN4f8&amp;amp;t=571s&quot;&gt;Promises&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Ana Vidović - &lt;a href=&quot;https://www.youtube.com/watch?v=e26zZ83Oh6Y&quot;&gt;in concert&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Podcast - Lex Fridman Podcast, &lt;a href=&quot;https://lexfridman.com/sergey-nazarov/&quot;&gt;#181 – Sergey Nazarov: Chainlink, Smart Contracts, and Oracle Networks&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Historical review of rare immune pathway analysis</title><link href="/2021/05/28/pathway_analysis.html" rel="alternate" type="text/html" title="Historical review of rare immune pathway analysis" /><published>2021-05-28T00:00:00+02:00</published><updated>2021-05-28T00:00:00+02:00</updated><id>/2021/05/28/pathway_analysis</id><content type="html" xml:base="/2021/05/28/pathway_analysis.html">&lt;h1 id=&quot;historical-review-of-rare-immune-pathway-analysis&quot;&gt;Historical review of rare immune pathway analysis&lt;/h1&gt;
+# Other media
+1. Sergei Loznitsa&apos;s monumental [State Funeral](https://www.imdb.com/title/tt10203842/).
+2. Yazz Ahmed - [Polyhymnia](https://www.youtube.com/watch?v=6kKYzuvxsZo)
+3. Floating Points, Pharoah Sanders &amp; The London Symphony Orchestra - [Promises](https://www.youtube.com/watch?v=Mn8x0QbN4f8&amp;t=571s).
+4. Ana Vidović - [in concert](https://www.youtube.com/watch?v=e26zZ83Oh6Y).
+5. Podcast - Lex Fridman Podcast, [#181 – Sergey Nazarov: Chainlink, Smart Contracts, and Oracle Networks](https://lexfridman.com/sergey-nazarov/)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Historical review of rare immune pathway analysis</title><link href="/2021/05/28/pathway_analysis.html" rel="alternate" type="text/html" title="Historical review of rare immune pathway analysis" /><published>2021-05-28T00:00:00+02:00</published><updated>2021-05-28T00:00:00+02:00</updated><id>/2021/05/28/pathway_analysis</id><content type="html" xml:base="/2021/05/28/pathway_analysis.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;28 May 2021&lt;/p&gt;
-&lt;h1 id=&quot;itan--casanova-contributions&quot;&gt;Itan &amp;amp; Casanova contributions&lt;/h1&gt;
+# Itan &amp; Casanova contributions
 
-&lt;p&gt;We are tackling this problem of protein pathway analysis from the viewpoint of 
+We are tackling this problem of protein pathway analysis from the viewpoint of 
 rare immune disease and infection.
 Historically, several topics in bioinformatic and functional analysis have 
 been required before we could achieve our current position of 
-statistically-robust genetic discovery for rare disease:&lt;/p&gt;
+statistically-robust genetic discovery for rare disease:
 
-&lt;ol&gt;
-  &lt;li&gt;Candidate variant select for individual genomes&lt;/li&gt;
-  &lt;li&gt;Compiling reliable cohorts of patients with shared phenotypes&lt;/li&gt;
-  &lt;li&gt;Protein-protein interactions&lt;/li&gt;
-  &lt;li&gt;Variant collapse&lt;/li&gt;
-  &lt;li&gt;Protein pathway analysis&lt;/li&gt;
-  &lt;li&gt;Functional validation&lt;/li&gt;
-&lt;/ol&gt;
+1. Candidate variant select for individual genomes
+2. Compiling reliable cohorts of patients with shared phenotypes
+3. Protein-protein interactions
+4. Variant collapse
+5. Protein pathway analysis
+6. Functional validation
 
-&lt;p&gt;Therefore, a historical review of the timeline is beneficial to illustrate the 
+Therefore, a historical review of the timeline is beneficial to illustrate the 
 technical successes that allow us to reliably produce candidate variants by
-genome sequencing and to validate statistically-driven results by &lt;em&gt;“traditional”&lt;/em&gt;
+genome sequencing and to validate statistically-driven results by _&quot;traditional&quot;_
 functional validation. 
 These steps [1, 2 and 6 in our list] are exemplified by the following 
 historical review. 
 The complete list of steps 1-6 are touched on, 
 but full validation of each step is the culmination of what we are currently 
-working on and will be explicitly reviewed when we have completed our study.&lt;/p&gt;
+working on and will be explicitly reviewed when we have completed our study.
 
-&lt;p&gt;As one of the leaders in this field, Casanova lab has provided a lot of insider
+As one of the leaders in this field, Casanova lab has provided a lot of insider
 history to the story in a great twitter thread
-&lt;a href=&quot;https://twitter.com/casanova_lab/status/1397539593608695808&quot;&gt;https://twitter.com/casanova_lab/status/1397539593608695808&lt;/a&gt;.
+&lt;https://twitter.com/casanova_lab/status/1397539593608695808&gt;.
 The literature for discussion is first listed here to facilitate downloading 
-but sources are referenced as usual throughout.&lt;/p&gt;
+but sources are referenced as usual throughout. 
 
-&lt;hr /&gt;
+---
 
-&lt;p&gt;2013 PNAS. The human gene connectome as a map of short cuts for morbid allele discovery.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2013human&quot;&gt;(Itan et al., 2013)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/23509278/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/23509278/&lt;/a&gt;&lt;/p&gt;
+2013 PNAS. The human gene connectome as a map of short cuts for morbid allele discovery.
+{% cite itan2013human %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/23509278/&gt;
 
-&lt;p&gt;2014 BMC Gen. HGCS: an online tool for prioritizing disease-causing gene variants by biological distance.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2014hgcs&quot;&gt;(Itan et al., 2014)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/24694260/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/24694260/&lt;/a&gt;&lt;/p&gt;
+2014 BMC Gen. HGCS: an online tool for prioritizing disease-causing gene variants by biological distance.
+{% cite itan2014hgcs %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/24694260/&gt;
 
-&lt;p&gt;2015 Front. Novel primary immunodeficiency candidate genes predicted by the human gene connectome.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015novel&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/25883595/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/25883595/&lt;/a&gt;,&lt;/p&gt;
+2015 Front. Novel primary immunodeficiency candidate genes predicted by the human gene connectome.
+{% cite itan2015novel %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/25883595/&gt;, 
 
-&lt;p&gt;2015 PNAS. The human gene damage index as a gene-level approach to prioritizing exome variants.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015human&quot;&gt;(Itan et al., 2015)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26483451/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26483451/&lt;/a&gt;&lt;/p&gt;
+2015 PNAS. The human gene damage index as a gene-level approach to prioritizing exome variants.
+{% cite itan2015human %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/26483451/&gt;
 
-&lt;p&gt;2016 NatMet. The mutation significance cutoff: gene-level thresholds for variant predictions.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2016mutation&quot;&gt;(Itan et al., 2016)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26820543/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26820543/&lt;/a&gt;&lt;/p&gt;
+2016 NatMet. The mutation significance cutoff: gene-level thresholds for variant predictions.
+{% cite itan2016mutation %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/26820543/&gt;
 
-&lt;p&gt;2015 PNAS. Can the impact of human genetic variations be predicted?
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015can&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26351682/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26351682/&lt;/a&gt;&lt;/p&gt;
+2015 PNAS. Can the impact of human genetic variations be predicted?
+{% cite itan2015can %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/26351682/&gt;
 
-&lt;p&gt;2018 Bioinf. PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations.
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2018popviz&quot;&gt;(Zhang et al., 2018)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/30535305/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/30535305/&lt;/a&gt;&lt;/p&gt;
+2018 Bioinf. PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations.
+{% cite zhang2018popviz %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/30535305/&gt;
 
-&lt;p&gt;2019 PNAS. Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis.
-&lt;a class=&quot;citation&quot; href=&quot;#maffucci2019blacklisting&quot;&gt;(Maffucci et al., 2019)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/30591557/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/30591557/&lt;/a&gt;&lt;/p&gt;
+2019 PNAS. Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis.
+{% cite maffucci2019blacklisting %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/30591557/&gt;
 
-&lt;p&gt;2019 NAR. SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data.
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2019seqtailor&quot;&gt;(Zhang et al., 2019)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/31045209/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/31045209/&lt;/a&gt;.&lt;/p&gt;
+2019 NAR. SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data.
+{% cite zhang2019seqtailor %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/31045209/&gt;.
 
-&lt;p&gt;2020 Hum Gen. The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity?
-&lt;a class=&quot;citation&quot; href=&quot;#casanova2020human&quot;&gt;(Casanova &amp;amp; Abel, 2020)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/32462426/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/32462426/&lt;/a&gt;&lt;/p&gt;
+2020 Hum Gen. The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity?
+{% cite casanova2020human %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/32462426/&gt;
 
-&lt;p&gt;2021 JCI. Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency.
-&lt;a class=&quot;citation&quot; href=&quot;#bastard2021herpes&quot;&gt;(Bastard et al., 2021)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/32960813/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/32960813/&lt;/a&gt;&lt;/p&gt;
+2021 JCI. Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency.
+{% cite bastard2021herpes %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/32960813/&gt;
 
-&lt;p&gt;2021 JCI. TLR3 controls constitutive IFN-β antiviral immunity in human fibroblasts and cortical neurons.
-&lt;a class=&quot;citation&quot; href=&quot;#gao2021tlr3&quot;&gt;(Gao et al., 2021)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/33393505/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/33393505/&lt;/a&gt;&lt;/p&gt;
+2021 JCI. TLR3 controls constitutive IFN-β antiviral immunity in human fibroblasts and cortical neurons.
+{% cite gao2021tlr3 %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/33393505/&gt;
 
-&lt;p&gt;2021 AJHG. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/34015270/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/34015270/&lt;/a&gt;&lt;/p&gt;
+2021 AJHG. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity
+{% cite zhang2021computational %}
+&lt;https://pubmed.ncbi.nlm.nih.gov/34015270/&gt;
 
-&lt;hr /&gt;
+---
 
-&lt;p&gt;To date, the main paper that implements protein pathway analysis for rare 
+To date, the main paper that implements protein pathway analysis for rare 
 immune disease is that by
 Peng Zhang and 
-Yuval Itan &lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
+Yuval Itan {% cite zhang2021computational %}.
 
-&lt;p&gt;The history begins with determining methods for candidate variant selection - 
+The history begins with determining methods for candidate variant selection - 
 the main challenge in human genomics, 
 especially for individual patients who can benefit from precision medicine. 
 Over the last decade, we have reached a point where we can now reasonably 
 discern individual candidate-causal variants from the background noise of 
-genomic variability.&lt;/p&gt;
+genomic variability.
 
-&lt;p&gt;From the authors’ perspective, the project began around 2011 and its first 
+From the authors&apos; perspective, the project began around 2011 and its first 
 step was concluded in 2013 with 
-Yuval Itan’s
-first “Human Gene Connectome” paper 
+Yuval Itan&apos;s
+first &quot;Human Gene Connectome&quot; paper 
 while he was a post-doc with Casanova lab. 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2013human&quot;&gt;(Itan et al., 2013)&lt;/a&gt;.
+{% cite itan2013human %}.
 This software connected genes like streets in a map, 
 based on their physiological relatedness.
 It was soon followed by methodological development 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2014hgcs&quot;&gt;(Itan et al., 2014)&lt;/a&gt;
+{% cite itan2014hgcs %}
 and application to inborn errors of immunity 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015novel&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
+{% cite itan2015novel %}
 or both 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015human&quot;&gt;(Itan et al., 2015)&lt;/a&gt;,
+{% cite itan2015human %},
 and a couple of necessary detours 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2016mutation&quot;&gt;(Itan et al., 2016)&lt;/a&gt;
+{% cite itan2016mutation %}
 and 
-&lt;a class=&quot;citation&quot; href=&quot;#maffucci2019blacklisting&quot;&gt;(Maffucci et al., 2019)&lt;/a&gt;.
+{% cite maffucci2019blacklisting %}.
 A review was also written by two of the main authors during the same period
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015can&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;.&lt;/p&gt;
+{% cite itan2015can %}.
 
-&lt;p&gt;When Peng Zhang joined the Casanova lab as post-doc, 
+When Peng Zhang joined the Casanova lab as post-doc, 
 Yuval Itan had started his own lab. 
 However, the pair worked together to continue producing the papers on variant
 interpretation and data processing
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2018popviz&quot;&gt;(Zhang et al., 2018)&lt;/a&gt;
+{% cite zhang2018popviz %}
 and
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2019seqtailor&quot;&gt;(Zhang et al., 2019)&lt;/a&gt;.&lt;/p&gt;
+{% cite zhang2019seqtailor %}.
 
-&lt;p&gt;After completing this period of work, 
-they renamed “Human Gene Connectome II” the 
-“Network-based Heterogeneity Clustering”.
+After completing this period of work, 
+they renamed &quot;Human Gene Connectome II&quot; the 
+&quot;Network-based Heterogeneity Clustering&quot;.
 At this point, their aims were defined as being generally indistinguishable 
 from ours. 
-That is, &lt;em&gt;“the detection of physiological homogeneity in a cohort of patients 
+That is, _&quot;the detection of physiological homogeneity in a cohort of patients 
 sharing a clinical phenotype but with high genetic heterogeneity - 
-a hallmark of severe infectious diseases”&lt;/em&gt; (Casanova via twitter), 
+a hallmark of severe infectious diseases&quot;_ (Casanova via twitter), 
 as presented in their next paper on this topic
-&lt;a class=&quot;citation&quot; href=&quot;#casanova2020human&quot;&gt;(Casanova &amp;amp; Abel, 2020)&lt;/a&gt;.&lt;/p&gt;
+{% cite casanova2020human %}.
 
-&lt;p&gt;Shen-Ying Zhang came on board as senior author on the next two papers.
+Shen-Ying Zhang came on board as senior author on the next two papers.
 With an excellent database of immune disorders and infections, 
 the team could gradually build their software.
 Exomes from patients with HSV-1 encephalitis were used for testing successive 
 versions in
-&lt;a class=&quot;citation&quot; href=&quot;#bastard2021herpes&quot;&gt;(Bastard et al., 2021)&lt;/a&gt; 
+{% cite bastard2021herpes %} 
 and 
-&lt;a class=&quot;citation&quot; href=&quot;#gao2021tlr3&quot;&gt;(Gao et al., 2021)&lt;/a&gt;.&lt;/p&gt;
+{% cite gao2021tlr3 %}.
 
-&lt;p&gt;Quoting Casanova &lt;em&gt;“When they were capable of detecting the known TLR3-IFN needles in the HSE stack, they installed camp 1, rested a bit and reported to me on the radio, while I was watching them from the basecamp with binoculars. I encouraged them to push for the final ascent and they did.”&lt;/em&gt;&lt;/p&gt;
+Quoting Casanova _&quot;When they were capable of detecting the known TLR3-IFN needles in the HSE stack, they installed camp 1, rested a bit and reported to me on the radio, while I was watching them from the basecamp with binoculars. I encouraged them to push for the final ascent and they did.&quot;_
 
-&lt;p&gt;With the same goal as our own - 
+With the same goal as our own - 
 producing unbiased methods for detection of biologically-connected causal 
 genetic variation - 
 they found new gene variants that interact via the TLR3-IFN protein pathway,
 in individual patients. 
 Shen-Ying Zhang found them to be biochemically deleterious, 
 an important factor for validation of genetic-first aproaches. 
-In this case, Zhang &lt;em&gt;et al&lt;/em&gt; get as close to the &lt;em&gt;“gold-standard”&lt;/em&gt; 
-as anyone to date.&lt;/p&gt;
+In this case, Zhang _et al_ get as close to the _&quot;gold-standard&quot;_ 
+as anyone to date.
 
-&lt;p&gt;The functional validation of candidate variants in disease then provided a proof-of-principle indication that they could detect physiological homogeneity in the midst of genetic heterogeneity 
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
+The functional validation of candidate variants in disease then provided a proof-of-principle indication that they could detect physiological homogeneity in the midst of genetic heterogeneity 
+{% cite zhang2021computational %}.
 
-&lt;p&gt;Quoting Casanova 
-&lt;em&gt;“A computational approach for detecting physiological homogeneity in the midst of genetic heterogeity.
-That was terrific!”&lt;/em&gt;.&lt;/p&gt;
+Quoting Casanova 
+_&quot;A computational approach for detecting physiological homogeneity in the midst of genetic heterogeity.
+That was terrific!&quot;_.
 
-&lt;hr /&gt;
+---
 
-&lt;blockquote&gt;
-  &lt;p&gt;An aside on what I call the &lt;em&gt;“gold-standard”&lt;/em&gt; for our field should be:&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Unbiased statistical detection of a genetic phenomenon.&lt;/li&gt;
-    &lt;li&gt;Validation by functional models under systematic control.&lt;/li&gt;
-  &lt;/ol&gt;
+&gt; An aside on what I call the _&quot;gold-standard&quot;_ for our field should be:
+&gt; 1. Unbiased statistical detection of a genetic phenomenon.
+&gt; 2. Validation by functional models under systematic control.
+&gt; 
+&gt; Part [1] Depends on patient cohorts that are large enough to detect the effect based on the phenotype strength - difficult for _rare disease_.\
+&gt; Part [2] Depends on independently testing biological mechanisms. 
+&gt;
+&gt; This second step generally consists of two hurdles:
+&gt; * If the same researchers perform (1) genetic stats and (2) functional work, 
+&gt; there is a bias that is difficult to avoid when trying to functionally 
+&gt; validate statistically positive results.
+&gt; * If the statistical genetic associations happen to contain a false positive 
+&gt; for something like severe rare immune disease, 
+&gt; the sensitive functional models may detect a damaging response. 
+&gt; One might find a truly damaging biological mechanism, 
+&gt; but if the statistical genetic association is not correct then this 
+&gt; biological mechanism should not be deemed causal; 
+&gt; back-tracking at this stage would be very difficult due to self-imposed bias. 
+&gt; 
+&gt; Ideally, in the future we hope to see a separation of the two steps 
+&gt; (stat genetics and wet-lab) such that each are performed independently. 
+&gt; The wet-lab would also ideally focus their routines on a particular protein 
+&gt; pathway/system with SOPs that improve accuracy and precision 
+&gt; (e.g. clinical diagnostics labs, clinical trials) rather than setting up 
+&gt; models for each new study.
 
-  &lt;p&gt;Part [1] Depends on patient cohorts that are large enough to detect the effect based on the phenotype strength - difficult for &lt;em&gt;rare disease&lt;/em&gt;.&lt;br /&gt;
-Part [2] Depends on independently testing biological mechanisms.&lt;/p&gt;
+---
 
-  &lt;p&gt;This second step generally consists of two hurdles:&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;If the same researchers perform (1) genetic stats and (2) functional work, 
-there is a bias that is difficult to avoid when trying to functionally 
-validate statistically positive results.&lt;/li&gt;
-    &lt;li&gt;If the statistical genetic associations happen to contain a false positive 
-for something like severe rare immune disease, 
-the sensitive functional models may detect a damaging response. 
-One might find a truly damaging biological mechanism, 
-but if the statistical genetic association is not correct then this 
-biological mechanism should not be deemed causal; 
-back-tracking at this stage would be very difficult due to self-imposed bias.&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;Ideally, in the future we hope to see a separation of the two steps 
-(stat genetics and wet-lab) such that each are performed independently. 
-The wet-lab would also ideally focus their routines on a particular protein 
-pathway/system with SOPs that improve accuracy and precision 
-(e.g. clinical diagnostics labs, clinical trials) rather than setting up 
-models for each new study.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Returning to our historical review, 
+Returning to our historical review, 
 we have been producing our protocols similarly in parallel.
 With patient cohorts of comparable sizes and phenotypes we will soon 
 have a complementary validation of protocols.
 However, great care is also being taken to test and select the most reliable 
 statistical methods for association testing - 
 an improvement to the fine work by
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
+{% cite zhang2021computational %}.
 
-&lt;p&gt;Best practices in candidate variant selection protocols are basically 
+Best practices in candidate variant selection protocols are basically 
 standardised as of 2021, 
 so the main remaining task is standardisation of the protein-pathway 
 annotation and association testing methods - 
-steps which we will soon be ready to publish after peer-review.&lt;/p&gt;
+steps which we will soon be ready to publish after peer-review.
 
-&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+# References 
 
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;itan2013human&quot;&gt;Itan, Y., Zhang, S.-Y., Vogt, G., Abhyankar, A., Herman, M., Nitschke, P., Fried, D., Quintana-Murci, L., Abel, L., &amp;amp; Casanova, J.-L. (2013). The human gene connectome as a map of short cuts for morbid allele discovery. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;110&lt;/i&gt;(14), 5558–5563.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2014hgcs&quot;&gt;Itan, Y., Mazel, M., Mazel, B., Abhyankar, A., Nitschke, P., Quintana-Murci, L., Boisson-Dupuis, S., Boisson, B., Abel, L., Zhang, S.-Y., &amp;amp; others. (2014). HGCS: an online tool for prioritizing disease-causing gene variants by biological distance. &lt;i&gt;BMC Genomics&lt;/i&gt;, &lt;i&gt;15&lt;/i&gt;(1), 1–8.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2015novel&quot;&gt;Itan, Y., &amp;amp; Casanova, J.-L. (2015). Novel primary immunodeficiency candidate genes predicted by the human gene connectome. &lt;i&gt;Frontiers in Immunology&lt;/i&gt;, &lt;i&gt;6&lt;/i&gt;, 142.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2015human&quot;&gt;Itan, Y., Shang, L., Boisson, B., Patin, E., Bolze, A., Moncada-Vélez, M., Scott, E., Ciancanelli, M. J., Lafaille, F. G., Markle, J. G., &amp;amp; others. (2015). The human gene damage index as a gene-level approach to prioritizing exome variants. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;112&lt;/i&gt;(44), 13615–13620.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2016mutation&quot;&gt;Itan, Y., Shang, L., Boisson, B., Ciancanelli, M. J., Markle, J. G., Martinez-Barricarte, R., Scott, E., Shah, I., Stenson, P. D., Gleeson, J., &amp;amp; others. (2016). The mutation significance cutoff: gene-level thresholds for variant predictions. &lt;i&gt;Nature Methods&lt;/i&gt;, &lt;i&gt;13&lt;/i&gt;(2), 109–110.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2015can&quot;&gt;Itan, Y., &amp;amp; Casanova, J.-L. (2015). Can the impact of human genetic variations be predicted? &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;112&lt;/i&gt;(37), 11426–11427.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;zhang2018popviz&quot;&gt;Zhang, P., Bigio, B., Rapaport, F., Zhang, S.-Y., Casanova, J.-L., Abel, L., Boisson, B., &amp;amp; Itan, Y. (2018). PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations. &lt;i&gt;Bioinformatics&lt;/i&gt;, &lt;i&gt;34&lt;/i&gt;(24), 4307–4309.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;maffucci2019blacklisting&quot;&gt;Maffucci, P., Bigio, B., Rapaport, F., Cobat, A., Borghesi, A., Lopez, M., Patin, E., Bolze, A., Shang, L., Bendavid, M., &amp;amp; others. (2019). Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;116&lt;/i&gt;(3), 950–959.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;zhang2019seqtailor&quot;&gt;Zhang, P., Boisson, B., Stenson, P. D., Cooper, D. N., Casanova, J.-L., Abel, L., &amp;amp; Itan, Y. (2019). SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data. &lt;i&gt;Nucleic Acids Research&lt;/i&gt;, &lt;i&gt;47&lt;/i&gt;(W1), W623–W631.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;casanova2020human&quot;&gt;Casanova, J.-L., &amp;amp; Abel, L. (2020). &lt;i&gt;The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity?&lt;/i&gt; Springer.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;bastard2021herpes&quot;&gt;Bastard, P., Manry, J., Chen, J., Rosain, J., Seeleuthner, Y., AbuZaitun, O., Lorenzo, L., Khan, T., Hasek, M., Hernandez, N., &amp;amp; others. (2021). Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency. &lt;i&gt;The Journal of Clinical Investigation&lt;/i&gt;, &lt;i&gt;131&lt;/i&gt;(1).&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;gao2021tlr3&quot;&gt;Gao, D., Ciancanelli, M. J., Zhang, P., Harschnitz, O., Bondet, V., Hasek, M., Chen, J., Mu, X., Itan, Y., Cobat, A., &amp;amp; others. (2021). TLR3 controls constitutive IFN-βantiviral immunity in human fibroblasts and cortical neurons. &lt;i&gt;The Journal of Clinical Investigation&lt;/i&gt;, &lt;i&gt;131&lt;/i&gt;(1).&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;zhang2021computational&quot;&gt;Zhang, P., Cobat, A., Lee, Y.-S., Wu, Y., Bayrak, C. S., Boccon-Gibod, C., Matuozzo, D., Lorenzo, L., Jain, A., Boucherit, S., &amp;amp; others. (2021). A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name></name></author><category term="genomics" /><summary type="html">Historical review of rare immune pathway analysis</summary></entry><entry><title type="html">Unnecessary complexity in precision medicine</title><link href="/2020/05/05/singhgupta_genes.html" rel="alternate" type="text/html" title="Unnecessary complexity in precision medicine" /><published>2020-05-05T00:00:00+02:00</published><updated>2020-05-05T00:00:00+02:00</updated><id>/2020/05/05/singhgupta_genes</id><content type="html" xml:base="/2020/05/05/singhgupta_genes.html">&lt;h1 id=&quot;unnecessary-complexity-in-precision-medicine&quot;&gt;Unnecessary complexity in precision medicine&lt;/h1&gt;
+{% bibliography --cited %}</content><author><name></name></author><category term="genomics" /><summary type="html">Historical review of rare immune pathway analysis</summary></entry><entry><title type="html">Unnecessary complexity in precision medicine</title><link href="/2020/05/05/singhgupta_genes.html" rel="alternate" type="text/html" title="Unnecessary complexity in precision medicine" /><published>2020-05-05T00:00:00+02:00</published><updated>2020-05-05T00:00:00+02:00</updated><id>/2020/05/05/singhgupta_genes</id><content type="html" xml:base="/2020/05/05/singhgupta_genes.html">{{ page.title }}
+================
 &lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-in-precision-medicine&quot; id=&quot;markdown-toc-unnecessary-complexity-in-precision-medicine&quot;&gt;Unnecessary complexity in precision medicine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#abstract&quot; id=&quot;markdown-toc-abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#complexity-in-living-systems&quot; id=&quot;markdown-toc-complexity-in-living-systems&quot;&gt;Complexity in living systems&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#is-complexity-necessary&quot; id=&quot;markdown-toc-is-complexity-necessary&quot;&gt;Is complexity necessary?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#evolution-of-complexity-genic-genomic-and-developmental&quot; id=&quot;markdown-toc-evolution-of-complexity-genic-genomic-and-developmental&quot;&gt;Evolution of complexity: genic, genomic, and developmental&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-in-precision-medicine-1&quot; id=&quot;markdown-toc-unnecessary-complexity-in-precision-medicine-1&quot;&gt;Unnecessary complexity in precision medicine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-and-the-etiology-of-cancer&quot; id=&quot;markdown-toc-unnecessary-complexity-and-the-etiology-of-cancer&quot;&gt;Unnecessary complexity and the etiology of cancer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-beyond-precision-medicine&quot; id=&quot;markdown-toc-unnecessary-complexity-beyond-precision-medicine&quot;&gt;Unnecessary complexity beyond precision medicine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#conclusions&quot; id=&quot;markdown-toc-conclusions&quot;&gt;Conclusions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;br /&gt;
-Singh_and_Gupta.2020.GenoMed;&lt;br /&gt;
+&lt;br/&gt;
+* TOC
+{:toc}
+&lt;br/&gt;
+Singh_and_Gupta.2020.GenoMed;  
 Singh, R.S., Gupta, B.P. Genes and genomes and unnecessary complexity in precision medicine. npj Genom. Med. 5, 21 (2020). https://doi.org/10.1038/s41525-020-0128-1 Open Access
-&lt;a href=&quot;https://doi.org/10.1038/s41525-020-0128-1&quot;&gt;https://doi.org/10.1038/s41525-020-0128-1&lt;/a&gt;&lt;/p&gt;
+[https://doi.org/10.1038/s41525-020-0128-1](https://doi.org/10.1038/s41525-020-0128-1)
 
-&lt;h1 id=&quot;abstract&quot;&gt;Abstract&lt;/h1&gt;
+# Abstract
 
-&lt;p&gt;Risk factors, gene to phenotype, are more complex that anticipated in early genomics. 
+Risk factors, gene to phenotype, are more complex that anticipated in early genomics. 
 Genotype - phenotype
 Molecular and evolutionary complexity.
 Molecular contigency - chance driven mutation, redundancy, molectular pathway cross-over (shared phenotypes).
-Necessary complexity versus unnecessary - evolutionary baggage due to molecular constraint and blind evolution.&lt;/p&gt;
+Necessary complexity versus unnecessary - evolutionary baggage due to molecular constraint and blind evolution. 
 
-&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+# Introduction
 
-&lt;p&gt;“Two individuals bearing the same set of risk factors may not present (or exhibit the symptoms of) the same disease. This is the kind of problem that precision medicine is expected to overcome.”
-From familial studies, we often see that even clear monogenic, dominant disease does not always manifest equally among family members. “The lack of genetic determinism in disease is the result of molecular contingency.”&lt;/p&gt;
+&quot;Two individuals bearing the same set of risk factors may not present (or exhibit the symptoms of) the same disease. This is the kind of problem that precision medicine is expected to overcome.&quot;
+From familial studies, we often see that even clear monogenic, dominant disease does not always manifest equally among family members. &quot;The lack of genetic determinism in disease is the result of molecular contingency.&quot;
 
-&lt;p&gt;An interesting point is made that I haven’t though much about; “Whether evolution is deterministic, i.e., predictable and repeatable, or contingent and unpredictable is an interesting topic in evolutionary biology (ref 1) (for a recent review see ref. 2)”
-Although, this is just a smaller version of a question in physics that I do think about frequently: if every irreducibly small particle/force in the universe could be detected with a mapped trajectory, then we could “see” both forward and reverse in time; causal determinism. Since the particle physics answer will not come anytime soon, a discussion on the evolutionary version is reasonable.&lt;/p&gt;
+An interesting point is made that I haven&apos;t though much about; &quot;Whether evolution is deterministic, i.e., predictable and repeatable, or contingent and unpredictable is an interesting topic in evolutionary biology (ref 1) (for a recent review see ref. 2)&quot;
+Although, this is just a smaller version of a question in physics that I do think about frequently: if every irreducibly small particle/force in the universe could be detected with a mapped trajectory, then we could &quot;see&quot; both forward and reverse in time; causal determinism. Since the particle physics answer will not come anytime soon, a discussion on the evolutionary version is reasonable. 
 
-&lt;p&gt;”..phenotypic evolutionary ‘repeatability’ is common when the founding populations are closely related, perhaps resulting from shared genes and developmental pathways, whereas different outcomes become more likely as historical divergences increase.”&lt;/p&gt;
+&quot;..phenotypic evolutionary ‘repeatability’ is common when the founding populations are closely related, perhaps resulting from shared genes and developmental pathways, whereas different outcomes become more likely as historical divergences increase.&quot;
 
-&lt;p&gt;I believe that in some cases we can produces actionable levels of confidence in mutation prediction to make this a worthwhile endeavour. Knowing that a mutation is likely to occur (and be evolutionarily selected against) and result in disease means that we can prepare a treatment / cure for when it does occur naturally. 
+I believe that in some cases we can produces actionable levels of confidence in mutation prediction to make this a worthwhile endeavour. Knowing that a mutation is likely to occur (and be evolutionarily selected against) and result in disease means that we can prepare a treatment / cure for when it does occur naturally. 
 For example, each nucleotide within each individual cell will have a particular probability for the energy required to mutate. 
 Many factors affect this value; nucleotide type, methylation, DNA/RNA folding, bound proteins, chemical/UV insult, etc. 
 Some of these factors can be estimated based on large studies, and some may never be quantifiable in the real world.
-However, we can at least quantify some values to produce mutation predictor value X and and response Y and therefore quantify estimate coefficients, and therefore predict that mutation 1 is more likely to occur than mutation 2.&lt;/p&gt;
+However, we can at least quantify some values to produce mutation predictor value X and and response Y and therefore quantify estimate coefficients, and therefore predict that mutation 1 is more likely to occur than mutation 2. 
 
-&lt;p&gt;Reference is made to “‘Evolution and Tinkering,’ Jacob (ref 4)” who compares natural selection to a tinkerer as opposed to an engineer.
-Singh and Gupta propose “a theory of molecular complexity, consisting of necessary and unnecessary complexity in living systems”, that “exceedingly high level of unnecessary complexity” is more due to blind evolution rather than randomness of mutation. 
-“Unecessary and unnecessary complexity is relevant to current discussions on genomics and precision medicine.”&lt;/p&gt;
-
-&lt;h1 id=&quot;complexity-in-living-systems&quot;&gt;Complexity in living systems&lt;/h1&gt;
-&lt;h1 id=&quot;is-complexity-necessary&quot;&gt;Is complexity necessary?&lt;/h1&gt;
-&lt;h1 id=&quot;evolution-of-complexity-genic-genomic-and-developmental&quot;&gt;Evolution of complexity: genic, genomic, and developmental&lt;/h1&gt;
-&lt;h1 id=&quot;unnecessary-complexity-in-precision-medicine-1&quot;&gt;Unnecessary complexity in precision medicine&lt;/h1&gt;
-&lt;h1 id=&quot;unnecessary-complexity-and-the-etiology-of-cancer&quot;&gt;Unnecessary complexity and the etiology of cancer&lt;/h1&gt;
-&lt;h1 id=&quot;unnecessary-complexity-beyond-precision-medicine&quot;&gt;Unnecessary complexity beyond precision medicine&lt;/h1&gt;
-&lt;h1 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h1&gt;</content><author><name></name></author><category term="genomics," /><category term="journal" /><category term="club" /><summary type="html">Unnecessary complexity in precision medicine 26 Apr 2020 Unnecessary complexity in precision medicine Singh_and_Gupta.2020.GenoMed; Singh, R.S., Gupta, B.P. Genes and genomes and unnecessary complexity in precision medicine. npj Genom. Med. 5, 21 (2020). https://doi.org/10.1038/s41525-020-0128-1 Open Access https://doi.org/10.1038/s41525-020-0128-1</summary></entry><entry><title type="html">Websites for basic genetic variant information</title><link href="/2020/04/27/genetic_mutation_websites.html" rel="alternate" type="text/html" title="Websites for basic genetic variant information" /><published>2020-04-27T00:00:00+02:00</published><updated>2020-04-27T00:00:00+02:00</updated><id>/2020/04/27/genetic_mutation_websites</id><content type="html" xml:base="/2020/04/27/genetic_mutation_websites.html">&lt;h1 id=&quot;websites-for-basic-genetic-variant-information&quot;&gt;Websites for basic genetic variant information&lt;/h1&gt;
+Reference is made to &quot;‘Evolution and Tinkering,’ Jacob (ref 4)&quot; who compares natural selection to a tinkerer as opposed to an engineer.
+Singh and Gupta propose &quot;a theory of molecular complexity, consisting of necessary and unnecessary complexity in living systems&quot;, that &quot;exceedingly high level of unnecessary complexity&quot; is more due to blind evolution rather than randomness of mutation. 
+&quot;Unecessary and unnecessary complexity is relevant to current discussions on genomics and precision medicine.&quot;
+ 
+# Complexity in living systems
+# Is complexity necessary?
+# Evolution of complexity: genic, genomic, and developmental
+# Unnecessary complexity in precision medicine
+# Unnecessary complexity and the etiology of cancer
+# Unnecessary complexity beyond precision medicine
+# Conclusions</content><author><name></name></author><category term="genomics," /><category term="journal" /><category term="club" /><summary type="html">Unnecessary complexity in precision medicine 26 Apr 2020 Unnecessary complexity in precision medicine Singh_and_Gupta.2020.GenoMed; Singh, R.S., Gupta, B.P. Genes and genomes and unnecessary complexity in precision medicine. npj Genom. Med. 5, 21 (2020). https://doi.org/10.1038/s41525-020-0128-1 Open Access https://doi.org/10.1038/s41525-020-0128-1</summary></entry><entry><title type="html">Websites for basic genetic variant information</title><link href="/2020/04/27/genetic_mutation_websites.html" rel="alternate" type="text/html" title="Websites for basic genetic variant information" /><published>2020-04-27T00:00:00+02:00</published><updated>2020-04-27T00:00:00+02:00</updated><id>/2020/04/27/genetic_mutation_websites</id><content type="html" xml:base="/2020/04/27/genetic_mutation_websites.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+1. [Introduction](#introduction)
 
-&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;Identifying pathogenic variants with whole genome and whole exome sequencing is not simple.
+# Introduction
+Identifying pathogenic variants with whole genome and whole exome sequencing is not simple.
 Determining the correct filtering method can take some time but it is not the most difficult task.
 Validating genetic factors is generally the most time consuming part of this type of research. 
 Here is a compilation of some of the websites and resources that I use constantly.
@@ -780,29 +676,29 @@ Other times (usually) a genetic finding (particularly biallelic mutations) seem 
  With that in mind, it is good to have some sort of routine way to quickly assess the possible pathogenicity of a mutation by hand.
 I will mostly discuss these in the context of rare mutations which are likely to be under selective pressure and occur at very low frequencies in a healthy population.
  Sites and tools for getting basic genetic information For assessing rare variants Ensembl and Exac (now gnomAD) are my bread and butter.
-I haven’t done it yet but I need to set up a hotkey to open a browser with both of these sites simultaneously.
+I haven&apos;t done it yet but I need to set up a hotkey to open a browser with both of these sites simultaneously.
 To demonstrate how I like to use these we could use an example. Lets say we have NGS results for a patient with immunodeficiency with coding variants in the gene RAG2.
 OK, well known gene, important for antibody production as wells as TCR and BCR development.
 Looks good so far.
-Let’s see if the variants are common SNPs or could they be likely to cause damage if they are not reported (of course this is in your pipeline automatically but it’s good practice and takes less than 60 seconds; valuable if there is a real person affected by your results).
+Let&apos;s see if the variants are common SNPs or could they be likely to cause damage if they are not reported (of course this is in your pipeline automatically but it&apos;s good practice and takes less than 60 seconds; valuable if there is a real person affected by your results).
  After a long time getting confused about transcripts and coordinates, I now know how important it is to accurately report coordinates so there is no confusion if collaborating or reporting the mutations etc. Jump over to Exac.
-&lt;a href=&quot;http://exac.broadinstitute.org&quot;&gt;Exac.org&lt;/a&gt;
+[Exac.org](http://exac.broadinstitute.org)
  This is in a nutshell, the exomes of ~ 60,000 individuals which can be used to view how frequently mutations occur in the general population (unfortunately it is mostly just European but there is some global representation). Exac is vital for checking coding variants.
 It covers some of the intronic regions (exon intron splice sites) and some of the upstream and downstream regions.
 This is typical for anyone who does whole exome sequencing.
  We mentioned confusion about transcripts and coordinates, Exac automatically loads the coverage as shown for the canonical transcript. Stick with this transcript for reporting or at least for your own notes.
-When you head over to Ensembl grab the same one in the transcript table. Update! &lt;a href=&quot;http://gnomad.broadinstitute.org/about&quot;&gt;The Genome Aggregation Database (gnomAD) is online&lt;/a&gt;. This data set is the combination of “123,136 exomes and 15,496 genomes from unrelated individuals” which has “removed individuals known to be affected by severe pediatric disease, as well as their first-degree relatives.”
-This is n extremely exciting resource. If you are familiar with Exac then you will know the value of this expansion into gnomAD. &lt;a href=&quot;https://youtu.be/_uRuFZv4JaU&quot;&gt;youtube.com&lt;/a&gt; &lt;a href=&quot;http://www.ensembl.org/index.html&quot;&gt;Ensembl&lt;/a&gt; Any good pipeline will have annotation of the details for any coding variants but it can be pretty valuable to go and look at these again by hand.
-It doesn’t take long but can end up saving time in the long run.
+When you head over to Ensembl grab the same one in the transcript table. Update! [The Genome Aggregation Database (gnomAD) is online](http://gnomad.broadinstitute.org/about). This data set is the combination of &quot;123,136 exomes and 15,496 genomes from unrelated individuals&quot; which has &quot;removed individuals known to be affected by severe pediatric disease, as well as their first-degree relatives.&quot;
+This is n extremely exciting resource. If you are familiar with Exac then you will know the value of this expansion into gnomAD. [youtube.com](https://youtu.be/_uRuFZv4JaU) [Ensembl](http://www.ensembl.org/index.html) Any good pipeline will have annotation of the details for any coding variants but it can be pretty valuable to go and look at these again by hand.
+It doesn&apos;t take long but can end up saving time in the long run.
 If you do it often, the first check on Exac take less than 60 seconds.
 The next check on Ensemble will only take 2-3 minutes.
 In the quick search I plug in the gene name, luckily for my stuff the top hit is always the human gene (sorry Alpaca researchers).
-When you get to the gene page first click is always “Show transcript table.”
+When you get to the gene page first click is always &quot;Show transcript table.&quot;
 If you are lucky there is only one coding transcript like for RAG2.
 Most of the time there are about 6 transcripts of wildly varying lengths just to confuse matters.
 Go for the transcript ID of the canonical transcript which you noted on Exac.
 If you do so then life will be easier when you go to check the coordinates. 
-On the left hand side in the table “Transcript-based displays” click “cDNA” shown under “Sequence”.
+On the left hand side in the table &quot;Transcript-based displays&quot; click &quot;cDNA&quot; shown under &quot;Sequence&quot;.
 You can then search through to find the variant and amino acid to see if everything lines up.
 You see the cDNA position and amino acid positions overlaid. If you were to pick a different transcript then of course the coordinates are likely to be different.
 From here I usually go back to the table on the left of the screen to search Exons.
@@ -810,15 +706,15 @@ This obviously just lays out the exon sequences  in blocks along with useful in
 Only a small segment of the introns are displayed.
 If you want reference sequences of multiple types just find the down load sequence button and chose FASTA and decide which type you want to display. You would likely have the information based on the annotated NGS data but you may want to look at the different transcripts and Ensembl is the best option. So far (in just a couple of minutes) you could have looked up the allele frequencies, affect of mutation on different transcripts and check that everything that should be reported from the NGS output matches up.
 My next step is to check if these variants a already reported.
-Everyone has their favourite method, searching PubMed etc. For my topics OMIM often produces good results and a quick search. &lt;a href=&quot;https://www.omim.org/&quot;&gt;Online Mendelian Inheritance in Man&lt;/a&gt;
+Everyone has their favourite method, searching PubMed etc. For my topics OMIM often produces good results and a quick search. [Online Mendelian Inheritance in Man](https://www.omim.org/)
 This is a curated database and is generally very good.
 Hopefully it continues to grow for a long time into the future.
-Depending on how much you already know about your gene it is sometimes helpful to jump straight down to the “Allelic variants” section (if one is present).
+Depending on how much you already know about your gene it is sometimes helpful to jump straight down to the &quot;Allelic variants&quot; section (if one is present).
 You may find a few variants already reported with a similar phenotype being described as your case.
 You may find the exact mutations already reported.
 If this is the case then it is likely that it would have taken a few minutes longer to find the same cases on one of the other databases.
 Whether you have found that there are many mutations reported similar to those that interest you or if you have found nothing reported so far, my next step is always to run through UniProt.
-&lt;a href=&quot;http://www.uniprot.org&quot;&gt;UniProt&lt;/a&gt;
+[UniProt](http://www.uniprot.org)
 UniProt is so rich in information that there is no need to expnad on it here.
 If you have never used it then just pick your favourite protein and go look it up now.
 There is (usually) a combination of nearly everything you need to get a quick overview of a protein.
@@ -828,288 +724,284 @@ With these four websites one would likely be able to decide how confident you ar
 At least if you are just looking coding variants.
 Assessing non-coding regions is much messier business.
 From here on in validation of a mutation can require a widely variable amount of functional work.
-One thing is certain however, Sanger sequencing will be needed to confirm your NGS finding. &lt;a href=&quot;https://www.youtube.com/watch?v=3amsDkyiMu8&quot;&gt;youtube.com&lt;/a&gt; &lt;a href=&quot;https://github.com/gantzgraf/autoprimer3/releases/tag/v3.0.2&quot;&gt;Autoprimer3&lt;/a&gt;
+One thing is certain however, Sanger sequencing will be needed to confirm your NGS finding. [youtube.com](https://www.youtube.com/watch?v=3amsDkyiMu8) [Autoprimer3](https://github.com/gantzgraf/autoprimer3/releases/tag/v3.0.2)
 Autoprimer3 is an excellent application that you can use to design primers for a gene of interest.
-It is super quick for producing primers to be used on genomic DNA for “any UCSC genome and design PCR/sequencing primers to genes or genome coordinates”.
+It is super quick for producing primers to be used on genomic DNA for &quot;any UCSC genome and design PCR/sequencing primers to genes or genome coordinates&quot;.
 As an example I timed myself to see how long it takes to get a primer list for all exons of the gene RAG2 and a reference sequence from default genomic coordinates on hg38 while avoiding SNPs based on dbsnp142.
 It took me 46 seconds to open the application and produce a primer list and reference sequence.
-Less than 1% of the time I may have to go and redesign a primer manually because of an awkward sequence or a patient’s DNA may have some uncommon variant at the primer site. 
+Less than 1% of the time I may have to go and redesign a primer manually because of an awkward sequence or a patient&apos;s DNA may have some uncommon variant at the primer site. 
 Depending on which supplier you order oligos from, Sanger sequencing to confirm a variant by found during NGS can be done within 3 days; about 90 seconds to design and order the oligos, a day or 2 until they are delivered,  and a day to PCR and sequence.
 The explanation may be a bit long winded here but this app is excellent.
 Just give it a try if you do any routine PCR or sequencing for coding variant.
 As the name suggests, it is a simple version of Primer3 but super quick.
-&lt;a href=&quot;https://software.broadinstitute.org/gatk/&quot;&gt;Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing Data.&lt;/a&gt;
-GATK most useful to jump straight to: &lt;a href=&quot;https://software.broadinstitute.org/gatk/documentation/tooldocs/&quot;&gt;Tool Documentation Index&lt;/a&gt; Genome hg38 &lt;a href=&quot;http://genome.ucsc.edu/cgi-bin/das/hg38/dna?segment=chr7:142299011,142813287&quot;&gt;(TCR region as example)&lt;/a&gt;
-&lt;a href=&quot;https://gpgtools.org&quot;&gt;GPGtools&lt;/a&gt;
+[Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing Data.](https://software.broadinstitute.org/gatk/)
+GATK most useful to jump straight to: [Tool Documentation Index](https://software.broadinstitute.org/gatk/documentation/tooldocs/) Genome hg38 [(TCR region as example)](http://genome.ucsc.edu/cgi-bin/das/hg38/dna?segment=chr7:142299011,142813287)
+[GPGtools](https://gpgtools.org)
 for sending sensitive patient info.
-&lt;a href=&quot;https://www.gnupg.org&quot;&gt;GnuPG&lt;/a&gt; is GPL licensed alternative to the PGP suite for sending sensitive patient info.
-See also Pretty good privacy for academic data. &lt;a href=&quot;http://www.umd.be/HSF3/HSF.html&quot;&gt;Human splice finder&lt;/a&gt; Illumina-Pipeline-V2 (“Version 2 of Illumina pipeline that incorporates &lt;a href=&quot;https://github.com/nirav99/Illumina-Pipeline-V2/blob/master/IlluminaPipelineCASAVA1_8.pdf&quot;&gt;CASAVA 1.8”)&lt;/a&gt; Sequence Manipulation Suite http://www.coccidia.icb.usp.br/sms2/index.html
+[GnuPG](https://www.gnupg.org) is GPL licensed alternative to the PGP suite for sending sensitive patient info.
+See also Pretty good privacy for academic data. [Human splice finder](http://www.umd.be/HSF3/HSF.html) Illumina-Pipeline-V2 (&quot;Version 2 of Illumina pipeline that incorporates [CASAVA 1.8&quot;)](https://github.com/nirav99/Illumina-Pipeline-V2/blob/master/IlluminaPipelineCASAVA1_8.pdf) Sequence Manipulation Suite http://www.coccidia.icb.usp.br/sms2/index.html
 Sequence Ontology http://www.sequenceontology.org
 UCSC Genome Bioinformatics FAQ https://genome.ucsc.edu/FAQ/FAQformat
 UCSC Table Browser https://genome.ucsc.edu/cgi-bin/hgTables
 MutScan - https://github.com/OpenGene/MutScan
-Detect and visualise target mutations by scanning FastQ files directly. Very useful if you are interested in some certain mutations but saves the time it would take to normally through your pipeline. &lt;/p&gt;
-&lt;h2 id=&quot;communities-and-learning&quot;&gt;Communities and learning&lt;/h2&gt;
-&lt;p&gt;No need to reinvent the wheel here. Stephen Turner has a better list of resources than I will produce with his post ”Staying Current in Bioinformatics &amp;amp; Genomics: 2017 Edition.” 
+Detect and visualise target mutations by scanning FastQ files directly. Very useful if you are interested in some certain mutations but saves the time it would take to normally through your pipeline. 
+## Communities and learning
+No need to reinvent the wheel here. Stephen Turner has a better list of resources than I will produce with his post &quot;Staying Current in Bioinformatics &amp; Genomics: 2017 Edition.&quot; 
 http://www.gettinggeneticsdone.com/2017/02/staying-current-in-bioinformatics-genomics-2017.html
 Essentially it boils down to the journals, Twitter, some expert blogs, and several genomics communities.
 The journals and other sites I like to follow are detailed here. When all directed into a single feed I think it produces an essential resource for most genetics/bioinformatics scientists.
-Literature of Interest - In this post I show the use of Feedly to condense all the litereature that I follow into a single source and allow the option to view by category.&lt;/p&gt;
+Literature of Interest - In this post I show the use of Feedly to condense all the litereature that I follow into a single source and allow the option to view by category.
 
-&lt;h2 id=&quot;machine-learning-and-cloud-computing&quot;&gt;Machine learning and cloud computing&lt;/h2&gt;
-&lt;p&gt;In this post I have started to gather some of the resources I like to use and topics that I find interesting.
+## Machine learning and cloud computing
+In this post I have started to gather some of the resources I like to use and topics that I find interesting.
 Some other links tagged on at the end:
 BioStarts - Bioinformatics academic community https://www.biostars.org
-Useful bash Bioinformatics one-liners&lt;br /&gt;
-https://github.com/stephenturner/oneliners&lt;br /&gt;
+Useful bash Bioinformatics one-liners  
+https://github.com/stephenturner/oneliners  
 Efficient R programming https://csgillespie.github.io/efficientR/
-Cheat sheets for data.   science http://www.datasciencecentral.com/…
+Cheat sheets for data.   science http://www.datasciencecentral.com/...
 RStudio Cheat Sheets  
-https://www.rstudio.com/resources/cheatsheets/#515&lt;/p&gt;</content><author><name></name></author><category term="statistics," /><category term="genomics" /><summary type="html">Websites for basic genetic variant information</summary></entry><entry><title type="html">Cryptography</title><link href="/2020/04/26/cryptography.html" rel="alternate" type="text/html" title="Cryptography" /><published>2020-04-26T00:00:00+02:00</published><updated>2020-04-26T00:00:00+02:00</updated><id>/2020/04/26/cryptography</id><content type="html" xml:base="/2020/04/26/cryptography.html">&lt;h1 id=&quot;cryptography&quot;&gt;Cryptography&lt;/h1&gt;
+https://www.rstudio.com/resources/cheatsheets/#515</content><author><name></name></author><category term="statistics," /><category term="genomics" /><summary type="html">Websites for basic genetic variant information</summary></entry><entry><title type="html">Cryptography</title><link href="/2020/04/26/cryptography.html" rel="alternate" type="text/html" title="Cryptography" /><published>2020-04-26T00:00:00+02:00</published><updated>2020-04-26T00:00:00+02:00</updated><id>/2020/04/26/cryptography</id><content type="html" xml:base="/2020/04/26/cryptography.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#breaking&quot;&gt;Breaking crypto&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#aes&quot;&gt;AES is the most important current encryption method&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#quantum&quot;&gt;Quantum computing&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#thoughts&quot;&gt;Some thoughts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#reading&quot;&gt;Reading list on more advanced topics&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+1. [Introduction](#introduction)
+2. [Breaking crypto](#breaking)
+3. [AES is the most important current encryption method](#aes)
+4. [Quantum computing](#quantum)
+5. [Some thoughts](#thoughts)
+6. [Reading list on more advanced topics](#reading)  
 
-&lt;p&gt;&lt;a name=&quot;introduction&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a name=&quot;introduction&quot;&gt;&lt;/a&gt;
 
-&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+# Introduction
 
-&lt;p&gt;Like most of the posts on this blog, this will be a work in progress. Cryptography is a topic which I stumbled upon and really enjoy.
+Like most of the posts on this blog, this will be a work in progress. Cryptography is a topic which I stumbled upon and really enjoy.
 For the reading list skip to the end of this page.
 There is a long interesting history which would appeal to a casual reader.
 Most people would be familiar with stories about crypto during WWII, particularly because of movies like
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.imdb.com/title/tt2084970/&quot;&gt;The Imitation Game&lt;span id=&quot;titleYear&quot;&gt;(2014).
-&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;
-Cracking of Enigma falls into the espionage theme along with stories like that of books from  &lt;span class=&quot;author notFaded&quot; style=&quot;color: #0000ff;&quot;&gt;&lt;span class=&quot;a-declarative&quot;&gt;&lt;a href=&quot;https://www.amazon.co.uk/Ben-Macintyre/e/B001H6WAL8/ref=dp_byline_cont_book_1&quot;&gt;Ben Macintyre.&lt;/a&gt; &lt;/span&gt;&lt;/span&gt;One of my favorites is: &lt;span id=&quot;productTitle&quot; class=&quot;a-size-large&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://www.amazon.co.uk/d/Books/Operation-Mincemeat-True-Story-Changed-Course-World/1408809214&quot;&gt;Operation Mincemeat&lt;/a&gt;:&lt;/span&gt; The True Spy Story That Changed the Course of World War II. &lt;/span&gt;
-Reading so much about the non-fiction side of this topic ultimately led me to the &lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_James_Bond_novels_and_short_stories&quot;&gt;Ian Flemming novels&lt;/a&gt;.&lt;/span&gt; Of course I had seen all the movies as a kid, and like most, loved them. Reading the novels in their order of release ended up being much more fun than I have with most fictional book series perhaps because of Flemming’s true involvements during WWII.&lt;/p&gt;
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[The Imitation Game&lt;span id=&quot;titleYear&quot;&gt;(2014).
+&lt;/span&gt;](http://www.imdb.com/title/tt2084970/)&lt;/span&gt;
+Cracking of Enigma falls into the espionage theme along with stories like that of books from  &lt;span class=&quot;author notFaded&quot; style=&quot;color: #0000ff;&quot;&gt;&lt;span class=&quot;a-declarative&quot;&gt;[Ben Macintyre.](https://www.amazon.co.uk/Ben-Macintyre/e/B001H6WAL8/ref=dp_byline_cont_book_1) &lt;/span&gt;&lt;/span&gt;One of my favorites is: &lt;span id=&quot;productTitle&quot; class=&quot;a-size-large&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;[Operation Mincemeat](https://www.amazon.co.uk/d/Books/Operation-Mincemeat-True-Story-Changed-Course-World/1408809214):&lt;/span&gt; The True Spy Story That Changed the Course of World War II. &lt;/span&gt;
+Reading so much about the non-fiction side of this topic ultimately led me to the &lt;span style=&quot;color: #0000ff;&quot;&gt;[Ian Flemming novels](https://en.wikipedia.org/wiki/List_of_James_Bond_novels_and_short_stories).&lt;/span&gt; Of course I had seen all the movies as a kid, and like most, loved them. Reading the novels in their order of release ended up being much more fun than I have with most fictional book series perhaps because of Flemming&apos;s true involvements during WWII.
 
-&lt;p&gt;Gentle brushing against the topic of cryptography with these classical stories  eventually lead me to an interest in modern crypto. Real, crypto! Like most sciences portrayed in popular culture, it really only gets interesting when you get into the technical reading.
+Gentle brushing against the topic of cryptography with these classical stories  eventually lead me to an interest in modern crypto. Real, crypto! Like most sciences portrayed in popular culture, it really only gets interesting when you get into the technical reading.
 Computerphile has several good videos on cryptographic topics. This video describes SHA1 in a way that I find quite interesting. This is just about hashing methods but it is a lovely introduction to crypto.
-&lt;a href=&quot;https://www.youtube.com/watch?v=DMtFhACPnTY&quot;&gt;www.youtube.com&lt;/a&gt;
-Another video from the series now gets to actual crypto  in the same entertaining way; &lt;a href=&quot;https://www.youtube.com/watch?v=jkV1KEJGKRA&quot;&gt;End to End Encryption (E2EE)&lt;/a&gt;.&lt;/p&gt;
+[www.youtube.com](https://www.youtube.com/watch?v=DMtFhACPnTY)
+Another video from the series now gets to actual crypto  in the same entertaining way; [End to End Encryption (E2EE)](
+https://www.youtube.com/watch?v=jkV1KEJGKRA).
 
-&lt;p&gt;&lt;a name=&quot;breaking&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;breaking-crypto&quot;&gt;Breaking crypto&lt;/h1&gt;
-&lt;p&gt;Learning the basics of crypto and how it’s broken is best done at the same time. Of course actually breaking the crypto is difficult. But understanding it doesn’t have to be. To learn this you can quickly get the main points about modular arithmetic, exponentiation, and periods in this video.
-&lt;a href=&quot;https://www.youtube.com/watch?v=12Q3Mrh03Gk&quot;&gt;Shor’s algorithm&lt;/a&gt;&lt;/p&gt;
+&lt;a name=&quot;breaking&quot;&gt;&lt;/a&gt;
+# Breaking crypto
+Learning the basics of crypto and how it&apos;s broken is best done at the same time. Of course actually breaking the crypto is difficult. But understanding it doesn&apos;t have to be. To learn this you can quickly get the main points about modular arithmetic, exponentiation, and periods in this video.
+[Shor’s algorithm](
+https://www.youtube.com/watch?v=12Q3Mrh03Gk)
 
-&lt;p&gt;I think getting a clear grasp on the topic relies on getting used to modular arithmetic. For example on a clock we use Mod 12. If you get up at 12am and the time is now 1pm well then obviously you have been up for 13 hours. &lt;strong&gt;13 mod 12 = 1&lt;/strong&gt;.
-You know just as well that if you get up at 7am and it is now 8pm you have also been up for 13 hours. We can do this in our head very easily, and can do other examples easily too if you get over the initial confusion. &lt;strong&gt;A/B = Q remainder R&lt;/strong&gt;. In some cases we only care about the remainder R. In that case we say: &lt;strong&gt;A modulo B is equal to R&lt;/strong&gt;. Where B is referred to as the modulus (or mod for short).
+I think getting a clear grasp on the topic relies on getting used to modular arithmetic. For example on a clock we use Mod 12\. If you get up at 12am and the time is now 1pm well then obviously you have been up for 13 hours. **13 mod 12 = 1**.
+You know just as well that if you get up at 7am and it is now 8pm you have also been up for 13 hours. We can do this in our head very easily, and can do other examples easily too if you get over the initial confusion. **A/B = Q remainder R**. In some cases we only care about the remainder R. In that case we say: **A modulo B is equal to R**. Where B is referred to as the modulus (or mod for short).
 The only difficulty is when the numbers become quite large.
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic&quot;&gt;Here is a page that describes this very well. &lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[Here is a page that describes this very well. ](https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/what-is-modular-arithmetic)&lt;/span&gt;
 
-&lt;p&gt;This video is summed up with the 4 steps. The reason that RSA works is because Step 2, finding the period, takes a very long time:&lt;/p&gt;
+This video is summed up with the 4 steps. The reason that RSA works is because Step 2, finding the period, takes a very long time:
 
-&lt;p&gt;&lt;img src=&quot;https://dylanlawlessblog.files.wordpress.com/2017/02/rsa.png&quot; alt=&quot;rsa&quot; /&gt;&lt;/p&gt;
+![rsa](https://dylanlawlessblog.files.wordpress.com/2017/02/rsa.png)
 
-&lt;p&gt;Quantum computing is expected to dramatically speed up this step.
+Quantum computing is expected to dramatically speed up this step.
 Another good intro video that has some interesting discussion on Diffie-Hellman key exchange was given at the Chaos Communication Congress:
-J. Alex Halderman, Nadia Heninger: Logjam: Diffie-Hellman, discrete logs, the NSA, and you.&lt;/p&gt;
+J. Alex Halderman, Nadia Heninger: Logjam: Diffie-Hellman, discrete logs, the NSA, and you.
 
-&lt;p&gt;“Earlier this year, we discovered that Diffie-Hellman key exchange – cornerstone of modern cryptography – is less secure in practice than the security community believed. In this talk, we’ll explain how the NSA is likely exploiting this weakness to allow it to decrypt connections to at least 20% of HTTPS websites, 25% of SSH servers, and 66% of IPsec VPNs.”
-&lt;a href=&quot;https://www.youtube.com/watch?v=mS8gm-_rJgM&quot;&gt;www.youtube.com&lt;/a&gt;&lt;/p&gt;
+“Earlier this year, we discovered that Diffie-Hellman key exchange – cornerstone of modern cryptography – is less secure in practice than the security community believed. In this talk, we’ll explain how the NSA is likely exploiting this weakness to allow it to decrypt connections to at least 20% of HTTPS websites, 25% of SSH servers, and 66% of IPsec VPNs.”
+[www.youtube.com](https://www.youtube.com/watch?v=mS8gm-_rJgM)
 
-&lt;p&gt;Applied Cypto Handbook is a very good technical introduction and probably as far as a general reader will ever want to go.
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://cacr.uwaterloo.ca/hac/&quot;&gt;http://cacr.uwaterloo.ca/hac/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+Applied Cypto Handbook is a very good technical introduction and probably as far as a general reader will ever want to go.
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://cacr.uwaterloo.ca/hac/](http://cacr.uwaterloo.ca/hac/)&lt;/span&gt;
 
-&lt;p&gt;&lt;a name=&quot;aes&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;aes-is-the-most-important-current-encryption-method&quot;&gt;AES is the most important current encryption method&lt;/h1&gt;
-&lt;p&gt;This lecture is the perfect intro if you already know what methods are out there.
-&lt;a href=&quot;https://www.youtube.com/watch?v=x1v2tX4_dkQ&quot;&gt;www.youtube.com&lt;/a&gt;
-The accompanying book is worth the money if you’re looking for a textbook. The table of contents is available on amazon.
-&lt;span style=&quot;color: #0000ff;&quot;&gt; &lt;a href=&quot;http://www.crypto-textbook.com&quot;&gt;http://www.crypto-textbook.com.&lt;/a&gt;&lt;/span&gt;
-Here is a link to &lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Évariste_Galois#Galois_theory&quot;&gt;Galois’ wiki.&lt;/a&gt;&lt;/span&gt;
-This might lead you down a wiki rabbit hole learning about interesting maths.&lt;/p&gt;
+&lt;a name=&quot;aes&quot;&gt;&lt;/a&gt;
+# AES is the most important current encryption method
+This lecture is the perfect intro if you already know what methods are out there.
+[www.youtube.com](https://www.youtube.com/watch?v=x1v2tX4_dkQ)
+The accompanying book is worth the money if you&apos;re looking for a textbook. The table of contents is available on amazon.
+&lt;span style=&quot;color: #0000ff;&quot;&gt; [http://www.crypto-textbook.com.](http://www.crypto-textbook.com)&lt;/span&gt;
+Here is a link to &lt;span style=&quot;color: #0000ff;&quot;&gt;[Galois&apos; wiki.](https://en.wikipedia.org/wiki/Évariste_Galois#Galois_theory)&lt;/span&gt;
+This might lead you down a wiki rabbit hole learning about interesting maths.
 
-&lt;p&gt;&lt;a name=&quot;quantum&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;quantum-computing&quot;&gt;Quantum computing&lt;/h1&gt;
-&lt;p&gt;Here are simply two videos from PBS that will be more entertaining and succinct at discussing this really interesting topic than I.
-&lt;a href=&quot;https://www.youtube.com/watch?v=IrbJYsep45E&quot;&gt;How quantum computing works&lt;/a&gt;
+&lt;a name=&quot;quantum&quot;&gt;&lt;/a&gt;
+# Quantum computing
+Here are simply two videos from PBS that will be more entertaining and succinct at discussing this really interesting topic than I.
+[How quantum computing works](https://www.youtube.com/watch?v=IrbJYsep45E)
 How might quantum computing destroy computer security?
-&lt;a href=&quot;https://www.youtube.com/watch?v=wUwZZaI5u0c&quot;&gt;By utilising Shor’s algorithm&lt;/a&gt;&lt;/p&gt;
+[By utilising Shor’s algorithm](https://www.youtube.com/watch?v=wUwZZaI5u0c)
 
-&lt;p&gt;A fun little topic brought up in this videos is: that quantum Fourier transform uses resonance to amplify the basic state associated with the correct period.
+A fun little topic brought up in this videos is: that quantum Fourier transform uses resonance to amplify the basic state associated with the correct period.
 If you’re reading this site then it’s likely that you are a biologist.
 If that is the case you may be more familiar with protein structures than quantum mechanics.
 I first became introduced to the practical application of Fourier transformation while learning nuclear magnetic resonance (NMR) spectroscopy for protein structuring.
 Of course, you don’t actually have to learn it to do NMR.
 It happens automatically during data analysis but most people in the field surely would still like to know the details.
-Wiki has a great page: &lt;a href=&quot;https://en.wikipedia.org/wiki/Fourier_transform&quot;&gt;https://en.wikipedia.org/wiki/Fourier_transform&lt;/a&gt;
-&lt;img src=&quot;https://dylanlawlessblog.files.wordpress.com/2017/02/ft.png&quot; alt=&quot;ft&quot; /&gt;
-“In NMR an exponentially shaped free induction decay (FID) signal is acquired in the time domain and Fourier-transformed to a Lorentzian line-shape in the frequency domain.”&lt;/p&gt;
+Wiki has a great page: [https://en.wikipedia.org/wiki/Fourier_transform](https://en.wikipedia.org/wiki/Fourier_transform)
+![ft](https://dylanlawlessblog.files.wordpress.com/2017/02/ft.png)
+“In NMR an exponentially shaped free induction decay (FID) signal is acquired in the time domain and Fourier-transformed to a Lorentzian line-shape in the frequency domain.”
 
-&lt;p&gt;The next main point addressed in this video is: Complex roots of unity.
+The next main point addressed in this video is: Complex roots of unity.
 This is introduced quite well in the video.
 If you have never seen anything like this before then I highly recommend the short book by Feynman;
-&lt;a href=&quot;https://www.amazon.co.uk/dp/B00BR40XJ6?ref_=k4w_oembed_ICZkE7ckZ2ZUfR&amp;amp;tag=kpembed-20&amp;amp;linkCode=kpd&quot;&gt;QED: The Strange Theory of Light and Matter&lt;/a&gt;
+[QED: The Strange Theory of Light and Matter](https://www.amazon.co.uk/dp/B00BR40XJ6?ref_=k4w_oembed_ICZkE7ckZ2ZUfR&amp;tag=kpembed-20&amp;linkCode=kpd)
 &lt;!--
 (https://www.amazon.com/QED-Strange-Princeton-Science-Library/dp/0691164096/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1494067439&amp;sr=1-1&amp;keywords=qed+the+strange+theory+of+light+and+matter)
 --&gt;
 In no way does this little book talk about quantum computing.
 If fact it is pretty old now and is not the kind of thing that professionals will be using for reference.
 Why would I suggest this for someone who is new to the topic? Well it is an extremely fun introduction to the topic of QED and lays the foundation of ideas that have become mainstream over the next 30 years.
-Understanding some basic ideas will leave you open to recognise more complex applications, especially important if you want to only look at the basics of quantum computing.&lt;/p&gt;
+Understanding some basic ideas will leave you open to recognise more complex applications, especially important if you want to only look at the basics of quantum computing.
 
-&lt;p&gt;&lt;a name=&quot;thoughts&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;some-thoughts&quot;&gt;Some thoughts&lt;/h1&gt;
-&lt;p&gt;This talk at Google by Peter Warren Singer based on his book,
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://www.amazon.com/Cybersecurity-Cyberwar-Everyone-Needs-Know%C2%AE/dp/0199918112&quot;&gt;Cybersecurity and Cyberwar&lt;/a&gt;&lt;/span&gt;,
+&lt;a name=&quot;thoughts&quot;&gt;&lt;/a&gt;
+# Some thoughts
+This talk at Google by Peter Warren Singer based on his book,
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[Cybersecurity and Cyberwar](https://www.amazon.com/Cybersecurity-Cyberwar-Everyone-Needs-Know%C2%AE/dp/0199918112)&lt;/span&gt;,
 may be a pretty interesting watch for anyone into technology security in some way. This is not a technical talk, more of something to get you into the mindset up why this topic may be interesting.
-&lt;a href=&quot;https://www.youtube.com/watch?v=h0SXO5KUZIo&quot;&gt;www.youtube.com&lt;/a&gt;
-&lt;a href=&quot;https://www.cl.cam.ac.uk/~rja14/book.html&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;https://www.cl.cam.ac.uk/~rja14/book.html&lt;/span&gt;&lt;/a&gt; Security Engineering — The Book&lt;/p&gt;
+[www.youtube.com](https://www.youtube.com/watch?v=h0SXO5KUZIo)
+[&lt;span style=&quot;color: #0000ff;&quot;&gt;https://www.cl.cam.ac.uk/~rja14/book.html&lt;/span&gt;](https://www.cl.cam.ac.uk/~rja14/book.html) Security Engineering — The Book
 
-&lt;p&gt;The cryptopals crypto challenges are a fun way to learn some hands on application of cryptographic techniques. &lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.cryptopals.com/&quot;&gt;http://www.cryptopals.com/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+The cryptopals crypto challenges are a fun way to learn some hands on application of cryptographic techniques. &lt;span style=&quot;color: #0000ff;&quot;&gt;[http://www.cryptopals.com/](http://www.cryptopals.com/)&lt;/span&gt;
 
-&lt;p&gt;Announcing the first SHA1 collision on February 23, 2017.
+Announcing the first SHA1 collision on February 23, 2017.
 This was a really big event in the crypto community.
 I think many people in the cyber security field assume that experiments and findings in public and academic research are a few years behind government capabilities.
 Take from that what you will.
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html&quot;&gt;https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html)&lt;/span&gt;
 
-&lt;p&gt;There are countless reasons why crypto is interesting.
-The applications range from the most mundane day to day requirements in the modern world such as banking, personal communication, the use of medical data (which I post about here &lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://dylanlawlessblog.wordpress.com/2017/02/21/pretty-good-privacy-for-academic-data/&quot;&gt;Pretty good privacy for academic data&lt;/a&gt;&lt;/span&gt;) all the way out to the most hypothetical academic applications.
-An interesting point to think about is the journey that each data packet makes across the mystical &lt;em&gt;internet&lt;/em&gt;.
+There are countless reasons why crypto is interesting.
+The applications range from the most mundane day to day requirements in the modern world such as banking, personal communication, the use of medical data (which I post about here &lt;span style=&quot;color: #0000ff;&quot;&gt;[Pretty good privacy for academic data](https://dylanlawlessblog.wordpress.com/2017/02/21/pretty-good-privacy-for-academic-data/)&lt;/span&gt;) all the way out to the most hypothetical academic applications.
+An interesting point to think about is the journey that each data packet makes across the mystical _internet_.
 Most electronic communications travel across a number of boarders and further distances than most people will travel in their entire life.
 Our world would not run very smoothly if all communication was sent in a readable format with no protection.
 Here is some basic info on the infrastructure require for modern electronic communication:
-&lt;a href=&quot;https://www.youtube.com/watch?v=DKHZKTRyzeg&quot;&gt;www.youtube.com&lt;/a&gt;,
-&lt;a href=&quot;https://www.youtube.com/watch?v=0TZwiUwZwIE&quot;&gt;www.youtube.com&lt;/a&gt;
-And the &lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.submarinecablemap.com&quot;&gt;Submarine Cable Map&lt;/a&gt;&lt;/span&gt;.&lt;/p&gt;
+[www.youtube.com](https://www.youtube.com/watch?v=DKHZKTRyzeg),
+[www.youtube.com](https://www.youtube.com/watch?v=0TZwiUwZwIE)
+And the &lt;span style=&quot;color: #0000ff;&quot;&gt;[Submarine Cable Map](http://www.submarinecablemap.com)&lt;/span&gt;.
 
-&lt;p&gt;While we’re on the topic, I found this video on the Cornwall cable landing station.
+While we&apos;re on the topic, I found this video on the Cornwall cable landing station.
 The physical infrastructure and engineering requirements of global communication are sometimes easy to forget if one spends more time on computer programming or mathematics
-&lt;a href=&quot;https://www.youtube.com/watch?v=K_nnUbX7uuQ&quot;&gt;www.youtube.com&lt;/a&gt;.&lt;/p&gt;
+[www.youtube.com](https://www.youtube.com/watch?v=K_nnUbX7uuQ).
 
-&lt;p&gt;&lt;a name=&quot;reading&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;reading-list-on-more-advanced-topics&quot;&gt;Reading list on more advanced topics&lt;/h1&gt;
-&lt;p&gt;/r/crypto wiki&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://www.reddit.com/r/crypto/wiki/index&quot;&gt;https://www.reddit.com/r/crypto/wiki/index&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Textbook: An Introduction to Mathematical Cryptography&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=5F72903FBACA6DF57799612526CC437F?doi=10.1.1.182.9999&amp;amp;rep=rep1&amp;amp;type=pdf&quot;&gt;http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=5F72903FBACA6DF57799612526CC437F?doi=10.1.1.182.9999&amp;amp;rep=rep1&amp;amp;type=pdf&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Cryptology ePrint Archive&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://eprint.iacr.org&quot;&gt;http://eprint.iacr.org&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Handbook of Applied Cryptography&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://cacr.uwaterloo.ca/hac/&quot;&gt;http://cacr.uwaterloo.ca/hac/&lt;/a&gt;&lt;/span&gt;
-Goldreich: The Foundations of Cryptography&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.wisdom.weizmann.ac.il/%7Eoded/foc-drafts.html&quot;&gt;http://www.wisdom.weizmann.ac.il/%7Eoded/foc-drafts.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Handbook of Elliptic and Hyperelliptic Curve Cryptography&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.hyperelliptic.org/HEHCC/&quot;&gt;http://www.hyperelliptic.org/HEHCC/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-eBACS: ECRYPT Benchmarking of Cryptographic Systems&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://bench.cr.yp.to&quot;&gt;http://bench.cr.yp.to&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Mihir Bellare and Shafi Goldwasser’s Lecture Notes&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://cseweb.ucsd.edu/%7Emihir/papers/gb.pdf&quot;&gt;http://cseweb.ucsd.edu/%7Emihir/papers/gb.pdf&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Charm: A tool for rapid cryptographic prototyping&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.charm-crypto.com/index.html&quot;&gt;http://www.charm-crypto.com/index.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-eHash Wiki&lt;br /&gt;
-&lt;a href=&quot;http://ehash.iaik.tugraz.at/wiki/The_Hash_Function_Zoo&quot;&gt;Hash Function Zoo&lt;/a&gt;&lt;br /&gt;
-and the &lt;a href=&quot;http://ehash.iaik.tugraz.at/wiki/The_SHA-3_Zoo&quot;&gt;SHA-3 Zoo&lt;/a&gt;&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://ehash.iaik.tugraz.at/wiki/The_eHash_Main_Page&quot;&gt;http://ehash.iaik.tugraz.at/wiki/The_eHash_Main_Page&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Cryptology ePrint Archive&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://eprint.iacr.org&quot;&gt;http://eprint.iacr.org&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-IACR Conferences (Crypto, Eurocrypt, Asiacrypt)&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.iacr.org/conferences/&quot;&gt;http://www.iacr.org/conferences/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-IEEE Symposium on Security and Privacy (There are loads of papers and talks on YouTube under Program of past events)&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://www.ieee-security.org/TC/SP2017/past.html&quot;&gt;https://www.ieee-security.org/TC/SP2017/past.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Crypto Stack Exchange&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://crypto.stackexchange.com&quot;&gt;https://crypto.stackexchange.com&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Blogpost so-you-want-to-crypto&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://www.seancassidy.me/so-you-want-to-crypto.html&quot;&gt;https://www.seancassidy.me/so-you-want-to-crypto.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Authenticated Encryption Zoo&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://aezoo.compute.dtu.dk/doku.php?id=AE%20Zoo&quot;&gt;https://aezoo.compute.dtu.dk/doku.php?id=AE%20Zoo&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Helger Lipmaa Cryptology Pointers&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://kodu.ut.ee/~lipmaa/crypto/&quot;&gt;http://kodu.ut.ee/~lipmaa/crypto/&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Free Course: Applied Cryptography&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://www.udacity.com/course/applied-cryptography--cs387&quot;&gt;https://www.udacity.com/course/applied-cryptography–cs387&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Kerckhoffs’s principle&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle&quot;&gt;https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Schneier’s Law&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://www.schneier.com/blog/archives/2011/04/schneiers_law.html&quot;&gt;https://www.schneier.com/blog/archives/2011/04/schneiers_law.html&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-crypto blogs from David Wong’s github&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;https://github.com/mimoo/crypto_blogs&quot;&gt;https://github.com/mimoo/crypto_blogs&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-Shor in Haskell The Quantum IO Monad&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.cs.nott.ac.uk/%7Epsztxa/publ/qio.pdf&quot;&gt;http://www.cs.nott.ac.uk/%7Epsztxa/publ/qio.pdf&lt;/a&gt;&lt;/span&gt;&lt;br /&gt;
-The Quipper Language: programming language for quantum computing&lt;br /&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;a href=&quot;http://www.mathstat.dal.ca/%7Eselinger/quipper/&quot;&gt;http://www.mathstat.dal.ca/%7Eselinger/quipper/&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;a name=&quot;reading&quot;&gt;&lt;/a&gt;
+# Reading list on more advanced topics
+/r/crypto wiki  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://www.reddit.com/r/crypto/wiki/index](https://www.reddit.com/r/crypto/wiki/index)&lt;/span&gt;  
+Textbook: An Introduction to Mathematical Cryptography  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=5F72903FBACA6DF57799612526CC437F?doi=10.1.1.182.9999&amp;rep=rep1&amp;type=pdf](http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=5F72903FBACA6DF57799612526CC437F?doi=10.1.1.182.9999&amp;rep=rep1&amp;type=pdf)&lt;/span&gt;  
+Cryptology ePrint Archive  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://eprint.iacr.org](http://eprint.iacr.org)&lt;/span&gt;  
+Handbook of Applied Cryptography  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://cacr.uwaterloo.ca/hac/](http://cacr.uwaterloo.ca/hac/)&lt;/span&gt;
+Goldreich: The Foundations of Cryptography  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://www.wisdom.weizmann.ac.il/%7Eoded/foc-drafts.html](http://www.wisdom.weizmann.ac.il/%7Eoded/foc-drafts.html)&lt;/span&gt;  
+Handbook of Elliptic and Hyperelliptic Curve Cryptography  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://www.hyperelliptic.org/HEHCC/](http://www.hyperelliptic.org/HEHCC/)&lt;/span&gt;  
+eBACS: ECRYPT Benchmarking of Cryptographic Systems  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://bench.cr.yp.to](http://bench.cr.yp.to)&lt;/span&gt;  
+Mihir Bellare and Shafi Goldwasser&apos;s Lecture Notes  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://cseweb.ucsd.edu/%7Emihir/papers/gb.pdf](http://cseweb.ucsd.edu/%7Emihir/papers/gb.pdf)&lt;/span&gt;  
+Charm: A tool for rapid cryptographic prototyping  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://www.charm-crypto.com/index.html](http://www.charm-crypto.com/index.html)&lt;/span&gt;  
+eHash Wiki  
+[Hash Function Zoo](http://ehash.iaik.tugraz.at/wiki/The_Hash_Function_Zoo)  
+and the [SHA-3 Zoo](http://ehash.iaik.tugraz.at/wiki/The_SHA-3_Zoo)  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://ehash.iaik.tugraz.at/wiki/The_eHash_Main_Page](http://ehash.iaik.tugraz.at/wiki/The_eHash_Main_Page)&lt;/span&gt;  
+Cryptology ePrint Archive  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://eprint.iacr.org](http://eprint.iacr.org)&lt;/span&gt;  
+IACR Conferences (Crypto, Eurocrypt, Asiacrypt)  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://www.iacr.org/conferences/](http://www.iacr.org/conferences/)&lt;/span&gt;  
+IEEE Symposium on Security and Privacy (There are loads of papers and talks on YouTube under Program of past events)  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://www.ieee-security.org/TC/SP2017/past.html](https://www.ieee-security.org/TC/SP2017/past.html)&lt;/span&gt;  
+Crypto Stack Exchange  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://crypto.stackexchange.com](https://crypto.stackexchange.com)&lt;/span&gt;  
+Blogpost so-you-want-to-crypto  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://www.seancassidy.me/so-you-want-to-crypto.html](https://www.seancassidy.me/so-you-want-to-crypto.html)&lt;/span&gt;  
+Authenticated Encryption Zoo  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://aezoo.compute.dtu.dk/doku.php?id=AE%20Zoo](https://aezoo.compute.dtu.dk/doku.php?id=AE%20Zoo)&lt;/span&gt;  
+Helger Lipmaa Cryptology Pointers  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://kodu.ut.ee/~lipmaa/crypto/](http://kodu.ut.ee/~lipmaa/crypto/)&lt;/span&gt;  
+Free Course: Applied Cryptography  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://www.udacity.com/course/applied-cryptography--cs387](https://www.udacity.com/course/applied-cryptography--cs387)&lt;/span&gt;  
+Kerckhoffs&apos;s principle  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle](https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle)&lt;/span&gt;  
+Schneier&apos;s Law  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://www.schneier.com/blog/archives/2011/04/schneiers_law.html](https://www.schneier.com/blog/archives/2011/04/schneiers_law.html)&lt;/span&gt;  
+crypto blogs from David Wong&apos;s github  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[https://github.com/mimoo/crypto_blogs](https://github.com/mimoo/crypto_blogs)&lt;/span&gt;  
+Shor in Haskell The Quantum IO Monad  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://www.cs.nott.ac.uk/%7Epsztxa/publ/qio.pdf](http://www.cs.nott.ac.uk/%7Epsztxa/publ/qio.pdf)&lt;/span&gt;  
+The Quipper Language: programming language for quantum computing  
+&lt;span style=&quot;color: #0000ff;&quot;&gt;[http://www.mathstat.dal.ca/%7Eselinger/quipper/](http://www.mathstat.dal.ca/%7Eselinger/quipper/)&lt;/span&gt;  
 
 &lt;!-- 
 ![encrpytdata](https://i.imgur.com/UubXs0H.gif)
---&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">Cryptography</summary></entry><entry><title type="html">The devil is in the detail</title><link href="/2019/08/19/devil_in_detail.html" rel="alternate" type="text/html" title="The devil is in the detail" /><published>2019-08-19T00:00:00+02:00</published><updated>2019-08-19T00:00:00+02:00</updated><id>/2019/08/19/devil_in_detail</id><content type="html" xml:base="/2019/08/19/devil_in_detail.html">&lt;h1 id=&quot;the-devil-is-in-the-detail&quot;&gt;The devil is in the detail&lt;/h1&gt;
+--&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">Cryptography</summary></entry><entry><title type="html">The devil is in the detail</title><link href="/2019/08/19/devil_in_detail.html" rel="alternate" type="text/html" title="The devil is in the detail" /><published>2019-08-19T00:00:00+02:00</published><updated>2019-08-19T00:00:00+02:00</updated><id>/2019/08/19/devil_in_detail</id><content type="html" xml:base="/2019/08/19/devil_in_detail.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;19 Aug 2019&lt;/p&gt;
-&lt;p&gt;I was learning some &lt;a href=&quot;https://en.wikipedia.org/wiki/Steganography&quot;&gt;steganography&lt;/a&gt; methods for a security project. 
+I was learning some [steganography](https://en.wikipedia.org/wiki/Steganography) methods for a security project. 
 At the same time, I was writing up a paper with some friends 
-(&lt;a href=&quot;https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf&quot;&gt;https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf&lt;/a&gt;) 
+([https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf](https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf)) 
 and decided to hide a little message in one of the figures.
 The goal was to encode some hidden data and see could we get it back out 
-the other side, after publication.&lt;/p&gt;
+the other side, after publication. 
 
-&lt;p&gt;It would be a lot of trouble for a master of espionage to have to publish a 
+It would be a lot of trouble for a master of espionage to have to publish a 
 paper every time a secret message needed to be encoded for public transmission, 
-but maybe it could be done!&lt;/p&gt;
+but maybe it could be done! 
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/editor_paper_rag.png&quot; width=&quot;101%&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;{{ site.baseurl }}{% link images/posts/editor_paper_rag.png %}&quot; width=&quot;101%&quot;&gt;
 
-&lt;p&gt;The secret message was imported into &lt;a href=&quot;https://www.r-project.org&quot;&gt;R&lt;/a&gt; from plain text. 
+The secret message was imported into [R](https://www.r-project.org) from plain text. 
 It was encoded into a png file that was to be a supplemental figure in our paper 
 From experience, supplemental figures usually get uploaded to a repository and
 stored in the same format for later downloaded after publication, 
 until main-text figures which are often converted in one way or another by the publisher. 
 Once the figure was released, anyone with the correct decoding algorithm 
-could get back the secret message.&lt;/p&gt;
+could get back the secret message. 
 
-&lt;p&gt;In this case, I used the 
-&lt;a href=&quot;https://github.com/richfitz/stegasaur&quot;&gt;richfitz/stegasaur&lt;/a&gt; package, 
-innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
+In this case, I used the 
+[richfitz/stegasaur](https://github.com/richfitz/stegasaur) package, 
+innocently offered with &quot;The aim is to be able to encode arbitrary R objects in cat pictures.&quot; 
 The inforation was hidden within the data that makes up the image, 
 and is imperceivable to the naked eye. 
-Even better, the file size was slightly &lt;em&gt;SMALLER&lt;/em&gt; than the original 
+Even better, the file size was slightly _SMALLER_ than the original 
 (1.9MB to 1.7MB) without a noticeable difference in quality. 
 After peer review of the paper, publisher proceessing and publication, 
 the secret message was successfully decoded from the protein structure figure 
-“F_E4_Structure.png” and was printed to the console:&lt;/p&gt;
+&quot;F_E4_Structure.png&quot; and was printed to the console: 
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/r_steg_decode.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;{{ site.baseurl }}{% link images/posts/r_steg_decode.png %}&quot; width=&quot;100%&quot;&gt;
 
-&lt;p&gt;This exercise looks like a bit of fun, 
+This exercise looks like a bit of fun, 
 but was done to demonstrate the unavoidable 
-risks that exist in sensitive data research.&lt;sup id=&quot;fnref:foot&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:foot&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
+risks that exist in sensitive data research.[^foot]
 Today, protected data enclaves are used for processing sensitive data 
 and usually allow summary results or figures to be exported.
-These are therefore basically a trust based system and are otherwise only security theatre.&lt;/p&gt;
+These are therefore basically a trust based system and are otherwise only security theatre.
 
-&lt;p&gt;Here’s an idea, &lt;a href=&quot;https://patents.google.com/patent/US8527779&quot;&gt;steganographic message blocks&lt;/a&gt; 
+Here&apos;s an idea, [steganographic message blocks](https://patents.google.com/patent/US8527779) 
 seperated across a career worth of publications, 
 that can only be deciphered once all blocks are collected! 
 Who would go to that trouble? 
 Go see what you can find in one Supplementary material png file. 
-&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&quot;&gt;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&lt;/a&gt;&lt;/p&gt;
+[https://link.springer.com/article/10.1007%2Fs10875-019-00670-z](https://link.springer.com/article/10.1007%2Fs10875-019-00670-z)
 
-&lt;h1 id=&quot;r-script&quot;&gt;R script &lt;/h1&gt;
-&lt;p&gt;Try it yourself.
+# R script 
+Try it yourself.
 Find the paper and get Figure E4.
 Download
-&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial&quot;&gt;10875_2019_670_MOESM5_ESM&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; install.packages(&quot;devtools&quot;)
-&amp;gt; install_github(&quot;richfitz/stegasaur&quot;)
-&amp;gt; library(&quot;devtools&quot;)
-&amp;gt; library(ggplot2) 
-&amp;gt; Decode message &amp;lt;- 
-&amp;gt;		stegasaur::decode(&quot;~/10875_2019_670_MOESM5_ESM.png&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;footnote&quot;&gt;Footnote&lt;/h1&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:foot&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;/topic/medical-espionage&quot;&gt;Medical espionage&lt;/a&gt;. &lt;a href=&quot;#fnref:foot&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">The devil is in the detail</summary></entry></feed>
+[10875_2019_670_MOESM5_ESM](https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial)
+```
+&gt; install.packages(&quot;devtools&quot;)
+&gt; install_github(&quot;richfitz/stegasaur&quot;)
+&gt; library(&quot;devtools&quot;)
+&gt; library(ggplot2) 
+&gt; Decode message &lt;- 
+&gt;		stegasaur::decode(&quot;~/10875_2019_670_MOESM5_ESM.png&quot;)
+```
+# Footnote
+[^foot]: [Medical espionage]({{ site.baseurl }}{% link _topic/cryptography/medical_espionage.md %}).</content><author><name></name></author><category term="statistics" /><summary type="html">The devil is in the detail</summary></entry></feed>
