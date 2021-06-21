@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-06-19T23:55:43+02:00</updated>
+ <updated>2021-06-21T10:32:37+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -14,38 +14,57 @@
  
  <entry>
    <title>Weeknotes</title>
-   <link href="https://tom.preston-werner.com/2021/06/14/weeknotes.html"/>
+   <link href="https://tom.preston-werner.com/2021/06/14/weeknotes_3.html"/>
    <updated>2021-06-14T00:00:00+02:00</updated>
-   <id>https://tom.preston-werner.com/2021/06/14/weeknotes</id>
+   <id>https://tom.preston-werner.com/2021/06/14/weeknotes_3</id>
    <content type="html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;14 June 2021&lt;/p&gt;
 
 &lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Using RCy3 to programmatically control Cytoscape for downloading STRINGdb in analysis.&lt;/li&gt;
+  &lt;li&gt;Writing up paper on protein network analysis.&lt;/li&gt;
+  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Spent time in &lt;a href=&quot;https://goo.gl/maps/TVz7B33HcDRy6FDF8&quot;&gt;Robella Val-de-Travers, Neuchâtel&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Rewrote most CSS on my website as learning for online classes.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.medrxiv.org/content/10.1101/2021.05.04.21256612v1.full.pdf&quot;&gt;Bowden et al., 2021 &lt;/a&gt;, The Triangulation WIthin A STudy (TWIST) framework for causal inference within Pharmacogenetic research.&lt;/li&gt;
+  &lt;li&gt;Reread &lt;a href=&quot;https://www.nature.com/articles/s41576-019-0177-4&quot;&gt;Povysil et al., 2019&lt;/a&gt;, Rare-variant collapsing analyses for complex traits: guidelines and applications.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=xanSAr83w-k&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=2&quot;&gt;Cant Get You Out of My Head E02&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Lex Fridman Podcast: &lt;a href=&quot;https://lexfridman.com/charles-hoskinson/&quot;&gt;#192 Charles Hoskinson: Cardano&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </content>
  </entry>
  
  <entry>
    <title>Weeknotes</title>
-   <link href="https://tom.preston-werner.com/2021/06/07/weeknotes.html"/>
+   <link href="https://tom.preston-werner.com/2021/06/07/weeknotes_2.html"/>
    <updated>2021-06-07T00:00:00+02:00</updated>
-   <id>https://tom.preston-werner.com/2021/06/07/weeknotes</id>
+   <id>https://tom.preston-werner.com/2021/06/07/weeknotes_2</id>
    <content type="html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;7 June 2021&lt;/p&gt;
 
 &lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Writing methods on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Genetic variance in viral clades.&lt;/li&gt;
+  &lt;li&gt;Creating toy datasets for testing code.&lt;/li&gt;
+  &lt;li&gt;Wrote code for power calcualtions with PPI network pathways and define the smallest testable sets (cohort sizes).&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
 &lt;ol&gt;
@@ -478,9 +497,9 @@ Other files that are not listed contain intermediate data.&lt;/p&gt;
  
  <entry>
    <title>Weeknotes</title>
-   <link href="https://tom.preston-werner.com/2021/05/31/weeknotes.html"/>
+   <link href="https://tom.preston-werner.com/2021/05/31/weeknotes_1.html"/>
    <updated>2021-05-31T00:00:00+02:00</updated>
-   <id>https://tom.preston-werner.com/2021/05/31/weeknotes</id>
+   <id>https://tom.preston-werner.com/2021/05/31/weeknotes_1</id>
    <content type="html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;31 May 2021&lt;/p&gt;
@@ -491,6 +510,7 @@ Other files that are not listed contain intermediate data.&lt;/p&gt;
   &lt;li&gt;Testing LD pruning in viral genomes.&lt;/li&gt;
   &lt;li&gt;Writing results on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;International collaboration call on host-pathogen interaction, hosted in &lt;a href=&quot;https://www.vanderbilt.edu&quot;&gt;Vanderbilt&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Swiss Genomics Forum 2021 &lt;a href=&quot;https://www.health2030genome.ch/swiss-genomics-forum/&quot;&gt;https://www.health2030genome.ch/swiss-genomics-forum/&lt;/a&gt;. Good talk from Nicholas Katsanis &lt;a href=&quot;https://www.rescindotherapeutics.com/about&quot;&gt;https://www.rescindotherapeutics.com/about&lt;/a&gt; and panel discussion.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
