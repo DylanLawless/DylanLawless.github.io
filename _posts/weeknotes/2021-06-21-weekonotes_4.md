@@ -9,7 +9,7 @@ status: finished
 {{ page.title }}
 ================
 
-<p class="meta">21  June 2021</p>
+<p class="meta">21 June 2021</p>
 
 # Work
 1. Writing up paper on protein network analysis.
@@ -18,16 +18,15 @@ status: finished
 
 # Personal 
 
-
 # Reading
 1. [Soviet Cities, Arseniy Kotov](http://fuel-design.com/publishing/soviet-cities/)
 2. [Genetics and Analysis of Quantitative Traits](https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812)
 
-# Other media
-1. Adam Curtis documentary: [Cant Get You Out of My Head E03](https://www.youtube.com/watch?v=DPjSeZJmEVc&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=3)
-
-
 <!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E04](https://www.youtube.com/watch?v=UglBcbz5pzQ&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=4 -->
 <!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=5 -->
 <!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=6 -->
+
+# Other media
+1. Adam Curtis documentary: [Cant Get You Out of My Head E03](https://www.youtube.com/watch?v=DPjSeZJmEVc&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=3)
+
 

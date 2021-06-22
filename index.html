@@ -2,7 +2,6 @@
 layout: default
 title: LawlessGenomics
 ---
-
 A home for topics that are relevant to human precision medicine and genomics.
 We include technical examples of statistical methods, best practices, 
 general reading, and pertinent details of research methods.
@@ -19,17 +18,6 @@ With minimalism and privacy in mind, this site is built to be light and fast
 as well as containing no ads, trackers, cookies, 
 <a href="https://themarkup.org/blacklight?url=lawlessgenomics.com">&c</a>.
 This site is under live development; some placeholder pages are included for testing. 
-
-<!--
-<div id="home">
-	<h2>Subject titles</h2>
-		<ul class="topic">
-		{% assign sorted_subject = site.topic | group_by: "subject" %}
-			{% for subject in sorted_subject %}
-			- {{ subject.name }}<br />
-			{% endfor %}
-		</ul>
--->
 
 <div id="Topics">
 	<div class="subjects">
@@ -106,16 +94,6 @@ This site is under live development; some placeholder pages are included for tes
 	<div >
 		<h1><a href="/weeknotes/">List all weeknotes</a></h1>
 	</div>
-
-	<!-- <div class="subjects"> -->
-	<!-- 	<h1>Weeknotes</h1> -->
-	<!-- 	{% for post in site.posts %} -->
-	<!-- 		{% if post.path contains 'weeknotes' %} -->
-	<!-- 			<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li> -->
-	<!-- 	{% endif %} -->
-	<!-- 	{% endfor %} --> 
-	<!-- 	</ul> -->
-	<!-- </div> -->
 
 	<div class="subjects">
 		<h1>Highlighted Media</h1>
