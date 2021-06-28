@@ -74,9 +74,6 @@
 
 	<div id="topic">
 <h1 id="fischers-exact-test">Fischer’s exact test</h1>
-<ul id="markdown-toc">
-  <li><a href="#fischers-exact-test" id="markdown-toc-fischers-exact-test">Fischer’s exact test</a></li>
-</ul>
 
 <p><br />
 https://www.statology.org/fishers-exact-test/
@@ -86,58 +83,139 @@ Statology page</p>
 
 <p>Fisher’s Exact Test uses the following null and alternative hypotheses:</p>
 
-<p>H0: (null hypothesis) The two variables are independent.
-H1: (alternative hypothesis) The two variables are not independent.</p>
+<ul>
+  <li>H0: (null hypothesis) The two variables are independent.</li>
+  <li>H1: (alternative hypothesis) The two variables are not independent.</li>
+</ul>
 
 <p>Suppose we have the following 2x2 table:</p>
 
-<p>Group 1	Group 2	Row Total
-Category 1	a	b	a+b
-Category 2	c	d	c+d
-Column Total	a+c	b+d	a+b+c+d = n</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: center">Group 1</th>
+      <th style="text-align: center">Group 2</th>
+      <th style="text-align: center">Row Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Category 1</td>
+      <td style="text-align: center">a</td>
+      <td style="text-align: center">b</td>
+      <td style="text-align: center">a+b</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Category 2</td>
+      <td style="text-align: center">c</td>
+      <td style="text-align: center">d</td>
+      <td style="text-align: center">c+d</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Column Total</td>
+      <td style="text-align: center">a+c</td>
+      <td style="text-align: center">b+d</td>
+      <td style="text-align: center">a+b+c+d = n</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>The one-tailed p value for Fisher’s Exact Test is calculated as:</p>
 
-<p>p = (a+b)!(c+d)!(a+c)!(b+d)! / (a!b!c!d!n!)</p>
+\[p = (a+b)!(c+d)!(a+c)!(b+d)! / (a!b!c!d!n!)\]
 
 <p>This produces the same p value as the CDF of the hypergeometric distribution with the following parameters:</p>
 
-<p>population size = n
-population “successes” = a+b
-sample size = a + c
-sample “successes” = a</p>
+<ul>
+  <li>population size = n</li>
+  <li>population “successes” = a+b</li>
+  <li>sample size = a + c</li>
+  <li>sample “successes” = a</li>
+</ul>
 
 <p>The two-tailed p value for Fisher’s Exact Test is less straightforward to calculate and can’t be found by simply multiplying the one-tailed p value by two. To find the two-tailed p value, we recommend using the Fisher’s Exact Test Calculator.</p>
 
-<p>Fisher’s Exact Test: Example</p>
+<h2 id="fishers-exact-test-example">Fisher’s Exact Test: Example</h2>
 
 <p>Suppose we want to know whether or not gender is associated with political party preference. We take a simple random sample of 25 voters and survey them on their political party preference. The following table shows the results of the survey:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Democrat	Republican	Total Male	4	9	13 Female	8	4	12 Total	12	13	25 Step 1: Define the hypotheses.
-</code></pre></div></div>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Sex</th>
+      <th style="text-align: right">Democrat</th>
+      <th style="text-align: center">Republican</th>
+      <th style="text-align: center">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Male</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: center">9</td>
+      <td style="text-align: center">13</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Female</td>
+      <td style="text-align: right">8</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">12</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Total</td>
+      <td style="text-align: right">12</td>
+      <td style="text-align: center">13</td>
+      <td style="text-align: center">25</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Step 1: Define the hypotheses.</p>
 
 <p>We will perform Fisher’s Exact Test using the following hypotheses:</p>
 
-<p>H0: Gender and political party preference are independent.
-H1: Gender and political party preference are not independent.</p>
+<ul>
+  <li>H0: Gender and political party preference are independent.</li>
+  <li>H1: Gender and political party preference are not independent.</li>
+</ul>
 
 <p>Step 2: Calculated the two-tailed p value.</p>
 
 <p>We can use the Fisher’s Exact Test Calculator with the following input:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Group1 Group1 Category1	4	9 Category2	8	4
-</code></pre></div></div>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center">Group1</th>
+      <th style="text-align: center">Group2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Category 1</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td>Category 2</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">4</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>One tailed p value: 0.081178
-Two-tailed p value is 0.115239</p>
+<ul>
+  <li>One tailed p value: 0.081178</li>
+  <li>Two-tailed p value is 0.115239</li>
+</ul>
 
 <p>Fisher’s Exact test example</p>
 
 <p>The two-tailed p value is 0.115239. Since this value is less than 0.05, we fail to reject the null hypothesis. We do not have sufficient evidence to say that there is any statistically significant association between gender and political party preference.</p>
 
-<p>Additional Resources</p>
-
-<p>Additional Resources</p>
+<h2 id="additional-resources">Additional Resources</h2>
 
 <p>The following tutorials explain how to perform a Fisher’s Exact Test using different statistical programs:</p>
 

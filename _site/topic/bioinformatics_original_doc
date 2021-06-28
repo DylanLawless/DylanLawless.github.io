@@ -1,18 +1,3 @@
----
-layout: topic
-title: Genomic analysis for rare disease
-created: 8 Aug 2018
-bibliography:
-- '../tail/bibliography.bib'
-tags: genomics
-subject: Precision medicine
----
-{{ page.title }}
-================
-
-* TOC
-{:toc}
-
 # Abbreviations
 BWA (Burrows-Wheeler transformation aligner), FDR (False discovery
 rate), GO (Gene Ontology), GrCh38 (Genome Reference Consortium Human

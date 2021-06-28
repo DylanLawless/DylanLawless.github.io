@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Integrating databases</title>
+	<meta name="author" content="LawlessGenomics" />
+	<!-- <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" /> -->
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+<div class="site">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.1_150ppi.png" 
+				alt="Logo image" width="35.7" height="55" /></a>
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+	<div id="topic">
+<h1 id="integrating-databases">Integrating databases</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#integrating-databases" id="markdown-toc-integrating-databases">Integrating databases</a></li>
+  <li><a href="#integrating-databases-1" id="markdown-toc-integrating-databases-1">Integrating databases</a>    <ul>
+      <li><a href="#subsec:gnomad" id="markdown-toc-subsec:gnomad">Population genetics</a></li>
+      <li><a href="#phenotype-genotype-and-function" id="markdown-toc-phenotype-genotype-and-function">Phenotype, genotype, and function</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="integrating-databases-1">Integrating databases</h1>
+<h2 id="subsec:gnomad">Population genetics</h2>
+<p>GnomAD (version r2.0.2) [@lek2016analysis] was used in these studies as
+the best source of population genetics data. The reference genome is
+GRCh37. Offline local database mirrors were used in most cases. Input
+sets used GnomAD variant allele frequencies and reference sequences
+processed as VCF and CSV files. outlines a specific data transformation
+using the gnomAD database, but in general, gnomAD was used as a
+filtering threshold for determining the expected population frequency of
+each variant. A strict threshold for rare variants could be set to
+ignore and candidate variants that are more frequent than 0.001.
+However, in most cases a more lenient level is used and any remaining
+benign or common variants are removed by “technical control” (filter on
+cohort to remove common variants between individuals that do not share a
+phenotype). A more modest cut-off threshold allows us to sometimes
+identify variant that are present in the general population, which are
+responsible for a recessive disease with no predictable heterozygous
+loss-of-function intolerance.</p>
+
+<p>Other sources of population genetics data comes from resources such as
+CliVar and dbSNP, which as they grow in size become an annotated and
+curated for of population data. These resources allow us to calculate
+the expected frequencies for disease-causing variants. However, since
+these are manually curated database and predominantly European based,
+they are inherently biased and not reliable for statistical
+applications.</p>
+
+<h2 id="phenotype-genotype-and-function">Phenotype, genotype, and function</h2>
+<p>Population genetics database gnomAD has been individually addressed in
+section [subsec:gnomad], as this is the most important type of
+annotation and filtering criteria for genetic determinants of rare
+disease. Additionally, in these studies many phenotype and genotype
+databases have been used for annotation and interpretation.
+Specifically, the most frequently used data came from MGI Phenotype,
+MorbidMap, VOC MammalianPhenotype, Gencode symbol, UniProtKB, Enterez
+ID, ENSGene ID, GO ID, Description, OMIM, BIOGRID interactions, HGMD
+human phenotype, ClinVar, and dbSNP. In most cases, every candidate
+variant was annotated with the main information per gene from a local
+database containing the information from each of the listed resources.</p>
+
+<p>These are the “basic” information databases that we used to annotate
+variants. In a cohort study, data mining can find correlations and was
+therefore included for posterity as it does not significantly increase
+the data storage. Even if an obvious cause of disease was found we may
+later return to the data to find other cofactors or genetic modifiers.
+Or for example, in a single case study, a variant of unknown
+significance may have no statistical basis to be selected or ignored. We
+use this information to decide if that mutation is worth consideration:
+Is it in a protein domain of known function? Are there other cases
+reported with the same phenotype? What is the gene function, ontology,
+etc.?</p>
+
+<p>We have also used some gene lists that are specific to disease,
+druggability, etc. A major contributor for collecting these gene lists
+has been the Mac Arthur et al. [@macarthurgit]. These gene lists can be
+used is special cases. For example, a study looking at (1) dominant
+pathogenic mutations, and (2) in known immune genes might filter to
+included only those known observables. We could decide to only study
+SNPs in FDA-approved drug targets.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[</td>
+      <td>p[4.5cm]{}</td>
+      <td>c</td>
+      <td>p[6cm]{}</td>
+      <td>]{}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+&amp; [<strong>Gene Count</strong>]{} &amp; [<strong>Reference</strong>]{}<br />
+&amp; [19,194]{} &amp; [HUGO 2018 [@HUGO2018]]{}<br />
+[FDA-approved drug targets]{} &amp; [385]{} &amp; [Wishart 2018
+[@Wishart2018]]{}<br />
+[Drug targets]{} &amp; [201]{} &amp; [Nelson 2012 [@Nelson2012]]{}<br />
+[Autosomal dominant genes]{} &amp; [307]{} &amp; [Blekhman 2008
+[@Blekhman2008]]{}<br />
+[Autosomal dominant genes]{} &amp; [631]{} &amp; [Berg 2013 [@Berg2013]]{}<br />
+[Autosomal recessive genes]{} &amp; [527]{} &amp; [Blekhman 2008
+[@Blekhman2008]]{}<br />
+[Autosomal recessive genes]{} &amp; [1073]{} &amp; [Berg 2013 [@Berg2013]]{}<br />
+[X-linked genes]{} &amp; [66]{} &amp; [Blekhman 2008 [@Blekhman2008]]{}<br />
+[X-linked recessive genes]{} &amp; [102]{} &amp; [Berg 2013 [@Berg2013]]{}<br />
+[X-linked dominant genes]{} &amp; [34]{} &amp; [Berg 2013 [@Berg2013]]{}<br />
+[X-linked ClinVar genes]{} &amp; [61]{} &amp; [Landrum 2014 [@Landrum2014]]{}<br />
+[All dominant genes]{} &amp; [709]{} &amp; [Blekhman 2008, Berg 2013
+[@Blekhman2008; @Berg2013]]{}<br />
+[All recessive genes]{} &amp; [1183]{} &amp; [Blekhman 2008, Berg 2013
+[@Blekhman2008; @Berg2013]]{}<br />
+[Homozygous LoF tolerant]{} &amp; [330]{} &amp; [Lek 2016 [@lek2016analysis]]{}<br />
+[Essential in culture]{} &amp; [283]{} &amp; [Hart 2014 [@Hart2014]]{}<br />
+[Essential in culture*]{} &amp; [683]{} &amp; [Hart 2017 [@Hart2017]]{}<br />
+[Non-essential in culture*]{} &amp; [913]{} &amp; [Hart 2017 [@Hart2017]]{}<br />
+[Essential in mice]{} &amp; [2,454]{} &amp; [Blake ‘11, Georgi ‘13, Liu ‘13
+[@Blake2010; @Georgi2013; @Liu2013]]{}<br />
+[Genes nearest to GWAS peaks]{} &amp; [6,336]{} &amp; [MacArthur 2017
+[@MacArthur2017]]{}<br />
+[DNA Repair Genes]{} &amp; [178]{} &amp; [Wood 2005 [@Wood2005]]{}<br />
+[DNA Repair Genes]{} &amp; [151]{} &amp; [Kang 2012 [@Kang2012]]{}<br />
+[ClinGen haploinsufficient genes]{} &amp; [294]{} &amp; [Rehm 2015
+[@Rehm2015]]{}<br />
+[Olfactory receptors]{} &amp; [371]{} &amp; [Mainland 2015 [@Mainland2015]]{}<br />
+[Reported in ClinVar]{} &amp; [3078]{} &amp; [Landrum 2014 [@Landrum2014]]{}<br />
+[Kinases]{} &amp; [347]{} &amp; [UniProt 2016 [@UniProt2016]]{}<br />
+[GPCRs from guide to pharmacology]{} &amp; [391]{} &amp; [Alexander 2017,
+Harding 2018. [@Alexander2017; @Harding2017]]{}<br />
+[GPCRs from Uniprot]{} &amp; [756]{} &amp; [UniProt 2016 [@UniProt2016]]{}<br />
+[Natural product targets]{} &amp; [37]{} &amp; [Dancik 2010 [@Dancik2010]]{}<br />
+[BROCA - Cancer Risk Panel]{} &amp; [66]{} &amp; [BROCA Cancer Risk Panel
+[@BROCACancerRiskPanel]]{}<br />
+[ACMG V2.0]{} &amp; [59]{} &amp; [Kalia 2017 [@Kalia2016]]{}<br />
+[GPI-anchored proteins]{} &amp; [135]{} &amp; [UniProt 2016 [@UniProt2016]]{}\</p>
+
+<p>@verma2018rare take an interesting approach to comparing druggable
+targets with population genetics data. DrugBank is a database for over
+800 genes with over 950 unique drugs. Genetic data can be filtered for
+these genes and targeted for LoF variants. Association analysis consists
+of logistic regression using the ICD-9 codes, and linear regression
+using quantitative variables. This gene binding and regression analysis
+steps are done using BioBin.</p>
+
+<p>The International Statistical Classification of Diseases and Related
+Health Problems (commonly known as the ICD) provides alpha-numeric codes
+to classify diseases and a wide variety of signs, symptoms, abnormal
+findings, complaints, social circumstances and external causes of injury
+or disease. Nearly every health condition can be assigned to a unique
+category and given a code, up to six characters long. Such categories
+usually include a set of similar diseases</p>
+
+<p>BioBin relies on the Library of Knowledge Integration (LOKI), which
+integrates multiple databases providing a comprehensive biological
+knowledge platform for variant binning [@pendergrass2013genomic]. The
+LOKI database consolidates biological information from several sources,
+most notably the National Center for Biotechnology (NCBI) dbSNP and
+Entrez Gene, Kyoto Encyclopedia of Genes and Genomes (KEGG), Reactome,
+Gene Ontology (GO), Protein families database (Pfam), NetPath-signal
+transduction pathways, amongst others
+[@coordinators2017database; @kanehisa2011kegg; @milacic2012annotating; @ashburner2000gene; @finn2013pfam; @kandasamy2010netpath].</p>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="35.7" height="55"/></a>
+					<div class="right-root">
+						<p> Maintained by Dylan Lawless. Postdoc at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="https://dylan-lawless.github.io">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						</p>
+					</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

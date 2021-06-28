@@ -55,7 +55,7 @@ be much smaller. Sample sizes are usually also small for rare diseases.
 
 # Genomic analysis protocol
 The best-practice methods for genomic analysis are discussed in other posts 
-including ["Genomic analysis for rare disease"]({{ site.baseurl }}{% link _topic/precision_med/bioinformatics.md %}).
+including ["Genomic analysis for rare disease"]({{ site.baseurl }}{% link _topic/genomic_analysis/1_exome_seq.md %}).
 These methods are generally a routine protocol that is performed for every sample, 
 and dependant on the technology used; 
 i.e. genome sequencing with

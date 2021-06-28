@@ -31,6 +31,17 @@ This site is under live development; some placeholder pages are included for tes
 	</div>
 
 	<div class="subjects">
+		<h1>Genomics of rare disease</h1>
+		<ul class="topic">
+		{% assign sorted-topic = site.topic | where: "subject","Genomic analysis" %}
+		{% for topic in sorted-topic %}
+		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+		{% endfor %}
+		</ul>
+	</div>
+
+
+	<div class="subjects">
 		<h1>Intelligence topics</h1>
 		<ul class="topic">
 		{% assign sorted-topic = site.topic | where: "subject","cryptography" %}
