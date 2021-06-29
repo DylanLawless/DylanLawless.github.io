@@ -3,6 +3,7 @@ layout: topic
 title: Pharmacogenomic stargazing
 created: 05 Mar 2021
 tags: genomics
+status: finished
 subject: Precision medicine
 ---
 {{ page.title }}
@@ -20,9 +21,9 @@ The following protocol for is provided as one step in a larger process
 of annotation in genomic analysis._
 
 # Stargazer genotyping
-As reported in "Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program" [0],
-{% cite taliun2021sequencing }
-Taliun et al. use a method of known pharmacogene (PGx) variation annotation 
+As reported in "Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program"
+{% cite taliun2021sequencing %},
+use a method of known pharmacogene (PGx) variation annotation 
 that can be adapted for many other drug-gene database applications.
 The star allele nomenclature method is applied to large scale data to screen 
 for possible pharmacogenomic interactions.
