@@ -28,6 +28,6 @@ status: finished
 <!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=6 -->
 
 # Other media
-1. Adam Curtis documentary: [Cant Get You Out of My Head E04](https://www.youtube.com/watch?v=UglBcbz5pzQ&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=4
+1. Adam Curtis documentary: [Cant Get You Out of My Head E04](https://www.youtube.com/watch?v=UglBcbz5pzQ&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=4)
 2. Dan Carlin's Hardcore History - [Supernova in the East II](https://www.dancarlin.com/product/hardcore-history-63-supernova-in-the-east-ii/)
 
