@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-29T23:33:23+02:00</updated><id>/feed.xml</id><entry><title type="html">Weeknotes</title><link href="/2021/06/21/weekonotes_4.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-21T00:00:00+02:00</published><updated>2021-06-21T00:00:00+02:00</updated><id>/2021/06/21/weekonotes_4</id><content type="html" xml:base="/2021/06/21/weekonotes_4.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-06-30T12:09:02+02:00</updated><id>/feed.xml</id><entry><title type="html">Weeknotes</title><link href="/2021/06/28/weekonotes_5.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-28T00:00:00+02:00</published><updated>2021-06-28T00:00:00+02:00</updated><id>/2021/06/28/weekonotes_5</id><content type="html" xml:base="/2021/06/28/weekonotes_5.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;28 June 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Protein structure visualisation and mutation analysis for RSV F and G proteins.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Learning how to embed a protein structure viewer in websites.&lt;/li&gt;
+  &lt;li&gt;Reviewing Altman &amp;amp; Bland &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://fuel-design.com/publishing/soviet-cities/&quot;&gt;Soviet Cities, Arseniy Kotov&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812&quot;&gt;Genetics and Analysis of Quantitative Traits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Chapter 3 in reading &lt;a href=&quot;https://en.wikisource.org/wiki/Reading_Marx%27s_Capital_Vol_I_with_David_Harvey/Class_3&quot;&gt;Capital with David Harvey&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
+
+&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=UglBcbz5pzQ&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=4&quot;&gt;Cant Get You Out of My Head E04&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-63-supernova-in-the-east-ii/&quot;&gt;Supernova in the East II&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/21/weekonotes_4.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-21T00:00:00+02:00</published><updated>2021-06-21T00:00:00+02:00</updated><id>/2021/06/21/weekonotes_4</id><content type="html" xml:base="/2021/06/21/weekonotes_4.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;21 June 2021&lt;/p&gt;
 
@@ -7,9 +37,13 @@
   &lt;li&gt;Writing up paper on protein network analysis.&lt;/li&gt;
   &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Discussions with students about joining for projects.&lt;/li&gt;
+  &lt;li&gt;MSc student completes project and report.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Learning how to embed a FATSA multiple sequence alignment viewer in websites.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
 &lt;ol&gt;
@@ -24,6 +58,7 @@
 &lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=DPjSeZJmEVc&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=3&quot;&gt;Cant Get You Out of My Head E03&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-62-supernova-in-the-east-i/&quot;&gt;Supernova in the East I&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/14/weeknotes_3.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-14T00:00:00+02:00</published><updated>2021-06-14T00:00:00+02:00</updated><id>/2021/06/14/weeknotes_3</id><content type="html" xml:base="/2021/06/14/weeknotes_3.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;14 June 2021&lt;/p&gt;
@@ -1087,75 +1122,4 @@ The Quipper Language: programming language for quantum computing&lt;br /&gt;
 
 &lt;!-- 
 ![encrpytdata](https://i.imgur.com/UubXs0H.gif)
---&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">Cryptography</summary></entry><entry><title type="html">The devil is in the detail</title><link href="/2019/08/19/devil_in_detail.html" rel="alternate" type="text/html" title="The devil is in the detail" /><published>2019-08-19T00:00:00+02:00</published><updated>2019-08-19T00:00:00+02:00</updated><id>/2019/08/19/devil_in_detail</id><content type="html" xml:base="/2019/08/19/devil_in_detail.html">&lt;h1 id=&quot;the-devil-is-in-the-detail&quot;&gt;The devil is in the detail&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;19 Aug 2019&lt;/p&gt;
-&lt;p&gt;I was learning some &lt;a href=&quot;https://en.wikipedia.org/wiki/Steganography&quot;&gt;steganography&lt;/a&gt; methods for a security project. 
-At the same time, I was writing up a paper with some friends 
-(&lt;a href=&quot;https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf&quot;&gt;https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf&lt;/a&gt;) 
-and decided to hide a little message in one of the figures.
-The goal was to encode some hidden data and see could we get it back out 
-the other side, after publication.&lt;/p&gt;
-
-&lt;p&gt;It would be a lot of trouble for a master of espionage to have to publish a 
-paper every time a secret message needed to be encoded for public transmission, 
-but maybe it could be done!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/editor_paper_rag.png&quot; width=&quot;101%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The secret message was imported into &lt;a href=&quot;https://www.r-project.org&quot;&gt;R&lt;/a&gt; from plain text. 
-It was encoded into a png file that was to be a supplemental figure in our paper 
-From experience, supplemental figures usually get uploaded to a repository and
-stored in the same format for later downloaded after publication, 
-until main-text figures which are often converted in one way or another by the publisher. 
-Once the figure was released, anyone with the correct decoding algorithm 
-could get back the secret message.&lt;/p&gt;
-
-&lt;p&gt;In this case, I used the 
-&lt;a href=&quot;https://github.com/richfitz/stegasaur&quot;&gt;richfitz/stegasaur&lt;/a&gt; package, 
-innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
-The inforation was hidden within the data that makes up the image, 
-and is imperceivable to the naked eye. 
-Even better, the file size was slightly &lt;em&gt;SMALLER&lt;/em&gt; than the original 
-(1.9MB to 1.7MB) without a noticeable difference in quality. 
-After peer review of the paper, publisher proceessing and publication, 
-the secret message was successfully decoded from the protein structure figure 
-“F_E4_Structure.png” and was printed to the console:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/r_steg_decode.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This exercise looks like a bit of fun, 
-but was done to demonstrate the unavoidable 
-risks that exist in sensitive data research.&lt;sup id=&quot;fnref:foot&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:foot&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;
-Today, protected data enclaves are used for processing sensitive data 
-and usually allow summary results or figures to be exported.
-These are therefore basically a trust based system and are otherwise only security theatre.&lt;/p&gt;
-
-&lt;p&gt;Here’s an idea, &lt;a href=&quot;https://patents.google.com/patent/US8527779&quot;&gt;steganographic message blocks&lt;/a&gt; 
-seperated across a career worth of publications, 
-that can only be deciphered once all blocks are collected! 
-Who would go to that trouble? 
-Go see what you can find in one Supplementary material png file. 
-&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&quot;&gt;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;r-script&quot;&gt;R script &lt;/h1&gt;
-&lt;p&gt;Try it yourself.
-Find the paper and get Figure E4.
-Download
-&lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial&quot;&gt;10875_2019_670_MOESM5_ESM&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; install.packages(&quot;devtools&quot;)
-&amp;gt; install_github(&quot;richfitz/stegasaur&quot;)
-&amp;gt; library(&quot;devtools&quot;)
-&amp;gt; library(ggplot2) 
-&amp;gt; Decode message &amp;lt;- 
-&amp;gt;		stegasaur::decode(&quot;~/10875_2019_670_MOESM5_ESM.png&quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;footnote&quot;&gt;Footnote&lt;/h1&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:foot&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;/topic/medical-espionage&quot;&gt;Medical espionage&lt;/a&gt;. &lt;a href=&quot;#fnref:foot&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">The devil is in the detail</summary></entry></feed>
+--&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">Cryptography</summary></entry></feed>

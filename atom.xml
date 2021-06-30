@@ -4,13 +4,53 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-06-29T23:33:23+02:00</updated>
+ <updated>2021-06-30T12:09:02+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Weeknotes</title>
+   <link href="https://tom.preston-werner.com/2021/06/28/weekonotes_5.html"/>
+   <updated>2021-06-28T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2021/06/28/weekonotes_5</id>
+   <content type="html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;28 June 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Protein structure visualisation and mutation analysis for RSV F and G proteins.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Learning how to embed a protein structure viewer in websites.&lt;/li&gt;
+  &lt;li&gt;Reviewing Altman &amp;amp; Bland &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://fuel-design.com/publishing/soviet-cities/&quot;&gt;Soviet Cities, Arseniy Kotov&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812&quot;&gt;Genetics and Analysis of Quantitative Traits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Chapter 3 in reading &lt;a href=&quot;https://en.wikisource.org/wiki/Reading_Marx%27s_Capital_Vol_I_with_David_Harvey/Class_3&quot;&gt;Capital with David Harvey&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
+
+&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=UglBcbz5pzQ&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=4&quot;&gt;Cant Get You Out of My Head E04&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-63-supernova-in-the-east-ii/&quot;&gt;Supernova in the East II&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Weeknotes</title>
@@ -26,9 +66,13 @@
   &lt;li&gt;Writing up paper on protein network analysis.&lt;/li&gt;
   &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Discussions with students about joining for projects.&lt;/li&gt;
+  &lt;li&gt;MSc student completes project and report.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Learning how to embed a FATSA multiple sequence alignment viewer in websites.&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
 &lt;ol&gt;
@@ -43,6 +87,7 @@
 &lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=DPjSeZJmEVc&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=3&quot;&gt;Cant Get You Out of My Head E03&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-62-supernova-in-the-east-i/&quot;&gt;Supernova in the East I&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 </content>
