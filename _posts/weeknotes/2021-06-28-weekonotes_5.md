@@ -30,4 +30,4 @@ status: finished
 # Other media
 1. Adam Curtis documentary: [Cant Get You Out of My Head E04](https://www.youtube.com/watch?v=UglBcbz5pzQ&list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&index=4)
 2. Dan Carlin's Hardcore History - [Supernova in the East II](https://www.dancarlin.com/product/hardcore-history-63-supernova-in-the-east-ii/)
-
+3. Komeda Quintet - [Astigmatic (1966): Avant-garde Jazz](https://youtube.com/playlist?list=PLB5sZsze0CR9FRtpZ3OiSh-8pVc9Q0X5r)
