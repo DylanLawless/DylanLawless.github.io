@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-06-30T12:09:02+02:00</updated>
+ <updated>2021-07-01T21:32:11+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -47,8 +47,8 @@
 &lt;ol&gt;
   &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=UglBcbz5pzQ&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=4&quot;&gt;Cant Get You Out of My Head E04&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-63-supernova-in-the-east-ii/&quot;&gt;Supernova in the East II&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Komeda Quintet - &lt;a href=&quot;https://youtube.com/playlist?list=PLB5sZsze0CR9FRtpZ3OiSh-8pVc9Q0X5r&quot;&gt;Astigmatic (1966): Avant-garde Jazz&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
 </content>
  </entry>
  
@@ -8487,52 +8487,56 @@ number 11 on the list <a href="https://github.com/DylanLawless/notes/blob/main/2
   </li>
 </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Source of variation</th>
-      <th style="text-align: right">Degrees of freedom</th>
-      <th style="text-align: right">Sum of squares</th>
-      <th style="text-align: right">Mean square</th>
-      <th style="text-align: right">Variance ratio (F)</th>
-      <th style="text-align: right">Probability</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Subjects</td>
-      <td style="text-align: right">7</td>
-      <td style="text-align: right">2.9661</td>
-      <td style="text-align: right">0.4237</td>
-      <td style="text-align: right">48.3</td>
-      <td style="text-align: right">\(&lt;\)0.0001</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">PaCO2</td>
-      <td style="text-align: right">1</td>
-      <td style="text-align: right">0.1153</td>
-      <td style="text-align: right">0.1153</td>
-      <td style="text-align: right">13.1</td>
-      <td style="text-align: right">0.0008</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Residual</td>
-      <td style="text-align: right">38</td>
-      <td style="text-align: right">0.3337</td>
-      <td style="text-align: right">0.0088</td>
-      <td style="text-align: right"> </td>
-      <td style="text-align: right"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Total</td>
-      <td style="text-align: right">46</td>
-      <td style="text-align: right">3.3139</td>
-      <td style="text-align: right">0.0720</td>
-      <td style="text-align: right"> </td>
-      <td style="text-align: right"> </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Source of variation</th>
+        <th style="text-align: right">Degrees of freedom</th>
+        <th style="text-align: right">Sum of squares</th>
+        <th style="text-align: right">Mean square</th>
+        <th style="text-align: right">Variance ratio (F)</th>
+        <th style="text-align: right">Probability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Subjects</td>
+        <td style="text-align: right">7</td>
+        <td style="text-align: right">2.9661</td>
+        <td style="text-align: right">0.4237</td>
+        <td style="text-align: right">48.3</td>
+        <td style="text-align: right">\(&lt;\)0.0001</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">PaCO2</td>
+        <td style="text-align: right">1</td>
+        <td style="text-align: right">0.1153</td>
+        <td style="text-align: right">0.1153</td>
+        <td style="text-align: right">13.1</td>
+        <td style="text-align: right">0.0008</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">Residual</td>
+        <td style="text-align: right">38</td>
+        <td style="text-align: right">0.3337</td>
+        <td style="text-align: right">0.0088</td>
+        <td style="text-align: right"> </td>
+        <td style="text-align: right"> </td>
+      </tr>
+      <tr>
+        <td style="text-align: left">Total</td>
+        <td style="text-align: right">46</td>
+        <td style="text-align: right">3.3139</td>
+        <td style="text-align: right">0.0720</td>
+        <td style="text-align: right"> </td>
+        <td style="text-align: right"> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
 
 <ul>
   <li>The residual sum of squares in table II represents the variation about regression lines.</li>
@@ -8686,7 +8690,9 @@ We should ignore any P value printed by our computer program, and use a statisti
 
 <p>The formula for a weighted correlation coefficient is:</p>
 
-<p>[\frac{
+<div class="math-container">
+$$
+\frac{
 \sum{m_i \bar{x}_i \bar{y}_i} 
 -
 \sum{m_i \bar{x}_i} \sum{m_i \bar{y}_i} 
@@ -8708,7 +8714,9 @@ We should ignore any P value printed by our computer program, and use a statisti
  \mathbin{/}
  \sum{m_i}
  )}
- }]</p>
+ }
+ $$
+</div>
 
 <p>where all summations are from \(i=1\) to \(n\). 
 When all the \(m_i\) are equal they cancel out, 
@@ -10274,7 +10282,11 @@ The <em>residual sum of squares</em> (RSS) is written as
 \(\label{eq4}\tag{4} 
 RSS = e^2 _1 + e^2 _2 +...+ e^2 _n\)</p>
 
-<p>[RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+…+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.]</p>
+<div class="math-container">
+$$
+RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+...+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.
+$$
+</div>
 
 <p>The least squares method uses \(\hat\beta_0 and \hat\beta_1\) such that RSS is minimised. The minimisers are as follows</p>
 
@@ -10326,11 +10338,14 @@ Var( \hat\mu ) = SE( \hat\mu )^2 = \frac{\sigma^2}{n}]</p>
 This SE will shirk with more frequent observations.
 In the same direction we can measure the standard errors for \(\hat\beta_0\) and \(\hat\beta_1\)</p>
 
-<p>[\label{eq8}\tag{8} 
-SE(\hat\beta_0)^2 = \sigma\left[  \frac{1}{n}</p>
-<ul>
-  <li>\frac {\bar x^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 } \right]]</li>
-</ul>
+<div class="math-container">
+$$ 
+\label{eq8}\tag{8} 
+SE(\hat\beta_0)^2 = \sigma\left[  \frac{1}{n} 
++ 
+\frac {\bar x^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 } \right]
+$$
+</div>
 
 <p>[SE(\hat\beta_1)^2 =  \frac{1}{n}</p>
 <ul>
@@ -10352,13 +10367,18 @@ The same fomula is true for \(\beta_0\), swapping terms.</p>
 
 <h1 id="se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</h1>
 
-<p>The SE can be used for a <em>hypothesis test</em> on the corfficients, i.e. testing the <em>null hypothesis</em> and <em>alternative hypothesis</em>,<br />
-\(\label{eq10}\tag{10} 
-H_0 - there is not relationship between X and Y\)<br />
-\(H_0 : \beta_1 = 0\)
-\(H_0 - there is not relationship between X and Y\)
-\(H_a : \beta_1 = 0\),
-respectively.</p>
+<p>The SE can be used for a <em>hypothesis test</em> on the corfficients, i.e. testing the <em>null hypothesis</em> and <em>alternative hypothesis</em>,</p>
+
+<div class="math-container">
+$$
+\label{eq10}\tag{10}
+H_0 \text{- there is no relationship between X and Y}\\
+H_0 : \beta_1 = 0\\
+H_a \text{- there is some relationship between X and Y}\\
+H_a : \beta_1 \ne 0,
+$$
+</div>
+<p>respectively.</p>
 
 <p>Therefore if \(\beta_1 = 0\), according to
 \ref(eqn 6)
@@ -10393,7 +10413,10 @@ statistic.</p>
 the LR cannot perfectly predict \(Y\) from \(X\).
 RSE is an estimate of the SD of \(\epsilon\).</p>
 
-<p>[\label{eq12}\tag{12} 
+<div class="math-container">
+$$
+
+\label{eq12}\tag{12} 
 RSE = \sqrt{
 \frac{1}{n-2} RSS
 }
@@ -10402,7 +10425,10 @@ RSE = \sqrt{
 \frac{1}{n-2}
 \sum_{i=1}^n 
 (y_i - \hat y_i)^2
-}]</p>
+}
+
+$$ 
+</div>
 
 <p>The RSS part is expanded on the right hand side of the equation since:
 $$</p>
