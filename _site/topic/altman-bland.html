@@ -186,52 +186,56 @@ number 11 on the list <a href="https://github.com/DylanLawless/notes/blob/main/2
   </li>
 </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Source of variation</th>
-      <th style="text-align: right">Degrees of freedom</th>
-      <th style="text-align: right">Sum of squares</th>
-      <th style="text-align: right">Mean square</th>
-      <th style="text-align: right">Variance ratio (F)</th>
-      <th style="text-align: right">Probability</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Subjects</td>
-      <td style="text-align: right">7</td>
-      <td style="text-align: right">2.9661</td>
-      <td style="text-align: right">0.4237</td>
-      <td style="text-align: right">48.3</td>
-      <td style="text-align: right">\(&lt;\)0.0001</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">PaCO2</td>
-      <td style="text-align: right">1</td>
-      <td style="text-align: right">0.1153</td>
-      <td style="text-align: right">0.1153</td>
-      <td style="text-align: right">13.1</td>
-      <td style="text-align: right">0.0008</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Residual</td>
-      <td style="text-align: right">38</td>
-      <td style="text-align: right">0.3337</td>
-      <td style="text-align: right">0.0088</td>
-      <td style="text-align: right"> </td>
-      <td style="text-align: right"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Total</td>
-      <td style="text-align: right">46</td>
-      <td style="text-align: right">3.3139</td>
-      <td style="text-align: right">0.0720</td>
-      <td style="text-align: right"> </td>
-      <td style="text-align: right"> </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Source of variation</th>
+        <th style="text-align: right">Degrees of freedom</th>
+        <th style="text-align: right">Sum of squares</th>
+        <th style="text-align: right">Mean square</th>
+        <th style="text-align: right">Variance ratio (F)</th>
+        <th style="text-align: right">Probability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Subjects</td>
+        <td style="text-align: right">7</td>
+        <td style="text-align: right">2.9661</td>
+        <td style="text-align: right">0.4237</td>
+        <td style="text-align: right">48.3</td>
+        <td style="text-align: right">\(&lt;\)0.0001</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">PaCO2</td>
+        <td style="text-align: right">1</td>
+        <td style="text-align: right">0.1153</td>
+        <td style="text-align: right">0.1153</td>
+        <td style="text-align: right">13.1</td>
+        <td style="text-align: right">0.0008</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">Residual</td>
+        <td style="text-align: right">38</td>
+        <td style="text-align: right">0.3337</td>
+        <td style="text-align: right">0.0088</td>
+        <td style="text-align: right"> </td>
+        <td style="text-align: right"> </td>
+      </tr>
+      <tr>
+        <td style="text-align: left">Total</td>
+        <td style="text-align: right">46</td>
+        <td style="text-align: right">3.3139</td>
+        <td style="text-align: right">0.0720</td>
+        <td style="text-align: right"> </td>
+        <td style="text-align: right"> </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
 
 <ul>
   <li>The residual sum of squares in table II represents the variation about regression lines.</li>
@@ -385,7 +389,9 @@ We should ignore any P value printed by our computer program, and use a statisti
 
 <p>The formula for a weighted correlation coefficient is:</p>
 
-\[\frac{
+<div class="math-container">
+$$
+\frac{
 \sum{m_i \bar{x}_i \bar{y}_i} 
 -
 \sum{m_i \bar{x}_i} \sum{m_i \bar{y}_i} 
@@ -407,7 +413,9 @@ We should ignore any P value printed by our computer program, and use a statisti
  \mathbin{/}
  \sum{m_i}
  )}
- }\]
+ }
+ $$
+</div>
 
 <p>where all summations are from \(i=1\) to \(n\). 
 When all the \(m_i\) are equal they cancel out, 

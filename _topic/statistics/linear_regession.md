@@ -64,9 +64,11 @@ $$
 RSS = e^2 _1 + e^2 _2 +...+ e^2 _n
 $$
  
+<div class="math-container">
 $$
 RSS = (y_1-\hat\beta0-\hat\beta_1x_1)^2+(y_2-\hat\beta_0-\hat\beta_1x_2)^2+...+(y_n-\hat\beta_0-\hat\beta_1x_n)^2.
 $$
+</div>
 
 The least squares method uses $$ \hat\beta_0 and \hat\beta_1 $$ such that RSS is minimised. The minimisers are as follows
 
@@ -128,13 +130,14 @@ $$ \sigma $$ (sigma) is the standard deviation for every $$ y_i $$ of $$ Y $$ (a
 This SE will shirk with more frequent observations.
 In the same direction we can measure the standard errors for $$ \hat\beta_0 $$ and $$ \hat\beta_1 $$
 
+<div class="math-container">
 $$ 
 \label{eq8}\tag{8} 
 SE(\hat\beta_0)^2 = \sigma\left[  \frac{1}{n} 
 + 
 \frac {\bar x^2}{ \sum_{i=1}^{n} (x_i - \bar x)^2 } \right]
 $$
-
+</div>
 
 $$ 
 SE(\hat\beta_1)^2 =  \frac{1}{n} 
@@ -164,13 +167,16 @@ The same fomula is true for $$ \beta_0 $$, swapping terms.
 # SE in hypothesis tests for coefficients
 {% raw %}
 The SE can be used for a _hypothesis test_ on the corfficients, i.e. testing the _null hypothesis_ and _alternative hypothesis_,  
+
+<div class="math-container">
 $$
-\label{eq10}\tag{10} 
-H_0 - there is not relationship between X and Y
-$$  
-$$ H_0 : \beta_1 = 0 $$
-$$ H_0 - there is not relationship between X and Y $$
-$$ H_a : \beta_1 = 0 $$,
+\label{eq10}\tag{10}
+H_0 \text{- there is no relationship between X and Y}\\
+H_0 : \beta_1 = 0\\
+H_a \text{- there is some relationship between X and Y}\\
+H_a : \beta_1 \ne 0,
+$$
+</div>
 respectively.
 
 Therefore if $$ \beta_1 = 0 $$, according to
@@ -215,6 +221,7 @@ RSE is an estimate of the SD of $$
 \epsilon $$.
 
 
+<div class="math-container">
 $$
 
 \label{eq12}\tag{12} 
@@ -229,6 +236,7 @@ RSE = \sqrt{
 }
 
 $$ 
+</div>
 
 The RSS part is expanded on the right hand side of the equation since:
 $$

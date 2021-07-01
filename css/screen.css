@@ -338,10 +338,20 @@ table {
 .site {
 	text-align: left;
 	width: 45rem;
+	/* width: 70ch; */
 	max-width: 90%;
 	margin: 1rem auto 1rem auto;
 	/* line-height: 1.6rem; */
 	}
+
+.table-wrapper {
+  overflow-x: scroll;
+}
+
+.math-container {
+  overflow-x: auto;
+  display: block; /* or use a <div> instead of a span */
+}
 
 .title {
 	font-family: Baskerville;

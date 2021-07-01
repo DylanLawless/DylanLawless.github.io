@@ -64,12 +64,17 @@ To look at variation within the subject we can use multiple regression.
 	- Also known as analysis of covariance 
 	- Equivalent to fitting parallel lines through each subject's data. 
 
+<div class="table-wrapper" markdown="block">
+
 | Source of variation | Degrees of freedom | Sum of squares | Mean square | Variance ratio (F) | Probability |
 |:--------------------|-------------------:|---------------:|------------:|-------------------:|------------:|
 | Subjects | 7 | 2.9661 | 0.4237 | 48.3 | $$<$$0.0001 |
 | PaCO2 | 1 | 0.1153 | 0.1153 | 13.1 | 0.0008 |
 | Residual | 38 | 0.3337 | 0.0088 |  | |
 | Total | 46 | 3.3139 | 0.0720 |  | |
+
+</div>
+
 
 * The residual sum of squares in table II represents the variation about regression lines. 
 * This removes the variation due to subjects (and any other nuisance variables which might be present) and express the variation in Y due to X as a proportion of what's left: 
@@ -144,6 +149,8 @@ We should ignore any P value printed by our computer program, and use a statisti
 
 The formula for a weighted correlation coefficient is:
 
+
+<div class="math-container">
 $$
 \frac{
 \sum{m_i \bar{x}_i \bar{y}_i} 
@@ -169,6 +176,8 @@ $$
  )}
  }
  $$
+</div>
+
 
 where all summations are from $$i=1$$ to $$n$$. 
 When all the $$m_i$$ are equal they cancel out, 
