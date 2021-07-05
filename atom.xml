@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-05T13:40:17+02:00</updated>
+ <updated>2021-07-05T13:49:10+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -8725,6 +8725,7 @@ within the subject a rise in Y was associated with a fall in X.</p>
       <li><a href="#odds-ratio" id="markdown-toc-odds-ratio">Odds ratio</a></li>
       <li><a href="#standard-error" id="markdown-toc-standard-error">Standard error</a></li>
       <li><a href="#confidence-interval" id="markdown-toc-confidence-interval">Confidence interval</a></li>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
     </ul>
   </li>
 </ul>
@@ -8877,6 +8878,10 @@ We can test the null hypothesis that the OR is 1 by the usual
 
 <p>Despite their usefulness, ORs can cause difficulties in interpretation. 
 Altman &amp; Bland review this debate and also discuss ORs in logistic regression and case-control studies in future Statistics Notes.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="bland2000odds">Bland, J. M., &amp; Altman, D. G. (2000). The odds ratio. <i>Bmj</i>, <i>320</i>(7247), 1468.</span></li></ol>
 </p>
 
   <h2> - </h2>
