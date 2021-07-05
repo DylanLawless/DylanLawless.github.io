@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-01T21:32:11+02:00</updated>
+ <updated>2021-07-05T13:40:17+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -8389,16 +8389,10 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
 <h2 id="correlation-regression-and-repeated-data-1">Correlation, regression and repeated data</h2>
 
 <p>This topic is introduced as the first paper 
-(<a class="citation" href="#bland1994correlation">(Bland &amp; Altman, 1994)</a>)
-in a series of BMJ statistical notes by Altman and Bland
-(<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>):</p>
-<ul>
-  <li>
-    <ol>
-      <li>Bland JM, Altman DG. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6933/896"> Correlation, regression and repeated data.</a> <b>308</b>, 896.</li>
-    </ol>
-  </li>
-</ul>
+<a class="citation" href="#bland1994correlation">(Bland &amp; Altman, 1994)</a>
+in a series of BMJ statistical notes by Altman \&amp; Bland
+(<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>):
+1. Bland JM, Altman DG. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6933/896"> Correlation, regression and repeated data.</a> <b>308</b>, 896.</p>
 
 <p>It concerns the analysis of paired data where there is more than one observation per subject.
 They point out that it could be highly misleading to analyse such data by combining repeated observations from several subjects and then calculating the correlation coefficient as if the data were a simple sample.</p>
@@ -8415,14 +8409,8 @@ Thus demonstrating that one should not mix observations from different subjects 
 
 <p>The methods to use in these circumstances are later discussed in another note for the BMJ series
 <a class="citation" href="#bland1995statistics">(Bland &amp; Altman, 1995)</a>,
-number 11 on the list <a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>:</p>
-<ul>
-  <li>
-    <ol>
-      <li>Bland JM, Altman DG. (1995) <a href="http://www.bmj.com/cgi/content/full/310/6977/446">Calculating correlation coefficients with repeated observations: Part 1, correlation within subjects.</a> <b>310</b>, 446.</li>
-    </ol>
-  </li>
-</ul>
+number 11 on the list <a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>:
+11. Bland JM, Altman DG. (1995) <a href="http://www.bmj.com/cgi/content/full/310/6977/446">Calculating correlation coefficients with repeated observations: Part 1, correlation within subjects.</a> <b>310</b>, 446.</p>
 
 <p><em>Notes: I am replacing their terms for my notes:</em></p>
 <ul>
@@ -8570,14 +8558,8 @@ by ignoring the fact that we have 47 observations on only 8 subjects, would prod
 
 <p>The second part shows how to find the correlation between the subject means 
 <a class="citation" href="#bland1995calculating">(Bland &amp; Altman, 1995)</a>,
-number 12 on the list <a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>:</p>
-<ul>
-  <li>
-    <ol>
-      <li>Bland JM, Altman DG. (1995) <a href="http://www.bmj.com/cgi/content/full/310/6980/633">Calculating correlation coefficients with repeated observations: Part 2, correlation between subjects.</a> <b>310</b>, 633.</li>
-    </ol>
-  </li>
-</ul>
+number 12 on the list <a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>:
+12. Bland JM, Altman DG. (1995) <a href="http://www.bmj.com/cgi/content/full/310/6980/633">Calculating correlation coefficients with repeated observations: Part 2, correlation between subjects.</a> <b>310</b>, 633.</p>
 
 <p>In this note they show the example table using the same 8 subjects with <em>one mean observation</em> for X and Y:</p>
 
@@ -8732,6 +8714,169 @@ within the subject a rise in Y was associated with a fall in X.</p>
 <ol class="bibliography"><li><span id="bland1994correlation">Bland, J. M., &amp; Altman, D. G. (1994). Correlation, regression, and repeated data. <i>BMJ: British Medical Journal</i>, <i>308</i>(6933), 896.</span></li>
 <li><span id="bland1995statistics">Bland, J. M., &amp; Altman, D. G. (1995). Statistics notes: Calculating correlation coefficients with repeated observations: Part 1—correlation within subjects. <i>Bmj</i>, <i>310</i>(6977), 446.</span></li>
 <li><span id="bland1995calculating">Bland, J. M., &amp; Altman, D. G. (1995). Calculating correlation coefficients with repeated observations: Part 2—Correlation between subjects. <i>Bmj</i>, <i>310</i>(6980), 633.</span></li></ol>
+</p>
+
+  <h2> - </h2>
+  <p><h1 id="odds-ratios-se--ci">Odds ratios, SE &amp; CI</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#odds-ratios-se--ci" id="markdown-toc-odds-ratios-se--ci">Odds ratios, SE &amp; CI</a>    <ul>
+      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+      <li><a href="#odds-ratio" id="markdown-toc-odds-ratio">Odds ratio</a></li>
+      <li><a href="#standard-error" id="markdown-toc-standard-error">Standard error</a></li>
+      <li><a href="#confidence-interval" id="markdown-toc-confidence-interval">Confidence interval</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Altman &amp; Bland review the use of odds ratio (OR), standard error (SE), and confidence interval (CI) with some examples in 
+<a class="citation" href="#bland2000odds">(Bland &amp; Altman, 2000)</a>; 
+the 42nd paper on the list of statistical notes in their BMJ series,
+(<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>):
+42. Bland JM, Altman DG. (2000) <a href="http://www.bmj.com/cgi/content/full/320/7247/1468">The odds ratio.</a> <b>320</b>, 1468.</p>
+
+<p>In reproducing their examples I use \(X\) and \(Y\);</p>
+<ul>
+  <li><em>X = Eczema</em></li>
+  <li><em>Y = Hay fever</em></li>
+</ul>
+
+<p>As an example dataset, they cite the following table; Association between hay fever (Y) and eczema (X) in 11 year old children.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: right">Y Yes</th>
+      <th style="text-align: right">Y No</th>
+      <th style="text-align: right">Y Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><b>X Yes</b></td>
+      <td style="text-align: right">141</td>
+      <td style="text-align: right">420</td>
+      <td style="text-align: right">561</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><b>X No</b></td>
+      <td style="text-align: right">928</td>
+      <td style="text-align: right">13 525</td>
+      <td style="text-align: right">14 453</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><b>X Total</b></td>
+      <td style="text-align: right">1069</td>
+      <td style="text-align: right">13 945</td>
+      <td style="text-align: right">15 522</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="odds-ratio">Odds ratio</h2>
+
+<h3 id="perspective-1">Perspective 1</h3>
+<p>The <em>probability</em> that a child with X will also have Y
+is estimated by the proportion \(\dfrac{141}{561}\) (25.1%)
+and <em>odds</em> is estimated by \(\dfrac{141}{420}\).</p>
+
+<p>Similarly, for children without X the <em>probability</em> of having Y is estimated by \(\dfrac{928}{14 453}\) (6.4%) 
+and the odds is \(\dfrac{928}{13 525}\).</p>
+
+<p>They compare the groups in several ways:</p>
+<ul>
+  <li>By the difference between the proportions 
+\(\dfrac{141}{561} - \dfrac{928}{14 453} = 0.187\) (or 18.7 percentage points).</li>
+  <li>The ratio of the proportions (also called the relative risk) 
+\(\dfrac{ \left(\dfrac{141}{561}\right) }{ \left(\dfrac{928}{14 453}\right) } = 3.91\).</li>
+  <li>The OR
+\(\dfrac{ \left(\dfrac{141}{420}\right) }{ \left(\dfrac{928}{13 525}\right) } = 4.89\).</li>
+</ul>
+
+<h3 id="perspective-2">Perspective 2</h3>
+<p>Looking at the table the other way round, 
+What is the <em>probability</em> that a child with Y will also have X?</p>
+
+<p>The <em>proportion</em> is \(\dfrac{141}{1069}\) (13.2%) 
+and the <em>odds</em> is \(\dfrac{141}{928}\).</p>
+
+<p>For a child without Y, the <em>proportion</em> with X is 
+\(\dfrac{420}{13 945}\) (3.0%) 
+and the <em>odds</em> is \(\dfrac{420}{13 525}\).</p>
+
+<p>Comparing the proportions this way,</p>
+<ul>
+  <li>
+    <p>The difference is 
+\(\dfrac{141}{1069} - \dfrac{420}{13 945} = 0.102\) (or 10.2 percentage points);</p>
+  </li>
+  <li>The ratio (relative risk) 
+\(\dfrac{ \left(\dfrac{141}{1069}\right) }{ \left(\dfrac{420}{13 945}\right) } = 4.38\);</li>
+  <li>The OR
+\(\dfrac{ \left(\dfrac{141}{928}\right) }{ \left(\dfrac{420}{13 525}\right) } = 4.89\).</li>
+</ul>
+
+<p>The OR is the same whichever way round we look at the table, 
+but the difference and ratio of proportions are not.
+This is because the two OR are</p>
+
+<p>\(\dfrac{ 141 / \textbf{420} }{ \textbf{928} / 13 525 }\) and
+\(\dfrac{ 141 / \textbf{928} }{ \textbf{420} / 13 525 }\) 
+which can both be rearranged to give
+\(\dfrac{ 141 \times 13 525 }{ 928 \times 420 }\).</p>
+
+<p>Swapping orders in rows and columns produces the same OR \(1/4.89 = 0.204\).</p>
+
+<p>Thus, OR can indicate the strength of the relationship.
+OR cannot be negative but is not limited in the positive direction, producing a skew distribution. 
+Reversing the order of categories for one variables simply results in a reversed sign of log OR:</p>
+
+<p>\(log(4.89) = 1.59\),</p>
+
+<p>\(log(0.204) = - 1.59\).</p>
+
+<h2 id="standard-error">Standard error</h2>
+<p>The standard error (SE) can be calculated for the log OR and hence a confidence interval (CI).</p>
+
+<p>The SE of log OR is simply estimated by the square root of the sum of the reciprocals of the four frequencies. 
+For the example,
+\(\text{SE(}log \text{OR)} =
+\sqrt{
+\frac{1}{141} + 
+\frac{1}{420} + 
+\frac{1}{928} + 
+\frac{1}{13 525}}
+=
+0.103\)</p>
+
+<h2 id="confidence-interval">Confidence interval</h2>
+
+<p>A 95% confidence interval (CI) for the log OR is obtained as 1.96 standard errors on either side of the estimate.</p>
+
+<p>For the example, 
+the log OR is 
+\(log_{e} (4.89) = 1.588\) 
+and the confidence interval is 
+\(1.588 \pm 1.96 \times 0.103\), 
+which gives \(1.386\) to \(1.790\).</p>
+
+<p>The antilog of these limits to give a 95% CI for the OR itself, 
+as 
+\(exp(1.386) = 4.00\) to 
+\(exp(1.790) = 5.99\).</p>
+
+<p>The observed OR, 4.89, 
+is not in the centre of the confidence interval because of the asymmetrical nature of the OR scale. 
+For this reason, in graphs ORs are often plotted using a logarithmic scale. 
+The OR is 1 when there is no relationship. 
+We can test the null hypothesis that the OR is 1 by the usual 
+\({\chi}^2\) test for a two by two table.</p>
+
+<p>Despite their usefulness, ORs can cause difficulties in interpretation. 
+Altman &amp; Bland review this debate and also discuss ORs in logistic regression and case-control studies in future Statistics Notes.</p>
 </p>
 
   <h2> - </h2>
@@ -10222,6 +10367,14 @@ https://www.statology.org/fishers-exact-test-in-r/</p>
 <p>Fisher’s Exact Test Calculator
 https://www.statology.org/fishers-exact-test-calculator/</p>
 
+</p>
+
+  <h2> - </h2>
+  <p><h1 id="head">Head</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#head" id="markdown-toc-head">Head</a></li>
+</ul>
 </p>
 
   <h2> - </h2>
