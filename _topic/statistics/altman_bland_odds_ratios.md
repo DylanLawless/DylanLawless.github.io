@@ -129,3 +129,7 @@ $${\chi}^2$$ test for a two by two table.
 
 Despite their usefulness, ORs can cause difficulties in interpretation. 
 Altman & Bland review this debate and also discuss ORs in logistic regression and case-control studies in future Statistics Notes.
+
+## References 
+
+{% bibliography --cited %}
