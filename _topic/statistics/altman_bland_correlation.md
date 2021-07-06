@@ -1,8 +1,24 @@
+---
+layout: topic
+title: Correlation, regression and repeated data
+created: 29 June 2021
+tags: statistics
+status: finished
+subject: statistics
+---
+{{ page.title }}
+================
+
+* TOC
+{:toc}
+
 ## Correlation, regression and repeated data
-The first paper on the list
-@bland1994correlation
-[ lit-altman_bland.md ]( 202106291417-lit-altman_bland.md ) is:
-* 1. Bland JM, Altman DG. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6933/896"> Correlation, regression and repeated data.</a> <b>308</b>, 896.
+
+This topic is introduced as the first paper 
+{% cite bland1994correlation %}
+in a series of BMJ statistical notes by Altman \& Bland
+([ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md )):
+1\. Bland JM, Altman DG. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6933/896"> Correlation, regression and repeated data.</a> <b>308</b>, 896.
 
 It concerns the analysis of paired data where there is more than one observation per subject.
 They point out that it could be highly misleading to analyse such data by combining repeated observations from several subjects and then calculating the correlation coefficient as if the data were a simple sample.
@@ -16,10 +32,11 @@ When the calculation is performed as if they have 25 subjects, the number of deg
 Thus demonstrating that one should not mix observations from different subjects indiscriminately, whether using correlation or the closely related regression analysis.
 
 ## Correlation within subjects, part 1
+
 The methods to use in these circumstances are later discussed in another note for the BMJ series
-@bland1995statistics,
-number 11 on the list [ lit-altman_bland.md ]( 202106291417-lit-altman_bland.md ):
-* 11. Bland JM, Altman DG. (1995) <a href="http://www.bmj.com/cgi/content/full/310/6977/446">Calculating correlation coefficients with repeated observations: Part 1, correlation within subjects.</a> <b>310</b>, 446.
+{% cite bland1995statistics %},
+number 11 on the list [ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md ):
+11\. Bland JM, Altman DG. (1995) <a href="http://www.bmj.com/cgi/content/full/310/6977/446">Calculating correlation coefficients with repeated observations: Part 1, correlation within subjects.</a> <b>310</b>, 446.
 
 _Notes: I am replacing their terms for my notes:_
 * _X = Paco2_
@@ -47,18 +64,23 @@ To look at variation within the subject we can use multiple regression.
 	- Also known as analysis of covariance 
 	- Equivalent to fitting parallel lines through each subject's data. 
 
+<div class="table-wrapper" markdown="block">
+
 | Source of variation | Degrees of freedom | Sum of squares | Mean square | Variance ratio (F) | Probability |
 |:--------------------|-------------------:|---------------:|------------:|-------------------:|------------:|
-| Subjects | 7 | 2.9661 | 0.4237 | 48.3 | $<$0.0001 |
+| Subjects | 7 | 2.9661 | 0.4237 | 48.3 | $$<$$0.0001 |
 | PaCO2 | 1 | 0.1153 | 0.1153 | 13.1 | 0.0008 |
 | Residual | 38 | 0.3337 | 0.0088 |  | |
 | Total | 46 | 3.3139 | 0.0720 |  | |
+
+</div>
+
 
 * The residual sum of squares in table II represents the variation about regression lines. 
 * This removes the variation due to subjects (and any other nuisance variables which might be present) and express the variation in Y due to X as a proportion of what's left: 
 	- (Sum of squares for X)/(Sum of squares for X + residual sum of squares).
 * The magnitude of the correlation coefficient within subjects is the square root of this proportion. 
-	- For table II this is: $\sqrt{ \frac{0.1153}{0.1153+0.3337} } = 0.51 $
+	- For table II this is: $$\sqrt{ \frac{0.1153}{0.1153+0.3337} } = 0.51 $$
 	- The sign of the correlation coefficient is given by the sign of the regression coefficient for X.
 * Regression slope is -0.108
 * So the correlation coefficient within subjects is -0.51. 
@@ -72,10 +94,11 @@ Incorrectly calculating the correlation coefficient
 by ignoring the fact that we have 47 observations on only 8 subjects, would produce -0.07, P=0.7. 
 
 ## Correlation within subjects, part 2
+
 The second part shows how to find the correlation between the subject means 
-@bland1995calculating,
-number 12 on the list [ lit-altman_bland.md ]( 202106291417-lit-altman_bland.md ):
-* 12. Bland JM, Altman DG. (1995) <a href="http://www.bmj.com/cgi/content/full/310/6980/633">Calculating correlation coefficients with repeated observations: Part 2, correlation between subjects.</a> <b>310</b>, 633.
+{% cite bland1995calculating %},
+number 12 on the list [ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md ):
+12\. Bland JM, Altman DG. (1995) <a href="http://www.bmj.com/cgi/content/full/310/6980/633">Calculating correlation coefficients with repeated observations: Part 2, correlation between subjects.</a> <b>310</b>, 633.
 
 In this note they show the example table using the same 8 subjects with _one mean observation_ for X and Y:
 
@@ -103,16 +126,16 @@ Does not take into account the different numbers of measurements on each subject
 We can calculate a weighted correlation coefficient using the number of observations as weights. 
 Many computer programs will calculate this, but it is not difficult to do by hand.
 
-* They denote the mean Y and X for subject i by $\bar{x}_i$ and $\bar{y}_i$, 
-* the number of observations for subject i by $m_i$, 
-* and the number of subjects by $n$. 
-* The weighted mean of the $\bar{x}_i$ is 
-$\frac{ \sum{ m_i \bar{x}_i } }{ \sum{ m_i } }$
+* They denote the mean Y and X for subject i by $$\bar{x}_i$$ and $$\bar{y}_i$$, 
+* the number of observations for subject i by $$m_i$$, 
+* and the number of subjects by $$n$$. 
+* The weighted mean of the $$\bar{x}_i$$ is 
+$$\frac{ \sum{ m_i \bar{x}_i } }{ \sum{ m_i } }$$
 <!-- (summation)mixi/(summation)mi. --> 
 
-In the usual case, where there is one observation per subject, the $m_i$ 
+In the usual case, where there is one observation per subject, the $$m_i$$ 
 are all one and this formula gives the usual mean 
-$\frac{ \sum{\bar{x}_i} }{n} $.
+$$\frac{ \sum{\bar{x}_i} }{n} $$.
 <!-- (summation)xi/n. -->
 
 An easy way to calculate the weighted correlation coefficient is to replace each individual observation by its subject mean. 
@@ -126,38 +149,46 @@ We should ignore any P value printed by our computer program, and use a statisti
 
 The formula for a weighted correlation coefficient is:
 
+
+<div class="math-container">
 $$
 \frac{
 \sum{m_i \bar{x}_i \bar{y}_i} 
-- 
-- \sum{m_i \bar{x}_i} \sum{m_i \bar{y}_i} 
-- \mathbin{/}
-- \sum{m_i}
-- }{
-- \sqrt{
--  ( 
--  \sum{m_i \bar{y}_i^2} 
--  -
--  (\sum{m_i \bar{y}_i})^2 
--  \mathbin{/}
--  \sum{m_i}
--  )
--  ( 
--  \sum{m_i \bar{y}_i^2} 
--  -
--  (\sum{m_i \bar{y}_i})^2 
--  \mathbin{/}
--  \sum{m_i}
--  )}
--  }
--  $$
--  }}
+-
+\sum{m_i \bar{x}_i} \sum{m_i \bar{y}_i} 
+\mathbin{/}
+\sum{m_i}
+}{
+\sqrt{
+ ( 
+ \sum{m_i \bar{y}_i^2} 
+ -
+ (\sum{m_i \bar{y}_i})^2 
+ \mathbin{/}
+ \sum{m_i}
+ )
+ ( 
+ \sum{m_i \bar{y}_i^2} 
+ -
+ (\sum{m_i \bar{y}_i})^2 
+ \mathbin{/}
+ \sum{m_i}
+ )}
+ }
+ $$
+</div>
 
-where all summations are from $i=1$ to $n$. 
-When all the $m_i$ are equal they cancel out, 
+
+where all summations are from $$i=1$$ to $$n$$. 
+When all the $$m_i$$ are equal they cancel out, 
 giving the usual formula for a correlation coefficient.
 
 For the data in the table the weighted correlation coefficient is r=0.08, P=0.9. 
 There is no evidence that subjects with a high Y also have a high X. 
 However, as they have already shown in part 1, 
 within the subject a rise in Y was associated with a fall in X.
+
+
+## References 
+
+{% bibliography --cited %}
