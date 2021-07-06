@@ -7,6 +7,10 @@ kramdown:
      bibliography: references.bib
      # style: apa
 
+url: "https://lawlessgenomics.com"
+plugins:
+  - jekyll-sitemap
+
 collections:
     topic:
         output: true
