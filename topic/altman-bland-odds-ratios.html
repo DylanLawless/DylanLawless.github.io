@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Odds ratios, SE & CI</title>
+	<meta name="author" content="LawlessGenomics" />
+	<!-- <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" /> -->
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+<div class="site">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.1_150ppi.png" 
+				alt="Logo image" width="35.7" height="55" /></a>
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+	<div id="topic">
+<h1 id="odds-ratios-se--ci">Odds ratios, SE &amp; CI</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#odds-ratios-se--ci" id="markdown-toc-odds-ratios-se--ci">Odds ratios, SE &amp; CI</a>    <ul>
+      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+      <li><a href="#odds-ratio" id="markdown-toc-odds-ratio">Odds ratio</a></li>
+      <li><a href="#standard-error" id="markdown-toc-standard-error">Standard error</a></li>
+      <li><a href="#confidence-interval" id="markdown-toc-confidence-interval">Confidence interval</a></li>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Altman &amp; Bland review the use of odds ratio (OR), standard error (SE), and confidence interval (CI) with some examples in 
+<a class="citation" href="#bland2000odds">(Bland &amp; Altman, 2000)</a>; 
+the 42nd paper on the list of statistical notes in their BMJ series,
+(<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>):
+42. Bland JM, Altman DG. (2000) <a href="http://www.bmj.com/cgi/content/full/320/7247/1468">The odds ratio.</a> <b>320</b>, 1468.</p>
+
+<p>In reproducing their examples I use \(X\) and \(Y\);</p>
+<ul>
+  <li><em>X = Eczema</em></li>
+  <li><em>Y = Hay fever</em></li>
+</ul>
+
+<p>As an example dataset, they cite the following table; Association between hay fever (Y) and eczema (X) in 11 year old children.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: right">Y Yes</th>
+      <th style="text-align: right">Y No</th>
+      <th style="text-align: right">Y Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><b>X Yes</b></td>
+      <td style="text-align: right">141</td>
+      <td style="text-align: right">420</td>
+      <td style="text-align: right">561</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><b>X No</b></td>
+      <td style="text-align: right">928</td>
+      <td style="text-align: right">13 525</td>
+      <td style="text-align: right">14 453</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><b>X Total</b></td>
+      <td style="text-align: right">1069</td>
+      <td style="text-align: right">13 945</td>
+      <td style="text-align: right">15 522</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="odds-ratio">Odds ratio</h2>
+
+<h3 id="perspective-1">Perspective 1</h3>
+<p>The <em>probability</em> that a child with X will also have Y
+is estimated by the proportion \(\dfrac{141}{561}\) (25.1%)
+and <em>odds</em> is estimated by \(\dfrac{141}{420}\).</p>
+
+<p>Similarly, for children without X the <em>probability</em> of having Y is estimated by \(\dfrac{928}{14 453}\) (6.4%) 
+and the odds is \(\dfrac{928}{13 525}\).</p>
+
+<p>They compare the groups in several ways:</p>
+<ul>
+  <li>By the difference between the proportions 
+\(\dfrac{141}{561} - \dfrac{928}{14 453} = 0.187\) (or 18.7 percentage points).</li>
+  <li>The ratio of the proportions (also called the relative risk) 
+\(\dfrac{ \left(\dfrac{141}{561}\right) }{ \left(\dfrac{928}{14 453}\right) } = 3.91\).</li>
+  <li>The OR
+\(\dfrac{ \left(\dfrac{141}{420}\right) }{ \left(\dfrac{928}{13 525}\right) } = 4.89\).</li>
+</ul>
+
+<h3 id="perspective-2">Perspective 2</h3>
+<p>Looking at the table the other way round, 
+What is the <em>probability</em> that a child with Y will also have X?</p>
+
+<p>The <em>proportion</em> is \(\dfrac{141}{1069}\) (13.2%) 
+and the <em>odds</em> is \(\dfrac{141}{928}\).</p>
+
+<p>For a child without Y, the <em>proportion</em> with X is 
+\(\dfrac{420}{13 945}\) (3.0%) 
+and the <em>odds</em> is \(\dfrac{420}{13 525}\).</p>
+
+<p>Comparing the proportions this way,</p>
+<ul>
+  <li>
+    <p>The difference is 
+\(\dfrac{141}{1069} - \dfrac{420}{13 945} = 0.102\) (or 10.2 percentage points);</p>
+  </li>
+  <li>The ratio (relative risk) 
+\(\dfrac{ \left(\dfrac{141}{1069}\right) }{ \left(\dfrac{420}{13 945}\right) } = 4.38\);</li>
+  <li>The OR
+\(\dfrac{ \left(\dfrac{141}{928}\right) }{ \left(\dfrac{420}{13 525}\right) } = 4.89\).</li>
+</ul>
+
+<p>The OR is the same whichever way round we look at the table, 
+but the difference and ratio of proportions are not.
+This is because the two OR are</p>
+
+<p>\(\dfrac{ 141 / \textbf{420} }{ \textbf{928} / 13 525 }\) and
+\(\dfrac{ 141 / \textbf{928} }{ \textbf{420} / 13 525 }\) 
+which can both be rearranged to give
+\(\dfrac{ 141 \times 13 525 }{ 928 \times 420 }\).</p>
+
+<p>Swapping orders in rows and columns produces the same OR \(1/4.89 = 0.204\).</p>
+
+<p>Thus, OR can indicate the strength of the relationship.
+OR cannot be negative but is not limited in the positive direction, producing a skew distribution. 
+Reversing the order of categories for one variables simply results in a reversed sign of log OR:</p>
+
+<p>\(log(4.89) = 1.59\),</p>
+
+<p>\(log(0.204) = - 1.59\).</p>
+
+<h2 id="standard-error">Standard error</h2>
+<p>The standard error (SE) can be calculated for the log OR and hence a confidence interval (CI).</p>
+
+<p>The SE of log OR is simply estimated by the square root of the sum of the reciprocals of the four frequencies. 
+For the example,
+\(\text{SE(}log \text{OR)} =
+\sqrt{
+\frac{1}{141} + 
+\frac{1}{420} + 
+\frac{1}{928} + 
+\frac{1}{13 525}}
+=
+0.103\)</p>
+
+<h2 id="confidence-interval">Confidence interval</h2>
+
+<p>A 95% confidence interval (CI) for the log OR is obtained as 1.96 standard errors on either side of the estimate.</p>
+
+<p>For the example, 
+the log OR is 
+\(log_{e} (4.89) = 1.588\) 
+and the confidence interval is 
+\(1.588 \pm 1.96 \times 0.103\), 
+which gives \(1.386\) to \(1.790\).</p>
+
+<p>The antilog of these limits to give a 95% CI for the OR itself, 
+as 
+\(exp(1.386) = 4.00\) to 
+\(exp(1.790) = 5.99\).</p>
+
+<p>The observed OR, 4.89, 
+is not in the centre of the confidence interval because of the asymmetrical nature of the OR scale. 
+For this reason, in graphs ORs are often plotted using a logarithmic scale. 
+The OR is 1 when there is no relationship. 
+We can test the null hypothesis that the OR is 1 by the usual 
+\({\chi}^2\) test for a two by two table.</p>
+
+<p>Despite their usefulness, ORs can cause difficulties in interpretation. 
+Altman &amp; Bland review this debate and also discuss ORs in logistic regression and case-control studies in future Statistics Notes.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="bland2000odds">Bland, J. M., &amp; Altman, D. G. (2000). The odds ratio. <i>Bmj</i>, <i>320</i>(7247), 1468.</span></li></ol>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="35.7" height="55"/></a>
+					<div class="right-root">
+						<p> Maintained by Dylan Lawless. Postdoc at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						</p>
+					</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
