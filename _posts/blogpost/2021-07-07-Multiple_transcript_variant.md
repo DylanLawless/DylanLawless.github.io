@@ -49,7 +49,7 @@ Transcript [2]
 * Exon 1 is 55 nucleotides.
 * position start 73,878,862	end 73,878,808.
 
-# Mutation example
+## Mutation example
 A DNA mutation at position g.73,878,863 A>T
 
 This mutation will only affect transcript [2] at
@@ -58,7 +58,7 @@ and protein position p.Met1Leu.
 
 Transcript [1] is not affected because the coding sequence begins later in the DNA sequence. 
 
-# cDNA note
+## cDNA note
 The cDNA position notation is used for simplicity. 
 We assume the parts of genomic DNA that will remain after splicing (introns and upstream/downstream sequences removed), and call this the coding DNA (cDNA).
 We can physically create cDNA when we collect mRNA from a cell and do reverse Transcription PCR (RT-PCR) to make a DNA copy.
