@@ -4,13 +4,233 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-06T20:44:59+02:00</updated>
+ <updated>2021-07-08T16:43:55+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
    <email>tom@mojombo.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Credited for a newly added immune gene in IUIS</title>
+   <link href="https://tom.preston-werner.com/2021/07/08/iuis.html"/>
+   <updated>2021-07-08T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2021/07/08/iuis</id>
+   <content type="html">&lt;h1 id=&quot;credited-for-a-newly-added-immune-gene-in-iuis&quot;&gt;Credited for a newly added immune gene in IUIS&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;08 Feb 2021&lt;/p&gt;
+
+&lt;p&gt;Forgive this self-praise, but I am very happy that our recent paper 
+&lt;em&gt;Germline TET2 loss of function causes childhood immunodeficiency and lymphoma&lt;/em&gt;
+&lt;a class=&quot;citation&quot; href=&quot;#stremenova2020germline&quot;&gt;(Stremenova Spegarova et al., 2020)&lt;/a&gt; has been 
+credited for a newly added immune gene in &lt;em&gt;Novel inborn errors of immunity: an Interim Update by the IUIS Committee&lt;/em&gt;
+&lt;a href=&quot;https://doi.org/10.1007/s10875-021-00980-1&quot;&gt;full link&lt;/a&gt;,
+&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007/s10875-021-00980-1.pdf&quot;&gt;pdf&lt;/a&gt;,
+as &lt;a href=&quot;https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1&quot;&gt;TET2 in table 1&lt;/a&gt;
+&lt;a class=&quot;citation&quot; href=&quot;#tangye2021ever&quot;&gt;(Tangye et al., 2021)&lt;/a&gt;.
+It has been included for the gene list of &lt;em&gt;Autoinflammatory diseases&lt;/em&gt; based on our work in 3 patients, 2 families with autosomal recessive loss-of-function.
+Since I began research on the genomics of immunology, the IUIS list of genes has been an extremely important reference for my work to which I am now thrilled to &lt;em&gt;give back&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;International Union of Immunological Societies (IUIS) &lt;a href=&quot;https://iuis.org&quot;&gt;IUIS.org&lt;/a&gt;;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The International Union of Immunological Societies (IUIS) is an umbrella organization for many of the regional and national societies of immunology throughout the world. As articulated in its Constitution, the objectives of IUIS are:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;to organize international co-operation in immunology and to promote communication between the various branches of immunology and allied subjects&lt;/li&gt;
+    &lt;li&gt;to encourage within each scientifically independent territory co-operation between the Societies that represent the interests of immunology&lt;/li&gt;
+    &lt;li&gt;to contribute to the advancement of immunology in all its aspects.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From &lt;em&gt;Novel inborn errors of immunity: an Interim Update by the IUIS Committee&lt;/em&gt;,&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Inborn errors of immunity (IEI) are generally considered to result from monogenic germline defects that manifest as increased susceptibility to severe and/or recurrent infectious diseases, autoimmune or autoinflammatory conditions, atopic manifestations, and hematopoietic or solid tissue malignancies [&lt;a href=&quot;https://doi.org/10.1126/sciimmunol.abb1662&quot;&gt;1&lt;/a&gt;]. 
+Over the past decade, the discovery of new IEIs has been occurring at an impressive rate. 
+Indeed, the 2011 biennial update published by the IUIS Committee update listed 191 IEIs; this number increased to 430 in the 2019 update
+[&lt;a href=&quot;https://doi.org/10.1007/s10875-020-00758-x&quot;&gt;2&lt;/a&gt;],
+[&lt;a href=&quot;https://doi.org/10.1007/s10875-019-00737-x&quot;&gt;3&lt;/a&gt;].
+This near-exponential increase in gene discovery is being driven by the accessibility and affordability of next-generation sequencing, and the efficient application of these technologies to elucidate the molecular etiology of unsolved cases of IEIs that are likely to result from single-gene defects
+&lt;a href=&quot;https://doi.org/10.1016/j.jaci.2016.08.003&quot;&gt;4&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Over the last 12 months, we have witnessed the ongoing rapid identification, and occasionally detailed molecular, biochemical, and cellular characterization, of genetic variants that cause, or are at least associated with, human diseases impacting host defense or immune regulation.
+Here, we will summarize reports on variants detected in 26 genes which we consider represent novel IEI 
+(&lt;a href=&quot;https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1&quot;&gt;Table 1&lt;/a&gt;).
+Many additional genetic variants have been reported recently. 
+However, those listed here have been adjudicated by the IUIS Committee to meet the strict criteria to be considered disease-causing
+&lt;a href=&quot;https://doi.org/10.1084/jem.20140520&quot;&gt;57&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Our paper took several years to complete, 
+although the genomic analysis worked incredibly well in this case - 
+a patient presented as described in &lt;strong&gt;figure 1&lt;/strong&gt; (Fig. S3 in publication);
+after running the routine pipeline that we had made, the result was immediately the top candidate, number one, as cause of disease in a single patient, lymphoma with immunodeficiency and autoinflammtory disease
+&lt;a class=&quot;citation&quot; href=&quot;#stremenova2020germline&quot;&gt;(Stremenova Spegarova et al., 2020)&lt;/a&gt;.
+We then found that our collaborator had a second family with a LoF in the same gene causing the same severe immunological features.
+By combining the families for further genomic and functional analysis work over several years we finally produced a robust explanation for the disease and strong evidence of the immunological features.
+The summarised information can be read in 
+&lt;a href=&quot;https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1&quot;&gt;Table 1 Newly validated inborn errors of immunity&lt;/a&gt;.
+The patient histories are shown in 
+&lt;em&gt;Supplemental Figure S3: Clinical timelines.&lt;/em&gt;
+(this version with legend from my PhD thesis),
+&lt;a href=&quot;/images/posts/clinical_history_summary.pdf&quot;&gt;(pdf version)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/clinical_history_summary.pdf&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The gene of interest, &lt;em&gt;TET2&lt;/em&gt; is intriguing since it is the monogenic cause of disease but has a widespread mechanism of action throughout the genome by epigenetic effects.
+From one of my unpublished documents, in reference to different types of epigenetic systems;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The effect of mutations which disrupt any of these systems have been described as damaging toward (i) epigenetic modifiers, (ii) epigenetic mediators, and (iii) epigenetic modulators [&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26972587/&quot;&gt;15&lt;/a&gt;]. Epigenetic modifiers are genes whose products have direct involvement; protein coding genes that control DNA methylation, post-translational modification, or higher-order chromatin structure (e.g. TET2, IDH, ARID). Mutation in these genes can have a cascade effect since they control the regulation of many downstream genes. The downstream genes which are targeted by the modifiers are epigenetic mediators.
+Damaging mutations in mediators might only be linked with epigenetics when they occur in, for example, tumour suppressor genes resulting in the same disease as mutation in one of the upstream epigenetic modifiers. Epigenetic modulators are upstream of modifiers and have the potential to induce or suppress differentiation-specific epigenetic states. Pro-inflammatory NF-κB signalling has been reported as an example of a modulator that links the environment and epigenome [&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26972587/&quot;&gt;15&lt;/a&gt;]. Excessive signalling in this pathway can trigger an epigenetically-dependant interleukin-6 positive feed-back loop.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;table-wrapper&quot;&gt;
+
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic modulators&lt;/th&gt;
+        &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic modifiers&lt;/th&gt;
+        &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic mediators&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;Secondary effect on multiple pathways (NF-kB, IL-6)&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;Primary effect on multiple genes (TET2, IDH1)&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;Primary effect on single genes (IGF-2, OCT4, WNT)&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic modulators&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic modifiers&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic mediators&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Secondary effect on multiple pathways (NF-kB, IL-6)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Primary effect on multiple genes (TET2, IDH1)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Primary effect on single genes (IGF-2, OCT4, WNT)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;one&lt;/th&gt;
+      &lt;th&gt;two&lt;/th&gt;
+      &lt;th&gt;three&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;one&lt;/td&gt;
+      &lt;td&gt;two&lt;/td&gt;
+      &lt;td&gt;three&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;When a protein has widespread control for many other genes, a LoF variant is often embryonic lethal and would never result in a relatively narrow phenotype. 
+For TET2 LoF, we found that completely disrupting the genome-wide methylation process causes a pronounced immunological phenotype.
+Unfortunately, the disease can be very difficult to correct without successful haematopoietic stem cell transplantation.
+In such cases, a great deal of biological understanding is gained that may otherwise have taken very long to elucidate.&lt;/p&gt;
+
+&lt;p&gt;Loss of TET2 in humans has severe consequences including haematological malignancy.
+Yet, it has also been shown that TET2 knock-out can improve anti-tumour therapy for the same reasons;
+Fraietta et al. showed that while developing therapeutic CD19-targeted T cells (CAR-T anti-tumour therapy), the integration of the CD19-CAR sequence happened to interrupt the TET2 coding sequence by chance
+&lt;a class=&quot;citation&quot; href=&quot;#fraietta2018disruption&quot;&gt;(Fraietta et al., 2018)&lt;/a&gt;.
+This fortuitous integration event had a combined effect; disrupting TET2 promoted the therapeutic efficacy of CD19-targeted T cells in the patient. 
+Inhibiting TET2 normally would not be considered ameliorative in cancer immunology. 
+However, in this case the pathogenic effect of TET2 deficiency allowed for more successful CAR-T cell therapy. 
+It is likely that this type of combined genetic alteration will improve CART function. This anecdotal example demonstrates the lymphoproliferative effect of TET2 deficiency.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;stremenova2020germline&quot;&gt;Stremenova Spegarova, J., Lawless, D., Mohamad, S. M. B., Engelhardt, K. R., Doody, G., Shrimpton, J., Rensing-Ehl, A., Ehl, S., Rieux-Laucat, F., Cargo, C., &amp;amp; others. (2020). Germline TET2 loss of function causes childhood immunodeficiency and lymphoma. &lt;i&gt;Blood&lt;/i&gt;, &lt;i&gt;136&lt;/i&gt;(9), 1055–1066.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;tangye2021ever&quot;&gt;Tangye, S. G., Al-Herz, W., Bousfiha, A., Cunningham-Rundles, C., Franco, J. L., Holland, S. M., Klein, C., Morio, T., Oksenhendler, E., Picard, C., &amp;amp; others. (2021). The ever-increasing array of novel inborn errors of immunity: an interim update by the IUIS committee. &lt;i&gt;Journal of Clinical Immunology&lt;/i&gt;, &lt;i&gt;41&lt;/i&gt;(3), 666–679.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;fraietta2018disruption&quot;&gt;Fraietta, J. A., Nobles, C. L., Sammons, M. A., Lundh, S., Carty, S. A., Reich, T. J., Cogdill, A. P., Morrissette, J. J. D., DeNizio, J. E., Reddy, S., &amp;amp; others. (2018). Disruption of TET2 promotes the therapeutic efficacy of CD19-targeted T cells. &lt;i&gt;Nature&lt;/i&gt;, &lt;i&gt;558&lt;/i&gt;(7709), 307.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Multiple transcript variant</title>
+   <link href="https://tom.preston-werner.com/2021/07/07/Multiple_transcript_variant.html"/>
+   <updated>2021-07-07T00:00:00+02:00</updated>
+   <id>https://tom.preston-werner.com/2021/07/07/Multiple_transcript_variant</id>
+   <content type="html">&lt;h1 id=&quot;multiple-transcript-variant&quot;&gt;Multiple transcript variant&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;07 July 2021&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;A colleague asked me about why there are multiple mRNA transcripts with different variant positions from a single variant in human genomic DNA.
+Here is a short summary to answer that question (forgiving over-simiplifications).
+First, a quick recap of how DNA is used to protuce proteins.
+Then an example of a gene where the mRNA could be spliced more than one way by the splisosome complex.&lt;/p&gt;
+
+&lt;h2 id=&quot;dna-to-protein&quot;&gt;DNA to protein&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Genomic DNA (only one version per cell/individual).&lt;/li&gt;
+  &lt;li&gt;Transcription to pre-mRNA (one exact copy of DNA as mRNA).&lt;/li&gt;
+  &lt;li&gt;Splicing pre-mRNA to mRNA transcript (introns removed by splisosome). One version or several slightly different versions.&lt;/li&gt;
+  &lt;li&gt;Spliced mRNA (messenger mRNA) translated into amino acid peptide chain.&lt;/li&gt;
+  &lt;li&gt;Peptide chain folds into protein.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Genomic DNA is transcripted over and over, in every cell (ignoring tissue-speicif expression, dynamics, etc.).
+When the pre-mRNA is spliced, there may be multiple versions produced.
+It all depends on how the splicing complex recognizes the intron/exon sequences. 
+This also explains why &lt;em&gt;splice mutations&lt;/em&gt; occur in 4-5 the nucleotides around the junction between exon and intron. 
+The is the part of the sequence that is recognised by the splisosome.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.researchgate.net/profile/Alen-Faiz/publication/224006658/figure/fig3/AS:203040918380546@1425420135624/Transcripts-from-a-single-gene-can-undergo-different-splicing-events-When-mRNA-is_W840.jpg&quot;&gt;image0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fig.cox.miami.edu/~cmallery/255/255hist/mcb4.1.dogma.jpg&quot;&gt;image1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;transcript-example&quot;&gt;Transcript example&lt;/h2&gt;
+&lt;p&gt;Transcript [1]
+&lt;a href=&quot;https://www.ensembl.org/Homo_sapiens/Transcript/Exons?db=core;g=ENSG00000104343;r=8:73780097-73878910;t=ENST00000650817&quot;&gt;link to ensemble/UBE2W-207&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Transcript UBE2W-207 ENST00000602593.6 8379bp 151aa.&lt;/li&gt;
+  &lt;li&gt;Exon 1 is 103 nucleotides.&lt;/li&gt;
+  &lt;li&gt;position start 73,878,910	end 73,878,808.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Transcript [2]
+&lt;a href=&quot;https://www.ensembl.org/Homo_sapiens/Transcript/Exons?db=core;g=ENSG00000104343;r=8:73780097-73878910;t=ENST00000602593&quot;&gt;link to ensemble/UBE2W-208&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Transcript UBE2W-208 ENST00000650817.1 8459bp	191aa.&lt;/li&gt;
+  &lt;li&gt;Exon 1 is 55 nucleotides.&lt;/li&gt;
+  &lt;li&gt;position start 73,878,862	end 73,878,808.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;mutation-example&quot;&gt;Mutation example&lt;/h1&gt;
+&lt;p&gt;A DNA mutation at position g.73,878,863 A&amp;gt;T&lt;/p&gt;
+
+&lt;p&gt;This mutation will only affect transcript [2] at
+cDNA (mRNA) position c.2A&amp;gt;T
+and protein position p.Met1Leu.&lt;/p&gt;
+
+&lt;p&gt;Transcript [1] is not affected because the coding sequence begins later in the DNA sequence.&lt;/p&gt;
+
+&lt;h1 id=&quot;cdna-note&quot;&gt;cDNA note&lt;/h1&gt;
+&lt;p&gt;The cDNA position notation is used for simplicity. 
+We assume the parts of genomic DNA that will remain after splicing (introns and upstream/downstream sequences removed), and call this the coding DNA (cDNA).
+We can physically create cDNA when we collect mRNA from a cell and do reverse Transcription PCR (RT-PCR) to make a DNA copy.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mun.ca/biology/desmid/brian/BIOL2060/BIOL2060-21/21_22.jpg&quot;&gt;image2&lt;/a&gt;
+&lt;a href=&quot;https://i.servimg.com/u/f21/17/30/76/23/splice10.png&quot;&gt;image3&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Weeknotes</title>
