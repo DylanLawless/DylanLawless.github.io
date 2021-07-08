@@ -20,7 +20,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description"
 content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
-	<title>Weeknotes</title>
+	<title>Multiple transcript variant</title>
 	<meta name="author" content="LawlessGenomics" />
 	<!-- <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" /> -->
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
@@ -75,30 +75,70 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 	</div>
 
 	<div id="post">
-<h1 id="weeknotes">Weeknotes</h1>
+<h1 id="multiple-transcript-variant">Multiple transcript variant</h1>
 
-<p class="meta">7 June 2021</p>
+<p class="meta">07 July 2021</p>
 
-<h1 id="work">Work</h1>
+<h2 id="introduction">Introduction</h2>
+<p>A colleague asked me about why there are multiple mRNA transcripts with different variant positions from a single variant in human genomic DNA.
+Here is a short summary to answer that question (forgiving over-simiplifications).
+First, a quick recap of how DNA is used to protuce proteins.
+Then an example of a gene where the mRNA could be spliced more than one way by the splisosome complex.</p>
+
+<h2 id="dna-to-protein">DNA to protein</h2>
 <ol>
-  <li>Writing methods on <a href="https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250">viral association genetics</a>.</li>
-  <li>Genetic variance in viral clades.</li>
-  <li>Creating toy datasets for testing code.</li>
-  <li>Wrote code for power calcualtions with PPI network pathways and define the smallest testable sets (cohort sizes).</li>
+  <li>Genomic DNA (only one version per cell/individual).</li>
+  <li>Transcription to pre-mRNA (one exact copy of DNA as mRNA).</li>
+  <li>Splicing pre-mRNA to mRNA transcript (introns removed by splisosome). One version or several slightly different versions.</li>
+  <li>Spliced mRNA (messenger mRNA) translated into amino acid peptide chain.</li>
+  <li>Peptide chain folds into protein.</li>
 </ol>
 
-<h1 id="reading">Reading</h1>
-<ol>
-  <li><a href="https://en.wikipedia.org/wiki/The_Honourable_Schoolboy">The Honourable Schoolboy</a>, John le Carré.</li>
-  <li><a href="https://www.amazon.com/Advanced-Level-Statistics-Francis/dp/0859508137">Advanced level statistics</a>, A. Francis. A good read on basic fundamentals but not a prefered over other modern textbooks with R code.</li>
-</ol>
+<p>Genomic DNA is transcripted over and over, in every cell (ignoring tissue-speicif expression, dynamics, etc.).
+When the pre-mRNA is spliced, there may be multiple versions produced.
+It all depends on how the splicing complex recognizes the intron/exon sequences. 
+This also explains why <em>splice mutations</em> occur in 4-5 the nucleotides around the junction between exon and intron. 
+The is the part of the sequence that is recognised by the splisosome.</p>
 
-<h1 id="other-media">Other media</h1>
-<ol>
-  <li>Oliver Nelson - <a href="https://www.youtube.com/watch?v=k-zaI8lLrQA">The Blues And The Abstract Truth 1961</a>.</li>
-  <li>Podcast - BBC, In Our Time with Melvyn Bragg, <a href="https://www.bbc.co.uk/programmes/b0435jyv">Photosynthesis</a></li>
-  <li>Adam Curtis documentary: <a href="https://www.youtube.com/watch?v=hqX1J-1LyzA&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=1">Cant Get You Out of My Head E01</a></li>
-</ol>
+<p><a href="https://www.researchgate.net/profile/Alen-Faiz/publication/224006658/figure/fig3/AS:203040918380546@1425420135624/Transcripts-from-a-single-gene-can-undergo-different-splicing-events-When-mRNA-is_W840.jpg">image0</a></p>
+
+<p><a href="http://fig.cox.miami.edu/~cmallery/255/255hist/mcb4.1.dogma.jpg">image1</a></p>
+
+<h2 id="transcript-example">Transcript example</h2>
+<p>Transcript [1]
+<a href="https://www.ensembl.org/Homo_sapiens/Transcript/Exons?db=core;g=ENSG00000104343;r=8:73780097-73878910;t=ENST00000650817">link to ensemble/UBE2W-207</a></p>
+
+<ul>
+  <li>Transcript UBE2W-207 ENST00000602593.6 8379bp 151aa.</li>
+  <li>Exon 1 is 103 nucleotides.</li>
+  <li>position start 73,878,910	end 73,878,808.</li>
+</ul>
+
+<p>Transcript [2]
+<a href="https://www.ensembl.org/Homo_sapiens/Transcript/Exons?db=core;g=ENSG00000104343;r=8:73780097-73878910;t=ENST00000602593">link to ensemble/UBE2W-208</a></p>
+
+<ul>
+  <li>Transcript UBE2W-208 ENST00000650817.1 8459bp	191aa.</li>
+  <li>Exon 1 is 55 nucleotides.</li>
+  <li>position start 73,878,862	end 73,878,808.</li>
+</ul>
+
+<h1 id="mutation-example">Mutation example</h1>
+<p>A DNA mutation at position g.73,878,863 A&gt;T</p>
+
+<p>This mutation will only affect transcript [2] at
+cDNA (mRNA) position c.2A&gt;T
+and protein position p.Met1Leu.</p>
+
+<p>Transcript [1] is not affected because the coding sequence begins later in the DNA sequence.</p>
+
+<h1 id="cdna-note">cDNA note</h1>
+<p>The cDNA position notation is used for simplicity. 
+We assume the parts of genomic DNA that will remain after splicing (introns and upstream/downstream sequences removed), and call this the coding DNA (cDNA).
+We can physically create cDNA when we collect mRNA from a cell and do reverse Transcription PCR (RT-PCR) to make a DNA copy.</p>
+
+<p><a href="https://www.mun.ca/biology/desmid/brian/BIOL2060/BIOL2060-21/21_22.jpg">image2</a>
+<a href="https://i.servimg.com/u/f21/17/30/76/23/splice10.png">image3</a></p>
 
 </div>
 
@@ -108,9 +148,9 @@ content="A home for topics in human precision medicine, genomic analysis, and da
     
       <li><span>08 Jul 2021</span> &raquo; <a href="/2021/07/08/iuis.html">Credited for a newly added immune gene in IUIS</a></li>
     
-      <li><span>07 Jul 2021</span> &raquo; <a href="/2021/07/07/Multiple_transcript_variant.html">Multiple transcript variant</a></li>
-    
       <li><span>28 Jun 2021</span> &raquo; <a href="/2021/06/28/weekonotes_5.html">Weeknotes</a></li>
+    
+      <li><span>21 Jun 2021</span> &raquo; <a href="/2021/06/21/weekonotes_4.html">Weeknotes</a></li>
     
   </ul>
 </div>
