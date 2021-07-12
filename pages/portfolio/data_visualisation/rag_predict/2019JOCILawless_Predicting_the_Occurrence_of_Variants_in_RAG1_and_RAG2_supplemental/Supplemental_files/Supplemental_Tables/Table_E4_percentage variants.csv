@@ -1,0 +1,6 @@
+﻿Percentage of mutated vs unmutated variatns in RAG1/2,,,,
+Gene,Status,value,Total_residues,Percentage
+RAG1,Unmutated,584,1043,55.99232982
+RAG1,Mutated,459,1043,44.00767018
+RAG2,Unmutated,295,527,55.9772296
+RAG2,Mutated,232,527,44.0227704
