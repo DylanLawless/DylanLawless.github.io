@@ -320,8 +320,11 @@ div#content a {
 
 a {
 	color: #c13e3e;
+	transition: color 150ms ease;
 	}
 
+a:active,
+a:focus,
 a:hover {
 	color: #fb6565;
 	}
