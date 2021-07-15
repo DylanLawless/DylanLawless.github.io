@@ -199,7 +199,7 @@ The Global Alliance for Genomics and Health (GA4GH) is leading the effort in
 safe data access. 
 > "GA4GH is a policy-framing and technical standards-setting organization, 
 > seeking to enable responsible genomic data sharing within a human rights framework.
-> Enabling responsible genomic data sharing for the benefit of human health. "
+> Enabling responsible genomic data sharing for the benefit of human health."
 
 The [driver projects promoted by GA4GH](https://www.ga4gh.org/how-we-work/driver-projects/) 
 are the some of the best real world examples

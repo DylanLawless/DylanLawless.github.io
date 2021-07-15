@@ -447,15 +447,14 @@ table {
 	background: #eee;
 	}
 
-
-/* portfolio css */
-body {font-family: 'Bitter', Georgia, Times, sans-serif;}
-    h1 {margin: 2em;}
-    .pswp__caption__center {text-align: center;}
-    figure {
-      display: inline-block;
-      width: 33.333%;
-      float: left;
-    }
-    img {width: 100%;}
-    .spacer {height: 5em;}
+blockquote {
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	}
+	blockquote:before {
+	color: #ccc;
+	}
+	blockquote p {
+	display: inline;
+	}
