@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description"
+content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Receiver operating characteristic plots</title>
+	<meta name="author" content="LawlessGenomics" />
+	<!-- <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" /> -->
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+<div class="site">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.1_150ppi.png" 
+				alt="Logo image" width="35.7" height="55" /></a>
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+	<div id="topic">
+<h1 id="receiver-operating-characteristic-plots">Receiver operating characteristic plots</h1>
+
+<h2 id="receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</h2>
+<p>This article covers the fifth paper in the series of statistics notes <a class="citation" href="#altman1994diagnostic">(Altman &amp; Bland, 1994)</a>
+(<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>):
+is: 5. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/309/6948/188"> Diagnostic tests 3: receiver operating characteristic plots.</a> <b>309</b>, 188,
+and concerns <em>quantitative diagnostic tests</em>.
+Diagnosis based on yes or no answers are covered in another statistical note by Bland and Altman.
+The same statistical methods for quantifying yes or no answers can be applied here when there is a cut off threshold for defining “<em>normal</em>” and “<em>abnormal</em>”.
+For simplicity, I will call someone who is diagnosed by a clinical test a “<em>case</em>” and someone who is not diagnosed by a test/healthy/normal, a “<em>control</em>”.
+These terms are incorrect, but much simpler to read each time than “people who are diagnosed by a test”.</p>
+
+<p>The receiver operating characteristic (ROC) plot can be used measure how test results compare between cases and controls.
+Altman and Bland mention that this method was developed in the 1950s for evaluating radar signal detection.
+As an aside for history buffs, from <a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">wikipedia</a>:</p>
+<blockquote>
+  <p>The ROC curve was first used during World War II for the analysis of radar signals before it was employed in signal detection theory.[56] Following the attack on Pearl Harbor in 1941, the United States army began new research to increase the prediction of correctly detected Japanese aircraft from their radar signals. For these purposes they measured the ability of a radar receiver operator to make these important distinctions, which was called the Receiver Operating Characteristic.[57]</p>
+</blockquote>
+
+<p><img src="/images/receiver_operating_characteristic_plots.png" width="60%" /></p>
+
+<p>The example shown in Figure 1 uses graft versus host disease, with an index measurement whose definition is not important.
+The yes indicate cases and no indicate controls in our terminology, respectively. 
+The usefulness of the test for predicting graft versus host disease will clearly relate to the degree of non-overlap between the two distributions.
+A ROC plot is obtained by calculating the</p>
+<ul>
+  <li>sensitivity and</li>
+  <li>specificity 
+of every observed data value and plotting, as in Figure 2,</li>
+  <li>Y axis = sensitivity,</li>
+  <li>X axis = 1 - specificity.</li>
+</ul>
+
+<p>A test that perfectly defines cases and cotrols would have a curve that aligns withe Y axis and top.
+A test that does not work would produce a straight line matching the centerline.
+In practice, overlaps always occur such that the curve usually lies somewhere between, as shown in Figure 2.</p>
+
+<p>The performance of the test (diagnostic accuracy) is reported as the <em>area under the ROC curve</em>.
+The area is equal to the probability that a random case has a higher measurement than that of a control.
+This probability is .5 for a test that does not work (e.g. coin-toss; straight line curve).
+This discriminatory power assessment is important for a clinical test if it is to be sufficient to discriminate cases and controls.</p>
+
+<p>At this stage we have the global assessment of discriminatory power showing that a test can divide cases and control.
+A cut off for clinical use also requires a local assessment. 
+As per Altman and Bland; the simple approach of minimising “errors” (equivalent to maximising the sum of the sensitivity and specificity) is not necessarily best. 
+We must consider any type of costs of</p>
+<ul>
+  <li>false negatives</li>
+  <li>false positives</li>
+  <li>and prevalence of disease in the test cohort.</li>
+</ul>
+
+<p>In their example:</p>
+<ul>
+  <li>cancer in general population
+    <ul>
+      <li>most cases should be detected (high sensitivity)</li>
+      <li>many false positives (low specificity), who could then be eliminated by a further test.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For comparing two or more measures, the ROC plot is useful. 
+The curve wholly above another is clearly the better test. 
+Altman and Bland cite a review for methods for comparing the areas under two curves for both paired and unpaired data.</p>
+
+<p>In my (reccomended) pocket-sized copy of 
+<em>Oxford handbook of medical statistics</em>
+<a class="citation" href="#peacock2011oxford">(Peacock &amp; Peacock, 2011)</a>,
+a clinical example uses a chosen cut-off of sensitivity \(&gt;81\%\) and specificity \(28\%\). 
+The area under ROC curve was .65, thus a moderately high predictive power. 
+The accuracy (proportion of all correctly identified cases) was 
+\(\frac{ 30 + 42 }{ 185 } = 39\%\)</p>
+
+<div class="table-wrapper">
+
+\[\frac{\text{No. cases above cutoff} + \text{No. controls below cutoff }}{ \text{cohort total} }\]
+
+</div>
+
+<h2 id="references">references</h2>
+
+<ol class="bibliography"><li><span id="altman1994diagnostic">Altman, D. G., &amp; Bland, J. M. (1994). Diagnostic tests 3: receiver operating characteristic plots. <i>BMJ: British Medical Journal</i>, <i>309</i>(6948), 188.</span></li>
+<li><span id="peacock2011oxford">Peacock, J., &amp; Peacock, P. (2011). <i>Oxford handbook of medical statistics</i>. Oxford university press.</span></li></ol>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="35.7" height="55"/></a>
+					<div class="right-root">
+						<p> Maintained by Dylan Lawless. Postdoc at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						</p>
+					</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
