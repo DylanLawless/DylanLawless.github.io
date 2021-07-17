@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-17T12:50:32+02:00</updated>
+ <updated>2021-07-17T12:56:35+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -8916,6 +8916,12 @@ Altman &amp; Bland review this debate and also discuss ORs in logistic regressio
 
   <h2> - </h2>
   <p><h1 id="receiver-operating-characteristic-plots">Receiver operating characteristic plots</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#receiver-operating-characteristic-plots-1" id="markdown-toc-receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</a></li>
+  <li><a href="#example-roc-cuvre" id="markdown-toc-example-roc-cuvre">Example ROC cuvre</a></li>
+  <li><a href="#references" id="markdown-toc-references">references</a></li>
+</ul>
 
 <h2 id="receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</h2>
 <p>This article covers the fifth paper in the series of statistics notes <a class="citation" href="#altman1994diagnostic">(Altman &amp; Bland, 1994)</a>
