@@ -78,39 +78,28 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 Reading time 41 minutes
 <h1 id="rag">RAG</h1>
 <ul id="markdown-toc">
-  <li><a href="#rag" id="markdown-toc-rag">RAG</a></li>
-  <li><a href="#abstract" id="markdown-toc-abstract">Abstract</a></li>
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#methods" id="markdown-toc-methods">Methods</a>    <ul>
-      <li><a href="#population-genetics-and-data-sources" id="markdown-toc-population-genetics-and-data-sources">Population genetics and data sources</a></li>
-      <li><a href="#data-processing" id="markdown-toc-data-processing">Data processing</a></li>
-      <li><a href="#raw-data-availability-and-analysis-script" id="markdown-toc-raw-data-availability-and-analysis-script">Raw data availability and analysis script</a></li>
-      <li><a href="#data-visualisation" id="markdown-toc-data-visualisation">Data visualisation</a></li>
-      <li><a href="#validation-of-mrf-against-functional-data" id="markdown-toc-validation-of-mrf-against-functional-data">Validation of MRF against functional data</a></li>
-    </ul>
-  </li>
-  <li><a href="#results" id="markdown-toc-results">Results</a>    <ul>
-      <li><a href="#rag1-and-rag2-conservation-and-mutation-rate-residue-frequency" id="markdown-toc-rag1-and-rag2-conservation-and-mutation-rate-residue-frequency">RAG1 and RAG2 conservation and mutation rate residue frequency</a></li>
-      <li><a href="#mrf-scores-select-for-confirmed-variants-in-human-disease" id="markdown-toc-mrf-scores-select-for-confirmed-variants-in-human-disease">MRF scores select for confirmed variants in human disease</a></li>
-      <li><a href="#top-candidate-variants-require-validation" id="markdown-toc-top-candidate-variants-require-validation">Top candidate variants require validation</a></li>
-      <li><a href="#false-positives-in-transib-domains-do-not-negatively-impact-prediction" id="markdown-toc-false-positives-in-transib-domains-do-not-negatively-impact-prediction">False positives in <em>Transib</em> domains do not negatively impact prediction</a></li>
-      <li><a href="#mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants" id="markdown-toc-mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants">MRF predicts RAG deficiency amongst PID patients harbouring rare variants</a></li>
-      <li><a href="#mrf-supplements-pathogenicity-prediction-tools-for-translational-research" id="markdown-toc-mrf-supplements-pathogenicity-prediction-tools-for-translational-research">MRF supplements pathogenicity prediction tools for translational research</a></li>
-      <li><a href="#figure" id="markdown-toc-figure">Figure</a></li>
-    </ul>
-  </li>
-  <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
-  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a>    <ul>
-      <li><a href="#main-supplemental-data-table" id="markdown-toc-main-supplemental-data-table">Main supplemental data table</a></li>
-      <li><a href="#clinical-relevance-of-top-candidates" id="markdown-toc-clinical-relevance-of-top-candidates">Clinical relevance of top candidates</a></li>
-      <li><a href="#supplemental-analysis-tables" id="markdown-toc-supplemental-analysis-tables">Supplemental analysis tables</a></li>
-      <li><a href="#protein-structure-application" id="markdown-toc-protein-structure-application">Protein structure application</a></li>
-      <li><a href="#median-cadd-score-per-residue" id="markdown-toc-median-cadd-score-per-residue">Median CADD score per residue</a></li>
-      <li><a href="#supplemental-file" id="markdown-toc-supplemental-file">Supplemental file</a></li>
-      <li><a href="#genome-wide-and-disease-specific-application" id="markdown-toc-genome-wide-and-disease-specific-application">Genome-wide and disease-specific application</a></li>
-      <li><a href="#bayesian-probability" id="markdown-toc-bayesian-probability">Bayesian probability</a></li>
-    </ul>
-  </li>
+  <li><a href="#ethics-statement" id="markdown-toc-ethics-statement">Ethics statement</a></li>
+  <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
+  <li><a href="#population-genetics-and-data-sources" id="markdown-toc-population-genetics-and-data-sources">Population genetics and data sources</a></li>
+  <li><a href="#data-processing" id="markdown-toc-data-processing">Data processing</a></li>
+  <li><a href="#raw-data-availability-and-analysis-script" id="markdown-toc-raw-data-availability-and-analysis-script">Raw data availability and analysis script</a></li>
+  <li><a href="#data-visualisation" id="markdown-toc-data-visualisation">Data visualisation</a></li>
+  <li><a href="#validation-of-mrf-against-functional-data" id="markdown-toc-validation-of-mrf-against-functional-data">Validation of MRF against functional data</a></li>
+  <li><a href="#rag1-and-rag2-conservation-and-mutation-rate-residue-frequency" id="markdown-toc-rag1-and-rag2-conservation-and-mutation-rate-residue-frequency">RAG1 and RAG2 conservation and mutation rate residue frequency</a></li>
+  <li><a href="#mrf-scores-select-for-confirmed-variants-in-human-disease" id="markdown-toc-mrf-scores-select-for-confirmed-variants-in-human-disease">MRF scores select for confirmed variants in human disease</a></li>
+  <li><a href="#top-candidate-variants-require-validation" id="markdown-toc-top-candidate-variants-require-validation">Top candidate variants require validation</a></li>
+  <li><a href="#false-positives-in-transib-domains-do-not-negatively-impact-prediction" id="markdown-toc-false-positives-in-transib-domains-do-not-negatively-impact-prediction">False positives in <em>Transib</em> domains do not negatively impact prediction</a></li>
+  <li><a href="#mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants" id="markdown-toc-mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants">MRF predicts RAG deficiency amongst PID patients harbouring rare variants</a></li>
+  <li><a href="#mrf-supplements-pathogenicity-prediction-tools-for-translational-research" id="markdown-toc-mrf-supplements-pathogenicity-prediction-tools-for-translational-research">MRF supplements pathogenicity prediction tools for translational research</a></li>
+  <li><a href="#figure" id="markdown-toc-figure">Figure</a></li>
+  <li><a href="#main-supplemental-data-table" id="markdown-toc-main-supplemental-data-table">Main supplemental data table</a></li>
+  <li><a href="#clinical-relevance-of-top-candidates" id="markdown-toc-clinical-relevance-of-top-candidates">Clinical relevance of top candidates</a></li>
+  <li><a href="#supplemental-analysis-tables" id="markdown-toc-supplemental-analysis-tables">Supplemental analysis tables</a></li>
+  <li><a href="#protein-structure-application" id="markdown-toc-protein-structure-application">Protein structure application</a></li>
+  <li><a href="#median-cadd-score-per-residue" id="markdown-toc-median-cadd-score-per-residue">Median CADD score per residue</a></li>
+  <li><a href="#supplemental-file" id="markdown-toc-supplemental-file">Supplemental file</a></li>
+  <li><a href="#genome-wide-and-disease-specific-application" id="markdown-toc-genome-wide-and-disease-specific-application">Genome-wide and disease-specific application</a></li>
+  <li><a href="#bayesian-probability" id="markdown-toc-bayesian-probability">Bayesian probability</a></li>
 </ul>
 
 <h1 id="abstract">Abstract</h1>

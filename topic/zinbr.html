@@ -78,12 +78,14 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 Reading time 4 minutes
 <h1 id="zero-inflated-negative-binomial-regression">Zero-inflated negative binomial regression</h1>
 <ul id="markdown-toc">
-  <li><a href="#zero-inflated-negative-binomial-regression" id="markdown-toc-zero-inflated-negative-binomial-regression">Zero-inflated negative binomial regression</a></li>
-  <li><a href="#zero-inflated-negative-binomial-regression-1" id="markdown-toc-zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</a></li>
+  <li><a href="#zero-inflated-negative-binomial-regression-1" id="markdown-toc-zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</a>    <ul>
+      <li><a href="#a-negative-binomial-model" id="markdown-toc-a-negative-binomial-model">A negative binomial model.</a></li>
+    </ul>
+  </li>
   <li><a href="#analysis-methods-you-might-consider" id="markdown-toc-analysis-methods-you-might-consider">Analysis methods you might consider</a></li>
 </ul>
 
-<h1 id="zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</h1>
+<h2 id="zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</h2>
 
 <p>Zero-inflated negative binomial regression (zinbr) is for modeling count variables with excessive zeros and it is usually for overdispersed count outcome variables.</p>
 
@@ -209,7 +211,7 @@ We use the pscl to run a zero-inflated negative binomial regression. We begin by
   </span><span class="n">summary</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<h1 id="analysis-methods-you-might-consider">Analysis methods you might consider</h1>
+<h2 id="analysis-methods-you-might-consider">Analysis methods you might consider</h2>
 <p>Some other methods that you might use.</p>
 
 <p>OLS Regression – You could try to analyze these data using OLS regression. However, count data are highly non-normal and are not well estimated by OLS regression.

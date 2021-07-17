@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-17T02:26:40+02:00</updated>
+ <updated>2021-07-17T12:50:32+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -1060,18 +1060,6 @@ steps which we will soon be ready to publish after peer-review.&lt;/p&gt;
    <content type="html">&lt;h1 id=&quot;unnecessary-complexity-in-precision-medicine&quot;&gt;Unnecessary complexity in precision medicine&lt;/h1&gt;
 &lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-in-precision-medicine&quot; id=&quot;markdown-toc-unnecessary-complexity-in-precision-medicine&quot;&gt;Unnecessary complexity in precision medicine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#abstract&quot; id=&quot;markdown-toc-abstract&quot;&gt;Abstract&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#complexity-in-living-systems&quot; id=&quot;markdown-toc-complexity-in-living-systems&quot;&gt;Complexity in living systems&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#is-complexity-necessary&quot; id=&quot;markdown-toc-is-complexity-necessary&quot;&gt;Is complexity necessary?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#evolution-of-complexity-genic-genomic-and-developmental&quot; id=&quot;markdown-toc-evolution-of-complexity-genic-genomic-and-developmental&quot;&gt;Evolution of complexity: genic, genomic, and developmental&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-in-precision-medicine-1&quot; id=&quot;markdown-toc-unnecessary-complexity-in-precision-medicine-1&quot;&gt;Unnecessary complexity in precision medicine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-and-the-etiology-of-cancer&quot; id=&quot;markdown-toc-unnecessary-complexity-and-the-etiology-of-cancer&quot;&gt;Unnecessary complexity and the etiology of cancer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#unnecessary-complexity-beyond-precision-medicine&quot; id=&quot;markdown-toc-unnecessary-complexity-beyond-precision-medicine&quot;&gt;Unnecessary complexity beyond precision medicine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#conclusions&quot; id=&quot;markdown-toc-conclusions&quot;&gt;Conclusions&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;&lt;br /&gt;
 Singh_and_Gupta.2020.GenoMed;&lt;br /&gt;
 Singh, R.S., Gupta, B.P. Genes and genomes and unnecessary complexity in precision medicine. npj Genom. Med. 5, 21 (2020). https://doi.org/10.1038/s41525-020-0128-1 Open Access
@@ -1472,7 +1460,7 @@ Who would go to that trouble?
 Go see what you can find in one Supplementary material png file. 
 &lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&quot;&gt;https://link.springer.com/article/10.1007%2Fs10875-019-00670-z&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;r-script&quot;&gt;R script &lt;/h1&gt;
+&lt;h2 id=&quot;r-script&quot;&gt;R script &lt;/h2&gt;
 &lt;p&gt;Try it yourself.
 Find the paper and get Figure E4.
 Download
@@ -1484,7 +1472,7 @@ Download
 &amp;gt; Decode message &amp;lt;- 
 &amp;gt;		stegasaur::decode(&quot;~/10875_2019_670_MOESM5_ESM.png&quot;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&quot;footnote&quot;&gt;Footnote&lt;/h1&gt;
+&lt;h2 id=&quot;footnote&quot;&gt;Footnote&lt;/h2&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
@@ -1502,16 +1490,6 @@ Download
   <h2> - </h2>
   <p><h1 id="cryptography">Cryptography</h1>
 <p class="meta">28 Apr 2020</p>
-
-<ul id="markdown-toc">
-  <li><a href="#cryptography" id="markdown-toc-cryptography">Cryptography</a></li>
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#breaking-crypto" id="markdown-toc-breaking-crypto">Breaking crypto</a></li>
-  <li><a href="#aes-is-the-most-important-current-encryption-method" id="markdown-toc-aes-is-the-most-important-current-encryption-method">AES is the most important current encryption method</a></li>
-  <li><a href="#quantum-computing" id="markdown-toc-quantum-computing">Quantum computing</a></li>
-  <li><a href="#some-thoughts" id="markdown-toc-some-thoughts">Some thoughts</a></li>
-  <li><a href="#reading-list-on-more-advanced-topics" id="markdown-toc-reading-list-on-more-advanced-topics">Reading list on more advanced topics</a></li>
-</ul>
 
 <!--
 cross link and label
@@ -1691,22 +1669,9 @@ The Quipper Language: programming language for quantum computing<br />
 <p class="meta">13 Feb 2021</p>
 
 <ul id="markdown-toc">
-  <li><a href="#medical-espionage" id="markdown-toc-medical-espionage">Medical espionage</a></li>
-  <li><a href="#the-prospect-of-genomic-medical-espionage" id="markdown-toc-the-prospect-of-genomic-medical-espionage">The prospect of genomic medical espionage</a></li>
-  <li><a href="#ransomware" id="markdown-toc-ransomware">Ransomware</a></li>
-  <li><a href="#legal-safeguard" id="markdown-toc-legal-safeguard">Legal safeguard</a></li>
-  <li><a href="#metadata" id="markdown-toc-metadata">Metadata</a></li>
-  <li><a href="#disinformation" id="markdown-toc-disinformation">Disinformation</a></li>
-  <li><a href="#data-pollution" id="markdown-toc-data-pollution">Data pollution</a></li>
-  <li><a href="#in-the-media" id="markdown-toc-in-the-media">In the media</a></li>
-  <li><a href="#protecting-data-and-promoting-open-source-access" id="markdown-toc-protecting-data-and-promoting-open-source-access">Protecting data and promoting open-source access</a>    <ul>
-      <li><a href="#projects-focused-on-safe-access" id="markdown-toc-projects-focused-on-safe-access">Projects focused on safe access</a></li>
-      <li><a href="#obstacles-to-data-privacy" id="markdown-toc-obstacles-to-data-privacy">Obstacles to data privacy</a></li>
-      <li><a href="#future-methods" id="markdown-toc-future-methods">Future methods</a></li>
-    </ul>
-  </li>
-  <li><a href="#references" id="markdown-toc-references">References</a></li>
-  <li><a href="#footnotes" id="markdown-toc-footnotes">Footnotes</a></li>
+  <li><a href="#projects-focused-on-safe-access" id="markdown-toc-projects-focused-on-safe-access">Projects focused on safe access</a></li>
+  <li><a href="#obstacles-to-data-privacy" id="markdown-toc-obstacles-to-data-privacy">Obstacles to data privacy</a></li>
+  <li><a href="#future-methods" id="markdown-toc-future-methods">Future methods</a></li>
 </ul>
 
 <!--
@@ -2096,16 +2061,10 @@ Race for Coronavirus Vaccine Pits Spy Against Spy<br />
   <p><h1 id="genomic-sequencing-intro">Genomic sequencing intro</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#genomic-sequencing-intro" id="markdown-toc-genomic-sequencing-intro">Genomic sequencing intro</a></li>
-  <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#exome-sequencing" id="markdown-toc-exome-sequencing">Exome sequencing</a>    <ul>
-      <li><a href="#sample-preparation" id="markdown-toc-sample-preparation">Sample preparation</a></li>
-      <li><a href="#capture-library" id="markdown-toc-capture-library">Capture library</a></li>
-      <li><a href="#sequencing" id="markdown-toc-sequencing">Sequencing</a></li>
-      <li><a href="#ultra-deep-sequencing" id="markdown-toc-ultra-deep-sequencing">Ultra-deep sequencing</a></li>
-    </ul>
-  </li>
+  <li><a href="#sample-preparation" id="markdown-toc-sample-preparation">Sample preparation</a></li>
+  <li><a href="#capture-library" id="markdown-toc-capture-library">Capture library</a></li>
+  <li><a href="#sequencing" id="markdown-toc-sequencing">Sequencing</a></li>
+  <li><a href="#ultra-deep-sequencing" id="markdown-toc-ultra-deep-sequencing">Ultra-deep sequencing</a></li>
 </ul>
 
 <h1 id="abbreviations">Abbreviations</h1>
@@ -2302,11 +2261,6 @@ variant detection, naturally.</p>
   <h2> - </h2>
   <p><h1 id="genomic-analysis-intro">Genomic analysis intro</h1>
 
-<ul id="markdown-toc">
-  <li><a href="#genomic-analysis-intro" id="markdown-toc-genomic-analysis-intro">Genomic analysis intro</a></li>
-  <li><a href="#genomic-analysis" id="markdown-toc-genomic-analysis">Genomic analysis</a></li>
-</ul>
-
 <h1 id="genomic-analysis">Genomic analysis</h1>
 <p>Like any data science, bioinformatics is a discipline of data
 manipulation. The majority of jobs could be accomplished simply with a
@@ -2400,21 +2354,17 @@ dataset.</p>
   <p><h1 id="routine-analysis">Routine analysis</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#routine-analysis" id="markdown-toc-routine-analysis">Routine analysis</a></li>
-  <li><a href="#sec:routine_analysis" id="markdown-toc-sec:routine_analysis">Routine analysis</a>    <ul>
-      <li><a href="#analysis-workflow-structure" id="markdown-toc-analysis-workflow-structure">Analysis workflow structure.</a></li>
-      <li><a href="#analysis-storage-structure" id="markdown-toc-analysis-storage-structure">Analysis storage structure</a></li>
-      <li><a href="#sequence-alignment-to-reference-genome" id="markdown-toc-sequence-alignment-to-reference-genome">Sequence alignment to reference genome</a></li>
-      <li><a href="#read-adaptor-trimming" id="markdown-toc-read-adaptor-trimming">Read adaptor trimming</a></li>
-      <li><a href="#read-sorting" id="markdown-toc-read-sorting">Read sorting</a></li>
-      <li><a href="#gatk-best-practices" id="markdown-toc-gatk-best-practices">GATK best practices.</a></li>
-      <li><a href="#read-deduplication" id="markdown-toc-read-deduplication">Read deduplication</a></li>
-      <li><a href="#subsec:text_realtar" id="markdown-toc-subsec:text_realtar">Read realignment and targets</a></li>
-      <li><a href="#subsec:text_bsqr" id="markdown-toc-subsec:text_bsqr">Base quality score recalibration</a></li>
-      <li><a href="#subsec:text_hc" id="markdown-toc-subsec:text_hc">Haplotype calling</a></li>
-      <li><a href="#subsec:text_joint" id="markdown-toc-subsec:text_joint">Cohort joint genotyping</a></li>
-    </ul>
-  </li>
+  <li><a href="#analysis-workflow-structure" id="markdown-toc-analysis-workflow-structure">Analysis workflow structure.</a></li>
+  <li><a href="#analysis-storage-structure" id="markdown-toc-analysis-storage-structure">Analysis storage structure</a></li>
+  <li><a href="#sequence-alignment-to-reference-genome" id="markdown-toc-sequence-alignment-to-reference-genome">Sequence alignment to reference genome</a></li>
+  <li><a href="#read-adaptor-trimming" id="markdown-toc-read-adaptor-trimming">Read adaptor trimming</a></li>
+  <li><a href="#read-sorting" id="markdown-toc-read-sorting">Read sorting</a></li>
+  <li><a href="#gatk-best-practices" id="markdown-toc-gatk-best-practices">GATK best practices.</a></li>
+  <li><a href="#read-deduplication" id="markdown-toc-read-deduplication">Read deduplication</a></li>
+  <li><a href="#subsec:text_realtar" id="markdown-toc-subsec:text_realtar">Read realignment and targets</a></li>
+  <li><a href="#subsec:text_bsqr" id="markdown-toc-subsec:text_bsqr">Base quality score recalibration</a></li>
+  <li><a href="#subsec:text_hc" id="markdown-toc-subsec:text_hc">Haplotype calling</a></li>
+  <li><a href="#subsec:text_joint" id="markdown-toc-subsec:text_joint">Cohort joint genotyping</a></li>
 </ul>
 
 <h1 id="sec:routine_analysis">Routine analysis</h1>
@@ -2655,11 +2605,6 @@ on page .</p>
   <h2> - </h2>
   <p><h1 id="tailored-analysis">Tailored analysis</h1>
 
-<ul id="markdown-toc">
-  <li><a href="#tailored-analysis" id="markdown-toc-tailored-analysis">Tailored analysis</a></li>
-  <li><a href="#tailored-analysis-1" id="markdown-toc-tailored-analysis-1">Tailored analysis</a></li>
-</ul>
-
 <h1 id="tailored-analysis-1">Tailored analysis</h1>
 <p>Routine analysis typically takes up to a week, although it is usually
 performed on a standardised pipeline that can run automatically on a
@@ -2771,12 +2716,8 @@ fibrosis/lung disease).</p>
   <p><h1 id="integrating-databases">Integrating databases</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#integrating-databases" id="markdown-toc-integrating-databases">Integrating databases</a></li>
-  <li><a href="#integrating-databases-1" id="markdown-toc-integrating-databases-1">Integrating databases</a>    <ul>
-      <li><a href="#subsec:gnomad" id="markdown-toc-subsec:gnomad">Population genetics</a></li>
-      <li><a href="#phenotype-genotype-and-function" id="markdown-toc-phenotype-genotype-and-function">Phenotype, genotype, and function</a></li>
-    </ul>
-  </li>
+  <li><a href="#subsec:gnomad" id="markdown-toc-subsec:gnomad">Population genetics</a></li>
+  <li><a href="#phenotype-genotype-and-function" id="markdown-toc-phenotype-genotype-and-function">Phenotype, genotype, and function</a></li>
 </ul>
 
 <h1 id="integrating-databases-1">Integrating databases</h1>
@@ -2926,20 +2867,16 @@ transduction pathways, amongst others
   <p><h1 id="rare-disease-cohort-analysis">Rare disease cohort analysis</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#rare-disease-cohort-analysis" id="markdown-toc-rare-disease-cohort-analysis">Rare disease cohort analysis</a></li>
-  <li><a href="#sec:cohort_network_analysis" id="markdown-toc-sec:cohort_network_analysis">Rare disease cohort network analysis</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#exome-analysis" id="markdown-toc-exome-analysis">Exome analysis</a></li>
-      <li><a href="#cluster-list-preparation" id="markdown-toc-cluster-list-preparation">Cluster list preparation</a></li>
-      <li><a href="#sec:net_construction" id="markdown-toc-sec:net_construction">Network construction</a></li>
-      <li><a href="#sec:random_sample" id="markdown-toc-sec:random_sample">Random sampling</a></li>
-      <li><a href="#expanding-damaged-gene-mcl-clusters" id="markdown-toc-expanding-damaged-gene-mcl-clusters">Expanding damaged gene MCL clusters</a></li>
-      <li><a href="#sec:burden_rank" id="markdown-toc-sec:burden_rank">Burden rank</a></li>
-      <li><a href="#sec:number_test" id="markdown-toc-sec:number_test">Determining the number of tests <em>m</em></a></li>
-      <li><a href="#significance-testing" id="markdown-toc-significance-testing">Significance testing</a></li>
-      <li><a href="#sec:enrichment_test" id="markdown-toc-sec:enrichment_test">Enrichment testing</a></li>
-    </ul>
-  </li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#exome-analysis" id="markdown-toc-exome-analysis">Exome analysis</a></li>
+  <li><a href="#cluster-list-preparation" id="markdown-toc-cluster-list-preparation">Cluster list preparation</a></li>
+  <li><a href="#sec:net_construction" id="markdown-toc-sec:net_construction">Network construction</a></li>
+  <li><a href="#sec:random_sample" id="markdown-toc-sec:random_sample">Random sampling</a></li>
+  <li><a href="#expanding-damaged-gene-mcl-clusters" id="markdown-toc-expanding-damaged-gene-mcl-clusters">Expanding damaged gene MCL clusters</a></li>
+  <li><a href="#sec:burden_rank" id="markdown-toc-sec:burden_rank">Burden rank</a></li>
+  <li><a href="#sec:number_test" id="markdown-toc-sec:number_test">Determining the number of tests <em>m</em></a></li>
+  <li><a href="#significance-testing" id="markdown-toc-significance-testing">Significance testing</a></li>
+  <li><a href="#sec:enrichment_test" id="markdown-toc-sec:enrichment_test">Enrichment testing</a></li>
 </ul>
 
 <h1 id="sec:cohort_network_analysis">Rare disease cohort network analysis</h1>
@@ -3489,13 +3426,6 @@ identified by manual interpretation of unknown candidates. ]{}
   <h2> - </h2>
   <p><h1 id="genomic-analysis-discussion">Genomic analysis discussion</h1>
 
-<ul id="markdown-toc">
-  <li><a href="#genomic-analysis-discussion" id="markdown-toc-genomic-analysis-discussion">Genomic analysis discussion</a></li>
-  <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
-  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-  <li><a href="#command-line-example-code" id="markdown-toc-command-line-example-code">Command line example code</a></li>
-</ul>
-
 <h1 id="discussion">Discussion</h1>
 <p>Exome sequence data is usually about 4 GB of information per person.
 Whole genomes are approximately 50GB of data. The analysis of whole
@@ -4006,39 +3936,28 @@ perl /home/vcfhacks-v0.2.0/annovcfToSimple.pl <span class="se">\</span>
   <h2> - </h2>
   <p><h1 id="rag">RAG</h1>
 <ul id="markdown-toc">
-  <li><a href="#rag" id="markdown-toc-rag">RAG</a></li>
-  <li><a href="#abstract" id="markdown-toc-abstract">Abstract</a></li>
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#methods" id="markdown-toc-methods">Methods</a>    <ul>
-      <li><a href="#population-genetics-and-data-sources" id="markdown-toc-population-genetics-and-data-sources">Population genetics and data sources</a></li>
-      <li><a href="#data-processing" id="markdown-toc-data-processing">Data processing</a></li>
-      <li><a href="#raw-data-availability-and-analysis-script" id="markdown-toc-raw-data-availability-and-analysis-script">Raw data availability and analysis script</a></li>
-      <li><a href="#data-visualisation" id="markdown-toc-data-visualisation">Data visualisation</a></li>
-      <li><a href="#validation-of-mrf-against-functional-data" id="markdown-toc-validation-of-mrf-against-functional-data">Validation of MRF against functional data</a></li>
-    </ul>
-  </li>
-  <li><a href="#results" id="markdown-toc-results">Results</a>    <ul>
-      <li><a href="#rag1-and-rag2-conservation-and-mutation-rate-residue-frequency" id="markdown-toc-rag1-and-rag2-conservation-and-mutation-rate-residue-frequency">RAG1 and RAG2 conservation and mutation rate residue frequency</a></li>
-      <li><a href="#mrf-scores-select-for-confirmed-variants-in-human-disease" id="markdown-toc-mrf-scores-select-for-confirmed-variants-in-human-disease">MRF scores select for confirmed variants in human disease</a></li>
-      <li><a href="#top-candidate-variants-require-validation" id="markdown-toc-top-candidate-variants-require-validation">Top candidate variants require validation</a></li>
-      <li><a href="#false-positives-in-transib-domains-do-not-negatively-impact-prediction" id="markdown-toc-false-positives-in-transib-domains-do-not-negatively-impact-prediction">False positives in <em>Transib</em> domains do not negatively impact prediction</a></li>
-      <li><a href="#mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants" id="markdown-toc-mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants">MRF predicts RAG deficiency amongst PID patients harbouring rare variants</a></li>
-      <li><a href="#mrf-supplements-pathogenicity-prediction-tools-for-translational-research" id="markdown-toc-mrf-supplements-pathogenicity-prediction-tools-for-translational-research">MRF supplements pathogenicity prediction tools for translational research</a></li>
-      <li><a href="#figure" id="markdown-toc-figure">Figure</a></li>
-    </ul>
-  </li>
-  <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
-  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a>    <ul>
-      <li><a href="#main-supplemental-data-table" id="markdown-toc-main-supplemental-data-table">Main supplemental data table</a></li>
-      <li><a href="#clinical-relevance-of-top-candidates" id="markdown-toc-clinical-relevance-of-top-candidates">Clinical relevance of top candidates</a></li>
-      <li><a href="#supplemental-analysis-tables" id="markdown-toc-supplemental-analysis-tables">Supplemental analysis tables</a></li>
-      <li><a href="#protein-structure-application" id="markdown-toc-protein-structure-application">Protein structure application</a></li>
-      <li><a href="#median-cadd-score-per-residue" id="markdown-toc-median-cadd-score-per-residue">Median CADD score per residue</a></li>
-      <li><a href="#supplemental-file" id="markdown-toc-supplemental-file">Supplemental file</a></li>
-      <li><a href="#genome-wide-and-disease-specific-application" id="markdown-toc-genome-wide-and-disease-specific-application">Genome-wide and disease-specific application</a></li>
-      <li><a href="#bayesian-probability" id="markdown-toc-bayesian-probability">Bayesian probability</a></li>
-    </ul>
-  </li>
+  <li><a href="#ethics-statement" id="markdown-toc-ethics-statement">Ethics statement</a></li>
+  <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
+  <li><a href="#population-genetics-and-data-sources" id="markdown-toc-population-genetics-and-data-sources">Population genetics and data sources</a></li>
+  <li><a href="#data-processing" id="markdown-toc-data-processing">Data processing</a></li>
+  <li><a href="#raw-data-availability-and-analysis-script" id="markdown-toc-raw-data-availability-and-analysis-script">Raw data availability and analysis script</a></li>
+  <li><a href="#data-visualisation" id="markdown-toc-data-visualisation">Data visualisation</a></li>
+  <li><a href="#validation-of-mrf-against-functional-data" id="markdown-toc-validation-of-mrf-against-functional-data">Validation of MRF against functional data</a></li>
+  <li><a href="#rag1-and-rag2-conservation-and-mutation-rate-residue-frequency" id="markdown-toc-rag1-and-rag2-conservation-and-mutation-rate-residue-frequency">RAG1 and RAG2 conservation and mutation rate residue frequency</a></li>
+  <li><a href="#mrf-scores-select-for-confirmed-variants-in-human-disease" id="markdown-toc-mrf-scores-select-for-confirmed-variants-in-human-disease">MRF scores select for confirmed variants in human disease</a></li>
+  <li><a href="#top-candidate-variants-require-validation" id="markdown-toc-top-candidate-variants-require-validation">Top candidate variants require validation</a></li>
+  <li><a href="#false-positives-in-transib-domains-do-not-negatively-impact-prediction" id="markdown-toc-false-positives-in-transib-domains-do-not-negatively-impact-prediction">False positives in <em>Transib</em> domains do not negatively impact prediction</a></li>
+  <li><a href="#mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants" id="markdown-toc-mrf-predicts-rag-deficiency-amongst-pid-patients-harbouring-rare-variants">MRF predicts RAG deficiency amongst PID patients harbouring rare variants</a></li>
+  <li><a href="#mrf-supplements-pathogenicity-prediction-tools-for-translational-research" id="markdown-toc-mrf-supplements-pathogenicity-prediction-tools-for-translational-research">MRF supplements pathogenicity prediction tools for translational research</a></li>
+  <li><a href="#figure" id="markdown-toc-figure">Figure</a></li>
+  <li><a href="#main-supplemental-data-table" id="markdown-toc-main-supplemental-data-table">Main supplemental data table</a></li>
+  <li><a href="#clinical-relevance-of-top-candidates" id="markdown-toc-clinical-relevance-of-top-candidates">Clinical relevance of top candidates</a></li>
+  <li><a href="#supplemental-analysis-tables" id="markdown-toc-supplemental-analysis-tables">Supplemental analysis tables</a></li>
+  <li><a href="#protein-structure-application" id="markdown-toc-protein-structure-application">Protein structure application</a></li>
+  <li><a href="#median-cadd-score-per-residue" id="markdown-toc-median-cadd-score-per-residue">Median CADD score per residue</a></li>
+  <li><a href="#supplemental-file" id="markdown-toc-supplemental-file">Supplemental file</a></li>
+  <li><a href="#genome-wide-and-disease-specific-application" id="markdown-toc-genome-wide-and-disease-specific-application">Genome-wide and disease-specific application</a></li>
+  <li><a href="#bayesian-probability" id="markdown-toc-bayesian-probability">Bayesian probability</a></li>
 </ul>
 
 <h1 id="abstract">Abstract</h1>
@@ -4853,15 +4772,6 @@ This requires a major investment, however the MRF score provides a good approxim
   <h2> - </h2>
   <p><h1 id="immunogenomics">Immunogenomics</h1>
 <p class="meta">20 Feb 2021</p>
-
-<ul id="markdown-toc">
-  <li><a href="#immunogenomics" id="markdown-toc-immunogenomics">Immunogenomics</a></li>
-  <li><a href="#the-study-of-rare-immune-disorders" id="markdown-toc-the-study-of-rare-immune-disorders">The study of rare immune disorders.</a></li>
-  <li><a href="#genomic-analysis-protocol" id="markdown-toc-genomic-analysis-protocol">Genomic analysis protocol</a></li>
-  <li><a href="#immune-disorder-genes" id="markdown-toc-immune-disorder-genes">Immune disorder genes</a></li>
-  <li><a href="#primary-immunodeficiency-pid-genes" id="markdown-toc-primary-immunodeficiency-pid-genes">Primary Immunodeficiency (PID) genes</a></li>
-  <li><a href="#autoinflammatory-disease-genes" id="markdown-toc-autoinflammatory-disease-genes">Autoinflammatory disease genes</a></li>
-</ul>
 
 <h1 id="the-study-of-rare-immune-disorders">The study of rare immune disorders.</h1>
 <p><em>Note: in genomic analysis cohort studies a purely statistical approach 
@@ -6733,17 +6643,6 @@ Autoimmunity &amp; Inflammation in PID</p>
   <h2> - </h2>
   <p><h1 id="reference-databases">Reference databases</h1>
 
-<ul id="markdown-toc">
-  <li><a href="#reference-databases" id="markdown-toc-reference-databases">Reference databases</a></li>
-  <li><a href="#population-statistics" id="markdown-toc-population-statistics">Population statistics</a></li>
-  <li><a href="#disease-database" id="markdown-toc-disease-database">Disease database</a></li>
-  <li><a href="#functionl-databases" id="markdown-toc-functionl-databases">Functionl databases</a></li>
-  <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
-  <li><a href="#pathogens" id="markdown-toc-pathogens">Pathogens</a></li>
-  <li><a href="#misc" id="markdown-toc-misc">Misc</a></li>
-  <li><a href="#commercial" id="markdown-toc-commercial">Commercial</a></li>
-</ul>
-
 <h1 id="population-statistics">Population statistics</h1>
 <p><a href="https://www.ebi.ac.uk/gwas/home">GWAS Catalog</a><br />
 <a href="https://cftr2.org/mutations_history">CFTR2 Variant List</a><br />
@@ -6825,13 +6724,6 @@ Autoimmunity &amp; Inflammation in PID</p>
   <h2> - </h2>
   <p><h1 id="websites-for-basic-genetic-variant-information">Websites for basic genetic variant information</h1>
 <p class="meta">26 Apr 2020</p>
-
-<ul id="markdown-toc">
-  <li><a href="#websites-for-basic-genetic-variant-information" id="markdown-toc-websites-for-basic-genetic-variant-information">Websites for basic genetic variant information</a></li>
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#sites-and-tools-for-getting-basic-genetic-information" id="markdown-toc-sites-and-tools-for-getting-basic-genetic-information">Sites and tools for getting basic genetic information</a></li>
-  <li><a href="#communities-and-learning" id="markdown-toc-communities-and-learning">Communities and learning</a></li>
-</ul>
 
 <h1 id="introduction">Introduction</h1>
 <p>Identifying pathogenic variants with whole genome and whole exome sequencing is not simple.
@@ -6967,13 +6859,6 @@ https://www.rstudio.com/resources/cheatsheets/#515</p>
   <h2> - </h2>
   <p><h1 id="genomic-analysis-tools">Genomic analysis tools</h1>
 <p class="meta">26 Apr 2020</p>
-
-<ul id="markdown-toc">
-  <li><a href="#genomic-analysis-tools" id="markdown-toc-genomic-analysis-tools">Genomic analysis tools</a></li>
-  <li><a href="#command-line-tool" id="markdown-toc-command-line-tool">command line tool</a></li>
-  <li><a href="#desktop_applications" id="markdown-toc-desktop_applications">desktop_applications</a></li>
-  <li><a href="#websites" id="markdown-toc-websites">Websites</a></li>
-</ul>
 
 <h1 id="command-line-tool">command line tool</h1>
 <p><a href="https://github.com/virajbdeshpande/AmpliconArchitect">AmpliconArchitect</a> AmpliconArchitect is used to identify circular DNA fragments in genomic data.<br />
@@ -7166,32 +7051,12 @@ https://www.rstudio.com/resources/cheatsheets/#515</p>
   <p><h1 id="genome-wide-assocciation-study">Genome wide assocciation study</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#genome-wide-assocciation-study" id="markdown-toc-genome-wide-assocciation-study">Genome wide assocciation study</a></li>
-  <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
-  <li><a href="#very-basic-overview" id="markdown-toc-very-basic-overview">Very basic overview</a></li>
-  <li><a href="#benefits-and-limitations-of-genome-wide-association-studies" id="markdown-toc-benefits-and-limitations-of-genome-wide-association-studies">Benefits and limitations of genome-wide association studies</a></li>
-  <li><a href="#sample-collection-and-genotyping" id="markdown-toc-sample-collection-and-genotyping">Sample collection and genotyping</a></li>
-  <li><a href="#pre-imputation" id="markdown-toc-pre-imputation">Pre-imputation</a></li>
-  <li><a href="#imputation" id="markdown-toc-imputation">Imputation</a>    <ul>
-      <li><a href="#file-formats" id="markdown-toc-file-formats">File formats</a></li>
-      <li><a href="#imputation-services" id="markdown-toc-imputation-services">Imputation services</a></li>
-    </ul>
-  </li>
-  <li><a href="#information-score" id="markdown-toc-information-score">Information score</a></li>
-  <li><a href="#get-snptest-summary-with-impute-information-score" id="markdown-toc-get-snptest-summary-with-impute-information-score">Get snptest summary with impute information score¬</a></li>
-  <li><a href="#imputation-to-plink-format" id="markdown-toc-imputation-to-plink-format">Imputation to Plink format</a></li>
-  <li><a href="#quality-control" id="markdown-toc-quality-control">Quality control</a>    <ul>
-      <li><a href="#relatedness" id="markdown-toc-relatedness">Relatedness</a></li>
-      <li><a href="#missingness" id="markdown-toc-missingness">Missingness</a></li>
-      <li><a href="#genotype" id="markdown-toc-genotype">Genotype</a></li>
-      <li><a href="#hwe" id="markdown-toc-hwe">HWE</a></li>
-    </ul>
-  </li>
-  <li><a href="#phenotypes-and-covariates" id="markdown-toc-phenotypes-and-covariates">Phenotypes and covariates</a></li>
-  <li><a href="#pca" id="markdown-toc-pca">PCA</a></li>
-  <li><a href="#biological-interpretation" id="markdown-toc-biological-interpretation">Biological interpretation</a></li>
-  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
-  <li><a href="#command-line-example-code" id="markdown-toc-command-line-example-code">Command line example code</a></li>
+  <li><a href="#file-formats" id="markdown-toc-file-formats">File formats</a></li>
+  <li><a href="#imputation-services" id="markdown-toc-imputation-services">Imputation services</a></li>
+  <li><a href="#relatedness" id="markdown-toc-relatedness">Relatedness</a></li>
+  <li><a href="#missingness" id="markdown-toc-missingness">Missingness</a></li>
+  <li><a href="#genotype" id="markdown-toc-genotype">Genotype</a></li>
+  <li><a href="#hwe" id="markdown-toc-hwe">HWE</a></li>
 </ul>
 
 <h1 id="abbreviations">Abbreviations</h1>
@@ -7381,7 +7246,6 @@ e.g. &gt;0.7.</p>
 <p class="meta">26 Apr 2020</p>
 
 <ul id="markdown-toc">
-  <li><a href="#pharmacogenomics-for-personal-medicine" id="markdown-toc-pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</a></li>
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#preparing-an-example-vcf" id="markdown-toc-preparing-an-example-vcf">Preparing an example VCF</a></li>
   <li><a href="#comparing-annotated-genetic-data-to-drug-lists" id="markdown-toc-comparing-annotated-genetic-data-to-drug-lists">Comparing annotated genetic data to drug lists</a>    <ul>
@@ -7400,13 +7264,21 @@ e.g. &gt;0.7.</p>
   <li><a href="#gene-dosage" id="markdown-toc-gene-dosage">Gene dosage</a></li>
   <li><a href="#drug-indication-1" id="markdown-toc-drug-indication-1">Drug indication</a></li>
   <li><a href="#a-large-scale-example-summary" id="markdown-toc-a-large-scale-example-summary">A large scale example summary</a></li>
-  <li><a href="#funding-strategy" id="markdown-toc-funding-strategy">Funding strategy</a></li>
-  <li><a href="#legal-requirements" id="markdown-toc-legal-requirements">Legal requirements</a></li>
+  <li><a href="#funding-strategy" id="markdown-toc-funding-strategy">Funding strategy</a>    <ul>
+      <li><a href="#example-funding-stages" id="markdown-toc-example-funding-stages">Example funding stages:</a></li>
+      <li><a href="#example-funding-sources-per-stage" id="markdown-toc-example-funding-sources-per-stage">Example funding sources per stage:</a></li>
+    </ul>
+  </li>
+  <li><a href="#legal-requirements" id="markdown-toc-legal-requirements">Legal requirements</a>    <ul>
+      <li><a href="#swiss-law" id="markdown-toc-swiss-law">Swiss law</a></li>
+      <li><a href="#accreditation" id="markdown-toc-accreditation">Accreditation</a></li>
+    </ul>
+  </li>
   <li><a href="#more-questions" id="markdown-toc-more-questions">More questions</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
-<h1 id="introduction">Introduction</h1>
+<h2 id="introduction">Introduction</h2>
 <p>With the popularisation of commercial genetics services, more and more people are now able to “decode” their genetic data.
 Questions that might arise from this information include “do I have potentially disease-causing variants that can be treated with a drug?”, or “am I taking a drug that will be affected by my genetics?”.
 To tackle such questions with an example, we use public data in combination with pharmacogenomics.
@@ -7451,7 +7323,7 @@ Make certain that you use the same reference genome as used on the input data.
 The VCF file was made using reference genome GRCh37.
 Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).</p>
 
-<h1 id="preparing-an-example-vcf">Preparing an example VCF</h1>
+<h2 id="preparing-an-example-vcf">Preparing an example VCF</h2>
 <p>If you would like to try this using a whole genome using the Ensembl web 
 interface you will need to split your VCF into smaller block first.
 For routine usage the command-line version of VEP and it’s databases should be 
@@ -7537,13 +7409,13 @@ I encourage you to read each line and figure out what should happen. If it makes
 
 </code></pre></div></div>
 
-<h1 id="comparing-annotated-genetic-data-to-drug-lists">Comparing annotated genetic data to drug lists</h1>
+<h2 id="comparing-annotated-genetic-data-to-drug-lists">Comparing annotated genetic data to drug lists</h2>
 <p>Uploading either a small example or your split-whole-genome example, VEP will process the data and annotate it will whatever features you require, including gene names, variant consequence, pahtnogenicy prediction, etc.
 The next aim will be to see if any of your output genes are also present in your drug-gene database.
 The method will require merging both dataset (gene and drug datasets) based on shared features. 
 A simple sanity test would be useful first:</p>
 
-<h2 id="small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</h2>
+<h3 id="small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</h3>
 <p>From the VEP output I extracted the gene symbols column and compared against a list of druggable target genes from 
 <a href="https://www.drugbank.ca">DrugBank</a> 
 (because I happen to have their data on hand, FDA may be more reliable).
@@ -7582,7 +7454,7 @@ From a 10,000 VCF line file =
 <a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a>,
 <a href="https://www.drugbank.ca/bio_entities/BE0008994">TP73</a>.</p>
 
-<h1 id="a-real-example-of-merging-genetic-and-pharmacogenomic-data">A real example of merging genetic and pharmacogenomic data</h1>
+<h2 id="a-real-example-of-merging-genetic-and-pharmacogenomic-data">A real example of merging genetic and pharmacogenomic data</h2>
 <p>Now that a small example has shown us the logic of the process, we can try a more complex real-world example. 
 The following R language script is used to merge the VEP annotated VCF file with a DrugBank database based on the gene names that are common to both datasets.
 Read each line and try to understand the process. 
@@ -7687,7 +7559,7 @@ There are many layers to a this problem to create a usable product.
 For example, how to integrate pharmacodynamics, covariats to drug response, contraindications, variant pathogenicity, etc.
 However, this is a good start as a learning experience.</p>
 
-<h1 id="drug-indication">Drug indication</h1>
+<h2 id="drug-indication">Drug indication</h2>
 <p>My example used <a href="https://www.drugbank.ca">DrugBank</a> for pharmacogenomic information.
 However, it may be safest to use the <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">FDA information</a> as the primary source, but including <a href="https://www.drugbank.ca">DrugBank</a> info is no problem.
 Drugs might be either a treatment for a genetic determinant, or a warning for drug usage in someone who also has a genetic variation that might effect their treatment.
@@ -7721,7 +7593,7 @@ With this in mind, perhaps an application doing this job could work two ways.
 (1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
 (2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.</p>
 
-<h1 id="annotation">Annotation</h1>
+<h2 id="annotation">Annotation</h2>
 <p><a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor (VEP)</a> is very useful.
 During variant annotation, VEP supplies a “consequence” column.
 Consequences are general and based on translation of genetic code in humans. 
@@ -7772,12 +7644,12 @@ If they have a VCF file, you could:</p>
   <li>As an aside, you could also decide that you don’t want to commercialise and offer this tool for free which would prevent bigger companies (like Google) from offering this service in return for harvesting the public’s genetic data.</li>
 </ul>
 
-<h2 id="optimising-vcf-annotation">Optimising VCF annotation</h2>
+<h3 id="optimising-vcf-annotation">Optimising VCF annotation</h3>
 <p>The slowest part of the method is VCF annotation.
 You can significantly increase the speed by first reducing the input to contain only regions of interst.
 That is, prepare a list of coordinates for each gene, and select for those regions in your input VCF or genotype data before annotation (VEP).</p>
 
-<h2 id="how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</h2>
+<h3 id="how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</h3>
 <p>Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:<br />
 <a href="http://www.ensembl.org/info/data/biomart/index.html">http://www.ensembl.org/info/data/biomart/index.html</a><br />
@@ -7799,7 +7671,7 @@ You would have to figure out how to extract the regions from the vcf (sed, grep,
 When I needed this, I used my own tools which required converting to format like this “X:1-2000”, and ordered by number and alphabetic (some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
 If you use this list to extract regions from a VCF, remember to include all the original VCF header information.</p>
 
-<h2 id="extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</h2>
+<h3 id="extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</h3>
 <p>The early part of this tutorial shows how old-school command line tools can be used to extract data. 
 Indeed, this may be computationally most efficient but there are some specialised tools that make the process easier in general.
 You can use VCFtools to extract specified regions.<br />
@@ -7826,7 +7698,7 @@ And this command ran OK for me to give “output_prefix.recode.vcf”<br /></p>
 <p>This new VCF will now only contain gene regions that are potentially “druggable”, or at least included on the FDA list.
 VCF annotation will be <em>much faster</em> than annotation of the whole genome.</p>
 
-<h1 id="unknown-variants">Unknown variants</h1>
+<h2 id="unknown-variants">Unknown variants</h2>
 <p>In the majority of situations you will be stuck with <em>variants of unknown significance</em>.
 In the absence of tailored analysis and interpretation of each invidual variant, one must often rank unknown variants based on a predicted pathogenicity.
 Carefully consider that predictions can be completed wrong and address how such an annotation should be presented. 
@@ -7835,7 +7707,7 @@ https://cadd.gs.washington.edu/info<br />
 <a href="http://genetics.bwh.harvard.edu/pph2/">Polyphen</a> gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.
 See what other pathogenicity prediction tools you can find and estimate how widespread/accepted their usage is.</p>
 
-<h1 id="gene-dosage">Gene dosage</h1>
+<h2 id="gene-dosage">Gene dosage</h2>
 <p>An important cosideration of variant effect depends on gene dosage.
 A <a href="https://en.wikipedia.org/wiki/Dominance_(genetics)">dominant gene</a> may be affected by a single heterozgous variant while a recessive gene may be able to compensate against the negative effect of a heterozyous variant due the presence of a second functional gene copy.
 Therefore, the presence of heterozygous or homozygous allele is an important consideration.
@@ -7851,7 +7723,7 @@ Individual genes can be explored, or “panels” of disease-specific gene lists
 This shows the “Mode of inheritance” and colour-coded confidence in the disease-gene relationship.
 Integrating this type of expert-curated open datasets can be extremely useful.</p>
 
-<h1 id="drug-indication-1">Drug indication</h1>
+<h2 id="drug-indication-1">Drug indication</h2>
 <p>The indication or warning can be difficult to automate.
 For the example drug<br />
 <a href="https://www.drugbank.ca/drugs/DB11595">https://www.drugbank.ca/drugs/DB11595</a><br />
@@ -7871,7 +7743,7 @@ https://www.drugbank.ca/drugs/	DB00142<br />
 https://www.drugbank.ca/drugs/	DB01839<br />
 https://www.drugbank.ca/drugs/	DB00125</p>
 
-<h1 id="a-large-scale-example-summary">A large scale example summary</h1>
+<h2 id="a-large-scale-example-summary">A large scale example summary</h2>
 <p>I do not suggest this for a small project, but if I was to automate subsection requests for real:</p>
 <ul>
   <li>[1] Download the whole database (probably a big table sized &gt;100MB) and</li>
@@ -7891,14 +7763,14 @@ This table could be ranked based on consequence, CADD score.
 The top couple of rows then might be converted into a more readable format like a PDF.</li>
 </ul>
 
-<h1 id="funding-strategy">Funding strategy</h1>
+<h2 id="funding-strategy">Funding strategy</h2>
 <p>University-based start-ups ususally follow a plan with three or four funding stages before coming to market. 
 It is also possible to get investors from day 1, but it is more usual to follow 
 the steps outlined here.
 It is also possible to partner with early investors for their guidance rather 
 than for financial investment.</p>
 
-<h3 id="example-funding-stages">Example funding stages:</h3>
+<h4 id="example-funding-stages">Example funding stages:</h4>
 
 <ul>
   <li>A - Fundamental research (e.g. SNSF)</li>
@@ -7906,7 +7778,7 @@ than for financial investment.</p>
   <li>C - Product development (e.g. industry, Innosuisse funding)</li>
 </ul>
 
-<h3 id="example-funding-sources-per-stage">Example funding sources per stage:</h3>
+<h4 id="example-funding-sources-per-stage">Example funding sources per stage:</h4>
 
 <ol>
   <li>[A] Ignite grant
@@ -7944,8 +7816,8 @@ than for financial investment.</p>
 <p><a href="https://advancesindrugdiscovery.splashthat.com">https://advancesindrugdiscovery.splashthat.com</a>
 Basically, the “innovation” department experts help you to figure out what stage you are at. You can contact them as soon as you can disclose your tech non-confidentially (either you have patent protection or do not need it). If you were taking this path you would probably have competed steps 1-4.</p>
 
-<h1 id="legal-requirements">Legal requirements</h1>
-<h3 id="swiss-law">Swiss law</h3>
+<h2 id="legal-requirements">Legal requirements</h2>
+<h4 id="swiss-law">Swiss law</h4>
 <p>I include both the English and French translations here as the original source does not always include full English translation. 
 Swiss law contains specific provisions on genetic testing in humans.
 The Federal Council is divided into <a href="https://www.admin.ch/gov/fr/accueil.html">7 departments</a> and one chancellory. 
@@ -8004,7 +7876,7 @@ This contains section (810.12) contains 10 sections with 44 articles covering th
 and as stated, includes authorisation of “Pharmacogenetic tests performed to determine the effects of a planned therapy”, 
 “analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue”.</p>
 
-<h3 id="accreditation">Accreditation</h3>
+<h4 id="accreditation">Accreditation</h4>
 <p><a href="https://www.iso.org/standard/56115.html">ISO 15189</a> is a commonly sought standard accreditation for genetic analysis labs, 
 which is carried out by recognized accreditation services like <a href="https://www.finas.fi/Sivut/default.aspx">FINAS</a>.
 Here it is mentioned for the Geneva health 2030 genome center for clinical grade sequencing:
@@ -8019,7 +7891,7 @@ including
 BlueprintGenomics is a good example company for comparison:
 <a href="https://blueprintgenetics.com/certifications/">https://blueprintgenetics.com/certifications/</a>.</p>
 
-<h1 id="more-questions">More questions</h1>
+<h2 id="more-questions">More questions</h2>
 
 <p>Q: Do we have to infer that in the future everybody will have his genome sequenced ?<br />
 You do not have to assume this. It may become true. There could be privacy concerns or social problems arising from genetic prejudice, etc.</p>
@@ -8041,7 +7913,7 @@ However, it is common that for processing a large amount of data, such predictio
 For example, I might [1] rank first on VEP variant “consequences”; stop mutations with most importance.
 [2] Then rank secondly with these values since you cannot interpret most with consequence = missense variant.</p>
 
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 <ul>
   <li><a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/science-research-drugs/</a></li>
   <li><a href="https://www.pharmgkb.org/view/drug-labels.do">https://www.pharmgkb.org/view/drug-labels.do</a></li>
@@ -8056,7 +7928,6 @@ For example, I might [1] rank first on VEP variant “consequences”; stop muta
   <p><h1 id="quantification-of-plof">Quantification of pLoF</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#quantification-of-plof" id="markdown-toc-quantification-of-plof">Quantification of pLoF</a></li>
   <li><a href="#identification-of-plof-variants" id="markdown-toc-identification-of-plof-variants">Identification of pLoF variants</a>    <ul>
       <li><a href="#variant-effect-predictor" id="markdown-toc-variant-effect-predictor">Variant Effect Predictor</a></li>
       <li><a href="#loftee" id="markdown-toc-loftee">LOFTEE</a></li>
@@ -8073,7 +7944,7 @@ For example, I might [1] rank first on VEP variant “consequences”; stop muta
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
-<h1 id="identification-of-plof-variants">Identification of pLoF variants</h1>
+<h2 id="identification-of-plof-variants">Identification of pLoF variants</h2>
 <p>As reported in “Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program” [0],
 <!-- taliun2021sequencing -->
 predicted loss-of-function (pLoF) variants can be identified using 
@@ -8088,7 +7959,7 @@ I believe the “p” was originally for <em>predicted</em> loss-of-function,
 and has more recently changed to <em>putative</em> loss-of-function.
 The former is more transparent and preferable, I believe.</p>
 
-<h2 id="variant-effect-predictor">Variant Effect Predictor</h2>
+<h3 id="variant-effect-predictor">Variant Effect Predictor</h3>
 <p>Generally a local version of
 <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> 
 (VEP) software and databases are run for analysis.
@@ -8113,7 +7984,7 @@ The table from the ensembl website is worth reading:
 <a href="https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences">Ensembl Variation - Calculated variant consequences</a>.<br />
 <img src="/images/VEP_consequences.jpg" width="100%" /></p>
 
-<h2 id="loftee">LOFTEE</h2>
+<h3 id="loftee">LOFTEE</h3>
 <p>The <a href="https://github.com/konradjk/loftee">LOFTEE github</a> repo shows the code and examples of usage.
 It functions as a VEP plugin for 3 LoF consequences:</p>
 <ul>
@@ -8128,13 +7999,13 @@ These include known features about how transcripts will be affected by variants
 known splicing sequence mechanisms,
 and other flags including splicing prediction that may be less reliable but still valuable.</p>
 
-<h2 id="gencode">GENCODE</h2>
+<h3 id="gencode">GENCODE</h3>
 <p>Accurate annotation depends on correctly mapping positions based on the genome reference.
 The genomic coordinates of coding elements may be based on <a href="https://www.gencodegenes.org/human/">GENCODE</a> 
 [3].
 <!-- frankish2019gencode --></p>
 
-<h2 id="gene-ontology-go">Gene Ontology (GO)</h2>
+<h3 id="gene-ontology-go">Gene Ontology (GO)</h3>
 <p><a href="http://geneontology.org">Gene Ontology (GO)</a> is a valuable database of known gene function and
 can also be used to perform enrichment analysis on gene sets 
 [5, 6].
@@ -8156,8 +8027,8 @@ The output table shows the GO process “V(D)J recombination” as the strongest
 <p>The fold enrichment and strong P-value indicate a true association of shared biological pathway.<br />
 <img src="/images/GO_enrich.png" width="100%" /></p>
 
-<h1 id="published-example">Published example</h1>
-<h2 id="methods">Methods</h2>
+<h2 id="published-example">Published example</h2>
+<h3 id="methods">Methods</h3>
 <p>In Taliun et al [0], each of these tools are used in their analysis to target variants:</p>
 <ul>
   <li>stop-gained</li>
@@ -8199,7 +8070,7 @@ They tested all 12,563 GO terms that included more than one gene.
 The P-value significance threshold was thus ~2e-6. 
 The enrichment and depletion of pLOF variants in public gene databases was tested in a similar way.</p>
 
-<h2 id="results">Results</h2>
+<h3 id="results">Results</h3>
 <p>Taliun et al. wanted to see if any gene sets had enrichment or depletion of rare pLoF.
 In the first 53,831 TOPMed samples, 
 they detected more than 400 million variants:</p>
@@ -8279,7 +8150,7 @@ Genes associated with human disease in</p>
   <li>ClinVar [10] (4% depletion).</li>
 </ul>
 
-<h1 id="the-future">The future</h1>
+<h2 id="the-future">The future</h2>
 <p>With very large scale genome sequencing we will start to association studies for extremely rare variants (eventually there will be no novel SNVs). 
 This provokes a few possibilities.</p>
 <ol>
@@ -8297,7 +8168,7 @@ This provokes a few possibilities.</p>
 Will we slowly trudge through the same system again or will there be a more sophisticated approach for the non-coding genome in clinical genomics?</li>
 </ol>
 
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 <hr />
 
 <!-- curly-percent bibliography --cited curly-percent -->
@@ -8317,28 +8188,6 @@ Will we slowly trudge through the same system again or will there be a more soph
 
   <h2> - </h2>
   <p><h1 id="polygenic-risk-score">Polygenic risk score</h1>
-
-<ul id="markdown-toc">
-  <li><a href="#polygenic-risk-score" id="markdown-toc-polygenic-risk-score">Polygenic risk score</a></li>
-  <li><a href="#qc-base-and-target-cohort" id="markdown-toc-qc-base-and-target-cohort">QC: base and target cohort</a></li>
-  <li><a href="#base-only" id="markdown-toc-base-only">Base only</a></li>
-  <li><a href="#target-only" id="markdown-toc-target-only">Target only</a></li>
-  <li><a href="#combined" id="markdown-toc-combined">Combined</a></li>
-  <li><a href="#prs" id="markdown-toc-prs">PRS</a></li>
-  <li><a href="#shrinkage-of-effect-size-estimate" id="markdown-toc-shrinkage-of-effect-size-estimate">Shrinkage of effect size estimate</a></li>
-  <li><a href="#ld-control" id="markdown-toc-ld-control">LD control</a></li>
-  <li><a href="#prs-unit" id="markdown-toc-prs-unit">PRS unit</a></li>
-  <li><a href="#population-structure" id="markdown-toc-population-structure">Population structure</a></li>
-  <li><a href="#multi-prs" id="markdown-toc-multi-prs">Multi PRS</a></li>
-  <li><a href="#plot" id="markdown-toc-plot">Plot</a></li>
-  <li><a href="#assocciation-and-goodness-of-fit" id="markdown-toc-assocciation-and-goodness-of-fit">Assocciation and goodness of fit</a></li>
-  <li><a href="#plotting" id="markdown-toc-plotting">Plotting</a></li>
-  <li><a href="#clinical-application" id="markdown-toc-clinical-application">Clinical application</a></li>
-  <li><a href="#interpret" id="markdown-toc-interpret">Interpret</a></li>
-  <li><a href="#distribution" id="markdown-toc-distribution">Distribution</a></li>
-  <li><a href="#overfitting" id="markdown-toc-overfitting">Overfitting</a></li>
-  <li><a href="#power" id="markdown-toc-power">Power</a></li>
-</ul>
 
 <p><a href="https://pubmed.ncbi.nlm.nih.gov/30926966/">Martin, A.R.. et al. Clinical use of current polygenic risk scores may exacerbate health disparities. Nature Genetics. 2019; 51: 584-591</a></p>
 <h1 id="qc-base-and-target-cohort">QC: base and target cohort</h1>
@@ -8366,13 +8215,10 @@ Will we slowly trudge through the same system again or will there be a more soph
   <p><h1 id="pharmacogenomic-stargazing">Pharmacogenomic stargazing</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#pharmacogenomic-stargazing" id="markdown-toc-pharmacogenomic-stargazing">Pharmacogenomic stargazing</a></li>
-  <li><a href="#stargazer-genotyping" id="markdown-toc-stargazer-genotyping">Stargazer genotyping</a>    <ul>
-      <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
-      <li><a href="#stargazer-summary" id="markdown-toc-stargazer-summary">Stargazer summary</a></li>
-      <li><a href="#star-alleles" id="markdown-toc-star-alleles">Star alleles</a></li>
-    </ul>
-  </li>
+  <li><a href="#stargazer-genotyping" id="markdown-toc-stargazer-genotyping">Stargazer genotyping</a></li>
+  <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
+  <li><a href="#stargazer-summary" id="markdown-toc-stargazer-summary">Stargazer summary</a></li>
+  <li><a href="#star-alleles" id="markdown-toc-star-alleles">Star alleles</a></li>
   <li><a href="#published-example" id="markdown-toc-published-example">Published example</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
@@ -8385,7 +8231,7 @@ Relying on star allele labelling goes against the recommended
 The following protocol for is provided as one step in a larger process
 of annotation in genomic analysis.</em></p>
 
-<h1 id="stargazer-genotyping">Stargazer genotyping</h1>
+<h2 id="stargazer-genotyping">Stargazer genotyping</h2>
 <p>As reported in “Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program”
 <a class="citation" href="#taliun2021sequencing">(Taliun et al., 2021)</a>,
 use a method of known pharmacogene (PGx) variation annotation 
@@ -8504,7 +8350,7 @@ These strands can be phased to reconstruct the inheritence pattern.</em></p>
 a central repository for PGx variation that focuses on 
 haplotype structure and allelic variation.</p>
 
-<h1 id="published-example">Published example</h1>
+<h2 id="published-example">Published example</h2>
 <p>Taliun et al.
 (missing reference)
 <a class="citation" href="#zhou2009polymorphism">(Zhou, 2009)</a>
@@ -8548,7 +8394,7 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
   <p>Supplementary Figure 28. Summary of CYP2D6 haplotype analysis using the Stargazer program. Population-specific frequencies for (A) common CYP2D6 star alleles, (B) haplotype activity, (C) SV-defined haplotypes, and (D) predicted metabolism phenotypes. Abbreviations: hAS, haplotype activity score; dAS, diplotype activity score; N, number; SV, structural variation; del, whole gene deletion; hyb, CYP2D6/CYP2D7 hybrid.</p>
 </blockquote>
 
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 <ol class="bibliography"><li><span id="taliun2021sequencing">Taliun, D., Harris, D. N., Kessler, M. D., Carlson, J., Szpiech, Z. A., Torres, R., Taliun, S. A. G., Corvelo, A., Gogarten, S. M., Kang, H. M., &amp; others. (2021). Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program. <i>Nature</i>, <i>590</i>(7845), 290–299.</span></li>
 <li><span id="lee2019stargazer">Lee, S.-been, Wheeler, M. M., Patterson, K., McGee, S., Dalton, R., Woodahl, E. L., Gaedigk, A., Thummel, K. E., &amp; Nickerson, D. A. (2019). Stargazer: a software tool for calling star alleles from next-generation sequencing data using CYP2D6 as a model. <i>Genetics in Medicine</i>, <i>21</i>(2), 361–372.</span></li>
 <li><span id="mckenna2010genome">McKenna, A., Hanna, M., Banks, E., Sivachenko, A., Cibulskis, K., Kernytsky, A., Garimella, K., Altshuler, D., Gabriel, S., Daly, M., &amp; others. (2010). The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data. <i>Genome Research</i>, <i>20</i>(9), 1297–1303.</span></li>
@@ -8563,13 +8409,10 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
   <p><h1 id="correlation-regression-and-repeated-data">Correlation, regression and repeated data</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#correlation-regression-and-repeated-data" id="markdown-toc-correlation-regression-and-repeated-data">Correlation, regression and repeated data</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#correlation-within-subjects-part-1" id="markdown-toc-correlation-within-subjects-part-1">Correlation within subjects, part 1</a></li>
-      <li><a href="#correlation-within-subjects-part-2" id="markdown-toc-correlation-within-subjects-part-2">Correlation within subjects, part 2</a></li>
-      <li><a href="#references" id="markdown-toc-references">References</a></li>
-    </ul>
-  </li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#correlation-within-subjects-part-1" id="markdown-toc-correlation-within-subjects-part-1">Correlation within subjects, part 1</a></li>
+  <li><a href="#correlation-within-subjects-part-2" id="markdown-toc-correlation-within-subjects-part-2">Correlation within subjects, part 2</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
@@ -8906,14 +8749,15 @@ within the subject a rise in Y was associated with a fall in X.</p>
   <p><h1 id="odds-ratios-se--ci">Odds ratios, SE &amp; CI</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#odds-ratios-se--ci" id="markdown-toc-odds-ratios-se--ci">Odds ratios, SE &amp; CI</a>    <ul>
-      <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-      <li><a href="#odds-ratio" id="markdown-toc-odds-ratio">Odds ratio</a></li>
-      <li><a href="#standard-error" id="markdown-toc-standard-error">Standard error</a></li>
-      <li><a href="#confidence-interval" id="markdown-toc-confidence-interval">Confidence interval</a></li>
-      <li><a href="#references" id="markdown-toc-references">References</a></li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#odds-ratio" id="markdown-toc-odds-ratio">Odds ratio</a>    <ul>
+      <li><a href="#perspective-1" id="markdown-toc-perspective-1">Perspective 1</a></li>
+      <li><a href="#perspective-2" id="markdown-toc-perspective-2">Perspective 2</a></li>
     </ul>
   </li>
+  <li><a href="#standard-error" id="markdown-toc-standard-error">Standard error</a></li>
+  <li><a href="#confidence-interval" id="markdown-toc-confidence-interval">Confidence interval</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
@@ -9207,14 +9051,15 @@ The accuracy (proportion of all correctly identified cases) was
   <h2> - </h2>
   <p><h1 id="burden-testing-with-variant-collapse">Burden testing with variant collapse</h1>
 <ul id="markdown-toc">
-  <li><a href="#burden-testing-with-variant-collapse" id="markdown-toc-burden-testing-with-variant-collapse">Burden testing with variant collapse</a></li>
-  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a>    <ul>
-      <li><a href="#to-do" id="markdown-toc-to-do">To do</a></li>
-    </ul>
-  </li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#to-do" id="markdown-toc-to-do">To do</a></li>
   <li><a href="#main-papers-in-order" id="markdown-toc-main-papers-in-order">Main papers in order</a>    <ul>
       <li><a href="#major-classes-of-tests" id="markdown-toc-major-classes-of-tests">Major Classes of Tests</a></li>
-      <li><a href="#burden-tests-so-far" id="markdown-toc-burden-tests-so-far">Burden Tests So Far</a></li>
+      <li><a href="#burden-tests-so-far" id="markdown-toc-burden-tests-so-far">Burden Tests So Far</a>        <ul>
+          <li><a href="#tests" id="markdown-toc-tests">Tests</a></li>
+          <li><a href="#power-of-burden-tests-depends-on" id="markdown-toc-power-of-burden-tests-depends-on">Power of burden tests depends on</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#li-and-leal-2008" id="markdown-toc-li-and-leal-2008">Li and Leal 2008</a>    <ul>
@@ -9234,15 +9079,32 @@ The accuracy (proportion of all correctly identified cases) was
   <li><a href="#madsen-and-browning-2009" id="markdown-toc-madsen-and-browning-2009">Madsen and Browning 2009</a>    <ul>
       <li><a href="#background-1" id="markdown-toc-background-1">Background</a></li>
       <li><a href="#main-theory" id="markdown-toc-main-theory">Main theory</a></li>
-      <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
+      <li><a href="#methods" id="markdown-toc-methods">Methods</a>        <ul>
+          <li><a href="#weighted-sum-method" id="markdown-toc-weighted-sum-method">Weighted-Sum Method</a></li>
+          <li><a href="#power-simulations" id="markdown-toc-power-simulations">Power simulations</a></li>
+        </ul>
+      </li>
       <li><a href="#encode-data" id="markdown-toc-encode-data">ENCODE data</a></li>
-      <li><a href="#results" id="markdown-toc-results">Results</a></li>
+      <li><a href="#results" id="markdown-toc-results">Results</a>        <ul>
+          <li><a href="#proportion-of-variants-containing-mutations" id="markdown-toc-proportion-of-variants-containing-mutations">Proportion of Variants Containing Mutations</a></li>
+        </ul>
+      </li>
       <li><a href="#discussion" id="markdown-toc-discussion">Discussion</a></li>
       <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
     </ul>
   </li>
   <li><a href="#price-2010" id="markdown-toc-price-2010">Price 2010</a>    <ul>
-      <li><a href="#methods-1" id="markdown-toc-methods-1">Methods</a></li>
+      <li><a href="#methods-1" id="markdown-toc-methods-1">Methods</a>        <ul>
+          <li><a href="#simulation-framework" id="markdown-toc-simulation-framework">Simulation Framework</a></li>
+          <li><a href="#weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios" id="markdown-toc-weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios">Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios</a></li>
+          <li><a href="#fixed-threshold-approach" id="markdown-toc-fixed-threshold-approach">Fixed-Threshold Approach</a></li>
+          <li><a href="#weighted-approach" id="markdown-toc-weighted-approach">Weighted Approach</a></li>
+          <li><a href="#variable-threshold-approach" id="markdown-toc-variable-threshold-approach">Variable-Threshold Approach</a></li>
+          <li><a href="#cheating-approach-to-incorporating-varphip-phip" id="markdown-toc-cheating-approach-to-incorporating-varphip-phip">Cheating Approach to Incorporating \(\varphi(p)\) (“phi(p)”)</a></li>
+          <li><a href="#incorporation-of-computational-predictions-of-functional-effects" id="markdown-toc-incorporation-of-computational-predictions-of-functional-effects">Incorporation of Computational Predictions of Functional Effects</a></li>
+          <li><a href="#application-to-empirical-data-sets" id="markdown-toc-application-to-empirical-data-sets">Application to Empirical Data Sets</a></li>
+        </ul>
+      </li>
       <li><a href="#results-and-discussion" id="markdown-toc-results-and-discussion">Results and Discussion</a></li>
     </ul>
   </li>
@@ -9252,7 +9114,13 @@ The accuracy (proportion of all correctly identified cases) was
   </li>
   <li><a href="#skat" id="markdown-toc-skat">SKAT</a>    <ul>
       <li><a href="#introduction-1" id="markdown-toc-introduction-1">Introduction</a></li>
-      <li><a href="#methods-2" id="markdown-toc-methods-2">Methods</a></li>
+      <li><a href="#methods-2" id="markdown-toc-methods-2">Methods</a>        <ul>
+          <li><a href="#sequencing-kernel-association-test" id="markdown-toc-sequencing-kernel-association-test">Sequencing Kernel Association Test</a></li>
+          <li><a href="#skat-model-and-test-for-linear-snp-effects" id="markdown-toc-skat-model-and-test-for-linear-snp-effects">SKAT Model and Test for Linear SNP Effects</a></li>
+          <li><a href="#relationship-between-linear-skat-and-individual-variant-test-statistics" id="markdown-toc-relationship-between-linear-skat-and-individual-variant-test-statistics">Relationship between Linear SKAT and Individual Variant Test Statistics</a></li>
+          <li><a href="#accommodating-epistatic-effects-and-prior-information-under-the-skat" id="markdown-toc-accommodating-epistatic-effects-and-prior-information-under-the-skat">Accommodating Epistatic Effects and Prior Information under the SKAT</a></li>
+        </ul>
+      </li>
       <li><a href="#skat-is-a-generalization-of-the-c-alpha-test" id="markdown-toc-skat-is-a-generalization-of-the-c-alpha-test">SKAT Is a Generalization of the C-Alpha Test</a></li>
     </ul>
   </li>
@@ -9263,7 +9131,11 @@ The accuracy (proportion of all correctly identified cases) was
   </li>
   <li><a href="#protein-pathway-analysis" id="markdown-toc-protein-pathway-analysis">Protein pathway analysis</a>    <ul>
       <li><a href="#zhang-2021-ashg" id="markdown-toc-zhang-2021-ashg">Zhang 2021 ASHG</a></li>
-      <li><a href="#problems-with-this-paper-1" id="markdown-toc-problems-with-this-paper-1">Problems with this paper</a></li>
+      <li><a href="#problems-with-this-paper-1" id="markdown-toc-problems-with-this-paper-1">Problems with this paper</a>        <ul>
+          <li><a href="#cluster-method" id="markdown-toc-cluster-method">Cluster method</a></li>
+          <li><a href="#carrier-counts-instead-of-allele-dosage" id="markdown-toc-carrier-counts-instead-of-allele-dosage">Carrier counts instead of allele dosage</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#itan--casanova-contributions" id="markdown-toc-itan--casanova-contributions">Itan &amp; Casanova contributions</a>    <ul>
@@ -9274,7 +9146,7 @@ The accuracy (proportion of all correctly identified cases) was
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
-<h1 id="introduction">Introduction</h1>
+<h2 id="introduction">Introduction</h2>
 
 <p>In this series I will go over methods and theory for gene burden testing.
 I am publishing this live as I work since there are several heavy papers to get through.
@@ -9286,7 +9158,7 @@ I am publishing this live as I work since there are several heavy papers to get 
 Filter: If variants are MAF &gt;1.1 in gnomAD then run a filter to remove variants that are not sequenced in controls.
 Justification: If we ran that filter for every singleton it would remove the very rare variants that would have been a true positive if it had been sequenced in the controls.</p>
 
-<h1 id="main-papers-in-order">Main papers in order</h1>
+<h2 id="main-papers-in-order">Main papers in order</h2>
 
 <ul>
   <li>Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
@@ -9309,7 +9181,7 @@ Justification: If we ran that filter for every singleton it would remove the ver
 <a class="citation" href="#IonitaLaza2013Sequence">(Ionita-Laza et al., 2013)</a></li>
 </ul>
 
-<h2 id="major-classes-of-tests">Major Classes of Tests</h2>
+<h3 id="major-classes-of-tests">Major Classes of Tests</h3>
 
 <ul>
   <li>Burden/Collapsing tests</li>
@@ -9318,9 +9190,9 @@ Justification: If we ran that filter for every singleton it would remove the ver
   <li>Omnibus tests: hedge against difference scenarios</li>
 </ul>
 
-<h2 id="burden-tests-so-far">Burden Tests So Far</h2>
+<h3 id="burden-tests-so-far">Burden Tests So Far</h3>
 
-<h3 id="tests">Tests</h3>
+<h4 id="tests">Tests</h4>
 
 <ul>
   <li>Binary Collapsing: CAST</li>
@@ -9329,7 +9201,7 @@ Justification: If we ran that filter for every singleton it would remove the ver
   <li>Weighted Sum Test</li>
 </ul>
 
-<h3 id="power-of-burden-tests-depends-on">Power of burden tests depends on</h3>
+<h4 id="power-of-burden-tests-depends-on">Power of burden tests depends on</h4>
 
 <ul>
   <li>Number of associated variants</li>
@@ -9338,7 +9210,7 @@ Justification: If we ran that filter for every singleton it would remove the ver
   <li>Powerful if most variants are causal and have effects in the same direction.</li>
 </ul>
 
-<h1 id="li-and-leal-2008">Li and Leal 2008</h1>
+<h2 id="li-and-leal-2008">Li and Leal 2008</h2>
 <ul>
   <li>
     <p>Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
@@ -9350,7 +9222,7 @@ Justification: If we ran that filter for every singleton it would remove the ver
   <li>Combined Multivariate and Collapsing (CMC) method unifies the advantages of both collapsing and multiple-marker tests.</li>
 </ul>
 
-<h2 id="background">Background</h2>
+<h3 id="background">Background</h3>
 
 <p>Genotype phenotype association may be tested by:</p>
 
@@ -9372,7 +9244,7 @@ or logistic regression.</li>
   <li>If miss-classified, non-functional variants could introduce error.</li>
 </ul>
 
-<h2 id="genetic-model">Genetic model</h2>
+<h3 id="genetic-model">Genetic model</h3>
 
 <ul>
   <li>In a locus M variants can independently cause disease.</li>
@@ -9396,7 +9268,7 @@ or logistic regression.</li>
   <li>Their focus is the omnibus test, which provides an association test of the entire locus and is not focused on any specific variant within the locus.</li>
 </ul>
 
-<h2 id="single-marker-test">Single-marker test</h2>
+<h3 id="single-marker-test">Single-marker test</h3>
 
 <ul>
   <li>One approach of association studies is to test each variant site individually with the use of a univariate test and assess the significance of the <em>omnibus test</em> (chi-squared test or F test) after correction for multiple comparisons.</li>
@@ -9405,7 +9277,7 @@ or logistic regression.</li>
   <li>For an equal number of cases and controls, the classical Pearson chi-squared statistic for testing equal genotype frequencies in cases and controls is used.</li>
 </ul>
 
-<h2 id="multiple-marker-test">Multiple-marker test</h2>
+<h3 id="multiple-marker-test">Multiple-marker test</h3>
 
 <p>Another option is to test all variants simultaneously by multivariate test</p>
 
@@ -9417,7 +9289,7 @@ or logistic regression.</li>
   <li>Rejecting the null hypothesis would indicate that at least one of the variants is assocciated with disease.</li>
 </ul>
 
-<h2 id="basic-collapsing-method">Basic collapsing method</h2>
+<h3 id="basic-collapsing-method">Basic collapsing method</h3>
 
 <p>Since variants are expected to be very rare, 
 genotypes across all variants are collapsed.
@@ -9430,7 +9302,7 @@ The classic Pearson chi-squared statistic can be used to test the summed proport
 The power can be calculated as shown by the authors.</li>
 </ul>
 
-<h2 id="cmc-method">CMC method</h2>
+<h3 id="cmc-method">CMC method</h3>
 
 <p>Unified method that combines collapsing and multivariate testing.</p>
 
@@ -9444,7 +9316,7 @@ The power can be calculated as shown by the authors.</li>
 There are n markers in group g, and so on for each group.
 The multivariate test is done where for each group, the  individuals are coded with either 1 (a carrier of one or more variants) or 0 (wild-type).</p>
 
-<h2 id="power-of-cmc-method">Power of CMC method</h2>
+<h3 id="power-of-cmc-method">Power of CMC method</h3>
 
 <p>Results:</p>
 
@@ -9463,7 +9335,7 @@ The multivariate test is done where for each group, the  individuals are coded w
   </li>
 </ul>
 
-<h2 id="misclassification">Misclassification</h2>
+<h3 id="misclassification">Misclassification</h3>
 
 <p>Two types of miss-classifications are considered:</p>
 
@@ -9475,7 +9347,7 @@ The multivariate test is done where for each group, the  individuals are coded w
 
 <p><em>This section can be read for detail but is probably familiar enough for us to skip.</em></p>
 
-<h2 id="effects-of-linkage-disequilibrium-ld">Effects of Linkage Disequilibrium (LD)</h2>
+<h3 id="effects-of-linkage-disequilibrium-ld">Effects of Linkage Disequilibrium (LD)</h3>
 
 <p>A simulation is done in this section:</p>
 
@@ -9506,7 +9378,7 @@ The multivariate test is done where for each group, the  individuals are coded w
   </li>
 </ul>
 
-<h2 id="evaluation-of-type-i-error-rate">Evaluation of Type I Error Rate</h2>
+<h3 id="evaluation-of-type-i-error-rate">Evaluation of Type I Error Rate</h3>
 
 <ul>
   <li>Simulation was used to generate data under the null hypothesis of no association between variants and disease status.</li>
@@ -9537,7 +9409,7 @@ The multivariate test is done where for each group, the  individuals are coded w
   </li>
 </ul>
 
-<h2 id="problems-with-this-paper">Problems with this paper</h2>
+<h3 id="problems-with-this-paper">Problems with this paper</h3>
 
 <ul>
   <li>The main problem with collapsing method is when single individuals have more than one causal variant being only counted as “1”. This more likely to occur for our protein-pathway collapse than a single gene/locus collapse.</li>
@@ -9546,14 +9418,14 @@ The multivariate test is done where for each group, the  individuals are coded w
   <li>CMC code - maf threshold: In the R code, those variants with minor allele frequency below the specified maf threshold are collapsed into a single super variant. Can we group data into several frequency groups or is one <em>above/below</em> threshold only possible?</li>
 </ul>
 
-<h1 id="madsen-and-browning-2009">Madsen and Browning 2009</h1>
+<h2 id="madsen-and-browning-2009">Madsen and Browning 2009</h2>
 
 <ul>
   <li>A groupwise association test for rare mutations using a weighted sum statistic
 <a class="citation" href="#madsen2009groupwise">(Madsen &amp; Browning, 2009)</a></li>
 </ul>
 
-<h2 id="background-1">Background</h2>
+<h3 id="background-1">Background</h3>
 
 <ul>
   <li>
@@ -9593,7 +9465,7 @@ rare variants are defined as those having a minor allele frequency (MAF) of at m
 <p><em>Note that permutation of disease status results in correct type I error even in the presence of LD [Cheverud 2001, Churchill 1994], 
 although relatively low LD is expected between rare variants [Li and Leal 2008, Pritchard 2001,2001].</em></p>
 
-<h2 id="main-theory">Main theory</h2>
+<h3 id="main-theory">Main theory</h3>
 
 <ul>
   <li>
@@ -9622,8 +9494,8 @@ as suggested in the CMC method [Li and Leal 2008].</li>
   </li>
 </ul>
 
-<h2 id="methods">Methods</h2>
-<h3 id="weighted-sum-method">Weighted-Sum Method</h3>
+<h3 id="methods">Methods</h3>
+<h4 id="weighted-sum-method">Weighted-Sum Method</h4>
 <p>Compares the number of mutations in a group of variants between case/control. 
 Designed to identify an excess of mutations in case, compared to controls. 
 Each variant belongs to a group (gene, pathway, etc.) and, 
@@ -9687,7 +9559,7 @@ weight for variant is 0.447</li>
   <li>Permutation of case/control labels maintains the LD structure.</li>
 </ul>
 
-<h3 id="power-simulations">Power simulations</h3>
+<h4 id="power-simulations">Power simulations</h4>
 <p>Comparison of:</p>
 
 <ul>
@@ -9741,14 +9613,14 @@ e.g. <em>The mutation probability is calculated such that the probability (pM) t
 <ul>
   <li>The mutation probabilities (p) can be very low for some of the sampled variants.
 This means that some variants contain no mutations in any of the sampled individuals, and these variants are hence omitted in the tests.
-    <h2 id="encode-data">ENCODE data</h2>
+    <h3 id="encode-data">ENCODE data</h3>
     <p>The method was tested on rare variants with the frequency-spectrum of a naturally occurring population using the ENCODE resequencing data.</p>
   </li>
 </ul>
 
-<h2 id="results">Results</h2>
+<h3 id="results">Results</h3>
 
-<h3 id="proportion-of-variants-containing-mutations">Proportion of Variants Containing Mutations</h3>
+<h4 id="proportion-of-variants-containing-mutations">Proportion of Variants Containing Mutations</h4>
 <p>The mutation frequencies are sampled according to Wright’s formula, 
 and hence mutations are very rare for some variants. 
 Using 1000 affected and 1000 unaffected individuals, 
@@ -9757,14 +9629,14 @@ This level is in concordance with the level from human resequencing studies.</p>
 
 <p>Skipping the section: Power under Varying Model Parameters.</p>
 
-<h2 id="discussion">Discussion</h2>
+<h3 id="discussion">Discussion</h3>
 
 <p>Analysis of pathways can be done in two different ways. 
 One way is to use the pathway as a group, and run the test on the entire pathway. 
 On the other hand, for large pathways, it may be beneficial to use a method that allows a gene with a strong signal to have a high impact on the combined pathway test-statistic (T). 
 If a pathway contains G non-overlapping genes, a method to do this is to use the weighted-sum method on each gene, and combine the resulting p-values (p1,…,pG) with the Fisher product test statistic.</p>
 
-<h2 id="summary">Summary</h2>
+<h3 id="summary">Summary</h3>
 
 <ul>
   <li>Weight based on frequency of variat in the controls.</li>
@@ -9774,7 +9646,7 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
   <li>Alternative p-value using a standard permutation with a stopping rule gives uniform (0,1) distributed p-value, which might be useful for further analysis.</li>
 </ul>
 
-<h1 id="price-2010">Price 2010</h1>
+<h2 id="price-2010">Price 2010</h2>
 
 <ul>
   <li>Pooled association tests for rare variants in exon-resequencing studies.
@@ -9790,9 +9662,9 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
   <li>Statistical significance is assessed by permutation testing with variable thresholds.</li>
 </ul>
 
-<h2 id="methods-1">Methods</h2>
+<h3 id="methods-1">Methods</h3>
 
-<h3 id="simulation-framework">Simulation Framework</h3>
+<h4 id="simulation-framework">Simulation Framework</h4>
 <p>Simplified summary:</p>
 
 <ul>
@@ -9808,12 +9680,12 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
   </li>
 </ul>
 
-<h3 id="weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios">Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios</h3>
+<h4 id="weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios">Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios</h4>
 <p>(missing reference)
 	- Based on the frequency in controls.
 	- Relationship between log odds ratio and allele frequency the same as Madsen 2009.</p>
 
-<h3 id="fixed-threshold-approach">Fixed-Threshold Approach</h3>
+<h4 id="fixed-threshold-approach">Fixed-Threshold Approach</h4>
 <p>(missing reference)</p>
 
 <ul>
@@ -9837,19 +9709,19 @@ I need to compare these two papers here in more detail
   </li>
 </ul>
 
-<h3 id="weighted-approach">Weighted Approach</h3>
+<h4 id="weighted-approach">Weighted Approach</h4>
 <p>(missing reference)</p>
 <ul>
   <li>Also generalise by adding \(\pi_j\) for a quantitative phenotype value.</li>
 </ul>
 
-<h3 id="variable-threshold-approach">Variable-Threshold Approach</h3>
+<h4 id="variable-threshold-approach">Variable-Threshold Approach</h4>
 <ul>
   <li>There exists some (unknown) threshold T for which variants with a minor allele frequency (MAF) below T are substantially more likely to be functional than are variants with an MAF above T.</li>
   <li>z-score of a regression across samples of phenotypes versus counts of mutations meeting the allele-frequency threshold T.</li>
 </ul>
 
-<h3 id="cheating-approach-to-incorporating-varphip-phip">Cheating Approach to Incorporating \(\varphi(p)\) (“phi(p)”)</h3>
+<h4 id="cheating-approach-to-incorporating-varphip-phip">Cheating Approach to Incorporating \(\varphi(p)\) (“phi(p)”)</h4>
 <ul>
   <li>Weight variants according to the probability \(\varphi(p)\)
     <ul>
@@ -9859,16 +9731,16 @@ I need to compare these two papers here in more detail
   </li>
 </ul>
 
-<h3 id="incorporation-of-computational-predictions-of-functional-effects">Incorporation of Computational Predictions of Functional Effects</h3>
+<h4 id="incorporation-of-computational-predictions-of-functional-effects">Incorporation of Computational Predictions of Functional Effects</h4>
 <ul>
   <li>Tested if incorporation of PolyPhen-2 scores improves statistical test.</li>
   <li>To asses, simulated PolyPhen-2 predictions of damaging and neutral mutations.</li>
 </ul>
 
-<h3 id="application-to-empirical-data-sets">Application to Empirical Data Sets</h3>
+<h4 id="application-to-empirical-data-sets">Application to Empirical Data Sets</h4>
 <p>Applied to some real data.</p>
 
-<h2 id="results-and-discussion">Results and Discussion</h2>
+<h3 id="results-and-discussion">Results and Discussion</h3>
 <ul>
   <li>Skipping this.</li>
   <li>The methods are an improvement.
@@ -9876,14 +9748,14 @@ I need to compare these two papers here in more detail
   <li>and additionaly adds a method for the quantitative variable.</li>
 </ul>
 
-<h1 id="neale-2011">Neale 2011</h1>
+<h2 id="neale-2011">Neale 2011</h2>
 
 <ul>
   <li>Testing for an unusual distribution of rare variants.
 (missing reference)</li>
 </ul>
 
-<h2 id="c-alpha-tests">C-alpha tests</h2>
+<h3 id="c-alpha-tests">C-alpha tests</h3>
 <ul>
   <li>They propose here the C-alpha test statistic as a novel approach for testing for
     <ul>
@@ -9893,12 +9765,12 @@ I need to compare these two papers here in more detail
   <li>Unlike existing burden tests, C-alpha, by testing the variance rather than the mean, maintains consistent power when the target set contains both risk and protective variants.</li>
 </ul>
 
-<h1 id="skat">SKAT</h1>
+<h2 id="skat">SKAT</h2>
 
 <p>Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test
 (missing reference)</p>
 
-<h2 id="introduction-1">Introduction</h2>
+<h3 id="introduction-1">Introduction</h3>
 
 <ul>
   <li>They propose the sequence kernel association test (SKAT),
@@ -9929,9 +9801,9 @@ to have little or no effect on phenotype,</li>
   <li>or the use of permutation to estimate the threshold.</li>
 </ul>
 
-<h2 id="methods-2">Methods</h2>
+<h3 id="methods-2">Methods</h3>
 
-<h3 id="sequencing-kernel-association-test">Sequencing Kernel Association Test</h3>
+<h4 id="sequencing-kernel-association-test">Sequencing Kernel Association Test</h4>
 <p>*SKAT is a supervised test 
 	- for the joint effects of multiple variants 
 	- in a region 
@@ -9954,7 +9826,7 @@ to have little or no effect on phenotype,</li>
   <li>\(G_i\) genotypes (0,1,2 general)</li>
 </ul>
 
-<h3 id="skat-model-and-test-for-linear-snp-effects">SKAT Model and Test for Linear SNP Effects</h3>
+<h4 id="skat-model-and-test-for-linear-snp-effects">SKAT Model and Test for Linear SNP Effects</h4>
 <p>Eqn 1 and 2:</p>
 
 <ul>
@@ -9978,18 +9850,18 @@ to have little or no effect on phenotype,</li>
   <li>Under these conditions, we show in Appendix A that the SKAT test statistic Q is equivalent to the C-alpha test statistic T.</li>
 </ul>
 
-<h3 id="relationship-between-linear-skat-and-individual-variant-test-statistics">Relationship between Linear SKAT and Individual Variant Test Statistics</h3>
+<h4 id="relationship-between-linear-skat-and-individual-variant-test-statistics">Relationship between Linear SKAT and Individual Variant Test Statistics</h4>
 <ul>
   <li>One needs to fit the null model only a single time to be able to compute the Sj for all individual variants j as well as all regions to be tested.</li>
   <li>Similarly, if multiple regions are under consideration, then the same mb0 can be used to compute the SKAT Q statistics for each region.</li>
 </ul>
 
-<h3 id="accommodating-epistatic-effects-and-prior-information-under-the-skat">Accommodating Epistatic Effects and Prior Information under the SKAT</h3>
+<h4 id="accommodating-epistatic-effects-and-prior-information-under-the-skat">Accommodating Epistatic Effects and Prior Information under the SKAT</h4>
 <p>Ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework.</p>
 
 <p>They replace Gi’b by a more flexible function f(Gi) in the linear and logistic models (1) and (2) where f(Gi) allows for rare variant by rare variant and common variant by rare-variant interactions</p>
 
-<h2 id="skat-is-a-generalization-of-the-c-alpha-test">SKAT Is a Generalization of the C-Alpha Test</h2>
+<h3 id="skat-is-a-generalization-of-the-c-alpha-test">SKAT Is a Generalization of the C-Alpha Test</h3>
 
 <ul>
   <li>The recently proposed the C-alpha test has advantages over burden tests in that
@@ -10006,8 +9878,8 @@ to have little or no effect on phenotype,</li>
   </li>
 </ul>
 
-<h1 id="lee-2012">Lee 2012</h1>
-<h2 id="introduction-2">Introduction</h2>
+<h2 id="lee-2012">Lee 2012</h2>
+<h3 id="introduction-2">Introduction</h3>
 <p>SKAT-O</p>
 
 <ul>
@@ -10020,7 +9892,7 @@ to have little or no effect on phenotype,</li>
   </li>
 </ul>
 
-<h2 id="methods-3">Methods</h2>
+<h3 id="methods-3">Methods</h3>
 <ul>
   <li>They show the SKAT method</li>
   <li>They show the buden testing methods</li>
@@ -10032,8 +9904,8 @@ to have little or no effect on phenotype,</li>
   </li>
 </ul>
 
-<h1 id="protein-pathway-analysis">Protein pathway analysis</h1>
-<h2 id="zhang-2021-ashg">Zhang 2021 ASHG</h2>
+<h2 id="protein-pathway-analysis">Protein pathway analysis</h2>
+<h3 id="zhang-2021-ashg">Zhang 2021 ASHG</h3>
 
 <p>Zhang et al. provide and excellent example of the same problem that we are
 assessing. 
@@ -10052,13 +9924,13 @@ Basically the only difference is:</p>
 
 <p>Same cohort size. Really nice to see it in ASHG. Will have to do a comparison to per-gene SKAT-O to show the improvement, as they do.</p>
 
-<h2 id="problems-with-this-paper-1">Problems with this paper</h2>
+<h3 id="problems-with-this-paper-1">Problems with this paper</h3>
 
-<h3 id="cluster-method">Cluster method</h3>
+<h4 id="cluster-method">Cluster method</h4>
 <p>I surprised to see them apply their own novel clustering method (NHC) without some formal methods paper first - so many already exist, including 10 that can be used with their String data. 
 In theory it sound good but there is no real evidence.</p>
 
-<h3 id="carrier-counts-instead-of-allele-dosage">Carrier counts instead of allele dosage</h3>
+<h4 id="carrier-counts-instead-of-allele-dosage">Carrier counts instead of allele dosage</h4>
 <p>Their main analysis is:</p>
 
 <ul>
@@ -10125,8 +9997,8 @@ this_case_pathway_hit <span class="o">=</span> dict<span class="o">()</span>
 <span class="c"># They do not show any code with the SKAT parameters, presumably defaults using R.</span>
 </code></pre></div></div>
 
-<h1 id="itan--casanova-contributions">Itan &amp; Casanova contributions</h1>
-<h2 id="historical-review">Historical review</h2>
+<h2 id="itan--casanova-contributions">Itan &amp; Casanova contributions</h2>
+<h3 id="historical-review">Historical review</h3>
 
 <p>We are tackling this problem of protein pathway analysis from the viewpoint of 
 rare immune disease and infection.
@@ -10346,7 +10218,7 @@ so the main remaining task is standardisation of the protein-pathway
 annotation and association testing methods - 
 steps which we will soon be ready to publish after peer-review.</p>
 
-<h1 id="burden-test-power-calculation">Burden test power calculation</h1>
+<h2 id="burden-test-power-calculation">Burden test power calculation</h2>
 
 <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">This</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">seems</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">work</span><span class="w">
 </span><span class="c1"># This script tests then the minimum number of heterozygous mutations that can exist in a test set to reach significance.</span><span class="w">
@@ -10515,7 +10387,7 @@ Then we will find the real minimum variant count required to pass significance:<
 </span><span class="c1"># $asym.pval [1] 0.0311075</span><span class="w">
 </span></code></pre></div></div>
 
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="li2008methods">Li, B., &amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. <i>The American Journal of Human Genetics</i>, <i>83</i>(3), 311–321.</span></li>
 <li><span id="morris2010evaluation">Morris, A. P., &amp; Zeggini, E. (2010). An evaluation of statistical approaches to rare variant analysis in genetic association studies. <i>Genetic Epidemiology</i>, <i>34</i>(2), 188–193.</span></li>
@@ -10697,15 +10569,11 @@ https://www.statology.org/fishers-exact-test-calculator/</p>
   <h2> - </h2>
   <p><h1 id="head">Head</h1>
 
-<ul id="markdown-toc">
-  <li><a href="#head" id="markdown-toc-head">Head</a></li>
-</ul>
 </p>
 
   <h2> - </h2>
   <p><h1 id="linear-regression">Linear regression</h1>
 <ul id="markdown-toc">
-  <li><a href="#linear-regression" id="markdown-toc-linear-regression">Linear regression</a></li>
   <li><a href="#simple-linear-regression" id="markdown-toc-simple-linear-regression">Simple linear regression</a></li>
   <li><a href="#drawing-the-line" id="markdown-toc-drawing-the-line">Drawing the line</a></li>
   <li><a href="#accuracy-of-the-coefficient-estimates" id="markdown-toc-accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</a></li>
@@ -10721,7 +10589,7 @@ https://www.statology.org/fishers-exact-test-calculator/</p>
 <p><br />
 This page is being formulated currently by plagerising “An Introduction to Statistical Learning”. If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead.</p>
 
-<h1 id="simple-linear-regression">Simple linear regression</h1>
+<h2 id="simple-linear-regression">Simple linear regression</h2>
 
 <p>Predict a quantitative response \(Y\) using a predictor variable \(X\); regressing \(Y\) onto \(X\).
 The <em>intercept</em> and <em>splope</em> are written as \(\beta_0\) and \(\beta_1\), respectively.
@@ -10740,7 +10608,7 @@ With some sample data, one can begin to predict \(Y\) based on the predictor \(X
 
 <p>In this case, the estimated response \(\hat y\) equals the estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) according to a sample of the predictor values (\(x\)).</p>
 
-<h1 id="drawing-the-line">Drawing the line</h1>
+<h2 id="drawing-the-line">Drawing the line</h2>
 
 <p>The estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) are unknown, therefore we need to get these values to predict \(Y\) based on \(X\).
 A number (\(n\)) of obersevations are made where we measure \(X\) and \(Y\). Measurements could be recorded as: (measure 1, x = 5, y = 10), (measure 2, x = 10, y = 20), and so on up to \(n\) obersavations;</p>
@@ -10783,7 +10651,7 @@ and
 \(\bar{x} \equiv \frac{1}{n}\sum_{i=1}^{n} x_i\)
 so the equation above (\ref{eq5}) defines the least squares coefficient estimates for simple linear regression.</p>
 
-<h1 id="accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</h1>
+<h2 id="accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</h2>
 
 <p>We will want to account for error \(\epsilon\) to draw an accurate line. 
 \(\epsilon\) would be the mean-zero random error for the relationship between \(Y\) and \(X\) for the unknown function \(f\).</p>
@@ -10843,7 +10711,7 @@ This interval for \(\hat\beta_1\) is approximately</p>
 <p>a 95% chance that the true \(\beta_1\) value is in this range.
 The same fomula is true for \(\beta_0\), swapping terms.</p>
 
-<h1 id="se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</h1>
+<h2 id="se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</h2>
 
 <p>The SE can be used for a <em>hypothesis test</em> on the corfficients, i.e. testing the <em>null hypothesis</em> and <em>alternative hypothesis</em>,</p>
 
@@ -10880,12 +10748,12 @@ No relationship will give <em>t</em>-distribution \(n - 2\) degrees of freedom.
 <p>The probability of observing any number equal to |<em>t</em>| or larger, assuming \(\beta_1 = 0\), is the <em>p-value</em>.
 A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can <em>reject the null hypothesis</em>.</p>
 
-<h1 id="model-accuracy">Model accuracy</h1>
+<h2 id="model-accuracy">Model accuracy</h2>
 
 <p>After rejecting the null we want to check if the line fits well - does the model fit the data?
 Ttwo related quantities can asses the fit of linear regression; <em>residual standard error</em> (RSE) and \(R^2\)
 statistic.</p>
-<h2 id="residual-standard-error">Residual Standard Error</h2>
+<h3 id="residual-standard-error">Residual Standard Error</h3>
 
 <p>Because of the error term \(\epsilon\),
 the LR cannot perfectly predict \(Y\) from \(X\).
@@ -10923,7 +10791,7 @@ The value calculated in eqn \ref{eq12} will become smaller when the estimate and
 \(\hat y_1 \approx y_1\) for 
 \(i = 1,2,...,n\), in which case the model will fit the data well.</p>
 
-<h2 id="r2-statistic">\(R^2\) Statistic</h2>
+<h3 id="r2-statistic">\(R^2\) Statistic</h3>
 <p>We use this all the time; it will be worth getting into the discussion from 
 Cosma Rohilla Shalizi in
 <a href="http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/">Advanced Data Analysis from an Elementary Point of View</a>
@@ -10931,7 +10799,7 @@ Cosma Rohilla Shalizi in
 ``2.2.1.1 R2: Distraction or Nuisance?’’. 
 The short summary following just covers the basic “normal” usage, rather getting into the statistica weeds.</p>
 
-<h1 id="multiple-linear-regression">Multiple linear regression</h1>
+<h2 id="multiple-linear-regression">Multiple linear regression</h2>
 
 <p>In a linear regression we use a predictor variable X to predict a quantitative response Y.
 If we want to use more than one variable (\(X_1, X_2, ...\)) 
@@ -10947,9 +10815,6 @@ that might affect the response Y, then we will use a multiple linear regression.
 
   <h2> - </h2>
   <p><h1 id="pca">PCA</h1>
-<ul id="markdown-toc">
-  <li><a href="#pca" id="markdown-toc-pca">PCA</a></li>
-</ul>
 
 <p><br />
 We will look at principal component analysis (PCA) and singular value decomposition (SVD).
@@ -11048,12 +10913,14 @@ Doing Bayesian data analysis a tutorial with R and BUGS.pdf<br />
   <h2> - </h2>
   <p><h1 id="zero-inflated-negative-binomial-regression">Zero-inflated negative binomial regression</h1>
 <ul id="markdown-toc">
-  <li><a href="#zero-inflated-negative-binomial-regression" id="markdown-toc-zero-inflated-negative-binomial-regression">Zero-inflated negative binomial regression</a></li>
-  <li><a href="#zero-inflated-negative-binomial-regression-1" id="markdown-toc-zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</a></li>
+  <li><a href="#zero-inflated-negative-binomial-regression-1" id="markdown-toc-zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</a>    <ul>
+      <li><a href="#a-negative-binomial-model" id="markdown-toc-a-negative-binomial-model">A negative binomial model.</a></li>
+    </ul>
+  </li>
   <li><a href="#analysis-methods-you-might-consider" id="markdown-toc-analysis-methods-you-might-consider">Analysis methods you might consider</a></li>
 </ul>
 
-<h1 id="zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</h1>
+<h2 id="zero-inflated-negative-binomial-regression-1">Zero-inflated negative binomial regression</h2>
 
 <p>Zero-inflated negative binomial regression (zinbr) is for modeling count variables with excessive zeros and it is usually for overdispersed count outcome variables.</p>
 
@@ -11179,7 +11046,7 @@ We use the pscl to run a zero-inflated negative binomial regression. We begin by
   </span><span class="n">summary</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span><span class="w">
 </span></code></pre></div></div>
 
-<h1 id="analysis-methods-you-might-consider">Analysis methods you might consider</h1>
+<h2 id="analysis-methods-you-might-consider">Analysis methods you might consider</h2>
 <p>Some other methods that you might use.</p>
 
 <p>OLS Regression – You could try to analyze these data using OLS regression. However, count data are highly non-normal and are not well estimated by OLS regression.
