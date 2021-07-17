@@ -19,11 +19,11 @@ body {
 		font-size: 0.8rem;
 		line-height: 1.4rem;
 		}
-	h1 { 
+	h1, h2 { 
 		font: 1.2rem 'Didot';
 		color: black;
 	}
-	h2, h3, h4, h5, h6 {
+	h3, h4, h5, h6 {
 		font: 1.0rem 'Didot';
 		font-style: italic;
 		color: black;
@@ -38,11 +38,11 @@ body {
 		font-size: 1.1rem;
 		line-height: 1.7rem;
 		}
-	h1 { 
+	h1, h2 { 
 		font: 1.2rem 'Didot';
 		color: black;
 		}
-	h2, h3, h4, h5, h6 {
+	h3, h4, h5, h6 {
 		font: 1.1rem 'Didot';
 		font-style: italic;
 		color: black;
@@ -57,11 +57,11 @@ body {
 		font-size: 1.1rem;
 		line-height: 1.7rem;
 		}
-	h1 { 
+	h1, h2 { 
 		font: 1.2rem 'Didot';
 		color: black;
 		}
-	h2, h3, h4, h5, h6 {
+	h3, h4, h5, h6 {
 		font: 1.1rem 'Didot';
 		font-style: italic;
 		color: black;
@@ -75,11 +75,11 @@ body {
 		font-size: 1.2rem;
 		line-height: 2rem;
 		}
-	h1 { 
+	h1, h2 { 
 		font: 1.6rem 'Didot';
 		color: black;
 		}
-	h2, h3, h4, h5, h6 {
+	h3, h4, h5, h6 {
 		font: 1.3rem 'Didot';
 		font-style: italic;
 		color: black;
@@ -93,11 +93,11 @@ body {
 		font-size: 1.3rem;
 		line-height: 2rem;
 		}
-	h1 { 
+	h1, h2 { 
 		font: 1.7rem 'Didot';
 		color: black;
 		}
-	h2, h3, h4, h5, h6 {
+	h3, h4, h5, h6 {
 		font: 1.3rem 'Didot';
 		font-style: italic;
 		color: black;
@@ -111,11 +111,11 @@ body {
 		font-size: 1.3rem;
 		line-height: 2rem;
 		}
-	h1 { 
+	h1, h2 { 
 		font: 1.7rem 'Didot';
 		color: black;
 		}
-	h2, h3, h4, h5, h6 {
+	h3, h4, h5, h6 {
 		font: 1.3rem 'Didot';
 		font-style: italic;
 		color: black;
@@ -128,11 +128,11 @@ body {
 		font-size: 1.3rem;
 		line-height: 2rem;
 		}
-	h1 { 
+	h1, h2 { 
 		font: 1.7rem 'Didot';
 		color: black;
 		}
-	h2, h3, h4, h5, h6 {
+	h3, h4, h5, h6 {
 		font: 1.3rem 'Didot';
 		font-style: italic;
 		color: black;
@@ -433,18 +433,18 @@ table {
 
 
 /* Table of contents */
-
 #markdown-toc ul {
-	list-style: indent;
+	/* list-style: indent; */
+    list-style: decimal;
 	}
 
 #markdown-toc {
 	border: 2px solid #333333;
 	padding: 1.0rem; /* top */
 	padding-left: 2.5rem;
-	list-style: decimal;
 	display: inline-block;
-	background: #eee;
+	background: #f0f0f0;
+	/* list-style: decimal; */
 	}
 
 blockquote {

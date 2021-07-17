@@ -12,11 +12,11 @@ subject: statistics
 * TOC
 {:toc}
 
-## Correlation, regression and repeated data
+## Introduction
 
 This topic is introduced as the first paper 
 {% cite bland1994correlation %}
-in a series of BMJ statistical notes by Altman \& Bland
+in a series of BMJ statistical notes by Altman & Bland
 ([ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md )):
 1\. Bland JM, Altman DG. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6933/896"> Correlation, regression and repeated data.</a> <b>308</b>, 896.
 
