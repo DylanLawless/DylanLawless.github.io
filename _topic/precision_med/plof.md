@@ -11,7 +11,7 @@ subject: Precision medicine
 * TOC
 {:toc}
 
-# Identification of pLoF variants
+## Identification of pLoF variants
 As reported in "Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program" [0],
 <!-- taliun2021sequencing -->
 predicted loss-of-function (pLoF) variants can be identified using 
@@ -26,7 +26,7 @@ I believe the "p" was originally for _predicted_ loss-of-function,
 and has more recently changed to _putative_ loss-of-function.
 The former is more transparent and preferable, I believe.
 
-## Variant Effect Predictor 
+### Variant Effect Predictor 
 Generally a local version of
 [Variant Effect Predictor](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/) 
 (VEP) software and databases are run for analysis.
@@ -51,7 +51,7 @@ The table from the ensembl website is worth reading:
 [Ensembl Variation - Calculated variant consequences](https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences).\
 <img src="{{ site.baseurl }}{% link images/VEP_consequences.jpg %}" width="100%">
 
-## LOFTEE
+### LOFTEE
 The [LOFTEE github](https://github.com/konradjk/loftee) repo shows the code and examples of usage.
 It functions as a VEP plugin for 3 LoF consequences: 
 * stop-gained
@@ -64,13 +64,13 @@ These include known features about how transcripts will be affected by variants
 known splicing sequence mechanisms,
 and other flags including splicing prediction that may be less reliable but still valuable.
 
-## GENCODE
+### GENCODE
 Accurate annotation depends on correctly mapping positions based on the genome reference.
 The genomic coordinates of coding elements may be based on [GENCODE](https://www.gencodegenes.org/human/) 
 [3].
 <!-- frankish2019gencode -->
 
-## Gene Ontology (GO)
+### Gene Ontology (GO)
 [Gene Ontology (GO)](http://geneontology.org) is a valuable database of known gene function and
 can also be used to perform enrichment analysis on gene sets 
 [5, 6].
@@ -90,8 +90,8 @@ The output table shows the GO process "V(D)J recombination" as the strongest ass
 The fold enrichment and strong P-value indicate a true association of shared biological pathway.\
 <img src="{{ site.baseurl }}{% link images/GO_enrich.png %}" width="100%">
 
-# Published example
-## Methods
+## Published example
+### Methods
 In Taliun et al [0], each of these tools are used in their analysis to target variants: 
 * stop-gained
 * frameshift
@@ -124,7 +124,7 @@ They tested all 12,563 GO terms that included more than one gene.
 The P-value significance threshold was thus ~2e-6. 
 The enrichment and depletion of pLOF variants in public gene databases was tested in a similar way.
 
-## Results
+### Results
 Taliun et al. wanted to see if any gene sets had enrichment or depletion of rare pLoF.
 In the first 53,831 TOPMed samples, 
 they detected more than 400 million variants:
@@ -190,7 +190,7 @@ Genes associated with human disease in
 * OMIM19 [9] (4% depletion) and 
 * ClinVar [10] (4% depletion).
 
-# The future
+## The future
 With very large scale genome sequencing we will start to association studies for extremely rare variants (eventually there will be no novel SNVs). 
 This provokes a few possibilities.
 1. Predicting probably of all SNVs.
@@ -200,7 +200,7 @@ This provokes a few possibilities.
 3. Novel non-coding variants will become the new variants of unknown significance (VUS). 
 Will we slowly trudge through the same system again or will there be a more sophisticated approach for the non-coding genome in clinical genomics?
 
-# References
+## References
 ----------
 <!-- curly-percent bibliography --cited curly-percent -->
 [0]  Taliun, Daniel, et al. Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program. Nature 590.7845 (2021): 290-299.

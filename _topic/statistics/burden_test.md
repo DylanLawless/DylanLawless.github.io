@@ -11,7 +11,7 @@ subject: statistics
 * TOC
 {:toc}
 
-# Introduction
+## Introduction
 
 In this series I will go over methods and theory for gene burden testing.
 I am publishing this live as I work since there are several heavy papers to get through.
@@ -23,7 +23,7 @@ Running code on test data: Remake the gVCF as BP_RESOLUTION to list a site for e
 Filter: If variants are MAF >1.1 in gnomAD then run a filter to remove variants that are not sequenced in controls.
 Justification: If we ran that filter for every singleton it would remove the very rare variants that would have been a true positive if it had been sequenced in the controls. 
 
-# Main papers in order
+## Main papers in order
 
 * Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
 {% cite li2008methods %}.
@@ -44,30 +44,30 @@ Justification: If we ran that filter for every singleton it would remove the ver
 * Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants.
 {% cite IonitaLaza2013Sequence  %}
 
-## Major Classes of Tests
+### Major Classes of Tests
 
 * Burden/Collapsing tests
 * Supervised/Adaptive Burden/Collapsing tests
 * Variance component (similarity) based tests
 * Omnibus tests: hedge against difference scenarios
 
-## Burden Tests So Far
+### Burden Tests So Far
 
-### Tests
+#### Tests
 
 * Binary Collapsing: CAST
 * CMC
 * Count Collapsing: MZ (GRANVIL)
 * Weighted Sum Test
 
-### Power of burden tests depends on
+#### Power of burden tests depends on
 
 * Number of associated variants
 * Number of non-associated variants
 * Direction of the effects.
 * Powerful if most variants are causal and have effects in the same direction.
 
-# Li and Leal 2008
+## Li and Leal 2008
 * Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data
 {% cite li2008methods %}
 
@@ -76,7 +76,7 @@ Justification: If we ran that filter for every singleton it would remove the ver
 * Both methods are superior to analyzing each variant individually with univariate tests. 
 * Combined Multivariate and Collapsing (CMC) method unifies the advantages of both collapsing and multiple-marker tests.
 
-## Background
+### Background
 
 Genotype phenotype association may be tested by:
 
@@ -93,7 +93,7 @@ or logistic regression.
 * If classified correct power of causal detection is higher than single- and multiple-marker testing.
 * If miss-classified, non-functional variants could introduce error.
 
-## Genetic model
+### Genetic model
 
 * In a locus M variants can independently cause disease.
 * A = allele
@@ -115,7 +115,7 @@ or logistic regression.
 * The expected freqs are used to calculate the power to detect assoc in this study.
 * Their focus is the omnibus test, which provides an association test of the entire locus and is not focused on any specific variant within the locus.
 
-## Single-marker test
+### Single-marker test
 
 * One approach of association studies is to test each variant site individually with the use of a univariate test and assess the significance of the _omnibus test_ (chi-squared test or F test) after correction for multiple comparisons. 
 * For univariate tests, a contingency table can be constructed to compare genotype frequencies at each variant site in cases and controls. 
@@ -123,7 +123,7 @@ or logistic regression.
 * For an equal number of cases and controls, the classical Pearson chi-squared statistic for testing equal genotype frequencies in cases and controls is used.
 
 
-## Multiple-marker test
+### Multiple-marker test
 
 Another option is to test all variants simultaneously by multivariate test
 
@@ -133,7 +133,7 @@ Another option is to test all variants simultaneously by multivariate test
 * _Note: Hotellings T-squared tests the differences between the (multivariate) means of different populations, where tests for univariate problems would make use of a t-test. The distribution is named for Harold Hotelling, who developed it as a generalization of Student's t-distribution._
 * Rejecting the null hypothesis would indicate that at least one of the variants is assocciated with disease. 
 
-## Basic collapsing method
+### Basic collapsing method
 
 Since variants are expected to be very rare, 
 genotypes across all variants are collapsed.
@@ -144,7 +144,7 @@ An individual is coded once if they have any one variant for the locus.
 The classic Pearson chi-squared statistic can be used to test the summed proportion of variants in cases vs controls. 
 The power can be calculated as shown by the authors. 
 
-## CMC method
+### CMC method
 
 Unified method that combines collapsing and multivariate testing.
 
@@ -156,7 +156,7 @@ e.g. M markers in a locus are split into K groups.
 There are n markers in group g, and so on for each group.
 The multivariate test is done where for each group, the  individuals are coded with either 1 (a carrier of one or more variants) or 0 (wild-type).
 
-## Power of CMC method
+### Power of CMC method
 
 Results:
 
@@ -167,7 +167,7 @@ Results:
 * Slight (very slight I think) loss of power when _causal_ variants are high frequency compared to collapsing.
 	- This scenario is unlikely otherwise single-marker test may be possible to detect.
 
-## Misclassification
+### Misclassification
 
 Two types of miss-classifications are considered: 
 
@@ -177,7 +177,7 @@ Two types of miss-classifications are considered:
 
 _This section can be read for detail but is probably familiar enough for us to skip._
  
-## Effects of Linkage Disequilibrium (LD)
+### Effects of Linkage Disequilibrium (LD)
 
 A simulation is done in this section:
 
@@ -195,7 +195,7 @@ Results:
 * Data generated with each variant on a separate haplotype, the corresponding powers are
 	- 0.011, 0.451, and 0.737, respectively.
 
-## Evaluation of Type I Error Rate
+### Evaluation of Type I Error Rate
 
 * Simulation was used to generate data under the null hypothesis of no association between variants and disease status.
 *  This process was repeated for 5000 replicates. 
@@ -213,7 +213,7 @@ Result:
 * CMC method, with multivariate Hotelling's T2 test or logistic regression: 
 	- _well controlled_.
 
-## Problems with this paper
+### Problems with this paper
 
 * The main problem with collapsing method is when single individuals have more than one causal variant being only counted as "1". This more likely to occur for our protein-pathway collapse than a single gene/locus collapse. 
 * Reason 1: dosage is not counted. Someone may have homozygous and only counts for 1 rather than 2 (or some other weight).
@@ -221,12 +221,12 @@ Result:
 * CMC code - maf threshold: In the R code, those variants with minor allele frequency below the specified maf threshold are collapsed into a single super variant. Can we group data into several frequency groups or is one _above/below_ threshold only possible?
 
 
-# Madsen and Browning 2009
+## Madsen and Browning 2009
 
 * A groupwise association test for rare mutations using a weighted sum statistic
 {% cite madsen2009groupwise %}
 
-## Background
+### Background
 
 * CAST: Cohort allelic sums test - an existing grouping method in which the number of individuals with one or more mutations in a group (e.g. gene) is compared between affected and unaffected individuals.
 
@@ -254,7 +254,7 @@ rare variants are defined as those having a minor allele frequency (MAF) of at m
 _Note that permutation of disease status results in correct type I error even in the presence of LD [Cheverud 2001, Churchill 1994], 
 although relatively low LD is expected between rare variants [Li and Leal 2008, Pritchard 2001,2001]._
 
-## Main theory
+### Main theory
 
 * The weighted-sum method deviates from the CAST method [5,27]:
 weighting the variants differently when determining the genetic load of an individual. 
@@ -275,8 +275,8 @@ as suggested in the CMC method [Li and Leal 2008].
 	- include mutations of all frequencies, 
 	- but mutations are weighted according to their frequency in the unaffected individuals.
 
-## Methods
-### Weighted-Sum Method
+### Methods
+#### Weighted-Sum Method
 Compares the number of mutations in a group of variants between case/control. 
 Designed to identify an excess of mutations in case, compared to controls. 
 Each variant belongs to a group (gene, pathway, etc.) and, 
@@ -324,7 +324,7 @@ weight for variant is 0.447
 
 * Permutation of case/control labels maintains the LD structure. 
 
-### Power simulations
+#### Power simulations
 Comparison of:
 
 * Weighted-sum method,
@@ -363,12 +363,12 @@ NB. Tested Variants.
 
 * The mutation probabilities (p) can be very low for some of the sampled variants.
 This means that some variants contain no mutations in any of the sampled individuals, and these variants are hence omitted in the tests.
-## ENCODE data
+### ENCODE data
 The method was tested on rare variants with the frequency-spectrum of a naturally occurring population using the ENCODE resequencing data.
 
-## Results
+### Results
 
-### Proportion of Variants Containing Mutations
+#### Proportion of Variants Containing Mutations
 The mutation frequencies are sampled according to Wright's formula, 
 and hence mutations are very rare for some variants. 
 Using 1000 affected and 1000 unaffected individuals, 
@@ -377,7 +377,7 @@ This level is in concordance with the level from human resequencing studies.
 
 Skipping the section: Power under Varying Model Parameters.
 
-## Discussion
+### Discussion
 
 Analysis of pathways can be done in two different ways. 
 One way is to use the pathway as a group, and run the test on the entire pathway. 
@@ -385,7 +385,7 @@ On the other hand, for large pathways, it may be beneficial to use a method that
 If a pathway contains G non-overlapping genes, a method to do this is to use the weighted-sum method on each gene, and combine the resulting p-values (p1,...,pG) with the Fisher product test statistic.
 
 
-## Summary 
+### Summary 
 
 * Weight based on frequency of variat in the controls.
 * Sum of ranks in cases.
@@ -395,7 +395,7 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
 
 
 
-# Price 2010
+## Price 2010
 
 * Pooled association tests for rare variants in exon-resequencing studies.
 {% cite price2010pooled %}
@@ -406,9 +406,9 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
 	- incorporating computational predictions of the functional effects of missense variants.
 * Statistical significance is assessed by permutation testing with variable thresholds.
 
-## Methods
+### Methods
 
-### Simulation Framework
+#### Simulation Framework
 Simplified summary:
 
 * Model of European ancestry to recapitulate the site-frequency spectrum of non-synonymous human SNPs.
@@ -419,12 +419,12 @@ Simplified summary:
 	- carrier and non-carrier same variance
 	- carriers shifted by $$\delta$$ SD
 
-### Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios
+#### Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios
 {% cite madsen2009groupwise. %}
 	- Based on the frequency in controls.
 	- Relationship between log odds ratio and allele frequency the same as Madsen 2009.
 
-### Fixed-Threshold Approach
+#### Fixed-Threshold Approach
 {% cite madsen2009groupwise. %}
 
 * i indexes SNPs, 
@@ -442,48 +442,48 @@ I need to compare these two papers here in more detail
 	- Recessive model only homozygous are assigned 1.
 	- Dominant model both het and homo are assigned 1.
 
-### Weighted Approach
+#### Weighted Approach
 {% cite madsen2009groupwise. %}
 * Also generalise by adding $$\pi_j$$ for a quantitative phenotype value.
 
-### Variable-Threshold Approach
+#### Variable-Threshold Approach
 * There exists some (unknown) threshold T for which variants with a minor allele frequency (MAF) below T are substantially more likely to be functional than are variants with an MAF above T. 
 * z-score of a regression across samples of phenotypes versus counts of mutations meeting the allele-frequency threshold T. 
 
-### Cheating Approach to Incorporating $$\varphi(p)$$ ("phi(p)")
+#### Cheating Approach to Incorporating $$\varphi(p)$$ ("phi(p)")
 * Weight variants according to the probability $$\varphi(p)$$ 
 	- that an allele of frequency p is functional, 
 	- as inferred by using the same simulated data used to evaluate power.
 
-### Incorporation of Computational Predictions of Functional Effects
+#### Incorporation of Computational Predictions of Functional Effects
 * Tested if incorporation of PolyPhen-2 scores improves statistical test.
 * To asses, simulated PolyPhen-2 predictions of damaging and neutral mutations.
 
-### Application to Empirical Data Sets
+#### Application to Empirical Data Sets
 Applied to some real data.
 
-## Results and Discussion
+### Results and Discussion
 * Skipping this.
 * The methods are an improvement.
 {% cite madsen2009groupwise. %}
 * and additionaly adds a method for the quantitative variable.
 
-# Neale 2011
+## Neale 2011
 
 * Testing for an unusual distribution of rare variants.
 {% cite neale2011testing %}
 
-## C-alpha tests
+### C-alpha tests
 * They propose here the C-alpha test statistic as a novel approach for testing for 
 	- the presence of this mixture of effects across a set of rare variants. 
 * Unlike existing burden tests, C-alpha, by testing the variance rather than the mean, maintains consistent power when the target set contains both risk and protective variants. 
 
-# SKAT
+## SKAT
 
 Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test
 {% cite wulee2011rare %}
 
-## Introduction
+### Introduction
 
 * They propose the sequence kernel association test (SKAT), 
 	- regression method to test for 
@@ -508,9 +508,9 @@ to have little or no effect on phenotype,
 * Burden tests require either specification of thresholds for collapsing 
 * or the use of permutation to estimate the threshold.
 
-## Methods
+### Methods
 
-### Sequencing Kernel Association Test
+#### Sequencing Kernel Association Test
 *SKAT is a supervised test 
 	- for the joint effects of multiple variants 
 	- in a region 
@@ -529,7 +529,7 @@ Notation:
 * $$X_i$$ covariats
 * $$G_i$$ genotypes (0,1,2 general)
 
-### SKAT Model and Test for Linear SNP Effects
+#### SKAT Model and Test for Linear SNP Effects
 Eqn 1 and 2:
 
 * linear regression and 
@@ -546,16 +546,16 @@ Eqn 3:
 * A special case of SKAT arises when the outcome is dichotomous, no covariates are included, and all $$W_j$$ = 1. 
 * Under these conditions, we show in Appendix A that the SKAT test statistic Q is equivalent to the C-alpha test statistic T.
 
-### Relationship between Linear SKAT and Individual Variant Test Statistics
+#### Relationship between Linear SKAT and Individual Variant Test Statistics
 * One needs to fit the null model only a single time to be able to compute the Sj for all individual variants j as well as all regions to be tested. 
 * Similarly, if multiple regions are under consideration, then the same mb0 can be used to compute the SKAT Q statistics for each region.
 
-### Accommodating Epistatic Effects and Prior Information under the SKAT
+#### Accommodating Epistatic Effects and Prior Information under the SKAT
 Ability to model the epistatic effects of sequence variants on the phenotype within the flexible kernel machine regression framework.
 
 They replace Gi’b by a more flexible function f(Gi) in the linear and logistic models (1) and (2) where f(Gi) allows for rare variant by rare variant and common variant by rare-variant interactions
 
-## SKAT Is a Generalization of the C-Alpha Test
+### SKAT Is a Generalization of the C-Alpha Test
 
 * The recently proposed the C-alpha test has advantages over burden tests in that 
 	- it explicitly models the possibility that minor alleles can be deleterious or protective. 
@@ -564,8 +564,8 @@ They replace Gi’b by a more flexible function f(Gi) in the linear and logistic
 	- the C-alpha test statistic is equivalent to the SKAT statistic with unweighted linear kernel, 
 	- which is the same as the kernel machine test in Wu et al.
 
-# Lee 2012
-## Introduction 
+## Lee 2012
+### Introduction 
 SKAT-O
 
 * Optimal tests for rare variant effects in sequencing association studies.
@@ -573,15 +573,15 @@ SKAT-O
 
 * A class of tests that include burden tests and SKAT as special cases, and derive an optimal test within this class that maximizes power. 
 
-## Methods
+### Methods
 * They show the SKAT method
 * They show the buden testing methods
 * The show a method for:
 	- $$Q_p$$ = (1 - $$p$$)$$Q_{SKAT}$$ + $$pQ_{burden}$$
 	- The resulting optimal test corresponds to a best linear combination of SKAT and burden tests that maximizes power. 
 
-# Protein pathway analysis
-## Zhang 2021 ASHG
+## Protein pathway analysis
+### Zhang 2021 ASHG
 
 Zhang et al. provide and excellent example of the same problem that we are
 assessing. 
@@ -598,13 +598,13 @@ Basically the only difference is:
 
 Same cohort size. Really nice to see it in ASHG. Will have to do a comparison to per-gene SKAT-O to show the improvement, as they do.
 
-## Problems with this paper
+### Problems with this paper
 
-### Cluster method
+#### Cluster method
 I surprised to see them apply their own novel clustering method (NHC) without some formal methods paper first - so many already exist, including 10 that can be used with their String data. 
 In theory it sound good but there is no real evidence.
 
-### Carrier counts instead of allele dosage
+#### Carrier counts instead of allele dosage
 Their main analysis is:
 
 * (a) with PC-adj = glm(Pheno ~ Carrier-status + PCs, family=binomial). 
@@ -664,8 +664,8 @@ for each_pathway in pathway_gene_set_dict.keys():
 # They do not show any code with the SKAT parameters, presumably defaults using R.
 ```
 
-# Itan & Casanova contributions
-## Historical review
+## Itan & Casanova contributions
+### Historical review
 
 We are tackling this problem of protein pathway analysis from the viewpoint of 
 rare immune disease and infection.
@@ -877,7 +877,7 @@ so the main remaining task is standardisation of the protein-pathway
 annotation and association testing methods - 
 steps which we will soon be ready to publish after peer-review.
 
-# Burden test power calculation
+## Burden test power calculation
 
 ``` R
 This code seems to work
@@ -1051,6 +1051,6 @@ geno4
 # $asym.pval [1] 0.0311075
 ```
 
-# References 
+## References 
 
 {% bibliography --cited %}

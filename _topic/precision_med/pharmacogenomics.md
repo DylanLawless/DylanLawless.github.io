@@ -12,7 +12,7 @@ subject: Precision medicine
 * TOC
 {:toc}
 
-# Introduction
+## Introduction
 With the popularisation of commercial genetics services, more and more people are now able to "decode" their genetic data.
 Questions that might arise from this information include "do I have potentially disease-causing variants that can be treated with a drug?", or "am I taking a drug that will be affected by my genetics?".
 To tackle such questions with an example, we use public data in combination with pharmacogenomics.
@@ -57,7 +57,7 @@ Make certain that you use the same reference genome as used on the input data.
 The VCF file was made using reference genome GRCh37.
 Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).
 
-# Preparing an example VCF
+## Preparing an example VCF
 If you would like to try this using a whole genome using the Ensembl web 
 interface you will need to split your VCF into smaller block first.
 For routine usage the command-line version of VEP and it's databases should be 
@@ -144,13 +144,13 @@ done
 
 ```
 
-# Comparing annotated genetic data to drug lists
+## Comparing annotated genetic data to drug lists
 Uploading either a small example or your split-whole-genome example, VEP will process the data and annotate it will whatever features you require, including gene names, variant consequence, pahtnogenicy prediction, etc.
 The next aim will be to see if any of your output genes are also present in your drug-gene database.
 The method will require merging both dataset (gene and drug datasets) based on shared features. 
 A simple sanity test would be useful first:
 
-## Small example check of gene list versus drug-gene list
+### Small example check of gene list versus drug-gene list
 From the VEP output I extracted the gene symbols column and compared against a list of druggable target genes from 
 [DrugBank](https://www.drugbank.ca) 
 (because I happen to have their data on hand, FDA may be more reliable).
@@ -189,7 +189,7 @@ From a 10,000 VCF line file =
 [SCNN1D](https://www.drugbank.ca/bio_entities/BE0000495),
 [TP73](https://www.drugbank.ca/bio_entities/BE0008994).
 
-# A real example of merging genetic and pharmacogenomic data
+## A real example of merging genetic and pharmacogenomic data
 Now that a small example has shown us the logic of the process, we can try a more complex real-world example. 
 The following R language script is used to merge the VEP annotated VCF file with a DrugBank database based on the gene names that are common to both datasets.
 Read each line and try to understand the process. 
@@ -295,7 +295,7 @@ There are many layers to a this problem to create a usable product.
 For example, how to integrate pharmacodynamics, covariats to drug response, contraindications, variant pathogenicity, etc.
 However, this is a good start as a learning experience.
 
-# Drug indication
+## Drug indication
 My example used [DrugBank](https://www.drugbank.ca) for pharmacogenomic information.
 However, it may be safest to use the [FDA information](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling) as the primary source, but including [DrugBank](https://www.drugbank.ca) info is no problem.
 Drugs might be either a treatment for a genetic determinant, or a warning for drug usage in someone who also has a genetic variation that might effect their treatment.
@@ -329,7 +329,7 @@ With this in mind, perhaps an application doing this job could work two ways.
 (1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
 (2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.
 
-# Annotation
+## Annotation
 [Variant Effect Predictor (VEP)](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/) is very useful.
 During variant annotation, VEP supplies a "consequence" column.
 Consequences are general and based on translation of genetic code in humans. 
@@ -372,12 +372,12 @@ For the license:
 * If there were a reason to prevent you using the software commercially, you might be able to make a simple replacement that could give the minimum outputs that you need - gene name and mutation type. If the topic happens to interest you, you can read about [reverse engineering software](https://en.wikipedia.org/wiki/Reverse_engineering#Software).
 * As an aside, you could also decide that you don't want to commercialise and offer this tool for free which would prevent bigger companies (like Google) from offering this service in return for harvesting the public's genetic data.
 
-## Optimising VCF annotation
+### Optimising VCF annotation
 The slowest part of the method is VCF annotation.
 You can significantly increase the speed by first reducing the input to contain only regions of interst.
 That is, prepare a list of coordinates for each gene, and select for those regions in your input VCF or genotype data before annotation (VEP).
 
-## How to get coordinates for a gene list
+### How to get coordinates for a gene list
 Use Biomart.
 Their main server was down when I tried, so I went via Ensembl, data access section:  
 [http://www.ensembl.org/info/data/biomart/index.html](http://www.ensembl.org/info/data/biomart/index.html)  
@@ -399,7 +399,7 @@ You would have to figure out how to extract the regions from the vcf (sed, grep,
 When I needed this, I used my own tools which required converting to format like this "X:1-2000", and ordered by number and alphabetic (some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
 If you use this list to extract regions from a VCF, remember to include all the original VCF header information.
 
-## Extracting regions from a VCF using a bed file
+### Extracting regions from a VCF using a bed file
 The early part of this tutorial shows how old-school command line tools can be used to extract data. 
 Indeed, this may be computationally most efficient but there are some specialised tools that make the process easier in general.
 You can use VCFtools to extract specified regions.  
@@ -427,7 +427,7 @@ $:~/tools/vcftools_0.1.13/bin \
 This new VCF will now only contain gene regions that are potentially "druggable", or at least included on the FDA list.
 VCF annotation will be _much faster_ than annotation of the whole genome.
 
-# Unknown variants
+## Unknown variants
 In the majority of situations you will be stuck with _variants of unknown significance_.
 In the absence of tailored analysis and interpretation of each invidual variant, one must often rank unknown variants based on a predicted pathogenicity.
 Carefully consider that predictions can be completed wrong and address how such an annotation should be presented. 
@@ -436,7 +436,7 @@ https://cadd.gs.washington.edu/info
 [Polyphen](http://genetics.bwh.harvard.edu/pph2/) gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.
 See what other pathogenicity prediction tools you can find and estimate how widespread/accepted their usage is.
 
-# Gene dosage
+## Gene dosage
 An important cosideration of variant effect depends on gene dosage.
 A [dominant gene](https://en.wikipedia.org/wiki/Dominance_(genetics)) may be affected by a single heterozgous variant while a recessive gene may be able to compensate against the negative effect of a heterozyous variant due the presence of a second functional gene copy.
 Therefore, the presence of heterozygous or homozygous allele is an important consideration.
@@ -453,7 +453,7 @@ This shows the "Mode of inheritance" and colour-coded confidence in the disease-
 Integrating this type of expert-curated open datasets can be extremely useful.
 
 
-# Drug indication
+## Drug indication
 The indication or warning can be difficult to automate.
 For the example drug  
 [https://www.drugbank.ca/drugs/DB11595](https://www.drugbank.ca/drugs/DB11595)  
@@ -473,7 +473,7 @@ https://www.drugbank.ca/drugs/	DB00142
 https://www.drugbank.ca/drugs/	DB01839  
 https://www.drugbank.ca/drugs/	DB00125  
 
-# A large scale example summary
+## A large scale example summary
 I do not suggest this for a small project, but if I was to automate subsection requests for real:  
 - [1] Download the whole database (probably a big table sized >100MB) and  
 - [2] For every query (the Drug ID) extract the sections of interest (indication,  Biologic Classification, Description,  FDA label, etc.)  
@@ -491,20 +491,20 @@ Gene, consequence, variant, amino acid, genome position, CADD, DrugBank ID, Desc
 This table could be ranked based on consequence, CADD score.
 The top couple of rows then might be converted into a more readable format like a PDF.
 
-# Funding strategy
+## Funding strategy
 University-based start-ups ususally follow a plan with three or four funding stages before coming to market. 
 It is also possible to get investors from day 1, but it is more usual to follow 
 the steps outlined here.
 It is also possible to partner with early investors for their guidance rather 
 than for financial investment.
 
-### Example funding stages:
+#### Example funding stages:
 
 * A - Fundamental research (e.g. SNSF)
 * B - Tech development (gap between the basic research and usable product)
 * C - Product development (e.g. industry, Innosuisse funding)
 
-### Example funding sources per stage:
+#### Example funding sources per stage:
 
 1. [A] Ignite grant
 	- <https://www.epfl.ch/innovation/startup/grants/ignition-grants/>
@@ -530,8 +530,8 @@ than for financial investment.
 <https://advancesindrugdiscovery.splashthat.com>
 Basically, the "innovation" department experts help you to figure out what stage you are at. You can contact them as soon as you can disclose your tech non-confidentially (either you have patent protection or do not need it). If you were taking this path you would probably have competed steps 1-4. 
 
-# Legal requirements
-### Swiss law
+## Legal requirements
+#### Swiss law
 I include both the English and French translations here as the original source does not always include full English translation. 
 Swiss law contains specific provisions on genetic testing in humans.
 The Federal Council is divided into [7 departments](https://www.admin.ch/gov/fr/accueil.html) and one chancellory. 
@@ -578,7 +578,7 @@ The details are then listed individually at:
 and as stated, includes authorisation of "Pharmacogenetic tests performed to determine the effects of a planned therapy", 
 "analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue".
 
-### Accreditation
+#### Accreditation
 [ISO 15189](https://www.iso.org/standard/56115.html) is a commonly sought standard accreditation for genetic analysis labs, 
 which is carried out by recognized accreditation services like [FINAS](https://www.finas.fi/Sivut/default.aspx).
 Here it is mentioned for the Geneva health 2030 genome center for clinical grade sequencing:
@@ -593,7 +593,7 @@ GA4GH provides other information about many [legal and ethic topics](https://www
 BlueprintGenomics is a good example company for comparison:
 <https://blueprintgenetics.com/certifications/>.
 
-# More questions
+## More questions
 
 Q: Do we have to infer that in the future everybody will have his genome sequenced ?  
 You do not have to assume this. It may become true. There could be privacy concerns or social problems arising from genetic prejudice, etc.
@@ -615,7 +615,7 @@ However, it is common that for processing a large amount of data, such predictio
 For example, I might [1] rank first on VEP variant "consequences"; stop mutations with most importance.
 [2] Then rank secondly with these values since you cannot interpret most with consequence = missense variant. 
 
-# References
+## References
 - [https://www.fda.gov/drugs/science-research-drugs/](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)
 - [https://www.pharmgkb.org/view/drug-labels.do](https://www.pharmgkb.org/view/drug-labels.do)
 - Mary V. Relling & William E. Evans. Pharmacogenomics in the clinic. _Nature_ 2015; 526, 343–350\. doi: 10.1038/nature15817

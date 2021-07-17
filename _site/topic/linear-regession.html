@@ -78,7 +78,6 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 Reading time 8 minutes
 <h1 id="linear-regression">Linear regression</h1>
 <ul id="markdown-toc">
-  <li><a href="#linear-regression" id="markdown-toc-linear-regression">Linear regression</a></li>
   <li><a href="#simple-linear-regression" id="markdown-toc-simple-linear-regression">Simple linear regression</a></li>
   <li><a href="#drawing-the-line" id="markdown-toc-drawing-the-line">Drawing the line</a></li>
   <li><a href="#accuracy-of-the-coefficient-estimates" id="markdown-toc-accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</a></li>
@@ -94,7 +93,7 @@ Reading time 8 minutes
 <p><br />
 This page is being formulated currently by plagerising “An Introduction to Statistical Learning”. If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead.</p>
 
-<h1 id="simple-linear-regression">Simple linear regression</h1>
+<h2 id="simple-linear-regression">Simple linear regression</h2>
 
 <p>Predict a quantitative response \(Y\) using a predictor variable \(X\); regressing \(Y\) onto \(X\).
 The <em>intercept</em> and <em>splope</em> are written as \(\beta_0\) and \(\beta_1\), respectively.
@@ -113,7 +112,7 @@ With some sample data, one can begin to predict \(Y\) based on the predictor \(X
 
 <p>In this case, the estimated response \(\hat y\) equals the estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) according to a sample of the predictor values (\(x\)).</p>
 
-<h1 id="drawing-the-line">Drawing the line</h1>
+<h2 id="drawing-the-line">Drawing the line</h2>
 
 <p>The estimated intercept and slope (\(\hat \beta_0\) and \(\hat \beta_1\)) are unknown, therefore we need to get these values to predict \(Y\) based on \(X\).
 A number (\(n\)) of obersevations are made where we measure \(X\) and \(Y\). Measurements could be recorded as: (measure 1, x = 5, y = 10), (measure 2, x = 10, y = 20), and so on up to \(n\) obersavations;</p>
@@ -156,7 +155,7 @@ and
 \(\bar{x} \equiv \frac{1}{n}\sum_{i=1}^{n} x_i\)
 so the equation above (\ref{eq5}) defines the least squares coefficient estimates for simple linear regression.</p>
 
-<h1 id="accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</h1>
+<h2 id="accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</h2>
 
 <p>We will want to account for error \(\epsilon\) to draw an accurate line. 
 \(\epsilon\) would be the mean-zero random error for the relationship between \(Y\) and \(X\) for the unknown function \(f\).</p>
@@ -215,7 +214,7 @@ This interval for \(\hat\beta_1\) is approximately</p>
 <p>a 95% chance that the true \(\beta_1\) value is in this range.
 The same fomula is true for \(\beta_0\), swapping terms.</p>
 
-<h1 id="se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</h1>
+<h2 id="se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</h2>
 
 <p>The SE can be used for a <em>hypothesis test</em> on the corfficients, i.e. testing the <em>null hypothesis</em> and <em>alternative hypothesis</em>,</p>
 
@@ -252,12 +251,12 @@ No relationship will give <em>t</em>-distribution \(n - 2\) degrees of freedom.
 <p>The probability of observing any number equal to |<em>t</em>| or larger, assuming \(\beta_1 = 0\), is the <em>p-value</em>.
 A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can <em>reject the null hypothesis</em>.</p>
 
-<h1 id="model-accuracy">Model accuracy</h1>
+<h2 id="model-accuracy">Model accuracy</h2>
 
 <p>After rejecting the null we want to check if the line fits well - does the model fit the data?
 Ttwo related quantities can asses the fit of linear regression; <em>residual standard error</em> (RSE) and \(R^2\)
 statistic.</p>
-<h2 id="residual-standard-error">Residual Standard Error</h2>
+<h3 id="residual-standard-error">Residual Standard Error</h3>
 
 <p>Because of the error term \(\epsilon\),
 the LR cannot perfectly predict \(Y\) from \(X\).
@@ -295,7 +294,7 @@ The value calculated in eqn \ref{eq12} will become smaller when the estimate and
 \(\hat y_1 \approx y_1\) for 
 \(i = 1,2,...,n\), in which case the model will fit the data well.</p>
 
-<h2 id="r2-statistic">\(R^2\) Statistic</h2>
+<h3 id="r2-statistic">\(R^2\) Statistic</h3>
 <p>We use this all the time; it will be worth getting into the discussion from 
 Cosma Rohilla Shalizi in
 <a href="http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/">Advanced Data Analysis from an Elementary Point of View</a>
@@ -303,7 +302,7 @@ Cosma Rohilla Shalizi in
 ``2.2.1.1 R2: Distraction or Nuisance?’’. 
 The short summary following just covers the basic “normal” usage, rather getting into the statistica weeds.</p>
 
-<h1 id="multiple-linear-regression">Multiple linear regression</h1>
+<h2 id="multiple-linear-regression">Multiple linear regression</h2>
 
 <p>In a linear regression we use a predictor variable X to predict a quantitative response Y.
 If we want to use more than one variable (\(X_1, X_2, ...\)) 

@@ -58,7 +58,7 @@ Who would go to that trouble?
 Go see what you can find in one Supplementary material png file. 
 [https://link.springer.com/article/10.1007%2Fs10875-019-00670-z](https://link.springer.com/article/10.1007%2Fs10875-019-00670-z)
 
-# R script 
+## R script 
 Try it yourself.
 Find the paper and get Figure E4.
 Download
@@ -71,6 +71,6 @@ Download
 > Decode message <- 
 >		stegasaur::decode("~/10875_2019_670_MOESM5_ESM.png")
 ```
-# Footnote
+## Footnote
 [^foot]: [Medical espionage]({{ site.baseurl }}{% link _topic/cryptography/medical_espionage.md %}).
 

@@ -1,6 +1,6 @@
 markdown: kramdown
 kramdown: 
-  toc_levels: "1,2"
+  toc_levels: "2..6"
   scholar:
      replace_strings: true
      query: "@*"

@@ -20,7 +20,7 @@ Relying on star allele labelling goes against the recommended
 The following protocol for is provided as one step in a larger process
 of annotation in genomic analysis._
 
-# Stargazer genotyping
+## Stargazer genotyping
 As reported in "Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program"
 {% cite taliun2021sequencing %},
 use a method of known pharmacogene (PGx) variation annotation 
@@ -101,7 +101,7 @@ A full list of cytochrome P450 (CYP) alleles with star notation can be found via
 a central repository for PGx variation that focuses on 
 haplotype structure and allelic variation.
 
-# Published example
+## Published example
 Taliun et al.
 {% cite taliun2021sequencing }
 provide a complementary approach to _de novo_ genome assembly
@@ -153,5 +153,5 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).
 
 > Supplementary Figure 28. Summary of CYP2D6 haplotype analysis using the Stargazer program. Population-specific frequencies for (A) common CYP2D6 star alleles, (B) haplotype activity, (C) SV-defined haplotypes, and (D) predicted metabolism phenotypes. Abbreviations: hAS, haplotype activity score; dAS, diplotype activity score; N, number; SV, structural variation; del, whole gene deletion; hyb, CYP2D6/CYP2D7 hybrid.
 
-# References
+## References
 {% bibliography --cited %}

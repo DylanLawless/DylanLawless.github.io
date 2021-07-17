@@ -14,7 +14,7 @@ subject: statistics
 <br/>
 This page is being formulated currently by plagerising "An Introduction to Statistical Learning". If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead. 
 
-# Simple linear regression
+## Simple linear regression
 {% raw %}
 Predict a quantitative response $$Y$$ using a predictor variable $$X$$; regressing $$Y$$ onto $$X$$.
 The _intercept_ and _splope_ are written as $$\beta_0$$ and $$\beta_1$$, respectively.
@@ -38,7 +38,7 @@ $$
 In this case, the estimated response $$\hat y$$ equals the estimated intercept and slope ($$\hat \beta_0$$ and $$\hat \beta_1$$) according to a sample of the predictor values ($$x$$). 
 {% endraw %}
 
-# Drawing the line
+## Drawing the line
 {% raw %}
 The estimated intercept and slope ($$\hat \beta_0$$ and $$\hat \beta_1$$) are unknown, therefore we need to get these values to predict $$Y$$ based on $$X$$.
 A number ($$n$$) of obersevations are made where we measure $$X$$ and $$Y$$. Measurements could be recorded as: (measure 1, x = 5, y = 10), (measure 2, x = 10, y = 20), and so on up to $$n$$ obersavations; 
@@ -93,7 +93,7 @@ so the equation above (\ref{eq5}) defines the least squares coefficient estimate
 
 {% endraw %}
 
-# Accuracy of the Coefficient Estimates
+## Accuracy of the Coefficient Estimates
 {% raw %}
 We will want to account for error $$\epsilon$$ to draw an accurate line. 
 $$ \epsilon $$ would be the mean-zero random error for the relationship between $$ Y $$ and $$ X $$ for the unknown function $$ f $$.
@@ -164,7 +164,7 @@ The same fomula is true for $$ \beta_0 $$, swapping terms.
 
 {% endraw %}
 
-# SE in hypothesis tests for coefficients
+## SE in hypothesis tests for coefficients
 {% raw %}
 The SE can be used for a _hypothesis test_ on the corfficients, i.e. testing the _null hypothesis_ and _alternative hypothesis_,  
 
@@ -206,13 +206,13 @@ A very low p-value indicates that it is unlikely that an assocation will be meas
 
 {% endraw %}
 
-# Model accuracy
+## Model accuracy
 {% raw %}
 After rejecting the null we want to check if the line fits well - does the model fit the data?
 Ttwo related quantities can asses the fit of linear regression; _residual standard error_ (RSE) and $$
 R^2$$
 statistic. 
-## Residual Standard Error
+### Residual Standard Error
 
 Because of the error term $$ 
 \epsilon $$,
@@ -259,7 +259,7 @@ $$, in which case the model will fit the data well.
 
 
 
-## $$R^2$$ Statistic
+### $$R^2$$ Statistic
 We use this all the time; it will be worth getting into the discussion from 
 Cosma Rohilla Shalizi in
 [Advanced Data Analysis from an Elementary Point of View](
@@ -275,7 +275,7 @@ The short summary following just covers the basic "normal" usage, rather getting
 {% endraw %}
 
 
-# Multiple linear regression
+## Multiple linear regression
 {% raw %}
 In a linear regression we use a predictor variable X to predict a quantitative response Y.
 If we want to use more than one variable ($$ X_1, X_2, ... $$) 

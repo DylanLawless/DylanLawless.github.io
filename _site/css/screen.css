@@ -434,7 +434,6 @@ table {
 
 /* Table of contents */
 #markdown-toc ul {
-	/* list-style: indent; */
     list-style: decimal;
 	}
 
@@ -443,12 +442,12 @@ table {
 	padding: 1.0rem; /* top */
 	padding-left: 2.5rem;
 	display: inline-block;
-	background: #f0f0f0;
-	/* list-style: decimal; */
+	background: #eeeeee;
+	list-style: decimal;
 	}
 
 blockquote {
-	border-left: 10px solid #ccc;
+	border-left: 5px solid #ccc;
 	margin: 1.5em 10px;
 	padding: 0.5em 10px;
 	}

@@ -11,7 +11,7 @@ subject: statistics
 * TOC
 {:toc}
 
-# Zero-inflated negative binomial regression
+## Zero-inflated negative binomial regression
 
 Zero-inflated negative binomial regression (zinbr) is for modeling count variables with excessive zeros and it is usually for overdispersed count outcome variables. 
 
@@ -136,7 +136,7 @@ m1 <- zeroinfl(count ~ child + camper | persons,
 
 
 
-# Analysis methods you might consider
+## Analysis methods you might consider
 Some other methods that you might use.
 
 OLS Regression – You could try to analyze these data using OLS regression. However, count data are highly non-normal and are not well estimated by OLS regression.
