@@ -9,6 +9,9 @@ subject: statistics
 {{ page.title }}
 ================
 
+* TOC
+{:toc}
+
 ## Receiver operating characteristic plots
 This article covers the fifth paper in the series of statistics notes {% cite altman1994diagnostic %}
 ([ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md )): 5. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/309/6948/188"> Diagnostic tests 3: receiver operating characteristic plots.</a> <b>309</b>, 188,
