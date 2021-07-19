@@ -13,8 +13,8 @@ subject: statistics
 {:toc}
 
 ## Sensitivity and specificity
-The third paper on the list of BMJ statistics notes by Alman and Bland,
-[ lit-altman_bland.md ]( 202106291417-lit-altman_bland.md ),
+The third paper on the list of BMJ statistics notes by Altman and Bland,
+([ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md )),
 {% cite altman1994diagnostic1 %} 3. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6943/1552">
 Diagnostic tests 1: sensitivity and specificity.</a> <b>308</b>, 1552.
 <sup id="a1">[1](#f1)</sup>
