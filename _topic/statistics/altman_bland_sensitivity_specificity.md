@@ -57,7 +57,7 @@ The proportions of these two groups that were correctly diagnosed by the scan we
 
 Based on Altman and Bland's example sample, 
 we expect 90% true positives (_patients with abnormal pathology to have abnormal (positive) liver scans_), 
-while 63% true negatives (_those with normal pathology would have normal (negative) liver scans_).
+and 63% true negatives (_those with normal pathology would have normal (negative) liver scans_).
 
 ## Confidence intervals
 The sensitivity and specificity are proportions, so confidence intervals can be calculated.
@@ -66,7 +66,7 @@ This uses standard methods for proportions
 
 ## Quantifying the diagnostic ability
 Sensitivity and specificity are one approach to quantifying the diagnostic ability of the test.
-In this case, we already have the final results of **tests** and **diagnosis** of our sample set.
+In this case, we already have the final results of **tests** and **diagnosis** from the sample set.
 For an individual patient we only have the **test** result.
 We want to quantify how well the test can predict true positives.
 
