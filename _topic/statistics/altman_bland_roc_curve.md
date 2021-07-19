@@ -16,6 +16,7 @@ subject: statistics
 This article covers the fifth paper in the series of statistics notes {% cite altman1994diagnostic %}
 ([ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md )): 5. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/309/6948/188"> Diagnostic tests 3: receiver operating characteristic plots.</a> <b>309</b>, 188,
 and concerns _quantitative diagnostic tests_.
+<sup id="a1">[1](#f1)</sup>
 Diagnosis based on yes or no answers are covered in another note by Bland and Altman.
 The same statistical methods for quantifying yes or no answers can be applied here when there is a cut off threshold for defining _normal_ and _abnormal_ test results.
 For simplicity, I will call someone who is diagnosed by a clinical test a "_case_" and someone who is not diagnosed by a test/healthy/normal, a "_control_".
@@ -127,6 +128,10 @@ ggplot(rfFit$pred[selectedIndices, ],
 
 ```
 
-## references 
+## References 
 
 {% bibliography --cited %}
+
+**Footnote**
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+[↩](#a1)

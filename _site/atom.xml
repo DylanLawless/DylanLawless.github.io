@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-19T12:54:01+02:00</updated>
+ <updated>2021-07-19T14:09:25+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -6689,10 +6689,10 @@ Autoimmunity &amp; Inflammation in PID</p>
 
 <h1 id="methods">Methods</h1>
 <p><a href="https://www.genome.gov/20019523/">Genome-Wide Association Studies Fact Sheet - National Human Genome Research Institute (NHGRI)</a><br />
-<a href="https://www.genomicsengland.co.uk/genomics-england-uses-mongodb-to-power-the-data-science-behind-the-100000-genomes-project/">Genomics England uses MongoDB to power the 100,000 Genomes Project | Genomics England</a><br />
-<a href="https://www.mongodb.com/press/genomics-england-uses-mongodb-to-power-the-data-science-behind-the-100000-genomes-project">Genomics England uses MongoDB to Power the 100,000 Genomes Project | MongoDB</a><br />
+[Genomics England uses MongoDB to power the 100,000 Genomes Project | Genomics England](https://www.genomicsengland.co.uk/genomics-england-uses-mongodb-to-power-the-data-science-behind-the-100000-genomes-project/)<br />
+[Genomics England uses MongoDB to Power the 100,000 Genomes Project | MongoDB](https://www.mongodb.com/press/genomics-england-uses-mongodb-to-power-the-data-science-behind-the-100000-genomes-project)<br />
 <a href="http://docs.opencb.org/plugins/servlet/mobile?contentId=327756#content/view/327756">Confluence Mobile - OpenCB</a><br />
-<a href="https://www.nextprot.org/">neXtProt platform | The human protein knowledge base and annotation database</a><br />
+[neXtProt platform | The human protein knowledge base and annotation database](https://www.nextprot.org/)<br />
 <a href="https://s3.us-east-2.amazonaws.com/ccrs/ccr.html">Integrative Genomics Viewer - CCRs</a><br />
 <a href="https://vdjdb.cdr3.net/">VDJdb</a><br />
 <a href="https://vdjviz.cdr3.net/">VDJviz: home</a><br />
@@ -6701,7 +6701,7 @@ Autoimmunity &amp; Inflammation in PID</p>
 <a href="https://www.cdisc.org/about">Clinical Data Interchange Standards Consortium</a><br />
 <a href="http://transmartfoundation.org/europe-fall-meeting-2018/">European i2b2 tranSMART Academic Users Group</a><br />
 <a href="https://rd-connect.eu/">RD-Connect</a>
-<a href="https://www.sanger.ac.uk/science/tools">Tools and Software | Wellcome Sanger Institute</a>\</p>
+[Tools and Software | Wellcome Sanger Institute](https://www.sanger.ac.uk/science/tools)\</p>
 
 <h1 id="pathogens">Pathogens</h1>
 <p><a href="https://img.jgi.doe.gov/cgi-bin/vr/main.cgi">JGI Integrated Microbial Viral Genome Home</a><br />
@@ -8421,7 +8421,8 @@ which ranged from zero to eight gene copies (Supplementary Figs. 27, 28).</p>
 <a class="citation" href="#bland1994correlation">(Bland &amp; Altman, 1994)</a>
 in a series of BMJ statistical notes by Altman &amp; Bland
 (<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>):
-1. Bland JM, Altman DG. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6933/896"> Correlation, regression and repeated data.</a> <b>308</b>, 896.</p>
+1. Bland JM, Altman DG. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6933/896"> Correlation, regression and repeated data.</a> <b>308</b>, 896.
+<sup id="a1"><a href="#f1">1</a></sup></p>
 
 <p>It concerns the analysis of paired data where there is more than one observation per subject.
 They point out that it could be highly misleading to analyse such data by combining repeated observations from several subjects and then calculating the correlation coefficient as if the data were a simple sample.</p>
@@ -8524,7 +8525,7 @@ number 11 on the list <a href="https://github.com/DylanLawless/notes/blob/main/2
         <td style="text-align: right">2.9661</td>
         <td style="text-align: right">0.4237</td>
         <td style="text-align: right">48.3</td>
-        <td style="text-align: right">\(&lt;\)0.0001</td>
+        <td style="text-align: right">$$&lt;$$0.0001</td>
       </tr>
       <tr>
         <td style="text-align: left">PaCO2</td>
@@ -8743,6 +8744,10 @@ within the subject a rise in Y was associated with a fall in X.</p>
 <ol class="bibliography"><li><span id="bland1994correlation">Bland, J. M., &amp; Altman, D. G. (1994). Correlation, regression, and repeated data. <i>BMJ: British Medical Journal</i>, <i>308</i>(6933), 896.</span></li>
 <li><span id="bland1995statistics">Bland, J. M., &amp; Altman, D. G. (1995). Statistics notes: Calculating correlation coefficients with repeated observations: Part 1—correlation within subjects. <i>Bmj</i>, <i>310</i>(6977), 446.</span></li>
 <li><span id="bland1995calculating">Bland, J. M., &amp; Altman, D. G. (1995). Calculating correlation coefficients with repeated observations: Part 2—Correlation between subjects. <i>Bmj</i>, <i>310</i>(6980), 633.</span></li></ol>
+
+<p><strong>Footnote</strong>
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+<a href="#a1">↩</a></p>
 </p>
 
   <h2> - </h2>
@@ -8766,7 +8771,8 @@ within the subject a rise in Y was associated with a fall in X.</p>
 <a class="citation" href="#bland2000odds">(Bland &amp; Altman, 2000)</a>; 
 the 42nd paper on the list of statistical notes in their BMJ series,
 (<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>):
-42. Bland JM, Altman DG. (2000) <a href="http://www.bmj.com/cgi/content/full/320/7247/1468">The odds ratio.</a> <b>320</b>, 1468.</p>
+42. Bland JM, Altman DG. (2000) <a href="http://www.bmj.com/cgi/content/full/320/7247/1468">The odds ratio.</a> <b>320</b>, 1468.
+<sup id="a1"><a href="#f1">1</a></sup></p>
 
 <p>In reproducing their examples I use \(X\) and \(Y\);</p>
 <ul>
@@ -8873,8 +8879,9 @@ Reversing the order of categories for one variables simply results in a reversed
 <p>The standard error (SE) can be calculated for the log OR and hence a confidence interval (CI).</p>
 
 <p>The SE of log OR is simply estimated by the square root of the sum of the reciprocals of the four frequencies. 
-For the example,
-\(\text{SE(}log \text{OR)} =
+For the example,</p>
+<div class="table-wrapper">
+  <p>\(\text{SE(}log \text{OR)} =
 \sqrt{
 \frac{1}{141} + 
 \frac{1}{420} + 
@@ -8882,6 +8889,7 @@ For the example,
 \frac{1}{13 525}}
 =
 0.103\)</p>
+</div>
 
 <h2 id="confidence-interval">Confidence interval</h2>
 
@@ -8912,6 +8920,10 @@ Altman &amp; Bland review this debate and also discuss ORs in logistic regressio
 <h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="bland2000odds">Bland, J. M., &amp; Altman, D. G. (2000). The odds ratio. <i>Bmj</i>, <i>320</i>(7247), 1468.</span></li></ol>
+
+<p><strong>Footnote</strong>
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+<a href="#a1">↩</a></p>
 </p>
 
   <h2> - </h2>
@@ -8920,13 +8932,14 @@ Altman &amp; Bland review this debate and also discuss ORs in logistic regressio
 <ul id="markdown-toc">
   <li><a href="#receiver-operating-characteristic-plots-1" id="markdown-toc-receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</a></li>
   <li><a href="#example-roc-cuvre" id="markdown-toc-example-roc-cuvre">Example ROC cuvre</a></li>
-  <li><a href="#references" id="markdown-toc-references">references</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <h2 id="receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</h2>
 <p>This article covers the fifth paper in the series of statistics notes <a class="citation" href="#altman1994diagnostic">(Altman &amp; Bland, 1994)</a>
 (<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>): 5. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/309/6948/188"> Diagnostic tests 3: receiver operating characteristic plots.</a> <b>309</b>, 188,
 and concerns <em>quantitative diagnostic tests</em>.
+<sup id="a1"><a href="#f1">1</a></sup>
 Diagnosis based on yes or no answers are covered in another note by Bland and Altman.
 The same statistical methods for quantifying yes or no answers can be applied here when there is a cut off threshold for defining <em>normal</em> and <em>abnormal</em> test results.
 For simplicity, I will call someone who is diagnosed by a clinical test a “<em>case</em>” and someone who is not diagnosed by a test/healthy/normal, a “<em>control</em>”.
@@ -9048,28 +9061,32 @@ The accuracy (proportion of all correctly identified cases) was
 
 </span></code></pre></div></div>
 
-<h2 id="references">references</h2>
+<h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="altman1994diagnostic">Altman, D. G., &amp; Bland, J. M. (1994). Diagnostic tests 3: receiver operating characteristic plots. <i>BMJ: British Medical Journal</i>, <i>309</i>(6948), 188.</span></li>
 <li><span id="peacock2011oxford">Peacock, J., &amp; Peacock, P. (2011). <i>Oxford handbook of medical statistics</i>. Oxford university press.</span></li></ol>
+
+<p><strong>Footnote</strong>
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+<a href="#a1">↩</a></p>
 </p>
 
   <h2> - </h2>
   <p><h1 id="sensitivity-and-specificity">Sensitivity and specificity</h1>
 
 <ul id="markdown-toc">
+  <li><a href="#sensitivity-and-specificity-1" id="markdown-toc-sensitivity-and-specificity-1">Sensitivity and specificity</a></li>
   <li><a href="#confidence-intervals" id="markdown-toc-confidence-intervals">Confidence intervals</a></li>
   <li><a href="#quantifying-the-diagnostic-ability" id="markdown-toc-quantifying-the-diagnostic-ability">Quantifying the diagnostic ability</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
+<h2 id="sensitivity-and-specificity-1">Sensitivity and specificity</h2>
 <p>The third paper on the list of BMJ statistics notes by Alman and Bland,
 <a href="202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>,
-(missing reference)</p>
-<ol>
-  <li>Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6943/1552">
-Diagnostic tests 1: sensitivity and specificity.</a> <b>308</b>, 1552.</li>
-</ol>
+<a class="citation" href="#altman1994diagnostic1">(Altman &amp; Bland, 1994)</a> 3. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6943/1552">
+Diagnostic tests 1: sensitivity and specificity.</a> <b>308</b>, 1552.
+<sup id="a1"><a href="#f1">1</a></sup></p>
 
 <p>The simple diagnostic test such as an x-ray is used to classify patients into two groups:</p>
 <ul>
@@ -9085,48 +9102,50 @@ Diagnostic tests 1: sensitivity and specificity.</a> <b>308</b>, 1552.</li>
 The results of a scan (<strong>test</strong>) compared to the correct diagnosis (<strong>true positive</strong>) based on either necropsy, biopsy, or surgical inspection. 
 i.e. How good is the scan for correct diagnosis?</p>
 
-<p><strong>Table 1. Relation between results of liver scan and correct diagnosis</strong></p>
+<p><strong>Table 1.</strong> <em>Relation between results of liver scan and correct diagnosis.</em></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Liver scan</th>
-      <th>Pathology</th>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> </td>
-      <td>Abnormal (+)</td>
-      <td>Normal (-)</td>
-      <td>Total</td>
-    </tr>
-    <tr>
-      <td>Abnormal(+)</td>
-      <td>231</td>
-      <td>32</td>
-      <td>263</td>
-    </tr>
-    <tr>
-      <td>Normal(-)</td>
-      <td>27</td>
-      <td>54</td>
-      <td>81</td>
-    </tr>
-    <tr>
-      <td>Total</td>
-      <td>258</td>
-      <td>86</td>
-      <td>344</td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-wrapper">
 
-<p>Option 1
-The proportions of patients 
-who are correctly “diagnosed” by the scan</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Liver scan</th>
+        <th style="text-align: center">: Pathology :||</th>
+        <th style="text-align: center"> </th>
+        <th style="text-align: center"> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"> </td>
+        <td style="text-align: center">**Abnormal (+)**</td>
+        <td style="text-align: center">**Normal (-)**</td>
+        <td style="text-align: center">**Total**</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">**Abnormal(+)**</td>
+        <td style="text-align: center">_231_</td>
+        <td style="text-align: center">32</td>
+        <td style="text-align: center">263</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">**Normal(-)**</td>
+        <td style="text-align: center">27</td>
+        <td style="text-align: center">_54_</td>
+        <td style="text-align: center">81</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">**Total**</td>
+        <td style="text-align: center">258</td>
+        <td style="text-align: center">86</td>
+        <td style="text-align: center">344</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p>The proportions of patients who are correctly “diagnosed” by the scan</p>
 
 <ul>
   <li>Disease signs and abnormal liver
@@ -9157,25 +9176,31 @@ who are correctly “diagnosed” by the scan</p>
 </ul>
 
 <p>Based on Altman and Bland’s example sample, 
-we expect 90% true positives (patients with abnormal pathology to have abnormal (positive) liver scans), 
-while 63% true negatives (those with normal pathology would have normal (negative) liver scans).</p>
+we expect 90% true positives (<em>patients with abnormal pathology to have abnormal (positive) liver scans</em>), 
+while 63% true negatives (<em>those with normal pathology would have normal (negative) liver scans</em>).</p>
 
 <h2 id="confidence-intervals">Confidence intervals</h2>
 <p>The sensitivity and specificity are proportions, so confidence intervals can be calculated.
 This uses standard methods for proportions
-(missing reference).</p>
+<a class="citation" href="#gardner1989calculating">(Gardner &amp; Altman, 1989)</a>.</p>
 
 <h2 id="quantifying-the-diagnostic-ability">Quantifying the diagnostic ability</h2>
 <p>Sensitivity and specificity are one approach to quantifying the diagnostic ability of the test.
 In this case, we already have the final results of <strong>tests</strong> and <strong>diagnosis</strong> of our sample set.
 For an individual patient we only have the <strong>test</strong> result.
-We want to quantify how well the test can predict true positives.
-This is answered in the next statistical note; <em>predictive values</em>.
-It defines <em>positive</em> and <em>negative predictive values</em> and requires the use of <em>sensitivity</em>, <em>specificity</em>, and <em>prevalence</em>.</p>
+We want to quantify how well the test can predict true positives.</p>
+
+<p>This is answered in the next statistical note; <em>predictive values</em>.
+It defines <em>positive</em> and <em>negative predictive values</em> and requires the use of <em>sensitivity,</em> <em>specificity,</em> and <em>prevalence</em>.</p>
 
 <h2 id="references">References</h2>
 
-<ol class="bibliography"></ol>
+<ol class="bibliography"><li><span id="altman1994diagnostic1">Altman, D. G., &amp; Bland, J. M. (1994). Diagnostic tests. 1: Sensitivity and specificity. <i>BMJ: British Medical Journal</i>, <i>308</i>(6943), 1552.</span></li>
+<li><span id="gardner1989calculating">Gardner, M. J., &amp; Altman, D. G. (1989). Calculating confidence intervals for proportions and their differences. <i>Statistics with Confidence. London: BMJ Publishing Group</i>, 28–33.</span></li></ol>
+
+<p><strong>Footnote</strong>
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+<a href="#a1">↩</a></p>
 </p>
 
   <h2> - </h2>
@@ -10697,11 +10722,6 @@ https://www.statology.org/fishers-exact-test-calculator/</p>
 </p>
 
   <h2> - </h2>
-  <p><h1 id="head">Head</h1>
-
-</p>
-
-  <h2> - </h2>
   <p><h1 id="linear-regression">Linear regression</h1>
 <ul id="markdown-toc">
   <li><a href="#simple-linear-regression" id="markdown-toc-simple-linear-regression">Simple linear regression</a></li>
@@ -10875,7 +10895,8 @@ SE(\hat\beta_1)}\)
 No relationship will give <em>t</em>-distribution \(n - 2\) degrees of freedom.
 (bell curve shape, for values of n greater than \(\approx\) 30 it is similar to normal distribution).</p>
 
-<p>The probability of observing any number equal to |<em>t</em>| or larger, assuming \(\beta_1 = 0\), is the <em>p-value</em>.
+<p>The probability of observing any number equal to |_t_| or larger, assuming $$ 
+\beta_1 = 0 $$, is the <em>p-value</em>.
 A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can <em>reject the null hypothesis</em>.</p>
 
 <h2 id="model-accuracy">Model accuracy</h2>

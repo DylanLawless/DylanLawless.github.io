@@ -19,6 +19,7 @@ Altman & Bland review the use of odds ratio (OR), standard error (SE), and confi
 the 42nd paper on the list of statistical notes in their BMJ series,
 ([ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md )):
 42\. Bland JM, Altman DG. (2000) <a href="http://www.bmj.com/cgi/content/full/320/7247/1468">The odds ratio.</a> <b>320</b>, 1468.
+<sup id="a1">[1](#f1)</sup>
 
 In reproducing their examples I use $$X$$ and $$Y$$; 
 * _X = Eczema_
@@ -94,6 +95,7 @@ The standard error (SE) can be calculated for the log OR and hence a confidence 
 
 The SE of log OR is simply estimated by the square root of the sum of the reciprocals of the four frequencies. 
 For the example,
+<div class="table-wrapper" markdown="block">
 $$\text{SE(}log \text{OR)} =
 \sqrt{
 \frac{1}{141} + 
@@ -103,6 +105,7 @@ $$\text{SE(}log \text{OR)} =
 =
 0.103
 $$
+</div>
 
 ## Confidence interval
 
@@ -133,3 +136,7 @@ Altman & Bland review this debate and also discuss ORs in logistic regression an
 ## References 
 
 {% bibliography --cited %}
+
+**Footnote**
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+[↩](#a1)

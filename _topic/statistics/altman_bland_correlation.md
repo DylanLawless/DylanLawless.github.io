@@ -19,6 +19,7 @@ This topic is introduced as the first paper
 in a series of BMJ statistical notes by Altman & Bland
 ([ lit-altman_bland.md ]( https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md )):
 1\. Bland JM, Altman DG. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6933/896"> Correlation, regression and repeated data.</a> <b>308</b>, 896.
+<sup id="a1">[1](#f1)</sup>
 
 It concerns the analysis of paired data where there is more than one observation per subject.
 They point out that it could be highly misleading to analyse such data by combining repeated observations from several subjects and then calculating the correlation coefficient as if the data were a simple sample.
@@ -192,3 +193,7 @@ within the subject a rise in Y was associated with a fall in X.
 ## References 
 
 {% bibliography --cited %}
+
+**Footnote**
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+[↩](#a1)

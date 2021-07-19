@@ -21,3 +21,10 @@ defaults:
     values:
       layout: topic
 
+plugins:
+  - jekyll-spaceship
+
+jekyll-spaceship:
+  # default enabled processors
+  processors:
+    - table-processor

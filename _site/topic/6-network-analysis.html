@@ -2,8 +2,7 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -17,23 +16,22 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description"
-content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
 	<title>Rare disease cohort analysis</title>
-	<meta name="author" content="LawlessGenomics" />
+	<meta name="author" content="LawlessGenomics">
 	<!-- <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" /> -->
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -55,9 +53,7 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.1_150ppi.png" 
-				alt="Logo image" width="35.7" height="55" /></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.1_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
 			</div>
 
 			<div class="logo">
@@ -75,7 +71,7 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 	</div>
 
 	<div id="topic">
-Reading time 22 minutes
+Reading time  22 minutes
 <h1 id="rare-disease-cohort-analysis">Rare disease cohort analysis</h1>
 
 <ul id="markdown-toc">
@@ -143,7 +139,7 @@ performed on each protein pathway cluster.</p>
 
 <p><strong>FigureLabel</strong>
 method
-<img src="/images/net_analysis/method.png" width="40%" /></p>
+<img src="/images/net_analysis/method.png" width="40%"></p>
 
 <p><strong>Rare variant analysis and protein pathway significant enrichment.</strong>
 A. DNA is collected and sequenced. B. Routine genomic analysis is
@@ -161,7 +157,7 @@ testing correction is applied to identify the critical significant
 threshold.
 <strong>FigureLabel</strong>
 abstract
-<img src="/images/net_analysis/abstract.pdf" width="40%" /></p>
+<img src="/images/net_analysis/abstract.pdf" width="40%"></p>
 
 <h2 id="exome-analysis">Exome analysis</h2>
 <p>Exome sequencing analyses has been discussed in detail. The rare disease
@@ -175,16 +171,16 @@ practices” were used for marking duplicate reads, recalibration, and
 whole cohort variant quality score recalibration before generating
 genomic VCFs with HaplotypeCaller and joint genotyping. Filtering and
 prediction of functional consequences was performed using Variant Effect
-Predictor<br />
+Predictor<br>
 (http://www.ensembl.org/info/docs/tools/vep/index.html), Exome Variant
-Server<br />
+Server<br>
 (http://evs.gs.washington.edu/EVS/), The Single Nucleotide Polymorphism
-database<br />
+database<br>
 (https://www.ncbi.nlm.nih.gov/projects/SNP/) and ClinVar
 (https://www.ncbi.nlm.nih.gov/ clinvar/), The Exome Aggregation
-Consortium and The Genome Aggregation Database<br />
+Consortium and The Genome Aggregation Database<br>
 (http://gnomad.broadinstitute.org). Filtering of common variations and
-annotation was performed using VCFhacks<br />
+annotation was performed using VCFhacks<br>
 (https://github.com/gantzgraf/vcfhack). Candidate variants were required
 to pass the following filtering conditions: frequency (count/coverage)
 between 20-100%, according to VEP-annotation at least one canonical
@@ -222,7 +218,7 @@ structure is divided between long-term and short-term
 storage.
 <strong>FigureLabel</strong>
 analysis_flow
-<img src="/images/net_analysis/analysis_flow.pdf" width="80%" /></p>
+<img src="/images/net_analysis/analysis_flow.pdf" width="80%"></p>
 
 <h2 id="sec:net_construction">Network construction</h2>
 <p>Group-specific gene lists [1 (i-ii) and 2 (i-ii)] were assessed for
@@ -238,17 +234,17 @@ considered as making up a part of a protein pathway.</p>
 
 <p>[*[5]{}[Z]{}]{}</p>
 
-<p><br />
+<p><br>
 &amp; [Network cluster]{} &amp; [Number of nodes]{} &amp; [Number of edges]{} &amp;
-[Number of clusters]{}<br />
-&amp; [Total ]{} &amp; [1956]{} &amp; [9559]{} &amp; [114]{}<br />
-&amp; [No edges]{} &amp; [1]{} &amp; [0]{} &amp; [107]{}<br />
-&amp; [One edge]{} &amp; [2]{} &amp; [1]{} &amp; [6]{}<br />
-&amp; [Large multi-edge]{} &amp; [1837]{} &amp; [9553]{} &amp; [1]{}<br />
-&amp; [Total]{} &amp; [2305]{} &amp; [14139]{} &amp; [102]{}<br />
-&amp; [No edges]{} &amp; [1]{} &amp; [0]{} &amp; [77]{}<br />
-&amp; [One edge]{} &amp; [2]{} &amp; [1]{} &amp; [3]{}<br />
-&amp; [Two edges]{} &amp; [3]{} &amp; [2]{} &amp; [1]{}<br />
+[Number of clusters]{}<br>
+&amp; [Total ]{} &amp; [1956]{} &amp; [9559]{} &amp; [114]{}<br>
+&amp; [No edges]{} &amp; [1]{} &amp; [0]{} &amp; [107]{}<br>
+&amp; [One edge]{} &amp; [2]{} &amp; [1]{} &amp; [6]{}<br>
+&amp; [Large multi-edge]{} &amp; [1837]{} &amp; [9553]{} &amp; [1]{}<br>
+&amp; [Total]{} &amp; [2305]{} &amp; [14139]{} &amp; [102]{}<br>
+&amp; [No edges]{} &amp; [1]{} &amp; [0]{} &amp; [77]{}<br>
+&amp; [One edge]{} &amp; [2]{} &amp; [1]{} &amp; [3]{}<br>
+&amp; [Two edges]{} &amp; [3]{} &amp; [2]{} &amp; [1]{}<br>
 &amp; [Large multi-edge]{} &amp; [2219]{} &amp; [14134]{} &amp; [1]{}\</p>
 
 <p><strong>Table [table:node_summary]</strong> lists the characteristics of PPIs for
@@ -271,7 +267,7 @@ harbour potentially damaging functional variants in a typical disease
 cohort.
 <strong>FigureLabel</strong>
 damage_list_case
-<img src="/images/net_analysis/damage_list_case.png" width="50%" /></p>
+<img src="/images/net_analysis/damage_list_case.png" width="50%"></p>
 
 <p>To segregate protein pathways and refine the number of genes (nodes) in
 each cluster, the Markov cluster algorithm (MCL) was used
@@ -301,13 +297,13 @@ without considering overlaps.]{} [fig:inflation]</p>
 
 <p>[*[4]{}[Z]{}]{}</p>
 
-<p><br />
-&amp; &amp; [Total count median]{} &amp; [Node/Edge ratio ]{}<br />
-&amp; &amp; [Case/control $\pm$ S.D.]{} &amp; [Case/control $\pm$ S.D.]{}<br />
-&amp; &amp; [2130.5 $\pm$ 246.78]{} &amp;<br />
-&amp; [PPI only *]{} &amp; [11849 $\pm$ 3238.55]{} &amp; [0.18 $\pm$ 0.03]{}<br />
-&amp; [Inflation 2.5]{} &amp; [2787.5 $\pm$ 740.34]{} &amp; [0.78 $\pm$ 0.12]{}<br />
-&amp; [Inflation 3]{} &amp; [4229.5 $\pm$ 3669.18]{} &amp; [0.77 $\pm$ 0.61]{}<br />
+<p><br>
+&amp; &amp; [Total count median]{} &amp; [Node/Edge ratio ]{}<br>
+&amp; &amp; [Case/control $\pm$ S.D.]{} &amp; [Case/control $\pm$ S.D.]{}<br>
+&amp; &amp; [2130.5 $\pm$ 246.78]{} &amp;<br>
+&amp; [PPI only *]{} &amp; [11849 $\pm$ 3238.55]{} &amp; [0.18 $\pm$ 0.03]{}<br>
+&amp; [Inflation 2.5]{} &amp; [2787.5 $\pm$ 740.34]{} &amp; [0.78 $\pm$ 0.12]{}<br>
+&amp; [Inflation 3]{} &amp; [4229.5 $\pm$ 3669.18]{} &amp; [0.77 $\pm$ 0.61]{}<br>
 &amp; [Inflation 4]{} &amp; [1199.5 $\pm$ 146.37]{} &amp; [1.78 $\pm$ 0.01]{}\</p>
 
 <p><strong>Figure [fig:network_size_inflation]</strong> illustrates the effect of
@@ -332,7 +328,7 @@ large increase in single-protein nodes on one group. Binwidth of
 10.
 <strong>FigureLabel</strong>
 network_size_inflation
-<img src="/images/net_analysis/network_size_inflation_free.pdf" width="40%" /></p>
+<img src="/images/net_analysis/network_size_inflation_free.pdf" width="40%"></p>
 
 <p><strong>Cumulative sum of network rank by size</strong>. The effect of inflation on
 network size distribution could be potentially measured automatically by
@@ -341,7 +337,7 @@ the best inflation parameter to use. This process would reduce user
 bias.
 <strong>FigureLabel</strong>
 cumulative_sum_net_rank
-<img src="/images/net_analysis/cumulative_sum_net_rank.pdf" width="40%" /></p>
+<img src="/images/net_analysis/cumulative_sum_net_rank.pdf" width="40%"></p>
 
 <p><strong>QQ plot illustrating uniform inflation.</strong> The data presented in
 figure [fig:cumulative_sum_net_rank] is used to produce the
@@ -350,7 +346,7 @@ case and control groups after all inflation parameters were
 tested.
 <strong>FigureLabel</strong>
 qqplot_2
-<img src="/images/net_analysis/qqplot_2.pdf" width="40%" /></p>
+<img src="/images/net_analysis/qqplot_2.pdf" width="40%"></p>
 
 <p><strong>Figure [fig:network_size_nodes]</strong> shows the number of proteins per
 network. For example, 235 clusters (470 protein nodes) were seen for
@@ -367,7 +363,7 @@ protein (nodes) with no interactions remain; in this cases approximately
 pathway.
 <strong>FigureLabel</strong>
 network_size_nodes
-<img src="/images/net_analysis/network_size_nodes.pdf" width="40%" /></p>
+<img src="/images/net_analysis/network_size_nodes.pdf" width="40%"></p>
 
 <h2 id="sec:random_sample">Random sampling</h2>
 <p>With our group-specific gene lists [1 (i-ii) and 2 (i-ii)], prepared
@@ -417,7 +413,8 @@ rescued by checking for LoF enrichment. This method is applied to real
 data in section [sec:enrichment_test] and <strong>table
 [table:bh_real]</strong>.</p>
 
-<h2 id="sec:number_test">Determining the number of tests <em>m</em></h2>
+<h2 id="sec:number_test">Determining the number of tests <em>m</em>
+</h2>
 <p>The number of tests should be determined by the predefine LoF ratio per
 network, <em>q</em>. This value is arbitrarily set and has the problem that an
 investigator can decide to use a higher threshold to nude the critical
@@ -527,32 +524,32 @@ tests. Someone interested can recalculate this table to see this effect.</p>
 
 <p>[*[2]{}[Z]{}]{}</p>
 
-<p><br />
-&amp; [P value]{}<br />
-&amp; [&lt;0.001]{}<br />
-[Olive oil]{} &amp; [0.008]{}<br />
-[Whole milk]{} &amp; [0.039]{}<br />
-[White meat]{} &amp; [0.041]{}<br />
-[Proteins]{} &amp; [0.042]{}<br />
-[Nuts]{} &amp; [0.06]{}<br />
-[Cereals and pasta]{} &amp; [0.074]{}<br />
-[White fish]{} &amp; [0.205]{}<br />
-[Butter]{} &amp; [0.212]{}<br />
-[Vegetables]{} &amp; [0.216]{}<br />
-[Skimmed milk]{} &amp; [0.222]{}<br />
-[Red meat]{} &amp; [0.251]{}<br />
-[Fruit]{} &amp; [0.269]{}<br />
-[Eggs]{} &amp; [0.275]{}<br />
-[Blue fish]{} &amp; [0.34]{}<br />
-[Legumes]{} &amp; [0.341]{}<br />
-[Carbohydrates]{} &amp; [0.384]{}<br />
-[Potatoes]{} &amp; [0.569]{}<br />
-[Bread]{} &amp; [0.594]{}<br />
-[Fats]{} &amp; [0.696]{}<br />
-[Sweets]{} &amp; [0.762]{}<br />
-[Dairy products]{} &amp; [0.94]{}<br />
-[Semi-skimmed milk]{} &amp; [0.942]{}<br />
-[Total meat]{} &amp; [0.975]{}<br />
+<p><br>
+&amp; [P value]{}<br>
+&amp; [&lt;0.001]{}<br>
+[Olive oil]{} &amp; [0.008]{}<br>
+[Whole milk]{} &amp; [0.039]{}<br>
+[White meat]{} &amp; [0.041]{}<br>
+[Proteins]{} &amp; [0.042]{}<br>
+[Nuts]{} &amp; [0.06]{}<br>
+[Cereals and pasta]{} &amp; [0.074]{}<br>
+[White fish]{} &amp; [0.205]{}<br>
+[Butter]{} &amp; [0.212]{}<br>
+[Vegetables]{} &amp; [0.216]{}<br>
+[Skimmed milk]{} &amp; [0.222]{}<br>
+[Red meat]{} &amp; [0.251]{}<br>
+[Fruit]{} &amp; [0.269]{}<br>
+[Eggs]{} &amp; [0.275]{}<br>
+[Blue fish]{} &amp; [0.34]{}<br>
+[Legumes]{} &amp; [0.341]{}<br>
+[Carbohydrates]{} &amp; [0.384]{}<br>
+[Potatoes]{} &amp; [0.569]{}<br>
+[Bread]{} &amp; [0.594]{}<br>
+[Fats]{} &amp; [0.696]{}<br>
+[Sweets]{} &amp; [0.762]{}<br>
+[Dairy products]{} &amp; [0.94]{}<br>
+[Semi-skimmed milk]{} &amp; [0.942]{}<br>
+[Total meat]{} &amp; [0.975]{}<br>
 [Processed meat]{} &amp; [0.986]{}\</p>
 
 <p>The choice of a false discover rate depends on the application. False
@@ -603,20 +600,20 @@ dataset and P-values are
 shown.
 <strong>FigureLabel</strong>
 means_test
-<img src="/images/net_analysis/means_test.pdf" width="30%" /></p>
+<img src="/images/net_analysis/means_test.pdf" width="30%"></p>
 
 <p>[*[6]{}[Z]{}]{}</p>
 
-<p><br />
+<p><br>
 &amp; [<strong>LoF freq in cases</strong>]{} &amp; [<strong>LoF freq due to cases per network</strong>]{}
-&amp; [<strong>P-value</strong>]{} &amp; [<strong>rank</strong>]{} &amp; [<strong>$(i/m)Q$</strong>]{}<br />
-&amp; [0.306]{} &amp; [1]{} &amp; [0.023]{} &amp; [1]{} &amp; [0.025]{}<br />
-[27]{} &amp; [0.429]{} &amp; [1]{} &amp; [0.12]{} &amp; [2]{} &amp; [0.05]{}<br />
-[16]{} &amp; [0.6]{} &amp; [0.919]{} &amp; [0.13]{} &amp; [3]{} &amp; [0.075]{}<br />
-[19]{} &amp; [0.281]{} &amp; [0.835]{} &amp; [0.14]{} &amp; [4]{} &amp; [0.1]{}<br />
-[25]{} &amp; [0.25]{} &amp; [1]{} &amp; [0.28]{} &amp; [5]{} &amp; [0.125]{}<br />
-[11]{} &amp; [0.357]{} &amp; [0.838]{} &amp; [0.33]{} &amp; [6]{} &amp; [0.15]{}<br />
-[10]{} &amp; [0.516]{} &amp; [0.856]{} &amp; [0.34]{} &amp; [7]{} &amp; [0.175]{}<br />
+&amp; [<strong>P-value</strong>]{} &amp; [<strong>rank</strong>]{} &amp; [<strong>$(i/m)Q$</strong>]{}<br>
+&amp; [0.306]{} &amp; [1]{} &amp; [0.023]{} &amp; [1]{} &amp; [0.025]{}<br>
+[27]{} &amp; [0.429]{} &amp; [1]{} &amp; [0.12]{} &amp; [2]{} &amp; [0.05]{}<br>
+[16]{} &amp; [0.6]{} &amp; [0.919]{} &amp; [0.13]{} &amp; [3]{} &amp; [0.075]{}<br>
+[19]{} &amp; [0.281]{} &amp; [0.835]{} &amp; [0.14]{} &amp; [4]{} &amp; [0.1]{}<br>
+[25]{} &amp; [0.25]{} &amp; [1]{} &amp; [0.28]{} &amp; [5]{} &amp; [0.125]{}<br>
+[11]{} &amp; [0.357]{} &amp; [0.838]{} &amp; [0.33]{} &amp; [6]{} &amp; [0.15]{}<br>
+[10]{} &amp; [0.516]{} &amp; [0.856]{} &amp; [0.34]{} &amp; [7]{} &amp; [0.175]{}<br>
 [18]{} &amp; [0.474]{} &amp; [0.85]{} &amp; [0.47]{} &amp; [8]{} &amp; [0.2]{}\</p>
 
 <p>[@l@l@]{} [0pt][0pt]</p>
@@ -667,9 +664,7 @@ identified by manual interpretation of unknown candidates. ]{}
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.2_150ppi.png" 
-				alt="Logo image" width="35.7" height="55"/></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
 					<div class="right-root">
 						<p> Maintained by Dylan Lawless. Postdoc at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
 						<a href="/resume">Resume</a>
