@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-19T14:19:50+02:00</updated>
+ <updated>2021-07-19T14:29:48+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -9110,7 +9110,7 @@ i.e. How good is the scan for correct diagnosis?</p>
     <thead>
       <tr>
         <th style="text-align: left">Liver scan</th>
-        <th style="text-align: center">: Pathology :||</th>
+        <th style="text-align: center">: Pathology (diagnosis) :||</th>
         <th style="text-align: center"> </th>
         <th style="text-align: center"> </th>
       </tr>
@@ -9145,8 +9145,7 @@ i.e. How good is the scan for correct diagnosis?</p>
 
 </div>
 
-<p>The proportions of patients who are correctly “diagnosed” by the scan</p>
-
+<p>The proportions of patients who are correctly “diagnosed” by the scan are:</p>
 <ul>
   <li>Disease signs and abnormal liver
     <ul>
@@ -9177,7 +9176,7 @@ i.e. How good is the scan for correct diagnosis?</p>
 
 <p>Based on Altman and Bland’s example sample, 
 we expect 90% true positives (<em>patients with abnormal pathology to have abnormal (positive) liver scans</em>), 
-while 63% true negatives (<em>those with normal pathology would have normal (negative) liver scans</em>).</p>
+and 63% true negatives (<em>those with normal pathology would have normal (negative) liver scans</em>).</p>
 
 <h2 id="confidence-intervals">Confidence intervals</h2>
 <p>The sensitivity and specificity are proportions, so confidence intervals can be calculated.
@@ -9186,7 +9185,7 @@ This uses standard methods for proportions
 
 <h2 id="quantifying-the-diagnostic-ability">Quantifying the diagnostic ability</h2>
 <p>Sensitivity and specificity are one approach to quantifying the diagnostic ability of the test.
-In this case, we already have the final results of <strong>tests</strong> and <strong>diagnosis</strong> of our sample set.
+In this case, we already have the final results of <strong>tests</strong> and <strong>diagnosis</strong> from the sample set.
 For an individual patient we only have the <strong>test</strong> result.
 We want to quantify how well the test can predict true positives.</p>
 
