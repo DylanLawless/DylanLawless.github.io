@@ -41,13 +41,13 @@ i.e. How good is the scan for correct diagnosis?
 
 </div>
 
-The proportions of patients who are correctly "diagnosed" by the scan are:
+Patients who are correctly labelled are:
 * Disease signs and abnormal liver
 	- 258 true positives
 * No signs and healthy liver
 	- 86 true negatives
 
-The proportions of these two groups that were correctly diagnosed by the scan were $$231/258=0.90$$ and $$54/86=0.63$$, respectively. 
+The proportions of these two groups that were also correctly diagnosed by the scan were $$231/258=0.90$$ and $$54/86=0.63$$, respectively. 
 
 * Sensitivity 
 	- Proportion of **true positives** that are **correctly identified** by the test.
