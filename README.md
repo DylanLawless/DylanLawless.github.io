@@ -1,4 +1,4 @@
-# This is the data for LawlessGenomics
+## This is the data for LawlessGenomics
 [lawlessgenomics.com](https://lawlessgenomics.com) hosted via [DylanLawless.github.io](https://dylanlawless.github.io)
 
 Some installs may be required to serve this site locally for testing; 
@@ -27,7 +27,7 @@ Within text citations are used with: {% cite name %}.
 The biblio is printed at end of file with:
 {% bibliography --cited %}.
 
-# Rake deploy pre-build before hosting
+## Rake deploy pre-build before hosting
 Plugins (scholar) cannot be run on GitHub pages, therefore the site is run by using the \_site directory as the root as described by [davidensinger.com](http://davidensinger.com/2013/07/automating-jekyll-deployment-to-github-pages-with-rake/).
 
 To allow this to work, two branches are created:
@@ -113,7 +113,7 @@ rake commit_deploy
 Make sure that `sh jek.sh` is run so that jekyll compiles the site and populates
 \_site before commiting and pushing the _master_ to the live site. 
 
-# License
+## License
 The following directories and their contents are Copyright Dylan Lawless.
 You may not reuse anything therein without my permission (although I am unlikely to complain about non-profit usage):
 
@@ -129,7 +129,7 @@ If you copy my pushlished content, a link back to https://lawlessgenomics.com wo
 For git tracking, test:
 `git config merge.conflictstyle diff3`
 
-# Cloning and keys
+## Cloning and keys
 Since I work with others and use different accounts, machines, emails, here are some notes incase you or I need them.
 
 To push to multiple github accounts with different keys,
@@ -186,3 +186,17 @@ git config user.name sars-cov-2-voc
 ```
 
 You should now be able to pull and push from that repo without the ["incorrect user" problems](https://stackoverflow.com/questions/4665337/git-pushing-to-remote-github-repository-as-wrong-user).
+
+## Submodules
+I have a fork of jekyll-reading-time as a submodule in plugins.
+If you did not have this submodule added in \_plugins (with reading_time_filter.rb), then the  options set in \_layouts/topics.html and post.html would cause content to be printed 2 times, with a formatting error due to the jekyll-reading-time command "{{ content | reading_time }}".
+To add a submodule, e.g. git within the git such as in bundles, use
+
+git submodule add https://github.com/...
+To clone use
+
+git clone --recursive git://github.com/foo/bar.git
+or if you forgot or cant use recursive, do
+
+git submodule init
+git submodule update
