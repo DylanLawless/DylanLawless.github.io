@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-19T14:29:48+02:00</updated>
+ <updated>2021-07-19T15:43:51+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -9145,7 +9145,7 @@ i.e. How good is the scan for correct diagnosis?</p>
 
 </div>
 
-<p>The proportions of patients who are correctly “diagnosed” by the scan are:</p>
+<p>Patients who are correctly labelled are:</p>
 <ul>
   <li>Disease signs and abnormal liver
     <ul>
@@ -9159,7 +9159,7 @@ i.e. How good is the scan for correct diagnosis?</p>
   </li>
 </ul>
 
-<p>The proportions of these two groups that were correctly diagnosed by the scan were \(231/258=0.90\) and \(54/86=0.63\), respectively.</p>
+<p>The proportions of these two groups that were also correctly diagnosed by the scan were \(231/258=0.90\) and \(54/86=0.63\), respectively.</p>
 
 <ul>
   <li>Sensitivity
