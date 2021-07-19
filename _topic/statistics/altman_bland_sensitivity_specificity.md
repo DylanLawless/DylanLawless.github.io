@@ -32,7 +32,7 @@ i.e. How good is the scan for correct diagnosis?
 
 <div class="table-wrapper" markdown="block">
 
-| Liver scan	|: Pathology :|||
+| Liver scan 	|: Pathology (diagnosis) :|||
 |:---|:---:|:---:|:---:|
 |					| **Abnormal (+)**	| **Normal (-)**	| **Total** |
 | **Abnormal(+)**	| _231_				| 32				| 263 |
@@ -41,8 +41,7 @@ i.e. How good is the scan for correct diagnosis?
 
 </div>
 
-The proportions of patients who are correctly "diagnosed" by the scan
-
+The proportions of patients who are correctly "diagnosed" by the scan are:
 * Disease signs and abnormal liver
 	- 258 true positives
 * No signs and healthy liver
