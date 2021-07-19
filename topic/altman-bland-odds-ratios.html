@@ -2,8 +2,7 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -17,23 +16,22 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description"
-content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
-	<title>Odds ratios, SE & CI</title>
-	<meta name="author" content="LawlessGenomics" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Odds ratios, SE &amp; CI</title>
+	<meta name="author" content="LawlessGenomics">
 	<!-- <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" /> -->
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -55,9 +53,7 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.1_150ppi.png" 
-				alt="Logo image" width="35.7" height="55" /></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.1_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
 			</div>
 
 			<div class="logo">
@@ -80,7 +76,8 @@ Reading time 4 minutes
 
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#odds-ratio" id="markdown-toc-odds-ratio">Odds ratio</a>    <ul>
+  <li>
+<a href="#odds-ratio" id="markdown-toc-odds-ratio">Odds ratio</a>    <ul>
       <li><a href="#perspective-1" id="markdown-toc-perspective-1">Perspective 1</a></li>
       <li><a href="#perspective-2" id="markdown-toc-perspective-2">Perspective 2</a></li>
     </ul>
@@ -96,7 +93,8 @@ Reading time 4 minutes
 <a class="citation" href="#bland2000odds">(Bland &amp; Altman, 2000)</a>; 
 the 42nd paper on the list of statistical notes in their BMJ series,
 (<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>):
-42. Bland JM, Altman DG. (2000) <a href="http://www.bmj.com/cgi/content/full/320/7247/1468">The odds ratio.</a> <b>320</b>, 1468.</p>
+42. Bland JM, Altman DG. (2000) <a href="http://www.bmj.com/cgi/content/full/320/7247/1468">The odds ratio.</a> <b>320</b>, 1468.
+<sup id="a1"><a href="#f1">1</a></sup></p>
 
 <p>In reproducing their examples I use \(X\) and \(Y\);</p>
 <ul>
@@ -203,8 +201,9 @@ Reversing the order of categories for one variables simply results in a reversed
 <p>The standard error (SE) can be calculated for the log OR and hence a confidence interval (CI).</p>
 
 <p>The SE of log OR is simply estimated by the square root of the sum of the reciprocals of the four frequencies. 
-For the example,
-\(\text{SE(}log \text{OR)} =
+For the example,</p>
+<div class="table-wrapper">
+  <p>\(\text{SE(}log \text{OR)} =
 \sqrt{
 \frac{1}{141} + 
 \frac{1}{420} + 
@@ -212,6 +211,7 @@ For the example,
 \frac{1}{13 525}}
 =
 0.103\)</p>
+</div>
 
 <h2 id="confidence-interval">Confidence interval</h2>
 
@@ -242,6 +242,10 @@ Altman &amp; Bland review this debate and also discuss ORs in logistic regressio
 <h2 id="references">References</h2>
 
 <ol class="bibliography"><li><span id="bland2000odds">Bland, J. M., &amp; Altman, D. G. (2000). The odds ratio. <i>Bmj</i>, <i>320</i>(7247), 1468.</span></li></ol>
+
+<p><strong>Footnote</strong>
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+<a href="#a1">↩</a></p>
 
 </div>
 
@@ -276,9 +280,7 @@ Altman &amp; Bland review this debate and also discuss ORs in logistic regressio
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.2_150ppi.png" 
-				alt="Logo image" width="35.7" height="55"/></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
 					<div class="right-root">
 						<p> Maintained by Dylan Lawless. Postdoc at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
 						<a href="/resume">Resume</a>

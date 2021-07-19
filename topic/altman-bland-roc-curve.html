@@ -2,8 +2,7 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -17,23 +16,22 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description"
-content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
 	<title>Receiver operating characteristic plots</title>
-	<meta name="author" content="LawlessGenomics" />
+	<meta name="author" content="LawlessGenomics">
 	<!-- <link href="https://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Dyaln feed title" type="application/atom+xml" /> -->
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -55,9 +53,7 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.1_150ppi.png" 
-				alt="Logo image" width="35.7" height="55" /></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.1_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
 			</div>
 
 			<div class="logo">
@@ -81,13 +77,14 @@ Reading time 4 minutes
 <ul id="markdown-toc">
   <li><a href="#receiver-operating-characteristic-plots-1" id="markdown-toc-receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</a></li>
   <li><a href="#example-roc-cuvre" id="markdown-toc-example-roc-cuvre">Example ROC cuvre</a></li>
-  <li><a href="#references" id="markdown-toc-references">references</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <h2 id="receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</h2>
 <p>This article covers the fifth paper in the series of statistics notes <a class="citation" href="#altman1994diagnostic">(Altman &amp; Bland, 1994)</a>
 (<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>): 5. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/309/6948/188"> Diagnostic tests 3: receiver operating characteristic plots.</a> <b>309</b>, 188,
 and concerns <em>quantitative diagnostic tests</em>.
+<sup id="a1"><a href="#f1">1</a></sup>
 Diagnosis based on yes or no answers are covered in another note by Bland and Altman.
 The same statistical methods for quantifying yes or no answers can be applied here when there is a cut off threshold for defining <em>normal</em> and <em>abnormal</em> test results.
 For simplicity, I will call someone who is diagnosed by a clinical test a “<em>case</em>” and someone who is not diagnosed by a test/healthy/normal, a “<em>control</em>”.
@@ -100,7 +97,7 @@ An aside for history buffs, from <a href="https://en.wikipedia.org/wiki/Receiver
   <p>The ROC curve was first used during World War II for the analysis of radar signals before it was employed in signal detection theory.[56] Following the attack on Pearl Harbor in 1941, the United States army began new research to increase the prediction of correctly detected Japanese aircraft from their radar signals. For these purposes they measured the ability of a radar receiver operator to make these important distinctions, which was called the Receiver Operating Characteristic.[57]</p>
 </blockquote>
 
-<p><img src="/images/receiver_operating_characteristic_plots.png" width="100%" /></p>
+<p><img src="/images/receiver_operating_characteristic_plots.png" width="100%"></p>
 
 <p>The example shown in Figure 1 uses graft versus host disease, with an index measurement whose definition is not important.
 The <em>Yes</em> indicate <em>cases</em> and <em>No</em> indicate <em>controls</em> in our terminology, respectively. 
@@ -164,7 +161,7 @@ The accuracy (proportion of all correctly identified cases) was
 <h2 id="example-roc-cuvre">Example ROC cuvre</h2>
 <p>To implement this method, I include here an example in R code.</p>
 
-<p><img src="/images/receiver_operating_characteristic_curve.png" width="100%" /></p>
+<p><img src="/images/receiver_operating_characteristic_curve.png" width="100%"></p>
 
 <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Modified example from https://stackoverflow.com/questions/31138751/roc-curve-from-training-data-in-caret</span><span class="w">
 
@@ -209,10 +206,16 @@ The accuracy (proportion of all correctly identified cases) was
 
 </span></code></pre></div></div>
 
-<h2 id="references">references</h2>
+<h2 id="references">References</h2>
 
-<ol class="bibliography"><li><span id="altman1994diagnostic">Altman, D. G., &amp; Bland, J. M. (1994). Diagnostic tests 3: receiver operating characteristic plots. <i>BMJ: British Medical Journal</i>, <i>309</i>(6948), 188.</span></li>
-<li><span id="peacock2011oxford">Peacock, J., &amp; Peacock, P. (2011). <i>Oxford handbook of medical statistics</i>. Oxford university press.</span></li></ol>
+<ol class="bibliography">
+<li><span id="altman1994diagnostic">Altman, D. G., &amp; Bland, J. M. (1994). Diagnostic tests 3: receiver operating characteristic plots. <i>BMJ: British Medical Journal</i>, <i>309</i>(6948), 188.</span></li>
+<li><span id="peacock2011oxford">Peacock, J., &amp; Peacock, P. (2011). <i>Oxford handbook of medical statistics</i>. Oxford university press.</span></li>
+</ol>
+
+<p><strong>Footnote</strong>
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+<a href="#a1">↩</a></p>
 
 </div>
 
@@ -247,9 +250,7 @@ The accuracy (proportion of all correctly identified cases) was
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.2_150ppi.png" 
-				alt="Logo image" width="35.7" height="55"/></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
 					<div class="right-root">
 						<p> Maintained by Dylan Lawless. Postdoc at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
 						<a href="/resume">Resume</a>
