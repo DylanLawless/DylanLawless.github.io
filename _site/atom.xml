@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-22T14:12:12+02:00</updated>
+ <updated>2021-07-22T14:18:07+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -38,7 +38,7 @@ I keep a cloud “master_refereces.bib”, from which I then pull the project re
 &lt;h2 id=&quot;pre-printmd&quot;&gt;pre-print.md&lt;/h2&gt;
 &lt;p&gt;This is the main content.
 There is no title since this will come in the R markdown Rscript (pre-print.Rmd).
-Heading 1s can use “##”. 
+Heading 1s can use “#”. 
 For citations I use “@citekey”
 You can also use “\cite{key}” if you think you might convert to tex format later, e.g. you know your document will require complex formatting once the content is written.
 However, LaTeX math notation can be used with “$$”. 
@@ -134,7 +134,7 @@ In most cases, we require only&lt;/p&gt;
 
 &lt;p&gt;Everything else is usually superfluous formatting that is a time-consuming distraction and often ends up being redone in the final manuscript version anyway.&lt;/p&gt;
 
-&lt;p&gt;Using a markdown files for nearly everything that I write (academic, personal, web publishing, zettelkasten notes, etc.) means that atomic notes can be very easily shuttled around any possible project. 
+&lt;p&gt;Using markdown files for nearly everything that I write (academic, personal, web publishing, zettelkasten notes, etc.) means that atomic notes can be very easily shuttled around any possible project. 
 Citations in my master_references.bib also means that I will always have them available for any project, whether it is a large project or simply small literature note that is cross-posted between projects.&lt;/p&gt;
 </content>
  </entry>
