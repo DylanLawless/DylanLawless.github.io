@@ -1,8 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-07-19T15:43:51+02:00</updated><id>/feed.xml</id><entry><title type="html">Credited for a newly added immune gene in IUIS</title><link href="/2021/07/08/iuis.html" rel="alternate" type="text/html" title="Credited for a newly added immune gene in IUIS" /><published>2021-07-08T00:00:00+02:00</published><updated>2021-07-08T00:00:00+02:00</updated><id>/2021/07/08/iuis</id><content type="html" xml:base="/2021/07/08/iuis.html">&lt;h1 id=&quot;credited-for-a-newly-added-immune-gene-in-iuis&quot;&gt;Credited for a newly added immune gene in IUIS&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-07-22T12:31:07+02:00</updated><id>/feed.xml</id><entry><title type="html">Weeknotes</title><link href="/2021/07/19/weeknotes_8.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-19T00:00:00+02:00</published><updated>2021-07-19T00:00:00+02:00</updated><id>/2021/07/19/weeknotes_8</id><content type="html" xml:base="/2021/07/19/weeknotes_8.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;19 July 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Methods for comparing odds ratios and CI in subset analysis.&lt;/li&gt;
+  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Reviewing Altman &amp;amp; Bland yet another paper from &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Fabiani et Bercovici - &lt;a href=&quot;https://www.bedetheque.com/BD-Incroyable-Histoire-de-la-medecine-L-Incroyable-Histoire-de-la-medecine-354061.html&quot;&gt;L’incroyable Histoire de la médecine&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.lesswrong.com/posts/vwqLfDfsHmiavFAGP/the-library-of-scott-alexandria&quot;&gt;The Library of Scott Alexandria&lt;/a&gt;
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-66-supernova-in-the-east-v/&quot;&gt;Supernova in the East V&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/07/12/weeknotes_7.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-12T00:00:00+02:00</published><updated>2021-07-12T00:00:00+02:00</updated><id>/2021/07/12/weeknotes_7</id><content type="html" xml:base="/2021/07/12/weeknotes_7.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;12 July 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Methods for pruning SNPs by correlation in cohort. &lt;a href=&quot;https://privefl.github.io/bigsnpr/articles/pruning-vs-clumping.html&quot;&gt;e.g.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Human whole genome analysis.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Reviewing Altman &amp;amp; Bland another paper from &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Designing a poster and illustrations of viral structure, proteins, and genetics.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Robert Bringhurst - &lt;a href=&quot;https://www.bookdepository.com/search?searchTerm=The+Elements+of+Typographic+Style&amp;amp;search=Find+book&quot;&gt;The Elements of Typographic Style&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.lesswrong.com/posts/vwqLfDfsHmiavFAGP/the-library-of-scott-alexandria&quot;&gt;The Library of Scott Alexandria&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
+
+&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-65-supernova-in-the-east-iv/&quot;&gt;Supernova in the East IV&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Credited for a newly added immune gene in IUIS</title><link href="/2021/07/08/iuis.html" rel="alternate" type="text/html" title="Credited for a newly added immune gene in IUIS" /><published>2021-07-08T00:00:00+02:00</published><updated>2021-07-08T00:00:00+02:00</updated><id>/2021/07/08/iuis</id><content type="html" xml:base="/2021/07/08/iuis.html">&lt;h1 id=&quot;credited-for-a-newly-added-immune-gene-in-iuis&quot;&gt;Credited for a newly added immune gene in IUIS&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;08 Feb 2021&lt;/p&gt;
 
-&lt;p&gt;Forgive this self-praise, but I am very happy that our recent paper 
+&lt;p&gt;Our recent paper 
 &lt;em&gt;Germline TET2 loss of function causes childhood immunodeficiency and lymphoma&lt;/em&gt;
 &lt;a class=&quot;citation&quot; href=&quot;#stremenova2020germline&quot;&gt;(Stremenova Spegarova et al., 2020)&lt;/a&gt; has been 
 credited for a newly added immune gene in &lt;em&gt;Novel inborn errors of immunity: an Interim Update by the IUIS Committee&lt;/em&gt;
@@ -166,7 +221,35 @@ We assume the parts of genomic DNA that will remain after splicing (introns and 
 We can physically create cDNA when we collect mRNA from a cell and do reverse Transcription PCR (RT-PCR) to make a DNA copy.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.mun.ca/biology/desmid/brian/BIOL2060/BIOL2060-21/21_22.jpg&quot;&gt;image2&lt;/a&gt;
-&lt;a href=&quot;https://i.servimg.com/u/f21/17/30/76/23/splice10.png&quot;&gt;image3&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">Multiple transcript variant</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/28/weekonotes_5.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-28T00:00:00+02:00</published><updated>2021-06-28T00:00:00+02:00</updated><id>/2021/06/28/weekonotes_5</id><content type="html" xml:base="/2021/06/28/weekonotes_5.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+&lt;a href=&quot;https://i.servimg.com/u/f21/17/30/76/23/splice10.png&quot;&gt;image3&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">Multiple transcript variant</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/07/05/weeknotes_6.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-05T00:00:00+02:00</published><updated>2021-07-05T00:00:00+02:00</updated><id>/2021/07/05/weeknotes_6</id><content type="html" xml:base="/2021/07/05/weeknotes_6.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;05 July 2021&lt;/p&gt;
+
+&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Functional interpretation of mutation analysis for RSV F and G proteins.&lt;/li&gt;
+  &lt;li&gt;Human whole genome analysis.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Learning how to annotate protein structures.&lt;/li&gt;
+  &lt;li&gt;Reviewing Altman &amp;amp; Bland papers from &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812&quot;&gt;Genetics and Analysis of Quantitative Traits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Robert Bringhurst - &lt;a href=&quot;https://www.bookdepository.com/search?searchTerm=The+Elements+of+Typographic+Style&amp;amp;search=Find+book&quot;&gt;The Elements of Typographic Style&lt;/a&gt; 
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-64-supernova-in-the-east-iii/&quot;&gt;Supernova in the East III&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/28/weeknotes_5.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-28T00:00:00+02:00</published><updated>2021-06-28T00:00:00+02:00</updated><id>/2021/06/28/weeknotes_5</id><content type="html" xml:base="/2021/06/28/weeknotes_5.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;28 June 2021&lt;/p&gt;
 
@@ -197,7 +280,7 @@ We can physically create cDNA when we collect mRNA from a cell and do reverse Tr
   &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=UglBcbz5pzQ&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=4&quot;&gt;Cant Get You Out of My Head E04&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-63-supernova-in-the-east-ii/&quot;&gt;Supernova in the East II&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Komeda Quintet - &lt;a href=&quot;https://youtube.com/playlist?list=PLB5sZsze0CR9FRtpZ3OiSh-8pVc9Q0X5r&quot;&gt;Astigmatic (1966): Avant-garde Jazz&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/21/weekonotes_4.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-21T00:00:00+02:00</published><updated>2021-06-21T00:00:00+02:00</updated><id>/2021/06/21/weekonotes_4</id><content type="html" xml:base="/2021/06/21/weekonotes_4.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/21/weeknotes_4.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-21T00:00:00+02:00</published><updated>2021-06-21T00:00:00+02:00</updated><id>/2021/06/21/weeknotes_4</id><content type="html" xml:base="/2021/06/21/weeknotes_4.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;21 June 2021&lt;/p&gt;
 
@@ -256,29 +339,6 @@ We can physically create cDNA when we collect mRNA from a cell and do reverse Tr
 &lt;ol&gt;
   &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=xanSAr83w-k&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=2&quot;&gt;Cant Get You Out of My Head E02&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Lex Fridman Podcast: &lt;a href=&quot;https://lexfridman.com/charles-hoskinson/&quot;&gt;#192 Charles Hoskinson: Cardano&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/07/weeknotes_2.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/weeknotes_2</id><content type="html" xml:base="/2021/06/07/weeknotes_2.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;7 June 2021&lt;/p&gt;
-
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Writing methods on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Genetic variance in viral clades.&lt;/li&gt;
-  &lt;li&gt;Creating toy datasets for testing code.&lt;/li&gt;
-  &lt;li&gt;Wrote code for power calcualtions with PPI network pathways and define the smallest testable sets (cohort sizes).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Advanced-Level-Statistics-Francis/dp/0859508137&quot;&gt;Advanced level statistics&lt;/a&gt;, A. Francis. A good read on basic fundamentals but not a prefered over other modern textbooks with R code.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Oliver Nelson - &lt;a href=&quot;https://www.youtube.com/watch?v=k-zaI8lLrQA&quot;&gt;The Blues And The Abstract Truth 1961&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Podcast - BBC, In Our Time with Melvyn Bragg, &lt;a href=&quot;https://www.bbc.co.uk/programmes/b0435jyv&quot;&gt;Photosynthesis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=hqX1J-1LyzA&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=1&quot;&gt;Cant Get You Out of My Head E01&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">SARS-CoV-2 variants of concern</title><link href="/2021/06/07/variants_of_concern.html" rel="alternate" type="text/html" title="SARS-CoV-2 variants of concern" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/variants_of_concern</id><content type="html" xml:base="/2021/06/07/variants_of_concern.html">&lt;h1 id=&quot;sars-cov-2-variants-of-concern&quot;&gt;SARS-CoV-2 variants of concern&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;07 June 2021&lt;/p&gt;
@@ -684,317 +744,27 @@ Other files that are not listed contain intermediate data.&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;notes.md&quot;&gt;notes.md&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/posts/ribosome-600.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="immunology" /><summary type="html">SARS-CoV-2 variants of concern</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/05/31/weeknotes_1.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-05-31T00:00:00+02:00</published><updated>2021-05-31T00:00:00+02:00</updated><id>/2021/05/31/weeknotes_1</id><content type="html" xml:base="/2021/05/31/weeknotes_1.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/images/posts/ribosome-600.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="immunology" /><summary type="html">SARS-CoV-2 variants of concern</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/07/weeknotes_2.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/weeknotes_2</id><content type="html" xml:base="/2021/06/07/weeknotes_2.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
 
-&lt;p class=&quot;meta&quot;&gt;31 May 2021&lt;/p&gt;
+&lt;p class=&quot;meta&quot;&gt;7 June 2021&lt;/p&gt;
 
 &lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
 &lt;ol&gt;
-  &lt;li&gt;Testing toy code for viral infection data.&lt;/li&gt;
-  &lt;li&gt;Testing LD pruning in viral genomes.&lt;/li&gt;
-  &lt;li&gt;Writing results on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;International collaboration call on host-pathogen interaction, hosted in &lt;a href=&quot;https://www.vanderbilt.edu&quot;&gt;Vanderbilt&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Swiss Genomics Forum 2021 &lt;a href=&quot;https://www.health2030genome.ch/swiss-genomics-forum/&quot;&gt;https://www.health2030genome.ch/swiss-genomics-forum/&lt;/a&gt;. Good talk from Nicholas Katsanis &lt;a href=&quot;https://www.rescindotherapeutics.com/about&quot;&gt;https://www.rescindotherapeutics.com/about&lt;/a&gt; and panel discussion.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Website CSS building.&lt;/li&gt;
-  &lt;li&gt;Implementing Rake for webdev.&lt;/li&gt;
-  &lt;li&gt;Tech4Growth &lt;a href=&quot;https://tech4growth.ch&quot;&gt;workshop&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Writing methods on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Genetic variance in viral clades.&lt;/li&gt;
+  &lt;li&gt;Creating toy datasets for testing code.&lt;/li&gt;
+  &lt;li&gt;Wrote code for power calcualtions with PPI network pathways and define the smallest testable sets (cohort sizes).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/34015270/&quot;&gt;Zhang et al., 2021 AJHG&lt;/a&gt;. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity.&lt;/li&gt;
-  &lt;li&gt;Accelerating Genomic Data Generation and Facilitating Genomic Data Access Using Decentralization, Privacy-Preserving Technologies and Equitable Compensation. &lt;a href=&quot;https://nebula.org/blog/wp-content/uploads/2019/05/Accelerating-Genomic-Data-Generation-and-Facilitating-Genomic-Data-Access.pdf&quot;&gt;Nublua, George Church et al&lt;/a&gt;. (See podcast below for related talk on smart contracts).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Advanced-Level-Statistics-Francis/dp/0859508137&quot;&gt;Advanced level statistics&lt;/a&gt;, A. Francis. A good read on basic fundamentals but not a prefered over other modern textbooks with R code.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
 &lt;ol&gt;
-  &lt;li&gt;Sergei Loznitsa’s monumental &lt;a href=&quot;https://www.imdb.com/title/tt10203842/&quot;&gt;State Funeral&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Yazz Ahmed - &lt;a href=&quot;https://www.youtube.com/watch?v=6kKYzuvxsZo&quot;&gt;Polyhymnia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Floating Points, Pharoah Sanders &amp;amp; The London Symphony Orchestra - &lt;a href=&quot;https://www.youtube.com/watch?v=Mn8x0QbN4f8&amp;amp;t=571s&quot;&gt;Promises&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Ana Vidović - &lt;a href=&quot;https://www.youtube.com/watch?v=e26zZ83Oh6Y&quot;&gt;in concert&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Podcast - Lex Fridman Podcast, &lt;a href=&quot;https://lexfridman.com/sergey-nazarov/&quot;&gt;#181 – Sergey Nazarov: Chainlink, Smart Contracts, and Oracle Networks&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Historical review of rare immune pathway analysis</title><link href="/2021/05/28/pathway_analysis.html" rel="alternate" type="text/html" title="Historical review of rare immune pathway analysis" /><published>2021-05-28T00:00:00+02:00</published><updated>2021-05-28T00:00:00+02:00</updated><id>/2021/05/28/pathway_analysis</id><content type="html" xml:base="/2021/05/28/pathway_analysis.html">&lt;h1 id=&quot;historical-review-of-rare-immune-pathway-analysis&quot;&gt;Historical review of rare immune pathway analysis&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;28 May 2021&lt;/p&gt;
-&lt;h1 id=&quot;itan--casanova-contributions&quot;&gt;Itan &amp;amp; Casanova contributions&lt;/h1&gt;
-
-&lt;p&gt;We are tackling this problem of protein pathway analysis from the viewpoint of 
-rare immune disease and infection.
-Historically, several topics in bioinformatic and functional analysis have 
-been required before we could achieve our current position of 
-statistically-robust genetic discovery for rare disease:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Candidate variant select for individual genomes&lt;/li&gt;
-  &lt;li&gt;Compiling reliable cohorts of patients with shared phenotypes&lt;/li&gt;
-  &lt;li&gt;Protein-protein interactions&lt;/li&gt;
-  &lt;li&gt;Variant collapse&lt;/li&gt;
-  &lt;li&gt;Protein pathway analysis&lt;/li&gt;
-  &lt;li&gt;Functional validation&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Therefore, a historical review of the timeline is beneficial to illustrate the 
-technical successes that allow us to reliably produce candidate variants by
-genome sequencing and to validate statistically-driven results by &lt;em&gt;“traditional”&lt;/em&gt;
-functional validation. 
-These steps [1, 2 and 6 in our list] are exemplified by the following 
-historical review. 
-The complete list of steps 1-6 are touched on, 
-but full validation of each step is the culmination of what we are currently 
-working on and will be explicitly reviewed when we have completed our study.&lt;/p&gt;
-
-&lt;p&gt;As one of the leaders in this field, Casanova lab has provided a lot of insider
-history to the story in a great twitter thread
-&lt;a href=&quot;https://twitter.com/casanova_lab/status/1397539593608695808&quot;&gt;https://twitter.com/casanova_lab/status/1397539593608695808&lt;/a&gt;.
-The literature for discussion is first listed here to facilitate downloading 
-but sources are referenced as usual throughout.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;2013 PNAS. The human gene connectome as a map of short cuts for morbid allele discovery.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2013human&quot;&gt;(Itan et al., 2013)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/23509278/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/23509278/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2014 BMC Gen. HGCS: an online tool for prioritizing disease-causing gene variants by biological distance.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2014hgcs&quot;&gt;(Itan et al., 2014)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/24694260/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/24694260/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2015 Front. Novel primary immunodeficiency candidate genes predicted by the human gene connectome.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015novel&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/25883595/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/25883595/&lt;/a&gt;,&lt;/p&gt;
-
-&lt;p&gt;2015 PNAS. The human gene damage index as a gene-level approach to prioritizing exome variants.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015human&quot;&gt;(Itan et al., 2015)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26483451/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26483451/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2016 NatMet. The mutation significance cutoff: gene-level thresholds for variant predictions.
-&lt;a class=&quot;citation&quot; href=&quot;#itan2016mutation&quot;&gt;(Itan et al., 2016)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26820543/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26820543/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2015 PNAS. Can the impact of human genetic variations be predicted?
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015can&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/26351682/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/26351682/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2018 Bioinf. PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations.
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2018popviz&quot;&gt;(Zhang et al., 2018)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/30535305/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/30535305/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2019 PNAS. Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis.
-&lt;a class=&quot;citation&quot; href=&quot;#maffucci2019blacklisting&quot;&gt;(Maffucci et al., 2019)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/30591557/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/30591557/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2019 NAR. SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data.
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2019seqtailor&quot;&gt;(Zhang et al., 2019)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/31045209/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/31045209/&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;2020 Hum Gen. The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity?
-&lt;a class=&quot;citation&quot; href=&quot;#casanova2020human&quot;&gt;(Casanova &amp;amp; Abel, 2020)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/32462426/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/32462426/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2021 JCI. Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency.
-&lt;a class=&quot;citation&quot; href=&quot;#bastard2021herpes&quot;&gt;(Bastard et al., 2021)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/32960813/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/32960813/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2021 JCI. TLR3 controls constitutive IFN-β antiviral immunity in human fibroblasts and cortical neurons.
-&lt;a class=&quot;citation&quot; href=&quot;#gao2021tlr3&quot;&gt;(Gao et al., 2021)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/33393505/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/33393505/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2021 AJHG. A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;
-&lt;a href=&quot;https://pubmed.ncbi.nlm.nih.gov/34015270/&quot;&gt;https://pubmed.ncbi.nlm.nih.gov/34015270/&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;To date, the main paper that implements protein pathway analysis for rare 
-immune disease is that by
-Peng Zhang and 
-Yuval Itan &lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The history begins with determining methods for candidate variant selection - 
-the main challenge in human genomics, 
-especially for individual patients who can benefit from precision medicine. 
-Over the last decade, we have reached a point where we can now reasonably 
-discern individual candidate-causal variants from the background noise of 
-genomic variability.&lt;/p&gt;
-
-&lt;p&gt;From the authors’ perspective, the project began around 2011 and its first 
-step was concluded in 2013 with 
-Yuval Itan’s
-first “Human Gene Connectome” paper 
-while he was a post-doc with Casanova lab. 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2013human&quot;&gt;(Itan et al., 2013)&lt;/a&gt;.
-This software connected genes like streets in a map, 
-based on their physiological relatedness.
-It was soon followed by methodological development 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2014hgcs&quot;&gt;(Itan et al., 2014)&lt;/a&gt;
-and application to inborn errors of immunity 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015novel&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;
-or both 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015human&quot;&gt;(Itan et al., 2015)&lt;/a&gt;,
-and a couple of necessary detours 
-&lt;a class=&quot;citation&quot; href=&quot;#itan2016mutation&quot;&gt;(Itan et al., 2016)&lt;/a&gt;
-and 
-&lt;a class=&quot;citation&quot; href=&quot;#maffucci2019blacklisting&quot;&gt;(Maffucci et al., 2019)&lt;/a&gt;.
-A review was also written by two of the main authors during the same period
-&lt;a class=&quot;citation&quot; href=&quot;#itan2015can&quot;&gt;(Itan &amp;amp; Casanova, 2015)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;When Peng Zhang joined the Casanova lab as post-doc, 
-Yuval Itan had started his own lab. 
-However, the pair worked together to continue producing the papers on variant
-interpretation and data processing
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2018popviz&quot;&gt;(Zhang et al., 2018)&lt;/a&gt;
-and
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2019seqtailor&quot;&gt;(Zhang et al., 2019)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;After completing this period of work, 
-they renamed “Human Gene Connectome II” the 
-“Network-based Heterogeneity Clustering”.
-At this point, their aims were defined as being generally indistinguishable 
-from ours. 
-That is, &lt;em&gt;“the detection of physiological homogeneity in a cohort of patients 
-sharing a clinical phenotype but with high genetic heterogeneity - 
-a hallmark of severe infectious diseases”&lt;/em&gt; (Casanova via twitter), 
-as presented in their next paper on this topic
-&lt;a class=&quot;citation&quot; href=&quot;#casanova2020human&quot;&gt;(Casanova &amp;amp; Abel, 2020)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Shen-Ying Zhang came on board as senior author on the next two papers.
-With an excellent database of immune disorders and infections, 
-the team could gradually build their software.
-Exomes from patients with HSV-1 encephalitis were used for testing successive 
-versions in
-&lt;a class=&quot;citation&quot; href=&quot;#bastard2021herpes&quot;&gt;(Bastard et al., 2021)&lt;/a&gt; 
-and 
-&lt;a class=&quot;citation&quot; href=&quot;#gao2021tlr3&quot;&gt;(Gao et al., 2021)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Quoting Casanova &lt;em&gt;“When they were capable of detecting the known TLR3-IFN needles in the HSE stack, they installed camp 1, rested a bit and reported to me on the radio, while I was watching them from the basecamp with binoculars. I encouraged them to push for the final ascent and they did.”&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;With the same goal as our own - 
-producing unbiased methods for detection of biologically-connected causal 
-genetic variation - 
-they found new gene variants that interact via the TLR3-IFN protein pathway,
-in individual patients. 
-Shen-Ying Zhang found them to be biochemically deleterious, 
-an important factor for validation of genetic-first aproaches. 
-In this case, Zhang &lt;em&gt;et al&lt;/em&gt; get as close to the &lt;em&gt;“gold-standard”&lt;/em&gt; 
-as anyone to date.&lt;/p&gt;
-
-&lt;p&gt;The functional validation of candidate variants in disease then provided a proof-of-principle indication that they could detect physiological homogeneity in the midst of genetic heterogeneity 
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Quoting Casanova 
-&lt;em&gt;“A computational approach for detecting physiological homogeneity in the midst of genetic heterogeity.
-That was terrific!”&lt;/em&gt;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;An aside on what I call the &lt;em&gt;“gold-standard”&lt;/em&gt; for our field should be:&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Unbiased statistical detection of a genetic phenomenon.&lt;/li&gt;
-    &lt;li&gt;Validation by functional models under systematic control.&lt;/li&gt;
-  &lt;/ol&gt;
-
-  &lt;p&gt;Part [1] Depends on patient cohorts that are large enough to detect the effect based on the phenotype strength - difficult for &lt;em&gt;rare disease&lt;/em&gt;.&lt;br /&gt;
-Part [2] Depends on independently testing biological mechanisms.&lt;/p&gt;
-
-  &lt;p&gt;This second step generally consists of two hurdles:&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;If the same researchers perform (1) genetic stats and (2) functional work, 
-there is a bias that is difficult to avoid when trying to functionally 
-validate statistically positive results.&lt;/li&gt;
-    &lt;li&gt;If the statistical genetic associations happen to contain a false positive 
-for something like severe rare immune disease, 
-the sensitive functional models may detect a damaging response. 
-One might find a truly damaging biological mechanism, 
-but if the statistical genetic association is not correct then this 
-biological mechanism should not be deemed causal; 
-back-tracking at this stage would be very difficult due to self-imposed bias.&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;Ideally, in the future we hope to see a separation of the two steps 
-(stat genetics and wet-lab) such that each are performed independently. 
-The wet-lab would also ideally focus their routines on a particular protein 
-pathway/system with SOPs that improve accuracy and precision 
-(e.g. clinical diagnostics labs, clinical trials) rather than setting up 
-models for each new study.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Returning to our historical review, 
-we have been producing our protocols similarly in parallel.
-With patient cohorts of comparable sizes and phenotypes we will soon 
-have a complementary validation of protocols.
-However, great care is also being taken to test and select the most reliable 
-statistical methods for association testing - 
-an improvement to the fine work by
-&lt;a class=&quot;citation&quot; href=&quot;#zhang2021computational&quot;&gt;(Zhang et al., 2021)&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Best practices in candidate variant selection protocols are basically 
-standardised as of 2021, 
-so the main remaining task is standardisation of the protein-pathway 
-annotation and association testing methods - 
-steps which we will soon be ready to publish after peer-review.&lt;/p&gt;
-
-&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
-
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;itan2013human&quot;&gt;Itan, Y., Zhang, S.-Y., Vogt, G., Abhyankar, A., Herman, M., Nitschke, P., Fried, D., Quintana-Murci, L., Abel, L., &amp;amp; Casanova, J.-L. (2013). The human gene connectome as a map of short cuts for morbid allele discovery. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;110&lt;/i&gt;(14), 5558–5563.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2014hgcs&quot;&gt;Itan, Y., Mazel, M., Mazel, B., Abhyankar, A., Nitschke, P., Quintana-Murci, L., Boisson-Dupuis, S., Boisson, B., Abel, L., Zhang, S.-Y., &amp;amp; others. (2014). HGCS: an online tool for prioritizing disease-causing gene variants by biological distance. &lt;i&gt;BMC Genomics&lt;/i&gt;, &lt;i&gt;15&lt;/i&gt;(1), 1–8.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2015novel&quot;&gt;Itan, Y., &amp;amp; Casanova, J.-L. (2015). Novel primary immunodeficiency candidate genes predicted by the human gene connectome. &lt;i&gt;Frontiers in Immunology&lt;/i&gt;, &lt;i&gt;6&lt;/i&gt;, 142.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2015human&quot;&gt;Itan, Y., Shang, L., Boisson, B., Patin, E., Bolze, A., Moncada-Vélez, M., Scott, E., Ciancanelli, M. J., Lafaille, F. G., Markle, J. G., &amp;amp; others. (2015). The human gene damage index as a gene-level approach to prioritizing exome variants. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;112&lt;/i&gt;(44), 13615–13620.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2016mutation&quot;&gt;Itan, Y., Shang, L., Boisson, B., Ciancanelli, M. J., Markle, J. G., Martinez-Barricarte, R., Scott, E., Shah, I., Stenson, P. D., Gleeson, J., &amp;amp; others. (2016). The mutation significance cutoff: gene-level thresholds for variant predictions. &lt;i&gt;Nature Methods&lt;/i&gt;, &lt;i&gt;13&lt;/i&gt;(2), 109–110.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;itan2015can&quot;&gt;Itan, Y., &amp;amp; Casanova, J.-L. (2015). Can the impact of human genetic variations be predicted? &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;112&lt;/i&gt;(37), 11426–11427.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;zhang2018popviz&quot;&gt;Zhang, P., Bigio, B., Rapaport, F., Zhang, S.-Y., Casanova, J.-L., Abel, L., Boisson, B., &amp;amp; Itan, Y. (2018). PopViz: a webserver for visualizing minor allele frequencies and damage prediction scores of human genetic variations. &lt;i&gt;Bioinformatics&lt;/i&gt;, &lt;i&gt;34&lt;/i&gt;(24), 4307–4309.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;maffucci2019blacklisting&quot;&gt;Maffucci, P., Bigio, B., Rapaport, F., Cobat, A., Borghesi, A., Lopez, M., Patin, E., Bolze, A., Shang, L., Bendavid, M., &amp;amp; others. (2019). Blacklisting variants common in private cohorts but not in public databases optimizes human exome analysis. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;116&lt;/i&gt;(3), 950–959.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;zhang2019seqtailor&quot;&gt;Zhang, P., Boisson, B., Stenson, P. D., Cooper, D. N., Casanova, J.-L., Abel, L., &amp;amp; Itan, Y. (2019). SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data. &lt;i&gt;Nucleic Acids Research&lt;/i&gt;, &lt;i&gt;47&lt;/i&gt;(W1), W623–W631.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;casanova2020human&quot;&gt;Casanova, J.-L., &amp;amp; Abel, L. (2020). The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity? &lt;i&gt;Human Genetics&lt;/i&gt;, &lt;i&gt;139&lt;/i&gt;, 681–694.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;bastard2021herpes&quot;&gt;Bastard, P., Manry, J., Chen, J., Rosain, J., Seeleuthner, Y., AbuZaitun, O., Lorenzo, L., Khan, T., Hasek, M., Hernandez, N., &amp;amp; others. (2021). Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency. &lt;i&gt;The Journal of Clinical Investigation&lt;/i&gt;, &lt;i&gt;131&lt;/i&gt;(1).&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;gao2021tlr3&quot;&gt;Gao, D., Ciancanelli, M. J., Zhang, P., Harschnitz, O., Bondet, V., Hasek, M., Chen, J., Mu, X., Itan, Y., Cobat, A., &amp;amp; others. (2021). TLR3 controls constitutive IFN-βantiviral immunity in human fibroblasts and cortical neurons. &lt;i&gt;The Journal of Clinical Investigation&lt;/i&gt;, &lt;i&gt;131&lt;/i&gt;(1).&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;zhang2021computational&quot;&gt;Zhang, P., Cobat, A., Lee, Y.-S., Wu, Y., Bayrak, C. S., Boccon-Gibod, C., Matuozzo, D., Lorenzo, L., Jain, A., Boucherit, S., &amp;amp; others. (2021). A computational approach for detecting physiological homogeneity in the midst of genetic heterogeneity. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</content><author><name></name></author><category term="genomics" /><summary type="html">Historical review of rare immune pathway analysis</summary></entry><entry><title type="html">Unnecessary complexity in precision medicine</title><link href="/2020/05/05/singhgupta_genes.html" rel="alternate" type="text/html" title="Unnecessary complexity in precision medicine" /><published>2020-05-05T00:00:00+02:00</published><updated>2020-05-05T00:00:00+02:00</updated><id>/2020/05/05/singhgupta_genes</id><content type="html" xml:base="/2020/05/05/singhgupta_genes.html">&lt;h1 id=&quot;unnecessary-complexity-in-precision-medicine&quot;&gt;Unnecessary complexity in precision medicine&lt;/h1&gt;
-&lt;p class=&quot;meta&quot;&gt;26 Apr 2020&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;
-Singh_and_Gupta.2020.GenoMed;&lt;br /&gt;
-Singh, R.S., Gupta, B.P. Genes and genomes and unnecessary complexity in precision medicine. npj Genom. Med. 5, 21 (2020). https://doi.org/10.1038/s41525-020-0128-1 Open Access
-&lt;a href=&quot;https://doi.org/10.1038/s41525-020-0128-1&quot;&gt;https://doi.org/10.1038/s41525-020-0128-1&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;abstract&quot;&gt;Abstract&lt;/h1&gt;
-
-&lt;p&gt;Risk factors, gene to phenotype, are more complex that anticipated in early genomics. 
-Genotype - phenotype
-Molecular and evolutionary complexity.
-Molecular contigency - chance driven mutation, redundancy, molectular pathway cross-over (shared phenotypes).
-Necessary complexity versus unnecessary - evolutionary baggage due to molecular constraint and blind evolution.&lt;/p&gt;
-
-&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;“Two individuals bearing the same set of risk factors may not present (or exhibit the symptoms of) the same disease. This is the kind of problem that precision medicine is expected to overcome.”
-From familial studies, we often see that even clear monogenic, dominant disease does not always manifest equally among family members. “The lack of genetic determinism in disease is the result of molecular contingency.”&lt;/p&gt;
-
-&lt;p&gt;An interesting point is made that I haven’t though much about; “Whether evolution is deterministic, i.e., predictable and repeatable, or contingent and unpredictable is an interesting topic in evolutionary biology (ref 1) (for a recent review see ref. 2)”
-Although, this is just a smaller version of a question in physics that I do think about frequently: if every irreducibly small particle/force in the universe could be detected with a mapped trajectory, then we could “see” both forward and reverse in time; causal determinism. Since the particle physics answer will not come anytime soon, a discussion on the evolutionary version is reasonable.&lt;/p&gt;
-
-&lt;p&gt;”..phenotypic evolutionary ‘repeatability’ is common when the founding populations are closely related, perhaps resulting from shared genes and developmental pathways, whereas different outcomes become more likely as historical divergences increase.”&lt;/p&gt;
-
-&lt;p&gt;I believe that in some cases we can produces actionable levels of confidence in mutation prediction to make this a worthwhile endeavour. Knowing that a mutation is likely to occur (and be evolutionarily selected against) and result in disease means that we can prepare a treatment / cure for when it does occur naturally. 
-For example, each nucleotide within each individual cell will have a particular probability for the energy required to mutate. 
-Many factors affect this value; nucleotide type, methylation, DNA/RNA folding, bound proteins, chemical/UV insult, etc. 
-Some of these factors can be estimated based on large studies, and some may never be quantifiable in the real world.
-However, we can at least quantify some values to produce mutation predictor value X and and response Y and therefore quantify estimate coefficients, and therefore predict that mutation 1 is more likely to occur than mutation 2.&lt;/p&gt;
-
-&lt;p&gt;Reference is made to “‘Evolution and Tinkering,’ Jacob (ref 4)” who compares natural selection to a tinkerer as opposed to an engineer.
-Singh and Gupta propose “a theory of molecular complexity, consisting of necessary and unnecessary complexity in living systems”, that “exceedingly high level of unnecessary complexity” is more due to blind evolution rather than randomness of mutation. 
-“Unecessary and unnecessary complexity is relevant to current discussions on genomics and precision medicine.”&lt;/p&gt;
-
-&lt;h1 id=&quot;complexity-in-living-systems&quot;&gt;Complexity in living systems&lt;/h1&gt;
-&lt;h1 id=&quot;is-complexity-necessary&quot;&gt;Is complexity necessary?&lt;/h1&gt;
-&lt;h1 id=&quot;evolution-of-complexity-genic-genomic-and-developmental&quot;&gt;Evolution of complexity: genic, genomic, and developmental&lt;/h1&gt;
-&lt;h1 id=&quot;unnecessary-complexity-in-precision-medicine-1&quot;&gt;Unnecessary complexity in precision medicine&lt;/h1&gt;
-&lt;h1 id=&quot;unnecessary-complexity-and-the-etiology-of-cancer&quot;&gt;Unnecessary complexity and the etiology of cancer&lt;/h1&gt;
-&lt;h1 id=&quot;unnecessary-complexity-beyond-precision-medicine&quot;&gt;Unnecessary complexity beyond precision medicine&lt;/h1&gt;
-&lt;h1 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h1&gt;</content><author><name></name></author><category term="genomics," /><category term="journal" /><category term="club" /><summary type="html">Unnecessary complexity in precision medicine 26 Apr 2020 Singh_and_Gupta.2020.GenoMed; Singh, R.S., Gupta, B.P. Genes and genomes and unnecessary complexity in precision medicine. npj Genom. Med. 5, 21 (2020). https://doi.org/10.1038/s41525-020-0128-1 Open Access https://doi.org/10.1038/s41525-020-0128-1</summary></entry></feed>
+  &lt;li&gt;Oliver Nelson - &lt;a href=&quot;https://www.youtube.com/watch?v=k-zaI8lLrQA&quot;&gt;The Blues And The Abstract Truth 1961&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Podcast - BBC, In Our Time with Melvyn Bragg, &lt;a href=&quot;https://www.bbc.co.uk/programmes/b0435jyv&quot;&gt;Photosynthesis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=hqX1J-1LyzA&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=1&quot;&gt;Cant Get You Out of My Head E01&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry></feed>
