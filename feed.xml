@@ -1,263 +1,231 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-07-23T17:34:30+02:00</updated><id>/feed.xml</id><entry><title type="html">Easy manuscript</title><link href="/2021/07/22/easy_manuscript.html" rel="alternate" type="text/html" title="Easy manuscript" /><published>2021-07-22T00:00:00+02:00</published><updated>2021-07-22T00:00:00+02:00</updated><id>/2021/07/22/easy_manuscript</id><content type="html" xml:base="/2021/07/22/easy_manuscript.html">&lt;h1 id=&quot;easy-manuscript&quot;&gt;Easy manuscript&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-07-24T10:13:46+02:00</updated><id>/feed.xml</id><entry><title type="html">Easy manuscript</title><link href="/2021/07/22/easy_manuscript.html" rel="alternate" type="text/html" title="Easy manuscript" /><published>2021-07-22T00:00:00+02:00</published><updated>2021-07-22T00:00:00+02:00</updated><id>/2021/07/22/easy_manuscript</id><content type="html" xml:base="/2021/07/22/easy_manuscript.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;22 July 2021&lt;/p&gt;
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Academic writing can be faster using &lt;em&gt;.md&lt;/em&gt; instead of &lt;em&gt;.tex&lt;/em&gt;.
+## Introduction
+Academic writing can be faster using _.md_ instead of _.tex_.
 Here is an example of how I write an academic paper.
-I use four main files (and a directory of images if required).&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;references.bib&lt;/li&gt;
-  &lt;li&gt;pre-print.md&lt;/li&gt;
-  &lt;li&gt;pre-print.Rmd&lt;/li&gt;
-  &lt;li&gt;build.sh&lt;/li&gt;
-&lt;/ul&gt;
+I use four main files (and a directory of images if required).
+* references\.bib
+* pre-print\.md
+* pre-print\.Rmd
+* build\.sh
 
-&lt;h2 id=&quot;referencesbib&quot;&gt;references.bib&lt;/h2&gt;
-&lt;p&gt;These are kept as normal in “references.bib”.
-I keep a cloud “master_refereces.bib”, from which I then pull the project references into a local “references.bib”.&lt;/p&gt;
+## references\.bib
+These are kept as normal in &quot;references.bib&quot;.
+I keep a cloud &quot;master_refereces.bib&quot;, from which I then pull the project references into a local &quot;references.bib&quot;.
 
-&lt;h2 id=&quot;pre-printmd&quot;&gt;pre-print.md&lt;/h2&gt;
-&lt;p&gt;This is the main content.
+## pre-print\.md
+This is the main content.
 There is no title since this will come in the R markdown Rscript (pre-print.Rmd).
-Heading 1s can use “#”. 
-For citations I use “@citekey”
-You can also use “\cite{key}” if you think you might convert to tex format later, e.g. you know your document will require complex formatting once the content is written.
-However, LaTeX math notation can be used with “$$”. 
-For example&lt;/p&gt;
+Heading 1s can use &quot;#&quot;. 
+For citations I use &quot;@citekey&quot;
+You can also use &quot;\cite{key}&quot; if you think you might convert to tex format later, e.g. you know your document will require complex formatting once the content is written.
+However, LaTeX math notation can be used with &quot;\$\$&quot;. 
+For example
 
-&lt;p&gt;\(\frac{ \sum{ m_i \bar{x}_i } }{ \sum{ m_i } }\).&lt;/p&gt;
+$$\frac{ \sum{ m_i \bar{x}_i } }{ \sum{ m_i } }$$.
 
-&lt;p&gt;In-line math works with single “$”, for example \(f(k) = {n \choose k} p^{k} (1-p)^{n-k}\).
-(Although, in this webpage’s source I actually still use double “$” without a line-break to print in-line math since I use different setting on this site. I am changing the website setting soon to use single and double “$” for zero editing).&lt;/p&gt;
+In-line math works with single &quot;\$&quot;, for example $$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$.
+(Although, in this webpage&apos;s source I actually still use double &quot;\$&quot; without a line-break to print in-line math since I use different setting on this site. I am changing the website setting soon to use single and double &quot;\$&quot; for zero editing).
 
-&lt;p&gt;The document “pre-print.md” looks like this:&lt;/p&gt;
+The document &quot;pre-print.md&quot; looks like this:
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Introduction &lt;/span&gt;
+``` bash 
+# Introduction 
 Bla bla bla
 
-&lt;span class=&quot;c&quot;&gt;# Methods&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;## Genome sequencing &lt;/span&gt;
+# Methods
+## Genome sequencing 
 Bla bla bla
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+```
 
-&lt;h2 id=&quot;pre-printrmd&quot;&gt;pre-print.Rmd&lt;/h2&gt;
-&lt;p&gt;This is the Rscript file that runs to produce the output PDF.
-It contains all of the settings and the last line shown is the link to the main contents.&lt;/p&gt;
+## pre-print\.Rmd
+This is the Rscript file that runs to produce the output PDF.
+It contains all of the settings and the last line shown is the link to the main contents. 
 
-&lt;div class=&quot;language-R highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Title&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+``` R
+---
+title: &quot;Title&quot;
 
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Allow landscape page for table&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pdflscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blandscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;landscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elandscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;landscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dylan&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lawless&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# PDF via xelatex&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pdf_document&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;latex_engine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xelatex&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#citation_package: natbib&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number_sections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc_depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;citations&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linkcolor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subparagraph&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;citecolor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlcolor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+header-includes: # Allow landscape page for table
+- \usepackage{pdflscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+author:
+- Dylan Lawless
+output:
+# PDF via xelatex
+  pdf_document:
+    latex_engine: xelatex
+    #citation_package: natbib
+    number_sections: true
+    toc: yes
+    toc_depth: 2
+link-citations: yes
+linkcolor: blue
+subparagraph: yes
+citecolor: blue
+urlcolor: blue
 
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Output MS word if you really need it&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#  word_document: default&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#   bookdown::word_document2: default  # for cross-references&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+# Output MS word if you really need it
+#  word_document: default
+#   bookdown::word_document2: default  # for cross-references
 
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Output as html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# output:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#  bookdown::html_document2:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#    toc: true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#    toc_depth: 2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+# Output as html
+# output:
+#  bookdown::html_document2:
+#    toc: true
+#    toc_depth: 2
 
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# pdf, html, or word citations can use: [@key]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# pdf citations only can use: \cite{key}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+# pdf, html, or word citations can use: [@key]
+# pdf citations only can use: \cite{key}
 
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bibliography&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;references.bib&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+bibliography: ./references.bib
+---
 
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;`{r child = &apos;./pre-print_v1.md&apos;}`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+```{r child = &apos;./pre-print_v1.md&apos;}```
 
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+```
 
-&lt;h1 id=&quot;buildsh&quot;&gt;build.sh&lt;/h1&gt;
-&lt;p&gt;The document can be built either by using R studio to knit “pre-print.Rmd” or by using a script to do the same without having to open the R studio GUI.&lt;/p&gt;
+# build\.sh
+The document can be built either by using R studio to knit &quot;pre-print.Rmd&quot; or by using a script to do the same without having to open the R studio GUI.
 
-&lt;p&gt;The shell script “build.sh” only neeeds one line to run the build:&lt;/p&gt;
+The shell script &quot;build.sh&quot; only neeeds one line to run the build:
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin.bash&lt;/span&gt;
+``` bash
+#!/bin.bash
 
-Rscript &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rmarkdown::render(&apos;pre-print.Rmd&apos;)&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+Rscript -e &quot;rmarkdown::render(&apos;pre-print.Rmd&apos;)&quot;
+```
 
-&lt;p&gt;This will output “pre-print.pdf”.&lt;/p&gt;
+This will output &quot;pre-print.pdf&quot;.
 
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;While LaTeX-style is the king of academic or technical writing,
+## Conclusion 
+While LaTeX-style is the king of academic or technical writing,
 using this simple markdown substitute covers ~90% of my needs and 99% of the content-writing process. 
 It avoids the time-consuming requirements of wring LaTeX formatting and produces almost the same result. 
-In most cases, we require only&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;section headers&lt;/li&gt;
-  &lt;li&gt;plain text&lt;/li&gt;
-  &lt;li&gt;italic or emph text&lt;/li&gt;
-  &lt;li&gt;inserted figures&lt;/li&gt;
-  &lt;li&gt;math notation&lt;/li&gt;
-  &lt;li&gt;.bib citations&lt;/li&gt;
-&lt;/ul&gt;
+In most cases, we require only
+* section headers
+* plain text
+* italic or emph text
+* inserted figures
+* math notation
+* .bib citations
 
-&lt;p&gt;Everything else is usually superfluous formatting that is a time-consuming distraction and often ends up being redone in the final manuscript version anyway.&lt;/p&gt;
+Everything else is usually superfluous formatting that is a time-consuming distraction and often ends up being redone in the final manuscript version anyway. 
 
-&lt;p&gt;Using markdown files for nearly everything that I write (academic, personal, web publishing, zettelkasten notes, etc.) means that atomic notes can be very easily shuttled around any possible project. 
-Citations in my master_references.bib also means that I will always have them available for any project, whether it is a large project or simply small literature note that is cross-posted between projects.&lt;/p&gt;</content><author><name></name></author><summary type="html">Easy manuscript</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/07/19/weeknotes_8.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-19T00:00:00+02:00</published><updated>2021-07-19T00:00:00+02:00</updated><id>/2021/07/19/weeknotes_8</id><content type="html" xml:base="/2021/07/19/weeknotes_8.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+Using markdown files for nearly everything that I write (academic, personal, web publishing, zettelkasten notes, etc.) means that atomic notes can be very easily shuttled around any possible project. 
+Citations in my master_references.bib also means that I will always have them available for any project, whether it is a large project or simply small literature note that is cross-posted between projects.</content><author><name></name></author><summary type="html">Easy manuscript</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/07/19/weeknotes_8.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-19T00:00:00+02:00</published><updated>2021-07-19T00:00:00+02:00</updated><id>/2021/07/19/weeknotes_8</id><content type="html" xml:base="/2021/07/19/weeknotes_8.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;19 July 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Methods for comparing odds ratios and CI in subset analysis.&lt;/li&gt;
-  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
+# Work
+1. Methods for comparing odds ratios and CI in subset analysis.
+2. Writing paper on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
 
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Reviewing Altman &amp;amp; Bland yet another paper from &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+# Personal 
+1. Reviewing Altman &amp; Bland yet another paper from [Statistics Notes in the British Medical Journal](https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm)
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Fabiani et Bercovici - &lt;a href=&quot;https://www.bedetheque.com/BD-Incroyable-Histoire-de-la-medecine-L-Incroyable-Histoire-de-la-medecine-354061.html&quot;&gt;L’incroyable Histoire de la médecine&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.lesswrong.com/posts/vwqLfDfsHmiavFAGP/the-library-of-scott-alexandria&quot;&gt;The Library of Scott Alexandria&lt;/a&gt;
+# Reading
+1. Fabiani et Bercovici - [L&apos;incroyable Histoire de la médecine](https://www.bedetheque.com/BD-Incroyable-Histoire-de-la-medecine-L-Incroyable-Histoire-de-la-medecine-354061.html)
+2. [The Library of Scott Alexandria](https://www.lesswrong.com/posts/vwqLfDfsHmiavFAGP/the-library-of-scott-alexandria)
 &lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
-&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
 
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-66-supernova-in-the-east-v/&quot;&gt;Supernova in the East V&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.cell.com/current-biology/pdf/S0960-9822(10)00772-4.pdf&quot;&gt;Jacob and Monod: From Operons to EvoDevo&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=bBSb6rIJ0Sg&amp;amp;list=PLVV0r6CmEsFxcUFA9rIQwdpd7L7ayJnKk&amp;amp;index=1&quot;&gt;François Jacob - My childhood and my studies&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/07/12/weeknotes_7.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-12T00:00:00+02:00</published><updated>2021-07-12T00:00:00+02:00</updated><id>/2021/07/12/weeknotes_7</id><content type="html" xml:base="/2021/07/12/weeknotes_7.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+# Other media
+1. Dan Carlin&apos;s Hardcore History - [Supernova in the East V](https://www.dancarlin.com/product/hardcore-history-66-supernova-in-the-east-v/)
+2. [Jacob and Monod: From Operons to EvoDevo](https://www.cell.com/current-biology/pdf/S0960-9822(10)00772-4.pdf)
+3. [François Jacob - My childhood and my studies](https://www.youtube.com/watch?v=bBSb6rIJ0Sg&amp;list=PLVV0r6CmEsFxcUFA9rIQwdpd7L7ayJnKk&amp;index=1)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/07/12/weeknotes_7.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-12T00:00:00+02:00</published><updated>2021-07-12T00:00:00+02:00</updated><id>/2021/07/12/weeknotes_7</id><content type="html" xml:base="/2021/07/12/weeknotes_7.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;12 July 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Methods for pruning SNPs by correlation in cohort. &lt;a href=&quot;https://privefl.github.io/bigsnpr/articles/pruning-vs-clumping.html&quot;&gt;e.g.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Human whole genome analysis.&lt;/li&gt;
-&lt;/ol&gt;
+# Work
+1. Writing paper on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
+2. Methods for pruning SNPs by correlation in cohort. [e.g.](https://privefl.github.io/bigsnpr/articles/pruning-vs-clumping.html)
+3. Human whole genome analysis.
 
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Reviewing Altman &amp;amp; Bland another paper from &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Designing a poster and illustrations of viral structure, proteins, and genetics.&lt;/li&gt;
-&lt;/ol&gt;
+# Personal 
+1. Reviewing Altman &amp; Bland another paper from [Statistics Notes in the British Medical Journal](https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm)
+2. Designing a poster and illustrations of viral structure, proteins, and genetics.
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Robert Bringhurst - &lt;a href=&quot;https://www.bookdepository.com/search?searchTerm=The+Elements+of+Typographic+Style&amp;amp;search=Find+book&quot;&gt;The Elements of Typographic Style&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.lesswrong.com/posts/vwqLfDfsHmiavFAGP/the-library-of-scott-alexandria&quot;&gt;The Library of Scott Alexandria&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+# Reading
+1. Robert Bringhurst - [The Elements of Typographic Style](https://www.bookdepository.com/search?searchTerm=The+Elements+of+Typographic+Style&amp;search=Find+book) 
+2. [The Library of Scott Alexandria](https://www.lesswrong.com/posts/vwqLfDfsHmiavFAGP/the-library-of-scott-alexandria)
 
 &lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
 &lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
 
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-65-supernova-in-the-east-iv/&quot;&gt;Supernova in the East IV&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Credited for a newly added immune gene in IUIS</title><link href="/2021/07/08/iuis.html" rel="alternate" type="text/html" title="Credited for a newly added immune gene in IUIS" /><published>2021-07-08T00:00:00+02:00</published><updated>2021-07-08T00:00:00+02:00</updated><id>/2021/07/08/iuis</id><content type="html" xml:base="/2021/07/08/iuis.html">&lt;h1 id=&quot;credited-for-a-newly-added-immune-gene-in-iuis&quot;&gt;Credited for a newly added immune gene in IUIS&lt;/h1&gt;
+# Other media
+1. Dan Carlin&apos;s Hardcore History - [Supernova in the East IV](https://www.dancarlin.com/product/hardcore-history-65-supernova-in-the-east-iv/)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Credited for a newly added immune gene in IUIS</title><link href="/2021/07/08/iuis.html" rel="alternate" type="text/html" title="Credited for a newly added immune gene in IUIS" /><published>2021-07-08T00:00:00+02:00</published><updated>2021-07-08T00:00:00+02:00</updated><id>/2021/07/08/iuis</id><content type="html" xml:base="/2021/07/08/iuis.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;08 Feb 2021&lt;/p&gt;
 
-&lt;p&gt;Our recent paper 
-&lt;em&gt;Germline TET2 loss of function causes childhood immunodeficiency and lymphoma&lt;/em&gt;
-&lt;a class=&quot;citation&quot; href=&quot;#stremenova2020germline&quot;&gt;(Stremenova Spegarova et al., 2020)&lt;/a&gt; has been 
-credited for a newly added immune gene in &lt;em&gt;Novel inborn errors of immunity: an Interim Update by the IUIS Committee&lt;/em&gt;
-&lt;a href=&quot;https://doi.org/10.1007/s10875-021-00980-1&quot;&gt;full link&lt;/a&gt;,
-&lt;a href=&quot;https://link.springer.com/content/pdf/10.1007/s10875-021-00980-1.pdf&quot;&gt;pdf&lt;/a&gt;,
-as &lt;a href=&quot;https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1&quot;&gt;TET2 in table 1&lt;/a&gt;
-&lt;a class=&quot;citation&quot; href=&quot;#tangye2021ever&quot;&gt;(Tangye et al., 2021)&lt;/a&gt;.
-It has been included for the gene list of &lt;em&gt;Autoinflammatory diseases&lt;/em&gt; based on our work in 3 patients, 2 families with autosomal recessive loss-of-function.
-Since I began research on the genomics of immunology, the IUIS list of genes has been an extremely important reference for my work to which I am now thrilled to &lt;em&gt;give back&lt;/em&gt;.&lt;/p&gt;
+Our recent paper 
+_Germline TET2 loss of function causes childhood immunodeficiency and lymphoma_
+{% cite stremenova2020germline %} has been 
+credited for a newly added immune gene in _Novel inborn errors of immunity: an Interim Update by the IUIS Committee_
+[full link](https://doi.org/10.1007/s10875-021-00980-1),
+[pdf](https://link.springer.com/content/pdf/10.1007/s10875-021-00980-1.pdf),
+as [TET2 in table 1](https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1)
+{% cite tangye2021ever %}.
+It has been included for the gene list of _Autoinflammatory diseases_ based on our work in 3 patients, 2 families with autosomal recessive loss-of-function.
+Since I began research on the genomics of immunology, the IUIS list of genes has been an extremely important reference for my work to which I am now thrilled to _give back_.
 
-&lt;p&gt;International Union of Immunological Societies (IUIS) &lt;a href=&quot;https://iuis.org&quot;&gt;IUIS.org&lt;/a&gt;;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;The International Union of Immunological Societies (IUIS) is an umbrella organization for many of the regional and national societies of immunology throughout the world. As articulated in its Constitution, the objectives of IUIS are:&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;to organize international co-operation in immunology and to promote communication between the various branches of immunology and allied subjects&lt;/li&gt;
-    &lt;li&gt;to encourage within each scientifically independent territory co-operation between the Societies that represent the interests of immunology&lt;/li&gt;
-    &lt;li&gt;to contribute to the advancement of immunology in all its aspects.&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
+International Union of Immunological Societies (IUIS) [IUIS.org](https://iuis.org);
+&gt;The International Union of Immunological Societies (IUIS) is an umbrella organization for many of the regional and national societies of immunology throughout the world. As articulated in its Constitution, the objectives of IUIS are:
+&gt; * to organize international co-operation in immunology and to promote communication between the various branches of immunology and allied subjects
+&gt; * to encourage within each scientifically independent territory co-operation between the Societies that represent the interests of immunology
+&gt; * to contribute to the advancement of immunology in all its aspects.
 
-&lt;p&gt;From &lt;em&gt;Novel inborn errors of immunity: an Interim Update by the IUIS Committee&lt;/em&gt;,&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Inborn errors of immunity (IEI) are generally considered to result from monogenic germline defects that manifest as increased susceptibility to severe and/or recurrent infectious diseases, autoimmune or autoinflammatory conditions, atopic manifestations, and hematopoietic or solid tissue malignancies [&lt;a href=&quot;https://doi.org/10.1126/sciimmunol.abb1662&quot;&gt;1&lt;/a&gt;]. 
-Over the past decade, the discovery of new IEIs has been occurring at an impressive rate. 
-Indeed, the 2011 biennial update published by the IUIS Committee update listed 191 IEIs; this number increased to 430 in the 2019 update
-[&lt;a href=&quot;https://doi.org/10.1007/s10875-020-00758-x&quot;&gt;2&lt;/a&gt;],
-[&lt;a href=&quot;https://doi.org/10.1007/s10875-019-00737-x&quot;&gt;3&lt;/a&gt;].
-This near-exponential increase in gene discovery is being driven by the accessibility and affordability of next-generation sequencing, and the efficient application of these technologies to elucidate the molecular etiology of unsolved cases of IEIs that are likely to result from single-gene defects
-&lt;a href=&quot;https://doi.org/10.1016/j.jaci.2016.08.003&quot;&gt;4&lt;/a&gt;.&lt;/p&gt;
+From _Novel inborn errors of immunity: an Interim Update by the IUIS Committee_,
+&gt; Inborn errors of immunity (IEI) are generally considered to result from monogenic germline defects that manifest as increased susceptibility to severe and/or recurrent infectious diseases, autoimmune or autoinflammatory conditions, atopic manifestations, and hematopoietic or solid tissue malignancies [[1](https://doi.org/10.1126/sciimmunol.abb1662)]. 
+&gt; Over the past decade, the discovery of new IEIs has been occurring at an impressive rate. 
+&gt; Indeed, the 2011 biennial update published by the IUIS Committee update listed 191 IEIs; this number increased to 430 in the 2019 update
+&gt; [[2](https://doi.org/10.1007/s10875-020-00758-x)],
+&gt; [[3](https://doi.org/10.1007/s10875-019-00737-x)].
+&gt; This near-exponential increase in gene discovery is being driven by the accessibility and affordability of next-generation sequencing, and the efficient application of these technologies to elucidate the molecular etiology of unsolved cases of IEIs that are likely to result from single-gene defects
+&gt; [4](https://doi.org/10.1016/j.jaci.2016.08.003).
+&gt;
+&gt; Over the last 12 months, we have witnessed the ongoing rapid identification, and occasionally detailed molecular, biochemical, and cellular characterization, of genetic variants that cause, or are at least associated with, human diseases impacting host defense or immune regulation.
+&gt; Here, we will summarize reports on variants detected in 26 genes which we consider represent novel IEI 
+&gt; ([Table 1](https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1)).
+&gt; Many additional genetic variants have been reported recently. 
+&gt; However, those listed here have been adjudicated by the IUIS Committee to meet the strict criteria to be considered disease-causing
+&gt; [57](https://doi.org/10.1084/jem.20140520).
 
-  &lt;p&gt;Over the last 12 months, we have witnessed the ongoing rapid identification, and occasionally detailed molecular, biochemical, and cellular characterization, of genetic variants that cause, or are at least associated with, human diseases impacting host defense or immune regulation.
-Here, we will summarize reports on variants detected in 26 genes which we consider represent novel IEI 
-(&lt;a href=&quot;https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1&quot;&gt;Table 1&lt;/a&gt;).
-Many additional genetic variants have been reported recently. 
-However, those listed here have been adjudicated by the IUIS Committee to meet the strict criteria to be considered disease-causing
-&lt;a href=&quot;https://doi.org/10.1084/jem.20140520&quot;&gt;57&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Our paper took several years to complete, 
+Our paper took several years to complete, 
 although the genomic analysis worked incredibly well in this case - 
-a patient presented as described in &lt;strong&gt;figure 1&lt;/strong&gt; (Fig. S3 in publication);
+a patient presented as described in **figure 1** (Fig. S3 in publication);
 after running the routine pipeline that we had made, the result was immediately the top candidate, number one, as cause of disease in a single patient, lymphoma with immunodeficiency and autoinflammtory disease
-&lt;a class=&quot;citation&quot; href=&quot;#stremenova2020germline&quot;&gt;(Stremenova Spegarova et al., 2020)&lt;/a&gt;.
+{% cite stremenova2020germline %}.
 We then found that our collaborator had a second family with a LoF in the same gene causing the same severe immunological features.
 By combining the families for further genomic and functional analysis work over several years we finally produced a robust explanation for the disease and strong evidence of the immunological features.
 The summarised information can be read in 
-&lt;a href=&quot;https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1&quot;&gt;Table 1 Newly validated inborn errors of immunity&lt;/a&gt;.&lt;/p&gt;
+[Table 1 Newly validated inborn errors of immunity](https://link.springer.com/article/10.1007/s10875-021-00980-1/tables/1).
 
-&lt;p&gt;&lt;strong&gt;Figure 1.&lt;/strong&gt; Patient histories as shown in the published 
-&lt;em&gt;Supplemental Figure S3: Clinical timelines&lt;/em&gt;
+**Figure 1.** Patient histories as shown in the published 
+_Supplemental Figure S3: Clinical timelines_
 (this version with legend is an extract my PhD thesis).
-&lt;a href=&quot;/images/posts/clinical_history_summary.pdf&quot;&gt;(pdf version)&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&quot;{{ site.baseurl }}{% link images/posts/clinical_history_summary.pdf %}&quot;&gt;(pdf version)&lt;/a&gt;.
 
-&lt;object data=&quot;/images/posts/clinical_history_summary.pdf&quot; type=&quot;application/pdf&quot; width=&quot;100%&quot; style=&quot;height:700px;&quot;&gt;
+&lt;object data=&quot;{{ site.baseurl }}{% link images/posts/clinical_history_summary.pdf %}&quot; type=&quot;application/pdf&quot; width=&quot;100%&quot;  style=&quot;height:700px;&quot;&gt;
 
 The gene of interest, _TET2_ is intriguing since it is the monogenic cause of disease but has a widespread mechanism of action throughout the genome by epigenetic effects.
 From one of my unpublished documents, in reference to different types of epigenetic systems;
-&amp;gt; The effect of mutations which disrupt any of these systems have been described as damaging toward (i) epigenetic modifiers, (ii) epigenetic mediators, and (iii) epigenetic modulators [[15](https://pubmed.ncbi.nlm.nih.gov/26972587/)]. Epigenetic modifiers are genes whose products have direct involvement; protein coding genes that control DNA methylation, post-translational modification, or higher-order chromatin structure (e.g. TET2, IDH, ARID). Mutation in these genes can have a cascade effect since they control the regulation of many downstream genes. The downstream genes which are targeted by the modifiers are epigenetic mediators.
-&amp;gt; Damaging mutations in mediators might only be linked with epigenetics when they occur in, for example, tumour suppressor genes resulting in the same disease as mutation in one of the upstream epigenetic modifiers. Epigenetic modulators are upstream of modifiers and have the potential to induce or suppress differentiation-specific epigenetic states. Pro-inflammatory NF-κB signalling has been reported as an example of a modulator that links the environment and epigenome [[15](https://pubmed.ncbi.nlm.nih.gov/26972587/)]. Excessive signalling in this pathway can trigger an epigenetically-dependant interleukin-6 positive feed-back loop.
+&gt; The effect of mutations which disrupt any of these systems have been described as damaging toward (i) epigenetic modifiers, (ii) epigenetic mediators, and (iii) epigenetic modulators [[15](https://pubmed.ncbi.nlm.nih.gov/26972587/)]. Epigenetic modifiers are genes whose products have direct involvement; protein coding genes that control DNA methylation, post-translational modification, or higher-order chromatin structure (e.g. TET2, IDH, ARID). Mutation in these genes can have a cascade effect since they control the regulation of many downstream genes. The downstream genes which are targeted by the modifiers are epigenetic mediators.
+&gt; Damaging mutations in mediators might only be linked with epigenetics when they occur in, for example, tumour suppressor genes resulting in the same disease as mutation in one of the upstream epigenetic modifiers. Epigenetic modulators are upstream of modifiers and have the potential to induce or suppress differentiation-specific epigenetic states. Pro-inflammatory NF-κB signalling has been reported as an example of a modulator that links the environment and epigenome [[15](https://pubmed.ncbi.nlm.nih.gov/26972587/)]. Excessive signalling in this pathway can trigger an epigenetically-dependant interleukin-6 positive feed-back loop.
 
-&lt;div class=&quot;table-wrapper&quot;&gt;
+&lt;div class=&quot;table-wrapper&quot; markdown=&quot;block&quot;&gt;
 
-    &lt;table&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic modulators&lt;/th&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic modifiers&lt;/th&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;Epigenetic mediators&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;Secondary effect on multiple pathways (NF-kB, IL-6)&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;Primary effect on multiple genes (TET2, IDH1)&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;Primary effect on single genes (IGF-2, OCT4, WNT)&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
+| Epigenetic modulators | Epigenetic modifiers | Epigenetic mediators |
+|:---------------------:|:--------------------:|:--------------------:|
+| Secondary effect on multiple pathways (NF-kB, IL-6) | Primary effect on multiple genes (TET2, IDH1) | Primary effect on single genes (IGF-2, OCT4, WNT) |
 
-  &lt;/div&gt;
+&lt;/div&gt;
 
 When a protein has widespread control for many other genes, a LoF variant is often embryonic lethal and would never result in a relatively narrow phenotype. 
 For TET2 LoF, we found that completely disrupting the genome-wide methylation process causes a pronounced immunological phenotype.
@@ -267,7 +235,7 @@ In such cases, a great deal of biological understanding is gained that may other
 Loss of TET2 in humans has severe consequences including haematological malignancy.
 Yet, it has also been shown that TET2 knock-out can improve anti-tumour therapy for the same reasons;
 Fraietta et al. showed that while developing therapeutic CD19-targeted T cells (CAR-T anti-tumour therapy), the integration of the CD19-CAR sequence happened to interrupt the TET2 coding sequence by chance
-&lt;a class=&quot;citation&quot; href=&quot;#fraietta2018disruption&quot;&gt;(Fraietta et al., 2018)&lt;/a&gt;.
+{% cite fraietta2018disruption %}.
 This fortuitous integration event had a combined effect; disrupting TET2 promoted the therapeutic efficacy of CD19-targeted T cells in the patient. 
 Inhibiting TET2 normally would not be considered ameliorative in cancer immunology. 
 However, in this case the pathogenic effect of TET2 deficiency allowed for more successful CAR-T cell therapy. 
@@ -275,211 +243,170 @@ It is likely that this type of combined genetic alteration will improve CART fun
 
 ## References 
 
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;stremenova2020germline&quot;&gt;Stremenova Spegarova, J., Lawless, D., Mohamad, S. M. B., Engelhardt, K. R., Doody, G., Shrimpton, J., Rensing-Ehl, A., Ehl, S., Rieux-Laucat, F., Cargo, C., &amp;amp; others. (2020). Germline TET2 loss of function causes childhood immunodeficiency and lymphoma. &lt;i&gt;Blood&lt;/i&gt;, &lt;i&gt;136&lt;/i&gt;(9), 1055–1066.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;tangye2021ever&quot;&gt;Tangye, S. G., Al-Herz, W., Bousfiha, A., Cunningham-Rundles, C., Franco, J. L., Holland, S. M., Klein, C., Morio, T., Oksenhendler, E., Picard, C., &amp;amp; others. (2021). The ever-increasing array of novel inborn errors of immunity: an interim update by the IUIS committee. &lt;i&gt;Journal of Clinical Immunology&lt;/i&gt;, &lt;i&gt;41&lt;/i&gt;(3), 666–679.&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;span id=&quot;fraietta2018disruption&quot;&gt;Fraietta, J. A., Nobles, C. L., Sammons, M. A., Lundh, S., Carty, S. A., Reich, T. J., Cogdill, A. P., Morrissette, J. J. D., DeNizio, J. E., Reddy, S., &amp;amp; others. (2018). Disruption of TET2 promotes the therapeutic efficacy of CD19-targeted T cells. &lt;i&gt;Nature&lt;/i&gt;, &lt;i&gt;558&lt;/i&gt;(7709), 307.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
-&lt;/object&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">Credited for a newly added immune gene in IUIS</summary></entry><entry><title type="html">Multiple transcript variant</title><link href="/2021/07/07/Multiple_transcript_variant.html" rel="alternate" type="text/html" title="Multiple transcript variant" /><published>2021-07-07T00:00:00+02:00</published><updated>2021-07-07T00:00:00+02:00</updated><id>/2021/07/07/Multiple_transcript_variant</id><content type="html" xml:base="/2021/07/07/Multiple_transcript_variant.html">&lt;h1 id=&quot;multiple-transcript-variant&quot;&gt;Multiple transcript variant&lt;/h1&gt;
+{% bibliography --cited %}</content><author><name></name></author><category term="statistics" /><summary type="html">Credited for a newly added immune gene in IUIS</summary></entry><entry><title type="html">Multiple transcript variant</title><link href="/2021/07/07/Multiple_transcript_variant.html" rel="alternate" type="text/html" title="Multiple transcript variant" /><published>2021-07-07T00:00:00+02:00</published><updated>2021-07-07T00:00:00+02:00</updated><id>/2021/07/07/Multiple_transcript_variant</id><content type="html" xml:base="/2021/07/07/Multiple_transcript_variant.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;07 July 2021&lt;/p&gt;
 
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;A colleague asked me about why there are multiple mRNA transcripts with different variant positions from a single variant in human genomic DNA.
+## Introduction
+A colleague asked me about why there are multiple mRNA transcripts with different variant positions from a single variant in human genomic DNA.
 Here is a short summary to answer that question (forgiving over-simiplifications).
 First, a quick recap of how DNA is used to protuce proteins.
-Then an example of a gene where the mRNA could be spliced more than one way by the splisosome complex.&lt;/p&gt;
+Then an example of a gene where the mRNA could be spliced more than one way by the splisosome complex.
 
-&lt;h2 id=&quot;dna-to-protein&quot;&gt;DNA to protein&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Genomic DNA (only one version per cell/individual).&lt;/li&gt;
-  &lt;li&gt;Transcription to pre-mRNA (one exact copy of DNA as mRNA).&lt;/li&gt;
-  &lt;li&gt;Splicing pre-mRNA to mRNA transcript (introns removed by splisosome). One version or several slightly different versions.&lt;/li&gt;
-  &lt;li&gt;Spliced mRNA (messenger mRNA) translated into amino acid peptide chain.&lt;/li&gt;
-  &lt;li&gt;Peptide chain folds into protein.&lt;/li&gt;
-&lt;/ol&gt;
+## DNA to protein
+1. Genomic DNA (only one version per cell/individual).
+2. Transcription to pre-mRNA (one exact copy of DNA as mRNA).
+3. Splicing pre-mRNA to mRNA transcript (introns removed by splisosome). One version or several slightly different versions. 
+4. Spliced mRNA (messenger mRNA) translated into amino acid peptide chain.
+5. Peptide chain folds into protein.
 
-&lt;p&gt;Genomic DNA is transcripted over and over, in every cell (ignoring tissue-speicif expression, dynamics, etc.).
+Genomic DNA is transcripted over and over, in every cell (ignoring tissue-speicif expression, dynamics, etc.).
 When the pre-mRNA is spliced, there may be multiple versions produced.
 It all depends on how the splicing complex recognizes the intron/exon sequences. 
-This also explains why &lt;em&gt;splice mutations&lt;/em&gt; occur in 4-5 the nucleotides around the junction between exon and intron. 
-The is the part of the sequence that is recognised by the splisosome.&lt;/p&gt;
+This also explains why _splice mutations_ occur in 4-5 the nucleotides around the junction between exon and intron. 
+The is the part of the sequence that is recognised by the splisosome. 
 
-&lt;p&gt;&lt;a href=&quot;https://www.researchgate.net/profile/Alen-Faiz/publication/224006658/figure/fig3/AS:203040918380546@1425420135624/Transcripts-from-a-single-gene-can-undergo-different-splicing-events-When-mRNA-is_W840.jpg&quot;&gt;image0&lt;/a&gt;&lt;/p&gt;
+[image0](https://www.researchgate.net/profile/Alen-Faiz/publication/224006658/figure/fig3/AS:203040918380546@1425420135624/Transcripts-from-a-single-gene-can-undergo-different-splicing-events-When-mRNA-is_W840.jpg)
 
-&lt;p&gt;&lt;a href=&quot;http://fig.cox.miami.edu/~cmallery/255/255hist/mcb4.1.dogma.jpg&quot;&gt;image1&lt;/a&gt;&lt;/p&gt;
+[image1](http://fig.cox.miami.edu/~cmallery/255/255hist/mcb4.1.dogma.jpg)
 
-&lt;h2 id=&quot;transcript-example&quot;&gt;Transcript example&lt;/h2&gt;
-&lt;p&gt;Transcript [1]
-&lt;a href=&quot;https://www.ensembl.org/Homo_sapiens/Transcript/Exons?db=core;g=ENSG00000104343;r=8:73780097-73878910;t=ENST00000650817&quot;&gt;link to ensemble/UBE2W-207&lt;/a&gt;&lt;/p&gt;
+## Transcript example 
+Transcript [1]
+[link to ensemble/UBE2W-207](https://www.ensembl.org/Homo_sapiens/Transcript/Exons?db=core;g=ENSG00000104343;r=8:73780097-73878910;t=ENST00000650817)
 
-&lt;ul&gt;
-  &lt;li&gt;Transcript UBE2W-207 ENST00000602593.6 8379bp 151aa.&lt;/li&gt;
-  &lt;li&gt;Exon 1 is 103 nucleotides.&lt;/li&gt;
-  &lt;li&gt;position start 73,878,910	end 73,878,808.&lt;/li&gt;
-&lt;/ul&gt;
+* Transcript UBE2W-207 ENST00000602593.6 8379bp 151aa.
+* Exon 1 is 103 nucleotides.
+* position start 73,878,910	end 73,878,808.
 
-&lt;p&gt;Transcript [2]
-&lt;a href=&quot;https://www.ensembl.org/Homo_sapiens/Transcript/Exons?db=core;g=ENSG00000104343;r=8:73780097-73878910;t=ENST00000602593&quot;&gt;link to ensemble/UBE2W-208&lt;/a&gt;&lt;/p&gt;
+Transcript [2]
+[link to ensemble/UBE2W-208](https://www.ensembl.org/Homo_sapiens/Transcript/Exons?db=core;g=ENSG00000104343;r=8:73780097-73878910;t=ENST00000602593)
 
-&lt;ul&gt;
-  &lt;li&gt;Transcript UBE2W-208 ENST00000650817.1 8459bp	191aa.&lt;/li&gt;
-  &lt;li&gt;Exon 1 is 55 nucleotides.&lt;/li&gt;
-  &lt;li&gt;position start 73,878,862	end 73,878,808.&lt;/li&gt;
-&lt;/ul&gt;
+* Transcript UBE2W-208 ENST00000650817.1 8459bp	191aa.
+* Exon 1 is 55 nucleotides.
+* position start 73,878,862	end 73,878,808.
 
-&lt;h2 id=&quot;mutation-example&quot;&gt;Mutation example&lt;/h2&gt;
-&lt;p&gt;A DNA mutation at position g.73,878,863 A&amp;gt;T&lt;/p&gt;
+## Mutation example
+A DNA mutation at position g.73,878,863 A&gt;T
 
-&lt;p&gt;This mutation will only affect transcript [2] at
-cDNA (mRNA) position c.2A&amp;gt;T
-and protein position p.Met1Leu.&lt;/p&gt;
+This mutation will only affect transcript [2] at
+cDNA (mRNA) position c.2A&gt;T
+and protein position p.Met1Leu.
 
-&lt;p&gt;Transcript [1] is not affected because the coding sequence begins later in the DNA sequence.&lt;/p&gt;
+Transcript [1] is not affected because the coding sequence begins later in the DNA sequence. 
 
-&lt;h2 id=&quot;cdna-note&quot;&gt;cDNA note&lt;/h2&gt;
-&lt;p&gt;The cDNA position notation is used for simplicity. 
+## cDNA note
+The cDNA position notation is used for simplicity. 
 We assume the parts of genomic DNA that will remain after splicing (introns and upstream/downstream sequences removed), and call this the coding DNA (cDNA).
-We can physically create cDNA when we collect mRNA from a cell and do reverse Transcription PCR (RT-PCR) to make a DNA copy.&lt;/p&gt;
+We can physically create cDNA when we collect mRNA from a cell and do reverse Transcription PCR (RT-PCR) to make a DNA copy.
 
-&lt;p&gt;&lt;a href=&quot;https://www.mun.ca/biology/desmid/brian/BIOL2060/BIOL2060-21/21_22.jpg&quot;&gt;image2&lt;/a&gt;
-&lt;a href=&quot;https://i.servimg.com/u/f21/17/30/76/23/splice10.png&quot;&gt;image3&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="statistics" /><summary type="html">Multiple transcript variant</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/07/05/weeknotes_6.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-05T00:00:00+02:00</published><updated>2021-07-05T00:00:00+02:00</updated><id>/2021/07/05/weeknotes_6</id><content type="html" xml:base="/2021/07/05/weeknotes_6.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+[image2](https://www.mun.ca/biology/desmid/brian/BIOL2060/BIOL2060-21/21_22.jpg)
+[image3](https://i.servimg.com/u/f21/17/30/76/23/splice10.png)</content><author><name></name></author><category term="statistics" /><summary type="html">Multiple transcript variant</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/07/05/weeknotes_6.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-07-05T00:00:00+02:00</published><updated>2021-07-05T00:00:00+02:00</updated><id>/2021/07/05/weeknotes_6</id><content type="html" xml:base="/2021/07/05/weeknotes_6.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;05 July 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Functional interpretation of mutation analysis for RSV F and G proteins.&lt;/li&gt;
-  &lt;li&gt;Human whole genome analysis.&lt;/li&gt;
-&lt;/ol&gt;
+# Work
+1. Writing paper on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
+2. Functional interpretation of mutation analysis for RSV F and G proteins.
+3. Human whole genome analysis.
 
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Learning how to annotate protein structures.&lt;/li&gt;
-  &lt;li&gt;Reviewing Altman &amp;amp; Bland papers from &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+# Personal 
+1. Learning how to annotate protein structures. 
+2. Reviewing Altman &amp; Bland papers from [Statistics Notes in the British Medical Journal](https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm)
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812&quot;&gt;Genetics and Analysis of Quantitative Traits&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Robert Bringhurst - &lt;a href=&quot;https://www.bookdepository.com/search?searchTerm=The+Elements+of+Typographic+Style&amp;amp;search=Find+book&quot;&gt;The Elements of Typographic Style&lt;/a&gt; 
-&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
-&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-64-supernova-in-the-east-iii/&quot;&gt;Supernova in the East III&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/28/weeknotes_5.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-28T00:00:00+02:00</published><updated>2021-06-28T00:00:00+02:00</updated><id>/2021/06/28/weeknotes_5</id><content type="html" xml:base="/2021/06/28/weeknotes_5.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;28 June 2021&lt;/p&gt;
-
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Protein structure visualisation and mutation analysis for RSV F and G proteins.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Learning how to embed a protein structure viewer in websites.&lt;/li&gt;
-  &lt;li&gt;Reviewing Altman &amp;amp; Bland &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://fuel-design.com/publishing/soviet-cities/&quot;&gt;Soviet Cities, Arseniy Kotov&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812&quot;&gt;Genetics and Analysis of Quantitative Traits&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Chapter 3 in reading &lt;a href=&quot;https://en.wikisource.org/wiki/Reading_Marx%27s_Capital_Vol_I_with_David_Harvey/Class_3&quot;&gt;Capital with David Harvey&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
+# Reading
+1. [Genetics and Analysis of Quantitative Traits](https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812)
+2. Robert Bringhurst - [The Elements of Typographic Style](https://www.bookdepository.com/search?searchTerm=The+Elements+of+Typographic+Style&amp;search=Find+book) 
 &lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
 &lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
 
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=UglBcbz5pzQ&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=4&quot;&gt;Cant Get You Out of My Head E04&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-63-supernova-in-the-east-ii/&quot;&gt;Supernova in the East II&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Komeda Quintet - &lt;a href=&quot;https://youtube.com/playlist?list=PLB5sZsze0CR9FRtpZ3OiSh-8pVc9Q0X5r&quot;&gt;Astigmatic (1966): Avant-garde Jazz&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/21/weeknotes_4.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-21T00:00:00+02:00</published><updated>2021-06-21T00:00:00+02:00</updated><id>/2021/06/21/weeknotes_4</id><content type="html" xml:base="/2021/06/21/weeknotes_4.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+# Other media
+1. Dan Carlin&apos;s Hardcore History - [Supernova in the East III](https://www.dancarlin.com/product/hardcore-history-64-supernova-in-the-east-iii/)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/28/weeknotes_5.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-28T00:00:00+02:00</published><updated>2021-06-28T00:00:00+02:00</updated><id>/2021/06/28/weeknotes_5</id><content type="html" xml:base="/2021/06/28/weeknotes_5.html">{{ page.title }}
+================
+
+&lt;p class=&quot;meta&quot;&gt;28 June 2021&lt;/p&gt;
+
+# Work
+1. Writing paper on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
+2. Protein structure visualisation and mutation analysis for RSV F and G proteins.
+
+# Personal 
+1. Learning how to embed a protein structure viewer in websites. 
+2. Reviewing Altman &amp; Bland [Statistics Notes in the British Medical Journal](https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm)
+
+# Reading
+1. [Soviet Cities, Arseniy Kotov](http://fuel-design.com/publishing/soviet-cities/)
+2. [Genetics and Analysis of Quantitative Traits](https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812)
+3. Chapter 3 in reading [Capital with David Harvey](https://en.wikisource.org/wiki/Reading_Marx%27s_Capital_Vol_I_with_David_Harvey/Class_3)
+ 
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
+&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
+
+# Other media
+1. Adam Curtis documentary: [Cant Get You Out of My Head E04](https://www.youtube.com/watch?v=UglBcbz5pzQ&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=4)
+2. Dan Carlin&apos;s Hardcore History - [Supernova in the East II](https://www.dancarlin.com/product/hardcore-history-63-supernova-in-the-east-ii/)
+3. Komeda Quintet - [Astigmatic (1966): Avant-garde Jazz](https://youtube.com/playlist?list=PLB5sZsze0CR9FRtpZ3OiSh-8pVc9Q0X5r)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/21/weeknotes_4.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-21T00:00:00+02:00</published><updated>2021-06-21T00:00:00+02:00</updated><id>/2021/06/21/weeknotes_4</id><content type="html" xml:base="/2021/06/21/weeknotes_4.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;21 June 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Writing up paper on protein network analysis.&lt;/li&gt;
-  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Discussions with students about joining for projects.&lt;/li&gt;
-  &lt;li&gt;MSc student completes project and report.&lt;/li&gt;
-&lt;/ol&gt;
+# Work
+1. Writing up paper on protein network analysis.
+2. Writing paper on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
+3. Discussions with students about joining for projects.
+4. MSc student completes project and report.
 
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Learning how to embed a FATSA multiple sequence alignment viewer in websites.&lt;/li&gt;
-&lt;/ol&gt;
+# Personal 
+1. Learning how to embed a FATSA multiple sequence alignment viewer in websites. 
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://fuel-design.com/publishing/soviet-cities/&quot;&gt;Soviet Cities, Arseniy Kotov&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812&quot;&gt;Genetics and Analysis of Quantitative Traits&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+# Reading
+1. [Soviet Cities, Arseniy Kotov](http://fuel-design.com/publishing/soviet-cities/)
+2. [Genetics and Analysis of Quantitative Traits](https://www.amazon.com/Genetics-Analysis-Quantitative-Traits-Michael/dp/0878934812)
 
 &lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E04](https://www.youtube.com/watch?v=UglBcbz5pzQ&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=4 --&gt;
 &lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
 &lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
 
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=DPjSeZJmEVc&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=3&quot;&gt;Cant Get You Out of My Head E03&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-62-supernova-in-the-east-i/&quot;&gt;Supernova in the East I&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/14/weeknotes_3.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-14T00:00:00+02:00</published><updated>2021-06-14T00:00:00+02:00</updated><id>/2021/06/14/weeknotes_3</id><content type="html" xml:base="/2021/06/14/weeknotes_3.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+# Other media
+1. Adam Curtis documentary: [Cant Get You Out of My Head E03](https://www.youtube.com/watch?v=DPjSeZJmEVc&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=3)
+2. Dan Carlin&apos;s Hardcore History - [Supernova in the East I](https://www.dancarlin.com/product/hardcore-history-62-supernova-in-the-east-i/)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/14/weeknotes_3.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-14T00:00:00+02:00</published><updated>2021-06-14T00:00:00+02:00</updated><id>/2021/06/14/weeknotes_3</id><content type="html" xml:base="/2021/06/14/weeknotes_3.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;14 June 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Using RCy3 to programmatically control Cytoscape for downloading STRINGdb in analysis.&lt;/li&gt;
-  &lt;li&gt;Writing up paper on protein network analysis.&lt;/li&gt;
-  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
+# Work
+1. Using RCy3 to programmatically control Cytoscape for downloading STRINGdb in analysis.
+2. Writing up paper on protein network analysis.
+3. Writing paper on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
 
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Spent time in &lt;a href=&quot;https://goo.gl/maps/TVz7B33HcDRy6FDF8&quot;&gt;Robella Val-de-Travers, Neuchâtel&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Rewrote most CSS on my website as learning for online classes.&lt;/li&gt;
-&lt;/ol&gt;
+# Personal 
+1. Spent time in [Robella Val-de-Travers, Neuchâtel](https://goo.gl/maps/TVz7B33HcDRy6FDF8)
+2. Rewrote most CSS on my website as learning for online classes.
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.medrxiv.org/content/10.1101/2021.05.04.21256612v1.full.pdf&quot;&gt;Bowden et al., 2021 &lt;/a&gt;, The Triangulation WIthin A STudy (TWIST) framework for causal inference within Pharmacogenetic research.&lt;/li&gt;
-  &lt;li&gt;Reread &lt;a href=&quot;https://www.nature.com/articles/s41576-019-0177-4&quot;&gt;Povysil et al., 2019&lt;/a&gt;, Rare-variant collapsing analyses for complex traits: guidelines and applications.&lt;/li&gt;
-&lt;/ol&gt;
+# Reading
+1. [The Honourable Schoolboy](https://en.wikipedia.org/wiki/The_Honourable_Schoolboy), John le Carré.
+2. [Bowden et al., 2021 ](https://www.medrxiv.org/content/10.1101/2021.05.04.21256612v1.full.pdf), The Triangulation WIthin A STudy (TWIST) framework for causal inference within Pharmacogenetic research.
+3. Reread [Povysil et al., 2019](https://www.nature.com/articles/s41576-019-0177-4), Rare-variant collapsing analyses for complex traits: guidelines and applications.
 
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=xanSAr83w-k&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=2&quot;&gt;Cant Get You Out of My Head E02&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Lex Fridman Podcast: &lt;a href=&quot;https://lexfridman.com/charles-hoskinson/&quot;&gt;#192 Charles Hoskinson: Cardano&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/07/weeknotes_2.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/weeknotes_2</id><content type="html" xml:base="/2021/06/07/weeknotes_2.html">&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
+# Other media
+1. Adam Curtis documentary: [Cant Get You Out of My Head E02](https://www.youtube.com/watch?v=xanSAr83w-k&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=2)
+2. Lex Fridman Podcast: [#192 Charles Hoskinson: Cardano](https://lexfridman.com/charles-hoskinson/)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry><entry><title type="html">Weeknotes</title><link href="/2021/06/07/weeknotes_2.html" rel="alternate" type="text/html" title="Weeknotes" /><published>2021-06-07T00:00:00+02:00</published><updated>2021-06-07T00:00:00+02:00</updated><id>/2021/06/07/weeknotes_2</id><content type="html" xml:base="/2021/06/07/weeknotes_2.html">{{ page.title }}
+================
 
 &lt;p class=&quot;meta&quot;&gt;7 June 2021&lt;/p&gt;
 
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Writing methods on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Genetic variance in viral clades.&lt;/li&gt;
-  &lt;li&gt;Creating toy datasets for testing code.&lt;/li&gt;
-  &lt;li&gt;Wrote code for power calcualtions with PPI network pathways and define the smallest testable sets (cohort sizes).&lt;/li&gt;
-&lt;/ol&gt;
+# Work
+1. Writing methods on [viral association genetics](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250).
+2. Genetic variance in viral clades.
+2. Creating toy datasets for testing code.
+3. Wrote code for power calcualtions with PPI network pathways and define the smallest testable sets (cohort sizes).
 
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Honourable_Schoolboy&quot;&gt;The Honourable Schoolboy&lt;/a&gt;, John le Carré.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Advanced-Level-Statistics-Francis/dp/0859508137&quot;&gt;Advanced level statistics&lt;/a&gt;, A. Francis. A good read on basic fundamentals but not a prefered over other modern textbooks with R code.&lt;/li&gt;
-&lt;/ol&gt;
+# Reading
+1. [The Honourable Schoolboy](https://en.wikipedia.org/wiki/The_Honourable_Schoolboy), John le Carré.
+2. [Advanced level statistics](https://www.amazon.com/Advanced-Level-Statistics-Francis/dp/0859508137), A. Francis. A good read on basic fundamentals but not a prefered over other modern textbooks with R code.
 
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Oliver Nelson - &lt;a href=&quot;https://www.youtube.com/watch?v=k-zaI8lLrQA&quot;&gt;The Blues And The Abstract Truth 1961&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Podcast - BBC, In Our Time with Melvyn Bragg, &lt;a href=&quot;https://www.bbc.co.uk/programmes/b0435jyv&quot;&gt;Photosynthesis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Adam Curtis documentary: &lt;a href=&quot;https://www.youtube.com/watch?v=hqX1J-1LyzA&amp;amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;amp;index=1&quot;&gt;Cant Get You Out of My Head E01&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry></feed>
+# Other media
+1. Oliver Nelson - [The Blues And The Abstract Truth 1961](https://www.youtube.com/watch?v=k-zaI8lLrQA).
+2. Podcast - BBC, In Our Time with Melvyn Bragg, [Photosynthesis](https://www.bbc.co.uk/programmes/b0435jyv)
+3. Adam Curtis documentary: [Cant Get You Out of My Head E01](https://www.youtube.com/watch?v=hqX1J-1LyzA&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=1)</content><author><name></name></author><category term="weeknotes" /><summary type="html">Weeknotes</summary></entry></feed>
