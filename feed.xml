@@ -22,7 +22,7 @@ layout: none
       <item>
         <title>{{ topic.title | xml_escape }}</title>
         <description>{{ topic.content | xml_escape }}</description>
-        <pubDate>{{ topic.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <pubDate>{{ topic.created | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <link>{{ site.url }}/{{ topic.url }}</link>
         <guid isPermaLink="true">{{ site.url }}/{{ topic.url }}</guid>
       </item>
