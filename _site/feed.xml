@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <description></description>
-    <link></link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <description>A home for topics in human precision medicine, genomic analysis, and data visualisation.</description>
+    <link>https://lawlessgenomics.com</link>
+    <atom:link href="https://lawlessgenomics.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Easy manuscript</title>
@@ -129,8 +129,8 @@ In most cases, we require only&lt;/p&gt;
 Citations in my master_references.bib also means that I will always have them available for any project, whether it is a large project or simply small literature note that is cross-posted between projects.&lt;/p&gt;
 </description>
         <pubDate>Thu, 22 Jul 2021 00:00:00 +0200</pubDate>
-        <link>//2021/07/22/easy_manuscript.html</link>
-        <guid isPermaLink="true">//2021/07/22/easy_manuscript.html</guid>
+        <link>https://lawlessgenomics.com//2021/07/22/easy_manuscript.html</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/22/easy_manuscript.html</guid>
       </item>
     
       <item>
@@ -166,8 +166,8 @@ Citations in my master_references.bib also means that I will always have them av
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 19 Jul 2021 00:00:00 +0200</pubDate>
-        <link>//2021/07/19/weeknotes_8.html</link>
-        <guid isPermaLink="true">//2021/07/19/weeknotes_8.html</guid>
+        <link>https://lawlessgenomics.com//2021/07/19/weeknotes_8.html</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/19/weeknotes_8.html</guid>
       </item>
     
       <item>
@@ -204,8 +204,8 @@ Citations in my master_references.bib also means that I will always have them av
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 12 Jul 2021 00:00:00 +0200</pubDate>
-        <link>//2021/07/12/weeknotes_7.html</link>
-        <guid isPermaLink="true">//2021/07/12/weeknotes_7.html</guid>
+        <link>https://lawlessgenomics.com//2021/07/12/weeknotes_7.html</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/12/weeknotes_7.html</guid>
       </item>
     
       <item>
@@ -318,8 +318,8 @@ It is likely that this type of combined genetic alteration will improve CART fun
 &lt;/object&gt;
 </description>
         <pubDate>Thu, 08 Jul 2021 00:00:00 +0200</pubDate>
-        <link>//2021/07/08/iuis.html</link>
-        <guid isPermaLink="true">//2021/07/08/iuis.html</guid>
+        <link>https://lawlessgenomics.com//2021/07/08/iuis.html</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/08/iuis.html</guid>
       </item>
     
       <item>
@@ -390,8 +390,8 @@ We can physically create cDNA when we collect mRNA from a cell and do reverse Tr
 &lt;a href=&quot;https://i.servimg.com/u/f21/17/30/76/23/splice10.png&quot;&gt;image3&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 07 Jul 2021 00:00:00 +0200</pubDate>
-        <link>//2021/07/07/Multiple_transcript_variant.html</link>
-        <guid isPermaLink="true">//2021/07/07/Multiple_transcript_variant.html</guid>
+        <link>https://lawlessgenomics.com//2021/07/07/Multiple_transcript_variant.html</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/07/Multiple_transcript_variant.html</guid>
       </item>
     
 		
@@ -742,8 +742,8 @@ within the subject a rise in Y was associated with a fall in X.&lt;/p&gt;
 &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 29 Jun 2021 00:00:00 +0200</pubDate>
-        <link>//topic/altman-bland-correlation</link>
-        <guid isPermaLink="true">//topic/altman-bland-correlation</guid>
+        <link>https://lawlessgenomics.com//topic/altman-bland-correlation</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-correlation</guid>
       </item>
     
       <item>
@@ -923,8 +923,8 @@ Altman &amp;amp; Bland review this debate and also discuss ORs in logistic regre
 &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Jul 2021 00:00:00 +0200</pubDate>
-        <link>//topic/altman-bland-odds-ratios</link>
-        <guid isPermaLink="true">//topic/altman-bland-odds-ratios</guid>
+        <link>https://lawlessgenomics.com//topic/altman-bland-odds-ratios</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-odds-ratios</guid>
       </item>
     
       <item>
@@ -1073,8 +1073,8 @@ The accuracy (proportion of all correctly identified cases) was
 &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
-        <link>//topic/altman-bland-roc-curve</link>
-        <guid isPermaLink="true">//topic/altman-bland-roc-curve</guid>
+        <link>https://lawlessgenomics.com//topic/altman-bland-roc-curve</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-roc-curve</guid>
       </item>
     
       <item>
@@ -1209,8 +1209,8 @@ It defines &lt;em&gt;positive&lt;/em&gt; and &lt;em&gt;negative predictive value
 &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 19 Jul 2021 00:00:00 +0200</pubDate>
-        <link>//topic/altman-bland-sensitivity-specificity</link>
-        <guid isPermaLink="true">//topic/altman-bland-sensitivity-specificity</guid>
+        <link>https://lawlessgenomics.com//topic/altman-bland-sensitivity-specificity</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-sensitivity-specificity</guid>
       </item>
     
       <item>
@@ -2577,8 +2577,8 @@ Then we will find the real minimum variant count required to pass significance:&
 &lt;li&gt;&lt;span id=&quot;gao2021tlr3&quot;&gt;Gao, D., Ciancanelli, M. J., Zhang, P., Harschnitz, O., Bondet, V., Hasek, M., Chen, J., Mu, X., Itan, Y., Cobat, A., &amp;amp; others. (2021). TLR3 controls constitutive IFN-βantiviral immunity in human fibroblasts and cortical neurons. &lt;i&gt;The Journal of Clinical Investigation&lt;/i&gt;, &lt;i&gt;131&lt;/i&gt;(1).&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
 </description>
         <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
-        <link>//topic/burden-test</link>
-        <guid isPermaLink="true">//topic/burden-test</guid>
+        <link>https://lawlessgenomics.com//topic/burden-test</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//topic/burden-test</guid>
       </item>
     
   </channel>

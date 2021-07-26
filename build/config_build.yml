@@ -28,3 +28,8 @@ jekyll-spaceship:
   # default enabled processors
   processors:
     - table-processor
+
+# feed config
+title: LawlessGenomics
+url: https://lawlessgenomics.com
+description: A home for topics in human precision medicine, genomic analysis, and data visualisation.

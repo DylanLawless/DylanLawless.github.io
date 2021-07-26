@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: https://lawlessgenomics.com/sitemap.xml
