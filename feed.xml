@@ -17,7 +17,8 @@ layout: none
         <guid isPermaLink="true">{{ site.url }}/{{ post.url }}</guid>
       </item>
     {% endfor %}
-    {% for topic in site.topics limit:5 %}
+		{% assign sorted-topic = site.topic | where: "subject","statistics" %}
+		{% for topic in sorted-topic limit:5 %}
       <item>
         <title>{{ topic.title | xml_escape }}</title>
         <description>{{ topic.content | xml_escape }}</description>
