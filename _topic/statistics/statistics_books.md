@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Statistics books
-created: 
+created: 03 April 2020
 tags: statistics
 status: finished
 subject: statistics

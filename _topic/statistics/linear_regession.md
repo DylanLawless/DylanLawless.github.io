@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Linear regression
-created: 
+created: 14 Aug 2020
 tags: statistics
 status: finished
 subject: statistics

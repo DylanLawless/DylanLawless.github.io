@@ -1,7 +1,7 @@
 ---
 layout: topic
-title: Fischer's exact test
-created: 
+title: Fisher's exact test
+created: 25 Sept 2020
 tags: statistics
 status: finished
 subject: statistics

@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="https://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="https://tom.preston-werner.com/"/>
- <updated>2021-07-26T15:58:56+02:00</updated>
+ <updated>2021-07-26T16:14:45+02:00</updated>
  <id>https://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -10805,7 +10805,7 @@ Then we will find the real minimum variant count required to pass significance:<
 </p>
 
   <h2> - </h2>
-  <p><h1 id="fischers-exact-test">Fischer’s exact test</h1>
+  <p><h1 id="fishers-exact-test">Fisher’s exact test</h1>
 
 <p><br />
 https://www.statology.org/fishers-exact-test/

@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: PCA
-created: 
+created: 28 June 2020
 tags: statistics
 status: finished
 subject: statistics
