@@ -2769,8 +2769,8 @@ Then we will find the real minimum variant count required to pass significance:&
       </item>
     
       <item>
-        <title>Fischer&apos;s exact test</title>
-        <description>&lt;h1 id=&quot;fischers-exact-test&quot;&gt;Fischer’s exact test&lt;/h1&gt;
+        <title>Fisher&apos;s exact test</title>
+        <description>&lt;h1 id=&quot;fishers-exact-test&quot;&gt;Fisher’s exact test&lt;/h1&gt;
 
 &lt;p&gt;&lt;br /&gt;
 https://www.statology.org/fishers-exact-test/
@@ -2923,9 +2923,9 @@ https://www.statology.org/fishers-exact-test-in-r/&lt;/p&gt;
 https://www.statology.org/fishers-exact-test-calculator/&lt;/p&gt;
 
 </description>
-        <pubDate></pubDate>
-        <link>https://lawlessgenomics.com//topic/fischer</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/fischer</guid>
+        <pubDate>Fri, 25 Sep 2020 00:00:00 +0200</pubDate>
+        <link>https://lawlessgenomics.com//topic/fisher</link>
+        <guid isPermaLink="true">https://lawlessgenomics.com//topic/fisher</guid>
       </item>
     
       <item>
@@ -3170,7 +3170,7 @@ that might affect the response Y, then we will use a multiple linear regression.
 \[\label{eq }\tag{ }\]
 
 </description>
-        <pubDate></pubDate>
+        <pubDate>Fri, 14 Aug 2020 00:00:00 +0200</pubDate>
         <link>https://lawlessgenomics.com//topic/linear-regession</link>
         <guid isPermaLink="true">https://lawlessgenomics.com//topic/linear-regession</guid>
       </item>
@@ -3246,7 +3246,7 @@ You may keep just PC1 and PC2, projecting the data onto these, so that PC1 and P
 Lastly, some analysis like GWAS can incorporate multiple PCs as individual covariates (with Plink or GCTA this would be a table with one data column per PC, and one row per sample ID) to account for complexity.
 In that case, our visualisation plots are more for sanity and understanding the diversity within the dataset.&lt;/p&gt;
 </description>
-        <pubDate></pubDate>
+        <pubDate>Sun, 28 Jun 2020 00:00:00 +0200</pubDate>
         <link>https://lawlessgenomics.com//topic/pca</link>
         <guid isPermaLink="true">https://lawlessgenomics.com//topic/pca</guid>
       </item>
@@ -3277,7 +3277,7 @@ Doing Bayesian data analysis a tutorial with R and BUGS.pdf&lt;br /&gt;
 &lt;a href=&quot;http://www.users.csbsju.edu/~mgass/robert.pdf&quot;&gt;http://www.users.csbsju.edu/~mgass/robert.pdf&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate></pubDate>
+        <pubDate>Fri, 03 Apr 2020 00:00:00 +0200</pubDate>
         <link>https://lawlessgenomics.com//topic/statistics-books</link>
         <guid isPermaLink="true">https://lawlessgenomics.com//topic/statistics-books</guid>
       </item>
