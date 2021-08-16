@@ -71,24 +71,21 @@
 	</div>
 
 	<div id="topic">
-Reading time  10 minutes
+Reading time  9 minutes
 <h1 id="routine-analysis">Routine analysis</h1>
 
 <ul id="markdown-toc">
   <li><a href="#analysis-workflow-structure" id="markdown-toc-analysis-workflow-structure">Analysis workflow structure.</a></li>
   <li><a href="#analysis-storage-structure" id="markdown-toc-analysis-storage-structure">Analysis storage structure</a></li>
   <li><a href="#sequence-alignment-to-reference-genome" id="markdown-toc-sequence-alignment-to-reference-genome">Sequence alignment to reference genome</a></li>
-  <li><a href="#read-adaptor-trimming" id="markdown-toc-read-adaptor-trimming">Read adaptor trimming</a></li>
-  <li><a href="#read-sorting" id="markdown-toc-read-sorting">Read sorting</a></li>
-  <li><a href="#gatk-best-practices" id="markdown-toc-gatk-best-practices">GATK best practices.</a></li>
   <li><a href="#read-deduplication" id="markdown-toc-read-deduplication">Read deduplication</a></li>
   <li><a href="#subsec:text_realtar" id="markdown-toc-subsec:text_realtar">Read realignment and targets</a></li>
   <li><a href="#subsec:text_bsqr" id="markdown-toc-subsec:text_bsqr">Base quality score recalibration</a></li>
   <li><a href="#subsec:text_hc" id="markdown-toc-subsec:text_hc">Haplotype calling</a></li>
   <li><a href="#subsec:text_joint" id="markdown-toc-subsec:text_joint">Cohort joint genotyping</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
-<h1 id="sec:routine_analysis">Routine analysis</h1>
 <p>Routine analysis can be summarised in order as raw sequence data quality
 control, read trimming, reference alignment, subsequently followed by
 the GATK best practices for SNV and indels. 
@@ -190,36 +187,7 @@ they can use their reference databases without going back and realigning
 all of their old samples again to GrCh38.
 The most popular method for aligning short read data to the reference
 human genome is “BWA-MEM” (a Burrows-Wheeler transformation aligner)
-[@Li2009Fast]. BWA-MEM was used to align sequencing data in this study
-to GrCh37 [subsec:text_alignment] (for an example usage see page ).</p>
-
-<h2 id="read-adaptor-trimming">Read adaptor trimming</h2>
-<p>Since Illumina-based sequencing technology relies on duplexed samples,
-identification sequence tags were added to all sequence libraries.
-During analysis these tag sequences can affect alignment and are
-therefore removed from each read [subsec:text_cut]. The command line
-usage is shown on page .</p>
-
-<h2 id="read-sorting">Read sorting</h2>
-<p>To allow downstream analyses to run efficiently, the sequences within
-files are rearranged based on their coordinate position after alignment
-with the reference genome. This process is carried out using SamTools
-[subsec:text_sort] This software is part of the The Broad
-Institute-maintained Genome Analysis Toolkit (GATK). Their standardised
-pipeline is illustrated here in [fig:gatk]; a protocol familiar to
-most bioinformaticians. And example of usage can be seen on page .</p>
-
-<h2 id="gatk-best-practices">GATK best practices.</h2>
-<p>Illustration from software.broadinstitute.org. Per-sample variant calling is used to
-produce a file in GVCF format. GVCFs are consolidated from multiple
-samples into a GenomicsDB datastore. Joint genotyping is carried out,
-and finally, variant quality score recalibration filtering is used to
-produce the final multi-sample callset with the desired balance of
-precision and sensitivity. Further downstream analysis, including
-annotation is not shown.
-<strong>FigureLabel</strong>
-gatk
-<img src="/images/bioinfo/gatk.png" width="40%"></p>
+(missing reference)” width=”40%”&gt;</p>
 
 <h2 id="read-deduplication">Read deduplication</h2>
 <p>Sequence library preparation may contain a PCR amplification step.
@@ -321,6 +289,10 @@ doing high-level tailored analysis is small but growing). There are
 usually more hurdles in determining candidate variants of unknown
 significance. An example of the command line arguments used can be found
 on page .</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"></ol>
 
 </div>
 

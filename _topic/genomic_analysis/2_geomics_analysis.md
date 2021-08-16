@@ -13,8 +13,6 @@ subject: Genomic analysis
 * TOC
 {:toc}
 
-
-# Genomic analysis
 Like any data science, bioinformatics is a discipline of data
 manipulation. The majority of jobs could be accomplished simply with a
 method for sequence alignment and data mining using grep, sed, and awk.

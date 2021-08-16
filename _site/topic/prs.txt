@@ -1,14 +1,14 @@
----
-layout: topic
-title: Polygenic risk score
-created: 3 Oct 2020
-bibliography:
-- '../tail/bibliography.bib'
-tags: genomics
-subject: Precision medicine
----
-{{ page.title }}
-================
+<!-- --- -->
+<!-- layout: topic -->
+<!-- title: Polygenic risk score -->
+<!-- created: 3 Oct 2020 -->
+<!-- bibliography: -->
+<!-- - '../tail/bibliography.bib' -->
+<!-- tags: genomics -->
+<!-- subject: Precision medicine -->
+<!-- --- -->
+<!-- {{ page.title }} -->
+<!-- ================ -->
 
 * TOC
 {:toc}

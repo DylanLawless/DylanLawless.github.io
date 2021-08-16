@@ -1,6 +1,6 @@
 ---
 layout: topic
-title: Rare disease cohort analysis
+title: Rare disease network analysis
 created: 8 Aug 2018
 bibliography:
 - '../tail/bibliography.bib'
@@ -13,7 +13,6 @@ subject: Genomic analysis
 * TOC
 {:toc}
 
-# Rare disease cohort network analysis {#sec:cohort_network_analysis}
 ## Introduction
 The exome sequencing is most commonly used for genetic diagnosis in
 single use cases. Over the next decade exome and genome sequencing will
@@ -56,15 +55,13 @@ the major datasets explicitly shown.
 **Deleterious rare variants in damaged protein pathways in rare
 disease.** A. GATK best practices were used for whole exome analysis
 with joint genotyping for cases and controls; 200 in total. Custom
-filtering [@vcfhacks2015Parry] extracted variants of high impact
+filtering {% cite vcfhacks2015Parry} extracted variants of high impact
 consequence (ostensibly loss-of-function (LoF)), present only in cohort
 cases. B. Genes harboring rare predicted LoF variants were grouped based
-on protein-protein interactions [@String2017Szklarczyk] using a Markov
-cluster algorithm [@Enright2002efficienct]. C. Case-control testing was
+on protein-protein interactions {% cite String2017Szklarczyk} using a Markov
+cluster algorithm {% cite Enright2002efficienct}. C. Case-control testing was
 performed on each protein pathway cluster.
 
-**FigureLabel**
-method
 <img src="{{ site.baseurl }}{% link images/net_analysis/method.png %}" width="40%">
 
 **Rare variant analysis and protein pathway significant enrichment.**
@@ -81,8 +78,6 @@ relevant to disease. F. Deleterious variant load per network was tested
 for enrichment in cases, controls, or random sampling. G. Multiple
 testing correction is applied to identify the critical significant
 threshold.
-**FigureLabel**
-abstract
 <img src="{{ site.baseurl }}{% link images/net_analysis/abstract.pdf %}" width="40%">
 
 ## Exome analysis
@@ -115,7 +110,7 @@ of the coding sequence, frameshift, missense, protein altering, splice
 acceptor, splice donor, or splice region; an inframe insertion or
 deletion; a start lost, stop gained, or stop retained, or according to
 VEP an GnomAD frequency unknown, &lt;=0.01, or with clinical
-significance 'path'. VCFhacks [@vcfhacks2015Parry] was used for
+significance 'path'. VCFhacks {% cite vcfhacks2015Parry} was used for
 cohort-specific filtering retained functional variants that were present
 in at least one case but absent in controls (for case-driven PPI
 clustering). The same criteria were used to also collect functional
@@ -127,7 +122,7 @@ Group-specific variant data was extracted from the joint cohort.
 Specifically, the datasets came from the routine analysis pipeline show
 in **Figure \[fig:analysis\_flow\]** as the output of the process
 “filter on Sample” and converted from VCF to tsv format using the
-process “annovcftoSimple” using the tool VCFhacks [@vcfhacks2015Parry].
+process “annovcftoSimple” using the tool VCFhacks {% cite vcfhacks2015Parry}.
 Four gene lists were prepared consisting of the following groups; (1)
 variants present in controls and (2) variants present in cases and
 further divided for genes that harboured either (i) all rare variants or
@@ -142,14 +137,12 @@ Reference data used secondary to inputs are shown as light boxes with
 curved sides. Key output files are shown by light slanted boxes. Storage
 structure is divided between long-term and short-term
 storage.
-**FigureLabel**
-analysis_flow
 <img src="{{ site.baseurl }}{% link images/net_analysis/analysis_flow.pdf %}" width="80%">
 
 ## Network construction {#sec:net_construction}
 Group-specific gene lists \[1 (i-ii) and 2 (i-ii)\] were assessed for
-PPI using the STRING database [@String2017Szklarczyk] via Cytoscape
-[@Shannon2003cytoscape]. An initial PPI network was generated for each
+PPI using the STRING database {% cite String2017Szklarczyk} via Cytoscape
+{% cite Shannon2003cytoscape}. An initial PPI network was generated for each
 of the 4 dataset groups. The STRINGdb default confidence score cut-off
 (0.4) was used for these tests. This score is the measure of evidence
 required to create an interaction between two nodes. A stricter value
@@ -158,20 +151,18 @@ PPI were defined as edges, and networks of proteins linked through PPI
 were defined as clusters. Clusters or networks can also be generally
 considered as making up a part of a protein pathway.
 
-[\*[5]{}[Z]{}]{}
 
-\
-& [Network cluster]{} & [Number of nodes]{} & [Number of edges]{} &
-[Number of clusters]{}\
-& [Total ]{} & [1956]{} & [9559]{} & [114]{}\
-& [No edges]{} & [1]{} & [0]{} & [107]{}\
-& [One edge]{} & [2]{} & [1]{} & [6]{}\
-& [Large multi-edge]{} & [1837]{} & [9553]{} & [1]{}\
-& [Total]{} & [2305]{} & [14139]{} & [102]{}\
-& [No edges]{} & [1]{} & [0]{} & [77]{}\
-& [One edge]{} & [2]{} & [1]{} & [3]{}\
-& [Two edges]{} & [3]{} & [2]{} & [1]{}\
-& [Large multi-edge]{} & [2219]{} & [14134]{} & [1]{}\
+| Network cluster | Number of nodes | Number of edges | Number of clusters |
+|---|---|---|---|
+| Total  | 1956 | 9559 | 114 |
+| No edges | 1 | 0 | 107 |
+| One edge | 2 | 1 | 6 |
+| Large multi-edge | 1837 | 9553 | 1 |
+| Total | 2305 | 14139 | 102 |
+| No edges | 1 | 0 | 77 |
+| One edge | 2 | 1 | 3 |
+| Two edges | 3 | 2 | 1 |
+| Large multi-edge | 2219 | 14134 | 1 |
 
 **Table \[table:node\_summary\]** lists the characteristics of PPIs for
 genes found to harbour functional, potential LoF rare variants in cases
@@ -191,13 +182,11 @@ can be seen.
 cohort.** A visual representation of PPI occurring in all genes that
 harbour potentially damaging functional variants in a typical disease
 cohort.
-**FigureLabel**
-damage_list_case
 <img src="{{ site.baseurl }}{% link images/net_analysis/damage_list_case.png %}" width="50%">
 
 To segregate protein pathways and refine the number of genes (nodes) in
 each cluster, the Markov cluster algorithm (MCL) was used
-[@van2000graph; @Enright2002efficienct]. The principal data-specific
+{% cite van2000graph; @Enright2002efficienct]. The principal data-specific
 adjustment required for using MCL is the inflation operator, which
 regulates cluster granularity or tightness. The optimum inflation
 parameter for separating protein pathways was found to be 2.5, using a
@@ -212,25 +201,19 @@ interactions). The median number of nodes (query proteins) are shown for
 cases and controls (also shown as total number of nodes in **table
 \[table:node\_summary\]**).
 
-[@l@l@]{} \[0pt\]\[0pt\]
-
-\[Inflation separates protein pathways\][**=0 Inflation separates
-protein pathways.** A visual representation the ideal inflation
+**Figure Inflation separates protein pathways** A visual representation the ideal inflation
 parameter used on a PPI cluster. Weak bonds are broken and strong bonds
 draw nodes closer together. No bonds are retained between clusters. With
 this type of inflation each protein network cluster can be investigated
-without considering overlaps.]{} \[fig:inflation\]
+without considering overlaps.\[fig:inflation\]
 
-[\*[4]{}[Z]{}]{}
 
-\
-& & [Total count median]{} & [Node/Edge ratio ]{}\
-& & [Case/control $\pm$ S.D.]{} & [Case/control $\pm$ S.D.]{}\
-& & [2130.5 $\pm$ 246.78]{} &\
-& [PPI only \*]{} & [11849 $\pm$ 3238.55]{} & [0.18 $\pm$ 0.03]{}\
-& [Inflation 2.5]{} & [2787.5 $\pm$ 740.34]{} & [0.78 $\pm$ 0.12]{}\
-& [Inflation 3]{} & [4229.5 $\pm$ 3669.18]{} & [0.77 $\pm$ 0.61]{}\
-& [Inflation 4]{} & [1199.5 $\pm$ 146.37]{} & [1.78 $\pm$ 0.01]{}\
+<!-- & Total count median | Node/Edge ratio | Case/control $\pm$ S.D. | Case/control $\pm$ S.D. | -->
+<!-- & 2130.5 $\pm$ 246.78 | -->
+<!-- & [PPI only \* | 11849 $\pm$ 3238.55 | 0.18 $\pm$ 0.03 | -->
+<!-- & [Inflation 2.5 | 2787.5 $\pm$ 740.34 | 0.78 $\pm$ 0.12 | -->
+<!-- & [Inflation 3 | 4229.5 $\pm$ 3669.18 | 0.77 $\pm$ 0.61 | -->
+<!-- & [Inflation 4 | 1199.5 $\pm$ 146.37 | 1.78 $\pm$ 0.01 | -->
 
 **Figure \[fig:network\_size\_inflation\]** illustrates the effect of
 adjusting the inflation parameter for MCL clustering on protein
@@ -252,8 +235,6 @@ group. Inflation parameter 2.5 produced the ideal distribution while
 inflation parameter 3 produced one large, poorly separated network and a
 large increase in single-protein nodes on one group. Binwidth of
 10.
-**FigureLabel**
-network_size_inflation
 <img src="{{ site.baseurl }}{% link images/net_analysis/network_size_inflation_free.pdf %}" width="40%">
 
 **Cumulative sum of network rank by size**. The effect of inflation on
@@ -261,8 +242,6 @@ network size distribution could be potentially measured automatically by
 quantifying the cumulative sum of network rank by size and determining
 the best inflation parameter to use. This process would reduce user
 bias.
-**FigureLabel**
-cumulative_sum_net_rank
 <img src="{{ site.baseurl }}{% link images/net_analysis/cumulative_sum_net_rank.pdf %}" width="40%">
 
 **QQ plot illustrating uniform inflation.** The data presented in
@@ -270,8 +249,6 @@ figure \[fig:cumulative\_sum\_net\_rank\] is used to produce the
 quantile-quantile plot for the most uniform distribution between the
 case and control groups after all inflation parameters were
 tested.
-**FigureLabel**
-qqplot_2
 <img src="{{ site.baseurl }}{% link images/net_analysis/qqplot_2.pdf %}" width="40%">
 
 **Figure \[fig:network\_size\_nodes\]** shows the number of proteins per
@@ -287,8 +264,6 @@ protein networks has a geometric distribution that decreases until
 protein (nodes) with no interactions remain; in this cases approximately
 200 out of 400 proteins did not play a major role in a single
 pathway.
-**FigureLabel**
-network_size_nodes
 <img src="{{ site.baseurl }}{% link images/net_analysis/network_size_nodes.pdf %}" width="40%">
 
 ## Random sampling {#sec:random_sample}
@@ -399,7 +374,7 @@ be 0.05 and below this we consider the result to be significant. The
 chance of getting this result if the null hypothesis was true would be
 5%. That does not mean that there is 5% chance that it is true. The
 following examples are reiterated summary of the topic found in the
-Handbook of biological statistics [@mcdonald2009handbook].
+Handbook of biological statistics {% cite mcdonald2009handbook}.
 
 For multiple tests of “families” then we need to adjust the P-value
 since we are more likely to get false positives by chance. In a
@@ -420,7 +395,7 @@ be reasonable to invalidate the significance of the original findings.
 Using Bonferroni correction for family-wise error rate can mean
 extremely small P-values. So instead we use a more powerful method for
 controlling the false discovery rate; the Benjamini-Hochberg procedure
-[@simes1986improved; @benjamini1995controlling].
+{% cite simes1986improved, @benjamini1995controlling}.
 
 In this procedure, we compare each individual P-value to its
 Benjamini-Hochberg critical value, $(i/m)Q$, where $i$ is the rank, $m$
@@ -441,35 +416,33 @@ the number of tests would be 24, slightly increasing the BH-critical
 value, and again identify a significant association for the first 4
 tests. Someone interested can recalculate this table to see this effect.
 
-[\*[2]{}[Z]{}]{}
 
-\
-& [P value]{}\
-& [&lt;0.001]{}\
-[Olive oil]{} & [0.008]{}\
-[Whole milk]{} & [0.039]{}\
-[White meat]{} & [0.041]{}\
-[Proteins]{} & [0.042]{}\
-[Nuts]{} & [0.06]{}\
-[Cereals and pasta]{} & [0.074]{}\
-[White fish]{} & [0.205]{}\
-[Butter]{} & [0.212]{}\
-[Vegetables]{} & [0.216]{}\
-[Skimmed milk]{} & [0.222]{}\
-[Red meat]{} & [0.251]{}\
-[Fruit]{} & [0.269]{}\
-[Eggs]{} & [0.275]{}\
-[Blue fish]{} & [0.34]{}\
-[Legumes]{} & [0.341]{}\
-[Carbohydrates]{} & [0.384]{}\
-[Potatoes]{} & [0.569]{}\
-[Bread]{} & [0.594]{}\
-[Fats]{} & [0.696]{}\
-[Sweets]{} & [0.762]{}\
-[Dairy products]{} & [0.94]{}\
-[Semi-skimmed milk]{} & [0.942]{}\
-[Total meat]{} & [0.975]{}\
-[Processed meat]{} & [0.986]{}\
+| Product |P value |
+|---|---|
+| Olive oil | 0.008 |
+| Whole milk | 0.039 |
+| White meat | 0.041 |
+| Proteins | 0.042 |
+| Nuts | 0.06 |
+| Cereals and pasta | 0.074 |
+| White fish | 0.205 |
+| Butter | 0.212 |
+| Vegetables | 0.216 |
+| Skimmed milk | 0.222 |
+| Red meat | 0.251 |
+| Fruit | 0.269 |
+| Eggs | 0.275 |
+| Blue fish | 0.34 |
+| Legumes | 0.341 |
+| Carbohydrates | 0.384 |
+| Potatoes | 0.569 |
+| Bread | 0.594 |
+| Fats | 0.696 |
+| Sweets | 0.762 |
+| Dairy products | 0.94 |
+| Semi-skimmed milk | 0.942 |
+| Total meat | 0.975 |
+| Processed meat | 0.986 |
 
 The choice of a false discover rate depends on the application. False
 positives can waste time, resources, and pollute future work. Minimising
@@ -517,27 +490,9 @@ candidates.
 are shown, comparing groups. A test of means was conducted in this test
 dataset and P-values are
 shown.
-**FigureLabel**
-means_test
 <img src="{{ site.baseurl }}{% link images/net_analysis/means_test.pdf %}" width="30%">
 
-[\*[6]{}[Z]{}]{}
-
-\
-& [**LoF freq in cases**]{} & [**LoF freq due to cases per network**]{}
-& [**P-value**]{} & [**rank**]{} & [**$(i/m)Q$**]{}\
-& [0.306]{} & [1]{} & [0.023]{} & [1]{} & [0.025]{}\
-[27]{} & [0.429]{} & [1]{} & [0.12]{} & [2]{} & [0.05]{}\
-[16]{} & [0.6]{} & [0.919]{} & [0.13]{} & [3]{} & [0.075]{}\
-[19]{} & [0.281]{} & [0.835]{} & [0.14]{} & [4]{} & [0.1]{}\
-[25]{} & [0.25]{} & [1]{} & [0.28]{} & [5]{} & [0.125]{}\
-[11]{} & [0.357]{} & [0.838]{} & [0.33]{} & [6]{} & [0.15]{}\
-[10]{} & [0.516]{} & [0.856]{} & [0.34]{} & [7]{} & [0.175]{}\
-[18]{} & [0.474]{} & [0.85]{} & [0.47]{} & [8]{} & [0.2]{}\
-
-[@l@l@]{} \[0pt\]\[0pt\]
-
-\[Protein network with significantly enriched variant load.\][**=0
+**Figure Protein network with significantly enriched variant load.**
 Protein network with significantly enriched variant load.** From the
 example data, network 22 was significantly enriched for rare variants.
 The same clustering method was again used on all variants with a less
@@ -547,5 +502,25 @@ protein network can be seen (about double in size compared to only very
 rare variants). Gene candidates with variants of unknown significance
 are coloured in red and, anecdotally, the colouring thereafter becomes
 lighter (orange to yellow) based on the likelihood of candidates being
-identified by manual interpretation of unknown candidates. ]{}
+identified by manual interpretation of unknown candidates.
 \[fig:immune\_cluster\]
+
+<div class="table-wrapper" markdown="block">
+
+| Cluster rank	| LoF freq in cases	| LoF freq in cases per cluster | P-value	|	rank	|	(i/m)Q	|
+|---|---|---|---|---|---|
+| 22			| 0.306				|	1		| 0.023	| 1 | 0.025 |
+| 27			| 0.429 			|	1		| 0.12	| 2 | 0.05 |
+| 16 			| 0.6   			|	0.919	| 0.13 	| 3 | 0.075 |
+| 19 			| 0.281 			|	0.835 	| 0.14 	| 4 | 0.1 |
+| 25 			| 0.25] 			|	1		| 0.28 	| 5 | 0.125 |
+| 11 			| 0.357 			|	0.838	| 0.33 	| 6 | 0.15 |
+| 10 			| 0.516 			|	0.856	| 0.34 	| 7 | 0.175 |
+| 18 			| 0.474 			|	0.85	| 0.47 	| 8 | 0.2 |
+
+</div>
+
+
+## References 
+
+{% bibliography --cited %}

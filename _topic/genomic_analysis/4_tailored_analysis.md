@@ -10,10 +10,6 @@ subject: Genomic analysis
 {{ page.title }}
 ================
 
-* TOC
-{:toc}
-
-# Tailored analysis
 Routine analysis typically takes up to a week, although it is usually
 performed on a standardised pipeline that can run automatically on a
 high-performance computing platform. A large part of custom filtering
@@ -99,7 +95,7 @@ cannot perform their normal function for the pathway since 50% of the
 protein is depleted (in heterozygous cases). Haploinsufficiency can
 result in a disease that phenotypically resembles a gain-of-function
 when the responsible protein normally acts as an inhibitor for an
-inflammatory pathway [@Lawless2018acase]. This is not expected with
+inflammatory pathway {% cite Lawless2018acase %}. This is not expected with
 *NLRP7* and therefore heterozygous loss-of-function does not explain
 disease.
 
@@ -118,3 +114,7 @@ analysis may produce more follow up questions, including whether other
 probable gene candidates can be ruled out, for which the patient carries
 only the “normal” reference alleles (e.g. *CFTR* screening for cystic
 fibrosis/lung disease).
+
+## References 
+
+{% bibliography --cited %}

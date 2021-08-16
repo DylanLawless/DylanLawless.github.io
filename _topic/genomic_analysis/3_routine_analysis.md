@@ -13,7 +13,6 @@ subject: Genomic analysis
 * TOC
 {:toc}
 
-# Routine analysis {#sec:routine_analysis}
 Routine analysis can be summarised in order as raw sequence data quality
 control, read trimming, reference alignment, subsequently followed by
 the GATK best practices for SNV and indels. 
@@ -117,7 +116,7 @@ they can use their reference databases without going back and realigning
 all of their old samples again to GrCh38.
 The most popular method for aligning short read data to the reference
 human genome is "BWA-MEM" (a Burrows-Wheeler transformation aligner)
-[@Li2009Fast]. BWA-MEM was used to align sequencing data in this study
+{% cite Li2009Fast }. BWA-MEM was used to align sequencing data in this study
 to GrCh37 \[subsec:text\_alignment\] (for an example usage see page ).
 
 ## Read adaptor trimming
@@ -248,3 +247,7 @@ doing high-level tailored analysis is small but growing). There are
 usually more hurdles in determining candidate variants of unknown
 significance. An example of the command line arguments used can be found
 on page .
+
+## References 
+
+{% bibliography --cited %}
