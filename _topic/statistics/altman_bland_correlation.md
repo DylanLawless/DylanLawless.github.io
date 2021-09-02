@@ -29,7 +29,7 @@ Many researchers would assume that it is acceptable to gather repeated measureme
 They use simulated data showing five pairs of measurements of two uncorrelated variables X and Y for subjects 1, 2, 3, 4, and 5.
 Using each subject's mean values, they show correlation coefficient r=-0.67, df=3, P=0.22.
 However, when they put all 25 observations together they get r=-0.47, df=23, P=0.02.
-When the calculation is performed as if they have 25 subjects, the number of degrees of freedom for the significance test is increased incorrectly and a spurious significant difference is produce.
+When the calculation is performed as if they have 25 subjects, the number of degrees of freedom for the significance test is increased incorrectly and a spurious significant difference is produced.
 Thus demonstrating that one should not mix observations from different subjects indiscriminately, whether using correlation or the closely related regression analysis.
 
 ## Correlation within subjects, part 1
@@ -43,7 +43,7 @@ _Notes: I am replacing their terms for my notes:_
 * _X = Paco2_
 * _Y = pHi_
 
-In this note they show an example table using 8 subjects with _4-8 observations_ for X and Y:
+In this note they show an example table using 8 subjects with _4-8 observations_ for X and Y (**table I**):
 
 | Subject | Y | X |
 |:--------|:---:|:---:|
@@ -59,11 +59,12 @@ In this note they show an example table using 8 subjects with _4-8 observations_
 To look at variation within the subject we can use multiple regression.
 
 * Make one variable, X or Y, the outcome variable and the other variable and the subject the predictor variables. 
-* Subject is treated as a categorical factor using dummy variables and so has seven degrees of freedom. 
+* The subject is treated as a categorical factor using dummy variables and so has seven degrees of freedom. 
 
 * Using an analysis of variance table for the regression (table II) shows how the variability in Y can be partitioned into components due to different sources.
 	- Also known as analysis of covariance 
-	- Equivalent to fitting parallel lines through each subject's data. 
+	- Equivalent to fitting parallel lines through each subject's data (**Figure 1.**)
+	
 
 <div class="table-wrapper" markdown="block">
 
@@ -77,11 +78,11 @@ To look at variation within the subject we can use multiple regression.
 </div>
 
 
-* The residual sum of squares in table II represents the variation about regression lines. 
+* The residual sum of squares in **table II** represents the variation about regression lines. 
 * This removes the variation due to subjects (and any other nuisance variables which might be present) and express the variation in Y due to X as a proportion of what's left: 
 	- (Sum of squares for X)/(Sum of squares for X + residual sum of squares).
 * The magnitude of the correlation coefficient within subjects is the square root of this proportion. 
-	- For table II this is: $$\sqrt{ \frac{0.1153}{0.1153+0.3337} } = 0.51 $$
+	- For **table II** this is: $$\sqrt{ \frac{0.1153}{0.1153+0.3337} } = 0.51 $$
 	- The sign of the correlation coefficient is given by the sign of the regression coefficient for X.
 * Regression slope is -0.108
 * So the correlation coefficient within subjects is -0.51. 
@@ -93,6 +94,11 @@ To look at variation within the subject we can use multiple regression.
 
 Incorrectly calculating the correlation coefficient 
 by ignoring the fact that we have 47 observations on only 8 subjects, would produce -0.07, P=0.7. 
+
+<img src="{{ site.baseurl }}{% link images/altman_bland_repeated_observations.png %}" width="100%">
+**Figure 1.** Recreation of "(Y) pH against (X) PaCO2 for eight subjects, with parallel lines fitted for each subject" as used in 
+{% cite bland1995statistics %}.
+Interestingly, replotting this data shows that their figure was not fully accurate (forgivable before the days of Rstudio in 1995, and not important for this example).
 
 ## Correlation within subjects, part 2
 
@@ -189,6 +195,25 @@ There is no evidence that subjects with a high Y also have a high X.
 However, as they have already shown in part 1, 
 within the subject a rise in Y was associated with a fall in X.
 
+
+``` R
+## Code and raw data for Figure 1
+df <- data.frame (
+  Subject = c("1", "1", "1", "1", "2", "2", "2", "2", "3", "3", "3", "3", "3", "3", "3", "3", "3", "4", "4", "4", "4", "4", "5", "5", "5", "5", "5", "5", "5", "5", "6", "6", "6", "6", "6", "6", "7", "7", "7", "8", "8", "8", "8", "8", "8", "8", "8"),
+
+  Y = c(6.68, 6.53, 6.43, 6.33, 6.85, 7.06, 7.13, 7.17, 7.4, 7.42, 7.41, 7.37, 7.34, 7.35, 7.28, 7.3, 7.34, 7.36, 7.33, 7.29, 7.3, 7.35, 7.35, 7.3, 7.3, 7.37, 7.27, 7.28, 7.32, 7.32, 7.38, 7.3, 7.29, 7.33, 7.31, 7.33, 6.86, 6.94, 6.92, 7.19, 7.29, 7.21, 7.25, 7.2, 7.19, 6.77, 6.82),
+
+  X = c(3.97, 4.12, 4.09, 3.97, 5.27, 5.37, 5.41, 5.44, 5.67, 3.64, 4.32, 4.73, 4.96, 5.04, 5.22, 4.82, 5.07, 5.67, 5.1, 5.53, 4.75, 5.51, 4.28, 4.44, 4.32, 3.23, 4.46, 4.72, 4.75, 4.99, 4.78, 4.73, 5.12, 4.93, 5.03, 4.93, 6.85, 6.44, 6.52, 5.28, 4.56, 4.34, 4.32, 4.41, 3.69, 6.09, 5.58)
+)
+
+require(ggplot2)
+ggplot(df, aes(x = X, y = Y, group=Subject, color = Subject) ) +
+  geom_point() +
+  geom_smooth(aes(color = Subject), method = "lm", formula = y ~ x, , se = FALSE)
+
+# The dataset is cited by Bland & Altman 1995 as: "Boyd O, Mackay CJ, Lamb G, Bland JM, Grounds RM, Bennett ED.Comparison of clinical information gained from routine blood-gas analysis and from gastric tonometry for intramural pH.Lancet1993;341:142–6."
+
+```
 
 ## References 
 
