@@ -80,7 +80,9 @@ $$\dfrac{ 141 / \textbf{928} }{ \textbf{420} / 13 525 }$$
 which can both be rearranged to give
 $$\dfrac{ 141 \times 13 525 }{ 928 \times 420 }$$.
 
-Swapping orders in rows and columns produces the same OR $$1/4.89 = 0.204$$.
+Swapping orders for rows and columns produces the same OR.
+
+Swapping orders for either only rows or only columns produces the the reciprocal of the OR, $$1/4.89 = 0.204$$.
 
 Thus, OR can indicate the strength of the relationship.
 OR cannot be negative but is not limited in the positive direction, producing a skew distribution. 
