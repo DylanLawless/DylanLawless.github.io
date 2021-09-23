@@ -336,7 +336,17 @@ a:visited {
 table {
 	font-size: inherit;
 	font: 100%;
+	border-spacing: 0;
+	border:1px solid #CCCCCC;
 	}
+
+th{
+    border:1px solid #CCCCCC;
+}
+
+td{
+    border:1px solid #CCCCCC;
+}
 
 .site {
 	text-align: left;
