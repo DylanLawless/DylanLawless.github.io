@@ -71,7 +71,150 @@
 	</div>
 
 	<div id="post">
-Reading time 2 minutes
+<h1 id="whos-afraid-of-the-big-bad-geneticist">Who’s afraid of the big bad geneticist?</h1>
+<p>Unfinished article</p>
+
+<p>Understanding public perception of genomics is crucial for ethically establishing systems of translational medicine.
+Despite efforts towards effective altruism,
+the use and strategies of genomic intervention ought remain in the control of the public; 
+the greatest tasking lies in adequate technical education for a topics with a high barrier to entry.
+Human genomics may be one field where oversimplified summaries are not sufficient to demonstrate the grand value for human health, agriculture, and other unexpected benefits.
+I shall continue to add high-quality resources that may be useful to this post, over time.</p>
+
+<h2 id="public-perception">Public perception</h2>
+<p>In studying the “Global Public Perceptions of Genomic Data Sharing: What Shapes the Willingness to Donate DNA and Health Data?”,
+<a class="citation" href="#middleton2020global">(Middleton et al., 2020)</a>
+perform analysis of 
+peoples’ familiarity with the concepts of DNA and genomics, 
+and associations in the willingness to donate DNA and medical information. 
+Publishor url: <a href="https://www.cell.com/ajhg/fulltext/S0002-9297(20)30292-5">https://www.cell.com/ajhg/fulltext/S0002-9297(20)30292-5</a>
+and <a href="https://github.com/DylanLawless/genomics_tools/blob/master/global_genomics_docs/2020_Middleton_AMHG_Global%20Public%20Perceptions%20of%20Genomic%20Data%20Sharing-%20What%20Shapes%20the%20Willingness%20to%20Donate%20DNA%20and%20Health%20Data.pdf">link to pdf</a>.</p>
+
+<p>The analysis have been adjusted for sociodemographic factors, etc.
+Not all demographies were homogeneously familiar with genetics, but the meta-analysis showed associations between understanding and participation willingness.</p>
+
+<ul>
+  <li>
+    <p>There was evidence for between-country heterogeneity (\(I^2\) = 48% and \(I^2\) = 61% for familiarity with genetics and personal experience, respectively).</p>
+  </li>
+  <li>
+    <p>Compared to participants who were unfamiliar with genetics, 
+those who were familiar or had personal experience had greater odds of being willing to donate 
+(odds ratio [OR] = 1.85, 95% CI = 1.11-2.00; 
+OR = 2.70, 95% CI = 2.37- 3.09, respectively).</p>
+  </li>
+  <li>
+    <p>Similar results were seen when considering single groups of recipients of donated DNA and medical information, i.e. doctors, non-profit researchers, for-profit researchers.</p>
+  </li>
+  <li>
+    <p>The association between genetic exceptionalism (perception DNA is different from other medical data) and willingness to donate was OR 1.60 (95% CI = 1.47–1.75).</p>
+  </li>
+  <li>
+    <p>There was a strong association between trust in multiple actors (doctors, non-profit researchers, commercial researchers, governments, etc.) and willingness to donate DNA and medical information. The pooled OR was 3.85 (95% CI = 3.34–4.44).</p>
+  </li>
+</ul>
+
+<p>To re-illustrate the authors’ work I have downloaded the data and reproduces the characteristics plots here as follows.
+This data was used for the meta-analysis to report the ORs listed above. 
+The R code that I used for this process is included.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Data source: DOI:https://doi.org/10.1016/j.ajhg.2020.08.023</span><span class="w">
+</span><span class="c1"># Download Supplemental data (mmc3.xlsx) Table S2. Unadjusted Results for Full Dataset, Stratified by Country</span><span class="w">
+</span><span class="c1"># Convert data to tsv format.</span><span class="w">
+
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">
+  </span><span class="n">read.table</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"mmc3.tsv"</span><span class="p">,</span><span class="w">
+             </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w">
+             </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\t"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">require</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span><span class="w">
+</span><span class="n">data_l</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gather</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">cohort</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w">
+       </span><span class="n">Total</span><span class="o">:</span><span class="n">United.States</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">convert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">factor_key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+
+</span><span class="n">data_l_sep</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">separate</span><span class="p">(</span><span class="n">data_l</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w">
+                       </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\(|\)"</span><span class="p">,</span><span class="w">
+                            </span><span class="n">into</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"value"</span><span class="p">,</span><span class="w"> </span><span class="s2">"samples"</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># Get variable names for filtering</span><span class="w">
+</span><span class="n">unique</span><span class="p">(</span><span class="n">data_l_sep</span><span class="o">$</span><span class="n">Variable</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Then plotting the main figures as follows</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="c1"># Figure 1. Willingness to Donate Anonymous DNA and Medical Information to Different Recipient Groups, Stratified by Country</span><span class="w">
+</span><span class="n">df1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data_l_sep</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Willingness to donate to at least two recipient groups"</span><span class="w"> </span><span class="o">|</span><span class="w">
+           </span><span class="n">Variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Willingness to donate to non-profit researchers"</span><span class="w"> </span><span class="o">|</span><span class="w">
+           </span><span class="n">Variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Willingness to donate to for-profit researchers"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Categories</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Variable</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df1</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">cohort</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">Variable</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="o">=</span><span class="s2">"dodge"</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">),</span><span class="w">
+        </span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"bottom"</span><span class="p">,</span><span class="w"> </span><span class="n">legend.direction</span><span class="o">=</span><span class="s2">"vertical"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cohort"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">" Percentage willingness "</span><span class="p">,</span><span class="w">
+       </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="s2">"Figure 1. Willingness to Donate Anonymous DNA and\nMedical Information to Different Recipient Groups"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p><img src="/images/posts/2021-09-21-global_perception/fig1.png" width="100%"></p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Figure 2 Familiarity with Genetics (Including Familiarity Gained through Personal Experience), Stratified by Country</span><span class="w">
+</span><span class="n">df2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data_l_sep</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Familiarity with genetics"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Categories</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Personal"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Categories</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Familiar"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Categories</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Unfamiliar"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Variable</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">cohort</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">Categories</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="o">=</span><span class="s2">"dodge"</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">),</span><span class="w">
+        </span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"bottom"</span><span class="p">,</span><span class="w"> </span><span class="n">legend.direction</span><span class="o">=</span><span class="s2">"vertical"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cohort"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">" Percentage"</span><span class="p">,</span><span class="w">
+       </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="s2">"Figure 2 Familiarity with Genetics \nIncluding Familiarity Gained through Personal Experience"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div></div>
+<p><img src="/images/posts/2021-09-21-global_perception/fig2.png" width="100%"></p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Figure 3 Perception of DNA as Being Different from Other Medical Information (Genetic Exceptionalism) versus DNA as Being the Same (or Unsure), Stratified by Country</span><span class="w">
+</span><span class="n">df3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data_l_sep</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Perception of DNA being different to other medical information versus DNA being the same"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Categories</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Same/Unsure"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Categories</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Different"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Variable</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df3</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">cohort</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">Categories</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="o">=</span><span class="s2">"dodge"</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">),</span><span class="w">
+        </span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"bottom"</span><span class="p">,</span><span class="w"> </span><span class="n">legend.direction</span><span class="o">=</span><span class="s2">"horizontal"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cohort"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">" Percentage"</span><span class="p">,</span><span class="w">
+       </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="s2">"Figure 3 Perception of DNA as Being Different from\nOther Medical Information (Genetic Exceptionalism)\nversus DNA as Being the Same (or Unsure)"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div></div>
+<p><img src="/images/posts/2021-09-21-global_perception/fig3.png" width="100%"></p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Figure 4 Trust in Donating DNA and Medical Information to More than One User (Including Doctor, Researcher, Company, Government, etc.), Stratified by Country</span><span class="w">
+</span><span class="n">df4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data_l_sep</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">Variable</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Trust in donating DNA and medical information to more than one user"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">Variable</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df4</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">cohort</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">Categories</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s2">"identity"</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="o">=</span><span class="s2">"dodge"</span><span class="p">)</span><span class="o">+</span><span class="w">
+  </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">45</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">),</span><span class="w">
+        </span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"bottom"</span><span class="p">,</span><span class="w"> </span><span class="n">legend.direction</span><span class="o">=</span><span class="s2">"horizontal"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">labs</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Cohort"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">" Percentage"</span><span class="p">,</span><span class="w">
+       </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="s2">"Figure 4 Trust in Donating DNA and Medical Information to \nMore than One User (incl. Doctor, Researcher, Government, etc.)"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<p><img src="/images/posts/2021-09-21-global_perception/fig4.png" width="100%"></p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="middleton2020global">Middleton, A., Milne, R., Almarri, M. A., Anwer, S., Atutornu, J., Baranova, E. E., Bevan, P., Cerezo, M., Cong, Y., Critchley, C., &amp; others. (2020). Global public perceptions of genomic data sharing: what shapes the willingness to donate DNA and health data? <i>The American Journal of Human Genetics</i>, <i>107</i>(4), 743–752.</span></li></ol>
+
 <h1 id="whos-afraid-of-the-big-bad-geneticist">Who’s afraid of the big bad geneticist?</h1>
 <p>Unfinished article</p>
 

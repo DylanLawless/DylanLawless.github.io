@@ -71,12 +71,13 @@ To look at variation within the subject we can use multiple regression.
 | Source of variation | Degrees of freedom | Sum of squares | Mean square | Variance ratio (F) | Probability |
 |:--------------------|-------------------:|---------------:|------------:|-------------------:|------------:|
 | Subjects | 7 | 2.9661 | 0.4237 | 48.3 | $$<$$0.0001 |
-| PaCO2 | 1 | 0.1153 | 0.1153 | 13.1 | 0.0008 |
+| X | 1 | 0.1153 | 0.1153 | 13.1 | 0.0008 |
 | Residual | 38 | 0.3337 | 0.0088 |  | |
 | Total | 46 | 3.3139 | 0.0720 |  | |
 
 </div>
 
+Table II. Analysis of variance for the data in table I (as shown in Altman & Bland). At the end of this page, this table is reproduced based on the original data and new R code, as shown. (Note that there is a slight varition between the published version and my replicated version of table II and Figure 1 below; probably due to a minor data entry error by the publisher or authors).
 
 * The residual sum of squares in **table II** represents the variation about regression lines. 
 * This removes the variation due to subjects (and any other nuisance variables which might be present) and express the variation in Y due to X as a proportion of what's left: 
@@ -197,7 +198,7 @@ within the subject a rise in Y was associated with a fall in X.
 
 
 ``` R
-## Code and raw data for Figure 1
+## Code and raw data for Table I, Analysis of variance table II, and Figure 1
 df <- data.frame (
   Subject = c("1", "1", "1", "1", "2", "2", "2", "2", "3", "3", "3", "3", "3", "3", "3", "3", "3", "4", "4", "4", "4", "4", "5", "5", "5", "5", "5", "5", "5", "5", "6", "6", "6", "6", "6", "6", "7", "7", "7", "8", "8", "8", "8", "8", "8", "8", "8"),
 
@@ -205,6 +206,34 @@ df <- data.frame (
 
   X = c(3.97, 4.12, 4.09, 3.97, 5.27, 5.37, 5.41, 5.44, 5.67, 3.64, 4.32, 4.73, 4.96, 5.04, 5.22, 4.82, 5.07, 5.67, 5.1, 5.53, 4.75, 5.51, 4.28, 4.44, 4.32, 3.23, 4.46, 4.72, 4.75, 4.99, 4.78, 4.73, 5.12, 4.93, 5.03, 4.93, 6.85, 6.44, 6.52, 5.28, 4.56, 4.34, 4.32, 4.41, 3.69, 6.09, 5.58)
 )
+
+# Run the Analysis of Variance with mutiple variable
+name=aov(Y ~ Subject + X, data = df) #runs the ANOVA test
+ls(name) #lists the items stored by the test.
+summary(name) #give the basic ANOVA output.
+```
+
+<div class="table-wrapper" markdown="block">
+
+|                  | Degrees of freedom | Sum of squares | Mean Square | Variance ratio (F) | Probability |
+|------------|-----|-----------|------------|-----------|---------|
+| df$Subject | 7 | 2.8648 | 0.4093 | 46.60  | < 2e-16 |
+| df$X  | 1 | 0.1153 | 0.1153 | 13.13 | 0.000847 |
+| Residuals | 38 | 0.3337 | 0.0088 |     |    |
+
+</div>
+
+Replicated version of Table II. Analysis of variance for the data in table I.
+Default R output headings modified:
+Degrees of freedom (Df),
+Sum of squares (Sum Sq),
+Mean square (Mean Sq),
+Variance ratio F (F value),
+Probability (Pr(>F)).
+(Repeated note: there is a slight varition between the published version and my replicated version of table II and Figure 1; probably due to a minor data entry error by the publisher or authors).
+
+``` R
+# code used to produce Figure 1. 
 
 require(ggplot2)
 ggplot(df, aes(x = X, y = Y, group=Subject, color = Subject) ) +

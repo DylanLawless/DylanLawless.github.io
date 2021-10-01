@@ -71,7 +71,126 @@
 	</div>
 
 	<div id="post">
-Reading time 2 minutes
+<h1 id="easy-manuscript">Easy manuscript</h1>
+
+<p class="meta">22 July 2021</p>
+<h2 id="introduction">Introduction</h2>
+<p>Academic writing can be faster using <em>.md</em> instead of <em>.tex</em>.
+Here is an example of how I write an academic paper.
+I use four main files (and a directory of images if required).</p>
+<ul>
+  <li>references.bib</li>
+  <li>pre-print.md</li>
+  <li>pre-print.Rmd</li>
+  <li>build.sh</li>
+</ul>
+
+<h2 id="referencesbib">references.bib</h2>
+<p>These are kept as normal in “references.bib”.
+I keep a cloud “master_refereces.bib”, from which I then pull the project references into a local “references.bib”.</p>
+
+<h2 id="pre-printmd">pre-print.md</h2>
+<p>This is the main content.
+There is no title since this will come in the R markdown Rscript (pre-print.Rmd).
+Heading 1s can use “#”. 
+For citations I use “@citekey”
+You can also use “\cite{key}” if you think you might convert to tex format later, e.g. you know your document will require complex formatting once the content is written.
+However, LaTeX math notation can be used with “$$”. 
+For example</p>
+
+<p>\(\frac{ \sum{ m_i \bar{x}_i } }{ \sum{ m_i } }\).</p>
+
+<p>In-line math works with single “$”, for example \(f(k) = {n \choose k} p^{k} (1-p)^{n-k}\).
+(Although, in this webpage’s source I actually still use double “$” without a line-break to print in-line math since I use different setting on this site. I am changing the website setting soon to use single and double “$” for zero editing).</p>
+
+<p>The document “pre-print.md” looks like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Introduction </span>
+Bla bla bla
+
+<span class="c"># Methods</span>
+<span class="c">## Genome sequencing </span>
+Bla bla bla
+</code></pre></div></div>
+
+<h2 id="pre-printrmd">pre-print.Rmd</h2>
+<p>This is the Rscript file that runs to produce the output PDF.
+It contains all of the settings and the last line shown is the link to the main contents.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">---</span><span class="w">
+</span><span class="n">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Title"</span><span class="w">
+
+</span><span class="n">header</span><span class="o">-</span><span class="n">includes</span><span class="o">:</span><span class="w"> </span><span class="c1"># Allow landscape page for table</span><span class="w">
+</span><span class="o">-</span><span class="w"> </span><span class="err">\</span><span class="n">usepackage</span><span class="p">{</span><span class="n">pdflscape</span><span class="p">}</span><span class="w">
+</span><span class="o">-</span><span class="w"> </span><span class="err">\</span><span class="n">newcommand</span><span class="p">{</span><span class="err">\</span><span class="n">blandscape</span><span class="p">}{</span><span class="err">\</span><span class="n">begin</span><span class="p">{</span><span class="n">landscape</span><span class="p">}}</span><span class="w">
+</span><span class="o">-</span><span class="w"> </span><span class="err">\</span><span class="n">newcommand</span><span class="p">{</span><span class="err">\</span><span class="n">elandscape</span><span class="p">}{</span><span class="err">\</span><span class="n">end</span><span class="p">{</span><span class="n">landscape</span><span class="p">}}</span><span class="w">
+</span><span class="n">author</span><span class="o">:</span><span class="w">
+</span><span class="o">-</span><span class="w"> </span><span class="n">Dylan</span><span class="w"> </span><span class="n">Lawless</span><span class="w">
+</span><span class="n">output</span><span class="o">:</span><span class="w">
+</span><span class="c1"># PDF via xelatex</span><span class="w">
+  </span><span class="n">pdf_document</span><span class="o">:</span><span class="w">
+    </span><span class="n">latex_engine</span><span class="o">:</span><span class="w"> </span><span class="n">xelatex</span><span class="w">
+    </span><span class="c1">#citation_package: natbib</span><span class="w">
+    </span><span class="n">number_sections</span><span class="o">:</span><span class="w"> </span><span class="n">true</span><span class="w">
+    </span><span class="n">toc</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span><span class="w">
+    </span><span class="n">toc_depth</span><span class="o">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="n">link</span><span class="o">-</span><span class="n">citations</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span><span class="w">
+</span><span class="n">linkcolor</span><span class="o">:</span><span class="w"> </span><span class="n">blue</span><span class="w">
+</span><span class="n">subparagraph</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span><span class="w">
+</span><span class="n">citecolor</span><span class="o">:</span><span class="w"> </span><span class="n">blue</span><span class="w">
+</span><span class="n">urlcolor</span><span class="o">:</span><span class="w"> </span><span class="n">blue</span><span class="w">
+
+</span><span class="c1"># Output MS word if you really need it</span><span class="w">
+</span><span class="c1">#  word_document: default</span><span class="w">
+</span><span class="c1">#   bookdown::word_document2: default  # for cross-references</span><span class="w">
+
+</span><span class="c1"># Output as html</span><span class="w">
+</span><span class="c1"># output:</span><span class="w">
+</span><span class="c1">#  bookdown::html_document2:</span><span class="w">
+</span><span class="c1">#    toc: true</span><span class="w">
+</span><span class="c1">#    toc_depth: 2</span><span class="w">
+
+</span><span class="c1"># pdf, html, or word citations can use: [@key]</span><span class="w">
+</span><span class="c1"># pdf citations only can use: \cite{key}</span><span class="w">
+
+</span><span class="n">bibliography</span><span class="o">:</span><span class="w"> </span><span class="n">.</span><span class="o">/</span><span class="n">references.bib</span><span class="w">
+</span><span class="o">---</span><span class="w">
+
+</span><span class="err">``</span><span class="n">`{r child = './pre-print_v1.md'}`</span><span class="err">``</span><span class="w">
+
+</span></code></pre></div></div>
+
+<h1 id="buildsh">build.sh</h1>
+<p>The document can be built either by using R studio to knit “pre-print.Rmd” or by using a script to do the same without having to open the R studio GUI.</p>
+
+<p>The shell script “build.sh” only neeeds one line to run the build:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin.bash</span>
+
+Rscript <span class="nt">-e</span> <span class="s2">"rmarkdown::render('pre-print.Rmd')"</span>
+</code></pre></div></div>
+
+<p>This will output “pre-print.pdf”.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>While LaTeX-style is the king of academic or technical writing,
+using this simple markdown substitute covers ~90% of my needs and 99% of the content-writing process. 
+It avoids the time-consuming requirements of wring LaTeX formatting and produces almost the same result. 
+In most cases, we require only</p>
+<ul>
+  <li>section headers</li>
+  <li>plain text</li>
+  <li>italic or emph text</li>
+  <li>inserted figures</li>
+  <li>math notation</li>
+  <li>.bib citations</li>
+</ul>
+
+<p>Everything else is usually superfluous formatting that is a time-consuming distraction and often ends up being redone in the final manuscript version anyway.</p>
+
+<p>Using markdown files for nearly everything that I write (academic, personal, web publishing, zettelkasten notes, etc.) means that atomic notes can be very easily shuttled around any possible project. 
+Citations in my master_references.bib also means that I will always have them available for any project, whether it is a large project or simply small literature note that is cross-posted between projects.</p>
+
 <h1 id="easy-manuscript">Easy manuscript</h1>
 
 <p class="meta">22 July 2021</p>

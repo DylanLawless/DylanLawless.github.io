@@ -71,7 +71,117 @@
 	</div>
 
 	<div id="topic">
-Reading time 5 minutes
+<h1 id="tailored-analysis">Tailored analysis</h1>
+
+<p>Routine analysis typically takes up to a week, although it is usually
+performed on a standardised pipeline that can run automatically on a
+high-performance computing platform. A large part of custom filtering
+begins when the routine analysis steps have been completed; downstream
+analysis is adapted for each particular challenge. The discussion in
+explains some foundational steps towards a fully automatic system that
+relies only on some input features, such as clinical information. While
+many software packages exist that claim to output tailored analysis,
+these tend to either only tackle a specific niche or require lots of
+curated auxiliary input data.</p>
+
+<p>The output of non-routine analysis (outlined in this chapter) sometimes
+takes only five minutes to interpret a cause of disease. In other cases,
+data that has been sequenced years previously has not yet relented an
+explanation for phenotypes that almost certainly should be explained by
+coding variants present within the sequence data. For example, for a
+dozen patients who share a similar and severe phenotype, it is often
+likely that the same gene or related genes could cause their disease.
+Unrelated patients with a rare dominant disease are not to all carry the
+same disease-causing variant; they may have different variants in shared
+gene, or variants among different genes which all contribute to a shared
+pathway that would result in the same end-point phenotype.</p>
+
+<p><strong>Shared pathways in candidate genes.</strong> Output of a STRING database
+query for known and predicted protein-protein interactions. These
+interactions include physical and functional associations. (STRING is an
+SIB-run service of the ELIXIR core data open resources for publicly
+funded research).</p>
+
+<p><strong>FigureLabel</strong>
+string_normal_image
+<img src="/images/bioinfo/string_normal_image.png" width="40%"></p>
+
+<p><em>image_caption</em></p>
+
+<p>For example, in <strong>Figure [fig:string_normal_image]</strong> above we see
+that from a group of unrelated people, all of the candidate genes
+carrying functional variants are joined by their shared functional
+interactions. For an autoinflammatory phenotype, genes like <em>NLRP3</em>,
+<em>NOD2</em>, <em>TNFAIP3</em>, <em>MyD88</em>, <em>IKBKB</em>, <em>FASLG</em>, or <em>TMEM173</em> might all
+have different functions but damaging mutations in any of these could
+result in phenotypes that, on the surface, appear related.</p>
+
+<p>Another circumstance might be seen in a small cohort of patients with a
+shared autoinflammatory phenotype. For example, the gene <em>NLRP7</em> has
+relatively few publications examining it’s role in autoinflammatory
+disease. One would not consider this a strong candidate gene if faced
+with a variant of unknown significance in this gene from a single
+patient. However, three or four very rare or novel mutations in
+unrelated patients should be given consideration as producing an
+autoinflammatory disease. Single case, or small cohorts lack the power
+to measure significant associations. Therefore in the situation proposed
+here, manual interpretation is required (biased as it may be).</p>
+
+<p><em>NLRP7</em> variants not reported as producing disease, like <em>MEFV</em>, or
+<em>TNFAIP3</em>. However, we must consider that genes plausibly responsible
+for causing disease in a dominant manner and that are highly conserved
+are generally under purifying selective pressure. Damaging mutations may
+be not be compatible with viability and therefore we never see cases of
+disease. Variants which are damaging to protein function but that do not
+completely destroy all of the normal structure may produce a phenotype
+that is pathogenic but viable with modern medical intervention.</p>
+
+<p>In the example of NLRP7, the protein is known to Inhibit
+CASP1/caspase-1-dependent IL-1$\beta$ secretion. The functional domains
+of this protein are shared in other pro-inflammatory processes. Pyrin,
+NACHT, and LRR, domain variants are all studied for autoinflammatory
+diseases. The related gene, <em>NLRP3</em>, is probably the most widely
+recognised gene where damaging variants in these functional domains
+produce severe immune disorders. In cases where we have protein
+structures, we can also model the effect.</p>
+
+<p>In our example, <em>NLRP7</em> variants have been reported as the genetic
+determinant of a condition that causes early neonatal death and ectopic
+pregnancy. Many of the reported variants are stop mutations that will
+either produce a truncated protein or prevent expression of the allele
+altogether through nonsense-mediated decay. It is difficult predict the
+mechanism of disease in cases like this where the two outcomes have
+opposing paths. That is to say, a truncated protein may have an active
+functional domain which can no longer be inhibited since the C-terminal
+domains are missing, while haploinsufficiency would mean that cells
+cannot perform their normal function for the pathway since 50% of the
+protein is depleted (in heterozygous cases). Haploinsufficiency can
+result in a disease that phenotypically resembles a gain-of-function
+when the responsible protein normally acts as an inhibitor for an
+inflammatory pathway <a class="citation" href="#Lawless2018acase">(Lawless et al., 2018)</a>. This is not expected with
+<em>NLRP7</em> and therefore heterozygous loss-of-function does not explain
+disease.</p>
+
+<p>For a candidate gene like this, we have some plausible evidence but
+cannot really progress any further without new functional studies. The
+first step involved confirmatory Sanger sequencing for all patients
+identified through exome sequencing. Next, any close relatives that are
+available might be also sequenced for the same variants. If the
+mutations are disease-causing then other carriers would also be expected
+to have some shared phenotype features. The possibilities in functional
+experiments vary widely and are highly dependent on the candidate genes.
+The procedure outlined in this hypothetical example is generally
+applicable in for the majority of single-case studies and illustrates
+the importance of tailored analysis. The initial findings of genomic
+analysis may produce more follow up questions, including whether other
+probable gene candidates can be ruled out, for which the patient carries
+only the “normal” reference alleles (e.g. <em>CFTR</em> screening for cystic
+fibrosis/lung disease).</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="Lawless2018acase">Lawless, D., Pathak, S., Scambler, T. E., Ouboussad, L., Anwar, R., &amp; Savic, S. (2018). A Case of Adult-Onset Still’s Disease Caused by a Novel Splicing Mutation in TNFAIP3 Successfully Treated With Tocilizumab. <i>Frontiers in Immunology</i>, <i>9</i>. https://doi.org/10.3389/fimmu.2018.01527</span></li></ol>
+
 <h1 id="tailored-analysis">Tailored analysis</h1>
 
 <p>Routine analysis typically takes up to a week, although it is usually

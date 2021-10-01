@@ -71,7 +71,151 @@
 	</div>
 
 	<div id="topic">
-Reading time 4 minutes
+<h1 id="receiver-operating-characteristic-plots">Receiver operating characteristic plots</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#receiver-operating-characteristic-plots-1" id="markdown-toc-receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</a></li>
+  <li><a href="#example-roc-cuvre" id="markdown-toc-example-roc-cuvre">Example ROC cuvre</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<h2 id="receiver-operating-characteristic-plots-1">Receiver operating characteristic plots</h2>
+<p>This article covers the fifth paper in the series of statistics notes <a class="citation" href="#altman1994diagnostic">(Altman &amp; Bland, 1994)</a>
+(<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>): 5. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/309/6948/188"> Diagnostic tests 3: receiver operating characteristic plots.</a> <b>309</b>, 188,
+and concerns <em>quantitative diagnostic tests</em>.
+<sup id="a1"><a href="#f1">1</a></sup>
+Diagnosis based on yes or no answers are covered in another note by Bland and Altman.
+The same statistical methods for quantifying yes or no answers can be applied here when there is a cut off threshold for defining <em>normal</em> and <em>abnormal</em> test results.
+For simplicity, I will call someone who is diagnosed by a clinical test a “<em>case</em>” and someone who is not diagnosed by a test/healthy/normal, a “<em>control</em>”.
+These terms are incorrect but much simpler to repeatedly read than “people who are diagnosed by a test”.</p>
+
+<p>The receiver operating characteristic (ROC) plot can be used measure how test results compare between cases and controls.
+Altman and Bland mention that this method was developed in the 1950s for evaluating radar signal detection.
+An aside for history buffs, from <a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">wikipedia</a>:</p>
+<blockquote>
+  <p>The ROC curve was first used during World War II for the analysis of radar signals before it was employed in signal detection theory.[56] Following the attack on Pearl Harbor in 1941, the United States army began new research to increase the prediction of correctly detected Japanese aircraft from their radar signals. For these purposes they measured the ability of a radar receiver operator to make these important distinctions, which was called the Receiver Operating Characteristic.[57]</p>
+</blockquote>
+
+<p><img src="/images/receiver_operating_characteristic_plots.png" width="100%"></p>
+
+<p>The example shown in Figure 1 uses graft versus host disease, with an index measurement whose definition is not important.
+The <em>Yes</em> indicate <em>cases</em> and <em>No</em> indicate <em>controls</em> in our terminology, respectively. 
+The usefulness of the test for predicting graft versus host disease will clearly relate to the degree of non-overlap between the two distributions.
+A ROC plot is obtained by calculating the</p>
+<ul>
+  <li>sensitivity and</li>
+  <li>specificity 
+of every observed data value and plotting, as in Figure 2,</li>
+  <li>Y axis = sensitivity,</li>
+  <li>X axis = 1 - specificity.</li>
+</ul>
+
+<p>A test that perfectly defines cases and cotrols would have a curve that aligns withe Y axis and top.
+A test that does not work would produce a straight line matching the centerline.
+In practice, overlaps always occur such that the curve usually lies somewhere between, as shown in Figure 2.</p>
+
+<p>The performance of the test (diagnostic accuracy) is reported as the <em>area under the ROC curve</em>.
+The area is equal to the probability that a random case has a higher measurement than that of a control.
+This probability is .5 for a test that does not work (e.g. coin-toss; straight line curve).
+This discriminatory power assessment is important for a clinical test if it is to be sufficient to discriminate cases and controls.</p>
+
+<p>At this stage we have the global assessment of discriminatory power showing that a test can divide cases and control.
+A cut off for clinical use also requires a local assessment. 
+As per Altman and Bland; the simple approach of minimising “errors” (equivalent to maximising the sum of the sensitivity and specificity) is not necessarily best. 
+We must consider any type of costs of</p>
+<ul>
+  <li>false negatives</li>
+  <li>false positives</li>
+  <li>and prevalence of disease in the test cohort.</li>
+</ul>
+
+<p>In their example:</p>
+<ul>
+  <li>cancer in general population
+    <ul>
+      <li>most cases should be detected (high sensitivity)</li>
+      <li>many false positives (low specificity), who could then be eliminated by a further test.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For comparing two or more measures, the ROC plot is useful. 
+The curve wholly above another is clearly the better test. 
+Altman and Bland cite a review for methods for comparing the areas under two curves for both paired and unpaired data.</p>
+
+<p>In my (reccomended) pocket-sized copy of 
+<em>Oxford handbook of medical statistics</em>
+<a class="citation" href="#peacock2011oxford">(Peacock &amp; Peacock, 2011)</a>,
+a clinical example uses a chosen cut-off of sensitivity \(&gt;81\%\) and specificity \(28\%\). 
+The area under ROC curve was .65, thus a moderately high predictive power. 
+The accuracy (proportion of all correctly identified cases) was 
+\(\frac{ 30 + 42 }{ 185 } = 39\%\)</p>
+
+<div class="table-wrapper">
+
+\[\frac{\text{No. cases above cutoff} + \text{No. controls below cutoff }}{ \text{cohort total} }\]
+
+</div>
+
+<h2 id="example-roc-cuvre">Example ROC cuvre</h2>
+<p>To implement this method, I include here an example in R code.</p>
+
+<p><img src="/images/receiver_operating_characteristic_curve.png" width="100%"></p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Modified example from https://stackoverflow.com/questions/31138751/roc-curve-from-training-data-in-caret</span><span class="w">
+
+</span><span class="n">library</span><span class="p">(</span><span class="n">caret</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">mlbench</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Dataset</span><span class="w">
+</span><span class="n">data</span><span class="p">(</span><span class="n">Sonar</span><span class="p">)</span><span class="w">
+</span><span class="c1"># An example dataset for classification of sonar signals using a neural network. The task is to train a network to discriminate between sonar signals bounced off a metal cylinder and those bounced off a roughly cylindrical rock. Each pattern is a set of 60 numbers in the range 0.0 to 1.0. Each number represents the energy within a particular frequency band, integrated over a certain period of time. Labels: "R" if the object is a rock and "M" if it is a mine (metal cylinder). </span><span class="w">
+
+</span><span class="n">ctrl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">trainControl</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">"cv"</span><span class="p">,</span><span class="w"> 
+                     </span><span class="n">summaryFunction</span><span class="o">=</span><span class="n">twoClassSummary</span><span class="p">,</span><span class="w"> 
+                     </span><span class="n">classProbs</span><span class="o">=</span><span class="nb">T</span><span class="p">,</span><span class="w">
+                     </span><span class="n">savePredictions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">T</span><span class="p">)</span><span class="w">
+
+</span><span class="n">rfFit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">train</span><span class="p">(</span><span class="n">Class</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">Sonar</span><span class="p">,</span><span class="w"> 
+               </span><span class="n">method</span><span class="o">=</span><span class="s2">"rf"</span><span class="p">,</span><span class="w"> </span><span class="n">preProc</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"center"</span><span class="p">,</span><span class="w"> </span><span class="s2">"scale"</span><span class="p">),</span><span class="w"> 
+               </span><span class="n">trControl</span><span class="o">=</span><span class="n">ctrl</span><span class="p">)</span><span class="w">
+
+</span><span class="n">library</span><span class="p">(</span><span class="n">pROC</span><span class="p">)</span><span class="w">
+</span><span class="c1"># Select a parameter setting</span><span class="w">
+</span><span class="n">selectedIndices</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rfFit</span><span class="o">$</span><span class="n">pred</span><span class="o">$</span><span class="n">mtry</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="w">
+
+</span><span class="c1"># Plot:</span><span class="w">
+</span><span class="n">plot.roc</span><span class="p">(</span><span class="n">rfFit</span><span class="o">$</span><span class="n">pred</span><span class="o">$</span><span class="n">obs</span><span class="p">[</span><span class="n">selectedIndices</span><span class="p">],</span><span class="w">
+         </span><span class="n">rfFit</span><span class="o">$</span><span class="n">pred</span><span class="o">$</span><span class="n">M</span><span class="p">[</span><span class="n">selectedIndices</span><span class="p">],</span><span class="w"> 
+         </span><span class="n">print.auc</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w">  
+         </span><span class="n">print.thres</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="c1">#thresh .557 shown</span><span class="w">
+         </span><span class="n">legacy.axes</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># With ggplot</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">plotROC</span><span class="p">)</span><span class="w">
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">rfFit</span><span class="o">$</span><span class="n">pred</span><span class="p">[</span><span class="n">selectedIndices</span><span class="p">,</span><span class="w"> </span><span class="p">],</span><span class="w"> 
+       </span><span class="n">aes</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="p">(</span><span class="w"> </span><span class="n">ifelse</span><span class="p">(</span><span class="n">rfFit</span><span class="o">$</span><span class="n">pred</span><span class="o">$</span><span class="n">obs</span><span class="p">[</span><span class="n">selectedIndices</span><span class="p">]</span><span class="o">==</span><span class="s2">"M"</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">),</span><span class="w">
+           </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">M</span><span class="w"> 
+           </span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">geom_roc</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">-0.4</span><span class="p">,</span><span class="w"> </span><span class="n">vjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">coord_equal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">style_roc</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">annotate</span><span class="p">(</span><span class="s2">"text"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="m">0.75</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">0.25</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="n">paste</span><span class="p">(</span><span class="s2">"AUC ="</span><span class="p">,</span><span class="w"> </span><span class="nf">round</span><span class="p">((</span><span class="n">calc_auc</span><span class="p">(</span><span class="n">g</span><span class="p">))</span><span class="o">$</span><span class="n">AUC</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">)))</span><span class="w">
+
+</span></code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography">
+<li><span id="altman1994diagnostic">Altman, D. G., &amp; Bland, J. M. (1994). Diagnostic tests 3: receiver operating characteristic plots. <i>BMJ: British Medical Journal</i>, <i>309</i>(6948), 188.</span></li>
+<li><span id="peacock2011oxford">Peacock, J., &amp; Peacock, P. (2011). <i>Oxford handbook of medical statistics</i>. Oxford university press.</span></li>
+</ol>
+
+<p><strong>Footnote</strong>
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+<a href="#a1">↩</a></p>
+
 <h1 id="receiver-operating-characteristic-plots">Receiver operating characteristic plots</h1>
 
 <ul id="markdown-toc">
