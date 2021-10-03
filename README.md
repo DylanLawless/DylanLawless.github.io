@@ -169,8 +169,10 @@ Host sarscov2voc.github.com
 Then clone your repo using the custom Host instead of the default provided by github when you use button "clone/ssh/copy".
 
 ``` bash
-# Clone using the correct Host as per config
-git clone git@dylanlawless.github.com:DylanLawless/DylanLawless.github.io.git
+# Clone using the correct Host as per config.
+# As shown at the end of this page, you may need to clone with submodules.
+# You can do by add the "--recursive" flag. 
+git clone --recursive git@dylanlawless.github.com:DylanLawless/DylanLawless.github.io.git
 
 # Set the local user here (instead of global, i.e. /Users/user/.gitconfig)
 cd "the clone repo dir"
@@ -187,16 +189,47 @@ git config user.name sars-cov-2-voc
 
 You should now be able to pull and push from that repo without the ["incorrect user" problems](https://stackoverflow.com/questions/4665337/git-pushing-to-remote-github-repository-as-wrong-user).
 
+### Multiple branches
+Since the website is built and deploy with source and master, you will need both and switch to source for building.
+
+`git pull --all`
+
+`git branch -a`
+
+`git checkout source`
+
 ## Submodules
 I have a fork of jekyll-reading-time as a submodule in plugins.
 If you did not have this submodule added in \_plugins (with reading_time_filter.rb), then the  options set in \_layouts/topics.html and post.html would cause content to be printed 2 times, with a formatting error due to the jekyll-reading-time command "{{ content | reading_time }}".
 To add a submodule, e.g. git within the git such as in bundles, use
 
 git submodule add https://github.com/...
-To clone use
 
-git clone --recursive git://github.com/foo/bar.git
+### Clone submodule default
+To clone use a submodule:
+
+`git clone --recursive git://github.com/foo/bar.git`
 or if you forgot or cant use recursive, do
 
-git submodule init
-git submodule update
+`git submodule init` and  `git submodule update`
+
+### Clone submodule with custom host and user SSH
+And if you are using the ssh method shown above you will need to define the path such that git can make the correct request to match your .ssh/config:
+
+To be able to clone the submodule (e.g. \_plugins/jekyll-reading-time), 
+modify the .gitmodules url
+
+From:	`url = git@github.com:DylanLawless/jekyll-reading-time.git`
+
+To:		`url = git@dylanlawless.github.com:DylanLawless/jekyll-reading-time.git`
+
+Set git to use the updated .gitmodules:
+
+`git submodule sync`
+
+Then update the submodules
+
+`git submodule init`
+
+`git submodule update`
+
