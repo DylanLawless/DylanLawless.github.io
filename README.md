@@ -205,7 +205,7 @@ To add a submodule, e.g. git within the git such as in bundles, use
 
 git submodule add https://github.com/...
 
-### Default clone submodule
+### Clone submodule default
 To clone use a submodule:
 
 `git clone --recursive git://github.com/foo/bar.git`
@@ -213,7 +213,7 @@ or if you forgot or cant use recursive, do
 
 `git submodule init` and  `git submodule update`
 
-## Update with custom host and user SSH
+### Clone submodule with custom host and user SSH
 And if you are using the ssh method shown above you will need to define the path such that git can make the correct request to match your .ssh/config:
 
 To be able to clone the submodule (e.g. \_plugins/jekyll-reading-time), 
