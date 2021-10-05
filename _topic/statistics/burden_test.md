@@ -23,6 +23,15 @@ Running code on test data: Remake the gVCF as BP_RESOLUTION to list a site for e
 Filter: If variants are MAF >1.1 in gnomAD then run a filter to remove variants that are not sequenced in controls.
 Justification: If we ran that filter for every singleton it would remove the very rare variants that would have been a true positive if it had been sequenced in the controls. 
 
+Methods for variant collapse:
+<https://www.nature.com/articles/s41576-019-0177-4/>
+{% cite Povysil2019rare %}
+One of the most important starting positions in our analysis is determined on variant collapse.
+Each project and biological system has unique features that dertermine how variants should be grouped for joint analysis.
+Some more context is available in this blogpost
+<https://lawlessgenomics.com/2021/05/28/pathway_analysis.html>.
+
+
 ## Main papers in order
 
 * Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data

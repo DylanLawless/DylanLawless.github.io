@@ -196,6 +196,14 @@ I am publishing this live as I work since there are several heavy papers to get 
 Filter: If variants are MAF &gt;1.1 in gnomAD then run a filter to remove variants that are not sequenced in controls.
 Justification: If we ran that filter for every singleton it would remove the very rare variants that would have been a true positive if it had been sequenced in the controls.</p>
 
+<p>Methods for variant collapse:
+<a href="https://www.nature.com/articles/s41576-019-0177-4/">https://www.nature.com/articles/s41576-019-0177-4/</a>
+<a class="citation" href="#Povysil2019rare">(Povysil et al., 2019)</a>
+One of the most important starting positions in our analysis is determined on variant collapse.
+Each project and biological system has unique features that dertermine how variants should be grouped for joint analysis.
+Some more context is available in this blogpost
+<a href="https://lawlessgenomics.com/2021/05/28/pathway_analysis.html">https://lawlessgenomics.com/2021/05/28/pathway_analysis.html</a>.</p>
+
 <h2 id="main-papers-in-order">Main papers in order</h2>
 
 <ul>
@@ -1432,6 +1440,7 @@ Then we will find the real minimum variant count required to pass significance:<
 <h2 id="references">References</h2>
 
 <ol class="bibliography">
+<li><span id="Povysil2019rare">Povysil, G., Petrovski, S., Hostyk, J., Aggarwal, V., Allen, A. S., &amp; Goldstein, D. B. (2019). Rare-variant collapsing analyses for complex traits: guidelines and applications. <i>Nature Reviews Genetics</i>, <i>20</i>(12), 747–759. https://doi.org/10.1038/s41576-019-0177-4</span></li>
 <li><span id="li2008methods">Li, B., &amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. <i>The American Journal of Human Genetics</i>, <i>83</i>(3), 311–321.</span></li>
 <li><span id="morris2010evaluation">Morris, A. P., &amp; Zeggini, E. (2010). An evaluation of statistical approaches to rare variant analysis in genetic association studies. <i>Genetic Epidemiology</i>, <i>34</i>(2), 188–193.</span></li>
 <li><span id="price2010pooled">Price, A. L., Kryukov, G. V., de Bakker, P. I. W., Purcell, S. M., Staples, J., Wei, L.-J., &amp; Sunyaev, S. R. (2010). Pooled association tests for rare variants in exon-resequencing studies. <i>The American Journal of Human Genetics</i>, <i>86</i>(6), 832–838.</span></li>
