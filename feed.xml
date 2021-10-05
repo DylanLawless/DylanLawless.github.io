@@ -1575,6 +1575,14 @@ I am publishing this live as I work since there are several heavy papers to get 
 Filter: If variants are MAF &amp;gt;1.1 in gnomAD then run a filter to remove variants that are not sequenced in controls.
 Justification: If we ran that filter for every singleton it would remove the very rare variants that would have been a true positive if it had been sequenced in the controls.&lt;/p&gt;
 
+&lt;p&gt;Methods for variant collapse:
+&lt;a href=&quot;https://www.nature.com/articles/s41576-019-0177-4/&quot;&gt;https://www.nature.com/articles/s41576-019-0177-4/&lt;/a&gt;
+&lt;a class=&quot;citation&quot; href=&quot;#Povysil2019rare&quot;&gt;(Povysil et al., 2019)&lt;/a&gt;
+One of the most important starting positions in our analysis is determined on variant collapse.
+Each project and biological system has unique features that dertermine how variants should be grouped for joint analysis.
+Some more context is available in this blogpost
+&lt;a href=&quot;https://lawlessgenomics.com/2021/05/28/pathway_analysis.html&quot;&gt;https://lawlessgenomics.com/2021/05/28/pathway_analysis.html&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h2 id=&quot;main-papers-in-order&quot;&gt;Main papers in order&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -2806,7 +2814,8 @@ Then we will find the real minimum variant count required to pass significance:&
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
-&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;li2008methods&quot;&gt;Li, B., &amp;amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;, &lt;i&gt;83&lt;/i&gt;(3), 311–321.&lt;/span&gt;&lt;/li&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;Povysil2019rare&quot;&gt;Povysil, G., Petrovski, S., Hostyk, J., Aggarwal, V., Allen, A. S., &amp;amp; Goldstein, D. B. (2019). Rare-variant collapsing analyses for complex traits: guidelines and applications. &lt;i&gt;Nature Reviews Genetics&lt;/i&gt;, &lt;i&gt;20&lt;/i&gt;(12), 747–759. https://doi.org/10.1038/s41576-019-0177-4&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;li2008methods&quot;&gt;Li, B., &amp;amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;, &lt;i&gt;83&lt;/i&gt;(3), 311–321.&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;morris2010evaluation&quot;&gt;Morris, A. P., &amp;amp; Zeggini, E. (2010). An evaluation of statistical approaches to rare variant analysis in genetic association studies. &lt;i&gt;Genetic Epidemiology&lt;/i&gt;, &lt;i&gt;34&lt;/i&gt;(2), 188–193.&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;price2010pooled&quot;&gt;Price, A. L., Kryukov, G. V., de Bakker, P. I. W., Purcell, S. M., Staples, J., Wei, L.-J., &amp;amp; Sunyaev, S. R. (2010). Pooled association tests for rare variants in exon-resequencing studies. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;, &lt;i&gt;86&lt;/i&gt;(6), 832–838.&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;Lee2012Optimal&quot;&gt;Lee, S., Wu, M. C., &amp;amp; Lin, X. (2012). Optimal tests for rare variant effects in sequencing association studies. &lt;i&gt;Biostatistics&lt;/i&gt;, &lt;i&gt;13&lt;/i&gt;(4), 762–775. https://doi.org/10.1093/biostatistics/kxs014&lt;/span&gt;&lt;/li&gt;
