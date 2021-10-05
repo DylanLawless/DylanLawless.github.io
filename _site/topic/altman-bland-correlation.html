@@ -426,6 +426,14 @@ within the subject a rise in Y was associated with a fall in X.</p>
 </span><span class="n">name</span><span class="o">=</span><span class="n">aov</span><span class="p">(</span><span class="n">Y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Subject</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="p">)</span><span class="w"> </span><span class="c1">#runs the ANOVA test</span><span class="w">
 </span><span class="n">ls</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="c1">#lists the items stored by the test.</span><span class="w">
 </span><span class="n">summary</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="c1">#give the basic ANOVA output.</span><span class="w">
+
+</span><span class="c1"># Output the column totals to match Altman &amp; Bland table</span><span class="w">
+</span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="w"> </span><span class="n">summary</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">))</span><span class="w">
+
+</span><span class="nf">sum</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,])</span><span class="w"> </span><span class="c1"># Total Degrees of freedom</span><span class="w">
+</span><span class="nf">sum</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="m">4</span><span class="o">:</span><span class="m">6</span><span class="p">,])</span><span class="w"> </span><span class="c1"># Total Sum Sq</span><span class="w">
+</span><span class="nf">sum</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="m">7</span><span class="o">:</span><span class="m">9</span><span class="p">,])</span><span class="w"> </span><span class="c1"># Total Mean Sq</span><span class="w">
+
 </span></code></pre></div></div>
 
 <div class="table-wrapper">

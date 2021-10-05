@@ -211,6 +211,14 @@ df <- data.frame (
 name=aov(Y ~ Subject + X, data = df) #runs the ANOVA test
 ls(name) #lists the items stored by the test.
 summary(name) #give the basic ANOVA output.
+
+# Output the column totals to match Altman & Bland table
+df <- as.data.frame(unlist( summary(name) ))
+
+sum(df[1:3,]) # Total Degrees of freedom
+sum(df[4:6,]) # Total Sum Sq
+sum(df[7:9,]) # Total Mean Sq
+
 ```
 
 <div class="table-wrapper" markdown="block">
