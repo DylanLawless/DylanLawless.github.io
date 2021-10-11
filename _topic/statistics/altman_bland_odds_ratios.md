@@ -97,7 +97,9 @@ The standard error (SE) can be calculated for the log OR and hence a confidence 
 
 The SE of log OR is simply estimated by the square root of the sum of the reciprocals of the four frequencies. 
 For the example,
+
 <div class="table-wrapper" markdown="block">
+
 $$\text{SE(}log \text{OR)} =
 \sqrt{
 \frac{1}{141} + 
@@ -107,6 +109,7 @@ $$\text{SE(}log \text{OR)} =
 =
 0.103
 $$
+
 </div>
 
 ## Confidence interval
