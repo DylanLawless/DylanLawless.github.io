@@ -527,6 +527,61 @@ div.desc {
   }
 }
 
+
+/* Plotly live figures --------------------------- */
+
+.live_responsive {
+  padding: 6px 6px ;
+  margin: 0px 0px 0px -16px;
+  border: 2px solid #ccc;
+  float: left;
+  width: 33.33333vw;
+  /* height: SET IN HTML FOR CUSTOM PLOT */
+}
+
+.live_responsive:hover {
+  border: 2px solid #777;
+}
+
+@media only screen and (max-width: 700px) {
+  .live_responsive {
+  width: 86vw !important;
+  margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .live_responsive {
+  width: 86vw !important;
+  }
+}
+
+div.live_gallery {
+  width: 100%;
+  height: 90%;
+}
+
+div.live_gallery iframe {
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+ .live_gallery iframe {
+  min-height: 100vw !important;
+  width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+ .live_gallery iframe {
+  min-height: 100vw !important;
+  width: 100%;
+  }
+}
+
+/* ------------------------------- */
+
+
 .clearfix:after {
   content: "";
   display: table;
