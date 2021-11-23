@@ -596,3 +596,22 @@ div.full-width {
   margin-left: -45vw;
   margin-right: -50vw;
 }
+
+/* portfolio live */
+.graph-container {
+  border: 2px solid grey;
+  margin-top: 2vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align:center; 
+  float:left;
+}
+
+.graph {
+  width: 100%;
+}
+
+.graph img {
+  width: 100%;
+}
