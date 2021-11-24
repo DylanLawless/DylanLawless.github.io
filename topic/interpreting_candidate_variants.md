@@ -2,6 +2,12 @@
 Rewrite:
 https://lawlessgenomics.com/topic/genetic-mutation-websites
 
+The recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology provide the standards and guidelines for the interpretation of sequence variants
+
+ cite richards2015standards
+
+https://www.clinicalgenome.org
+
 ## Incidental findings
 When clinical genetics is performed for diagnosis of a disease, 
 some genes variants should be reported whether or not they are the cause of the disease under investigation.  
@@ -150,3 +156,27 @@ GE panel app PID list
 https://panelapp.genomicsengland.co.uk/panels/398/
 Contains more than the IUIS list, with good overlap, and evidence is quite reliable. 
 
+
+
+## Single cases versos cohort studies
+These guys, and many others have major works on so many genes that discovered to be part of the immune system - all based on single cases (or a small number of cases).
+https://pubmed.ncbi.nlm.nih.gov/?term=fischer%20alain
+https://pubmed.ncbi.nlm.nih.gov/?term=jean-laurent+casanova
+https://pubmed.ncbi.nlm.nih.gov/?term=Notarangelo+LD&cauthor_id=20042228
+
+You can discover biological mechanisms with at least 2 approaches:
+
+1. Gradual discovery by working on the same system, long term. Modifying the conditions, with vitro/vivo genetic mutation to measure the change in assays. Or using some targeted protein inhibitor to induce LoF to get the same outcome. etc. Example, Andrea's lab, or any molecular biology lab would do this.
+https://pubmed.ncbi.nlm.nih.gov/?term=ablasser+andrea
+
+2. Find people/animal who naturally have a disfunction in this system and then define the genetic cause.
+ - 2A. get a cohort of people with a common genetic cause, but the phenotype will be mild and difficult to see a strong effect (disease) (examples height, or coronary disease).
+ - 2B. get individuals with a rare or novel genetic cause, their phenotype will be strong and easier to explain a direct gene to phenotype effect (examples X-SCID, or XLA)
+
+https://en.wikipedia.org/wiki/X-linked_severe_combined_immunodeficiency
+https://en.wikipedia.org/wiki/X-linked_agammaglobulinemia
+
+
+Option 2B is how I would think about individuals. This is also how most people who require a genetic diagnosis in hospital are assessed (although usually only a small list of candidate genes may be tested based on their suspected disease).
+A nice paper that started my interest in single-case immune discovery:
+https://pubmed.ncbi.nlm.nih.gov/25311508/
