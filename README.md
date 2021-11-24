@@ -119,6 +119,7 @@ You may not reuse anything therein without my permission (although I am unlikely
 
 * \_posts/
 * \_topics/
+* pages/
 * images/
 
 All other directories and files are MIT Licensed. Feel free to use the HTML and
