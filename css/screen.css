@@ -581,7 +581,6 @@ div.live_gallery iframe {
 
 /* ------------------------------- */
 
-
 .clearfix:after {
   content: "";
   display: table;
@@ -612,6 +611,32 @@ div.full-width {
   width: 100%;
 }
 
-.graph img {
-  width: 100%;
+/* Live portfolio html is sourced in iframes */
+/* when screen sizes are small, we want to zoom out that html so that 
+ * text appears correct and proportional. */ 
+/* The graph iframe inside the graph-container is doubled in height */ 
+/* and then the html inside iframe is zoomed out 50%. */
+/* e.g. [graph-container [ (200% graph [50% iframe]) ]] */
+
+@media only screen and (max-width: 500px) {
+	.graph iframe {
+	  height: 200%;
+	}
+
+	#myiframe {
+	width: 200%;
+	overflow: scroll;
+    border: 0;
+	-ms-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+	-o-transform: scale(0.5);
+	-webkit-transform: scale(.5);
+	transform: scale(.5);
+	-ms-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	}
 }
+
