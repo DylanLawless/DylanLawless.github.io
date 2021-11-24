@@ -1,16 +1,16 @@
----
-layout: topic
-title:
-created:
-tags: statistics
-status: finished
-subject: statistics
----
-{{ page.title }}
-================
+<!-- --- -->
+<!-- layout: topic -->
+<!-- title: -->
+<!-- created: -->
+<!-- tags: statistics -->
+<!-- status: finished -->
+<!-- subject: statistics -->
+<!-- --- -->
+<!-- {{ page.title }} -->
+<!-- ================ -->
 
-* TOC
-{:toc}
+<!-- * TOC -->
+<!-- {:toc} -->
 
 
 

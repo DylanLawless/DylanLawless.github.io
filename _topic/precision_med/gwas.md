@@ -1,17 +1,17 @@
----
-layout: topic
-title: Genome wide assocciation study
-created: 8 Sep 2020
-bibliography:
-- '../tail/bibliography.bib'
-tags: genomics
-subject: Precision medicine
----
-{{ page.title }}
-================
+<!-- --- -->
+<!-- layout: topic -->
+<!-- title: Genome wide assocciation study -->
+<!-- created: 8 Sep 2020 -->
+<!-- bibliography: -->
+<!-- - '../tail/bibliography.bib' -->
+<!-- tags: genomics -->
+<!-- subject: Precision medicine -->
+<!-- --- -->
+<!-- {{ page.title }} -->
+<!-- ================ -->
 
-* TOC
-{:toc}
+<!-- * TOC -->
+<!-- {:toc} -->
 
 # Abbreviations
 BWA (Burrows-Wheeler transformation aligner), 

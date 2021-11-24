@@ -1,15 +1,15 @@
----
-layout: topic
-title: Zero-inflated negative binomial regression
-created: 2021-04-26
-tags: statistics
-status: unfinished
-subject: statistics
----
-{{ page.title }}
-================
-* TOC
-{:toc}
+<!-- --- -->
+<!-- layout: topic -->
+<!-- title: Zero-inflated negative binomial regression -->
+<!-- created: 2021-04-26 -->
+<!-- tags: statistics -->
+<!-- status: unfinished -->
+<!-- subject: statistics -->
+<!-- --- -->
+<!-- {{ page.title }} -->
+<!-- ================ -->
+<!-- * TOC -->
+<!-- {:toc} -->
 
 ## Zero-inflated negative binomial regression
 

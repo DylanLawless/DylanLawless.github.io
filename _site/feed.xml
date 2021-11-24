@@ -7,7 +7,7 @@
     <atom:link href="https://lawlessgenomics.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Who's afraid of the big bad geneticist?</title>
+        <title>Who&apos;s afraid of the big bad geneticist?</title>
         <description>&lt;h1 id=&quot;whos-afraid-of-the-big-bad-geneticist&quot;&gt;Who’s afraid of the big bad geneticist?&lt;/h1&gt;
 &lt;p&gt;Unfinished article&lt;/p&gt;
 
@@ -434,7 +434,7 @@ It contains all of the settings and the last line shown is the link to the main 
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bibliography&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;references.bib&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;`{r child = './pre-print_v1.md'}`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;`{r child = &apos;./pre-print_v1.md&apos;}`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -445,7 +445,7 @@ It contains all of the settings and the last line shown is the link to the main 
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin.bash&lt;/span&gt;
 
-Rscript &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rmarkdown::render('pre-print.Rmd')&quot;&lt;/span&gt;
+Rscript &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rmarkdown::render(&apos;pre-print.Rmd&apos;)&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This will output “pre-print.pdf”.&lt;/p&gt;
@@ -552,66 +552,6 @@ Citations in my master_references.bib also means that I will always have them av
     
 		
 		
-      <item>
-        <title>Altman_bland_ci_from_p</title>
-        <description>&lt;h1 id=&quot;altman_bland_ci_from_p&quot;&gt;Altman_bland_ci_from_p&lt;/h1&gt;
-
-
-&lt;p&gt;Confidence intervals (CIs) are widely used in reporting statistical analyses of research data, and are usually considered to be more informative than P values from significance tests.1 2 Some published articles, however, report estimated effects and P values, but do not give CIs (a practice BMJ now strongly discourages). Here we show how to obtain the confidence interval when only the observed effect and the P value were reported.&lt;/p&gt;
-
-&lt;p&gt;The method is outlined in the box below in which we have distinguished two cases.&lt;/p&gt;
-
-&lt;p&gt;Steps to obtain the confidence interval (CI) for an estimate of effect from the P value and the estimate (Est)
-(a) CI for a difference
- 1 calculate the test statistic for a normal distribution test, z, from P3: z = −0.862 + √[0.743 − 2.404×log(P)]
- 2 calculate the standard error: SE = Est/z (ignoring minus signs)
- 3 calculate the 95% CI: Est –1.96×SE to Est + 1.96×SE.
-(b) CI for a ratio
- For a ratio measure, such as a risk ratio, the above formulas should be used with the estimate Est on the log scale (eg, the log risk ratio). Step 3 gives a CI on the log scale; to derive the CI on the natural scale we need to exponentiate (antilog) Est and its CI.4
-Notes&lt;/p&gt;
-
-&lt;p&gt;All P values are two sided.&lt;/p&gt;
-
-&lt;p&gt;All logarithms are natural (ie, to base e). 4&lt;/p&gt;
-
-&lt;p&gt;For a 90% CI, we replace 1.96 by 1.65; for a 99% CI we use 2.57.&lt;/p&gt;
-
-&lt;p&gt;(a) Calculating the confidence interval for a difference
-We consider first the analysis comparing two proportions or two means, such as in a randomised trial with a binary outcome or a measurement such as blood pressure.&lt;/p&gt;
-
-&lt;p&gt;For example, the abstract of a report of a randomised trial included the statement that “more patients in the zinc group than in the control group recovered by two days (49% v 32%, P=0.032).”5 The difference in proportions was Est = 17 percentage points, but what is the 95% confidence interval (CI)?&lt;/p&gt;
-
-&lt;p&gt;Following the steps in the box we calculate the CI as follows:&lt;/p&gt;
-
-&lt;p&gt;z = –0.862+ √[0.743 – 2.404×log(0.032)] = 2.141;
- SE = 17/2.141 = 7.940, so that 1.96×SE = 15.56 percentage points;
- 95% CI is 17.0 – 15.56 to 17.0 + 15.56, or 1.4 to 32.6 percentage points.
-(b) Calculating the confidence interval for a ratio (log transformation needed)
-The calculation is trickier for ratio measures, such as risk ratio, odds ratio, and hazard ratio. We need to log transform the estimate and then reverse the procedure, as described in a previous Statistics Note.6&lt;/p&gt;
-
-&lt;p&gt;For example, the abstract of a report of a cohort study includes the statement that “In those with a [diastolic blood pressure] reading of 95-99 mm Hg the relative risk was 0.30 (P=0.034).”7 What is the confidence interval around 0.30?&lt;/p&gt;
-
-&lt;p&gt;Following the steps in the box we calculate the CI as follows:&lt;/p&gt;
-
-&lt;p&gt;z = –0.862+ √[0.743 – 2.404×log(0.034)] = 2.117;
- Est = log (0.30) = −1.204;
- SE = −1.204/2.117 = −0.569 but we ignore the minus sign, so SE = 0.569, and 1.96×SE = 1.115;
- 95% CI on log scale = −1.204 − 1.115 to −1.204 + 1.115 = −2.319 to −0.089;
- 95% CI on natural scale = exp (−2.319) = 0.10 to exp (−0.089) = 0.91.
- Hence the relative risk is estimated to be 0.30 with 95% CI 0.10 to 0.91.
-Limitations of the method
-The methods described can be applied in a wide range of settings, including the results from meta-analysis and regression analyses. The main context where they are not correct is in small samples where the outcome is continuous and the analysis has been done by a t test or analysis of variance, or the outcome is dichotomous and an exact method has been used for the confidence interval. However, even here the methods will be approximately correct in larger studies with, say, 60 patients or more.&lt;/p&gt;
-
-&lt;p&gt;P values presented as inequalities
-Sometimes P values are very small and so are presented as P&amp;lt;0.0001 or something similar. The above method can be applied for small P values, setting P equal to the value it is less than, but the z statistic will be too small, hence the standard error will be too large and the resulting CI will be too wide. This is not a problem so long as we remember that the estimate is better than the interval suggests.&lt;/p&gt;
-
-&lt;p&gt;When we are told that P&amp;gt;0.05 or the difference is not significant, things are more difficult. If we apply the method described here, using P=0.05, the confidence interval will be too narrow. We must remember that the estimate is even poorer than the confidence interval calculated would suggest.&lt;/p&gt;
-</description>
-        <pubDate></pubDate>
-        <link>https://lawlessgenomics.com//topic/altman-bland-ci-from-p</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-ci-from-p</guid>
-      </item>
-    
       <item>
         <title>Correlation, regression and repeated data</title>
         <description>&lt;h1 id=&quot;correlation-regression-and-repeated-data&quot;&gt;Correlation, regression and repeated data&lt;/h1&gt;
@@ -2457,13 +2397,13 @@ This seems to amount to a carrier status of 7 in their dataset for the glm and f
 &lt;p&gt;Their main analysis:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# call R command to run pc-adj enrichment&lt;/span&gt;
-ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data &amp;lt;- read.table('temp_pc.txt', header=T, sep='&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;')&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fit &amp;lt;- glm(data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PHENOTYPE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ~ data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CARRIER&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC3&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;, family='binomial')&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;adjusted.pval &amp;lt;- anova(fit, test='LRT')[2, 5]&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data &amp;lt;- read.table(&apos;temp_pc.txt&apos;, header=T, sep=&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;)&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fit &amp;lt;- glm(data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PHENOTYPE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ~ data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CARRIER&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC3&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;, family=&apos;binomial&apos;)&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;adjusted.pval &amp;lt;- anova(fit, test=&apos;LRT&apos;)[2, 5]&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 r_pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;adjusted.pval&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; r_pvalue[0]
-pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; float&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%.3E'&lt;/span&gt; % Decimal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pvalue&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
-file_out.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;str&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pvalue&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; + &lt;span class=&quot;s1&quot;&gt;'\t'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; float&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%.3E&apos;&lt;/span&gt; % Decimal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pvalue&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+file_out.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;str&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pvalue&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; + &lt;span class=&quot;s1&quot;&gt;&apos;\t&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# pathway enrichment&lt;/span&gt;
 this_case_pathway_hit &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dict&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
@@ -2476,10 +2416,10 @@ this_case_pathway_hit &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dict&lt;spa
 	pathway_out &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; len&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pathway_genes&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; - pathway_in
 	&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;case_in &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; 0:
 		odd, pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; stats.fisher_exact&lt;span class=&quot;o&quot;&gt;([[&lt;/span&gt;case_in, case_out], 
-		&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;pathway_in, pathway_out]], &lt;span class=&quot;nv&quot;&gt;alternative&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'two-sided'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;pathway_in, pathway_out]], &lt;span class=&quot;nv&quot;&gt;alternative&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;two-sided&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 		adj_pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; pvalue &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; pathway_size
 		&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;adj_pvalue &amp;lt; 0.00001:
-			adj_pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; float&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%.3E'&lt;/span&gt; % Decimal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;adj_pvalue&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+			adj_pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; float&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%.3E&apos;&lt;/span&gt; % Decimal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;adj_pvalue&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
 			this_case_pathway_hit[each_pathway] &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; adj_pvalue
 
 &lt;span class=&quot;c&quot;&gt;# They do not show any code with the SKAT parameters, presumably defaults using R.&lt;/span&gt;
@@ -2905,7 +2845,7 @@ Then we will find the real minimum variant count required to pass significance:&
       </item>
     
       <item>
-        <title>Fisher's exact test</title>
+        <title>Fisher&apos;s exact test</title>
         <description>&lt;h1 id=&quot;fishers-exact-test&quot;&gt;Fisher’s exact test&lt;/h1&gt;
 
 &lt;p&gt;&lt;br /&gt;
