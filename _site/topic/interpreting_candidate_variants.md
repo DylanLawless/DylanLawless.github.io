@@ -3,6 +3,7 @@ Rewrite:
 https://lawlessgenomics.com/topic/genetic-mutation-websites
 
 The recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology provide the standards and guidelines for the interpretation of sequence variants
+
 <!-- {% cite richards2015standards %}. --> 
 
 https://www.clinicalgenome.org
