@@ -7,7 +7,7 @@
     <atom:link href="https://lawlessgenomics.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Who&apos;s afraid of the big bad geneticist?</title>
+        <title>Who's afraid of the big bad geneticist?</title>
         <description>&lt;h1 id=&quot;whos-afraid-of-the-big-bad-geneticist&quot;&gt;Who’s afraid of the big bad geneticist?&lt;/h1&gt;
 &lt;p&gt;Unfinished article&lt;/p&gt;
 
@@ -434,7 +434,7 @@ It contains all of the settings and the last line shown is the link to the main 
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bibliography&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;references.bib&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;`{r child = &apos;./pre-print_v1.md&apos;}`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;`{r child = './pre-print_v1.md'}`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -445,7 +445,7 @@ It contains all of the settings and the last line shown is the link to the main 
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin.bash&lt;/span&gt;
 
-Rscript &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rmarkdown::render(&apos;pre-print.Rmd&apos;)&quot;&lt;/span&gt;
+Rscript &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rmarkdown::render('pre-print.Rmd')&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This will output “pre-print.pdf”.&lt;/p&gt;
@@ -2397,13 +2397,13 @@ This seems to amount to a carrier status of 7 in their dataset for the glm and f
 &lt;p&gt;Their main analysis:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# call R command to run pc-adj enrichment&lt;/span&gt;
-ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data &amp;lt;- read.table(&apos;temp_pc.txt&apos;, header=T, sep=&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;)&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fit &amp;lt;- glm(data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PHENOTYPE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ~ data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CARRIER&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC3&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;, family=&apos;binomial&apos;)&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;adjusted.pval &amp;lt;- anova(fit, test=&apos;LRT&apos;)[2, 5]&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;data &amp;lt;- read.table('temp_pc.txt', header=T, sep='&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;')&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fit &amp;lt;- glm(data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PHENOTYPE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ~ data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CARRIER&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;+data&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PC3&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;, family='binomial')&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;adjusted.pval &amp;lt;- anova(fit, test='LRT')[2, 5]&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 r_pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ro.r&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;adjusted.pval&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; r_pvalue[0]
-pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; float&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%.3E&apos;&lt;/span&gt; % Decimal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pvalue&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
-file_out.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;str&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pvalue&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; + &lt;span class=&quot;s1&quot;&gt;&apos;\t&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; float&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%.3E'&lt;/span&gt; % Decimal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pvalue&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+file_out.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;str&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pvalue&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; + &lt;span class=&quot;s1&quot;&gt;'\t'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;# pathway enrichment&lt;/span&gt;
 this_case_pathway_hit &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dict&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
@@ -2416,10 +2416,10 @@ this_case_pathway_hit &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; dict&lt;spa
 	pathway_out &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; len&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;pathway_genes&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; - pathway_in
 	&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;case_in &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; 0:
 		odd, pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; stats.fisher_exact&lt;span class=&quot;o&quot;&gt;([[&lt;/span&gt;case_in, case_out], 
-		&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;pathway_in, pathway_out]], &lt;span class=&quot;nv&quot;&gt;alternative&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;two-sided&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;pathway_in, pathway_out]], &lt;span class=&quot;nv&quot;&gt;alternative&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'two-sided'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 		adj_pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; pvalue &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; pathway_size
 		&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;adj_pvalue &amp;lt; 0.00001:
-			adj_pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; float&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;%.3E&apos;&lt;/span&gt; % Decimal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;adj_pvalue&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+			adj_pvalue &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; float&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%.3E'&lt;/span&gt; % Decimal&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;adj_pvalue&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
 			this_case_pathway_hit[each_pathway] &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; adj_pvalue
 
 &lt;span class=&quot;c&quot;&gt;# They do not show any code with the SKAT parameters, presumably defaults using R.&lt;/span&gt;
@@ -2845,7 +2845,7 @@ Then we will find the real minimum variant count required to pass significance:&
       </item>
     
       <item>
-        <title>Fisher&apos;s exact test</title>
+        <title>Fisher's exact test</title>
         <description>&lt;h1 id=&quot;fishers-exact-test&quot;&gt;Fisher’s exact test&lt;/h1&gt;
 
 &lt;p&gt;&lt;br /&gt;
