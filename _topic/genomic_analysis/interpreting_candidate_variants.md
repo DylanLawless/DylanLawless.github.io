@@ -8,6 +8,15 @@ The recommendation of the American College of Medical Genetics and Genomics and 
 
 https://www.clinicalgenome.org
 
+Effective variant filtering and expected candidate variant yield
+in studies of rare human disease
+Brent S. Pedersen
+https://www.nature.com/articles/s41525-021-00227-3
+
+
+The gnomAD v2.1 release also provides the new parameter Popmax Filtering AF, which is the threshold filter allele frequency for candidate variants proposed by Whiffin et al. (2017) https://www.nature.com/articles/gim201726
+
+
 ## Incidental findings
 When clinical genetics is performed for diagnosis of a disease, 
 some genes variants should be reported whether or not they are the cause of the disease under investigation.  
