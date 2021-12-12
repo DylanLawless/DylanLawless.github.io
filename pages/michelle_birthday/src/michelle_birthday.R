@@ -1,6 +1,8 @@
 library(geosphere)
 library(leaflet)
 library(RColorBrewer)
+library(tidyr)
+library(dplyr)
 
 # wide format ----
 df <- 
@@ -10,32 +12,50 @@ df <-
              stringsAsFactors = TRUE,
              quote = "")
 
-df <- as.tibble(df)
+df <- tibble(df)
+df1 <- df %>% filter(!Method == "Home")
+df2 <- df %>% filter(Method == "Home")
+
 names(df)
 
 # flight paths ----
-flows <- gcIntermediate(df[,4:5], df[,6:7], sp = TRUE, addStartEnd = TRUE)
+flows <- gcIntermediate(df1[,4:5], df1[,6:7], sp = TRUE, addStartEnd = TRUE)
 
 # annotations ----
-flows$Person <- df$Person
-flows$counts <- df$Number
-flows$origins <- df$origins
-flows$destinations <- df$destinations
+flows$Person <- df1$Person
+flows$counts <- df1$Number
+flows$origins <- df1$origins
+flows$destinations <- df1$destinations
 
 hover <- paste0(flows$Person, " - ", 
                 flows$origins, " to ", 
                 flows$destinations, ': ', 
                 as.character(flows$counts))
 
-pal <- colorFactor(brewer.pal(9, 'Set1'), flows$origins)
+# Home flows ----
+flows2 <- gcIntermediate(df2[,4:5], df2[,6:7], sp = TRUE, addStartEnd = TRUE)
+
+# Home annotations ----
+flows2$Person <- df2$Person
+flows2$counts <- df2$Number
+flows2$origins <- df2$origins
+flows2$destinations <- df2$destinations
+
+pal <- colorFactor(brewer.pal(11, 'Spectral'), flows$origins)
 
 # plot ----
 leaflet() %>%
   addTiles() %>% # default osm
   #addProviderTiles('CartoDB.Positron') %>%
-  addPolylines(data = flows, label = hover, #weight = ~counts, 
+  addPolylines(data = flows, label = hover, 
+               weight = 6,
                group = ~origins, color = ~pal(origins),
                opacity = 1) %>%
+  addPolylines(data = flows2, label = hover, 
+               weight = 4, 
+               group = ~origins, 
+               color = "grey",
+               opacity = 0.3) %>%
 #  addLayersControl(overlayGroups = unique(flows$origins), options = layersControlOptions(collapsed = FALSE), position = c("topright")) %>%
   addCircleMarkers(~longitude.x, ~latitude.x, popup = ~as.character(Person),
              fillColor = ~pal(origins), radius = 5, stroke = TRUE, weight = 1, opacity = 1.0, fill = TRUE, data=df) %>%

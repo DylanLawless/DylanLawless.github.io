@@ -7,6 +7,6 @@ Number,Person,origins,longitude.x,latitude.x,longitude.y,latitude.y,destinations
 6,Kai,Dublin,-6.26031,53.349804,8.309307,47.050167,Lucerne,Flight,Departure,11
 7,Emma,London,-0.127758,51.507351,8.309307,47.050167,Lucerne,Flight,Departure,11
 8,Denisa,Lausanne,6.632273,46.519654,8.309307,47.050167,Lucerne,Train,Departure,11
-9,Sarina,Washington,-77.036366,38.895112,-77.036366,38.895112,Lucerne,Home,Departure,11
-10,Kate,Dublin,-6.26031,53.349804,-6.26031,53.349804,Lucerne,Home,Departure,11
-11,Paige,Cambridge,0.131237,52.202544,0.131237,52.202544,Lucerne,Home,Departure,11
+9,Sarina,Washington,-77.036366,38.895112,8.309307,47.050167,Lucerne,Home,Departure,11
+10,Kate,Dublin,-6.36031,53.379804,8.309307,47.050167,Lucerne,Home,Departure,11
+11,Paige,Cambridge,0.131237,52.202544,8.309307,47.050167,Lucerne,Home,Departure,11
