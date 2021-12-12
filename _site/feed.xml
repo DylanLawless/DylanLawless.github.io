@@ -3,8 +3,8 @@
   <channel>
     <title>LawlessGenomics</title>
     <description>A home for topics in human precision medicine, genomic analysis, and data visualisation.</description>
-    <link>https://lawlessgenomics.com</link>
-    <atom:link href="https://lawlessgenomics.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Who's afraid of the big bad geneticist?</title>
@@ -69,7 +69,7 @@ The R code that I used for this process is included.&lt;/p&gt;
        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Total&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;United.States&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;na.rm&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;convert&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;factor_key&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data_l_sep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;separate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data_l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-                       &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;\(|\)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                       &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;\\(|\\)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
                             &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;into&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;samples&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
 &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Get variable names for filtering&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -153,8 +153,8 @@ The R code that I used for this process is included.&lt;/p&gt;
 &lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;middleton2020global&quot;&gt;Middleton, A., Milne, R., Almarri, M. A., Anwer, S., Atutornu, J., Baranova, E. E., Bevan, P., Cerezo, M., Cong, Y., Critchley, C., &amp;amp; others. (2020). Global public perceptions of genomic data sharing: what shapes the willingness to donate DNA and health data? &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;, &lt;i&gt;107&lt;/i&gt;(4), 743–752.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
 </description>
         <pubDate>Tue, 21 Sep 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/09/21/whos_afraid.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/09/21/whos_afraid.html</guid>
+        <link>http://localhost:4000//2021/09/21/whos_afraid.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/09/21/whos_afraid.html</guid>
       </item>
     
       <item>
@@ -187,8 +187,8 @@ The R code that I used for this process is included.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 13 Sep 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/09/13/weeknotes_16.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/09/13/weeknotes_16.html</guid>
+        <link>http://localhost:4000//2021/09/13/weeknotes_16.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/09/13/weeknotes_16.html</guid>
       </item>
     
       <item>
@@ -222,8 +222,8 @@ The R code that I used for this process is included.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 06 Sep 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/09/06/weeknotes_15.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/09/06/weeknotes_15.html</guid>
+        <link>http://localhost:4000//2021/09/06/weeknotes_15.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/09/06/weeknotes_15.html</guid>
       </item>
     
       <item>
@@ -255,8 +255,8 @@ The R code that I used for this process is included.&lt;/p&gt;
 &lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
 </description>
         <pubDate>Mon, 30 Aug 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/08/30/weeknotes_14.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/08/30/weeknotes_14.html</guid>
+        <link>http://localhost:4000//2021/08/30/weeknotes_14.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/08/30/weeknotes_14.html</guid>
       </item>
     
       <item>
@@ -283,8 +283,8 @@ The R code that I used for this process is included.&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 16 Aug 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/08/16/weeknotes_12.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/08/16/weeknotes_12.html</guid>
+        <link>http://localhost:4000//2021/08/16/weeknotes_12.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/08/16/weeknotes_12.html</guid>
       </item>
     
       <item>
@@ -311,8 +311,8 @@ The R code that I used for this process is included.&lt;/p&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 02 Aug 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/08/02/weeknotes_10.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/08/02/weeknotes_10.html</guid>
+        <link>http://localhost:4000//2021/08/02/weeknotes_10.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/08/02/weeknotes_10.html</guid>
       </item>
     
       <item>
@@ -343,8 +343,8 @@ The R code that I used for this process is included.&lt;/p&gt;
 &lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
 </description>
         <pubDate>Mon, 26 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/07/26/weeknotes_9.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/26/weeknotes_9.html</guid>
+        <link>http://localhost:4000//2021/07/26/weeknotes_9.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/07/26/weeknotes_9.html</guid>
       </item>
     
       <item>
@@ -470,8 +470,8 @@ In most cases, we require only&lt;/p&gt;
 Citations in my master_references.bib also means that I will always have them available for any project, whether it is a large project or simply small literature note that is cross-posted between projects.&lt;/p&gt;
 </description>
         <pubDate>Thu, 22 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/07/22/easy_manuscript.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/22/easy_manuscript.html</guid>
+        <link>http://localhost:4000//2021/07/22/easy_manuscript.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/07/22/easy_manuscript.html</guid>
       </item>
     
       <item>
@@ -508,8 +508,8 @@ Citations in my master_references.bib also means that I will always have them av
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 19 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/07/19/weeknotes_8.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/19/weeknotes_8.html</guid>
+        <link>http://localhost:4000//2021/07/19/weeknotes_8.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/07/19/weeknotes_8.html</guid>
       </item>
     
       <item>
@@ -546,8 +546,8 @@ Citations in my master_references.bib also means that I will always have them av
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 12 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//2021/07/12/weeknotes_7.html</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//2021/07/12/weeknotes_7.html</guid>
+        <link>http://localhost:4000//2021/07/12/weeknotes_7.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2021/07/12/weeknotes_7.html</guid>
       </item>
     
 		
@@ -991,8 +991,8 @@ Probability (Pr(&amp;gt;F)).
 &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 29 Jun 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//topic/altman-bland-correlation</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-correlation</guid>
+        <link>http://localhost:4000//topic/altman-bland-correlation</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/altman-bland-correlation</guid>
       </item>
     
       <item>
@@ -1177,8 +1177,8 @@ Altman &amp;amp; Bland review this debate and also discuss ORs in logistic regre
 &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 04 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//topic/altman-bland-odds-ratios</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-odds-ratios</guid>
+        <link>http://localhost:4000//topic/altman-bland-odds-ratios</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/altman-bland-odds-ratios</guid>
       </item>
     
       <item>
@@ -1327,8 +1327,8 @@ The accuracy (proportion of all correctly identified cases) was
 &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 16 Jul 2021 00:00:00 +0000</pubDate>
-        <link>https://lawlessgenomics.com//topic/altman-bland-roc-curve</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-roc-curve</guid>
+        <link>http://localhost:4000//topic/altman-bland-roc-curve</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/altman-bland-roc-curve</guid>
       </item>
     
       <item>
@@ -1463,8 +1463,8 @@ It defines &lt;em&gt;positive&lt;/em&gt; and &lt;em&gt;negative predictive value
 &lt;a href=&quot;#a1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 19 Jul 2021 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//topic/altman-bland-sensitivity-specificity</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/altman-bland-sensitivity-specificity</guid>
+        <link>http://localhost:4000//topic/altman-bland-sensitivity-specificity</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/altman-bland-sensitivity-specificity</guid>
       </item>
     
       <item>
@@ -2840,8 +2840,8 @@ Then we will find the real minimum variant count required to pass significance:&
 &lt;li&gt;&lt;span id=&quot;gao2021tlr3&quot;&gt;Gao, D., Ciancanelli, M. J., Zhang, P., Harschnitz, O., Bondet, V., Hasek, M., Chen, J., Mu, X., Itan, Y., Cobat, A., &amp;amp; others. (2021). TLR3 controls constitutive IFN-βantiviral immunity in human fibroblasts and cortical neurons. &lt;i&gt;The Journal of Clinical Investigation&lt;/i&gt;, &lt;i&gt;131&lt;/i&gt;(1).&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
 </description>
         <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
-        <link>https://lawlessgenomics.com//topic/burden-test</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/burden-test</guid>
+        <link>http://localhost:4000//topic/burden-test</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/burden-test</guid>
       </item>
     
       <item>
@@ -3000,8 +3000,8 @@ https://www.statology.org/fishers-exact-test-calculator/&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 25 Sep 2020 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//topic/fisher</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/fisher</guid>
+        <link>http://localhost:4000//topic/fisher</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/fisher</guid>
       </item>
     
       <item>
@@ -3247,8 +3247,8 @@ that might affect the response Y, then we will use a multiple linear regression.
 
 </description>
         <pubDate>Fri, 14 Aug 2020 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//topic/linear-regession</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/linear-regession</guid>
+        <link>http://localhost:4000//topic/linear-regession</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/linear-regession</guid>
       </item>
     
       <item>
@@ -3323,8 +3323,8 @@ Lastly, some analysis like GWAS can incorporate multiple PCs as individual covar
 In that case, our visualisation plots are more for sanity and understanding the diversity within the dataset.&lt;/p&gt;
 </description>
         <pubDate>Sun, 28 Jun 2020 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//topic/pca</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/pca</guid>
+        <link>http://localhost:4000//topic/pca</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/pca</guid>
       </item>
     
       <item>
@@ -3354,8 +3354,8 @@ Doing Bayesian data analysis a tutorial with R and BUGS.pdf&lt;br /&gt;
 
 </description>
         <pubDate>Fri, 03 Apr 2020 00:00:00 +0200</pubDate>
-        <link>https://lawlessgenomics.com//topic/statistics-books</link>
-        <guid isPermaLink="true">https://lawlessgenomics.com//topic/statistics-books</guid>
+        <link>http://localhost:4000//topic/statistics-books</link>
+        <guid isPermaLink="true">http://localhost:4000//topic/statistics-books</guid>
       </item>
     
   </channel>
