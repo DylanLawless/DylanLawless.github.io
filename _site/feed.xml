@@ -1598,7 +1598,7 @@ Some more context is available in this blogpost
   &lt;li&gt;Pooled association tests for rare variants in exon-resequencing studies.
 &lt;a class=&quot;citation&quot; href=&quot;#price2010pooled&quot;&gt;(Price et al., 2010)&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Testing for an unusual distribution of rare variants.
-(missing reference).&lt;/li&gt;
+&lt;a class=&quot;citation&quot; href=&quot;#neale2011testing&quot;&gt;(Neale et al., 2011)&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;Rare-Variant Association Testing for Sequencing Data with the Sequence Kernel Association Test.
 (missing reference).&lt;/li&gt;
   &lt;li&gt;Optimal tests for rare variant effects in sequencing association studies.
@@ -2180,7 +2180,7 @@ I need to compare these two papers here in more detail
 
 &lt;ul&gt;
   &lt;li&gt;Testing for an unusual distribution of rare variants.
-(missing reference)&lt;/li&gt;
+&lt;a class=&quot;citation&quot; href=&quot;#neale2011testing&quot;&gt;(Neale et al., 2011)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;c-alpha-tests&quot;&gt;C-alpha tests&lt;/h3&gt;
@@ -2821,6 +2821,7 @@ Then we will find the real minimum variant count required to pass significance:&
 &lt;li&gt;&lt;span id=&quot;li2008methods&quot;&gt;Li, B., &amp;amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;, &lt;i&gt;83&lt;/i&gt;(3), 311–321.&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;morris2010evaluation&quot;&gt;Morris, A. P., &amp;amp; Zeggini, E. (2010). An evaluation of statistical approaches to rare variant analysis in genetic association studies. &lt;i&gt;Genetic Epidemiology&lt;/i&gt;, &lt;i&gt;34&lt;/i&gt;(2), 188–193.&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;price2010pooled&quot;&gt;Price, A. L., Kryukov, G. V., de Bakker, P. I. W., Purcell, S. M., Staples, J., Wei, L.-J., &amp;amp; Sunyaev, S. R. (2010). Pooled association tests for rare variants in exon-resequencing studies. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;, &lt;i&gt;86&lt;/i&gt;(6), 832–838.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;neale2011testing&quot;&gt;Neale, B. M., Rivas, M. A., Voight, B. F., Altshuler, D., Devlin, B., Orho-Melander, M., Kathiresan, S., Purcell, S. M., Roeder, K., &amp;amp; Daly, M. J. (2011). Testing for an unusual distribution of rare variants. &lt;i&gt;PLoS Genetics&lt;/i&gt;, &lt;i&gt;7&lt;/i&gt;(3), e1001322.&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;Lee2012Optimal&quot;&gt;Lee, S., Wu, M. C., &amp;amp; Lin, X. (2012). Optimal tests for rare variant effects in sequencing association studies. &lt;i&gt;Biostatistics&lt;/i&gt;, &lt;i&gt;13&lt;/i&gt;(4), 762–775. https://doi.org/10.1093/biostatistics/kxs014&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;Lee2012Optimalunified&quot;&gt;Lee, S., Emond, M. J., Bamshad, M. J., Barnes, K. C., Rieder, M. J., Nickerson, D. A., Christiani, D. C., Wurfel, M. M., &amp;amp; Lin, X. (2012). Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;, &lt;i&gt;91&lt;/i&gt;(2), 224–237. https://doi.org/https://doi.org/10.1016/j.ajhg.2012.06.007&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span id=&quot;IonitaLaza2013Sequence&quot;&gt;Ionita-Laza, I., Lee, S., Makarov, V., Buxbaum, J. D., &amp;amp; Lin, X. (2013). Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants. &lt;i&gt;The American Journal of Human Genetics&lt;/i&gt;, &lt;i&gt;92&lt;/i&gt;(6), 841–853. https://doi.org/https://doi.org/10.1016/j.ajhg.2013.04.015&lt;/span&gt;&lt;/li&gt;
