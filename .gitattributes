@@ -1,1 +1,2 @@
 _topic/precision_med/clingen-gene_disease_validity_table_all_genes.html filter=lfs diff=lfs merge=lfs -text
+_site/topic/clingen-gene_disease_validity_table_all_genes.html filter=lfs diff=lfs merge=lfs -text
