@@ -34,7 +34,7 @@ task :deploy do
   status = system("git checkout source")
   puts status ? "Success" : "Failed"
   puts "\n## Pushing all branches to origin"
-  status = system("git push --force --all origin")
+  status = system("git push --all origin")
   puts status ? "Success" : "Failed"
 end
 
