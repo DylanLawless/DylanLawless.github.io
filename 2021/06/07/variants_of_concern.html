@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>SARS-CoV-2 variants of concern</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+<div class="site">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.1_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+	<div id="post">
+Reading time  7 minutes
+<h1 id="sars-cov-2-variants-of-concern">SARS-CoV-2 variants of concern</h1>
+
+<p class="meta">07 June 2021</p>
+
+<h1 id="variants-of-concern-aligned-to-vaccine-coding-sequences">Variants of concern aligned to vaccine coding sequences</h1>
+
+<p>This work has not been peer reviewed.</p>
+
+<p><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf">Open PDF visualisation - variants_of_concern_to_vaccine.pdf</a></p>
+
+<h2 id="aims-and-results">Aims and results</h2>
+<ul>
+  <li>To produce standardized alignments of vaccine sequences.</li>
+  <li>Determine which are at risk to emerging variants.</li>
+</ul>
+
+<p>From the data presented within:</p>
+
+<ol>
+  <li>The translated amino acid sequences for all vaccines were derived.</li>
+  <li>These were aligned to the SARS-CoV-2 reference amino acid sequences of spike glycoprotein.</li>
+  <li>Known variants-of-concern were then annotated and visualised.</li>
+</ol>
+
+<h2 id="overview">Overview</h2>
+<p>Variants-of-concern for five SARS-CoV-2 strains 
+(<a href="https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html">CDC 4 Jun 2021</a>)
+are illustrated against the 
+translated amino acid sequences of the vaccines;</p>
+
+<ul>
+  <li>Moderna mRNA-1273</li>
+  <li>Pfizer/BioNTech BNT-162b2</li>
+  <li>Janssen/Johnson &amp; Johnson Ad26.COV2-S</li>
+  <li>Novavax NVX-CoV2373</li>
+  <li>Curevac CVnCoV</li>
+  <li>Sputnik V</li>
+  <li>AstraZeneca AZD1222</li>
+</ul>
+
+<p>and reference genome sequences;</p>
+
+<ul>
+  <li>QHD43416.1 [MN908947.3] and</li>
+  <li>YP_009724390.1 [NC_045512.2].</li>
+</ul>
+
+<p>The variants-of-concern are shown here, illustrated on the protein structure;
+<a href="https://www.rcsb.org/structure/6ZOX">6ZOX.pdb DOI: 10.2210/pdb6ZOX/pdb</a>
+<em>Structure of Disulphide-stabilized SARS-CoV-2 Spike Protein Trimer (x2 disulphide-bond mutant, G413C, V987C, single Arg S1/S2 cleavage site),</em>
+provided by Xiong et al., 2020 <a href="https://www.nature.com/articles/s41594-020-0478-5">10.1038/s41594-020-0478-5</a>.</p>
+
+<ul>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_front.jpg">6zox_voc_20210604_front.jpg</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg">6zox_voc_20210604_side.jpg</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg">6zox_voc_20210604_top.jpg</a></li>
+</ul>
+
+<p><img src="/images/posts/6zox_voc_20210604_stage.gif" width="100%"></p>
+
+<p>Two of the defining genetic features that are different between vaccines are seen here,</p>
+<ul>
+  <li>the S glycoprotein furin cleavage modification region (p.682-685)</li>
+</ul>
+
+<p><img src="/images/posts/snapshot_furin_cleavage_region.png" width="100%"></p>
+
+<ul>
+  <li>the S glycoprotein stabilization modification region (p.986-987)</li>
+</ul>
+
+<p><img src="/images/posts/snapshot_stabilizing_region_PP.png" width="100%"></p>
+
+<p>Visual alignment is shown against translated coding sequence for spike glycoprotein,
+illustrated here via</p>
+
+<p><a href="https://nextstrain.org/sars-cov-2">nextstrain.org</a>.
+<img src="/images/posts/nextstrain_spike.png" width="100%"></p>
+
+<p>Fasta sequences are included for:</p>
+
+<ul>
+  <li>Variants of Concern B.1.1.7</li>
+  <li>Variants of Concern B.1.351</li>
+  <li>Variants of Concern B.1.427</li>
+  <li>Variants of Concern B.1.429</li>
+  <li>Variants of Concern P.1</li>
+  <li>Ref QHD43416.1 [MN908947.3]</li>
+  <li>Ref YP_009724390.1 [NC_045512.2]</li>
+  <li>mRNA-1273 vaccine translated</li>
+  <li>BNT-162b2 vaccine translated</li>
+  <li>Ad26.COV2-S vaccine translated</li>
+  <li>NVX-CoV2373 vaccine translated</li>
+  <li>Sputnik V alleged unmodified YP_009724390.1</li>
+  <li>AZD1222 alleged unmodified YP_009724390.1</li>
+</ul>
+
+<h2 id="reference-genome-sequence">Reference genome sequence</h2>
+<p>The two reference sequences that are used by vaccine developers are;</p>
+
+<ul>
+  <li>Complete genome DNA and translated coding sequences:
+    <ul>
+      <li>
+<a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2">NC_045512.2</a>,</li>
+      <li>Protein ID for spike glycoprotein <a href="https://www.ncbi.nlm.nih.gov/protein/YP_009724390.1">YP_009724390.1</a>.</li>
+      <li>Date: 18-JUL-2020</li>
+      <li>This the same translated protein sequence as that is referred to based on genomic coordinates <a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_045512">NC_045512.2:21563-25384 translated GU280_gp02</a>
+</li>
+    </ul>
+  </li>
+  <li>Complete genome DNA and translated coding sequences:
+    <ul>
+      <li><a href="https://www.ncbi.nlm.nih.gov/nuccore/mn908947.3">MN908947.3</a></li>
+      <li>Protein ID for spike glycoprotein <a href="https://www.ncbi.nlm.nih.gov/protein/QHD43416.1">QHD43416.1</a>
+</li>
+      <li>Date: 18-MAR-2020</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Both reference sequences are provided in files:</p>
+
+<ul>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_NC_045512.2.21563-25384.md">reference_sequence_NC_045512.2.21563-25384.md</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_MN908947.3.md">reference_sequence_MN908947.3.md</a></li>
+</ul>
+
+<h2 id="vaccine-sequence-reproduction">Vaccine sequence reproduction</h2>
+<p>The sequences for vaccines have been reproduced by careful reconstruction based on</p>
+
+<ol>
+  <li>The authors’ reported reference sequence and</li>
+  <li>The description of the genetic modifications used during vaccine development.</li>
+</ol>
+
+<p>The primary sources are provided in each case, along with a detailed description of the genetic variants provided by authors.
+Additionally, the correct <a href="https://varnomen.hgvs.org/recommendations">HGVS-recommended nomenclature</a> has been used for more reliable reproduction than some of the primary sources.</p>
+
+<p><strong>For visual simplicity, an X symbol was used to illustrate amino acid deletions</strong>.
+All other amino acid changes use their correct symbol.</p>
+
+<p>For vaccines BNT-162b2 and mRNA-1273, the assemblies have also been sourced from <a href="https://github.com/NAalytics/Assemblies-of-putative-SARS-CoV2-spike-encoding-mRNA-sequences-for-vaccines-BNT-162b2-and-mRNA-1273">NAalytics</a>.
+This data matches the vaccine sequences that have been reproduced here based on primary literature.
+Briefly, 
+their experimental sequence information from the initial 
+Moderna (<a href="https://pubmed.ncbi.nlm.nih.gov/32756549/">Corbett Nature 2020 Oct</a>)
+and Pfizer/BioNTech (<a href="https://pubmed.ncbi.nlm.nih.gov/33301246/">Polack NEJM 2020 Dec</a>)
+COVID-19 vaccines, allowed them to produce a working assembly of the former 
+and a confirmation of previously reported sequence information for the latter RNA.
+Their data was sourced and formatted to select the coding sequences.
+The nucleotide sequences were then translated into amino acid coding sequences
+using <a href="https://web.expasy.org/translate/">https://web.expasy.org/translate/</a>,
+as shown in files:</p>
+
+<p><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_mRNA-1273.md">sarscov2_vaccine_sequence_translated_mRNA-1273.md</a>
+<a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_BNT-162b2.md">sarscov2_vaccine_sequence_translated_BNT-162b2.md</a></p>
+
+<h2 id="covid-19-vaccine-sequences-summarised">Covid-19 vaccine sequences summarised</h2>
+<p>The correct <a href="https://varnomen.hgvs.org/recommendations/protein/variant/delins/">HGVS standard notation is used</a>.</p>
+
+<ul>
+  <li>mRNA-1273
+    <ul>
+      <li>Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)</li>
+      <li>Delivery: Lipid-nanoparticle</li>
+    </ul>
+  </li>
+  <li>BNT162b2
+    <ul>
+      <li>Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)</li>
+      <li>Delivery: Lipid-nanoparticle</li>
+    </ul>
+  </li>
+  <li>Ad26.COV2-S
+    <ul>
+      <li>Genetics: p.[Arg682Ser;p.Arg685Gln]				- furin cleavage x2 (SRAG)</li>
+      <li>Genetics: p.(Lys986_Val987delinsProPro)			- stabilizing x2 (PP)</li>
+      <li>Delivery: Adenovirus vector (Ad26)</li>
+    </ul>
+  </li>
+  <li>NVX-CoV2373
+    <ul>
+      <li>Genetics: p.[Arg682_Arg683delinsGlnGln;Arg685Gln]	- furin cleavage x3 (GGAG)</li>
+      <li>Genetics: p.(Lys986_Val987delinsProPro)				- stabilizing x2 (PP)</li>
+      <li>Delivery: Lipid-nanoparticle, baculovirus expression cultured in Sf9</li>
+    </ul>
+  </li>
+  <li>Sputnik V
+    <ul>
+      <li>Genetics: “unmodified” full-length S-protein</li>
+      <li>Genetics: No reference sequence found</li>
+      <li>Delivery: Adenovirus vectors (Ad26 dose 1) and (Ad5 dose 2)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Incomplete others:</p>
+  </li>
+  <li>CVnCoV
+    <ul>
+      <li>Genetics: modified S protein.</li>
+    </ul>
+  </li>
+  <li>AZD1222
+    <ul>
+      <li>Genetics: Unmodified S protein</li>
+      <li>Genetics: No reference sequence found</li>
+      <li>Adenovirus vector (ChAdOx1).</li>
+    </ul>
+  </li>
+  <li>CoronaVac
+    <ul>
+      <li>a preparation of inactivated SARS-CoV-2 virions.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="covid-19-vaccine-details">Covid-19 vaccine details</h2>
+<ul>
+  <li>BioNTech/Pfizer: BNT162b2
+    <ul>
+      <li>Modified mRNA-in-lipid-nanoparticle vaccine</li>
+      <li>Expressing a modified S protein.</li>
+      <li>Stabiliazation by proline substitutions p.K986P, p.V987P.</li>
+    </ul>
+  </li>
+  <li>Moderna: mRNA-1273
+    <ul>
+      <li>Modified mRNA-in-lipid-nanoparticle vaccine</li>
+      <li>Expressing a modified S protein.</li>
+      <li>Stabiliazation by proline substitutions p.K986P, p.V987P.</li>
+    </ul>
+  </li>
+  <li>Janssen/Johnson &amp; Johnson: Ad26.COV2-S aka JNJ-78436735
+    <ul>
+      <li>
+<a href="https://www.biorxiv.org/content/10.1101/2020.07.30.227470v1">Pre-prindt</a>, <a href="https://www.nature.com/articles/s41541-020-00243-x">Published</a>.</li>
+      <li>Adenovirus serotype 26 (Ad26) viral vector vaccine</li>
+      <li>Expressing a modified S protein.</li>
+      <li>S protein of SARS-CoV-2 corresponding to positions 21,536–25,384 in SARS-CoV-2 isolate Wuhan-Hu-1 (genome MN908947 (18-MAR-2020))<a href="https://www.nature.com/articles/s41541-020-00243-x">Published</a>.</li>
+      <li>For Ad26.S.PP, the two stabilising variants p.(Lys986_Val987delinsProPro) are included as well as two mutations in the furin cleavage site that preserve the prefusion conformation and blocks shedding of S1.</li>
+      <li>The furin cleavage site was abolished by amino acid changes p.R682S and p.R685G.</li>
+      <li>Stabiliazation by proline substitutions p.K986P, p.V987P.</li>
+      <li>The correct <a href="https://varnomen.hgvs.org/recommendations/protein/variant/delins/">HGVS standard notation</a> should be: p.[Arg682Ser;p.Arg685Gln] and p.(Lys986_Val987delinsProPro).</li>
+    </ul>
+  </li>
+  <li>Novavax: NVX-CoV2373
+    <ul>
+      <li>A protein subunit vaccine containing a doubly modified S protein, with adjuvant.</li>
+      <li>Part of a 27.2nm nanoparticle.</li>
+      <li>S protein of SARS-CoV-2 corresponding to GenBank MN908947 nucleotides 21563-25384 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7584426/">as published</a>.</li>
+      <li>Contains the modified S protein with the two Proline substitutions, K986P and V987P. Additionally, three amino acids are changed (682-RRAR-685 to 682-QQAQ-685) to protect the protein against proteases.</li>
+      <li>The authors failed to write the correct <a href="https://varnomen.hgvs.org/recommendations/protein/variant/delins/">HGVS standard notation</a>: p.[Arg682_Arg683delinsGlnGln;Arg685Gln] and p.(Lys986_Val987delinsProPro),
+a simple list would even be better: p.R682Q, p.R683Q, p.R685Q, p.K986P, and p.V987P.</li>
+      <li>Saponin-based Matrix-M adjuvent.</li>
+      <li>Protein expression by a baculovirus in an Sf9 insect infection culture.</li>
+      <li><a href="https://www.biorxiv.org/content/10.1101/2020.06.29.178509v1.full.pdf">https://www.biorxiv.org/content/10.1101/2020.06.29.178509v1.full.pdf</a></li>
+      <li>Delivery in lipid nanoparticle</li>
+    </ul>
+  </li>
+  <li>Gamaleya Research Institute of Epidemiology and Microbiology: Sputnik V
+    <ul>
+      <li>aka Гам-КОВИД-Вак (Gam-COVID-Vac).</li>
+      <li>Two differnt adenovirus viral vectors.</li>
+      <li>Uses two different adenovirus serotypes; <a href="https://sputnikvaccine.com/about-vaccine/">recombinant Ad26 (dose 1) and recombinant Ad5 (dose 2)</a>.</li>
+      <li>Both carrying the gene for Spike glycoprotein (rAd26-S and rAd5-S).</li>
+      <li>Antigen insert is an “unmodified” full-length S-protein (no reference sequence).</li>
+      <li>Produced in HEK293 cell line.</li>
+      <li>No reference sequence found</li>
+      <li>The first major paper [Logunov et al Lancet. 2020] is this clinical trial of frozen and lyophilised vaccine. It mentions previous unpublished pre-clinical trials. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7471804/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7471804/</a>
+</li>
+    </ul>
+  </li>
+  <li>Curevac: CVnCoV
+    <ul>
+      <li>Unmodified mRNA-in-lipid-nanoparticle vaccine</li>
+      <li>Expressing a modified S protein.</li>
+      <li>Based on genome from first isolate <a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2">NC_045512.2</a>, Spike glycoprotein <a href="https://www.ncbi.nlm.nih.gov/protein/YP_009724390.1">YP_009724390.1</a>.</li>
+      <li>full-length S featuring K986P and V987P mutations.</li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/33863911/">https://pubmed.ncbi.nlm.nih.gov/33863911/</a></li>
+    </ul>
+  </li>
+  <li>Oxford/AstraZeneca: AZD1222 (formerly ChAdOx1 nCoV-19)
+    <ul>
+      <li>A viral vector vaccine</li>
+      <li>Viral vector (ChAdOx1 - chimpanzee adenovirus Oxford 1, <a href="https://pubmed.ncbi.nlm.nih.gov/22808149/">as published</a>)</li>
+      <li>Expressing the unmodified S protein.</li>
+      <li>No reference sequence found</li>
+      <li><a href="http://www.thelancet.com/retrieve/pii/S0140673620316044">Folegatti et al, Lancet July 2020</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="vaccine-multiple-sequence-alignment">Vaccine Multiple Sequence Alignment</h2>
+<p>The amino acid sequences of the coding region from each of the vaccine sequences 
+and the reference sequence were used for multiple sequence alignment
+via <a href="https://www.ebi.ac.uk/Tools/msa/clustalo/">https://www.ebi.ac.uk/Tools/msa/clustalo/</a>.</p>
+
+<p>Variants-of-concern were then formatted to be used for annotation on the 
+aligned sequences.</p>
+
+<h2 id="variants-of-concern">Variants of concern</h2>
+<p>SARS-CoV-2 Variant Classifications and Definitions were derived from
+<a href="https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html">https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcoronavirus%2F2019-ncov%2Fcases-updates%2Fvariant-surveillance%2Fvariant-info.html</a></p>
+
+<p>This dataset includes:</p>
+
+<ul>
+  <li>Variants of Interest (VOI)</li>
+  <li>Variants of Concern (VOC)</li>
+  <li>Variants of High Consequence (VOHC)</li>
+</ul>
+
+<p>The reformatted tables are presented in files:</p>
+
+<ul>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx">variants_of_concern.xlsx</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv">variants_of_concern.csv</a></li>
+</ul>
+
+<p>There are currently no VOHC. 
+VOC (but not VOI) were presented in the final visualisation.</p>
+
+<h2 id="aligned-variants-of-concern-to-vaccine">Aligned variants-of-concern to vaccine</h2>
+
+<p>The variants of concern were formatted such that one pseudo-fasta format entry 
+contains the amino acid change for each strain. 
+This data was then added to the multiple sequence alignment file to allow for
+aligned annotations,
+as shown in file:</p>
+
+<p><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa">variants_of_concern_to_vaccine.fa</a></p>
+
+<p>The file contains the list the variants-of-concern for five Sars-CoV-2 strains,
+2 reference sequence, and
+6 vaccine sequences:</p>
+
+<ul>
+  <li>Variants of Concern B.1.1.7</li>
+  <li>Variants of Concern B.1.351</li>
+  <li>Variants of Concern B.1.427</li>
+  <li>Variants of Concern B.1.429</li>
+  <li>Variants of Concern P.1</li>
+  <li>Ref QHD43416.1 [MN908947.3]</li>
+  <li>Ref YP_009724390.1 [NC_045512.2]</li>
+  <li>mRNA-1273 vaccine translated</li>
+  <li>BNT-162b2 vaccine translated</li>
+  <li>Ad26.COV2-S vaccine translated</li>
+  <li>NVX-CoV2373 vaccine translated</li>
+  <li>Sputnik V alleged unmodified YP_009724390.1</li>
+  <li>AZD1222 alleged unmodified YP_009724390.1</li>
+</ul>
+
+<p><img src="/images/posts/coronavirus-cutaway-600.png" width="20%"></p>
+
+<p>Different strains will contain benign variants.
+Typically, full sequences are used for alignment. 
+However, this can be visually distracting.
+Instead, only the variants-of-concern are annotated for the strain sequences.</p>
+
+<p>The final illustration was made using <a href="https://www.snapgene.com">https://www.snapgene.com</a> software.
+The snapgene-software formatted output can be loaded with the file:</p>
+
+<p><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln">variants_of_concern_to_vaccine.praln</a></p>
+
+<p>The final PDF version is shown in file:
+<a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf">Open PDF visualisation</a>
+<a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf">variants_of_concern_to_vaccine.pdf</a></p>
+
+<h2 id="main-files">Main files</h2>
+
+<p>The main files that might interst you are listed here together.
+Other files that are not listed contain intermediate data.</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2#readme">README.md</a></p>
+  </li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_NC_045512.2.21563-25384.md">reference_sequence_NC_045512.2.21563-25384.md</a></li>
+  <li>
+    <p><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_reference_sequence/reference_sequence_MN908947.3.md">reference_sequence_MN908947.3.md</a></p>
+  </li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_mRNA-1273.md">sarscov2_vaccine_sequence_translated_mRNA-1273.md</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_BNT-162b2.md">sarscov2_vaccine_sequence_translated_BNT-162b2.md</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md">sarscov2_vaccine_sequence_translated_NVX-CoV2373.md</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Ad26.COV2-S.md">sarscov2_vaccine_sequence_translated_Ad26.COV2-S.md</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_AZD1222.md">sarscov2_vaccine_sequence_translated_AZD1222.md</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_NVX-CoV2373.md">sarscov2_vaccine_sequence_translated_NVX-CoV2373.md</a></li>
+  <li>
+    <p><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/sarscov2_vaccine_sequences_translated/sarscov2_vaccine_sequence_translated_Sputnik-V.md">sarscov2_vaccine_sequence_translated_Sputnik-V.md</a></p>
+  </li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.xlsx">variants_of_concern.xlsx</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern.csv">variants_of_concern.csv</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.fa">variants_of_concern_to_vaccine.fa</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.praln">variants_of_concern_to_vaccine.praln</a></li>
+  <li>
+    <p><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/blob/master/variants_of_concern_to_vaccine.pdf">variants_of_concern_to_vaccine.pdf</a></p>
+  </li>
+  <li><a href="pdb/6zox.pdb">Protein structure, original structure file</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/6zox_voc_20210604_stage.vmd">Protein structure, VMD visualisation state 6zox_voc_20210604_stage.vmd</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_front.jpg">Protein structure with variants of concern 6zox_voc_20210604_front.jpg</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_side.jpg">Protein structure with variants of concern 6zox_voc_20210604_side.jpg</a></li>
+  <li><a href="https://github.com/DylanLawless/variants_of_concern_to_vaccine_SARS-CoV2/tree/master/pdb/renders/6zox_voc_20210604_top.jpg">Protein structure with variants of concern 6zox_voc_20210604_top.jpg</a></li>
+</ul>
+
+<h2 id="other-notes">Other notes</h2>
+<ul>
+  <li><a href="notes.md">notes.md</a></li>
+</ul>
+
+<p><img src="/images/posts/ribosome-600.png" width="100%"></p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li>
+<span>21 Sep 2021</span> » <a href="/2021/09/21/whos_afraid.html">Who's afraid of the big bad geneticist?</a>
+</li>
+    
+      <li>
+<span>13 Sep 2021</span> » <a href="/2021/09/13/weeknotes_16.html">Weeknotes</a>
+</li>
+    
+      <li>
+<span>06 Sep 2021</span> » <a href="/2021/09/06/weeknotes_15.html">Weeknotes</a>
+</li>
+    
+  </ul>
+</div>
+
+
+
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Postdoc at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
