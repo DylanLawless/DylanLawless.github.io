@@ -1,0 +1,71 @@
+
+Good work. I think you are correct about ISO 15189. I believe an actual board is responsible for coming and doing inspections to provide certification of compliance.
+
+Here it is mentioned for the Geneva health 2030 genome center for clinical grade sequencing:
+https://www.health2030genome.ch/dna-sequencing-platform/
+
+I do not know the exact requirements for interpreting sequencing results. (Research-grade does not require this, only clinical-grade). This page links to le conseil fédéral, in the section Counselling centers in Switzerland:
+https://www.sakk.ch/en/patients/genetic-counseling 
+
+BlueprintGenomics is a good example company:
+https://blueprintgenetics.com/certifications/
+
+GA4GH provides loads other info about of legal/ethic/etc. if you want some other ideas. 
+https://www.ga4gh.org/genomic-data-toolkit/regulatory-ethics-toolkit/
+
+
+
+Swiss law contains specific provisions on genetic testing in humans (Federal Act on Human Genetic Testing HGTA).
+
+
+1 federal law on genetic analysis (LAGH), and 3 ordinance which I think cover more details. (OAGH, OAGH-DFI, OACA).
+
+https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html
+
+The details listed individually:
+https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12
+
+Includes allowing "Pharmacogenetic tests performed to determine the effects of
+to determine the effects of a planned therapy".
+
+
+
+
+
+
+
+
+https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html
+
+Le Conseil fédéral
+ DFI
+ OFSP
+ Office fédéral de la santé publiqueOffice fédéral de la santé publique.
+
+The ordonnance is in:
+Section: Accueil - Recueil systématique - Droit interne - 8 Santé - Travail - Sécurité sociale - 81 Santé.
+
+
+810.122.122
+Ordonnance du DFI
+sur l’analyse génétique humaine
+(OAGH-DFI)
+du 14 février 2007 (Etat le 1er janvier 2017)
+
+Le Département fédéral de l’intérieur (DFI),
+
+vu l’art. 11, al. 2, de l’ordonnance du 14 février 2007 sur l’analyse génétique humaine1,
+
+
+Description des analyses génétiques qui peuvent être effectuées en fonction du diplôme
+
+Includes: analyse autorisée for
+Analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue.
+
+
+
+
+
+https://www.iso.org/standard/75859.html
+ISO/IEC 23092
+Genomys (EPFL) accred for genomic storage compression (similar to another standard compression method).

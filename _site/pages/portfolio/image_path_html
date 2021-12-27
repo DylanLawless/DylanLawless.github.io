@@ -1,0 +1,210 @@
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/False_positives_in_Transip_does_not_worsen_probability.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/False_positives_in_Transip_does_not_worsen_probability.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/Gene_locus_Germline_antibody.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/Gene_locus_Germline_antibody.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/Gene_locus_T_cell_receptor.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/Gene_locus_T_cell_receptor.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/Lymphocyte_development_wide.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/Lymphocyte_development_wide.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/RAG_CADD.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/RAG_CADD.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/RAG_cohort.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/RAG_cohort.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/RAG_crystal.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/RAG_crystal.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/RAG_domains.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/RAG_domains.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/RAG_in_lymphocyte_development.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/RAG_in_lymphocyte_development.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/Recombination_complex.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/Recombination_complex.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/cosmic.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/cosmic.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/gnomad_tet2.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/gnomad_tet2.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/gwas_immun.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/gwas_immun.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/hgmd_combined_methods.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/hgmd_combined_methods.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/igv_cohort.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/igv_cohort.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/igv_sanger.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/igv_sanger.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/methyl_digest.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/methyl_digest.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/pCS2MT-RAG1_Map_update.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/pCS2MT-RAG1_Map_update.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/pEFXC-flRAG2_Map.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/pEFXC-flRAG2_Map.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/pedigree1.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/pedigree1.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/pedigree2.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/pedigree2.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/rag1_gnomad.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/rag1_gnomad.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/rag_MRF_categories_and_assayed.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/rag_MRF_categories_and_assayed.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/rag_exac.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/rag_exac.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/rag_human_cases.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/rag_human_cases.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/rag_mrf.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/rag_mrf.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/recombination_plasmid_map2.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/recombination_plasmid_map2.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/stjude1.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/stjude1.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/stjude2.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/stjude2.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+
+
+<div class="responsive"> <div class="gallery">
+<a	href="{{ site.baseurl }}{% link pages/portfolio/images/string_network.png %}">
+<img src="{{ site.baseurl }}{% link pages/portfolio/images/string_network.png %}"> </a>
+<div class="desc"> Description
+</div></div></div>
+

@@ -1,0 +1,37 @@
+markdown: kramdown
+kramdown: 
+  toc_levels: "2..6"
+
+    # # references jekyll-scholar
+    # scholar:
+    #     replace_strings: true
+    #     query: "@*"
+    #     bibliography: references.bib
+    #     # style: apa
+
+collections:
+    topic:
+        output: true
+        permalink: /topic/:name
+      #    people: true
+
+        # You can define default values for attributes on topics. This can be useful if all the documents in the collection will share the same layout for example:
+defaults:
+  - scope:
+      path: ""
+      type: "topic"
+    values:
+      layout: topic
+
+plugins:
+  - jekyll-spaceship
+
+jekyll-spaceship:
+  # default enabled processors
+  processors:
+    - table-processor
+
+# feed config
+title: LawlessGenomics
+url: https://lawlessgenomics.com
+description: A home for topics in human precision medicine, genomic analysis, and data visualisation.

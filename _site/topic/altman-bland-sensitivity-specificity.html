@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Sensitivity and specificity</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+<div class="site">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.1_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+	<div id="topic">
+Reading time 2 minutes
+<h1 id="sensitivity-and-specificity">Sensitivity and specificity</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#sensitivity-and-specificity-1" id="markdown-toc-sensitivity-and-specificity-1">Sensitivity and specificity</a></li>
+  <li><a href="#confidence-intervals" id="markdown-toc-confidence-intervals">Confidence intervals</a></li>
+  <li><a href="#quantifying-the-diagnostic-ability" id="markdown-toc-quantifying-the-diagnostic-ability">Quantifying the diagnostic ability</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<h2 id="sensitivity-and-specificity-1">Sensitivity and specificity</h2>
+<p>The third paper on the list of BMJ statistics notes by Altman and Bland,
+(<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>),
+<a class="citation" href="#altman1994diagnostic1">(Altman &amp; Bland, 1994)</a> 3. Altman DG, Bland JM. (1994) <a href="http://www.bmj.com/cgi/content/full/308/6943/1552">
+Diagnostic tests 1: sensitivity and specificity.</a> <b>308</b>, 1552.
+<sup id="a1"><a href="#f1">1</a></sup></p>
+
+<p>The simple diagnostic test such as an x-ray is used to classify patients into two groups:</p>
+<ul>
+  <li>Presence of a symptom or sign
+    <ul>
+      <li>Yes</li>
+      <li>No</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Altman and Bland use the following cited example;
+The results of a scan (<strong>test</strong>) compared to the correct diagnosis (<strong>true positive</strong>) based on either necropsy, biopsy, or surgical inspection. 
+i.e. How good is the scan for correct diagnosis?</p>
+
+<p><strong>Table 1.</strong> <em>Relation between results of liver scan and correct diagnosis.</em></p>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Liver scan</th>
+        <th style="text-align: center" colspan="3">Pathology (diagnosis)</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left"> </td>
+        <td style="text-align: center"><strong>Abnormal (+)</strong></td>
+        <td style="text-align: center"><strong>Normal (-)</strong></td>
+        <td style="text-align: center"><strong>Total</strong></td>
+      </tr>
+      <tr>
+        <td style="text-align: left"><strong>Abnormal(+)</strong></td>
+        <td style="text-align: center"><em>231</em></td>
+        <td style="text-align: center">32</td>
+        <td style="text-align: center">263</td>
+      </tr>
+      <tr>
+        <td style="text-align: left"><strong>Normal(-)</strong></td>
+        <td style="text-align: center">27</td>
+        <td style="text-align: center"><em>54</em></td>
+        <td style="text-align: center">81</td>
+      </tr>
+      <tr>
+        <td style="text-align: left"><strong>Total</strong></td>
+        <td style="text-align: center">258</td>
+        <td style="text-align: center">86</td>
+        <td style="text-align: center">344</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p>Patients who are correctly labelled are:</p>
+<ul>
+  <li>Disease signs and abnormal liver
+    <ul>
+      <li>258 true positives</li>
+    </ul>
+  </li>
+  <li>No signs and healthy liver
+    <ul>
+      <li>86 true negatives</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The proportions of these two groups that were also correctly diagnosed by the scan were \(231/258=0.90\) and \(54/86=0.63\), respectively.</p>
+
+<ul>
+  <li>Sensitivity
+    <ul>
+      <li>Proportion of <strong>true positives</strong> that are <strong>correctly identified</strong> by the test.</li>
+    </ul>
+  </li>
+  <li>Specificity
+    <ul>
+      <li>Proportion of <strong>true negatives</strong> that are <strong>correctly identified</strong> by the test.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Based on Altman and Bland’s example sample, 
+we expect 90% true positives (<em>patients with abnormal pathology to have abnormal (positive) liver scans</em>), 
+and 63% true negatives (<em>those with normal pathology would have normal (negative) liver scans</em>).</p>
+
+<h2 id="confidence-intervals">Confidence intervals</h2>
+<p>The sensitivity and specificity are proportions, so confidence intervals can be calculated.
+This uses standard methods for proportions
+<a class="citation" href="#gardner1989calculating">(Gardner &amp; Altman, 1989)</a>.</p>
+
+<h2 id="quantifying-the-diagnostic-ability">Quantifying the diagnostic ability</h2>
+<p>Sensitivity and specificity are one approach to quantifying the diagnostic ability of the test.
+In this case, we already have the final results of <strong>tests</strong> and <strong>diagnosis</strong> from the sample set.
+For an individual patient we only have the <strong>test</strong> result.
+We want to quantify how well the test can predict true positives.</p>
+
+<p>This is answered in the next statistical note; <em>predictive values</em>.
+It defines <em>positive</em> and <em>negative predictive values</em> and requires the use of <em>sensitivity,</em> <em>specificity,</em> and <em>prevalence</em>.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography">
+<li><span id="altman1994diagnostic1">Altman, D. G., &amp; Bland, J. M. (1994). Diagnostic tests. 1: Sensitivity and specificity. <i>BMJ: British Medical Journal</i>, <i>308</i>(6943), 1552.</span></li>
+<li><span id="gardner1989calculating">Gardner, M. J., &amp; Altman, D. G. (1989). Calculating confidence intervals for proportions and their differences. <i>Statistics with Confidence. London: BMJ Publishing Group</i>, 28–33.</span></li>
+</ol>
+
+<p><strong>Footnote</strong>
+<b id="f1">1</b> This article is almost identical to the original version in acknowledgment to Altman and Bland. It is adapted here as part of a set of curated, consistent, and minimal examples of statistics required for human genomic analysis.
+<a href="#a1">↩</a></p>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="35.7" height="55"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Postdoc at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
