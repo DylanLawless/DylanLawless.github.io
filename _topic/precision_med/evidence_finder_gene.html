@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5f1546bdcc7de75ea88b028b5cdb1ec71ad3be71367e27de01cb51c1e7e7b695
-size 1180
+---
+layout: default
+title: Evidence finder gene level
+created: 24 Nov 2021
+tags: genomics
+subject: Precision medicine
+---
+<div class="full-width">
+<h1>Evidence finder gene level</h1>
+<p>
+This table provides links to genetic databases for browsing gene-disease validity evidence.
+Genes are only included which match the gene-disease validity curations by ClinGen's Gene Curation Expert Panel (GCEP).
+Some data has been simplified or omitted to produce a responsive reference table.
+For extended information including the evidence summary see external links.
+</p>
+
+<p> Last update: 2021-11-25 </p>
+<p><a href="https://lawlessgenomics.com/topic/evidence-finder-variant"
+	style="padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%; 
+	">&#x26A1
+	Show variant-level LoF/GoF evidence from ClinVar/HGMD</a></p>
+<p><a href="https://lawlessgenomics.com/topic/evidence_finder_gene_all.html" 
+	style="padding: 0% 0% 0% 0%; margin: 0% 0% 0% 0%; 
+	">&#x26A1
+	Expand to all genes</a></p>
+
+{% include_relative clingen-gene_disease_validity_table_original.html %}
+
+<p><a href="https://clinicalgenome.org/tools/clingen-website-faq/how-to-cite/">How to cite ClinGen.</a></p>
+{% bibliography --cited %}
+</div>
