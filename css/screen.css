@@ -20,13 +20,13 @@ body {
 		line-height: 1.4rem;
 		}
 	h1, h2 { 
-		font: 1.2rem 'Didot';
-		color: black;
+		font: 1.2rem 'Source Sans Pro', sans-serif; font-weight: 700;
+		color: #303030;
 	}
 	h3, h4, h5, h6 {
-		font: 1.0rem 'Didot';
+		font: 1.0rem 'Source Sans Pro', sans-serif; font-weight: 700;
 		font-style: italic;
-		color: black;
+		color: #303030;
 		}
     }
 
@@ -39,13 +39,13 @@ body {
 		line-height: 1.7rem;
 		}
 	h1, h2 { 
-		font: 1.2rem 'Didot';
-		color: black;
+		font: 1.2rem 'Source Sans Pro', sans-serif; font-weight: 700;
+		color: #303030;
 		}
 	h3, h4, h5, h6 {
-		font: 1.1rem 'Didot';
+		font: 1.1rem 'Source Sans Pro', sans-serif; font-weight: 700;
 		font-style: italic;
-		color: black;
+		color: #303030;
 		}
     }
 
@@ -58,13 +58,13 @@ body {
 		line-height: 1.7rem;
 		}
 	h1, h2 { 
-		font: 1.2rem 'Didot';
-		color: black;
+		font: 1.2rem 'Source Sans Pro', sans-serif; font-weight: 700;
+		color: #303030;
 		}
 	h3, h4, h5, h6 {
-		font: 1.1rem 'Didot';
+		font: 1.1rem 'Source Sans Pro', sans-serif; font-weight: 700;
 		font-style: italic;
-		color: black;
+		color: #303030;
 		}
     }
 
@@ -76,13 +76,13 @@ body {
 		line-height: 2rem;
 		}
 	h1, h2 { 
-		font: 1.6rem 'Didot';
-		color: black;
+		font: 1.6rem 'Source Sans Pro', sans-serif; font-weight: 700;
+		color: #303030;
 		}
 	h3, h4, h5, h6 {
-		font: 1.3rem 'Didot';
+		font: 1.3rem 'Source Sans Pro', sans-serif; font-weight: 700;
 		font-style: italic;
-		color: black;
+		color: #303030;
 		}
     }
 
@@ -94,13 +94,13 @@ body {
 		line-height: 2rem;
 		}
 	h1, h2 { 
-		font: 1.7rem 'Didot';
-		color: black;
+		font: 1.7rem 'Source Sans Pro', sans-serif; font-weight: 700;
+		color: #303030;
 		}
 	h3, h4, h5, h6 {
-		font: 1.3rem 'Didot';
+		font: 1.3rem 'Source Sans Pro', sans-serif; font-weight: 700;
 		font-style: italic;
-		color: black;
+		color: #303030;
 		}
     }
 
@@ -112,13 +112,13 @@ body {
 		line-height: 2rem;
 		}
 	h1, h2 { 
-		font: 1.7rem 'Didot';
-		color: black;
+		font: 1.7rem 'Source Sans Pro', sans-serif; font-weight: 700;
+		color: #303030;
 		}
 	h3, h4, h5, h6 {
-		font: 1.3rem 'Didot';
+		font: 1.3rem 'Source Sans Pro', sans-serif; font-weight: 700;
 		font-style: italic;
-		color: black;
+		color: #303030;
 		}
     }
 
@@ -129,13 +129,13 @@ body {
 		line-height: 2rem;
 		}
 	h1, h2 { 
-		font: 1.7rem 'Didot';
-		color: black;
+		font: 1.7rem 'Source Sans Pro', sans-serif; font-weight: 700;
+		color: #303030;
 		}
 	h3, h4, h5, h6 {
-		font: 1.3rem 'Didot';
+		font: 1.3rem 'Source Sans Pro', sans-serif; font-weight: 700;
 		font-style: italic;
-		color: black;
+		color: #303030;
 	}
     }
 
@@ -183,6 +183,7 @@ body {
 	}
 
 nav {
+	/* background: yellow; */
 	max-width: 1720px;
 	margin: 0 auto;
 	display: grid;
@@ -350,12 +351,28 @@ td{
 
 .site {
 	text-align: left;
+	width: 100vw;
+	/* width: 70ch; */
+	/* max-width: 90%; */
+	/* margin: 1rem auto 1rem auto; */
+	}
+
+
+.sitewidthnav {
+	text-align: left;
+	width: 90vw;
+	max-width: 90%;
+	margin: 0rem auto 1rem auto;
+	}
+
+.sitewidth {
+	text-align: left;
 	width: 45rem;
 	/* width: 70ch; */
 	max-width: 90%;
 	margin: 1rem auto 1rem auto;
-	/* line-height: 1.6rem; */
 	}
+
 
 .table-wrapper {
   overflow-x: scroll;
@@ -368,14 +385,14 @@ td{
 
 .title {
 	font-family: Baskerville;
-	color: #a00;
+	/* font-family: 'Source Sans Pro', sans-serif; font-weight: 600; color: #303030; */
 	font-size: 150%;
 	font-weight: medium;
-	margin-bottom: 3rem;
+	/* margin-bottom: 3rem; */
 	}
 
 .site .title a {
-	color: #202020;
+	color: black;
 	text-decoration: none;
 	}
 
@@ -392,6 +409,7 @@ td{
 .site .title a.extra:hover {
 	color: black;
 	}
+
 
 .site .meta {
 	color: #aaa;
@@ -638,5 +656,122 @@ div.full-width {
 	-webkit-transform-origin: 0 0;
 	transform-origin: 0 0;
 	}
+}
+
+
+/* index page and taglines */
+.wide { 
+	text-align:left;
+	font-weight:bold;
+	background:#ebebeb;
+	background-repeat: no-repeat;
+	background-size: 100%; //propotional resize
+	/* margin-bottom: 60px; */
+	height: 465px;
+}
+
+/* fade tagline */
+.tagline1 {
+	/* margin-top: 2rem ; */
+	animation: fadein			4s;
+	-moz-animation: fadein		4s; /* Firefox */
+	-webkit-animation: fadein	4s; /* Safari and Chrome */
+	-o-animation: fadein		4s; /* Opera */
+	-ms-animation: fadein		4s; /* Opera */
+
+	animation-delay:			1s;
+	-moz-animation-delay:		1s;
+	-webkit-animation-delay:	1s;
+
+	opacity: 0;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}}
+
+
+.tagline2 {
+	/* margin-top: 2rem ; */
+	animation: fadein			4s;
+	-moz-animation: fadein		4s; /* Firefox */
+	-webkit-animation: fadein	4s; /* Safari and Chrome */
+	-o-animation: fadein		4s; /* Opera */
+	-ms-animation: fadein		4s; /* Opera */
+
+	animation-delay:			3s;
+	-moz-animation-delay:		3s;
+	-webkit-animation-delay:	3s;
+
+	opacity: 0;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+		}
+
+	100% {
+		opacity: 1;
+		}}
+
+h1.tagline-h1{
+	text-align: center;
+	margin: 0 auto; 
+	font-family: 'Source Sans Pro', sans-serif; 
+	font-weight: 700; 
+    font-size:350% !important;
+	color: #303030 !important;
+	font-weight:bold !important;
+	margin-bottom: 2rem;
+}
+
+
+h2.tagline-h2{
+	text-align: center;
+	margin: 0 auto; 
+	font-family: 'Source Sans Pro', sans-serif; 
+	font-weight: 700; 
+    font-size:200% !important;
+	color: #303030 !important;
+	font-weight:bold !important;
+	margin-bottom: 2rem;
+}
+
+
+/* typing */
+.typing {
+	/* line-height: 100%; */
+	width: 22.5ch;
+	animation:	typing-1 8s, 
+				typing-2 2s steps(23), 
+				typing-3 1s step-end infinite ;
+	animation-delay: 0s, 8s;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 2px solid;
+	display:inline-block;
+	vertical-align:top; /* this should allowing correct alignment */
+}
+
+@keyframes typing-1 {
+from, to {width: 0}
+}
+
+@keyframes typing-2 {
+from {width: 0}
+}
+
+@keyframes typing-3 {
+/* from, to {border-color: #a3a3a3} */
+from, to {border-color: #e5e5e5}
+  50% {border-color: transparent}
 }
 
