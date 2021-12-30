@@ -234,3 +234,15 @@ Then update the submodules
 
 `git submodule update`
 
+## bfg and lfs
+LFS was used for testing but since it cannot render a large table in an iframe, it is not currently being used. 
+To prune out files that are not required in the git history, bfg was used. 
+This is not common, but to keep the repo size small files that are not required in the git history, bfg was used. 
+This is not common but required to keep the repo size small.
+The jar of bfg was used as follows:
+
+`java -jar ~/Downloads/bfg-1.14.0.jar --no-blob-protection --strip-blobs-bigger-than 60M ~/web/DylanLawless.github.io/`
+
+`git reflog expire --expire=now --all && git gc --prune=now --aggressive`
+
+
