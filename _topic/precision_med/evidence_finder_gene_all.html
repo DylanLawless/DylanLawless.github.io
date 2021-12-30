@@ -181,10 +181,19 @@ This table provides links to genetic databases for browsing gene-disease validit
 Gene count note:
 </em>
 	<!-- https://lawlessgenomics.com/topic/clingen-gene_disease_validity_table_all_genes.html -->
-Genes were derived from BioMart Ensembl release 105 GRCh37.p13 63737 human genes, where both <em>UniProtKB Gene Name symbol</em> and <em>HGNC ID </em> were present.
-These indetifiers were present for 54757 entries with an overlap of 15766, and 14436 total after removing duplicates.
-After merging with gene-disease data from ClinGen (1529), some entries had multiple disease/phenotype data which were retained as individual rows. 
-The total unique gene symbol count is 14520.
+Genes were derived from BioMart Ensembl release 105 GRCh37.p13 for
+66231 human genes for the identifiers <em>UniProtKB Gene Name symbol</em> and <em>HGNC ID</em>.
+Entries were retained where both identifiers present; 23646, 
+and duplicates were removed; 20963.
+This gene set was merged with ClinGen gene-disease data 
+and ClinGen Curation Activity Summary Report 
+(1529 and 1977, respectively with an overlap of 2053).
+Some entries had multiple disease/phenotype data which were retained as individual rows;
+21695 total for
+20541 unique gene symbols.
+A small amount of data cleaning was applied to reduce size by pruning unreliable gene data to
+20576 entries for 19435 unique gene symbols.
+Custom queries were generated for every gene to link to reference databases.
 </p>
 
 <div class="graph-container">
@@ -193,7 +202,7 @@ The total unique gene symbol count is 14520.
 <iframe id="igraph" scrolling="yes" style="border:none;" seamless="seamless" src="
 https://lawlessgenomics.com/topic/gene_disease_validity_table_all_genes.html
 	"
-	height="800" 
+	height="600" 
 	width="100%"></iframe>
  </div>
 </div>
