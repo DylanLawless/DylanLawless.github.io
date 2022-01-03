@@ -193,6 +193,7 @@ nav {
 
 .logoimage {
 	grid-column: 1;
+	transition: all .2s ease-in-out; 
 	}
 
 .logo {
@@ -202,6 +203,11 @@ nav {
 	margin-bottom: -20px;
 	margin-top: 0px;
 	}
+
+.logoimage:hover { 
+transform: scale(1.1); 
+}
+
 
 .right-menu {
 	grid-column: 3;
@@ -722,16 +728,41 @@ div.full-width {
 		opacity: 1;
 		}}
 
+
+.tagline3 {
+	animation: fadein			3s;
+	-moz-animation: fadein		3s; /* Firefox */
+	-webkit-animation: fadein	3s; /* Safari and Chrome */
+	-o-animation: fadein		3s; /* Opera */
+	-ms-animation: fadein		3s; /* Opera */
+
+	animation-delay:			5s;
+	-moz-animation-delay:		5s;
+	-webkit-animation-delay:	5s;
+
+	opacity: 0;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+		}
+
+	100% {
+		opacity: 1;
+		}}
+
 h1.tagline-h1{
 	text-align: center;
 	margin: 0 auto; 
 	font-family: 'Source Sans Pro', sans-serif; 
 	font-weight: 700; 
     font-size:350% !important;
-	color: #303030 !important;
+	color: #404040 !important;
 	font-weight:bold !important;
-	margin-bottom: 2rem;
-	margin-top: 2rem;
+	margin-top: 10vh;
+	margin-bottom: 5vh;
 }
 
 
@@ -740,11 +771,11 @@ h2.tagline-h2{
 	margin: 0 auto; 
 	font-family: 'Source Sans Pro', sans-serif; 
 	font-weight: 700; 
-    font-size:200% !important;
-	color: #303030 !important;
+	font-size:150% !important;
+	color: #404040 !important;
 	font-weight:bold !important;
-	margin-bottom: 2rem;
-	margin-top: 2rem;
+	/* margin-top: 5vh; */
+	/* margin-bottom: -1vh; */
 }
 
 
@@ -777,3 +808,71 @@ from, to {border-color: #e5e5e5}
   50% {border-color: transparent}
 }
 
+.landingPage{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+.ex1{
+	min-height:80vh;
+	/* background-color:lightpink; */
+}
+
+/* glitch code */
+.glitch {
+  /* font-family: 'Roboto Mono', monospace; */
+	font-family: 'Source Sans Pro', sans-serif; 
+	font-weight: 300;
+	white-space: pre-wrap;
+	animation:	glitch-1 8s, 
+	text-align: center;
+	margin: 0 auto; 
+	/* font-family: 'Source Sans Pro', sans-serif; */ 
+	/* font-weight: 300; */ 
+    /* font-size: 60% !important; */
+	color: #404040 !important;
+	/* font-weight:bold !important; */
+	margin-top:		-2vh;
+	margin-bottom:	-2vh;
+}
+
+
+
+@keyframes glitch-1 {
+from, to {width: 0}
+}
+
+@media only screen and (max-width:481px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+	.glitch {
+		font-size: 80% !important;
+	}
+}
+
+#glitch {
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#glitch {
+  /* font-weight: 100; */
+  /* font-size: 28px; */
+  color: #707070; /* grey*/
+}
+
+#glitch > .text > .dud {
+  color: #e9a8aa; /* red */
+}
+
+/* logo grow */
+.grow { 
+transition: all .2s ease-in-out; 
+}
+
+.grow:hover { 
+transform: scale(1.1); 
+}
