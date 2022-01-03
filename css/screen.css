@@ -362,7 +362,7 @@ td{
 	text-align: left;
 	width: 90vw;
 	max-width: 90%;
-	margin: 0rem auto 1rem auto;
+	margin: 1rem auto 1rem auto;
 	}
 
 .sitewidth {
@@ -731,6 +731,7 @@ h1.tagline-h1{
 	color: #303030 !important;
 	font-weight:bold !important;
 	margin-bottom: 2rem;
+	margin-top: 2rem;
 }
 
 
@@ -743,6 +744,7 @@ h2.tagline-h2{
 	color: #303030 !important;
 	font-weight:bold !important;
 	margin-bottom: 2rem;
+	margin-top: 2rem;
 }
 
 

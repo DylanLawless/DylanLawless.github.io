@@ -246,3 +246,22 @@ The jar of bfg was used as follows:
 `git reflog expire --expire=now --all && git gc --prune=now --aggressive`
 
 
+## rbenv
+Running a consistent ruby environment. 
+<https://github.com/rbenv/rbenv>
+`brew install rbenv`
+
+After install, init, and adding `~/.bash_profile` variable:
+` export PATH="$HOME/.rbenv/bin:$PATH" `
+` eval "$(rbenv init -)" `
+
+use the version specificied by the gemfile, e.g.
+`rbenv install 2.7.0`
+
+It is critical to also set:
+`rbenv local 2.7.0`
+`rbenv global 2.7.0`
+
+to allow the final bundle install to work:
+`gem install bundler`
+`bundle install`
