@@ -73,6 +73,7 @@ const phrases = [
 	'Genetic code shapes our uniqueness ',
 	'By understanding our genetic code',
 	'we understand human health',
+	'                                       ',
 ]
 
 const el = document.querySelector('.text')

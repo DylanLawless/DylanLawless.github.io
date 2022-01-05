@@ -175,7 +175,6 @@ body {
 /* Navbar main settings */
 .nav-container {
 	width: 100%;
-	/* background: grey; */
 	}
 
 #nav-toggle, .gg-menu {
@@ -364,11 +363,18 @@ td{
 	}
 
 
+.noscroll {
+	overscroll-behavior-x: none;
+}
+
+
 .sitewidthnav {
 	text-align: left;
 	width: 90vw;
 	max-width: 90%;
 	margin: 1rem auto 1rem auto;
+	background-size: 100% auto;
+	z-index: -5;
 	}
 
 .sitewidth {
@@ -378,6 +384,70 @@ td{
 	max-width: 90%;
 	margin: 1rem auto 1rem auto;
 	}
+
+.tagimage {
+    background-image:url("../images/national-cancer-institute-ct10qdGv1hQ-unsplash-2_shiftz2.png");
+	background-repeat: no-repeat;
+	background-color: black;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: 100% 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	z-index: -5;
+	left: 0;
+	top: 0;
+	height: 80vh;
+	width: 100vw;
+	margin-left: 50%;
+	transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.tagimage img {
+    flex-shrink: 0;
+    min-width: 100%;
+}
+
+
+.footer {
+  height: 100px;
+}
+
+.container {
+  height: 10rem;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+
+/* .container { */
+/*   height: 100px; */
+/* } */
+
+/* .tagimagenav { */
+/* 	background-repeat: no-repeat; */
+/* 	background-color: red; */
+/* 	background-size: 100% auto; */
+/* 	background-repeat: no-repeat; */
+/* 	background-position: bottom right; */
+/*     display: flex; */
+/*     justify-content: center; */
+/*     align-items: center; */
+/*     /1* overflow: hidden; *1/ */
+/* 	z-index: -5; */
+/* 	position: fixed; */
+/* 	left: 0; */
+/* 	top: 0; */
+/* 	height: 10rem; */
+/* 	width: 100vw; */
+/* 	margin-left: 50%; */
+/* 	transform: translateX(-50%); */
+/* } */
 
 
 .table-wrapper {
@@ -391,34 +461,40 @@ td{
 
 .title {
 	font-family: Baskerville;
-	/* font-family: 'Source Sans Pro', sans-serif; font-weight: 600; color: #303030; */
+	/* font-family: 'Source Sans Pro', sans-serif; font-weight: 300; color: #AAAAAA; */
 	font-size: 150%;
 	font-weight: medium;
 	/* margin-bottom: 3rem; */
+	z-index: 5;
 	}
 
 .site .title a {
 	color: black;
+	/* color: #AAAAAA; */
 	text-decoration: none;
 	}
 
 .site .title a:hover {
 	color: black;
+	/* color: #AAAAAA; */
 	}
 
 .site .title a.extra {
 	color: #aaa;
+	/* color: #AAAAAA; */
 	text-decoration: none;
 	margin-left: 1rem;
 	}
 
 .site .title a.extra:hover {
 	color: black;
+	/* color: #AAAAAA; */
 	}
 
 
 .site .meta {
 	color: #aaa;
+	/* color: #AAAAAA; */
 	}
 
 .site .footer {
@@ -676,6 +752,10 @@ div.full-width {
 	height: 465px;
 }
 
+
+
+
+
 /* fade tagline */
 .tagline1 {
 	/* margin-top: 2rem ; */
@@ -759,10 +839,14 @@ h1.tagline-h1{
 	font-family: 'Source Sans Pro', sans-serif; 
 	font-weight: 700; 
     font-size:350% !important;
-	color: #404040 !important;
+	/* color: #404040 !important; */
+	/* color: white !important; */
+	color: #AAAAAA !important;
 	font-weight:bold !important;
-	margin-top: 10vh;
+	/* margin-top: 10vh; */
+	margin-top: -10vh;
 	margin-bottom: 5vh;
+	z-index: -1;
 }
 
 
@@ -772,7 +856,9 @@ h2.tagline-h2{
 	font-family: 'Source Sans Pro', sans-serif; 
 	font-weight: 700; 
 	font-size:150% !important;
-	color: #404040 !important;
+	/* color: #404040 !important; */
+	/* color: white !important; */
+	color: #AAAAAA !important;
 	font-weight:bold !important;
 	/* margin-top: 5vh; */
 	/* margin-bottom: -1vh; */
@@ -828,13 +914,14 @@ from, to {border-color: #e5e5e5}
 	white-space: pre-wrap;
 	animation:	glitch-1 8s, 
 	text-align: center;
-	margin: 0 auto; 
+	/* margin: 0 auto; */ 
 	/* font-family: 'Source Sans Pro', sans-serif; */ 
 	/* font-weight: 300; */ 
     /* font-size: 60% !important; */
-	color: #404040 !important;
+	/* color: #404040 !important; */
+	color: #AAAAAA !important;
 	/* font-weight:bold !important; */
-	margin-top:		-2vh;
+	margin-top:		33vh;
 	margin-bottom:	-2vh;
 }
 
@@ -861,11 +948,13 @@ from, to {width: 0}
 #glitch {
   /* font-weight: 100; */
   /* font-size: 28px; */
-  color: #707070; /* grey*/
+  /* color: #707070; /* grey*/*/
+  /* color: #AAAAAA; /* grey*/*/
 }
 
 #glitch > .text > .dud {
-  color: #e9a8aa; /* red */
+  /* color: #e9a8aa; /1* red *1/ */
+  color: #663d51; /* red */
 }
 
 /* logo grow */
