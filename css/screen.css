@@ -865,11 +865,6 @@ h2.tagline-h2{
 	margin-bottom: 5rem;
 }
 
-@media only screen and (max-width:481px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
-	h1.tagline-h1{ font-size: 300% !important; }
-	h2.tagline-h2{ font-size: 150% !important; }
-}
-
 
 /* typing */
 .typing {
@@ -962,6 +957,30 @@ from, to {width: 0}
   /* color: #e9a8aa; /1* red *1/ */
   color: #663d51; /* red */
 }
+
+
+
+
+@media only screen and (max-width:481px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+	h1.tagline-h1{ font-size: 200% !important; }
+	h2.tagline-h2{ font-size: 100% !important; }
+}
+
+@media only screen and (max-height:520px)  { /* this is more important for view height */ 
+	h1.tagline-h1{ margin-top: 0rem; }
+	h1.tagline-h1{ margin-bottom: 5rem; }
+	h2.tagline-h2{ margin-top: 0rem; }
+	h2.tagline-h2{ margin-bottom: 0rem; }
+	.glitch { margin-top: 5rem;}
+	.glitch { margin-bottom: 0rem;}
+	
+
+}
+
+
+
+
+
 
 /* logo grow */
 .grow { 
