@@ -399,7 +399,7 @@ td{
 	z-index: -5;
 	left: 0;
 	top: 0;
-	height: 80vh;
+	height: 70vh;
 	width: 100vw;
 	margin-left: 50%;
 	transform: translateX(-50%);
@@ -845,8 +845,8 @@ h1.tagline-h1{
 	color: #AAAAAA !important;
 	font-weight:bold !important;
 	/* margin-top: 10vh; */
-	margin-top: -10vh;
-	margin-bottom: 5vh;
+	margin-top: 0rem;
+	margin-bottom: 2rem;
 	z-index: -1;
 }
 
@@ -862,7 +862,7 @@ h2.tagline-h2{
 	color: #AAAAAA !important;
 	font-weight:bold !important;
 	/* margin-top: 5vh; */
-	/* margin-bottom: -1vh; */
+	margin-bottom: 5rem;
 }
 
 
@@ -922,8 +922,8 @@ from, to {border-color: #e5e5e5}
 	/* color: #404040 !important; */
 	color: #AAAAAA !important;
 	/* font-weight:bold !important; */
-	margin-top:		33vh;
-	margin-bottom:	-2vh;
+	margin-top:		10rem;
+	/* margin-bottom:	-2rem; */
 }
 
 

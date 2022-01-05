@@ -1,13 +1,11 @@
 markdown: kramdown
 kramdown: 
   toc_levels: "2..6"
-
-    # # references jekyll-scholar
-    # scholar:
-    #     replace_strings: true
-    #     query: "@*"
-    #     bibliography: references.bib
-    #     # style: apa
+  scholar:
+     replace_strings: true
+     query: "@*"
+     bibliography: references.bib
+     # style: apa
 
 collections:
     topic:
