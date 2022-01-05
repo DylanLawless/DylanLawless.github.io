@@ -865,6 +865,11 @@ h2.tagline-h2{
 	margin-bottom: 5rem;
 }
 
+@media only screen and (max-width:481px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+	h1.tagline-h1{ font-size: 300% !important; }
+	h2.tagline-h2{ font-size: 150% !important; }
+}
+
 
 /* typing */
 .typing {
