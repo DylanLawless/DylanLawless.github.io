@@ -990,3 +990,95 @@ transition: all .2s ease-in-out;
 .grow:hover { 
 transform: scale(1.1); 
 }
+
+.buttonblack {
+  align-items: center;
+  background-image: linear-gradient(135deg, #000000 40%, #191919);
+  border-radius: 6px;
+  border: 2px solid #323232;
+  /* box-sizing: border-box; */
+  /* border: 2px solid #008CBA; */
+  color: #AAAAAA;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  /* height: auto; */
+  justify-content: center;
+  /* letter-spacing: .4px; */
+  /* outline: none; */
+  line-height: 100%;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonblack:active {
+  /* outline: 0; */
+  /* background-color: green; */ 
+  /* background-image: linear-gradient(135deg, black 40%, #fc894d); */
+  /* color: red; */ 
+  /* border: 2px solid #f44336; */
+  color: black; 
+}
+
+.buttonblack:hover {
+  /* outline: 1; */
+  background-image: linear-gradient(135deg, #e5e5e5 40%, #e5e5e5);
+  color: black; 
+  border: 2px solid #323232;
+}
+
+
+.buttonblack a {
+  color: #AAAAAA;
+  text-decoration: none;
+}
+.buttonblack:hover a {
+  color: black; 
+  text-decoration: none;
+}
+
+.buttonblack span {
+  transition: all 200ms;
+}
+
+.buttonblack:hover span {
+  transform: scale(.9);
+  opacity: .75;
+}
+
+@media screen and (max-width: 991px) {
+  .buttonblack {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .buttonblack span {
+    line-height: 50px;
+  }
+}
+
+.button-flex-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: DodgerBlue; */
+  flex-wrap: wrap
+}
+
+.button-flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  width       : auto;
+  text-align: center;
+
+}
