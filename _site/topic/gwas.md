@@ -25,6 +25,8 @@ Genomewide Association Studies and Assessment of the Risk of Disease, [Manolio N
 [Tam et al. 2019](https://pubmed.ncbi.nlm.nih.gov/31068683/)
 [pdf](https://www.gwern.net/docs/genetics/heritable/2019-tam.pdf)
 
+<https://personal.broadinstitute.org/howrigan/workshop/GWAS_QC_Howrigan_July2020.pdf>
+
 # Sample collection and genotyping
 A good paper on the "Basic statistical analysis in genetic case-control studies" by [Clarke et al. 2011](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3154648/).
 Genomic control: [wiki](https://en.wikipedia.org/wiki/Population_structure_(genetics)
