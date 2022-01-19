@@ -1086,3 +1086,20 @@ transform: scale(1.1);
   text-align: center;
 
 }
+
+
+.evidence-graph-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align:center; 
+  float:left;
+}
+
+.evidence-graph {
+  width: 100%;
+}
+
+.evidence-graph img {
+  width: 100%;
+}
