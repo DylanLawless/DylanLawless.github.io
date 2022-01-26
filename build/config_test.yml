@@ -13,9 +13,7 @@ collections:
     topic:
         output: true
         permalink: /topic/:name
-      #    people: true
 
-        # You can define default values for attributes on topics. This can be useful if all the documents in the collection will share the same layout for example:
 defaults:
   - scope:
       path: ""
@@ -23,15 +21,13 @@ defaults:
     values:
       layout: topic
 
-plugins:
-  - jekyll-spaceship
+# plugins:
+#   - jekyll-spaceship
 
-jekyll-spaceship:
-  # default enabled processors
-  processors:
-    - table-processor
+# jekyll-spaceship:
+#   processors:
+#     - table-processor
 
-# feed config
 title: LawlessGenomics
 url: https://lawlessgenomics.com
 description: A home for topics in human precision medicine, genomic analysis, and data visualisation.

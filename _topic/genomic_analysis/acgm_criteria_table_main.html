@@ -1,0 +1,48 @@
+---
+layout: default
+title: Interpretation of variants ACMG
+created: 23 Jan 2022
+tags: genomics
+subject: Genomic analysis
+---
+<div class="full-width">
+<h1>Interpretation of variants ACMG</h1>
+<p>
+Extensive annotation is applied during our genomics analysis.
+Interpretation of genetic determinants of disease is based on many evidence sources.
+One important source of interpretation comes from the
+Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology
+{% cite richards2015standards %}, full text at
+doi:
+<a href="https://www.gimjournal.org/article/S1098-3600(21)03031-8/fulltext">10.1038/gim.2015.30</a>.
+The following tables are provided as they appear in the initial steps of our filtering protocol for addiding the ACMG-standardised labels to candidate causal variants.
+</p>
+
+<!-- <p> -->
+<!-- <a href="https://lawlessgenomics.com/topic/evidence-finder-gene">Show gene-level evidence from ClinGen</a>. -->
+<!-- </p> -->
+
+<h2> Criteria for classifications </h2>
+{% include_relative acgm_criteria_table.html %}
+
+<h2> Caveats implementing filters </h2>
+<p> 
+Implementing the guidelines for interpretation of annotation requires multiple programmatic steps. 
+The number of individual caveat checks indicate the number of bioinformatic filter functions used.
+Unnumbered caveat checks indicate that only a single filter function is required during reference to annotation databases.
+However, each function depends on reference to either one or several evidence source databases (approximately 150 sources) which are not shown here. 
+</p>
+
+{% include_relative acgm_criteria_table_caveat.html %}
+
+<p>For reference, alternative public implementations of ACMG guidelines can be found in 
+{% cite li2017intervar %} and
+{% cite xavier2019tapes %};
+please note these tools have not implemented here nor is any assertion of their quality offered.
+Examples of effective variant filtering and expected candidate variant yield in studies of rare human disease are provided by
+{% cite pedersen2021effective %}.
+</p>
+
+<h2>References</h2>
+{% bibliography --cited %}
+</div>
