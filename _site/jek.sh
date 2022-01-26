@@ -1,7 +1,6 @@
 #!/bin/bash
-# Use the config_build for _config.yml
-# uses scholar plugin
 cp ./build/config_build.yml _config.yml
+cp ./build/Gemfile Gemfile
 sleep 1
 
 # bundle exec jekyll serve --incremental &
@@ -16,12 +15,6 @@ open -a Safari http://127.0.0.1:4000
 
 # :set spell spelllang=en_gb
 
-# if already in use
-# ps aux | grep jekyll
-# kill -9 "PID"
-
-# Errors due to OS updates.
-
 # e.g.: can't find gem jekyll (>= 0.a). Depending on machine:
 # If rails not installed,
 # sudo gem install rails
@@ -33,7 +26,6 @@ open -a Safari http://127.0.0.1:4000
 # sudo chmod -R 777 /usr/local/lib/ruby/gems/
 # gem install bundler jekyll
 # bundle add webrick
-
 
 # for ruby versions
 # installed with homebrew https://github.com/rbenv/rbenv
