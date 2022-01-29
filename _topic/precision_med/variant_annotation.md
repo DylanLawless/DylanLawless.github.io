@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Variant annotation
-created: 23 Sept 2021
+date: 2021-09-23 00:00:01
 tags: genomics
 subject: Precision medicine
 ---

@@ -1,14 +1,14 @@
----
-layout: topic
-title: Rare disease network analysis
-created: 8 Aug 2018
-bibliography:
-- '../tail/bibliography.bib'
-tags: genomics
-subject: Genomic analysis
----
-{{ page.title }}
-================
+/* --- */
+/* layout: topic */
+/* title: Rare disease network analysis */
+/* created: 8 Aug 2018 */
+/* bibliography: */
+/* - '../tail/bibliography.bib' */
+/* tags: genomics */
+/* subject: Genomic analysis */
+/* --- */
+/* {{ page.title }} */
+/* ================ */
 
 * TOC
 {:toc}

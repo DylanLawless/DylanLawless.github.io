@@ -1,13 +1,13 @@
 ---
 layout: topic
 title: Pharmacogenomics for personal medicine 
-created: 01 Jan 2019
+date: 2019-01-01 00:00:01
 tags: genomics
 subject: Precision medicine
 ---
 {{ page.title }}
 ================
-<p class="meta">26 Apr 2020</p>
+<p class="meta">01 Jan 2019</p>
 
 * TOC
 {:toc}

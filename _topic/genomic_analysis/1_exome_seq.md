@@ -24,23 +24,24 @@ interaction), VCF (variant call format).
 
 # Introduction
 
-This chapter contains theory and examples for the investigation of rare
-disease by exome sequencing used throughout this thesis. Each section is
-generally self-contained with a brief introduction. A specific section
-is devoted to a novel method of rare disease cohort network analysis in
-Sec \[sec:cohort\_network\_analysis\]. A separate introduction is also
-included to begin that section in context. This procedure was developed
-to provide a statistical method for the detection of damaged protein
-pathways that drive disease. The method is based on measuring variant
-enrichment and clustering by protein-protein interactions (PPI).
+This overview contains theory and examples for the investigation of rare
+disease by exome sequencing. 
+Each section is generally self-contained with a brief introduction. 
+An example of a summarised analysis plan is illustrated is the following map.
+Heavy boxes represent bioinformatic protocols and slanted boxes represent key file types.
+Other reference file types are shown by arrow boxes.
 
-A detailed overall analysis plan is illustrated in . A accompanying data
-storage plan is also provided in the same section that directly maps to
-the analysis plan. A rough overview “infographic” of a next generation
-sequencing study is shown **Figure \[fig:NGS\]**. The general
-requirements, personnel responsibilities, and cost-breakdown is shown.
+<img src="{{ site.baseurl }}{% link /pages/portfolio/ngs/analysis_flow.png %}" width="100%">
 
-**Whole exome sequencing experiment design.** The general
+An example accompanying data storage plan can be seen 
+[here](https://lawlessgenomics.com/pages/portfolio/ngs/analysis_flow_storage.png). 
+A rough overview "infographic" of a next generation sequencing study is shown below. 
+The general requirements, personnel responsibilities, and cost-breakdown is shown.
+
+
+<img src="{{ site.baseurl }}{% link images/bioinfo/NGS.png %}" width="100%">
+
+_**Whole exome sequencing experiment design.** The general
 requirements, personnel responsibilities, and cost-breakdown is shown
 for a small NGS study of approximately ten participants. If library
 preparation and sequencing is performed at a dedicated facility then
@@ -49,20 +50,18 @@ one critical feature; implementing the bioinformatic methods used in
 this chapter also requires a critical expertise in high-performance
 computing. No methods have been included to demonstrate job scheduling
 and parallelisation across large computer
-clusters.
-**FigureLabel**
-NGS
+clusters._
 
-<img src="{{ site.baseurl }}{% link images/bioinfo/NGS.png %}" width="80%">
 
-*image_caption*
 
 # Exome sequencing
 ## Sample preparation
 
 For genomic investigations, a patient generally donates a small blood
 sample (2-6mL) along with signed consent to use their biological
-material and data in genetic and functional research. Patient DNA is
+material and data in genetic and functional research. 
+A small sample of hair or saliva are also succificient as a source of DNA if a blood sample is unavailable. 
+Ideally, patient DNA is
 purified from peripheral blood monocytes. In most cases, the
 purification is done using a commercial kit such as that from Qiagen
 (51104 QIAamp DNA Blood Mini Kit). This protocol takes about 1 hour to
@@ -80,16 +79,19 @@ options available, the protocol used in this study was the SureSelect XT
 target enrichment system for Illumina paired-end multiplexed sequencing
 library. A detailed protocol is available from the manufacturer.
 However, the process can be summarised in four main steps. After DNA
-quality has been checked, the basic protocol consists of:\
-(1) DNA fragmentation into 100-300 base pair strands, either (i) by
-using an enzyme that digests the DNA or (ii) by breaking by sonication;
+quality has been checked, the basic protocol consists of:
+
+1. DNA fragmentation into 100-300 base pair strands, either 
+ - (i) by
+using an enzyme that digests the DNA or 
+ - (ii) by breaking by sonication;
 the DNA is suspended inside a small glass tube containing a glass rod
-which is vibrated by sonic waves inside a water bath.\
-(2) Another round of quality control checks to ensure that the DNA is
-fragmented into the correct size range.\
-(3) These fragments are bound by probes that specifically recognise the
-coding sequences which collectively make up the exome.\
-(4) The DNA that has been selectively purified is then tagged by adding
+which is vibrated by sonic waves inside a water bath.
+2. Another round of quality control checks to ensure that the DNA is
+fragmented into the correct size range.
+3. These fragments are bound by probes that specifically recognise the
+coding sequences which collectively make up the exome.
+4. The DNA that has been selectively purified is then tagged by adding
 a tail of nucleotides in specific sequences that label each of the
 individual samples with a unique code. When the sequencing step is
 performed later, all of the samples will get mixed together. The unique

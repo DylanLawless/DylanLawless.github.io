@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Pharmacogenomic stargazing
-created: 05 Mar 2021
+date: 2021-03-05 00:00:01
 tags: genomics
 status: finished
 subject: Precision medicine

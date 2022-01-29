@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Genomic analysis tools
-created: 8 Aug 2018
+date: 2018-08-08 00:00:01
 tags: genomics
 subject: Precision medicine
 ---

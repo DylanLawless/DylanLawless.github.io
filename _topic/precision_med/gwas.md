@@ -2,6 +2,7 @@
 <!-- layout: topic -->
 <!-- title: Genome wide assocciation study -->
 <!-- created: 8 Sep 2020 -->
+<!-- date: 2020-09-08 -->
 <!-- bibliography: -->
 <!-- - '../tail/bibliography.bib' -->
 <!-- tags: genomics -->

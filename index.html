@@ -80,14 +80,15 @@ in continuous development.
 <!-- <!-1- particles.js container -1-> <div id="particles-js"></div> <!-1- stats - count particles -1-> <div class="count-particles"> <span class="js-count-particles">--</span> particles </div> <!-1- particles.js lib - https://github.com/VincentGarreau/particles.js -1-> <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-1- stats.js lib -1-> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
 
 <div id="Topics">
+
 	<div class="subjects">
-		<h1>Genomics of rare disease</h1>
+		<h1>Precision medicine</h1>
 		<ul class="topic">
-		{% assign sorted-topic = site.topic | where: "subject","Genomic analysis" %}
+		{% assign sorted-topic = site.topic | where: "subject","Precision medicine" %}
 		{% for topic in sorted-topic %}
 		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
 		{% endfor %}
-		<a href="https://lawlessgenomics.com/genetic_ticker/current.html">Current analysis ticker</a>
+		<a href="https://lawlessgenomics.com/topic/evidence_builder.html">Evidence builder prototype</a>
 		</ul>
 	</div>
 
@@ -123,13 +124,13 @@ in continuous development.
 	</div>
 
 	<div class="subjects">
-		<h1>Precision medicine</h1>
+		<h1>Genomics of rare disease</h1>
 		<ul class="topic">
-		{% assign sorted-topic = site.topic | where: "subject","Precision medicine" %}
+		{% assign sorted-topic = site.topic | where: "subject","Genomic analysis" %}
 		{% for topic in sorted-topic %}
 		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
 		{% endfor %}
-		<a href="https://lawlessgenomics.com/topic/evidence_builder.html">Evidence builder prototype</a>
+		<a href="https://lawlessgenomics.com/genetic_ticker/current.html">Current analysis ticker</a>
 		</ul>
 	</div>
 

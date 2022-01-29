@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Websites for basic genetic variant information
-created: 27 Feb 2012
+date: 2012-02-27 00:00:01
 tags: statistics, genomics
 subject: Precision medicine
 ---
