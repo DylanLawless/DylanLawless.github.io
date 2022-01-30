@@ -385,9 +385,8 @@ td{
 	margin: 1rem auto 1rem auto;
 	}
 
-    /* background-image:url("../images/national-cancer-institute-ct10qdGv1hQ-unsplash-2_shiftz2.png"); */
 .tagimage {
-    background-image:url("https://raw.githubusercontent.com/DylanLawless/DylanLawless.github.io/master/images/national-cancer-institute-ct10qdGv1hQ-unsplash-2_shiftz2.png");
+    background-image:url("../images/national-cancer-institute-ct10qdGv1hQ-unsplash-2_shiftz2.png");
 	background-repeat: no-repeat;
 	background-color: black;
 	background-size: 100% auto;
