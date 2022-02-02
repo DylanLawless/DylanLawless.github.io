@@ -253,7 +253,8 @@ I publish this intermediate version to demonstrate the purpose and for discussio
 </br>
 
 <strong>Shown here:</strong> two randomly chosen coding variants in DDX58.<br>
-<strong>Variant table:</strong> gnomAD data for the variants of interest. <br>
+<!-- <strong>Variant table:</strong> gnomAD data for the variants of interest. <br> -->
+<strong>Annotation table:</strong> Default output from variant annotation. <br>
 <strong>Top:</strong> protein-coding functional data with coding positions. Protein annotations match that of Uniprot:ENST00000379883; ENSP00000369213; ENSG00000107201 [O95786-1].<br>
 <strong>Bottom:</strong> transcript sequence data with genomic coordinates, GRCh37.
 Blue dotted lines indicate the variants of interest.
@@ -280,16 +281,28 @@ The canonical transcript ENST00000379883.2 is indicated by the green diamond.
 	&#9997;&#65039; Protocol for evidence scores
 <a href="https://lawlessgenomics.com/topic/acgm-criteria-table-main">(as shown here)</a> based on the standards and guidelines for the interpretation of sequence variants from ACMG (doi:<a href="https://www.nature.com/articles/gim201530">10.1038/gim.2015.30</a>).<br>
 	&#9989; All-coding VEP and dbNSFP annotation pipeline.<br>
+	&#9989; Account for hg18, hg19 and GRCh38.<br>
+	<!-- - SNP1 <b>GRCh37</b> GnomAD v2.1.1 9-32493805-T-C <br> -->
+	<!-- - SNP2 <b>GRCh37</b> GnomAD v2.1.1 9-32491328-T-C <br> -->
+	<!-- - SNP1 <b>GRCh38</b> GnomAD v3.1.2 9-32493807-T-C <br> -->
+	<!-- - SNP2 <b>GRCh38</b> GnomAD v3.1.2 9-32491330-T-C <br> -->
 </p>
 
 <div class="evidence-graph-container">
   <div class="evidence-graph left" margin-bottom="3vh">
 
+<!-- <iframe id="igraph" scrolling="yes" style="border:none;" seamless="seamless" src=" -->
+<!-- 	./gnomad_table.html -->
+<!-- 	" -->
+<!-- 	height="240" --> 
+<!-- 	width="80%"></iframe> -->
+
 <iframe id="igraph" scrolling="yes" style="border:none;" seamless="seamless" src="
-	https://lawlessgenomics.com/topic/gnomad_table.html
+	./ddx58_grch38.vep.html
 	"
-	height="240" 
+	height="430" 
 	width="80%"></iframe>
+	<!-- https://lawlessgenomics.com/topic/ddx58_grch38.vep.html -->
 
 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="
 	https://lawlessgenomics.com/topic/gene_illustrate.html
