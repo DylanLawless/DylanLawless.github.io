@@ -7,6 +7,27 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Reference genome choice</title>
+        <description>&lt;h1 id=&quot;reference-genome-choice&quot;&gt;Reference genome choice&lt;/h1&gt;
+&lt;p&gt;Reference genome choice is discussed succinctly in many difference places.
+Therefore, I will not write a long piece on it but instead add links for what I think are usefule sources.&lt;/p&gt;
+
+&lt;h2 id=&quot;heng-li---which-human-reference-genome-to-use&quot;&gt;Heng Li - Which human reference genome to use?&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use&quot;&gt;https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;illumina-review&quot;&gt;Illumina review&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.illumina.com/science/genomics-research/articles/dragen-demystifying-reference-genomes.html&quot;&gt;https://www.illumina.com/science/genomics-research/articles/dragen-demystifying-reference-genomes.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 31 Jan 2022 01:00:01 +0100</pubDate>
+        <link>http://localhost:4000//2022/01/31/reference-genome-choice.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2022/01/31/reference-genome-choice.html</guid>
+      </item>
+    
+      <item>
         <title>Who's afraid of the big bad geneticist?</title>
         <description>&lt;h1 id=&quot;whos-afraid-of-the-big-bad-geneticist&quot;&gt;Who’s afraid of the big bad geneticist?&lt;/h1&gt;
 &lt;p&gt;Unfinished article&lt;/p&gt;
@@ -510,44 +531,6 @@ Citations in my master_references.bib also means that I will always have them av
         <pubDate>Mon, 19 Jul 2021 00:00:00 +0200</pubDate>
         <link>http://localhost:4000//2021/07/19/weeknotes_8.html</link>
         <guid isPermaLink="true">http://localhost:4000//2021/07/19/weeknotes_8.html</guid>
-      </item>
-    
-      <item>
-        <title>Weeknotes</title>
-        <description>&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;12 July 2021&lt;/p&gt;
-
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Methods for pruning SNPs by correlation in cohort. &lt;a href=&quot;https://privefl.github.io/bigsnpr/articles/pruning-vs-clumping.html&quot;&gt;e.g.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Human whole genome analysis.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Reviewing Altman &amp;amp; Bland another paper from &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Designing a poster and illustrations of viral structure, proteins, and genetics.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Robert Bringhurst - &lt;a href=&quot;https://www.bookdepository.com/search?searchTerm=The+Elements+of+Typographic+Style&amp;amp;search=Find+book&quot;&gt;The Elements of Typographic Style&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.lesswrong.com/posts/vwqLfDfsHmiavFAGP/the-library-of-scott-alexandria&quot;&gt;The Library of Scott Alexandria&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E05](https://www.youtube.com/watch?v=3v6k53bHX4A&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=5 --&gt;
-&lt;!-- 1. Adam Curtis documentary: [Cant Get You Out of My Head E06](https://www.youtube.com/watch?v=pga0Oi1cZvo&amp;list=PLt4ukDNowDWc0AvV8pImCrk4pK_tZXOyF&amp;index=6 --&gt;
-
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Dan Carlin’s Hardcore History - &lt;a href=&quot;https://www.dancarlin.com/product/hardcore-history-65-supernova-in-the-east-iv/&quot;&gt;Supernova in the East IV&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Mon, 12 Jul 2021 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000//2021/07/12/weeknotes_7.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2021/07/12/weeknotes_7.html</guid>
       </item>
     
 		
