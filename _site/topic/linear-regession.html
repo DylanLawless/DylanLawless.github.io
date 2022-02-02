@@ -2,7 +2,8 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -16,27 +17,28 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description"
+content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
 	<title>Linear regression</title>
-	<meta name="author" content="LawlessGenomics">
-	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<meta name="author" content="LawlessGenomics" />
+	<link href='https://lawlessgenomics.com/feed.xml' rel='alternate' title="LawlessGenomics" type='application/atom+xml'>
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 	
 	<!-- Google font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com"> 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -65,7 +67,9 @@
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
 				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
 			</div>
 
@@ -98,8 +102,7 @@ Reading time  8 minutes
   <li><a href="#drawing-the-line" id="markdown-toc-drawing-the-line">Drawing the line</a></li>
   <li><a href="#accuracy-of-the-coefficient-estimates" id="markdown-toc-accuracy-of-the-coefficient-estimates">Accuracy of the Coefficient Estimates</a></li>
   <li><a href="#se-in-hypothesis-tests-for-coefficients" id="markdown-toc-se-in-hypothesis-tests-for-coefficients">SE in hypothesis tests for coefficients</a></li>
-  <li>
-<a href="#model-accuracy" id="markdown-toc-model-accuracy">Model accuracy</a>    <ul>
+  <li><a href="#model-accuracy" id="markdown-toc-model-accuracy">Model accuracy</a>    <ul>
       <li><a href="#residual-standard-error" id="markdown-toc-residual-standard-error">Residual Standard Error</a></li>
       <li><a href="#r2-statistic" id="markdown-toc-r2-statistic">\(R^2\) Statistic</a></li>
     </ul>
@@ -107,7 +110,7 @@ Reading time  8 minutes
   <li><a href="#multiple-linear-regression" id="markdown-toc-multiple-linear-regression">Multiple linear regression</a></li>
 </ul>
 
-<p><br>
+<p><br />
 This page is being formulated currently by plagerising “An Introduction to Statistical Learning”. If you find this page before a lot of changes are complete, then keep this in mind. Once major changes/completion occurs, this message will be updated to references instead.</p>
 
 <h2 id="simple-linear-regression">Simple linear regression</h2>
@@ -265,8 +268,7 @@ SE(\hat\beta_1)}\)
 No relationship will give <em>t</em>-distribution \(n - 2\) degrees of freedom.
 (bell curve shape, for values of n greater than \(\approx\) 30 it is similar to normal distribution).</p>
 
-<p>The probability of observing any number equal to |_t_| or larger, assuming $$ 
-\beta_1 = 0 $$, is the <em>p-value</em>.
+<p>The probability of observing any number equal to |<em>t</em>| or larger, assuming \(\beta_1 = 0\), is the <em>p-value</em>.
 A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can <em>reject the null hypothesis</em>.</p>
 
 <h2 id="model-accuracy">Model accuracy</h2>
@@ -370,12 +372,14 @@ that might affect the response Y, then we will use a multiple linear regression.
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
 					<div class="right-root">
 						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
 						<a href="/resume">Resume</a>
 						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
-						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						<a href='https://lawlessgenomics.com/feed.xml'>RSS feed</a>
 						</p>
 					</div>
 		</div>

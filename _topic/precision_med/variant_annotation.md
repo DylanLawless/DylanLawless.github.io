@@ -2,6 +2,8 @@
 layout: topic
 title: Variant annotation
 date: 2021-09-23 00:00:01
+bibliography:
+- '../tail/bibliography.bib'
 tags: genomics
 subject: Precision medicine
 ---

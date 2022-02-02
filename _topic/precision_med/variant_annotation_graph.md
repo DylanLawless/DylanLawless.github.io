@@ -1,7 +1,7 @@
 ---
 layout: topic
 title: Variant annotation graph
-created: 2022-02-04 00:00:01
+date: 2022-01-30 00:00:01
 bibliography:
 - '../tail/bibliography.bib'
 tags: genomics
