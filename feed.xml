@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LawlessGenomics</title>
-    <description>A home for topics in human precision medicine, genomic analysis, and data visualisation.</description>
+    <description></description>
     <link>http://localhost:4000</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
@@ -656,7 +656,7 @@ number 11 on the list &lt;a href=&quot;https://github.com/DylanLawless/notes/blo
         &lt;td style=&quot;text-align: right&quot;&gt;2.9661&lt;/td&gt;
         &lt;td style=&quot;text-align: right&quot;&gt;0.4237&lt;/td&gt;
         &lt;td style=&quot;text-align: right&quot;&gt;48.3&lt;/td&gt;
-        &lt;td style=&quot;text-align: right&quot;&gt;$$&amp;lt;$$0.0001&lt;/td&gt;
+        &lt;td style=&quot;text-align: right&quot;&gt;\(&amp;lt;\)0.0001&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td style=&quot;text-align: left&quot;&gt;X&lt;/td&gt;
@@ -1354,7 +1354,7 @@ i.e. How good is the scan for correct diagnosis?&lt;/p&gt;
     &lt;thead&gt;
       &lt;tr&gt;
         &lt;th style=&quot;text-align: left&quot;&gt;Liver scan&lt;/th&gt;
-        &lt;th style=&quot;text-align: center&quot;&gt;: Pathology (diagnosis) :||&lt;/th&gt;
+        &lt;th style=&quot;text-align: center&quot;&gt;: Pathology (diagnosis) :&lt;/th&gt;
         &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
         &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
       &lt;/tr&gt;
@@ -1362,24 +1362,24 @@ i.e. How good is the scan for correct diagnosis?&lt;/p&gt;
     &lt;tbody&gt;
       &lt;tr&gt;
         &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;**Abnormal (+)**&lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;**Normal (-)**&lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;**Total**&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Abnormal (+)&lt;/strong&gt;&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Normal (-)&lt;/strong&gt;&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-        &lt;td style=&quot;text-align: left&quot;&gt;**Abnormal(+)**&lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;_231_&lt;/td&gt;
+        &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Abnormal(+)&lt;/strong&gt;&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;231&lt;/em&gt;&lt;/td&gt;
         &lt;td style=&quot;text-align: center&quot;&gt;32&lt;/td&gt;
         &lt;td style=&quot;text-align: center&quot;&gt;263&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-        &lt;td style=&quot;text-align: left&quot;&gt;**Normal(-)**&lt;/td&gt;
+        &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Normal(-)&lt;/strong&gt;&lt;/td&gt;
         &lt;td style=&quot;text-align: center&quot;&gt;27&lt;/td&gt;
-        &lt;td style=&quot;text-align: center&quot;&gt;_54_&lt;/td&gt;
+        &lt;td style=&quot;text-align: center&quot;&gt;&lt;em&gt;54&lt;/em&gt;&lt;/td&gt;
         &lt;td style=&quot;text-align: center&quot;&gt;81&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-        &lt;td style=&quot;text-align: left&quot;&gt;**Total**&lt;/td&gt;
+        &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
         &lt;td style=&quot;text-align: center&quot;&gt;258&lt;/td&gt;
         &lt;td style=&quot;text-align: center&quot;&gt;86&lt;/td&gt;
         &lt;td style=&quot;text-align: center&quot;&gt;344&lt;/td&gt;
@@ -3162,8 +3162,7 @@ SE(\hat\beta_1)}\)
 No relationship will give &lt;em&gt;t&lt;/em&gt;-distribution \(n - 2\) degrees of freedom.
 (bell curve shape, for values of n greater than \(\approx\) 30 it is similar to normal distribution).&lt;/p&gt;
 
-&lt;p&gt;The probability of observing any number equal to |_t_| or larger, assuming $$ 
-\beta_1 = 0 $$, is the &lt;em&gt;p-value&lt;/em&gt;.
+&lt;p&gt;The probability of observing any number equal to |&lt;em&gt;t&lt;/em&gt;| or larger, assuming \(\beta_1 = 0\), is the &lt;em&gt;p-value&lt;/em&gt;.
 A very low p-value indicates that it is unlikely that an assocation will be measured by chance, and therefore is like a true association between predictor and response, and we can &lt;em&gt;reject the null hypothesis&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;model-accuracy&quot;&gt;Model accuracy&lt;/h2&gt;
