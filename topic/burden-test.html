@@ -2,8 +2,7 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -17,28 +16,27 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description"
-content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
 	<title>Burden testing with variant collapse</title>
-	<meta name="author" content="LawlessGenomics" />
-	<link href='https://lawlessgenomics.com/feed.xml' rel='alternate' title="LawlessGenomics" type='application/atom+xml'>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
 	
 	<!-- Google font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com"> 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -67,9 +65,7 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.2_150ppi.png" 
-				alt="Logo image" width="25" height="38.5" /></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
 				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
 			</div>
 
@@ -100,16 +96,19 @@ Reading time  38 minutes
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#to-do" id="markdown-toc-to-do">To do</a></li>
-  <li><a href="#main-papers-in-order" id="markdown-toc-main-papers-in-order">Main papers in order</a>    <ul>
+  <li>
+<a href="#main-papers-in-order" id="markdown-toc-main-papers-in-order">Main papers in order</a>    <ul>
       <li><a href="#major-classes-of-tests" id="markdown-toc-major-classes-of-tests">Major Classes of Tests</a></li>
-      <li><a href="#burden-tests-so-far" id="markdown-toc-burden-tests-so-far">Burden Tests So Far</a>        <ul>
+      <li>
+<a href="#burden-tests-so-far" id="markdown-toc-burden-tests-so-far">Burden Tests So Far</a>        <ul>
           <li><a href="#tests" id="markdown-toc-tests">Tests</a></li>
           <li><a href="#power-of-burden-tests-depends-on" id="markdown-toc-power-of-burden-tests-depends-on">Power of burden tests depends on</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#li-and-leal-2008" id="markdown-toc-li-and-leal-2008">Li and Leal 2008</a>    <ul>
+  <li>
+<a href="#li-and-leal-2008" id="markdown-toc-li-and-leal-2008">Li and Leal 2008</a>    <ul>
       <li><a href="#background" id="markdown-toc-background">Background</a></li>
       <li><a href="#genetic-model" id="markdown-toc-genetic-model">Genetic model</a></li>
       <li><a href="#single-marker-test" id="markdown-toc-single-marker-test">Single-marker test</a></li>
@@ -123,16 +122,19 @@ Reading time  38 minutes
       <li><a href="#problems-with-this-paper" id="markdown-toc-problems-with-this-paper">Problems with this paper</a></li>
     </ul>
   </li>
-  <li><a href="#madsen-and-browning-2009" id="markdown-toc-madsen-and-browning-2009">Madsen and Browning 2009</a>    <ul>
+  <li>
+<a href="#madsen-and-browning-2009" id="markdown-toc-madsen-and-browning-2009">Madsen and Browning 2009</a>    <ul>
       <li><a href="#background-1" id="markdown-toc-background-1">Background</a></li>
       <li><a href="#main-theory" id="markdown-toc-main-theory">Main theory</a></li>
-      <li><a href="#methods" id="markdown-toc-methods">Methods</a>        <ul>
+      <li>
+<a href="#methods" id="markdown-toc-methods">Methods</a>        <ul>
           <li><a href="#weighted-sum-method" id="markdown-toc-weighted-sum-method">Weighted-Sum Method</a></li>
           <li><a href="#power-simulations" id="markdown-toc-power-simulations">Power simulations</a></li>
         </ul>
       </li>
       <li><a href="#encode-data" id="markdown-toc-encode-data">ENCODE data</a></li>
-      <li><a href="#results" id="markdown-toc-results">Results</a>        <ul>
+      <li>
+<a href="#results" id="markdown-toc-results">Results</a>        <ul>
           <li><a href="#proportion-of-variants-containing-mutations" id="markdown-toc-proportion-of-variants-containing-mutations">Proportion of Variants Containing Mutations</a></li>
         </ul>
       </li>
@@ -140,8 +142,10 @@ Reading time  38 minutes
       <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
     </ul>
   </li>
-  <li><a href="#price-2010" id="markdown-toc-price-2010">Price 2010</a>    <ul>
-      <li><a href="#methods-1" id="markdown-toc-methods-1">Methods</a>        <ul>
+  <li>
+<a href="#price-2010" id="markdown-toc-price-2010">Price 2010</a>    <ul>
+      <li>
+<a href="#methods-1" id="markdown-toc-methods-1">Methods</a>        <ul>
           <li><a href="#simulation-framework" id="markdown-toc-simulation-framework">Simulation Framework</a></li>
           <li><a href="#weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios" id="markdown-toc-weighted-approaches-correspond-to-implicit-assumptions-about-log-odds-ratios">Weighted Approaches Correspond to Implicit Assumptions about Log Odds Ratios</a></li>
           <li><a href="#fixed-threshold-approach" id="markdown-toc-fixed-threshold-approach">Fixed-Threshold Approach</a></li>
@@ -155,13 +159,16 @@ Reading time  38 minutes
       <li><a href="#results-and-discussion" id="markdown-toc-results-and-discussion">Results and Discussion</a></li>
     </ul>
   </li>
-  <li><a href="#neale-2011" id="markdown-toc-neale-2011">Neale 2011</a>    <ul>
+  <li>
+<a href="#neale-2011" id="markdown-toc-neale-2011">Neale 2011</a>    <ul>
       <li><a href="#c-alpha-tests" id="markdown-toc-c-alpha-tests">C-alpha tests</a></li>
     </ul>
   </li>
-  <li><a href="#skat" id="markdown-toc-skat">SKAT</a>    <ul>
+  <li>
+<a href="#skat" id="markdown-toc-skat">SKAT</a>    <ul>
       <li><a href="#introduction-1" id="markdown-toc-introduction-1">Introduction</a></li>
-      <li><a href="#methods-2" id="markdown-toc-methods-2">Methods</a>        <ul>
+      <li>
+<a href="#methods-2" id="markdown-toc-methods-2">Methods</a>        <ul>
           <li><a href="#sequencing-kernel-association-test" id="markdown-toc-sequencing-kernel-association-test">Sequencing Kernel Association Test</a></li>
           <li><a href="#skat-model-and-test-for-linear-snp-effects" id="markdown-toc-skat-model-and-test-for-linear-snp-effects">SKAT Model and Test for Linear SNP Effects</a></li>
           <li><a href="#relationship-between-linear-skat-and-individual-variant-test-statistics" id="markdown-toc-relationship-between-linear-skat-and-individual-variant-test-statistics">Relationship between Linear SKAT and Individual Variant Test Statistics</a></li>
@@ -171,21 +178,25 @@ Reading time  38 minutes
       <li><a href="#skat-is-a-generalization-of-the-c-alpha-test" id="markdown-toc-skat-is-a-generalization-of-the-c-alpha-test">SKAT Is a Generalization of the C-Alpha Test</a></li>
     </ul>
   </li>
-  <li><a href="#lee-2012" id="markdown-toc-lee-2012">Lee 2012</a>    <ul>
+  <li>
+<a href="#lee-2012" id="markdown-toc-lee-2012">Lee 2012</a>    <ul>
       <li><a href="#introduction-2" id="markdown-toc-introduction-2">Introduction</a></li>
       <li><a href="#methods-3" id="markdown-toc-methods-3">Methods</a></li>
     </ul>
   </li>
-  <li><a href="#protein-pathway-analysis" id="markdown-toc-protein-pathway-analysis">Protein pathway analysis</a>    <ul>
+  <li>
+<a href="#protein-pathway-analysis" id="markdown-toc-protein-pathway-analysis">Protein pathway analysis</a>    <ul>
       <li><a href="#zhang-2021-ashg" id="markdown-toc-zhang-2021-ashg">Zhang 2021 ASHG</a></li>
-      <li><a href="#problems-with-this-paper-1" id="markdown-toc-problems-with-this-paper-1">Problems with this paper</a>        <ul>
+      <li>
+<a href="#problems-with-this-paper-1" id="markdown-toc-problems-with-this-paper-1">Problems with this paper</a>        <ul>
           <li><a href="#cluster-method" id="markdown-toc-cluster-method">Cluster method</a></li>
           <li><a href="#carrier-counts-instead-of-allele-dosage" id="markdown-toc-carrier-counts-instead-of-allele-dosage">Carrier counts instead of allele dosage</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#itan--casanova-contributions" id="markdown-toc-itan--casanova-contributions">Itan &amp; Casanova contributions</a>    <ul>
+  <li>
+<a href="#itan--casanova-contributions" id="markdown-toc-itan--casanova-contributions">Itan &amp; Casanova contributions</a>    <ul>
       <li><a href="#historical-review" id="markdown-toc-historical-review">Historical review</a></li>
     </ul>
   </li>
@@ -233,7 +244,8 @@ Some more context is available in this blogpost
   <li>Optimal Unified Approach for Rare-Variant Association Testing with Application to Small-Sample Case-Control Whole-Exome Sequencing Studies.
 <a class="citation" href="#Lee2012Optimalunified">(Lee et al., 2012)</a>.</li>
   <li>Sequence Kernel Association Tests for the Combined Effect of Rare and Common Variants.
-<a class="citation" href="#IonitaLaza2013Sequence">(Ionita-Laza et al., 2013)</a></li>
+<a class="citation" href="#IonitaLaza2013Sequence">(Ionita-Laza et al., 2013)</a>
+</li>
 </ul>
 
 <h3 id="major-classes-of-tests">Major Classes of Tests</h3>
@@ -459,7 +471,8 @@ The multivariate test is done where for each group, the  individuals are coded w
   </li>
   <li>CMC method, with multivariate Hotelling’s T2 test or logistic regression:
     <ul>
-      <li><em>well controlled</em>.</li>
+      <li>
+<em>well controlled</em>.</li>
     </ul>
   </li>
 </ul>
@@ -477,7 +490,8 @@ The multivariate test is done where for each group, the  individuals are coded w
 
 <ul>
   <li>A groupwise association test for rare mutations using a weighted sum statistic
-<a class="citation" href="#madsen2009groupwise">(Madsen &amp; Browning, 2009)</a></li>
+<a class="citation" href="#madsen2009groupwise">(Madsen &amp; Browning, 2009)</a>
+</li>
 </ul>
 
 <h3 id="background-1">Background</h3>
@@ -705,7 +719,8 @@ If a pathway contains G non-overlapping genes, a method to do this is to use the
 
 <ul>
   <li>Pooled association tests for rare variants in exon-resequencing studies.
-<a class="citation" href="#price2010pooled">(Price et al., 2010)</a></li>
+<a class="citation" href="#price2010pooled">(Price et al., 2010)</a>
+</li>
   <li>The approach is based on the regression of
     <ul>
       <li>phenotypic values</li>
@@ -807,7 +822,8 @@ I need to compare these two papers here in more detail
 
 <ul>
   <li>Testing for an unusual distribution of rare variants.
-<a class="citation" href="#neale2011testing">(Neale et al., 2011)</a></li>
+<a class="citation" href="#neale2011testing">(Neale et al., 2011)</a>
+</li>
 </ul>
 
 <h3 id="c-alpha-tests">C-alpha tests</h3>
@@ -1086,7 +1102,7 @@ history to the story in a great twitter thread
 The literature for discussion is first listed here to facilitate downloading 
 but sources are referenced as usual throughout.</p>
 
-<hr />
+<hr>
 
 <p>2013 PNAS. The human gene connectome as a map of short cuts for morbid allele discovery.
 <a class="citation" href="#itan2013human">(Itan et al., 2013)</a>
@@ -1140,7 +1156,7 @@ but sources are referenced as usual throughout.</p>
 <a class="citation" href="#zhang2021computational">(Zhang et al., 2021)</a>
 <a href="https://pubmed.ncbi.nlm.nih.gov/34015270/">https://pubmed.ncbi.nlm.nih.gov/34015270/</a></p>
 
-<hr />
+<hr>
 
 <p>To date, the main paper that implements protein pathway analysis for rare 
 immune disease is that by
@@ -1222,7 +1238,7 @@ as anyone to date.</p>
 <em>“A computational approach for detecting physiological homogeneity in the midst of genetic heterogeity.
 That was terrific!”</em>.</p>
 
-<hr />
+<hr>
 
 <blockquote>
   <p>An aside on what I call the <em>“gold-standard”</em> for our field should be:</p>
@@ -1231,7 +1247,7 @@ That was terrific!”</em>.</p>
     <li>Validation by functional models under systematic control.</li>
   </ol>
 
-  <p>Part [1] Depends on patient cohorts that are large enough to detect the effect based on the phenotype strength - difficult for <em>rare disease</em>.<br />
+  <p>Part [1] Depends on patient cohorts that are large enough to detect the effect based on the phenotype strength - difficult for <em>rare disease</em>.<br>
 Part [2] Depends on independently testing biological mechanisms.</p>
 
   <p>This second step generally consists of two hurdles:</p>
@@ -1256,7 +1272,7 @@ pathway/system with SOPs that improve accuracy and precision
 models for each new study.</p>
 </blockquote>
 
-<hr />
+<hr>
 
 <p>Returning to our historical review, 
 we have been producing our protocols similarly in parallel.
@@ -1444,7 +1460,8 @@ Then we will find the real minimum variant count required to pass significance:<
 
 <h2 id="references">References</h2>
 
-<ol class="bibliography"><li><span id="Povysil2019rare">Povysil, G., Petrovski, S., Hostyk, J., Aggarwal, V., Allen, A. S., &amp; Goldstein, D. B. (2019). Rare-variant collapsing analyses for complex traits: guidelines and applications. <i>Nature Reviews Genetics</i>, <i>20</i>(12), 747–759. https://doi.org/10.1038/s41576-019-0177-4</span></li>
+<ol class="bibliography">
+<li><span id="Povysil2019rare">Povysil, G., Petrovski, S., Hostyk, J., Aggarwal, V., Allen, A. S., &amp; Goldstein, D. B. (2019). Rare-variant collapsing analyses for complex traits: guidelines and applications. <i>Nature Reviews Genetics</i>, <i>20</i>(12), 747–759. https://doi.org/10.1038/s41576-019-0177-4</span></li>
 <li><span id="li2008methods">Li, B., &amp; Leal, S. M. (2008). Methods for detecting associations with rare variants for common diseases: application to analysis of sequence data. <i>The American Journal of Human Genetics</i>, <i>83</i>(3), 311–321.</span></li>
 <li><span id="morris2010evaluation">Morris, A. P., &amp; Zeggini, E. (2010). An evaluation of statistical approaches to rare variant analysis in genetic association studies. <i>Genetic Epidemiology</i>, <i>34</i>(2), 188–193.</span></li>
 <li><span id="price2010pooled">Price, A. L., Kryukov, G. V., de Bakker, P. I. W., Purcell, S. M., Staples, J., Wei, L.-J., &amp; Sunyaev, S. R. (2010). Pooled association tests for rare variants in exon-resequencing studies. <i>The American Journal of Human Genetics</i>, <i>86</i>(6), 832–838.</span></li>
@@ -1465,7 +1482,8 @@ Then we will find the real minimum variant count required to pass significance:<
 <li><span id="zhang2019seqtailor">Zhang, P., Boisson, B., Stenson, P. D., Cooper, D. N., Casanova, J.-L., Abel, L., &amp; Itan, Y. (2019). SeqTailor: a user-friendly webserver for the extraction of DNA or protein sequences from next-generation sequencing data. <i>Nucleic Acids Research</i>, <i>47</i>(W1), W623–W631.</span></li>
 <li><span id="casanova2020human">Casanova, J.-L., &amp; Abel, L. (2020). The human genetic determinism of life-threatening infectious diseases: genetic heterogeneity and physiological homogeneity? <i>Human Genetics</i>, <i>139</i>, 681–694.</span></li>
 <li><span id="bastard2021herpes">Bastard, P., Manry, J., Chen, J., Rosain, J., Seeleuthner, Y., AbuZaitun, O., Lorenzo, L., Khan, T., Hasek, M., Hernandez, N., &amp; others. (2021). Herpes simplex encephalitis in a patient with a distinctive form of inherited IFNAR1 deficiency. <i>The Journal of Clinical Investigation</i>, <i>131</i>(1).</span></li>
-<li><span id="gao2021tlr3">Gao, D., Ciancanelli, M. J., Zhang, P., Harschnitz, O., Bondet, V., Hasek, M., Chen, J., Mu, X., Itan, Y., Cobat, A., &amp; others. (2021). TLR3 controls constitutive IFN-βantiviral immunity in human fibroblasts and cortical neurons. <i>The Journal of Clinical Investigation</i>, <i>131</i>(1).</span></li></ol>
+<li><span id="gao2021tlr3">Gao, D., Ciancanelli, M. J., Zhang, P., Harschnitz, O., Bondet, V., Hasek, M., Chen, J., Mu, X., Itan, Y., Cobat, A., &amp; others. (2021). TLR3 controls constitutive IFN-βantiviral immunity in human fibroblasts and cortical neurons. <i>The Journal of Clinical Investigation</i>, <i>131</i>(1).</span></li>
+</ol>
 
 </div>
 
@@ -1504,14 +1522,12 @@ Then we will find the real minimum variant count required to pass significance:<
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.2_150ppi.png" 
-				alt="Logo image" width="25" height="38.5" /></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
 					<div class="right-root">
 						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
 						<a href="/resume">Resume</a>
 						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
-						<a href='https://lawlessgenomics.com/feed.xml'>RSS feed</a>
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
 						</p>
 					</div>
 		</div>

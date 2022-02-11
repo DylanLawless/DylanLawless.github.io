@@ -2,8 +2,7 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -17,28 +16,27 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description"
-content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
 	<title>Quantification of pLoF</title>
-	<meta name="author" content="LawlessGenomics" />
-	<link href='https://lawlessgenomics.com/feed.xml' rel='alternate' title="LawlessGenomics" type='application/atom+xml'>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
 	
 	<!-- Google font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com"> 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -67,9 +65,7 @@ content="A home for topics in human precision medicine, genomic analysis, and da
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.2_150ppi.png" 
-				alt="Logo image" width="25" height="38.5" /></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
 				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
 			</div>
 
@@ -99,14 +95,16 @@ Reading time  9 minutes
 <h1 id="quantification-of-plof">Quantification of pLoF</h1>
 
 <ul id="markdown-toc">
-  <li><a href="#identification-of-plof-variants" id="markdown-toc-identification-of-plof-variants">Identification of pLoF variants</a>    <ul>
+  <li>
+<a href="#identification-of-plof-variants" id="markdown-toc-identification-of-plof-variants">Identification of pLoF variants</a>    <ul>
       <li><a href="#variant-effect-predictor" id="markdown-toc-variant-effect-predictor">Variant Effect Predictor</a></li>
       <li><a href="#loftee" id="markdown-toc-loftee">LOFTEE</a></li>
       <li><a href="#gencode" id="markdown-toc-gencode">GENCODE</a></li>
       <li><a href="#gene-ontology-go" id="markdown-toc-gene-ontology-go">Gene Ontology (GO)</a></li>
     </ul>
   </li>
-  <li><a href="#published-example" id="markdown-toc-published-example">Published example</a>    <ul>
+  <li>
+<a href="#published-example" id="markdown-toc-published-example">Published example</a>    <ul>
       <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
       <li><a href="#results" id="markdown-toc-results">Results</a></li>
     </ul>
@@ -135,9 +133,9 @@ The former is more transparent and preferable, I believe.</p>
 <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> 
 (VEP) software and databases are run for analysis.
 However, one can try out the online version using the ensembl VEP URL.
-An example output is shown here:<br />
-<img src="/images/VEP_example.png" width="100%" /><br />
-<br />
+An example output is shown here:<br>
+<img src="/images/VEP_example.png" width="100%"><br>
+<br>
 An obvious error that can occur is using mismatched genome builds.
 Make certain that you use the same reference genome as used on the input data.
 The Ensembl/VEP website URL should be for the same genome build (GRCh37, or the default GRCh38).
@@ -152,8 +150,8 @@ variant consequence defines which variants can be included in analysis since the
 This could introduce spurious results so it is  best to have a solid criteria for selecting consequences of interest. 
 The consequences provided by VEP are too long to discuss in detail. 
 The table from the ensembl website is worth reading:
-<a href="https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences">Ensembl Variation - Calculated variant consequences</a>.<br />
-<img src="/images/VEP_consequences.jpg" width="100%" /></p>
+<a href="https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences">Ensembl Variation - Calculated variant consequences</a>.<br>
+<img src="/images/VEP_consequences.jpg" width="100%"></p>
 
 <h3 id="loftee">LOFTEE</h3>
 <p>The <a href="https://github.com/konradjk/loftee">LOFTEE github</a> repo shows the code and examples of usage.
@@ -195,8 +193,8 @@ The output table shows the GO process “V(D)J recombination” as the strongest
   <li>for 4 random genes we would expect none to share the same GO process</li>
 </ul>
 
-<p>The fold enrichment and strong P-value indicate a true association of shared biological pathway.<br />
-<img src="/images/GO_enrich.png" width="100%" /></p>
+<p>The fold enrichment and strong P-value indicate a true association of shared biological pathway.<br>
+<img src="/images/GO_enrich.png" width="100%"></p>
 
 <h2 id="published-example">Published example</h2>
 <h3 id="methods">Methods</h3>
@@ -305,7 +303,7 @@ this does not account for the lack of observations -
 rare/novel variants that are non-pLoF are present (proportion of singletons).</li>
 </ul>
 
-<p><img src="/images/plof_enrichment_eg.png" width="100%" /></p>
+<p><img src="/images/plof_enrichment_eg.png" width="100%"></p>
 
 <p>They searched for gene sets with fewer rare pLOF variants than expected based on gene size. 
 The gene sets with strong functional constraint included genes that encode DNA- and RNA-binding proteins, 
@@ -340,19 +338,19 @@ Will we slowly trudge through the same system again or will there be a more soph
 </ol>
 
 <h2 id="references">References</h2>
-<hr />
+<hr>
 <!-- curly-percent bibliography --cited curly-percent -->
 <p>[0]  Taliun, Daniel, et al. Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program. Nature 590.7845 (2021): 290-299.
-<a href="https://doi.org/10.1038/s41586-021-03205-y">https://doi.org/10.1038/s41586-021-03205-y</a><br />
-[1] McLaren, W. et al. The Ensembl Variant Effect Predictor. Genome Biol. 17, 122 (2016).<br />
-[2] Karczewski, K. J. et al. loftee. GitHub https://github.com/konradjk/loftee (2015).<br />
-[3] Frankish, A. et al. GENCODE reference annotation for the human and mouse genomes. Nucleic Acids Res. 47 (D1), D766–D773 (2019).<br />
-[4] Povysil, Gundula, et al. “Rare-variant collapsing analyses for complex traits: guidelines and applications.” Nature Reviews Genetics 20.12 (2019): 747-759.<br />
-[5] The Gene Ontology Consortium. Gene ontology: tool for the unification of biology. Nat. Genet. 25, 25–29 (2000).<br />
-[6] The Gene Ontology Consortium. Expansion of the Gene Ontology knowledgebase and resources. Nucleic Acids Res. 45 (D1), D331–D338 (2017).<br />
-[7] Forbes, S. A. et al. COSMIC: exploring the world’s knowledge of somatic mutations in human cancer. Nucleic Acids Res. 43, D805–D811 (2015).<br />
-[8] Welter, D. et al. The NHGRI GWAS Catalog, a curated resource of SNP–trait associations. Nucleic Acids Res. 42, D1001–D1006 (2014).<br />
-[9] Hamosh, A., Scott, A. F., Amberger, J. S., Bocchini, C. A. &amp; McKusick, V. A. Online Mendelian Inheritance in Man (OMIM), a knowledgebase of human genes and genetic disorders. Nucleic Acids Res. 33, D514–D517 (2005).<br />
+<a href="https://doi.org/10.1038/s41586-021-03205-y">https://doi.org/10.1038/s41586-021-03205-y</a><br>
+[1] McLaren, W. et al. The Ensembl Variant Effect Predictor. Genome Biol. 17, 122 (2016).<br>
+[2] Karczewski, K. J. et al. loftee. GitHub https://github.com/konradjk/loftee (2015).<br>
+[3] Frankish, A. et al. GENCODE reference annotation for the human and mouse genomes. Nucleic Acids Res. 47 (D1), D766–D773 (2019).<br>
+[4] Povysil, Gundula, et al. “Rare-variant collapsing analyses for complex traits: guidelines and applications.” Nature Reviews Genetics 20.12 (2019): 747-759.<br>
+[5] The Gene Ontology Consortium. Gene ontology: tool for the unification of biology. Nat. Genet. 25, 25–29 (2000).<br>
+[6] The Gene Ontology Consortium. Expansion of the Gene Ontology knowledgebase and resources. Nucleic Acids Res. 45 (D1), D331–D338 (2017).<br>
+[7] Forbes, S. A. et al. COSMIC: exploring the world’s knowledge of somatic mutations in human cancer. Nucleic Acids Res. 43, D805–D811 (2015).<br>
+[8] Welter, D. et al. The NHGRI GWAS Catalog, a curated resource of SNP–trait associations. Nucleic Acids Res. 42, D1001–D1006 (2014).<br>
+[9] Hamosh, A., Scott, A. F., Amberger, J. S., Bocchini, C. A. &amp; McKusick, V. A. Online Mendelian Inheritance in Man (OMIM), a knowledgebase of human genes and genetic disorders. Nucleic Acids Res. 33, D514–D517 (2005).<br>
 [10] Landrum, M. J. et al. ClinVar: improving access to variant interpretations and supporting evidence. Nucleic Acids Res. 46 (D1), D1062–D1067 (2018).\</p>
 
 </div>
@@ -392,14 +390,12 @@ Will we slowly trudge through the same system again or will there be a more soph
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" 
-				src="/images/logos/logo4.2_150ppi.png" 
-				alt="Logo image" width="25" height="38.5" /></a>
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
 					<div class="right-root">
 						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
 						<a href="/resume">Resume</a>
 						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
-						<a href='https://lawlessgenomics.com/feed.xml'>RSS feed</a>
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
 						</p>
 					</div>
 		</div>

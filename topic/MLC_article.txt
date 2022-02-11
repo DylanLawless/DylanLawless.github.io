@@ -1,0 +1,61 @@
+https://towardsdatascience.com/markov-clustering-algorithm-577168dad475
+Markov Clustering Algorithm
+Intuitive description with examples and discussion
+Arun Jagota
+Arun Jagota
+Dec 17, 2020·
+
+In this post, we describe an interesting and effective graph-based clustering algorithm called Markov clustering. Like other graph-based clustering algorithms and unlike K-means clustering, this algorithm does not require the number of clusters to be known in advance. (For more on this, see [1].)
+This algorithm is very popular in clustering bioinformatics data, specifically to cluster protein sequences and to cluster genes from co-expression data [2]. This algorithm also lends itself to distributed computing [2]. As discussed there, the algorithm was able to utilize 2000 compute nodes to cluster a graph of about 70 million nodes and about 68 billion edges in less than 2½ hours.
+In this post, we have just one aim: to describe the algorithm at an intuitive level, with suitably chosen examples that bring out its distinguishing features.
+The Random Walk Principle
+The motivating idea in MCL is that if you start walking randomly from a node, you are more likely to move around in the same cluster than to cross clusters. This is because by definition clusters are internally dense while being separated by sparse regions. In graph clustering, density and sparsity is defined in terms of the proportion of edge slots that have edges in them.
+Let’s see an example.
+
+A graph with two connected components (clusters)
+The random walk will remain within the connected component where it starts, i.e. with {a, b} or within {c, d, e}. There is no way to get across.
+We could interpret this behavior as discovering the connected components as clusters.
+Okay, that’s a very simple example just to get us started. MCL would not be interesting if that’s all it could do. Let’s see a more interesting example.
+
+Randomly walking on this graph will visit nodes e and j more frequently
+Say we start the walk at node a. The walker will meander around but will eventually get to node e. Once it arrives at e, it is likely to revisit e soon. To see this, note that from e the next step is either to d, f, g, h, or i. In 3 of these 5, the step that follows will bring the walker back to e. You could say that the walker has discovered a core node in a cluster, in this case e.
+How could it record this information? By just maintaining a counter for each node which records the number of times that node has been visited in a certain unit of time.
+As we will see soon, there is a more efficient way to record this information. Random walking is just a convenient way to explain the algorithm’s behavior. That said, we’ll stick with random walking for a while longer, as it has more insights to offer.
+Let’s continue walking where we left off. Because e gets visited frequently, at some point we will walk from e to i. And at some point shortly thereafter, from i to j. Once j has been visited for the first time, it will get visited frequently again for the same reason that e was. j is a second core node we have discovered.
+Beyond Discovering Core Nodes
+Encouraged by our finding that we can discover core nodes by walking randomly, let’s dig deeper to see what else we can do.
+Consider the example below. Think of the two 4-cliques (fully connected subgraphs on 4 nodes) as the clusters. The edge a-b crosses the two clusters. Ignore the nodes of degree 1 for now.
+
+Two clusters connected by edge a-e
+Consider starting from node a and walking k steps. What is the probability distribution over the various nodes we end up at?
+Before looking at this, let’s define a key term, as it will keep cropping up in our discussion. The degree of a node is the number of edges that it touches.
+When k is 1, the probability of ending up at node e is ¼ since a’s degree is 4. When k is 2, the probability of ending up at e is 0 because there is no way to reach e from a in exactly two hops. When k is 3, the walks of length 3 that end at e have one of two structures
+a → { b or c or d } → a → e
+a → e → { f or g or h } → e
+So there are 6 such walks. The total number of distinct walks from node a of length 3 are 4*4*4 = 64 since every interior node on any of these walks has degree 4. So the probability of walking from a to e in exactly 3 steps is 6/64. Way less than ¼.
+We can think of it this way. When we took just one step from a, all we see is a’s neighbors. So the 1-step probability of ending up at e, while low, is not very low. If we walk a few more steps, we discover the cluster structure of a and realize that we are much more likely to stay within there than end up at e.
+That said, if we walk too long, say k=20 steps, the situation gets more diffuse. Simply put whereas the first walk from a to e is a rare event, once we have walked to e, the probability of visiting e again in the next few steps increases as we are now in e’s cluster.
+How can we take advantage of this behavior?
+At this point, we’ll bring in Markov chains. Consider, for every pair of nodes u and v, Puv(k), the probability of starting from node u and ending up at node v after walking k steps. Puv(1) is easily computed: it is just 1 divided by u’s degree.
+Now comes the key point. If we multiply the matrix P(1)=P with itself, we get P(2) = P². More generally, P(k) = P^k.
+This suggests the following procedure. We initialize P. We then compute P(k) by multiplying P with itself k times. (k is typically 2 or 3.) If some transition probability Puv(k) is especially low, way lower than Puv(1) is, we drive it further towards 0. A way to do this is to take each probability in P(k), raise it to a power greater than 1, and renormalize. In MCL, this process is called inflation. It enhances differences. The rich get richer.
+Putting this all together, the algorithm goes as follows:
+Initialize P from the graph
+repeat
+  Q = P^k 
+  P = inflate(Q)
+until happy
+Prune away especially low-probability transitions
+Find (strongly) connected components in the remaining directed graph
+We can interpret this algorithm as trying to find transitions that cross cluster boundaries and reduce their probabilities.
+Why do we iterate then? Because there is a risk of pruning away edges in the same cluster if we don’t iterate enough first.
+On the other hand, if we iterate without doing an inflation inside an iteration, we may diffuse the transition probabilities too rapidly and lose whatever we gained in the first few iterations. (We already saw an example of this.) Inflating seems to make the algorithm somewhat robust against this.
+Specifically, by deflating low probability transitions, we are forcing the algorithm to explore regions of the graph it might not yet have explored. Take an extreme form of this. Say we block a low-probability transition u → v, i.e. truncate the probability to 0. We are forcing the algorithm to try to find a different way to get from u to v if it can. If it can’t, we now gain more confidence that the transition from u to v crosses cluster boundaries.
+Ideally, after all the iterations have ended, the especially low-probability transitions are the ones that cross cluster boundaries. We can then clip these. This results in a directed graph whose strongly connected components are the clusters.
+In our example, the probabilities of the transitions from a to e and e to a would both reduce. We can interpret this as deleting the edge a-e in the undirected graph. The clusters are now the connected components, which can be found by a connected-components finding graph algorithm.
+Summary
+In this post, we explained, with suitably chosen examples, how the Markov clustering algorithm works. We started by explaining how random walks on a graph can discover core nodes within clusters. We then discussed how taking powers of the Markov matrix helps us distinguish between within-cluster transitions and across-cluster transitions. We discussed how doing inflation further enhances these distinctions. Interspersing inflation allows us to continue exploring the graph without risking diluting the transition probabilities too much.
+This algorithm is also attractive from the point of view of implementation. At its core, it uses very simple algebraic operations: powers of a matrix, and inflation. Consequently, it is very easy to implement for small-to-moderate size problems. For especially large problems, we can take advantage of the existence of efficient parallel algorithms for taking powers of a sparse matrix as mentioned in [2] below.
+Further Reading
+Density-based and Graph-based Clustering | by Arun Jagota | Dec, 2020 | Towards Data Science
+https://pubmed.ncbi.nlm.nih.gov/29315405/
