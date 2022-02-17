@@ -10,8 +10,8 @@ subject: cryptography
 ================
 <p class="meta">13 Feb 2021</p>
 
-* TOC
-{:toc}
+<!-- * TOC -->
+<!-- {:toc} -->
 
 <!--
 cross link and label
@@ -84,7 +84,7 @@ It is extremely unlikely that legal protections on genomic data will be availabl
 
 Will there even be a need for medical espionage when Illunima, Google, BGI, etc. start offering free genome sequencing?
 Will it be good or bad once every child gets genome sequencing along with their birth certificate?
-Predicting the balance of world order is folly, but as they say "history repeats itslef".
+Predicting the balance of world order is folly, but as they say "history repeats itself".
 We can detach from our virtual identities; online presence, daily routines, but we cannot detach from our genetic identity.
 Unlike fingerprinting, or retinal scan, are we prepared to provide a biometric identity with so much information?
 
@@ -151,11 +151,16 @@ Importing incorrect data will pollute analysis and
 potentially mask true positive results from being found. 
 In the last few years, some commercial genomic services have allowed users to 
 upload their own genomic and personal phenotypic information.
-While most users are just interested in their own results, this has a reasonable large potential for risk - 
+While most users are just interested in their own results, this has a reasonably large potential for risk - 
 a targeted data submission, randomly shuffling input phenotypic information 
 would weaken the database for association analysis.
 
 # In the media
+In this section I use some examples from popular media.
+I want to acknowledge that popular news stories for audiences in UK/USA often use scaremongering tropes of East versus West and often attribute individual responsibility to nations - China, N Korea, Russia, etc. 
+Such references are used here only as media examples.
+In the classic egregious intelligence-community style, the most flamboyant reports include the least tangible evidence.
+
 I notice that reports of medical espionage in public media are not always accurately defined. 
 The news story of a former University Of Florida researcher 
 indicted for scheme to defraud has, 
@@ -169,6 +174,7 @@ In this case, after ten years in the field the researcher was accused of
 "stealing exosome-related trade secrets concerning the research, 
 identification and treatment of a range of pediatric medical conditions" 
 and then "creating and selling exosome isolation kits" for sale via her company in China [5].
+
 Unlike these examples of personal gain, there have been reports of national medical espionage during to the COVD-19 crisis.
 
 [The BBC reported in November 2020](https://www.bbc.com/news/technology-54936886) 
@@ -186,12 +192,14 @@ says that the South Korean
 > North Korea has attempted to hack the servers of a local drug manufacturer 
 > to obtain technology information on the company's coronavirus vaccine and treatment."
 
+Several similar stories can be read in the references [9-11].
 Reports like this rarely include published evidence
 and may be nothing but fantasy dreamed up by _The Tailor of Panama_ type reporters.
-Regardless, targeted theft is very likely and one would assume it to be happening
-even when specific reports are unsubstantiated. 
 
-Remaining discussion to be added...
+However, targeted theft is very likely and one would assume it to be happening even when specific reports are unsubstantiated. 
+No matter who the media reports as the national enemy is this year, valuable genomic data is at potential risk.
+Researchers and commercial providers should think about mitigating this risk, not by implementing heavier security but by making the data public (safely). 
+Their value can be generated via public IP in software as a service (SaaS) rather than by hoarding sensitive data.
 
 # Protecting data and promoting open-source access
 ## Projects focused on safe access
@@ -239,12 +247,15 @@ All subsequent steps will therefore be detached from the subject's personal info
 However, the personal information is not necessarily the valuable info, 
 the genome sequence is (even if anonymised).
 Anyone who has access to the DNA sample can easily sequence the genome for less than 
-\$500 US.
+\$500 US. 
+Storing and resequencing DNA is actually becoming cheaper than storing the data.
+The sample freezers may become more valuable to thief than data servers. 
 
 _Problem level [2-3]_\
 The sample preparation and sequencing has identical risk as step 1. 
 However, the sample is now likely out of the hands of the primary person responsible.
 It will most likely be in a large scale sequence facility. 
+Keep in mind that for measurement accuracy in 100ng of DNA library; 50ng is sequenced and 50ng is thrown away (often but not always).
 
 _Problem level [4]_\
 Data processing will become more routine over time.
@@ -253,10 +264,12 @@ but since a large majority of processing today is for clinical diagnosis,
 it means that at some stage a researcher will be required to do custom analysis
 on an individual sample. 
 This person is likely to have unrestricted access to all database samples.
+The admin of the whole pipeline also has unrestricted access to all data.
 
 _Problem level [5]_\
 The data submission level will consist of anonymous subject IDs again, 
 however it will contain whole genome sequences (or processed variant called datasets).
+This is probably the best stage for an opportunist to make a copy; the dataset is reduced to the key info and ready for downstream analysis.
 
 _Problem level [6]_\
 Data access is the step in which nearly every genomic data protection process is
@@ -305,7 +318,7 @@ One may argue that the proposed danger is hyperbolic;
 that it is a subject for intellectual property rather than political.
 When once ineptly accused of making a topic political,
 Christopher Hitchens extemporaneously rebutted with an apt simile to the nuclear threat at the time (1984), 
-arguing that some topics they are explicitly political whether or not others lack a recognition of facts:
+arguing that some topics are explicitly political whether or not others lack a recognition of facts:
 
 > "As we sit here, everyone is this room has been made into a front-line soldier; 
 > the nuclear age means that we are all conscripted; we don't have the right to conscientious objection anymore. 
@@ -314,7 +327,7 @@ arguing that some topics they are explicitly political whether or not others lac
 > We can't then complain of those that are objecting to it that they are politicising it. 
 > The politicisation has been done. 
 > We are all conscripted. 
-> We might as well be sitting here in uniform." [9]
+> We might as well be sitting here in uniform." [12]
 
 While the comparison to a nuclear détente is an exaggeration, 
 this problem is not simply a matter of consumer choice. 
@@ -349,16 +362,16 @@ N. Korea attempted to steal COVID-19 vaccine, treatment technology via hacking: 
 [8] North Korea accused of hacking Pfizer for Covid-19 vaccine data.\
 [https://www.bbc.com/news/technology-56084575](https://www.bbc.com/news/technology-56084575)\
 \
-[9] Firing line Episode S0629, Recorded on December 11, 1984. Guests: R. (Robert Emmett) Emmett Tyrrell Jr., Christopher Hitchens.\
-\
-Coronavirus: Cyber-spies hunt Covid-19 research, US and UK warn\
+[9] Coronavirus: Cyber-spies hunt Covid-19 research, US and UK warn\
 [https://www.bbc.com/news/technology-52551023](https://www.bbc.com/news/technology-52551023)\
 \
-The Cyber Side of Vaccine Nationalism\
+[10] The Cyber Side of Vaccine Nationalism\
 [https://www.cfr.org/blog/cyber-side-vaccine-nationalism](https://www.cfr.org/blog/cyber-side-vaccine-nationalism)\
 \
-Race for Coronavirus Vaccine Pits Spy Against Spy\
+[11] Race for Coronavirus Vaccine Pits Spy Against Spy\
 [https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare](https://www.nytimes.com/2020/09/05/us/politics/coronavirus-vaccine-espionage.html?referringSource=articleShare)
+\
+[12] Firing line Episode S0629, Recorded on December 11, 1984. Guests: R. (Robert Emmett) Emmett Tyrrell Jr., Christopher Hitchens.\
 
 # Footnotes
 [^foot]: [A trivial example of data export by hiding data within a "results figure"]({{ site.baseurl }}{% link _posts/blogpost/2019-08-19-devil_in_detail.md %}).
