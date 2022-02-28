@@ -1,0 +1,470 @@
+Writing a PhD thesis with LaTeX
+
+March 17, 2018
+
+My university amazingly did not seem to have a [LaTeX](https://www.latex-project.org/about/) template for thesis writing.
+Therefore I want to provide one along with guidelines on how to write your PhD thesis using LaTeX.
+
+It is very painful to watch people trying to edit their thesis, containing 50 figures, bloating to huge file sizes that causes Microsoft Word to freeze and crash every hour, until finally they lose a day of work at 5pm on a Friday.
+Citation managers like EndNote or Mendeley are great but everyone knows how often they go crazy and ruin all of your referencing work.
+
+LaTeX is a document preparation system that has been [around for a very long time](https://en.wikipedia.org/wiki/LaTeX).
+Once you try it, you will realise that using something like MS Word for scientific writing is akin to getting the budget version of the toy you always wanted as a child.
+If you have not used them before, it is worth bookmarking: [GitHub](https://github.com/), [OverLeaf](https://www.overleaf.com/), or [ShareLaTeX](https://www.sharelatex.com/) (since originally writing this, ShareLaTeX was become included in OverLeaf).
+
+There are many ways to edit LaTeX projects.
+For beginners on Mac I recommend TexMaker from http://www.xm1math.net/texmaker/
+
+To get started, simply create a main.tex file for the project you have.
+If you are using my temple open “my_thesis.tex” and hit the arrow pointing to the Quick Build dropdown menu (Figure 1).
+If everything works correctly you should see the PDF get built on the right side of the screen.
+There are loads of options to edit .tex files rather than TexMaker, such as editing with Vim.
+But this is a good option for a beginner.
+
+https://dylanlawlessblog.files.wordpress.com/2018/03/screen-shot-2018-03-17-at-16-28-38.png?w=620
+
+Figure 1. TexMaker running “my_thesis.tex” and outputting a complete pdf.
+
+To someone unfamiliar with coding, using LaTeX can seem difficult.
+But it’s not.
+It’s usually easy to figure out what you need to do to get what you want.
+Compare this to looking for some obscure edit option in MS Word, according to Google, which may or may not be gone since the last software update.
+You write everything in plain text, using some markup to get exactly what you want.
+If you can’t remember how to do something, the editor will usually offer a quick click solution.
+
+
+For example you might write: This is \textbf{bold} text.
+Resulting in a pdf showing: This is **bold** text.
+
+ShareLaTeX has directions or how to Learn LaTeX in 30 minutes ([linked](https://www.sharelatex.com/learn/Learn_LaTeX_in_30_minutes)) and  how to create a document ([linked](https://www.sharelatex.com/learn/Creating_a_document_in_LaTeX)).
+
+For a PhD, there is generally a modular component to presentation and layout.
+One or several research topics are split over chapters and there is normally Introduction, Materials and Methods, and Final Discussion.
+When writing this up using LaTeX, the thesis is split into multiple parts.
+Each chapter or section can get its own file.
+Any time you want, you simple render the PDF and everything gets merged into one, with all cross references and citations working just as they are supposed to.
+Figures are not embedded in the file you are working on, rather they are simply linked and only display on the PDF when you need.
+No more massive Word documents with manually relabelling everything when you need to move a figure.
+
+
+This feature keeps chapters modular and allows you to mix and match, change order, with minimum effort or editing.
+
+There are three main parts.
+**1. The front or head:**
+
+* Title page
+* Statement
+* Acknowledgements
+* Preface
+* Settings
+* etc.
+
+**2. The main:**
+
+* Chapter 1 Intro
+* Chapter 2 Methods
+* Chapter 3 etc.
+
+**3. The tail:**
+
+* bibliography
+* glossary
+* credits
+* etc.
+
+You generally will have two documents open.
+The master layout document (“my_thesis”) and the chapter you are working on.
+When learning the basics, it is good to start LaTeX projects from scratch to see what each element of the settings file does.
+
+For short documents like a letter or a research paper, there is normally only one file for the entire project (Figure 2).
+The settings go at the start, then the written main text (references can go in here too but people often put them in a separate file).
+
+
+https://dylanlawlessblog.files.wordpress.com/2018/03/1.png?w=620
+
+Figure 2. A typical research paper layout.
+
+One main document, a bibliography, and an image folder.
+
+For long documents, like a thesis it would get very hard to keep scrolling back and forth to edit settings and main text.
+So instead we separate each to its own document, We have one main layout document (“my_thesis”) which essentially says load the settings, load the main text, load the references and acknowledgments, and combine together to print the PDF (Figure 3).
+The settings file lists everything that the LaTeX editor will need to interpret what you write and generate the PDF.
+
+
+https://dylanlawlessblog.files.wordpress.com/2018/03/2.png?w=620
+
+Figure 3. What a typical workflow might look like.
+When you want to work on Chapter 1, you simply open the file “Ch1_Introduction.tex”.
+Reference figures which are stored in the images folder.
+When you want to see everything in context just open the main layout file “My_thesis.tex” and hit run.
+The quick build PDF compiles everything neatly.
+Every figure you reference, every citation you make, hyperlinks, etc. are all now correctly labelled.
+
+There are so many possibilities for presenting your work which are a nightmare to do in  popular word processors.
+When you can present complex mathematical problems with ease, you are likely to uncover solutions to problems you didn’t even conceive of previously.
+
+
+
+
+
+
+
+# Code
+## my_thesis.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%		Thesis
+%%%%%		Dylan Lawless
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{head/settings.tex} % custom packages, etc.
+
+in this file
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% HEAD: Book-Begin                  %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\frontmatter
+\input{head/titlepage.tex}
+\input{head/statement}
+\input{head/acknowledgements}
+\include{head/dedication}
+\include{head/abstracts}
+%\include{main/ch_abbreviations}
+\clearpage
+\tableofcontents
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures} % adds an entry to the table of contents
+\listoftables
+\addcontentsline{toc}{chapter}{List of tables} % adds an entry to the table of contents
+
+% space before each new paragraph according to the template guidelines.
+%(needs to be after titlepage and frontmatter to keep the table of contents lists short)
+\setlength{\parskip}{1em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MAIN: The chapters of the thesis  %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+\include{main/ch_abbreviations}
+\include{main/ch_introduction}
+\include{main/ch_RAG}
+\include{main/ch_predictive_genomics}
+\include{main/ch_mehtylation_assay}
+\include{main/ch_TET2}
+\include{main/ch_bioinformatics}
+\include{main/appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TAIL: Bibliography, Appendix, CV  %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{tail/appendix}
+%\include{tail/biblio}
+		%% While using chapterbib / sectionbib Run LATEX; run BibTEX on each included file; run LATEX; run LATEX.
+
+
+		%% For normal bib, silence the per-chapter bibliography and rely on normal use of the bib in this main root file.
+
+
+% Add your glossary here
+% Add your index here
+% Photographic credits (list of pictures&images that have been used with names of the person holding the copyright for them)
+%\include{tail/publications}
+\end{document}
+
+
+## settings.txt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%		Thesis Settings
+%
+%		Lawless Template
+%		Adapted from EPFL
+%		2018
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt,fleqn]{book}
+\usepackage{ccaption}
+	% http://ctan.org/pkg/ccaption.
+
+This allows the legend placement on next page.
+
+May have problem with hyperref.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\usepackage[french,german,english]{babel}
+
+% List of abbreviations
+% Do not try putting acronyms in section titles, that would cause infinite loop of pdftex compilation
+\usepackage[printonlyused,withpage]{acronym}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% EDOC THESIS TEMPLATE: Variant 1.0 -> Latin modern, large text width&height
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{lmodern}
+%\usepackage[a4paper,top=22mm,bottom=28mm,inner=35mm,outer=25mm]{geometry}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EDOC THESIS TEMPLATE: Variant 2.0 -> Utopia, Gabarrit A (lighter pages)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{fourier} % Utopia font-typesetting including mathematical formula compatible with newer TeX-Distributions (>2010)
+%\usepackage{utopia} % on older systems -> use this package instead of fourier in combination with mathdesign for better looking results
+%\usepackage[adobe-utopia]{mathdesign}
+\setlength{\textwidth}{146.8mm} % = 210mm - 37mm - 26.2mm
+\setlength{\oddsidemargin}{11.6mm} % 37mm - 1in (from hoffset)
+\setlength{\evensidemargin}{0.8mm} % = 26.2mm - 1in (from hoffset)
+\setlength{\topmargin}{-2.2mm} % = 0mm -1in + 23.2mm 
+\setlength{\textheight}{221.9mm} % = 297mm -29.5mm -31.6mm - 14mm (12 to accomodate footline with pagenumber)
+\setlength{\headheight}{14pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Paragraph indent setting
+% \setlength{\parindent}{0pt}
+
+\usepackage{setspace} % increase interline spacing slightly
+%\setstretch{1.1} % my preferable size.
+\setstretch{1.5} % the size required by University.
+
+\makeatletter
+\setlength{\@fptop}{0pt}  % for aligning all floating figures/tables etc...
+
+to the top margin
+\makeatother
+
+%%%%%%%% Test packages %%%%%%%% 
+%%%%%%%% Test packages %%%%%%%% 
+%%%%%%%% Test packages %%%%%%%% 
+
+\setcounter{tocdepth}{4} %Sets the depth for TOC
+\setcounter{secnumdepth}{4} %Sets the numbering depth
+% -1 part, 0 chapter, 1 section, 2 subsection,  3 subsubsection, 4 paragraph, 5 subparagraph.
+
+%The following three lines are included to add "Chapter" in front of the chapter number in the table of contents.
+
+Otherwise it would just read "1...
+
+2..
+
+etc"
+\usepackage{tocloft,calc}
+\renewcommand{\cftchappresnum}{Chapter }
+\AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries Chapter }}}
+
+
+\usepackage{amsmath}
+\usepackage{siunitx} %scientific units for measurements
+\DeclareSIUnit\Molar{\textsc{m}} %scientific units for measurements molarity
+
+
+%\usepackage[nottoc,numbib]{tocbibind}
+	%Au­to­mat­i­cally adds the bib­li­og­ra­phy and/or the in­dex and/or the con­tents, etc., to the Ta­ble of Con­tents list­ing.
+
+%\usepackage{natbib} 
+	%used in combination with style plainnat in the biblio file.
+\usepackage[numbers,sectionbib,sort&compress]{natbib}  % sectionbib if to add bib per-chapter in conjuction with \usepackage{chapterbib}.
+
+Numbers is changing from the default author year to numbers.
+
+(Items in bibliography sorted in order cited).
+
+
+\setlength{\bibsep}{0.5pt}
+\usepackage{chapterbib} % to add per-chapter bibliography.
+\usepackage{notoccite}  
+	% This is allowing citations to list in number of appearance 
+
+\usepackage{tabularx} 
+	% The same arguments as tabular*, but modifies the widths of certain columns, rather than the inter column space, to set a table with the requested total width.
+
+The columns that may stretch are marked with the new token X in the preamble argument.
+\newcolumntype{Z}{ >{\centering\arraybackslash}X } 
+	% This preamble is used for centering in tabularx and X columns, i.e.
+
+the cntered heading box on a multi-column table.
+
+
+
+\usepackage{multirow} % This package is used in tables to make a column that spans vertically over several rows.
+
+Example use: for a coulm, 4 rows tall, with the work Test; {\multirow{4}{*}{Test}}.
+
+\usepackage{qtree} 
+	% this is for decision trees, or branching illustrastion etc.
+
+An example would be: $ \Tree [.S [ I [.VP use [.NP {\LaTeX} ]]]] 
+
+\usepackage{tikz} %overlay caption and image or scale bar.
+
+
+
+\usepackage{ltablex} % this is to split table over multiple pages.
+
+\usepackage{textcomp}
+	% to draw arrows in text mode use either command 
+		% A$\,\to\,$B
+		% A\textrightarrow B
+\usepackage{wrapfig}
+
+\usepackage{xymtexpdf}
+	% chemical structures: for a simple ring structure use \cyclohexanev{}.
+	% this package's use of ; clashes with French for some reason.
+
+Apparently using a hack will work around:
+		%\begingroup \shorthandoff{;}  "formula here " \endgroup
+
+\usepackage{rotating} % used for rotating text
+	% using: \begin{turn}{45} {your text here} \end{turn}{} 
+		
+%%%%%%%% Test packages %%%%%%%% 
+%%%%%%%% Test packages %%%%%%%% 
+%%%%%%%% Test packages %%%%%%%% 
+
+
+\usepackage{graphicx,xcolor}
+\graphicspath{{images/}}
+\usepackage{courier} % to print font use \texttt{} 
+\usepackage{subfig}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage[final]{pdfpages}
+
+\usepackage{fancyhdr}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\pagestyle{fancy}
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\fancyhead[OR]{\bfseries \nouppercase{\rightmark}}
+	\fancyhead[EL]{\bfseries \nouppercase{\leftmark}}
+	\fancyfoot[EL,OR]{\thepage}
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\fancyfoot[EL,OR]{\thepage}}
+\fancypagestyle{addpagenumbersforpdfimports}{
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyfoot{}
+	\fancyfoot[RO,LE]{\thepage}
+}
+
+\usepackage{listings}
+\lstset{language=[LaTeX]Tex,tabsize=4, basicstyle=\scriptsize\ttfamily, showstringspaces=false, numbers=left, numberstyle=\tiny, numbersep=10pt, breaklines=true, breakautoindent=true, breakindent=10pt}
+
+\usepackage{hyperref}
+\hypersetup{pdfborder={0 0 0},
+	colorlinks=true,
+	linkcolor={blue!50!black},
+	citecolor={blue!50!black},
+	urlcolor=black}
+\urlstyle{same}
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+    \hbox{}
+    \thispagestyle{empty}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother \clearpage{\pagestyle{plain}\cleardoublepage}
+
+
+%%%%% CHAPTER HEADER %%%%
+\usepackage{color}
+\usepackage{tikz}
+\usepackage[explicit]{titlesec}
+\newcommand*\chapterlabel{}
+%\renewcommand{\thechapter}{\Roman{chapter}}
+\titleformat{\chapter}[display]  % type (section,chapter,etc...) to vary,  shape (eg display-type)
+	{\normalfont\bfseries\Huge} % format of the chapter
+	{\gdef\chapterlabel{\thechapter\ }}     % the label 
+ 	{0pt} % separation between label and chapter-title
+ 	  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-8cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=black] (0,0) rectangle(35.5mm,15mm);
+        \node[anchor=north east,yshift=-7.2cm,xshift=34mm,minimum height=30mm,inner sep=0mm] at (current page.north west)
+        {\parbox[top][30mm][t]{15mm}{\raggedleft $\phantom{\textrm{l}}$\color{white}\chapterlabel}};  %the black l is just to get better base-line alingement
+        \node[anchor=north west,yshift=-7.2cm,xshift=37mm,text width=\textwidth,minimum height=30mm,inner sep=0mm] at (current page.north west)
+              {\parbox[top][30mm][t]{\textwidth}{\color{black}#1}};
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+   \gdef\chapterlabel{}
+  } % code before the title body
+
+\titlespacing*{\chapter}{0pt}{50pt}{30pt}
+\titlespacing*{\section}{0pt}{13.2pt}{*0}  % 13.2pt is line spacing for a text with 11pt font size
+\titlespacing*{\subsection}{0pt}{13.2pt}{*0}
+\titlespacing*{\subsubsection}{0pt}{13.2pt}{*0}
+
+\newcounter{myparts}
+\newcommand*\partlabel{}
+\titleformat{\part}[display]  % type (section,chapter,etc...) to vary,  shape (eg display-type)
+	{\normalfont\bfseries\Huge} % format of the part
+	{\gdef\partlabel{\thepart\ }}     % the label 
+ 	{0pt} % separation between label and part-title
+ 	  {\setlength{\unitlength}{20mm}
+	  \addtocounter{myparts}{1}
+	  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,xshift=-65mm,yshift=-6.9cm-\value{myparts}*20mm] at (current page.north east) % for unknown reasons: 3mm missing -> 65 instead of 62
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=black] (0,0) rectangle(62mm,20mm);   % -\value{myparts}\unitlength
+        \node[anchor=north west,yshift=-6.1cm-\value{myparts}*20mm,xshift=-60.5mm,minimum height=30mm,inner sep=0mm] at (current page.north east)
+        {\parbox[top][30mm][t]{55mm}{\raggedright \color{white}Part \partlabel $\phantom{\textrm{l}}$}};  %the phantom l is just to get better base-line alingement
+        \node[anchor=north east,yshift=-6.1cm-\value{myparts}*20mm,xshift=-63.5mm,text width=\textwidth,minimum height=30mm,inner sep=0mm] at (current page.north east)
+              {\parbox[top][30mm][t]{\textwidth}{\raggedleft \color{black}#1}};
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+   \gdef\partlabel{}
+  } % code before the title body
+
+
+
+## main_chapter_example.txt
+
+%%%%	Packages used in settings for this specific chapter	%%%
+%\usepackage{amsmath}
+%\usepackage{graphicx}   
+%\graphicspath{ {images/} }
+%\usepackage{siunitx}
+%\usepackage{fourier}
+%\usepackage{array}
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{makecell}
+%\newcolumntype{Z}{ >{\centering\arraybackslash}X }
+%\renewcommand\theadfont{\bfseries}
+%\renewcommand\theadalign{cc}
+%\usepackage[autolanguage, np]{numprint}
+
+\chapter{Example; theory and data}
+\label{chap:ch_math} % This can be referenced in other places using:\autoref{chap:ch_math}
+
+\emph{A sub-chapter to \autoref{chap:ch_2.txt}.
+
+\section{Introduction}
+The trapezoidal rule approximates the region under the graph of the weighted function $f(x)$ as a trapezoid to calculate its area.
+
+
+It follows that
+$$\int_a^b \! f(x) \, \mathrm{d}x \approx\ \left(b-a\right) \left[\frac{f\left(a\right)\ + f\left(b\right)}{2}\right].$$
+...
+
+## Filesize 
+
+From a comment on tex.stackexchange.com,
+ghostscript is one of the most common tools for PDF size-optimisation.
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=foo-compressed.pdf foo.pdf
+
+A common approach is to let Ghostscript (gs) optimize and compress the PDF after it has been created with pdflatex.
+-dPrinted=false to preserve Hyperlinks.
+-dCompatibilityLevel 1.5 as pdflatex outputs PDF 1.5 by default since 2010.
+
