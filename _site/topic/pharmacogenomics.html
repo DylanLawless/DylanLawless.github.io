@@ -91,7 +91,7 @@
 <!-- MAIN START -------------------------------------------------------- -->
 <div class="sitewidth">
 	<div id="topic">
-Reading time  24 minutes
+Reading time  25 minutes
 <h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
 <p class="meta">01 Jan 2019</p>
 
@@ -128,6 +128,7 @@ Reading time  24 minutes
       <li><a href="#accreditation" id="markdown-toc-accreditation">Accreditation</a></li>
     </ul>
   </li>
+  <li><a href="#cyp450" id="markdown-toc-cyp450">CYP450</a></li>
   <li><a href="#more-questions" id="markdown-toc-more-questions">More questions</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
@@ -142,15 +143,16 @@ Outside of genotype data (offered by <a href="https://www.23andme.com">23andMe</
 <p>As an example input, try download Craig Venter’s genome VCF:
 <a href="ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz">ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz</a>.</p>
 
-<p>When I wrote this post, I used a data source with different genetic data files;
+<p>When I wrote this post, I used a data source with different genetic data files so that the results are not identical;
 <a href="https://my.pgp-hms.org/public_genetic_data">https://my.pgp-hms.org/public_genetic_data</a>.
 To check that it works OK, I tried a quick version of this challenge.
 I picked the first whole genome VCF file that I saw (hu24385B 2019-04-07.vcf.g_z)
 <a href="https://my.pgp-hms.org/profile/hu24385B">https://my.pgp-hms.org/profile/hu24385B</a>. 
 The VCF has 3,461,639 variants.
 VCF files can contain a large range of information for each variant, however only the first 7 column are strictly neccessary; Chromosome, position, ID, Reference, Alternate, Qulaity, Filter, info. 
-<a href="https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it">The details are explained on this GATK forum post</a>.
-Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
+<a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format">The details are explained on the GATK forum post (also linked above)</a>.</p>
+
+<p>Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
 Therefore the most common input source may be lacking gene symbols.
 To get the gene names of a single file, the simplest way was is to upload a VCF (or a part of it) to <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> to get the gene symbol (and any other information that you wish).</p>
 
@@ -178,13 +180,13 @@ The VCF file was made using reference genome GRCh37.
 Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).</p>
 
 <h2 id="preparing-an-example-vcf">Preparing an example VCF</h2>
-<p>If you would like to try this using a whole genome using the Ensembl web 
-interface you will need to split your VCF into smaller block first.
+<p>If you would like to try this using a whole genome and the Ensembl web 
+interface you will need to split your VCF into smaller blocks first.
 For routine usage the command-line version of VEP and it’s databases should be 
-installed on run locally.
+installed and run locally.
 There are several bioinformatics tools that are commonly used for manipulating 
-genetic file formats such as VCFtools. 
-To get a real understanding of the data type, I inlcude here a method using 
+genetic file formats, such as VCFtools. 
+However, to get a real understanding of the data type, I inlcude here a method using 
 command line bash to split a VCF file into smaller blocks. 
 A bash script is printed below where I use very mainstream traditional 
 command-line tools to wrangle data, including 
@@ -444,8 +446,9 @@ For example, if we go and check the Prescribing Information PDF to compare two d
 <strong>Explained</strong>: Atezolizumab is used to treat thrombocytopenia (low levels of thrombocytes).<br>
 You <em>do not want to give</em> this to someone who has <a href="https://omim.org/entry/176860?search=proc&highlight=proc"><em>PROC</em></a><a href="https://omim.org/entry/176860?search=proc&highlight=proc"> deficiency</a>;
 their disease is <a href="https://en.wikipedia.org/wiki/Thrombophilia">Thrombophilia</a> (hypercoagulability, or <a href="https://en.wikipedia.org/wiki/Thrombosis">thrombosis</a>).
-With this in mind, perhaps an application doing this job could work two ways.
-(1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
+With this in mind, perhaps an application doing this job could work two ways.</p>
+
+<p>(1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
 (2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.</p>
 
 <h2 id="annotation">Annotation</h2>
@@ -560,7 +563,8 @@ Carefully consider that predictions can be completed wrong and address how such 
 One can rank unknown variants based on PHRED-scaled CADD score, highest being more predicted pathogenic.
 https://cadd.gs.washington.edu/info<br>
 <a href="http://genetics.bwh.harvard.edu/pph2/">Polyphen</a> gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.
-See what other pathogenicity prediction tools you can find and estimate how widespread/accepted their usage is.</p>
+See what other pathogenicity prediction tools you can find and estimate how widespread/accepted their usage is.
+Here is a table of tools that I use most: <a href="https://lawlessgenomics.com/topic/annotation-datasets-table-main">annotation-datasets</a>.</p>
 
 <h2 id="gene-dosage">Gene dosage</h2>
 <p>An important cosideration of variant effect depends on gene dosage.
@@ -748,6 +752,20 @@ including
 BlueprintGenomics is a good example company for comparison:
 <a href="https://blueprintgenetics.com/certifications/">https://blueprintgenetics.com/certifications/</a>.</p>
 
+<h2 id="cyp450">CYP450</h2>
+<p><a href="https://en.wikipedia.org/wiki/Cytochrome_P450">Cytochromes P450 (CYPs)</a> are a superfamily of enzymes containing heme as a cofactor that functions as monooxygenases, and are important for the clearance of various compounds.
+Because of this, the set of &gt;20 PharmVar genes can be of particular importance. 
+Details can be found on <a href="https://www.pharmvar.org">PharmVar.org</a>.</p>
+
+<blockquote>
+  <p>“Your doctor may use cytochrome P450 (CYP450) tests to help determine how your body processes (metabolizes) a drug. The human body uses cytochrome P450 enzymes to process medications. Because of inherited (genetic) traits that cause variations in these enzymes, medications may affect each person differently.”
+<a href="https://www.mayoclinic.org/tests-procedures/cyp450-test/about/pac-20393711">- Mayo clinic</a>.</p>
+</blockquote>
+
+<p>Automatically, these genes will be included in the analysis that was described above. 
+However, it would be possible tailor analysis specifically to these genes.
+Some tools already exist to do so, as illustrated in my post about one tool called <a href="https://lawlessgenomics.com/topic/stargazing">Stargazer</a>.</p>
+
 <h2 id="more-questions">More questions</h2>
 
 <p>Q: Do we have to infer that in the future everybody will have his genome sequenced ?<br>
@@ -757,7 +775,7 @@ You do not have to assume this. It may become true. There could be privacy conce
 Your tool will provide a service based on genetics.<br>
 Option [1] One has their genetics already and will use it for personal medicine.<br>
 Option [2] they are prescribed a drug and want to only sequence the genes of interest that could affect this drug.<br>
-Option [3] they do not want any genetic info and therefor your product is irrelevant.<br>
+Option [3] they do not want any genetic info and therefore your product is irrelevant.<br>
 Option [4] they do not want their personal genetics, but are willing to estimate their relatedness to others in a genetic database and therefore calculate a probability of accuracy for this drug-gene information. e.g. both parents are Swiss and therefore based on the population they have probability of X that their genotype is Y.</p>
 
 <p>Q: Is it realistic to assume that it will be feasible based on the fact that the sequencing cost is decreasing ?<br>

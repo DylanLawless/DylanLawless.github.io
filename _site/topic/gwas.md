@@ -166,9 +166,31 @@ File formats output
 ## Genotype
 ## HWE
 
+## QTL analysis
+* [ezQTL](https://analysistools.cancer.gov/ezqtl/#/home) is a web-based tool for integrative QTL (Quantitative Trait Loci) visualization and colocalization with GWAS data for individual loci to aid GWAS annotation.
+It combines several features which are found on other resources, such as 
+[LocusZoom](http://locuszoom.org).
+* To get your GWAS data in the correct format, this blog post is nice:
+[Huwenboshi tips-for-formatting-gwas-summary-stats](https://huwenboshi.github.io/data%20management/2017/11/23/tips-for-formatting-gwas-summary-stats.html).
+* QTL analysis is often performed on GWAS summary statistics and compared against the public GTEx data:
+[https://www.gtexportal.org/](https://www.gtexportal.org/).
+* Choosing the tissue depends on the situation.
+Target organ (e.g., lung for pneumonia) and blood eQTL are what we have used for infection GWAS.
+
 # Phenotypes and covariates
 
 # PCA
+* This biostars post has a great
+[Tutorial:Produce PCA bi-plot for 1000 Genomes Phase III](https://www.biostars.org/p/335605/).
+* For GWAS PCA I have used PLINK
+[1.9](https://www.cog-genomics.org/plink/1.9/strat#pca),
+[2.0](https://www.cog-genomics.org/plink/2.0/strat#pca),
+and [GCTA](https://yanglab.westlake.edu.cn/software/gcta/#PCA).
+PLINK uses a port of GCTA.
+GCTA is doing something similar to EIGENSTRAT
+which itself is a part of [EIGENSOFT](https://www.hsph.harvard.edu/alkes-price/software/).
+For GWAS data I have only used PLINK or GCTA instead of installing other software separately.
+I have used several R libraries for performing PCA in R with different types of genetic data (e.g. virual sequence) but there is no need to list them here.
 
 # Biological interpretation
 
