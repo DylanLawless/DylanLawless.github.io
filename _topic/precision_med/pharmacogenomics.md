@@ -23,11 +23,27 @@ As an example input, try download Craig Venter's genome VCF:
 [ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz](ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz).
 
 When I wrote this post, I used a data source with different genetic data files;
-[https://my.pgp-hms.org/public_genetic_data](https://my.pgp-hms.org/public_genetic_data).
+[https://my.pgp-hms.org/public_genetic_data](https://my.pgp-hms.org/public_genetic_data) and 
+I searched under "All data types".
+
 To check that it works OK, I tried a quick version of this challenge.
-I picked the first whole genome VCF file that I saw (hu24385B 2019-04-07.vcf.g_z)
-[https://my.pgp-hms.org/profile/hu24385B](https://my.pgp-hms.org/profile/hu24385B). 
-The VCF has 3,461,639 variants.
+I picked the first whole genome VCF file that I saw:
+
+* [https://my.pgp-hms.org/profile/hu24385B](https://my.pgp-hms.org/profile/hu24385B): 
+* hu24385B 2019-04-07.vcf.gz
+* Dante Labs Whole Genome
+* 147 MB
+
+Here are a few more that might work, but I have not tested:
+
+* [1] VCF from Dante Labs vs GRCh37 (246 MB)
+* [https://my.pgp-hms.org/profile/hu1D5A29](https://my.pgp-hms.org/profile/hu1D5A29)
+* [2] WGS 30x filtered SNP VCF (325 MB)
+* [https://my.pgp-hms.org/profile/hu1C1368](https://my.pgp-hms.org/profile/hu1C1368)
+* [3] 60820188474283.snp.vcf.gz (222 MB)
+* [https://my.pgp-hms.org/profile/hu6ABACE](https://my.pgp-hms.org/profile/hu6ABACE)
+
+The "hu24385B" VCF has 3,461,639 variants.
 VCF files can contain a large range of information for each variant, however only the first 7 column are strictly neccessary; Chromosome, position, ID, Reference, Alternate, Qulaity, Filter, info. 
 [The details are explained on this GATK forum post](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it).
 Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
@@ -150,6 +166,15 @@ The next aim will be to see if any of your output genes are also present in your
 The method will require merging both dataset (gene and drug datasets) based on shared features. 
 A simple sanity test would be useful first:
 
+### Drug-gene list
+Here is a similar drug-gene list that can be used for a case-study:
+[notdrugbank_all_interaction.txt](https://lawlessgenomics.com/pages/drugbank_all_interaction.txt)
+
+Drugbank has changed their access policy and now requires access applications. If you want the up-to-date DrugBank data I believe you can apply for non-commercial use (and wait a few days). 
+The data can then be found at:
+[https://go.drugbank.com/releases/latest#protein-identifiers](https://go.drugbank.com/releases/latest#protein-identifiers), 
+"protein-identifiers" tab, "Drug Target Identifiers" section, "All" file.
+
 ### Small example check of gene list versus drug-gene list
 From the VEP output I extracted the gene symbols column and compared against a list of druggable target genes from 
 [DrugBank](https://www.drugbank.ca) 
@@ -197,6 +222,8 @@ The are many alternative ways to do the same thing in different programming lang
 This example is done using R. 
 I recommending installing R and then installing R studio to edit and run your commands.
 
+* If you need a copy of the data and code used in the following example, email me and ask for: "r_merge.zip"
+
 ``` R
 # Comment lines are ignored because of "#" symbol.
 # Command lines are run by clicking "Run" or "command+enter" on Mac
@@ -238,7 +265,7 @@ vepfile <- read.table(
 # the "fill=TRUE" is needed because not all 
 # file lines have the same number of elements.
 drugs <- read.table(
-  file="all.txt",
+  file="drugbank_all_interaction.txt",
   na.strings=c("", "NA"),
   sep="\t",
   header=TRUE,
