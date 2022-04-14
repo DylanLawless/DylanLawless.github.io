@@ -91,7 +91,7 @@
 <!-- MAIN START -------------------------------------------------------- -->
 <div class="sitewidth">
 	<div id="topic">
-Reading time  24 minutes
+Reading time  25 minutes
 <h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
 <p class="meta">01 Jan 2019</p>
 
@@ -100,6 +100,7 @@ Reading time  24 minutes
   <li><a href="#preparing-an-example-vcf" id="markdown-toc-preparing-an-example-vcf">Preparing an example VCF</a></li>
   <li>
 <a href="#comparing-annotated-genetic-data-to-drug-lists" id="markdown-toc-comparing-annotated-genetic-data-to-drug-lists">Comparing annotated genetic data to drug lists</a>    <ul>
+      <li><a href="#drug-gene-list" id="markdown-toc-drug-gene-list">Drug-gene list</a></li>
       <li><a href="#small-example-check-of-gene-list-versus-drug-gene-list" id="markdown-toc-small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</a></li>
     </ul>
   </li>
@@ -143,11 +144,32 @@ Outside of genotype data (offered by <a href="https://www.23andme.com">23andMe</
 <a href="ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz">ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz</a>.</p>
 
 <p>When I wrote this post, I used a data source with different genetic data files;
-<a href="https://my.pgp-hms.org/public_genetic_data">https://my.pgp-hms.org/public_genetic_data</a>.
-To check that it works OK, I tried a quick version of this challenge.
-I picked the first whole genome VCF file that I saw (hu24385B 2019-04-07.vcf.g_z)
-<a href="https://my.pgp-hms.org/profile/hu24385B">https://my.pgp-hms.org/profile/hu24385B</a>. 
-The VCF has 3,461,639 variants.
+<a href="https://my.pgp-hms.org/public_genetic_data">https://my.pgp-hms.org/public_genetic_data</a> and 
+I searched under “All data types”.</p>
+
+<p>To check that it works OK, I tried a quick version of this challenge.
+I picked the first whole genome VCF file that I saw:</p>
+
+<ul>
+  <li>
+<a href="https://my.pgp-hms.org/profile/hu24385B">https://my.pgp-hms.org/profile/hu24385B</a>:</li>
+  <li>hu24385B 2019-04-07.vcf.gz</li>
+  <li>Dante Labs Whole Genome</li>
+  <li>147 MB</li>
+</ul>
+
+<p>Here are a few more that might work, but I have not tested:</p>
+
+<ul>
+  <li>[1] VCF from Dante Labs vs GRCh37 (246 MB)</li>
+  <li><a href="https://my.pgp-hms.org/profile/hu1D5A29">https://my.pgp-hms.org/profile/hu1D5A29</a></li>
+  <li>[2] WGS 30x filtered SNP VCF (325 MB)</li>
+  <li><a href="https://my.pgp-hms.org/profile/hu1C1368">https://my.pgp-hms.org/profile/hu1C1368</a></li>
+  <li>[3] 60820188474283.snp.vcf.gz (222 MB)</li>
+  <li><a href="https://my.pgp-hms.org/profile/hu6ABACE">https://my.pgp-hms.org/profile/hu6ABACE</a></li>
+</ul>
+
+<p>The “hu24385B” VCF has 3,461,639 variants.
 VCF files can contain a large range of information for each variant, however only the first 7 column are strictly neccessary; Chromosome, position, ID, Reference, Alternate, Qulaity, Filter, info. 
 <a href="https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it">The details are explained on this GATK forum post</a>.
 Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
@@ -269,6 +291,15 @@ The next aim will be to see if any of your output genes are also present in your
 The method will require merging both dataset (gene and drug datasets) based on shared features. 
 A simple sanity test would be useful first:</p>
 
+<h3 id="drug-gene-list">Drug-gene list</h3>
+<p>Here is a similar drug-gene list that can be used for a case-study:
+<a href="https://lawlessgenomics.com/pages/drugbank_all_interaction.txt">notdrugbank_all_interaction.txt</a></p>
+
+<p>Drugbank has changed their access policy and now requires access applications. If you want the up-to-date DrugBank data I believe you can apply for non-commercial use (and wait a few days). 
+The data can then be found at:
+<a href="https://go.drugbank.com/releases/latest#protein-identifiers">https://go.drugbank.com/releases/latest#protein-identifiers</a>, 
+“protein-identifiers” tab, “Drug Target Identifiers” section, “All” file.</p>
+
 <h3 id="small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</h3>
 <p>From the VEP output I extracted the gene symbols column and compared against a list of druggable target genes from 
 <a href="https://www.drugbank.ca">DrugBank</a> 
@@ -317,6 +348,10 @@ The are many alternative ways to do the same thing in different programming lang
 This example is done using R. 
 I recommending installing R and then installing R studio to edit and run your commands.</p>
 
+<ul>
+  <li>If you need a copy of the data and code used in the following example, email me and ask for: “r_merge.zip”</li>
+</ul>
+
 <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Comment lines are ignored because of "#" symbol.</span><span class="w">
 </span><span class="c1"># Command lines are run by clicking "Run" or "command+enter" on Mac</span><span class="w">
 
@@ -357,7 +392,7 @@ I recommending installing R and then installing R studio to edit and run your co
 </span><span class="c1"># the "fill=TRUE" is needed because not all </span><span class="w">
 </span><span class="c1"># file lines have the same number of elements.</span><span class="w">
 </span><span class="n">drugs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.table</span><span class="p">(</span><span class="w">
-  </span><span class="n">file</span><span class="o">=</span><span class="s2">"all.txt"</span><span class="p">,</span><span class="w">
+  </span><span class="n">file</span><span class="o">=</span><span class="s2">"drugbank_all_interaction.txt"</span><span class="p">,</span><span class="w">
   </span><span class="n">na.strings</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">),</span><span class="w">
   </span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="w">
   </span><span class="n">header</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w">

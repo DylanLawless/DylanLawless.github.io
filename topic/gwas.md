@@ -170,6 +170,19 @@ File formats output
 
 # PCA
 
+
+Deciding how to prune out a sub population is difficult.
+This tools uses Euclidean distances to do so (but is currently restricted to European).
+https://meyer-lab-cshl.github.io/plinkQC/
+
+
+# QTL
+If you find some significant association in GWAS, people usually then check if the SNP (which represents the LD block) is correlated with QTLs that will affect expression or splicing.
+I've used:
+https://fuma.ctglab.nl
+This one gives similar results, plus some more:
+https://analysistools.cancer.gov/ezqtl/#/qtls
+
 # Biological interpretation
 
 # Conclusion
