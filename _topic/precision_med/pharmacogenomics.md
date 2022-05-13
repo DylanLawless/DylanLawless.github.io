@@ -182,7 +182,7 @@ From the VEP output I extracted the gene symbols column and compared against a l
 I used another command-line method to do this efficienctly:
 
 ``` bash
-cut -f1 -d "," vep_output_file.csv | uniq > unique.genes.txt
+cut -f1 -d "," vep_output_file.csv - uniq > unique.genes.txt
 ```
 
 - Cut column 1 (f1) 
@@ -198,7 +198,7 @@ The next command will then compare both lists.
 <br/>
 
 ``` bash
-sort unique.genes.txt unique.druggable.txt | uniq -c -i | grep -v '1 '
+sort unique.genes.txt unique.druggable.txt - uniq -c -i | grep -v '1 '
 ```
 
 This command also used "uniq -c" to count how many times each gen name occurs and then "grep -v '1 '" meaning ignore genes that are only present 1 time. 
@@ -620,6 +620,128 @@ GA4GH provides other information about many [legal and ethic topics](https://www
 BlueprintGenomics is a good example company for comparison:
 <https://blueprintgenetics.com/certifications/>.
 
+## Cytochrome P450 (CYP) genes for known PGx
+[Cytochrome P450](https://en.wikipedia.org/wiki/Cytochrome_P450) monooxygenases are a group of genes encoding proteins that catalyze the oxidation and metabolism of a large number of xenobiotics and endogenous compounds. 
+Therefore these genes/proteins are important for drug metabolism. 
+Furthermore, common genetic variants are known for many of these genes which affect how the protein interacts with drugs.
+The [Pharmacogene Variation (PharmVar)](https://www.pharmvar.org) consortium repository is used to label human cytochrome P450 (CYP) genes for known PGx variation.
+The major focus of PharmVar is to catalogue allelic variation of genes impacting drug metabolism, disposition and response and provide a unifying designation system (nomenclature) for the global pharmacogenetic/genomic community. 
+Similar resource include the [Pharmacogenomic KnowledgeBase](https://www.pharmgkb.org), 
+and the [Clinical Pharmacogenetic Implementation Consortium](https://cpicpgx.org).
+You can [read more in this post](https://lawlessgenomics.com/topic/stargazing) on one example of pharmacogenomic analysis using these resources.
+
+## DNA regulation and the 3D genome
+There is a collection of reviews on [the 3D genome Nature Reviews 2019](https://www.nature.com/collections/rsxlmsyslk). 
+From this, I have collected some illustrations to remind us about the combination of biochemical and physical structure that DNA takes inside each cell.
+
+### 3D genome variation
+DNA is not only a simple string of nucleotides. 
+It is constantly wrapped up around proteins which affect its shape and accessibility.
+This means that genes encoded on the DNA may take different lengths of time to be expressed and produce proteins.
+Some DNA regions may physically cluster together and are labelled as topologically associating domains (TADs).
+{% cite spielmann2018structural %}
+[https://doi.org/10.1038/s41576-018-0007-0](https://www.nature.com/articles/s41576-018-0007-0)
+
+<img src="{{ site.baseurl }}{% link images/3d_genome/spielmann2018structural_Box1.webp %}" width="50%">
+> {% cite spielmann2018structural %} _Box 1 Chromatin organization  from the 3D nucleus to the linear genome._
+
+In coding regions, a "damaging" DNA variant will affect the function of a protein, or cause complete loss of that protein.
+In some cases, a single gene defect can cause a specific disease.
+Similarly, changing the expression of DNA (even if the gene has no damaging coding variants) could cause the same outcome.
+Therefore, regions of DNA that control the expression of surrounding genes are just as important as coding variants. 
+Historically, effects due to DNA accessibility and expression have been very difficult to understand biologically, but the methods and evidence is improving. 
+
+<img src="{{ site.baseurl }}{% link images/3d_genome/spielmann2018structural_Fig2.webp %}" width="50%">
+> {% cite spielmann2018structural %} _Fig. 2: Clinical examples of structural variations in the 3D genome. a - Duplications of enhancer elements at the IHH locus that occur within topologically associating domains (intra-TAD) cause tissue-specific misregulation and are associated with synpolydactyly of the feet89. For examples see REFS97,104,107,137,138. b - Duplication of a TAD boundary at the SOX9 locus causes neo-TAD formation and is associated with Cooks syndrome, short digits and nail aplasia63. For examples see REFS117,121. c - Deletion of a TAD boundary at the LMNB1 locus causes enhancer adoption and adult-onset demyelinating leukodystrophy139. For examples see REFS117,121,140. d - Inversions of an enhancer cluster at the EPHA4 locus cause enhancer adoption and misregulation of WNT6 and are associated with F-syndrome, syndactyly of thumb and index finger76. For examples see REFS102,114,141. e - Balanced translocations at the MEF2C locus cause a regulator loss of function and are associated with anomalies of the brain (including callosum hypoplasia142) and developmental delay116. For examples see REFS99,104,143. PRS, element associated with Pierre Robin sequence; RevSex, element associated with disorders of sex development. Part c is adapted with permission from REF.113, Elsevier. Part e is adapted with permission from Shimojima, K. et al. De novo microdeletion of 5q14.3 excluding MEF2C in a patient with infantile spasms, microcephaly, and agenesis of the corpus callosum. Am. J. Med. Genet. Part A, REF.142, Copyright 2011 Wiley Periodicals, Inc._
+
+There are a huge number of methods to quantify 3D genome structure, DNA regulation and expression, mutation within 3D regions, large rearrangements in DNA, etc.
+The following figure illustrates one technique. 
+We will not discuss all the possibilities here as the technologies are rapidly increasing.
+Each large biotech company offers dozens/hundreds of options. 
+{% cite de2017capturing %}
+[https://doi.org/10.1038/nsmb.3404](https://www.nature.com/articles/nsmb.3404)
+
+<img src="{{ site.baseurl }}{% link images/3d_genome/de2017capturing_fig1.webp %}" width="50%">
+> {% cite de2017capturing %} _Figure 1: Single-cell models of chromosomes reveal principle characteristics of nuclear organization. (a) Single-cell Hi-C is performed to identify contacts between chromosomal regions (1). The contacts are sequenced using Illumina paired-end sequencing (2) and used as restraints in performing computational modeling of 3D genome structures (3). (b) Genome structures recapitulate known features of nuclear organization. Images of genome structures are adapted from ref. 13. (c) Structures of TADs show that they can exist in both compacted and elongated conformations. (d) Schematic representation of the loop-extrusion model. A chromatin region is captured by an extrusion complex forming a tiny loop (2), which is actively extended, leading to the formation of larger loops (3). Ultimately, the extrusion complex releases the chromatin, leading to the dissolving of the loop (4)._
+
+### Noncoding DNA regulation
+It is useful to understand the mechanisms causing DNA regulation more specifically.
+If you want a good understanding of the topic, one of the best resources today is the 
+The Genotype-Tissue Expression (GTEx) project
+{% cite gtex2020gtex %}
+[https://doi.org/10.1126/science.aaz1776](https://www.science.org/doi/10.1126/science.aaz1776).
+GTEx include WGS, WES, and RNA-Seq data.
+This paper has an excellent overview, and their web interface is informative
+[https://www.gtexportal.org/home/](https://www.gtexportal.org/home/).
+
+One of the most common uses of GTEx is as follows:
+
+* When an association between genetic variant and a phenotype is found (e.g. a common DNA variant and heart disease), it is often not due to a coding variant but instead due to a non-coding variant. 
+* To understand how this can cause disease, we match DNA and RNA from the same individuals to see how this variant affects the expression level of downstream genes. 
+* If the DNA variant is correlated with a change in RNA expression (and subsequently protein level) we can determine its regulatory effect.
+* We quantify the RNA expression and its affect on trait (phenotype) within this DNA loci (gene or group of genes): expression quantitative trait loci (eQTL).
+* There are other types of QTL, but eQTL are a fine example. 
+
+The following two figures from
+{% cite elkon2017characterization %}
+[https://doi.org/10.1038/nbt.3863](https://www.nature.com/articles/nbt.3863)
+can help to visualise an example of the process.
+
+* In the second figure (labelled Figure 4b) we consider one gene with a certain nucleotide position, having either G or A (2 chromosomes gives possibilites of GG, GA, or AA).
+* We can see how one genotype may have lower RNA expression (and less protein produced) for people with two copies of the gene with nucleotide G.
+* However, people with one or two copies of this gene with an A nucleotide at the same position may have higher RNA expression levels (and more protein).
+* If this gene is used in drug metabolism, then perhaps they should receive a personalised drug dosage.
+
+<img src="{{ site.baseurl }}{% link images/3d_genome/elkon2017characterization_Fig1.webp %}" width="50%">
+> {% cite elkon2017characterization %} _Figure 1: Genome-wide identification of candidate regulatory regions. (a) The conditions in which each gene is expressed are determined by a complex interplay between cis-regulatory DNA elements embedded near the gene's transcription start site (TSS) (the gene's promoter region, typically taken as 1,000 bp upstream to 200 bp downstream of the TSS) and distal enhancer elements located far (along the linear genomic DNA) from the gene's TSS. These DNA elements are bound by TFs that modulated the efficiency by which RNA polymerase is recruited to the gene's TSS to initiate transcription. Image adapted with permission from Figure 1, ref. 21, Springer Nature. (b) Distinct chromatin marks correlate with different regulatory states. Thus, epigenomic profiling of chromatin accessibility, histone modifications and TF binding in large panels of cell lines and tissues predicts comprehensive maps of putative regulatory elements across the genome and indicates the conditions under which each element is active. Reprinted from Figure 2, ref. 157, Mol. Cell., 55, Plank, J.L. & Dean, A., Enhancer function: mechanistic and genome-wide insights come together. 5–14 (2014), with permission from Elsevier. (c) Bidirectional production of eRNAs emerges as an effective mark of active enhancers. Thus, expression profiling of eRNAs is used on top of the epigenomic layers to improve the identification of enhancers and delineate the conditions in which they are activated. This cartoon shows tracks for epigenetic hallmarks of enhancers (DHS, histone marks and TF binding sites (TF BS) in addition to bidirectional production of eRNAs (as detected by GRO-seq))._
+
+<img src="{{ site.baseurl }}{% link images/3d_genome/elkon2017characterization_Fig4.webp %}" width="50%">
+> {% cite elkon2017characterization %} _Figure 4: Inference of enhancer-promoter links. (a) Enhancer-promoter (E-P) interactions are predicted based on their correlated activation pattern measured over a large panel of cells and tissues. Activation pattern could be measured by epigenetic marks, DHS or transcriptional activity (e.g., mRNA and eRNA levels). (b) Top: eQTL analysis detects associations between SNP genotypes and expression level of target genes. In this example, individuals who are homozygous for the reference allele (GG) show significantly lower expression of the target gene than individuals who are homozygous for the alternative allele (AA). Heterozygous individuals show an intermediate expression level. If either the eQTL SNP itself or any other SNP that is in strong linkage disequilibrium with it is located within a regulatory element, then a putative functional link between that enhancer and the promoter of the associated gene is predicted. Bottom: allele-specific expression analysis requires the presence of a heterozygous SNP within the target RNA (in the figure, the SNP with the T/C alleles), and tests for imbalanced expression from the two copies (maternal and paternal copies) of the gene. Imbalanced expression of the two copies implies that the individual is also heterozygous for another SNP that modulates the activity of a cis-regulatory element that controls the expression of the target gene. The A allele of the SNP located within the enhancer increases the enhancer activity and thus causes elevated expression of the copy of the gene encoded on the same chromosome (the copy of the gene that carries the C allele)._
+
+### Chromatin regulation
+This paper is not very important to read in detail. However, thee figure is nice for our discussion
+{% cite keung2015chromatin %}
+[https://doi.org/10.1038/nrg3900](https://www.nature.com/articles/nrg3900#citeas)
+
+<img src="{{ site.baseurl }}{% link images/3d_genome/keung2015chromatin_fig1.webp %}" width="50%">
+> {% cite keung2015chromatin %} _Figure 1: Regulatory features of chromatin at multiple length scales. a - The amino termini of histone proteins have numerous amino acid residues that can be biochemically modified, such as by the addition of methyl (Me), acetyl (Ac), ubiquitin (Ub) and phosphate (P) groups. These modifications influence the binding of DNA and regulatory proteins26. b - Genomic DNA, which itself can be methylated on cytosine residues, is wound around 4 pairs of histone proteins, which collectively comprise a nucleosome15. c - The positioning of nucleosomes on DNA influences the accessibility of transcription factors to regions such as the promoter. Regulatory proteins (orange, blue, red and purple) bind to nucleosomes, DNA and transcribed non-coding RNA (ncRNA). Histone marks (red circles) often appear in large spatial domains; their occupancy as a function of genomic position (red histogram) can be quantified using chromatin immunoprecipitation followed by DNA sequencing (ChIP–seq)19,21. d - Chromosomes exist in spatial territories in the nucleus. There are interactions within and between chromosomes, as well as between chromosomes and nuclear structures such as the nuclear pore, inner nuclear membrane and nuclear lamina18._
+
+### Chromatin regulation and mutation
+Briefly, we might also consider how to improve our methods over time.
+The 3D genome structure also affects how likely mutation is to occur due to the probability of physical biochemical events occurring.
+Very simply, "random" mutations occur frequently in DNA. They are either "repaired" or passed on and subject to natural selection.
+
+* Consider the variable frequency of variants across the genome throughout the human population. 
+* Also consider that progression towards old age can lead to an increase in such random mutation within a single person (leaving out many citations here).
+
+The paper by {% cite makova2015effects %} 
+[https://doi.org/10.1038/nrg3890](https://www.nature.com/articles/nrg3890)
+is not important to read - however, their figure is a nice illustration for our discussion.
+
+<img src="{{ site.baseurl }}{% link images/3d_genome/makova2015effects_fig2.webp %}" width="50%">
+> {% cite makova2015effects %} _Figure 2: Aspects of chromatin organization that can affect evolutionary rates. A portion of a chromatin fibre is shown to illustrate closed versus open chromatin and the different types of mutations that occur at higher or lower rates in each case. The closed state can represent quiescent chromatin with little dynamic histone modification or with the repressive modifications histone H3 lysine 9 trimethylation (H3K9me3; associated with heterochromatin) or H3K27me3. Actively transcribed and regulated DNA tends to be in open chromatin marked by DNase-hypersensitive sites, transcription factor occupancy and activating histone modifications such as H3K4me1 (associated with enhancers), H3K4me3 (associated with promoters), H3K36me3 (associated with transcribed chromatin), H3K27 acetylation (H3K27ac) and H4ac (both associated with enhancers and promoters). D, deletion; I, insertion; indel, insertion and deletion; Pol II, RNA polymerase II; S, substitution._
+
+## PCA and LD
+The following paper is relatively old now. 
+However, it illustrates population structure nicely.
+As parent pass one their DNA down to children, rearrangements occur. 
+However, the DNA rearrangements occur as relatively large stretches of DNA.
+Therefore, within a related population most people will have very similar blocks of DNA (including common variants) and only small numbers of novel (rare) variants.
+
+1. Common variants might be most useful for pharmacogenomics in general since so many people share the same sets of variants / affected gene-drug interactions.
+2. Each individual rare variant only affect a minority. However, they might be rare because they may cause an unusual phenotype which is not as likely to survive natural selection. This unique gene-phenotype might lead to a new discovery in biological mechanism. 
+3. If we share large stretches of DNA in a population, having one common variant means that you are likely to also have the second common variant on the same stretch of DNA. The nature of DNA [linkage disequilibrium](https://en.wikipedia.org/wiki/Linkage_disequilibrium) (LD) allows us to make statistical inferences that are very powerful for genetic analysis. For example, only sequencing a small number of SNPs across the genome which represent each DNA LD block allows us define genetic ancestry (23andMe, forensic genetics, GWAS, etc).
+
+{% cite novembre2008genes %}
+[https://doi.org/10.1038/nature07331](https://www.nature.com/articles/nature07331) illustrates how analysis DNA in this way, using principal component analysis (PCA), shows that geographic location and genetic ancestry strongly overlap. 
+It also illustrates how tailored medical treatments would generally apply to different people based on their genetic ancestry.
+Very few people are likely to require a treatment that is unique only to them. 
+Although treatment with a combination of drugs and different gene-drug interactions will increase the level of unique tailoring.
+
+<img src="{{ site.baseurl }}{% link images/3d_genome/novembre2008genes_fig1.webp %}" width="50%">
+
+> {% cite novembre2008genes %} _Figure 1: Population structure within Europe. a, A statistical summary of genetic data from 1,387 Europeans based on principal component axis one (PC1) and axis two (PC2). Small coloured labels represent individuals and large coloured points represent median PC1 and PC2 values for each country. The inset map provides a key to the labels. The PC axes are rotated to emphasize the similarity to the geographic map of Europe. AL, Albania; AT, Austria; BA, Bosnia-Herzegovina; BE, Belgium; BG, Bulgaria; CH, Switzerland; CY, Cyprus; CZ, Czech Republic; DE, Germany; DK, Denmark; ES, Spain; FI, Finland; FR, France; GB, United Kingdom; GR, Greece; HR, Croatia; HU, Hungary; IE, Ireland; IT, Italy; KS, Kosovo; LV, Latvia; MK, Macedonia; NO, Norway; NL, Netherlands; PL, Poland; PT, Portugal; RO, Romania; RS, Serbia and Montenegro; RU, Russia, Sct, Scotland; SE, Sweden; SI, Slovenia; SK, Slovakia; TR, Turkey; UA, Ukraine; YG, Yugoslavia. b, A magnification of the area around Switzerland from a showing differentiation within Switzerland by language. c, Genetic similarity versus geographic distance. Median genetic correlation between pairs of individuals as a function of geographic distance between their respective populations._
+
 ## More questions
 
 Q: Do we have to infer that in the future everybody will have his genome sequenced ?  
@@ -648,4 +770,7 @@ For example, I might [1] rank first on VEP variant "consequences"; stop mutation
 - Mary V. Relling & William E. Evans. Pharmacogenomics in the clinic. _Nature_ 2015; 526, 343–350\. doi: 10.1038/nature15817
 - Yip VL, Hawcutt DB, Pirmohamed M. Pharmacogenetic Markers of Drug Efficacy and Toxicity. _Clin Pharmacol Ther._ 2015;98(1):61-70\. doi: 10.1002/cpt.135.
 - David R. Adams, M.D., Ph.D.,  and Christine M. Eng, M.D. Next-Generation Sequencing to Diagnose Suspected Genetic Disorders N Engl J Med Oct 2018 doi: 10.1056/NEJMra1711801
+
+{% bibliography --cited %}
+
 
