@@ -10,7 +10,7 @@ mkdir ./tmp
 for file in `cat import_clean.list`; do cp $file ./tmp/; done
 printf "copied\n"
 
-cd tmp
+cd ./tmp/
 for file in *.html; do cat $file | sed 's/\"height\"\:\"auto\"\,\"padding\"\:40/\"height\"\:\"auto\"/g' > ../$file; done
 printf "replaced\n"
 
