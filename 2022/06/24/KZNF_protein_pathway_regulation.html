@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>KZNF protein pathway regulation</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="post">
+Reading time  8 minutes
+<h1 id="kznf-protein-pathway-regulation">KZNF protein pathway regulation</h1>
+<ul id="markdown-toc">
+  <li><a href="#exec-summary" id="markdown-toc-exec-summary">Exec summary</a></li>
+  <li>
+<a href="#background" id="markdown-toc-background">Background</a>    <ul>
+      <li><a href="#typical-approach" id="markdown-toc-typical-approach">Typical approach</a></li>
+      <li><a href="#new-approach" id="markdown-toc-new-approach">New approach</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#case-study" id="markdown-toc-case-study">Case study</a>    <ul>
+      <li>
+<a href="#protocol" id="markdown-toc-protocol">Protocol</a>        <ul>
+          <li><a href="#0-select-a-pli-znf-pilot-study" id="markdown-toc-0-select-a-pli-znf-pilot-study">0. Select a pLI ZNF (pilot study)</a></li>
+          <li><a href="#1-make-a-znf-in-vitro-assay" id="markdown-toc-1-make-a-znf-in-vitro-assay">1. Make a ZNF in vitro assay</a></li>
+          <li><a href="#2-chip-seq" id="markdown-toc-2-chip-seq">2. Chip-seq</a></li>
+          <li><a href="#3-find-genes-with-de" id="markdown-toc-3-find-genes-with-de">3. Find genes with DE</a></li>
+          <li><a href="#4-cluster-all-target-genes-into-their-protein-pathways" id="markdown-toc-4-cluster-all-target-genes-into-their-protein-pathways">4. Cluster all target genes into their protein pathways</a></li>
+          <li><a href="#5-identify-pathways-with-pli" id="markdown-toc-5-identify-pathways-with-pli">5. Identify pathways with pLI</a></li>
+          <li><a href="#6-further-development" id="markdown-toc-6-further-development">6. Further development</a></li>
+        </ul>
+      </li>
+      <li><a href="#result" id="markdown-toc-result">Result</a></li>
+    </ul>
+  </li>
+  <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
+  <li>
+<a href="#code-used" id="markdown-toc-code-used">Code used</a>    <ul>
+      <li><a href="#1unzipsh" id="markdown-toc-1unzipsh">1.unzip.sh</a></li>
+      <li><a href="#2scansh" id="markdown-toc-2scansh">2.scan.sh</a></li>
+      <li><a href="#3analyser" id="markdown-toc-3analyser">3.analyse.R</a></li>
+      <li><a href="#4chipsh" id="markdown-toc-4chipsh">4.chip.sh</a></li>
+      <li><a href="#5genelistsh" id="markdown-toc-5genelistsh">5.genelist.sh</a></li>
+      <li><a href="#6mclplofsh" id="markdown-toc-6mclplofsh">6.mclplof.sh</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<h2 id="exec-summary">Exec summary</h2>
+
+<ul>
+  <li>We use existing data to show an improved method for identifying ZNF-dependent gene regulation at the:
+    <ol>
+      <li>gene level.</li>
+      <li>protein pathway level.</li>
+    </ol>
+  </li>
+  <li>The method is statistically unbiased and might be used to produce more successful functional validation studies.</li>
+</ul>
+
+<p>I will go thorough the steps to get to this final summary image:</p>
+
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot.jpg" width="100%"></p>
+
+<h2 id="background">Background</h2>
+
+<ul>
+  <li>Control of gene expression by KZNFs occurs throughout the genome.</li>
+  <li>Clusters of several genes within a single region are affected by one KZNF binding site.</li>
+  <li>Research often focuses on one KZNF at a time
+    <ul>
+      <li>functional experiment require a ZNF in vitro system and Chip-seq</li>
+    </ul>
+  </li>
+  <li>Research often focuses on the resulting best candidate:
+    <ul>
+      <li>a single genome site that had the larges change in expression</li>
+      <li>to top gene in that region (for whatever reason)</li>
+      <li>nearst gene to the regulotory region</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li>ZNF genes that are intolerant to LoF (pLI = 1) are very interesting:
+    <ul>
+      <li>since their function is regulation of expression for target genes</li>
+      <li>the targets themselves must also have a intollerance to LoF</li>
+    </ul>
+  </li>
+  <li>ZNF targets can be many gene (i) genome wide (ii) clustered together.</li>
+  <li>Genome-wide ZNF targets might form a protein pathway</li>
+  <li>pLI ZNF targets may also be (i) individually pLI or (ii) cumulatively pLI for a pathway.</li>
+</ol>
+
+<h3 id="typical-approach">Typical approach</h3>
+
+<ol>
+  <li>Make a ZNF in vitro assay</li>
+  <li>Chip-seq</li>
+  <li>Find genes with DE</li>
+  <li>Explain the top hit</li>
+  <li>Or pass all hits into GO for a pathway report.</li>
+</ol>
+
+<p>Opinion:</p>
+<ul>
+  <li>Result #4 is interesting and requires a lot of functional work.</li>
+  <li>Result #5 is generally not very insightful and often focuses on a cluster of genes, rather than genome-wide.</li>
+</ul>
+
+<h3 id="new-approach">New approach</h3>
+
+<ol>
+  <li>Select a pLI ZNF (pilot study)</li>
+  <li>Make a ZNF in vitro assay</li>
+  <li>Chip-seq</li>
+  <li>Find genes with DE</li>
+  <li>Cluster all target genes into their protein pathways</li>
+  <li>Identify pathways where all genes are (i) individually pLI or (ii) cumulatively pLI for the pathway.</li>
+</ol>
+
+<p>Opinion:</p>
+<ul>
+  <li>This result unbiased for picking what you determine to be the “top hit”.</li>
+  <li>The mechanisms of pLI (and therefore ZFN downstream effect) can be interpreted from existing evidence
+    <ul>
+      <li>for all genes withing the pathway, functional explanation is likely avaiable (Uniprot + GTEx)</li>
+    </ul>
+  </li>
+  <li>A successful pilot in the most damaging pLI will provide a route to more complex and subtle regulatory mechanisms
+    <ul>
+      <li>i.e. genes/pathways that are tollerant to haploinsuffiency which would otherwise be at the mercy of blind functional analysis.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="case-study">Case study</h2>
+<h3 id="protocol">Protocol</h3>
+
+<h4 id="0-select-a-pli-znf-pilot-study">0. Select a pLI ZNF (pilot study)</h4>
+<p>The closer pLI is to one, the more intolerant of protein-truncating variants the transcript appears to be. 
+We consider pLI ≥ 0.9 as an extremely intolerant set of transcripts. 
+<a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a>.</p>
+
+<ul>
+  <li>Methods in <a href="#1unzipsh">Code block 1</a>
+</li>
+</ul>
+
+<p>To find ZNF genes with pLI &gt;0.9 I used</p>
+<ul>
+  <li><a href="https://gnomad.broadinstitute.org/downloads">https://gnomad.broadinstitute.org/downloads</a></li>
+  <li>Section “Constraint”</li>
+  <li>File “pLoF Metrics by Gene TSV”</li>
+  <li>Ref <a href="https://www.nature.com/articles/s41586-020-2308-7">https://www.nature.com/articles/s41586-020-2308-7</a>
+</li>
+  <li>
+<a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a>.</li>
+</ul>
+
+<p>Handling requires installation of samtools <a href="https://www.htslib.org">https://www.htslib.org</a> (Samtools, BCFtools, HTSlib).
+Uncompress the data with bgzip.</p>
+
+<ul>
+  <li>Methods in <a href="#2scansh">Code block 2</a>
+</li>
+</ul>
+
+<p>Query the whole genoe pLI score for all ZNF genes.
+Clean the dataset to extract the data of interest:
+Gene name, numbers of observed/expected LoF, pLI score, etc.</p>
+
+<ul>
+  <li>Methods in <a href="#3analyser">Code block 3</a>
+</li>
+</ul>
+
+<p>The R code performs a lot of formatting and cleaning to interpret the dataset.
+We find all genes wiht pLI &gt; 0.9.</p>
+
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_A.jpg" width="100%"></p>
+
+<p>I have pre-emptively shown ZNF777 in red. I will show in the next section why I chose this as a pilot study.</p>
+
+<h4 id="1-make-a-znf-in-vitro-assay">1. Make a ZNF in vitro assay</h4>
+<p>This was found from existing data, as shown in the next section.</p>
+
+<h4 id="2-chip-seq">2. Chip-seq</h4>
+<p>This was found from existing data, as shown in the next section.</p>
+
+<h4 id="3-find-genes-with-de">3. Find genes with DE</h4>
+<p>I used existing chip-seq data.
+This will pair one ZNF to a list of all genes that it ostensibly regulates.
+I believe this dataset to be a useful example:
+<a class="citation" href="#imbeault2017krab">(Imbeault et al., 2017)</a>,
+<a href="https://www.nature.com/articles/nature21683">https://www.nature.com/articles/nature21683</a>.</p>
+
+<blockquote>
+  <p>“We then determined the genomic targets of human KZFPs by performing chromatin immunoprecipitation with exonuclease digestion (ChIP–exo)[13] on 257 HEK293T cell lines, each engineered to express one haemagglutinin (HA)-tagged family member. We obtained single base-pair resolution binding sites for 222 human KZFPs (Supplementary Table 4), 12 of them in duplicate (Extended Data Fig. 2), with the number of high-quality peaks per protein ranging from more than 10,000 to only around 15 (Extended Data Fig. 3a).</p>
+</blockquote>
+
+<p>I compared my list of all ZNF for pLI &gt;0.9 with the ZNF genes available in this study.
+The first match was ZNF777, which has pLI 0.99 (as shown in Figure 1).</p>
+
+<p>I downloaded the data:</p>
+<ul>
+  <li>
+    <p>GSM2466654	ZNF777
+  -<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78099">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78099</a>
+      -<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2466654">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2466654</a></p>
+  </li>
+  <li>
+    <p>Methods in <a href="#3analyser">Code block 3</a></p>
+  </li>
+</ul>
+
+<p>I cleaned and visualise the MACS (Model-based Analysis of ChIP-Seq) peak data.
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3120977/">What is MACS? - ref 1</a>,
+<a class="citation" href="#feng2011using">(Feng et al., 2011)</a>.
+<a href="https://hbctraining.github.io/Intro-to-ChIPseq/lessons/05_peak_calling_macs.html">What is MACS? - ref 2</a></p>
+
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_B.jpg" width="100%"></p>
+
+<h4 id="4-cluster-all-target-genes-into-their-protein-pathways">4. Cluster all target genes into their protein pathways</h4>
+
+<ul>
+  <li>Methods in <a href="#4chipsh">Code block 4</a>
+</li>
+  <li>Methods in <a href="#5genelistsh">Code block 5</a>
+</li>
+  <li>Methods in <a href="#6mclplofsh">Code block 6</a>
+(The data contained genomic coordinates so I needed to gene coding region protein for further steps.)</li>
+  <li>Methods in <a href="#3analyser">Code block 3</a>
+</li>
+</ul>
+
+<p>The genes “affected” by ZNF777 were clustered into their best-fit protein pathways using <a href="https://string-db.org">STRING-db</a>.
+String uses experimental and curated data from Biocarta, BioCyc, GO, KEGG, and Reactome, BIND, DIP, GRID, HPRD, IntAct, MINT, and PID.</p>
+
+<p>I access the database using <a href="https://cytoscape.org">Cytoscape</a>.</p>
+
+<p>Pathway clustering was performed using 
+Markov Cluster Algorithm (MCL), an unsupervised cluster algorithm for networks based on stochastic flow.
+<a class="citation" href="#van2000graph">(Van Dongen, 2000)</a>,
+<a href="https://micans.org/mcl/">https://micans.org/mcl/</a>.</p>
+
+<p>In Figure A, I show all of the gene target of ZNF777.</p>
+<ul>
+  <li>Each node illustrates one protein.</li>
+  <li>Each edge illustrates the weight of evidence connecting proteins.</li>
+</ul>
+
+<p>Since we cannot define the protein pathways clearly here 
+(something that you find when reading hierarchical <a href="http://geneontology.org">GO enrichement analsis</a> results), 
+I instead cluster these proteins into the best-fitting pathways.</p>
+
+<p>The result of MCL clustering is show in Figure B.</p>
+
+<p>Now we have a set of distinct protein pathways.</p>
+
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img1-2_merged.jpg" width="100%"></p>
+
+<h4 id="5-identify-pathways-with-pli">5. Identify pathways with pLI</h4>
+
+<ul>
+  <li>Methods in <a href="#3analyser">Code block 3</a>
+</li>
+</ul>
+
+<p>Next, since we started with a ZNF that is intolerant to LoF, we also believe that the target genes must also be</p>
+<ul>
+  <li>(i) individually pLI</li>
+  <li>or (ii) cumulatively pLI for the pathway.</li>
+</ul>
+
+<p>I cleaned the data further to group gene according to their</p>
+<ol>
+  <li>protein pathways,</li>
+  <li>genomic distribution, and</li>
+  <li>pLI score.</li>
+</ol>
+
+<p>Figure 3 shows the top 5 largest pathways.</p>
+
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_C.jpg" width="100%"></p>
+
+<ul>
+  <li>
+<strong>Key:</strong> We can see that rahter than focusing on a cluster of genes within one genomic region, we interpret genes according to their protein pthway.</li>
+  <li>Some protein pathways will have high pLI scores and may be considered the major ZNF targets.</li>
+  <li>Some protein pathways can tolerate LoF and maybe considered by-standers.</li>
+</ul>
+
+<p>These by-stander genes are still surely sensitive to regulation by ZNF777.
+However, we can infer the evolutionary hierarchy of the major and minor protein pathways under the control of this ZNF.</p>
+
+<h4 id="6-further-development">6. Further development</h4>
+<p>There are 2 major further ways to progress.</p>
+
+<ol>
+  <li>Complete all avaialble Chip-seq datasets for pLI &gt;0.9. Expand into pLI below 0.9 if possible.</li>
+  <li>Find which genes are in these protein pathways and see why they are not regulated by this ZNF (and see if there are sister ZNFs working in tangent to control pathway dosages).</li>
+</ol>
+
+<h3 id="result">Result</h3>
+<p>From all candidate ZNF gene targets, we find those which match it’s intolerance to LoF.
+We therefore define these pathways as the major targets of this ZNF.</p>
+
+<p>I have purposely refrained for completing the final step: quantifying the top pLI pathway/gene list. 
+This is to prevent from making a conclusion without testing the theory and stats.</p>
+
+<h2 id="summary">Summary</h2>
+
+<h2 id="code-used">Code used</h2>
+<h3 id="1unzipsh">1.unzip.sh</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+
+# dataset
+# &lt;https://gnomad.broadinstitute.org/downloads&gt;
+# Section "Constraint"
+# File "pLoF Metrics by Gene TSV"
+# Ref &lt;https://www.nature.com/articles/s41586-020-2308-7&gt;
+
+# install samtools
+
+bgzip -d gnomad.v2.1.1.lof_metrics.by_gene.txt.bgz
+
+</code></pre></div></div>
+
+<h3 id="2scansh">2.scan.sh</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+set -e
+cd ../data/
+
+output=ZNF_summary.tsv
+
+# query gene and get summary column
+head -1 gnomad.v2.1.1.lof_metrics.by_gene.txt | cut -f 1,17,18,20,21,42,43,46,75,76,77 &gt; $output
+# obs_lof	mu_lof	exp_lof	pLI	obs_het_lof	obs_hom_lof	exp_hom_lof
+
+grep "ZNF*" gnomad.v2.1.1.lof_metrics.by_gene.txt | cut -f 1,17,18,20,21,42,43,46,75,76,77 &gt;&gt; $output
+
+</code></pre></div></div>
+<h3 id="3analyser">3.analyse.R</h3>
+
+<p><strong>Major note:</strong> some of the data used in the second half of this script requires the scripts from 4,5,6.
+I have named them in the order of writing. 
+It will be obvious when a dataset is missing, that the next bash script should be run.
+If continuing this project, 3.analyse.R should be split into sequential order, or call the bash script within the R code.</p>
+
+<p><strong>Minor note:</strong> This script is needlessly long and contains rough exploration work. If continuing this project, it can be heavily simplified.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Multiple sequence alignment file</span><span class="w">
+</span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> 
+	</span><span class="n">read.table</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"../data/ZNF_summary.tsv"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\t"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Note there is one KAZN gene included, figure out the grep correction later.</span><span class="w">
+
+</span><span class="c1"># The closer pLI is to one, the more intolerant of protein-truncating variants the transcript appears to be. We consider pLI ≥ 0.9 as an extremely intolerant set of transcripts. _Lek et al Nature 2016._</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># get the data in chr order</span><span class="w">
+</span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">arrange</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">start_position</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df</span><span class="o">$</span><span class="n">chromosome</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">chromosome</span><span class="p">)</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">start_position</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">start_position</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># replace NAs with X chromosome </span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">chromosome</span><span class="p">[</span><span class="nf">is.na</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">chromosome</span><span class="p">)]</span><span class="o">&lt;-</span><span class="s2">"X"</span><span class="w">
+
+</span><span class="c1"># create the subset for example: ZNF777</span><span class="w">
+</span><span class="n">g1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">subset</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">gene</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"ZNF777"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">pZNF777</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> 
+	</span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+</span><span class="c1">#	ggplot(aes(x=start_position, y=pLI))+</span><span class="w">
+	</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">stringr</span><span class="o">::</span><span class="n">str_sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">chromosome</span><span class="p">),</span><span class="w"> </span><span class="n">numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)),</span><span class="w">
+				  </span><span class="n">y</span><span class="o">=</span><span class="n">pLI</span><span class="p">))</span><span class="o">+</span><span class="w">
+</span><span class="c1">#	geom_point() +</span><span class="w">
+	</span><span class="n">geom_jitter</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">g1</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="c1"># this adds a red point</span><span class="w">
+	</span><span class="n">geom_text</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">g1</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="o">=</span><span class="s2">"ZNF777"</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="m">.95</span><span class="p">,</span><span class="w"> </span><span class="n">colour</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_hline</span><span class="p">(</span><span class="n">linetype</span><span class="o">=</span><span class="s2">"dotted"</span><span class="p">,</span><span class="w"> </span><span class="n">yintercept</span><span class="o">=</span><span class="m">0.9</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="c1">#facet_grid(~chromosome) +</span><span class="w">
+</span><span class="c1">#	facet_grid(.~factor(chromosome, stringr::str_sort(unique(chromosome), numeric = TRUE))) + </span><span class="w">
+</span><span class="c1">#	theme(legend.position="none", panel.background = element_rect("#F7F7F7"),</span><span class="w">
+</span><span class="c1">#			#axis.text.x=element_text(angle=45,hjust=1,vjust=0.5),</span><span class="w">
+</span><span class="c1">#			axis.text.x=element_blank()) +</span><span class="w">
+	</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"ZNF genes genomic position"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">ylab</span><span class="p">(</span><span class="s2">"pLI (≥ 0.9 extremely intolerant to LoF)"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="n">pZNF777</span><span class="w">
+
+</span><span class="c1"># Next I want to simulate some chip-seq data, matching one ZNF to a list of all genes that are regulated</span><span class="w">
+</span><span class="c1"># I believe this dataset is useful</span><span class="w">
+</span><span class="c1">#### https://www.nature.com/articles/nature21683</span><span class="w">
+</span><span class="c1"># We then determined the genomic targets of human KZFPs by performing chromatin immunoprecipitation with exonuclease digestion (ChIP–exo)13 on 257 HEK293T cell lines, each engineered to express one haemagglutinin (HA)-tagged family member. We obtained single base-pair resolution binding sites for 222 human KZFPs (Supplementary Table 4), 12 of them in duplicate (Extended Data Fig. 2), with the number of high-quality peaks per protein ranging from more than 10,000 to only around 15 (Extended Data Fig. 3a). </span><span class="w">
+
+</span><span class="c1">#ZNF77 has pLI 0.99</span><span class="w">
+</span><span class="c1"># Download</span><span class="w">
+</span><span class="c1"># GSM2466654	ZNF777</span><span class="w">
+</span><span class="c1"># https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE78099</span><span class="w">
+</span><span class="c1">## https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM2466654</span><span class="w">
+
+</span><span class="n">df2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> 
+	</span><span class="n">read.table</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"../data/GSM2466654_ZNF777_peaks_processed_score_signal_exo.bed.txt"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\t"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">separate</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="w"> </span><span class="n">V1</span><span class="p">,</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"text"</span><span class="p">,</span><span class="w"> </span><span class="s2">"chromosome"</span><span class="p">),</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"chr"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">select</span><span class="p">(</span><span class="o">-</span><span class="n">text</span><span class="p">)</span><span class="w">
+
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df2</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'V2'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'start_position'</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df2</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'V3'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'end_position'</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df2</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'V5'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'score'</span><span class="w">
+
+</span><span class="n">df2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+	</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">start_position</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">score</span><span class="w"> </span><span class="p">))</span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+</span><span class="c1">#	geom_hline(linetype="dotted", yintercept=0.9) +</span><span class="w">
+	</span><span class="c1">#facet_grid(~chromosome) +</span><span class="w">
+	</span><span class="n">facet_grid</span><span class="p">(</span><span class="n">.</span><span class="o">~</span><span class="n">factor</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">stringr</span><span class="o">::</span><span class="n">str_sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">chromosome</span><span class="p">),</span><span class="w"> </span><span class="n">numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+	</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_rect</span><span class="p">(</span><span class="s2">"#F7F7F7"</span><span class="p">),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_text(angle=45,hjust=1,vjust=0.5),</span><span class="w">
+			</span><span class="n">axis.text.x</span><span class="o">=</span><span class="n">element_blank</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Genes genomic position"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">ylab</span><span class="p">(</span><span class="s2">"Score MACS peak"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="c1"># aligned to GRCh37g1k </span><span class="w">
+
+</span><span class="c1"># get gene symbtols via ensenbke biomart</span><span class="w">
+</span><span class="c1"># http://grch37.ensembl.org/biomart/martview/35883cadc275e8738b07668ab1f8d58f</span><span class="w">
+
+</span><span class="c1"># run 4.chip.sh</span><span class="w">
+
+</span><span class="c1"># Query for these coordinates and output attibutes:</span><span class="w">
+</span><span class="c1">#Dataset : Human genes (GRCh37.p13)</span><span class="w">
+</span><span class="c1">#Filters: coordinates, e.g. 1:100:10000:-1, 1:100000:200000:1: [ID-list specified]</span><span class="w">
+</span><span class="c1">#Attributes:</span><span class="w">
+</span><span class="c1">#Gene stable ID</span><span class="w">
+</span><span class="c1">#Gene start (bp)</span><span class="w">
+</span><span class="c1">#Gene end (bp)</span><span class="w">
+</span><span class="c1">#Chromosome/scaffold name</span><span class="w">
+</span><span class="c1">#Transcription start site (TSS)</span><span class="w">
+</span><span class="c1">#Gene name</span><span class="w">
+
+</span><span class="c1"># Output: GSM2466654_ZNF777_peaks_processed_score_signal_exo.bed.biomartformat_annotated.txt</span><span class="w">
+
+</span><span class="n">df3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> 
+	</span><span class="n">read.table</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"../data/GSM2466654_ZNF777_peaks_processed_score_signal_exo.bed.biomartformat_annotated.txt"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\t"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># run 5.genelist.sh</span><span class="w">
+
+</span><span class="c1"># cytoscape </span><span class="w">
+</span><span class="c1"># string gene query, print list</span><span class="w">
+</span><span class="c1"># MCL cluster, default 2.5 inflation</span><span class="w">
+
+</span><span class="n">df4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> 
+	</span><span class="n">read.table</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"../output/img2_string_network_ZNF777_peaks_MCL2.5_table.csv"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">","</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df4</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">select</span><span class="p">(</span><span class="n">X__mclCluster</span><span class="p">,</span><span class="w"> </span><span class="n">display.name</span><span class="p">)</span><span class="w"> 
+
+</span><span class="c1"># colnames(df)[colnames(df) == 'oldName'] &lt;- 'newName'</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df4</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df4</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'display.name'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'Gene.name'</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df4</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df4</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'X__mclCluster'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'mclCluster'</span><span class="w">
+
+</span><span class="c1"># merge MCL clusters with the MACS peaks (genes named via biomart)</span><span class="w">
+</span><span class="n">df5</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span><span class="w"> </span><span class="n">df4</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># get first in gene (instead of all TSS)</span><span class="w">
+</span><span class="n">df5</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df5</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+	</span><span class="n">group_by</span><span class="p">(</span><span class="n">Gene.name</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+	</span><span class="n">filter</span><span class="p">(</span><span class="n">row_number</span><span class="p">()</span><span class="o">==</span><span class="m">1</span><span class="p">)</span><span class="w">
+
+</span><span class="nf">names</span><span class="p">(</span><span class="n">df5</span><span class="p">)</span><span class="w">
+
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df5</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df5</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'Chromosome.scaffold.name'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'chromosome'</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df5</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df5</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'Gene.start..bp.'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'start_position'</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df5</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df5</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'Gene.end..bp.'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'end_position'</span><span class="w">
+
+</span><span class="n">df5</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+	</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">start_position</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">mclCluster</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">mclCluster</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">))</span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="c1">#	geom_hline(linetype="dotted", yintercept=0.9) +</span><span class="w">
+	</span><span class="c1">#facet_grid(~chromosome) +</span><span class="w">
+	</span><span class="n">facet_grid</span><span class="p">(</span><span class="o">~</span><span class="n">factor</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">stringr</span><span class="o">::</span><span class="n">str_sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">chromosome</span><span class="p">),</span><span class="w"> </span><span class="n">numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+	</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_rect</span><span class="p">(</span><span class="s2">"#F7F7F7"</span><span class="p">),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_text(angle=45,hjust=1,vjust=0.5),</span><span class="w">
+			</span><span class="n">axis.text.x</span><span class="o">=</span><span class="n">element_blank</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Genes genomic position"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">ylab</span><span class="p">(</span><span class="s2">"Score MACS peak"</span><span class="p">)</span><span class="w"> 
+
+
+</span><span class="n">df5</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+	</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">stringr</span><span class="o">::</span><span class="n">str_sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">chromosome</span><span class="p">),</span><span class="w"> </span><span class="n">numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)),</span><span class="w"> 
+				  </span><span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">mclCluster</span><span class="p">),</span><span class="w"> 
+				  </span><span class="n">group</span><span class="o">=</span><span class="n">mclCluster</span><span class="p">,</span><span class="w">
+				  </span><span class="n">color</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">mclCluster</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">))</span><span class="o">+</span><span class="w">
+	</span><span class="c1">#geom_point() +</span><span class="w">
+	</span><span class="n">geom_jitter</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_rect</span><span class="p">(</span><span class="s2">"#F7F7F7"</span><span class="p">),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_text(angle=45,hjust=1,vjust=0.5),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_blank()</span><span class="w">
+			</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Genes genomic position"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">ylab</span><span class="p">(</span><span class="s2">"Protein pathway ID"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="c1"># merge protein pathway data with MACS peaks</span><span class="w">
+
+</span><span class="n">df5</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df5</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">mclCluster</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df2</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="n">df5</span><span class="p">)</span><span class="w">
+
+</span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="w">
+	</span><span class="p">(</span><span class="n">df2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">select</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">start_position</span><span class="p">,</span><span class="w"> </span><span class="n">end_position</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">)),</span><span class="w">
+	</span><span class="p">(</span><span class="n">df5</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">select</span><span class="p">(</span><span class="n">Gene.name</span><span class="p">,</span><span class="w"> </span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">start_position</span><span class="p">,</span><span class="w"> </span><span class="n">end_position</span><span class="p">,</span><span class="w"> </span><span class="n">mclCluster</span><span class="p">)),</span><span class="w">
+	</span><span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">T</span><span class="w"> </span><span class="p">)</span><span class="w">
+
+</span><span class="n">df2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+	</span><span class="n">select</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">start_position</span><span class="p">,</span><span class="w"> </span><span class="n">end_position</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">)</span><span class="w">
+
+</span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="w"> </span><span class="n">df5</span><span class="p">,</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">T</span><span class="w"> </span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># get pLI scores</span><span class="w">
+</span><span class="c1"># now get the plof for mcl genes</span><span class="w">
+</span><span class="n">gene_names</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">mclCluster</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">select</span><span class="p">(</span><span class="n">Gene.name</span><span class="p">)</span><span class="w">
+
+</span><span class="n">write.table</span><span class="p">(</span><span class="n">gene_names</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s1">'../output/gene_names_mcl_top5.csv'</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">,</span><span class="w"> </span><span class="n">quote</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">col.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># run 6.mclplof.sh</span><span class="w">
+
+</span><span class="c1"># Multiple sequence alignment file</span><span class="w">
+</span><span class="n">df6</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> 
+	</span><span class="n">read.table</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">"../output/gene_names_mcl_top5_plof.txt"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\t"</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+
+</span><span class="nf">names</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="n">df6</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># colnames(df6)[colnames(df6) == 'oldName'] &lt;- 'newName'</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">df6</span><span class="p">)[</span><span class="n">colnames</span><span class="p">(</span><span class="n">df6</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'gene'</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'Gene.name'</span><span class="w">
+
+</span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">df6</span><span class="p">,</span><span class="w"> </span><span class="n">all.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">T</span><span class="p">)</span><span class="w">
+
+</span><span class="n">tmp</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+	</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">stringr</span><span class="o">::</span><span class="n">str_sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">chromosome</span><span class="p">),</span><span class="w"> </span><span class="n">numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)),</span><span class="w"> 
+				  </span><span class="n">y</span><span class="o">=</span><span class="n">mclCluster</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">group</span><span class="o">=</span><span class="n">mclCluster</span><span class="p">,</span><span class="w">
+				  </span><span class="n">color</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">mclCluster</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">))</span><span class="o">+</span><span class="w">
+</span><span class="c1">#	geom_point() +</span><span class="w">
+	</span><span class="n">geom_jitter</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_rect</span><span class="p">(</span><span class="s2">"#F7F7F7"</span><span class="p">),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_text(angle=45,hjust=1,vjust=0.5),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_blank()</span><span class="w">
+	</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Genes genomic position"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">ylab</span><span class="p">(</span><span class="s2">"Protein pathway ID"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="n">p0</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+</span><span class="c1">#	filter(chromosome ==1 ) %&gt;%</span><span class="w">
+	</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">start_position</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">y</span><span class="o">=</span><span class="n">mclCluster</span><span class="p">,</span><span class="w"> 
+				  </span><span class="n">group</span><span class="o">=</span><span class="n">mclCluster</span><span class="p">,</span><span class="w">
+				  </span><span class="n">color</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">mclCluster</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">))</span><span class="o">+</span><span class="w">
+</span><span class="c1">#	geom_point() +</span><span class="w">
+	</span><span class="n">geom_jitter</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_rect</span><span class="p">(</span><span class="s2">"#F7F7F7"</span><span class="p">),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_text(angle=45,hjust=1,vjust=0.5),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_blank()</span><span class="w">
+	</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Genes genomic position"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">ylab</span><span class="p">(</span><span class="s2">"Protein pathway ID"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="n">g2</span><span class="o">$</span><span class="n">Gene.name</span><span class="w">
+</span><span class="n">g2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">subset</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="w"> </span><span class="n">pLI</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0.9</span><span class="p">)</span><span class="w">
+</span><span class="n">p1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tmp2</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+	</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">factor</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">stringr</span><span class="o">::</span><span class="n">str_sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">chromosome</span><span class="p">),</span><span class="w"> </span><span class="n">numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)),</span><span class="w"> 
+				  </span><span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">mclCluster</span><span class="p">),</span><span class="w"> 
+				  </span><span class="n">group</span><span class="o">=</span><span class="n">mclCluster</span><span class="p">,</span><span class="w">
+				  </span><span class="n">color</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">mclCluster</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">))</span><span class="o">+</span><span class="w">
+	</span><span class="c1">#geom_point() +</span><span class="w">
+	</span><span class="n">geom_jitter</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">pLI</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_line</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_rect</span><span class="p">(</span><span class="s2">"#F7F7F7"</span><span class="p">),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_text(angle=45,hjust=1,vjust=0.5),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_blank()</span><span class="w">
+	</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Genes genomic position"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">ylab</span><span class="p">(</span><span class="s2">"Protein pathway ID"</span><span class="p">)</span><span class="w">  </span><span class="o">+</span><span class="w"> 
+	</span><span class="n">geom_text</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">g2</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">Gene.name</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span><span class="w">
+
+</span><span class="n">p2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+</span><span class="c1">#	filter(chromosome ==1 ) %&gt;%</span><span class="w">
+	</span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">start_position</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="p">))</span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_segment</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">xend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start_position</span><span class="p">,</span><span class="w"> </span><span class="n">yend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">))</span><span class="o">+</span><span class="w">
+	</span><span class="n">facet_grid</span><span class="p">(</span><span class="n">.</span><span class="o">~</span><span class="n">factor</span><span class="p">(</span><span class="n">chromosome</span><span class="p">,</span><span class="w"> </span><span class="n">stringr</span><span class="o">::</span><span class="n">str_sort</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">chromosome</span><span class="p">),</span><span class="w"> </span><span class="n">numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_rect</span><span class="p">(</span><span class="s2">"#F7F7F7"</span><span class="p">),</span><span class="w">
+			</span><span class="c1">#axis.text.x=element_text(angle=45,hjust=1,vjust=0.5),</span><span class="w">
+			</span><span class="n">axis.text.x</span><span class="o">=</span><span class="n">element_blank</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Genes genomic position"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">ylab</span><span class="p">(</span><span class="s2">"Score MACS peak"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="c1"># Plot main figure ----</span><span class="w">
+</span><span class="n">require</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span><span class="w">
+</span><span class="n">grid.arrange</span><span class="p">(</span><span class="n">pZNF777</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span><span class="n">ncol</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> 
+				 </span><span class="n">bottom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+				 </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">)</span><span class="w"> 
+
+</span></code></pre></div></div>
+
+<h3 id="4chipsh">4.chip.sh</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+
+cd ../data/
+
+# convert to correct format
+# (Chr:Start:End:Strand) [Max 500 advised]
+# e.g. 1:100:10000:-1, 1:100000:200000:1
+
+cut -f 1-3 GSM2466654_ZNF777_peaks_processed_score_signal_exo.bed.txt |\
+	sed 's/	/:/g' |\
+	sed 's/chr//g' \
+	&gt; GSM2466654_ZNF777_peaks_processed_score_signal_exo.bed.biomartformat.txt
+
+</code></pre></div></div>
+
+<h3 id="5genelistsh">5.genelist.sh</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+
+# gene simple gene list to cluster with STRING
+cut -f 6 GSM2466654_ZNF777_peaks_processed_score_signal_exo.bed.biomartformat_annotated.txt |\
+	sort |\
+	uniq \
+	&gt; GSM2466654_ZNF777_peaks_processed_score_signal_exo.bed.biomartformat_annotated_genes.txt
+
+</code></pre></div></div>
+
+<h3 id="6mclplofsh">6.mclplof.sh</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/bash
+cd ../output/
+
+# for every line in the top 5 protein pathways, get the pLI data
+head -1 ../data/gnomad.v2.1.1.lof_metrics.by_gene.txt | cut -f 1,17,18,20,21,42,43,46,75,76,77 &gt; gene_names_mcl_top5_plof.txt
+
+while read -r line; 
+do 
+grep "$line"  ../data/gnomad.v2.1.1.lof_metrics.by_gene.txt;
+done &lt; gene_names_mcl_top5.csv  |\
+	cut -f 1,17,18,20,21,42,43,46,75,76,77 &gt;&gt; gene_names_mcl_top5_plof.txt
+
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography">
+<li><span id="lek2016analysis">Lek, M., Karczewski, K. J., Minikel, E. V., Samocha, K. E., Banks, E., Fennell, T., O’Donnell-Luria, A. H., Ware, J. S., Hill, A. J., Cummings, B. B., &amp; others. (2016). Analysis of protein-coding genetic variation in 60,706 humans. <i>Nature</i>, <i>536</i>(7616), 285.</span></li>
+<li><span id="imbeault2017krab">Imbeault, M., Helleboid, P.-Y., &amp; Trono, D. (2017). KRAB zinc-finger proteins contribute to the evolution of gene regulatory networks. <i>Nature</i>, <i>543</i>(7646), 550–554.</span></li>
+<li><span id="feng2011using">Feng, J., Liu, T., &amp; Zhang, Y. (2011). Using MACS to identify peaks from ChIP-Seq data. <i>Current Protocols in Bioinformatics</i>, <i>34</i>(1), 2–14.</span></li>
+<li><span id="van2000graph">Van Dongen, S. M. (2000). <i>Graph clustering by flow simulation</i> [PhD thesis].</span></li>
+</ol>
+
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li>
+<span>31 Jan 2022</span> » <a href="/2022/01/31/reference-genome-choice.html">Reference genome choice</a>
+</li>
+    
+      <li>
+<span>21 Sep 2021</span> » <a href="/2021/09/21/whos_afraid.html">Who's afraid of the big bad geneticist?</a>
+</li>
+    
+      <li>
+<span>13 Sep 2021</span> » <a href="/2021/09/13/weeknotes_16.html">Weeknotes</a>
+</li>
+    
+  </ul>
+</div>
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

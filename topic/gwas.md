@@ -192,6 +192,19 @@ which itself is a part of [EIGENSOFT](https://www.hsph.harvard.edu/alkes-price/s
 For GWAS data I have only used PLINK or GCTA instead of installing other software separately.
 I have used several R libraries for performing PCA in R with different types of genetic data (e.g. virual sequence) but there is no need to list them here.
 
+
+Deciding how to prune out a sub population is difficult.
+This tools uses Euclidean distances to do so (but is currently restricted to European).
+https://meyer-lab-cshl.github.io/plinkQC/
+
+
+# QTL
+If you find some significant association in GWAS, people usually then check if the SNP (which represents the LD block) is correlated with QTLs that will affect expression or splicing.
+I've used:
+https://fuma.ctglab.nl
+This one gives similar results, plus some more:
+https://analysistools.cancer.gov/ezqtl/#/qtls
+
 # Biological interpretation
 
 # Conclusion
