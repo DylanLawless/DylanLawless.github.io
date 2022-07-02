@@ -18,7 +18,7 @@
 	
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
-	<title>The devil is in the detail</title>
+	<title>We need a nice rare disease database</title>
 	<meta name="author" content="LawlessGenomics">
 	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
@@ -91,79 +91,91 @@
 <!-- MAIN START -------------------------------------------------------- -->
 <div class="sitewidth">
 	<div id="post">
-Reading time 2 minutes
-<h1 id="the-devil-is-in-the-detail">The devil is in the detail</h1>
+Reading time 3 minutes
+<h1 id="we-need-a-nice-rare-disease-database">We need a nice rare disease database</h1>
+<p class="meta">30 June 2022</p>
 
-<p class="meta">19 Aug 2019</p>
-<p>I was learning some <a href="https://en.wikipedia.org/wiki/Steganography">steganography</a> methods for a security project. 
-At the same time, I was writing up a paper with some friends 
-(<a href="https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf">https://link.springer.com/content/pdf/11.1007%2Fs10875-019-00670-z.pdf</a>) 
-and decided to hide a little message in one of the figures.
-The goal was to encode some hidden data and see could we get it back out 
-the other side, after publication.</p>
+<!-- * TOC -->
+<!-- {:toc} -->
 
-<p>It would be a lot of trouble for a master of espionage to have to publish a 
-paper every time a secret message needed to be encoded for public transmission, 
-but maybe it could be done!</p>
+<h2 id="what-is-this">What is this?</h2>
 
-<p><img src="/images/posts/editor_paper_rag.png" width="101%"></p>
+<p>This short post is to demonstrate a problem and a solution as an example of why I add these things to my public page. 
+It is just one of the hundreds of small, modular datasets that I build and cross-link for all my public and private LawlessGenomics work.
+For precision medicine we need countless small, efficient, connected, tools in a consisten format. 
+This is one example.</p>
 
-<p>The secret message was imported into <a href="https://www.r-project.org">R</a> from plain text. 
-It was encoded into a png file that was to be a supplemental figure in our paper 
-From experience, supplemental figures usually get uploaded to a repository and
-stored in the same format for later downloaded after publication, 
-until main-text figures which are often converted in one way or another by the publisher. 
-Once the figure was released, anyone with the correct decoding algorithm 
-could get back the secret message.</p>
+<h2 id="problem">Problem</h2>
 
-<p>In this case, I used the 
-<a href="https://github.com/richfitz/stegasaur">richfitz/stegasaur</a> package, 
-innocently offered with “The aim is to be able to encode arbitrary R objects in cat pictures.” 
-The inforation was hidden within the data that makes up the image, 
-and is imperceivable to the naked eye. 
-Even better, the file size was slightly <em>SMALLER</em> than the original 
-(1.9MB to 1.7MB) without a noticeable difference in quality. 
-After peer review of the paper, publisher proceessing and publication, 
-the secret message was successfully decoded from the protein structure figure 
-“F_E4_Structure.png” and was printed to the console:</p>
+<p>Diagnosing rare immune disorders is very challenging.
+A fast checklist of candidate genes is required.</p>
 
-<p><img src="/images/posts/r_steg_decode.png" width="100%"></p>
+<h2 id="one-step-to-the-solution">One step to the solution</h2>
 
-<p>This exercise looks like a bit of fun, 
-but was done to demonstrate the unavoidable 
-risks that exist in sensitive data research.<sup id="fnref:foot" role="doc-noteref"><a href="#fn:foot" class="footnote" rel="footnote">1</a></sup>
-Today, protected data enclaves are used for processing sensitive data 
-and usually allow summary results or figures to be exported.
-These are therefore basically a trust based system and are otherwise only security theatre.</p>
+<p>One of the most important resources for clinical immunology genetics is the yearly report of the
+Inborn Errors of Immunity (IEI) Committee by the International Union of Immunological Societies (IUIS)
+(<a href="https://iuis.org/committees/iei/">https://iuis.org</a>),
+<a class="citation" href="#tangye2022iei">(Tangye et al., 2022)</a>. 
+Read the paper here:
+<a href="https://link.springer.com/article/10.1007/s10875-022-01289-3">doi.org/10.1007/s10875-022-01289-3</a>
+and directly download their original xlsx table from Springer here:
+<a href="https://static-content.springer.com/esm/art%3A10.1007%2Fs10875-022-01289-3/MediaObjects/10875_2022_1289_MOESM2_ESM.xlsx">Supplementary file2 (XLSX 93 kb)</a>.</p>
 
-<p>Here’s an idea, <a href="https://patents.google.com/patent/US8527779">steganographic message blocks</a> 
-seperated across a career worth of publications, 
-that can only be deciphered once all blocks are collected! 
-Who would go to that trouble? 
-Go see what you can find in one Supplementary material png file. 
-<a href="https://link.springer.com/article/10.1007%2Fs10875-019-00670-z">https://link.springer.com/article/10.1007%2Fs10875-019-00670-z</a></p>
+<h2 id="however">However</h2>
 
-<h2 id="r-script">R script </h2>
-<p>Try it yourself.
-Find the paper and get Figure E4.
-Download
-<a href="https://link.springer.com/article/10.1007%2Fs10875-019-00670-z#SupplementaryMaterial">10875_2019_670_MOESM5_ESM</a></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; install.packages("devtools")
-&gt; install_github("richfitz/stegasaur")
-&gt; library("devtools")
-&gt; library(ggplot2) 
-&gt; Decode message &lt;- 
-&gt;		stegasaur::decode("~/10875_2019_670_MOESM5_ESM.png")
-</code></pre></div></div>
-<h2 id="footnote">Footnote</h2>
+<p>Because of traditional publishing protocols, there is a major problem. 
+To use this dataset you must either:</p>
+<ol>
+  <li>Download and save an XLSX table (<a href="https://static-content.springer.com/esm/art%3A10.1007%2Fs10875-022-01289-3/MediaObjects/10875_2022_1289_MOESM2_ESM.xlsx">download</a>).</li>
+  <li>Bookmark the webpage and <a href="https://link.springer.com/article/10.1007/s10875-022-01289-3/tables/1">view a png screen-shot of each table</a>.</li>
+  <li>Download the pdf version and view an embedded <a href="https://link.springer.com/content/pdf/10.1007/s10875-022-01289-3.pdf">pdf</a> of each table.</li>
+</ol>
 
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:foot" role="doc-endnote">
-      <p><a href="/topic/medical-espionage">Medical espionage</a>. <a href="#fnref:foot" class="reversefootnote" role="doc-backlink">↩</a></p>
-    </li>
-  </ol>
-</div>
+<h2 id="better-solution">Better solution</h2>
+
+<p>For years, I have made personal databases of gene lists which I query very often. 
+Every bioinformatician also uses large sets of databases for annotation.</p>
+
+<p>I notice a huge gap for clinicians, etc. who also need this info but have to rely on looking up the paper each time.
+One good example of the correct method is the Genomics England PanelApp
+<a href="https://panelapp.genomicsengland.co.uk">https://panelapp.genomicsengland.co.uk</a>.</p>
+
+<p>I want a fast, searchable version of the IUIS IEI gene list.
+So I made it here:</p>
+
+<ul>
+  <li>
+<a href="/topic/iuis-iei-table-page">Human Inborn Errors of Immunity</a>.</li>
+</ul>
+
+<h2 id="why-is-this-better">Why is this better?</h2>
+
+<p>I don’t just want to confirm that my query gene is an <em>immune disorder-related gene</em>, I want to quickly get a lot of facts about it.
+Bioinformatically, I would add all this data in one step using my variant effect pipeline. 
+However, I usually look this stuff up while on the go, in a meeting, etc.
+For a clinician, it is the same. 
+They do not have the time to call up and request a bioinformatic query.
+We all need a fast, searchable table.</p>
+
+<p>I have added additional hyperlinks to all of the external websites that are most pertinent.
+I also did a lot of cleaning and standardisation for filtering “Inheritance” terms, etc. so that it can work seamlessly.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>Many thanks to the committee for releasing their invaluable updates every year.</p>
+
+<p>Please do not contact me to complain!
+I hope I have modified and cited the original information enough to deter a take-down request. 
+I also hope someone adds a version to the IUIS website.</p>
+
+<h2 id="anecdote">Anecdote</h2>
+
+<p>I was lucky enough to have a paper which accounts for one of these newly added genes, since this list is rapidly approaching its asymptote:
+<a href="/2021/07/08/credited-iuis.html">Credited for a newly added immune gene in IUIS</a>.</p>
+
+<h1 id="references">References</h1>
+
+<ol class="bibliography"><li><span id="tangye2022iei">Tangye, S. G., Al-Herz, W., Bousfiha, A., Cunningham-Rundles, C., Franco, J. L., Holland, S. M., Klein, C., Morio, T., Oksenhendler, E., Picard, C., Puel, A., Puck, J., Seppänen, M. R. J., Somech, R., Su, H. C., Sullivan, K. E., Torgerson, T. R., &amp; Meyts, I. (2022). Human Inborn Errors of Immunity: 2022 Update on the Classification from the International Union of Immunological Societies Expert Committee. <i>Journal of Clinical Immunology</i>. https://doi.org/10.1007/s10875-022-01289-3</span></li></ol>
 
 </div>
 
@@ -172,15 +184,15 @@ Download
   <ul class="posts">
     
       <li>
-<span>30 Jun 2022</span> » <a href="/2022/06/30/we-need-a-nice-rare-disease-database.html">We need a nice rare disease database</a>
-</li>
-    
-      <li>
 <span>24 Jun 2022</span> » <a href="/2022/06/24/KZNF_protein_pathway_regulation.html">KZNF protein pathway regulation</a>
 </li>
     
       <li>
 <span>31 Jan 2022</span> » <a href="/2022/01/31/reference-genome-choice.html">Reference genome choice</a>
+</li>
+    
+      <li>
+<span>21 Sep 2021</span> » <a href="/2021/09/21/whos_afraid.html">Who's afraid of the big bad geneticist?</a>
 </li>
     
   </ul>

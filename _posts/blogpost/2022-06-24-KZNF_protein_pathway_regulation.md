@@ -8,6 +8,7 @@ status: unfinished
 
 {{ page.title }}
 ================
+<p class="meta">24 June 2022</p>
 * TOC
 {:toc}
 
