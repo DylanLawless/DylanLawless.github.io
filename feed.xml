@@ -7,8 +7,100 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>We need a nice rare disease database</title>
+        <description>&lt;h1 id=&quot;we-need-a-nice-rare-disease-database&quot;&gt;We need a nice rare disease database&lt;/h1&gt;
+&lt;p class=&quot;meta&quot;&gt;30 June 2022&lt;/p&gt;
+
+&lt;!-- * TOC --&gt;
+&lt;!-- {:toc} --&gt;
+
+&lt;h2 id=&quot;what-is-this&quot;&gt;What is this?&lt;/h2&gt;
+
+&lt;p&gt;This short post is to demonstrate a problem and a solution as an example of why I add these things to my public page. 
+It is just one of the hundreds of small, modular datasets that I build and cross-link for all my public and private LawlessGenomics work.
+For precision medicine we need countless small, efficient, connected, tools in a consisten format. 
+This is one example.&lt;/p&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;Diagnosing rare immune disorders is very challenging.
+A fast checklist of candidate genes is required.&lt;/p&gt;
+
+&lt;h2 id=&quot;one-step-to-the-solution&quot;&gt;One step to the solution&lt;/h2&gt;
+
+&lt;p&gt;One of the most important resources for clinical immunology genetics is the yearly report of the
+Inborn Errors of Immunity (IEI) Committee by the International Union of Immunological Societies (IUIS)
+(&lt;a href=&quot;https://iuis.org/committees/iei/&quot;&gt;https://iuis.org&lt;/a&gt;),
+&lt;a class=&quot;citation&quot; href=&quot;#tangye2022iei&quot;&gt;(Tangye et al., 2022)&lt;/a&gt;. 
+Read the paper here:
+&lt;a href=&quot;https://link.springer.com/article/10.1007/s10875-022-01289-3&quot;&gt;doi.org/10.1007/s10875-022-01289-3&lt;/a&gt;
+and directly download their original xlsx table from Springer here:
+&lt;a href=&quot;https://static-content.springer.com/esm/art%3A10.1007%2Fs10875-022-01289-3/MediaObjects/10875_2022_1289_MOESM2_ESM.xlsx&quot;&gt;Supplementary file2 (XLSX 93 kb)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;however&quot;&gt;However&lt;/h2&gt;
+
+&lt;p&gt;Because of traditional publishing protocols, there is a major problem. 
+To use this dataset you must either:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Download and save an XLSX table (&lt;a href=&quot;https://static-content.springer.com/esm/art%3A10.1007%2Fs10875-022-01289-3/MediaObjects/10875_2022_1289_MOESM2_ESM.xlsx&quot;&gt;download&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;Bookmark the webpage and &lt;a href=&quot;https://link.springer.com/article/10.1007/s10875-022-01289-3/tables/1&quot;&gt;view a png screen-shot of each table&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Download the pdf version and view an embedded &lt;a href=&quot;https://link.springer.com/content/pdf/10.1007/s10875-022-01289-3.pdf&quot;&gt;pdf&lt;/a&gt; of each table.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;better-solution&quot;&gt;Better solution&lt;/h2&gt;
+
+&lt;p&gt;For years, I have made personal databases of gene lists which I query very often. 
+Every bioinformatician also uses large sets of databases for annotation.&lt;/p&gt;
+
+&lt;p&gt;I notice a huge gap for clinicians, etc. who also need this info but have to rely on looking up the paper each time.
+One good example of the correct method is the Genomics England PanelApp
+&lt;a href=&quot;https://panelapp.genomicsengland.co.uk&quot;&gt;https://panelapp.genomicsengland.co.uk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I want a fast, searchable version of the IUIS IEI gene list.
+So I made it here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/topic/iuis-iei-table-page&quot;&gt;Human Inborn Errors of Immunity&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;why-is-this-better&quot;&gt;Why is this better?&lt;/h2&gt;
+
+&lt;p&gt;I don’t just want to confirm that my query gene is an &lt;em&gt;immune disorder-related gene&lt;/em&gt;, I want to quickly get a lot of facts about it.
+Bioinformatically, I would add all this data in one step using my variant effect pipeline. 
+However, I usually look this stuff up while on the go, in a meeting, etc.
+For a clinician, it is the same. 
+They do not have the time to call up and request a bioinformatic query.
+We all need a fast, searchable table.&lt;/p&gt;
+
+&lt;p&gt;I have added additional hyperlinks to all of the external websites that are most pertinent.
+I also did a lot of cleaning and standardisation for filtering “Inheritance” terms, etc. so that it can work seamlessly.&lt;/p&gt;
+
+&lt;h2 id=&quot;thanks&quot;&gt;Thanks&lt;/h2&gt;
+
+&lt;p&gt;Many thanks to the committee for releasing their invaluable updates every year.&lt;/p&gt;
+
+&lt;p&gt;Please do not contact me to complain!
+I hope I have modified and cited the original information enough to deter a take-down request. 
+I also hope someone adds a version to the IUIS website.&lt;/p&gt;
+
+&lt;h2 id=&quot;anecdote&quot;&gt;Anecdote&lt;/h2&gt;
+
+&lt;p&gt;I was lucky enough to have a paper which accounts for one of these newly added genes, since this list is rapidly approaching its asymptote:
+&lt;a href=&quot;/2021/07/08/credited-iuis.html&quot;&gt;Credited for a newly added immune gene in IUIS&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;tangye2022iei&quot;&gt;Tangye, S. G., Al-Herz, W., Bousfiha, A., Cunningham-Rundles, C., Franco, J. L., Holland, S. M., Klein, C., Morio, T., Oksenhendler, E., Picard, C., Puel, A., Puck, J., Seppänen, M. R. J., Somech, R., Su, H. C., Sullivan, K. E., Torgerson, T. R., &amp;amp; Meyts, I. (2022). Human Inborn Errors of Immunity: 2022 Update on the Classification from the International Union of Immunological Societies Expert Committee. &lt;i&gt;Journal of Clinical Immunology&lt;/i&gt;. https://doi.org/10.1007/s10875-022-01289-3&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 30 Jun 2022 02:00:01 +0200</pubDate>
+        <link>http://localhost:4000//2022/06/30/we-need-a-nice-rare-disease-database.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2022/06/30/we-need-a-nice-rare-disease-database.html</guid>
+      </item>
+    
+      <item>
         <title>KZNF protein pathway regulation</title>
         <description>&lt;h1 id=&quot;kznf-protein-pathway-regulation&quot;&gt;KZNF protein pathway regulation&lt;/h1&gt;
+&lt;p class=&quot;meta&quot;&gt;24 June 2022&lt;/p&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#exec-summary&quot; id=&quot;markdown-toc-exec-summary&quot;&gt;Exec summary&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#background&quot; id=&quot;markdown-toc-background&quot;&gt;Background&lt;/a&gt;    &lt;ul&gt;
@@ -1035,133 +1127,6 @@ The R code that I used for this process is included.&lt;/p&gt;
         <pubDate>Mon, 26 Jul 2021 00:00:00 +0200</pubDate>
         <link>http://localhost:4000//2021/07/26/weeknotes_9.html</link>
         <guid isPermaLink="true">http://localhost:4000//2021/07/26/weeknotes_9.html</guid>
-      </item>
-    
-      <item>
-        <title>Easy manuscript</title>
-        <description>&lt;h1 id=&quot;easy-manuscript&quot;&gt;Easy manuscript&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;22 July 2021&lt;/p&gt;
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Academic writing can be faster using &lt;em&gt;.md&lt;/em&gt; instead of &lt;em&gt;.tex&lt;/em&gt;.
-Here is an example of how I write an academic paper.
-I use four main files (and a directory of images if required).&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;references.bib&lt;/li&gt;
-  &lt;li&gt;pre-print.md&lt;/li&gt;
-  &lt;li&gt;pre-print.Rmd&lt;/li&gt;
-  &lt;li&gt;build.sh&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;referencesbib&quot;&gt;references.bib&lt;/h2&gt;
-&lt;p&gt;These are kept as normal in “references.bib”.
-I keep a cloud “master_refereces.bib”, from which I then pull the project references into a local “references.bib”.&lt;/p&gt;
-
-&lt;h2 id=&quot;pre-printmd&quot;&gt;pre-print.md&lt;/h2&gt;
-&lt;p&gt;This is the main content.
-There is no title since this will come in the R markdown Rscript (pre-print.Rmd).
-Heading 1s can use “#”. 
-For citations I use “@citekey”
-You can also use “\cite{key}” if you think you might convert to tex format later, e.g. you know your document will require complex formatting once the content is written.
-However, LaTeX math notation can be used with “$$”. 
-For example&lt;/p&gt;
-
-&lt;p&gt;\(\frac{ \sum{ m_i \bar{x}_i } }{ \sum{ m_i } }\).&lt;/p&gt;
-
-&lt;p&gt;In-line math works with single “$”, for example \(f(k) = {n \choose k} p^{k} (1-p)^{n-k}\).
-(Although, in this webpage’s source I actually still use double “$” without a line-break to print in-line math since I use different setting on this site. I am changing the website setting soon to use single and double “$” for zero editing).&lt;/p&gt;
-
-&lt;p&gt;The document “pre-print.md” looks like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Introduction &lt;/span&gt;
-Bla bla bla
-
-&lt;span class=&quot;c&quot;&gt;# Methods&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;## Genome sequencing &lt;/span&gt;
-Bla bla bla
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;pre-printrmd&quot;&gt;pre-print.Rmd&lt;/h2&gt;
-&lt;p&gt;This is the Rscript file that runs to produce the output PDF.
-It contains all of the settings and the last line shown is the link to the main contents.&lt;/p&gt;
-
-&lt;div class=&quot;language-R highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Title&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;includes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Allow landscape page for table&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usepackage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pdflscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blandscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;landscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;newcommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elandscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;landscape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dylan&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Lawless&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# PDF via xelatex&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pdf_document&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;latex_engine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xelatex&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#citation_package: natbib&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number_sections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;toc_depth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;citations&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linkcolor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subparagraph&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;citecolor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;urlcolor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Output MS word if you really need it&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#  word_document: default&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#   bookdown::word_document2: default  # for cross-references&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# Output as html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# output:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#  bookdown::html_document2:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#    toc: true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#    toc_depth: 2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# pdf, html, or word citations can use: [@key]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;# pdf citations only can use: \cite{key}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bibliography&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;references.bib&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;`{r child = './pre-print_v1.md'}`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;buildsh&quot;&gt;build.sh&lt;/h1&gt;
-&lt;p&gt;The document can be built either by using R studio to knit “pre-print.Rmd” or by using a script to do the same without having to open the R studio GUI.&lt;/p&gt;
-
-&lt;p&gt;The shell script “build.sh” only neeeds one line to run the build:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin.bash&lt;/span&gt;
-
-Rscript &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rmarkdown::render('pre-print.Rmd')&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This will output “pre-print.pdf”.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;While LaTeX-style is the king of academic or technical writing,
-using this simple markdown substitute covers ~90% of my needs and 99% of the content-writing process. 
-It avoids the time-consuming requirements of wring LaTeX formatting and produces almost the same result. 
-In most cases, we require only&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;section headers&lt;/li&gt;
-  &lt;li&gt;plain text&lt;/li&gt;
-  &lt;li&gt;italic or emph text&lt;/li&gt;
-  &lt;li&gt;inserted figures&lt;/li&gt;
-  &lt;li&gt;math notation&lt;/li&gt;
-  &lt;li&gt;.bib citations&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Everything else is usually superfluous formatting that is a time-consuming distraction and often ends up being redone in the final manuscript version anyway.&lt;/p&gt;
-
-&lt;p&gt;Using markdown files for nearly everything that I write (academic, personal, web publishing, zettelkasten notes, etc.) means that atomic notes can be very easily shuttled around any possible project. 
-Citations in my master_references.bib also means that I will always have them available for any project, whether it is a large project or simply small literature note that is cross-posted between projects.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 22 Jul 2021 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000//2021/07/22/easy_manuscript.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2021/07/22/easy_manuscript.html</guid>
       </item>
     
 		
