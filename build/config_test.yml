@@ -16,3 +16,5 @@ defaults:
 
 title: LawlessGenomics
 url: https://lawlessgenomics.com
+
+# exclude: [_posts]
