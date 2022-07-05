@@ -74,7 +74,15 @@ a:hover {
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect x="656.9442" y="-319.252" clip-path="url(#clipPath2)" fill="none" width="112.7573" rx="4" ry="4" height="30"/>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://github.com/brentp/slivar" fill="#c13e3e" target="_blank" >
       <text x="672.9313" xml:space="preserve" y="-299.7169" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Filter Variants</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
       <rect x="640.3379" y="-381.1348" clip-path="url(#clipPath2)" fill="none" width="145.9699" rx="4" ry="4" height="48.3861"/>
       <text x="656.4929" xml:space="preserve" y="-352.4066" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Raw SNPSs + Indels</text>
     </g>
@@ -83,14 +91,30 @@ a:hover {
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect x="656.9442" y="-275.7553" clip-path="url(#clipPath2)" fill="none" width="112.7573" rx="4" ry="4" height="30"/>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531432-Genotype-Refinement-workflow-for-germline-short-variants" fill="#c13e3e" target="_blank" >
       <text x="662.6364" xml:space="preserve" y="-256.2202" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Refine Genotypes</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="rgb(229,229,229)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(229,229,229)">
       <rect x="656.9442" y="-232.2586" clip-path="url(#clipPath2)" width="112.7573" rx="4" ry="4" height="30" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect x="656.9442" y="-232.2586" clip-path="url(#clipPath2)" fill="none" width="112.7573" rx="4" ry="4" height="30"/>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://lawlessgenomics.com/topic/variant-annotation" fill="#c13e3e" target="_blank" >
       <text x="661.2419" xml:space="preserve" y="-212.7235" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Annotate Variants</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
       <rect x="640.3379" y="-186.1019" clip-path="url(#clipPath2)" fill="none" width="145.9699" rx="4" ry="4" height="48.3861"/>
       <text x="668.5925" xml:space="preserve" y="-157.3737" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Analysis-Ready</text>
     </g>
@@ -130,14 +154,30 @@ a:hover {
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="656.9442" width="112.7573" height="13.9777" y="-346.7264" clip-path="url(#clipPath2)"/>
-      <text x="702.0319" y="-335.2024" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">VCF</text>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format" fill="#c13e3e" target="_blank" >
+      <text x="702.0319" y="-335.2024" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">VCF</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="gray" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="gray">
       <rect x="656.9442" width="112.7573" height="13.9777" y="-151.6935" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="656.9442" width="112.7573" height="13.9777" y="-151.6935" clip-path="url(#clipPath2)"/>
-      <text x="702.0319" y="-140.1695" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">VCF</text>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format" fill="#c13e3e" target="_blank" >
+      <text x="702.0319" y="-140.1695" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">VCF</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="white">
       <rect x="111.1642" width="191.0141" height="323.8934" y="-368.5049" clip-path="url(#clipPath2)" stroke="none"/>
@@ -309,24 +349,59 @@ a:hover {
       <rect fill="none" x="533.524" width="30" height="30" y="-380.6661" clip-path="url(#clipPath2)"/>
       <text x="544.7301" xml:space="preserve" y="-361.131" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">1</text>
       <rect x="110.1901" y="-382.0298" clip-path="url(#clipPath2)" fill="none" width="145.9699" rx="4" ry="4" height="48.3861"/>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://lawlessgenomics.com/topic/1-exome-seq" fill="#c13e3e" target="_blank" >
       <text x="118.8948" xml:space="preserve" y="-353.3016" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Raw Unmapped Reads</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
       <rect x="110.1901" y="-283.8583" clip-path="url(#clipPath2)" fill="none" width="145.9699" rx="4" ry="4" height="48.3861"/>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2723002/" fill="#c13e3e" target="_blank" >
       <text x="127.2093" xml:space="preserve" y="-255.1301" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Raw Mapped Reads</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="rgb(229,229,229)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(229,229,229)">
       <rect x="126.7964" y="-224.2147" clip-path="url(#clipPath2)" width="112.7573" rx="4" ry="4" height="30" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect x="126.7964" y="-224.2147" clip-path="url(#clipPath2)" fill="none" width="112.7573" rx="4" ry="4" height="30"/>
+
+
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/5358880192027-MarkDuplicates-Picard-" fill="#c13e3e" target="_blank" >
       <text x="136.3382" xml:space="preserve" y="-204.6795" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Mark Duplicates</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="rgb(229,229,229)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(229,229,229)">
       <rect x="126.7964" y="-185.0216" clip-path="url(#clipPath2)" width="112.7573" rx="4" ry="4" height="30" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect x="126.7964" y="-185.0216" clip-path="url(#clipPath2)" fill="none" width="112.7573" rx="4" ry="4" height="30"/>
+	
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/5358896138011-BaseRecalibrator" fill="#c13e3e" target="_blank" >
       <text x="135.9866" xml:space="preserve" y="-172.5529" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Recalibrate Base</text>
       <text x="141.8841" xml:space="preserve" y="-158.4201" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Quality Scores</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
       <rect x="110.1901" y="-134.4822" clip-path="url(#clipPath2)" fill="none" width="145.9699" rx="4" ry="4" height="48.3861"/>
       <text x="119.261" xml:space="preserve" y="-105.754" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Analysis-Ready Reads</text>
     </g>
@@ -335,28 +410,63 @@ a:hover {
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="126.7964" width="112.7573" height="13.9777" y="-347.6214" clip-path="url(#clipPath2)"/>
-      <text x="137.7122" y="-336.0974" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">uBAM or FASTQ</text>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html" fill="#c13e3e" target="_blank" >
+      <text x="137.7122" y="-336.0974" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">uBAM or FASTQ</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="gray" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="gray">
       <rect x="126.7964" width="112.7573" height="13.9777" y="-249.4499" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="126.7964" width="112.7573" height="13.9777" y="-249.4499" clip-path="url(#clipPath2)"/>
-      <text x="170.4163" y="-237.9259" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">BAM</text>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://support.illumina.com/help/BS_App_RNASeq_Alignment_OLH_1000000006112/Content/Source/Informatics/BAM-Format.htm" fill="#c13e3e" target="_blank" >
+      <text x="170.4163" y="-237.9259" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">BAM</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="gray" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="gray">
       <rect x="126.7964" width="112.7573" height="13.9777" y="-95.6792" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="126.7964" width="112.7573" height="13.9777" y="-95.6792" clip-path="url(#clipPath2)"/>
-      <text x="170.4163" y="-84.1552" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">BAM</text>
+
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://support.illumina.com/help/BS_App_RNASeq_Alignment_OLH_1000000006112/Content/Source/Informatics/BAM-Format.htm" fill="#c13e3e" target="_blank" >
+      <text x="170.4163" y="-84.1552" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">BAM</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+
+
     </g>
     <g fill="rgb(229,229,229)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(229,229,229)">
       <rect x="126.7964" y="-325.1158" clip-path="url(#clipPath2)" width="112.7573" rx="4" ry="4" height="30" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect x="126.7964" y="-325.1158" clip-path="url(#clipPath2)" fill="none" width="112.7573" rx="4" ry="4" height="30"/>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="http://bio-bwa.sourceforge.net" fill="#c13e3e" target="_blank" >
       <text x="132.5677" xml:space="preserve" y="-305.5807" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Map to Reference</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="rgb(229,229,229)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(229,229,229)">
       <rect x="372.6912" y="-319.252" clip-path="url(#clipPath2)" width="164.3331" rx="4" ry="4" height="48.3861" stroke="none"/>
@@ -370,14 +480,30 @@ a:hover {
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect x="381.8727" y="-259.6849" clip-path="url(#clipPath2)" fill="none" width="145.9699" rx="4" ry="4" height="30"/>
-      <text x="393.6683" y="-240.1497" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">GVCF                        </text>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531812-GVCF-Genomic-Variant-Call-Format" fill="#c13e3e" target="_blank" >
+      <text x="393.6683" y="-240.1497" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">GVCF</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="rgb(229,229,229)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(229,229,229)">
       <rect x="381.8727" y="-194.9443" clip-path="url(#clipPath2)" width="145.9699" rx="4" ry="4" height="30" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect x="381.8727" y="-194.9443" clip-path="url(#clipPath2)" fill="none" width="145.9699" rx="4" ry="4" height="30"/>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/5358891439771-CombineGVCFs" fill="#c13e3e" target="_blank" >
       <text x="399.8235" xml:space="preserve" y="-175.4092" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">Consolidate GVCFs</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="rgb(229,229,229)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(229,229,229)">
       <rect x="381.8727" y="-155.502" clip-path="url(#clipPath2)" width="145.9699" rx="4" ry="4" height="48.3861" stroke="none"/>
@@ -395,28 +521,67 @@ a:hover {
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="398.4791" width="112.7573" height="13.9777" y="-347.6214" clip-path="url(#clipPath2)"/>
-      <text x="442.0989" y="-336.0974" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">BAM</text>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://support.illumina.com/help/BS_App_RNASeq_Alignment_OLH_1000000006112/Content/Source/Informatics/BAM-Format.htm" fill="#c13e3e" target="_blank" >
+      <text x="442.0989" y="-336.0974" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">BAM</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="rgb(59,59,59)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(59,59,59)">
       <rect x="389.2975" width="131.1205" height="13.9777" y="-284.8436" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="389.2975" width="131.1205" height="13.9777" y="-284.8436" clip-path="url(#clipPath2)"/>
-      <text x="408.7093" y="-273.3196" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">HaplotypeCaller</text>
+
+
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/5358864757787-HaplotypeCaller" fill="#c13e3e" target="_blank" >
+      <text x="408.7093" y="-273.3196" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">HaplotypeCaller</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+
+
     </g>
     <g fill="rgb(59,59,59)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="rgb(59,59,59)">
       <rect x="398.4791" width="112.7573" height="13.9777" y="-121.0936" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="398.4791" width="112.7573" height="13.9777" y="-121.0936" clip-path="url(#clipPath2)"/>
-      <text x="406.6878" y="-109.5696" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">Genotype GVCFs</text>
+
+
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/5358906861083-GenotypeGVCFs" fill="#c13e3e" target="_blank" >
+      <text x="406.6878" y="-109.5696" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">Genotype GVCFs</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+
     </g>
     <g fill="gray" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="gray">
       <rect x="398.4791" width="112.7573" height="13.9777" y="-52.6311" clip-path="url(#clipPath2)" stroke="none"/>
     </g>
     <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke-linecap="butt">
       <rect fill="none" x="398.4791" width="112.7573" height="13.9777" y="-52.6311" clip-path="url(#clipPath2)"/>
-      <text x="443.5667" y="-41.1071" clip-path="url(#clipPath2)" fill="white" font-family="sans-serif" stroke="none" xml:space="preserve">VCF</text>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
+	  <a  href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format" fill="#c13e3e" target="_blank" >
+      <text x="443.5667" y="-41.1071" clip-path="url(#clipPath2)" fill="pink" font-family="sans-serif" stroke="none" xml:space="preserve">VCF</text>
+	  </a>
+	<!-- ############## -->
+	<!-- HYPERLINK CODE -->
+	<!-- ############## -->
     </g>
     <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,31,472)" stroke="white">
       <rect x="482.4807" y="-255.2135" clip-path="url(#clipPath2)" width="40.1474" rx="4" ry="4" height="21.0573" stroke="none"/>
