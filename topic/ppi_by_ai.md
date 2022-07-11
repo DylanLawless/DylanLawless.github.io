@@ -7,7 +7,7 @@ One of the major immediately practical achievments in biology has been the
 advances made in highly accurate protein structure prediction.
 
 The most well-known of these methods is AlphaFold,
-{% cite jumper2021highly %}.
+<!-- {% cite jumper2021highly %}. -->
 AlphaFold was seen to be highly successful in 
 Critical Assessment of protein Structure Prediction (CASP) session 14, 
 hosted by the Protein Structure Prediction Center
@@ -56,7 +56,7 @@ This DNA variant occurs on the same gene which is translated into the pathogen-r
 Since this variant occurs on every copy of the patients DNA, it means that this process occurs continuously, inducing a constant pro-inflammatory disease.
 
 By discovering the cause of disease for the patient, we may be able to treat them and in some very luckly cases a cure might be possible by hematopoietic stem cell transplantation 
-{% cite signa2022hematopoietic %}.
+<!-- {% cite signa2022hematopoietic %}. -->
 Furthermore, we may have just discovered a new mechanism if extremely important protein function.
 This experiment designed by nature has provided us with a discovery, we just needed to uncover the experimental conditions that were used. 
 Using the traditional, sequential approach, it may be unlikely that this particular DNA variant would every be mutated in vitro to observe and effect.
