@@ -11,6 +11,12 @@ subject: meetings
 
 Public conferences attending or participating in:
 
+[European Society for Immunodeficiencies ESID](https://esidmeeting.org) 2022 - Gothenburg
+
+[Global Health Institute scientific retreat](https://www.epfl.ch/schools/sv/ghi/) - 2022 Grindelwald
+
+<img src="{{ site.baseurl }}{% link images/meetings/grindelwald.JPG %}" width="80%">
+
 [The European Society of Human Genetics (ESHG)](https://2020.eshg.org) - 2020 Berlin
 
 <img src="{{ site.baseurl }}{% link images/meetings/berlin.jpg %}" width="80%">
