@@ -1,11 +1,16 @@
 markdown: kramdown
 kramdown: 
   toc_levels: "2..6"
+  # scholar:
+  #    replace_strings: true
+  #    query: "@*"
+  #    bibliography: references.bib
 
 collections:
     topic:
         output: true
         permalink: /topic/:name
+      #    people: true
 
 defaults:
   - scope:
@@ -13,6 +18,14 @@ defaults:
       type: "topic"
     values:
       layout: topic
+
+# plugins:
+#   - jekyll-spaceship
+
+# jekyll-spaceship:
+#   # default enabled processors
+#   processors:
+#     - table-processor
 
 title: LawlessGenomics
 url: https://lawlessgenomics.com
