@@ -19,7 +19,6 @@ Variant annotation is one major step in the diagnosis of genetic disease.
 <p>Select an alternative analysis protocol using tabs.</p>
 
 <div class="w3-bar w3-black">
-<!-- <div class="w3-bar w3-dark-grey"> -->
     <button class="tab tablink w3-green" onclick="openCity(event,'module_GermlineSNV')">Germline SNV/INDEL</button>
     <button class="tab tablink w3-green" onclick="openCity(event,'module_RNAseq')">RNAseq</button>
 </div>
@@ -37,10 +36,11 @@ A PDF version of this figure is linked to [<a href="https://lawlessgenomics.com/
 </div>
 
 <div id="module_RNAseq" class="w3-container city" style="display:none">
-<object type="image/svg+xml" data="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph_v2_side_A.svg">
+<object type="image/svg+xml" data="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph_v2_RNA.svg">
     <!-- Your fall back here -->
     <img src="image.svg" />
 </object>
+A PDF version of this figure will be available for download in the near future.
 </div>
 
 <script>
