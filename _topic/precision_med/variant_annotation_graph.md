@@ -17,10 +17,9 @@ Variant annotation is one major step in the diagnosis of genetic disease.
 * [View a list of databases that I recommend]({{ site.baseurl }}{% link _topic/precision_med/variant_annotation_table_main.html %}).
 
 Select an alternative analysis protocol using tabs.
-A PDF version of this figure is linked to [<a href="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph.pdf">download here</a>].
 
 <div class="w3-bar w3-black">
-    <button class="tab tablink w3-green" onclick="openCity(event,'module_GermlineSNV')">Germline SNV/INDEL</button>
+    <button class="tab tablink w3-green button" onclick="openCity(event,'module_GermlineSNV')">Germline SNV/INDEL</button>
     <button class="tab tablink w3-green" onclick="openCity(event,'module_RNAseq')">RNAseq</button>
 </div>
 
@@ -28,13 +27,18 @@ A PDF version of this figure is linked to [<a href="https://lawlessgenomics.com/
 <!-- # This file must be already online,        --> 
 <!-- # it seems that the jekyll tags to         --> 
 <!-- # relative path break the downstream html. -->
+
+<!-- # Note: -->
+<!-- For the initial display, remove display:none -->
+
+<!-- <div id="module_GermlineSNV" class="w3-container city active" style="display:none"> -->
 <div id="module_GermlineSNV" class="w3-container city">
 	<object type="image/svg+xml" data="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph_v2_side_A.svg">
 	</object>
 </div>
 
-<!-- <div id="module_RNAseq" class="w3-container city" style="display:none"> -->
-<div id="module_GermlineSNV" class="w3-container city">
+<div id="module_RNAseq" class="w3-container city" style="display:none">
+<!-- <div id="module_RNAseq" class="w3-container city"> -->
 	<object type="image/svg+xml" data="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph_v2_RNA.svg">
 	</object>
 </div>
