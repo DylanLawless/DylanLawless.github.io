@@ -9,14 +9,15 @@ subject: Precision medicine
 ---
 {{ page.title }}
 ================
-<p class="meta">01 Jul 2022 - last update</p>
+<p class="meta">26 Aug 2022 - last update</p>
 
 Variant annotation is one major step in the diagnosis of genetic disease.
 
 * [View a list of annotation tools that I recommend]({{ site.baseurl }}{% link _topic/precision_med/variant_annotation.md %}).
 * [View a list of databases that I recommend]({{ site.baseurl }}{% link _topic/precision_med/variant_annotation_table_main.html %}).
 
-<p>Select an alternative analysis protocol using tabs.</p>
+Select an alternative analysis protocol using tabs.
+A PDF version of this figure is linked to [<a href="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph.pdf">download here</a>].
 
 <div class="w3-bar w3-black">
     <button class="tab tablink w3-green" onclick="openCity(event,'module_GermlineSNV')">Germline SNV/INDEL</button>
@@ -28,19 +29,14 @@ Variant annotation is one major step in the diagnosis of genetic disease.
 <!-- # it seems that the jekyll tags to         --> 
 <!-- # relative path break the downstream html. -->
 <div id="module_GermlineSNV" class="w3-container city">
-<object type="image/svg+xml" data="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph_v2_side_A.svg">
-    <!-- Your fall back here -->
-    <img src="image.svg" />
-</object>
-A PDF version of this figure is linked to [<a href="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph.pdf">download here</a>].
+	<object type="image/svg+xml" data="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph_v2_side_A.svg">
+	</object>
 </div>
 
-<div id="module_RNAseq" class="w3-container city" style="display:none">
-<object type="image/svg+xml" data="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph_v2_RNA.svg">
-    <!-- Your fall back here -->
-    <img src="image.svg" />
-</object>
-A PDF version of this figure will be available for download in the near future.
+<!-- <div id="module_RNAseq" class="w3-container city" style="display:none"> -->
+<div id="module_GermlineSNV" class="w3-container city">
+	<object type="image/svg+xml" data="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph_v2_RNA.svg">
+	</object>
 </div>
 
 <script>
@@ -58,3 +54,6 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " w3-green";
 }
 </script>
+
+A PDF version of the Germline SNV/INDEL protocol is linked to [<a href="https://lawlessgenomics.com/pages/portfolio_live/variant_annotation_graph.pdf">download here</a>].
+A PDF version of the RNAseq protocols will be available for download in the near future.
