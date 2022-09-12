@@ -4,9 +4,9 @@
 cp ./build/config_test.yml _config.yml
 cp ./build/Gemfile_test Gemfile
 
-# bundle exec jekyll serve --incremental &
-bundle exec jekyll serve &
-# jekyll serve &
+# # bundle exec jekyll serve --incremental &
+# bundle exec jekyll serve &
+jekyll serve --skip-initial-build --incremental &
 sleep 3
 
 open -a Safari http://127.0.0.1:4000
