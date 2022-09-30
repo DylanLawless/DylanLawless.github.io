@@ -1,4 +1,6 @@
 #!/bin/bash
+
+
 cp ./build/config_build.yml _config.yml
 cp ./build/Gemfile Gemfile
 sleep 1
