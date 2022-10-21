@@ -1,3 +1,5 @@
+#  Main ----
+
 library(dplyr)
 library(stringr)
 library(lubridate)
@@ -201,3 +203,123 @@ save_reactable(df_t, "../output/patent_history_sophiagenetics.html")
 system("grep -v '<!DOCTYPE html' ../output/patent_history_sophiagenetics.html > ../output/patent_history_sophiagenetics_clean.html")
 # For multiple tables on one html page, the <script>s used cause both tables to disappear. Therefore for table 2, edit the output to only contain only the <body> ... </body> content from the bottom of the documen    t. The scripts in table 1 will be applied on both. You must also comment out the <!DOCTYPE html> for table 1. grep with the flag “-A” to print number of lines “After” match.
 # grep -A 20 "<body " patent_history_sophiagenetics.html | grep -v "</html>" > patent_history_sophiagenetics_clean.html
+
+
+# Document analysis ----
+
+# install.packages("tm")
+require("tm")
+
+my.corpus <- Corpus(DirSource("./corpus"))
+getTransformations
+my.corpus <- tm_map(my.corpus, removePunctuation)
+my.corpus <- tm_map(my.corpus, removeWords, stopwords("english"))
+my.stops <- c("history","clio", "programming")
+my.corpus <- tm_map(my.corpus, removeWords, my.stops)
+
+# my.list <- unlist(read.table("PATH TO STOPWORD FILE", stringsAsFactors=FALSE))
+# my.stops <- c(my.list)
+# my.corpus <- tm_map(my.corpus, removeWords, my.stops)
+
+# Our results will be more useful if we can lemmatize our corpus. Instead of counting “run” and “runs”, for instance, as 2 separate words, we want to count them as the same word. To lemmatize the corpus means to change all variants of words into the same stem word.
+# To do this, we need another package to help with the lemmatizing. But we can use tm_map in way we’ve already done.
+# install("Snowball")
+# require("Snowball")
+# my.corpus <- tm_map(my.corpus, stemDocument)
+
+my.tdm <- TermDocumentMatrix(my.corpus)
+inspect(my.tdm)
+my.dtm <- DocumentTermMatrix(my.corpus, control = list(weighting = weightTfIdf, stopwords = TRUE))
+inspect(my.dtm)
+# inspected <- t(inspected) # rotate
+
+findFreqTerms(my.tdm, 2)
+findAssocs(my.tdm, 'genetic', 0.20)
+
+my.df <- as.data.frame(inspect(my.tdm))
+my.df.scale <- scale(my.df)
+d <- dist(my.df.scale,method="euclidean")
+fit <- hclust(d, method="ward")
+plot(fit)
+
+library(MASS)
+head(my.dtm)
+
+
+# wdbc.pr <- prcomp(my.dtm, center = TRUE, scale = TRUE)
+wdbc.pr <- prcomp(my.dtm, center = TRUE)
+summary(wdbc.pr)
+
+screeplot(wdbc.pr, type = "l", npcs = 20, main = "Screeplot of the first 10 PCs")
+abline(h = 1, col="red", lty=5)
+legend("topright", legend=c("Eigenvalue = 1"),
+		 col=c("red"), lty=5, cex=0.6)
+cumpro <- cumsum(wdbc.pr$sdev^2 / sum(wdbc.pr$sdev^2))
+plot(cumpro[0:15], xlab = "PC #", ylab = "Amount of explained variance", main = "Cumulative variance plot")
+abline(v = 6, col="blue", lty=5)
+abline(h = 0.88759, col="blue", lty=5)
+legend("topleft", legend=c("Cut-off @ PC6"),
+		 col=c("blue"), lty=5, cex=0.6)
+
+plot(wdbc.pr$x[,1],wdbc.pr$x[,2], xlab="PC1 (44.3%)", ylab = "PC2 (19%)", main = "PC1 / PC2 - plot")
+
+library("factoextra")
+fviz_pca_ind(wdbc.pr)
+temp <- head(wdbc.pr) 
+
+fviz_pca_ind(wdbc.pr, geom.ind = "point", pointshape = 21, 
+				 pointsize = 2, 
+				 fill.ind = rownames(wdbc.pr$x), 
+				 col.ind = "black", 
+				 addEllipses = TRUE,
+				 label = "var",
+				 col.var = "black",
+				 repel = TRUE,
+				 legend.title = "Diagnosis") +
+	ggtitle("2D PCA-plot from 30 feature dataset") +
+	theme(plot.title = element_text(hjust = 0.5))
+
+# alternative
+pca_res <- prcomp(my.dtm, center = TRUE, scale = TRUE)
+pca_res <- prcomp(my.dtm, center = TRUE)
+var_explained <- pca_res$sdev^2/sum(pca_res$sdev^2)
+
+library(dplyr)
+pca_res_x <- pca_res$x %>% as.data.frame()
+pca_res_x$Var <- ( row.names(pca_res_x))
+
+library(ggplot2)
+p2AL <- pca_res_x %>% 
+	ggplot(aes(x=PC1,y=PC2, label=Var)) +
+	geom_label(aes(fill = Var), colour = "white", size = 2, alpha=0.7, 
+				  position=position_jitter(width=0.03,height=0.03)
+	)+
+	labs(x=paste0("PC1: ",round(var_explained[1]*100,1),"%"),
+		  y=paste0("PC2: ",round(var_explained[2]*100,1),"%"))
+
+p2A <- pca_res_x %>% 
+	ggplot(aes(x=PC1,y=PC2, label=Var)) +
+	geom_point(aes(color = Var, alpha=0.7) ) +
+	labs(x=paste0("PC1: ",round(var_explained[1]*100,1),"%"),
+		  y=paste0("PC2: ",round(var_explained[2]*100,1),"%"))
+
+
+library(factoextra)
+p2B <- fviz_pca_ind(pca_res, col.ind = "cos2", # Color by the quality of representation
+						  gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), 
+						  max.overlaps = 15,
+						  repel = TRUE     # Avoid text overlapping
+) 
+
+p2C <- fviz_eig(pca_res)
+# get_eig(pca_res) 
+
+
+library(cowplot)
+mid_row <- plot_grid(p2B, p2C, labels = c('B'), ncol = 2)
+bottom_row <- plot_grid(p2AL, p2A, labels = c('C'), ncol = 2)
+plot <- plot_grid(mid_row, bottom_row, labels = c('', '', ''), ncol = 1)
+
+ggdraw(add_sub(vjust = 0.5, plot,
+					"(A) Genotype matrix.\n(B) PCA variance explained per Individual [typical]\n(C) PCA variance explained per Position [rotated matrix].\nPCAs (left) are manually derived from pca_res$sdev^2/sum(pca_res$sdev^2).\nPCAs (center) are made by fviz_pca_ind. (jitter added)"))
+

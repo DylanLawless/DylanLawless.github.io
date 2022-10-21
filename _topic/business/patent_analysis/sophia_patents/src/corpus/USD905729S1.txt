@@ -1,0 +1,107 @@
+  Patents
+ 
+ 
+
+Display screen or portion thereof with graphical user interface
+
+Images (2)
+
+  
+USD905729S1
+United States
+ Download PDF  Find Prior Art   Similar
+Inventor Gilbert Perrin Current Assignee Sophia Genetics SA
+Worldwide applications
+2018  US
+Application US35/355,059 events 
+2018-06-29
+Application filed by Sophia Genetics Sa
+2018-06-29
+Priority to US35/355,059
+2020-12-22
+Application granted
+2020-12-22
+Publication of USD905729S1
+Status
+Active
+2035-12-22
+Anticipated expiration
+Info Patent citations (14) Legal events Similar documents Priority and Related Applications External links USPTOUSPTO PatentCenterUSPTO AssignmentEspacenetGlobal DossierDiscuss
+Description
+
+1. A Display screen or portion thereof with graphical user interface
+1.0 is a front view of a display screen or portion thereof with graphical user interface.
+The broken lines depict the display screen or portion thereof and form no part of the claimed design. The broken lines depict portions of the graphical user interface and form no part of the claimed design.
+Claims (1)
+Hide Dependent 
+
+CLAIM
+The ornamental design for a display screen or portion thereof with graphical user interface, as shown and described.
+Patent Citations (14)
+
+Publication number	Priority date	Publication date	Assignee	Title
+US20060150115A1 *	2004-12-31	2006-07-06	Samsung Electronics Co., Ltd.	Apparatus and method for providing graphic user interface composed of plural columns
+USD658199S1 *	2011-05-27	2012-04-24	Microsoft Corporation	Display screen with animated user interface
+USD665396S1 *	2010-09-14	2012-08-14	Microsoft Corporation	Display screen with graphical user interface
+USD697926S1 *	2012-08-06	2014-01-21	Samsung Electronics Co., Ltd.	Display screen or portion thereof with animated graphical user interface
+USD698359S1 *	2011-09-12	2014-01-28	Microsoft Corporation	Display screen with graphical user interface
+USD719969S1 *	2012-10-26	2014-12-23	Cisco Technology, Inc.	Display screen with a graphical user interface
+USD740313S1 *	2013-01-04	2015-10-06	Samsung Electronics Co., Ltd.	Display screen or portion thereof with graphical user interface
+USD745550S1 *	2013-12-02	2015-12-15	Microsoft Corporation	Display screen with animated graphical user interface
+USD746845S1 *	2013-10-25	2016-01-05	Microsoft Corporation	Display screen with graphical user interface
+USD750099S1 *	2013-06-05	2016-02-23	Samsung Electronics Co., Ltd.	Display screen or portion thereof with graphic user interface
+USD754154S1 *	2014-01-07	2016-04-19	Samsung Electronics Co., Ltd.	Display screen or portion thereof with graphical user interface
+USD763867S1 *	2014-01-07	2016-08-16	Samsung Electronics Co., Ltd.	Display screen or portion thereof with graphical user interface
+USD764524S1 *	2014-08-28	2016-08-23	Microsoft Corporation	Display screen with graphical user interface
+USD768176S1 *	2014-12-31	2016-10-04	Samsung Electronics Co., Ltd.	Display screen or portion thereof with graphical user interface
+Family To Family Citations				
+* Cited by examiner, † Cited by third party
+Similar Documents
+
+Publication	Publication Date	Title
+USD896264S1	2020-09-15	Display screen or portion thereof with a graphical user interface
+USD904445S1	2020-12-08	Display screen or portion thereof with a graphical user interface
+USD931893S1	2021-09-28	Display screen or a portion thereof with a graphical user interface
+USD902951S1	2020-11-24	Display screen or portion thereof with a graphical user interface
+USD890797S1	2020-07-21	Display screen or portion thereof with a graphical user interface
+USD845321S1	2019-04-09	Display screen or a portion thereof with graphical user interface
+USD845314S1	2019-04-09	Display screen or portion thereof with graphical user interface
+USD839904S1	2019-02-05	Display screen or portion thereof with graphical user interface
+USD839888S1	2019-02-05	Display screen or portion thereof with graphical user interface
+USD908138S1	2021-01-19	Display screen or portion thereof with a graphical user interface
+USD900857S1	2020-11-03	Display screen or portion thereof with graphical user interface
+USD906363S1	2020-12-29	Display screen or portion thereof with a graphical user interface
+USD865804S1	2019-11-05	Display screen with graphical user interface
+USD893532S1	2020-08-18	Display screen or portion thereof with graphical user interface
+USD906358S1	2020-12-29	Display screen or a portion thereof with a graphical user interface
+USD922418S1	2021-06-15	Display screen or portion thereof with graphical user interface
+USD892825S1	2020-08-11	Display screen or portion thereof with graphical user interface
+USD849786S1	2019-05-28	Display screen or portion thereof with a graphical user interface
+USD891445S1	2020-07-28	Display screen or portion thereof with graphical user interface
+USD866571S1	2019-11-12	Display screen or portion thereof with graphical user interface
+USD844661S1	2019-04-02	Display screen or portion thereof with graphical user interface
+USD936073S1	2021-11-16	Display screen or portion thereof with a graphical user interface
+USD892842S1	2020-08-11	Display screen or portion thereof with graphical user interface
+USD912685S1	2021-03-09	Display screen or portion thereof with graphical user interface
+USD910059S1	2021-02-09	Display screen or portion thereof with a graphical user interface
+Priority And Related Applications
+
+Priority Applications (1)
+
+Application	Priority date	Filing date	Title
+US35/355,059	2018-06-29	2018-06-29	Display screen or portion thereof with graphical user interface
+Applications Claiming Priority (1)
+
+Application	Filing date	Title
+US35/355,059	2018-06-29	Display screen or portion thereof with graphical user interface
+Legal Events
+
+Date	Code	Title	Description
+2018-06-29	FEPP	Fee payment procedure	
+Free format text: ENTITY STATUS SET TO UNDISCOUNTED (ORIGINAL EVENT CODE: BIG.); ENTITY STATUS OF PATENT OWNER: SMALL ENTITY
+
+2018-11-02	FEPP	Fee payment procedure	
+Free format text: ENTITY STATUS SET TO SMALL (ORIGINAL EVENT CODE: SMAL); ENTITY STATUS OF PATENT OWNER: SMALL ENTITY
+
+Data provided by IFI CLAIMS Patent Services
+About Send Feedback Public Datasets Terms Privacy Policy
