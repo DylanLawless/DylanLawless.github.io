@@ -119,10 +119,15 @@ colnames(df6)
 df6$date <- as.character(df6$date)
 df6$date <- df6$date %>% replace_na('incomplete') 
 
+
+main_table <- df6
+main_table <- main_table %>% select(-inventor.author, everything(), inventor.author)
+
 df_t <- 
-	reactable( df6,
+	reactable( main_table,
 				  compact = TRUE,
 				  searchable = TRUE,
+				  resizable = TRUE,
 				  #elementId = "download-table",
 				  defaultPageSize = 10,
 				  filterable = TRUE,
@@ -134,9 +139,10 @@ df_t <-
 				  
 				  columns = list(
 				  	"id" = colDef(minWidth = 200),  # overrides the default
-				  	"inventor.author" = colDef(minWidth = 200),  # overrides the default
-				  	
-				  	
+				  	"inventor.author" = colDef(
+				  		minWidth = 360
+				  		), 
+				  	"date" = colDef(minWidth = 100),  # overrides the default
 				  	"title" = colDef(minWidth = 260),  # overrides the default
 				  	'result.link' = colDef(minWidth = 360,
 				  						 cell = function(result.link) {
