@@ -2,10 +2,10 @@
 ## Genetics & Genomics Resources Cheatsheet				
 ## Last updated by Evonne McArthur 10/31/2022				
 ## Special acknowledgment to members of the Capra Lab who helped develop and aggregate many of these resources				
-"## Additional credit to Vanderbilt Genetics Institute, Vanderbilt Human Genetics Graduate Program, and Vanderbilt Genetics and Genomic Medicine"				
+## Additional credit to Vanderbilt Genetics Institute, Vanderbilt Human Genetics Graduate Program, and Vanderbilt Genetics and Genomic Medicine				
 ## Source https://docs.google.com/document/d/1QSjDJCXqhtt6Dzc10vHs8LHGenrpurTSInlzsp8Chy4/edit#				
 ## Source @EvonneMcArthur				
-Category	Function	Name	URL	Notes
+Database_category	Function	Name	URL	Notes
 Overview resources	What does the genome look like at this location?	UCSC genome browser	https://genome.ucsc.edu/	
 		Integrative genomics viewer - IGV	https://igv.org/app/	
 		DECIPHER genome browser	https://www.deciphergenomics.org/browser	
@@ -27,10 +27,10 @@ Population genetics & variation	What is the frequency of a variant across popula
 	Other data & resources	1000 Genomes	http://www.internationalgenome.org/	
 		Simons diversity project	https://www.simonsfoundation.org/simons-genome-diversity-project/	
 		TOPMED	https://topmed.nhlbi.nih.gov/	
-		dbSNP	https://www.ncbi.nlm.nih.gov/snp/	"contains information about single nucleotide polymorphisms (SNPs)and multiple small-scale variations that include insertions/deletions, microsatellites, and non-polymorphic variants."
+		dbSNP	https://www.ncbi.nlm.nih.gov/snp/	"contains information about single nucleotide polymorphisms (SNPs) and multiple small-scale variations that include insertions/deletions, microsatellites, and non-polymorphic variants."
 		dbVar	https://www.ncbi.nlm.nih.gov/dbvar/	"contains records of larger (>50 bp)genomic structural variation, including insertions, deletions, duplications, inversions, multinucleotide substitutions, mobile element insertions, translocations, and complex chromosomal rearrangements."
 Evolutionary & comparative genomics	How old is my allele or gene? 	Human genome dating	https://human.genome.dating	
-	How old or conserved is my sequence/region? 	"UCSC genome browser - toggle 46-way alignment, 100-way alignment, and/or PhastCons tracks"	https://genome.ucsc.edu/	
+	How old or conserved is my sequence/region? 	UCSC genome browser	https://genome.ucsc.edu/	"toggle 46-way alignment, 100-way alignment, and/or PhastCons tracks"
 	How is my gene expressed across species? 	ACEview	https://www.ncbi.nlm.nih.gov/ieb/research/acembly/	shows RNA-seq gene expression profile across 16 selected tissues from the Non-Human Primates Reference Transcriptome Resource
 	What orthologs or paralogs exist for my gene/sequence?	Metaphors	http://orthology.phylomedb.org/	
 		PhylomedDB	http://phylomedb.org/search_phylome	
@@ -38,7 +38,7 @@ Evolutionary & comparative genomics	How old is my allele or gene? 	Human genome 
 	How do two genomes or genome assemblies compare?	Comparative Genome Viewer	https://www.ncbi.nlm.nih.gov/genome/cgv	
 Trait & disease associations	Rare disease/variant: How are these genes & phenotypes associated?	OMIM	https://www.omim.org/	
 		DECIPHER [from gene]	https://www.deciphergenomics.org/genes	
-		DECIPHER (from phenotype)	https://www.deciphergenomics.org/phenogram	
+		DECIPHER [from phenotype]	https://www.deciphergenomics.org/phenogram	
 		UniProt https://www.uniprot.org/ 		
 	Common disease/trait: How are these genes & phenotypes associated?	Open Targets Genetics	https://genetics.opentargets.org/	
 		PheWAS Catalog	https://phewascatalog.org/phewas	
@@ -46,7 +46,7 @@ Trait & disease associations	Rare disease/variant: How are these genes & phenoty
 		ExWAS from Genebass	https://genebass.org	
 		ExWAS from AstraZeneca	https://azphewas.com/	
 		Polygenic risk score catalog	https://www.pgscatalog.org/	
-	Both rare & common disease/variant perspective: How are these genes & phenotypes associated?	Phenotype-Genotype Integrator - PheGenI	https://www.ncbi.nlm.nih.gov/gap/phegeni	"combines genome-wide association study (GWAS)data from dbGAP and an NHGRI project with genetic, phenotype, expression, and polymorphism data from the NCBI databases"
+	Both rare & common disease/variant perspective: How are these genes & phenotypes associated?	Phenotype-Genotype Integrator - PheGenI	https://www.ncbi.nlm.nih.gov/gap/phegeni	"combines genome-wide association study (GWAS) data from dbGAP and an NHGRI project with genetic, phenotype, expression, and polymorphism data from the NCBI databases"
 		GeneCards	https://www.genecards.org/	
 	How does genetically-regulated expression of this gene associate with phenotypes (TWAS)?	TWAS hub	http://twas-hub.org/	
 		webTWAS	http://www.webtwas.net/	
@@ -58,7 +58,7 @@ Trait & disease associations	Rare disease/variant: How are these genes & phenoty
 Clinical genetics & patient information	Where can I get a comprehensive overview of a particular genetic disorder?	GeneReviews	https://www.ncbi.nlm.nih.gov/books/NBK1116/	
 		OMIM	https://www.omim.org/	
 		MedlinePlus.gov	https://medlineplus.gov/genetics/	
-	What tools can help create a differential diagnosis based on observed traits?	OMIM clinical synopsis	https://www.omim.org/search/advanced/clinicalSynopsis	One particular feature is the clinical synopsis table to compare features of similar syndromes: Access from the DisorderÕs Page > ÒPhenotypic SeriesÓ > ÒView corresponding clinical synopses as a tableÓ
+	What tools can help create a differential diagnosis based on observed traits?	OMIM clinical synopsis	https://www.omim.org/search/advanced/clinicalSynopsis	One particular feature is the clinical synopsis table to compare features of similar syndromes: Access from the Disorder's Page > Phenotypic Series > View corresponding clinical synopses as a table
 		Phenomizer	https://compbio.charite.de/phenomizer/	
 		Face2Gene	https://www.face2gene.com/	allows input input of patient face photo or manually added search terms
 		Paid: SimulConsult	https://simulconsult.com/	
@@ -90,7 +90,7 @@ Clinical genetics & patient information	Where can I get a comprehensive overview
 	What are some good resources for learning clinical genetics?	ACMG Genetics 101	https://www.acmgeducation.net/URL/Genetics101	videoseries for introductory genomics for healthcare providers
 		Vademecium Metabolism	http://evm.health2media.com/#/start	book and corresponding website
 		Oxford Handbook of Genetics	https://academic.oup.com/book/38754	
-		Medical Biochemical Genetics Clinical Core Seminar Series [advanced]	https://www.simd.org/MBG-CCSS/index.asp	
+		Medical Biochemical Genetics Clinical Core Seminar Series	https://www.simd.org/MBG-CCSS/index.asp	
 	Other resources	Pedigree drawing	https://pedigree.progenygenetics.com/	
 		Matchmaker exchange	https://www.matchmakerexchange.org/	
 Gene regulation & functional genomics	Which tissues is this gene expressed in? Is this variant associated with gene expression or splicing (eQTL/sQTL)? 	Genotype-tissue expression project - GTEx	https://www.gtexportal.org/home/	
@@ -110,19 +110,19 @@ Gene regulation & functional genomics	Which tissues is this gene expressed in? I
 	Other datasets	FANTOM	https://fantom.gsc.riken.jp	
 		Vierstra TF motifs	https://www.vierstra.org/resources/motif_clustering	
 Protein structure & function	What is the overview of the function and structure of my protein of interest?	Uniprot	https://www.uniprot.org/	
-		Human Protein Atlas	https://www.proteinatlas.org/	"(IHC, FISH, tissues"
+		Human Protein Atlas	https://www.proteinatlas.org/	"IHC, FISH, tissues"
 		SWISS-MODEL	https://swissmodel.expasy.org/repository	
 		Interactive PDB viewer	https://www.molsoft.com/pdbv.html	
 		AlphaFold	https://alphafold.ebi.ac.uk/	
 	"What processes, phenotypes, networks are my gene set enriched for? "	Ontology enrichment GREAT	http://great.stanford.edu/	
-   		Ontology enrichment Enrichr	https://maayanlab.cloud/Enrichr/	
-   		Ontology enrichment WebGestalt	http://www.webgestalt.org/	
-   		GnomAD	https://gnomad.broadinstitute.org/	highlights were there is variation in the protein
+		Ontology enrichment Enrichr	https://maayanlab.cloud/Enrichr/	
+		Ontology enrichment WebGestalt	http://www.webgestalt.org/	
+		GnomAD	https://gnomad.broadinstitute.org/	highlights were there is variation in the protein
 		Gene ORGANizer	http://geneorganizer.huji.ac.il/	highlights organs/systems affected
 	What networks or interactions are involved?	KEGG	https://www.genome.jp/kegg/	
 		Reactome	https://reactome.org	
 		STRING (PPIs)	https://string-db.org	
-		SPOKE	https://spoke.rbvi.ucsf.edu/neighborhood.html	"shows anything associated with a gene (drugs, proteins, etc"
+		SPOKE	https://spoke.rbvi.ucsf.edu/neighborhood.html	shows anything associated with a gene - drugs, proteins, etc
 Variant effect prediction & annotation		Ensembl VEP	https://www.ensembl.org/vep	
 		Open Targets	https://platform.opentargets.org/	
 		CADD	https://cadd.gs.washington.edu/snv	
