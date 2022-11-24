@@ -13,8 +13,8 @@ status: finished
 
 ## Introduction
 A colleague asked me about why there are multiple mRNA transcripts with different variant positions from a single variant in human genomic DNA.
-Here is a short summary to answer that question (forgiving over-simiplifications).
-First, a quick recap of how DNA is used to protuce proteins.
+Here is a short summary to answer that question (forgiving over-simplifications).
+First, a quick recap of how DNA is used to produce proteins.
 Then an example of a gene where the mRNA could be spliced more than one way by the splisosome complex.
 
 ## DNA to protein
@@ -24,15 +24,22 @@ Then an example of a gene where the mRNA could be spliced more than one way by t
 4. Spliced mRNA (messenger mRNA) translated into amino acid peptide chain.
 5. Peptide chain folds into protein.
 
-Genomic DNA is transcripted over and over, in every cell (ignoring tissue-speicif expression, dynamics, etc.).
+Genomic DNA is transcribed over and over, in every cell (ignoring tissue-specific expression, dynamics, etc.).
 When the pre-mRNA is spliced, there may be multiple versions produced.
 It all depends on how the splicing complex recognizes the intron/exon sequences. 
 This also explains why _splice mutations_ occur in 4-5 the nucleotides around the junction between exon and intron. 
 The is the part of the sequence that is recognised by the splisosome. 
 
-[image0](https://www.researchgate.net/profile/Alen-Faiz/publication/224006658/figure/fig3/AS:203040918380546@1425420135624/Transcripts-from-a-single-gene-can-undergo-different-splicing-events-When-mRNA-is_W840.jpg)
+<img src="{{ site.baseurl }}{% link images/posts/multiple_transcript_variant/Transcripts-from-a-single-gene-can-undergo-different-splicing-events-When-mRNA-is_W840.jpg %}" width="80%">
 
-[image1](http://fig.cox.miami.edu/~cmallery/255/255hist/mcb4.1.dogma.jpg)
+**Figure 1: Transcripts from a single gene undergo different splicing events.** This figure illustrate why one single variant in genomic DNA can result in several different variants in the RNA transcript / protein isoforms. 
+E.g. a variant in exon 2 will be present in 3 of the 4 protein isoforms and its amino acid position (nomenclature) will vary.
+Note for simplicity when reporting a variant, we often report just the genomic position or the _canonical_ transcript position (in cDNA) instead of reporting all possible outcomes (description of cDNA below). 
+HGVS has guidelines on nomenclature - [varnomen.hgvs.org](http://varnomen.hgvs.org).
+
+<img src="{{ site.baseurl }}{% link images/posts/multiple_transcript_variant/dna_rna_codon.jpeg %}" width="80%">
+
+**Figure 2: DNA to RNA, splicing, and translation to protein.**
 
 ## Transcript example 
 Transcript [1]
@@ -49,6 +56,10 @@ Transcript [2]
 * Exon 1 is 55 nucleotides.
 * position start 73,878,862	end 73,878,808.
 
+<img src="{{ site.baseurl }}{% link images/posts/multiple_transcript_variant/ensemble_transcripts.png %}" width="100%">
+
+**Figure 3: Screenshots from the Ensembl link listed above, showing two different transcripts based on the genomic DNA from one gene.**
+
 ## Mutation example
 A DNA mutation at position g.73,878,863 A>T
 
@@ -63,5 +74,10 @@ The cDNA position notation is used for simplicity.
 We assume the parts of genomic DNA that will remain after splicing (introns and upstream/downstream sequences removed), and call this the coding DNA (cDNA).
 We can physically create cDNA when we collect mRNA from a cell and do reverse Transcription PCR (RT-PCR) to make a DNA copy.
 
-[image2](https://www.mun.ca/biology/desmid/brian/BIOL2060/BIOL2060-21/21_22.jpg)
-[image3](https://i.servimg.com/u/f21/17/30/76/23/splice10.png)
+<img src="{{ site.baseurl }}{% link images/posts/multiple_transcript_variant/splice10.png %}" width="100%">
+
+**Figure 4: mRNA splicing in more detail.**
+
+<img src="{{ site.baseurl }}{% link images/posts/multiple_transcript_variant/reverse_transcription.png %}" width="100%">
+
+**Figure 5. Simplified illustration of reverse transcription from an already-spliced RNA transcript to cDNA as used in the lab or performed by some (RNA genome) viruses.**
