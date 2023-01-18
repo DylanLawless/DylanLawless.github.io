@@ -7,7 +7,11 @@ cp ./build/Gemfile_test Gemfile
 
 # # bundle exec jekyll serve --incremental &
 # bundle exec jekyll serve &
-bundle jekyll exec serve --skip-initial-build --incremental &
+# bundle jekyll exec serve --skip-initial-build --incremental &
+
+# I do not know why but now fails without specifying encoding first:
+LC_ALL="en_US.UTF-8" bundle jekyll exec serve --skip-initial-build --incremental &
+
 # jekyll exec serve --skip-initial-build --incremental &
 sleep 3
 
