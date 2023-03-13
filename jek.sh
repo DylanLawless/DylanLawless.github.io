@@ -1,17 +1,10 @@
 #!/bin/bash
-
-
 cp ./build/config_build.yml _config.yml
 cp ./build/Gemfile Gemfile
 sleep 1
 
-# bundle exec jekyll serve --incremental &
-# bundle exec jekyll serve &
-
 # I do not know why but now fails without specifying encoding first:
 LC_ALL="en_US.UTF-8" bundle exec jekyll serve &
-
-# jekyll serve &
 sleep 3
 
 open -a Safari http://127.0.0.1:4000
