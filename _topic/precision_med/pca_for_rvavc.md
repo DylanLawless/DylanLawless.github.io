@@ -26,14 +26,14 @@ A study (<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851819/>) recommends per
 The eigenvec table generated from the PCA contains rows for each sample and columns for each PC, providing a value for how similar each individual is to others in the population. 
 All samples - case and control - should be included. 
 
-To perform PCA, plink2 and GCTA can be used (<https://yanglab.westlake.edu.cn/software/gcta/#PCA>). 
+To perform PCA, plink2 (<https://www.cog-genomics.org/plink/2.0/>) and GCTA (<https://yanglab.westlake.edu.cn/software/gcta/#PCA>) can be used.
 It is recommended to prune the data to variants that best represent the linkage disequilibrium (LD) structure before running PCA. 
 
 ## Method
 
 Here are the steps to use PCA as a covariate in rare variant analysis:
 
-1. Convert VCF to plink format using the command `plink2 --vcf my.vcf --make-bed output`. This will create three output files with extensions `.bed`, `.bim`, and `.fam`. This binary fileset will contain information about the SNPs and samples in the VCF file, including SNP names, positions, alleles, and genotypes, as well as sample IDs, phenotypes, and family information.
+1. Start with a joint genotyped cohort VCF. Convert VCF to plink format using the command `plink2 --vcf samples.filt.vcf --make-bed samples.filt`. This will create three output files with extensions `.bed`, `.bim`, and `.fam`. This binary fileset will contain information about the SNPs and samples in the VCF file, including SNP names, positions, alleles, and genotypes, as well as sample IDs, phenotypes, and family information.
 2. Use plink2 to filter variants based on LD and other criteria, and exclude any known regions of high LD. For example, a script may exclude regions using a list of known ranges (e.g., `exclusion_regions_hg19.txt`) and name the dataset `samples.filt`.
 3. Use GCTA to generate a Genetic Relationship Matrix (GRM) from all samples.
 4. Use GCTA to perform PCA on the pruned GRM dataset, including all samples. This will output an eigenvec table containing rows for each sample and columns for each PC.
@@ -64,49 +64,55 @@ processed=/work/user/data/processed
 wdir=$processed/combined
 
 #==============================================================================
+# Starting with a VCF file of joint genotyped cohort
 # Make GRM and PCA
 # Prune known and cohort-specific LD regions for the grm
 #==============================================================================
 
 # Plink2 <https://www.cog-genomics.org/plink/2.0/>
+# Convert VCF to plink format
+plink2 \
+	--vcf $wdir/geno/samples.filt.vcf \
+	--make-bed $wdir/geno/samples.filt
+
 # Removing long-range LD regions for PCA
 plink2 \
-        --bfile $wdir/geno/samples.filt.group \
-        --exclude range $processed/exclusion_regions_hg19.txt \
-        --make-bed \
-        --out $wdir/grm/samples.filt.group.no_lrldr
+    --bfile $wdir/geno/samples.filt \
+    --exclude range $processed/exclusion_regions_hg19.txt \
+    --make-bed \
+    --out $wdir/grm/samples.filt.no_lrldr
 
 # Produce a pruned subset of markers that are in approximate
 # linkage equilibrium with each other
 # Writes the IDs to plink.prune.in
 # (and the IDs of all excluded variants to plink.prune.out)
 plink2 \
-        --bfile $wdir/grm/samples.filt.group.no_lrldr \
-        --indep-pairwise 50 5 0.5 \
-        --out $wdir/grm/samples.filt.group.no_lrldr
+    --bfile $wdir/grm/samples.filt.no_lrldr \
+    --indep-pairwise 50 5 0.5 \
+    --out $wdir/grm/samples.filt.no_lrldr
 
 # Extract the pruned subset of markers
 # Extract the pruned subset of markers
 plink2 \
-        --bfile $wdir/grm/samples.filt.group.no_lrldr \
-        --extract $wdir/grm/samples.filt.group.no_lrldr.prune.in \
-        --make-bed --out $wdir/grm/samples.filt.group.no_lrldr.pruned
+    --bfile $wdir/grm/samples.filt.no_lrldr \
+    --extract $wdir/grm/samples.filt.no_lrldr.prune.in \
+    --make-bed --out $wdir/grm/samples.filt.no_lrldr.pruned
 
 # PCA
 # this takes apporx 10 minutes on 32 threads, 70 minutes on this dataset on ~18 thread
 
 # GCTA <https://yanglab.westlake.edu.cn/software/gcta/#Download>
 /work/user/tool/gcta64 \
-        --bfile $wdir/grm/samples.filt.group.no_lrldr.pruned \
-        --autosome --make-grm \
-        --out $wdir/grm/samples.filt.group.grm \
-        --thread-num 24
+    --bfile $wdir/grm/samples.filt.no_lrldr.pruned \
+    --autosome --make-grm \
+    --out $wdir/grm/samples.filt.grm \
+    --thread-num 24
 
 /work/user/tool/gcta64 \
-        --grm $wdir/grm/samples.filt.group.grm \
-        --pca 20 \
-        --out $wdir/grm/samples.filt.group.pca \
-        --thread-num 24
+    --grm $wdir/grm/samples.filt.grm \
+    --pca 20 \
+    --out $wdir/grm/samples.filt.pca \
+    --thread-num 24
 
 # # have a look at the PCA in grm/plotpca.pdf
 # module load intel/18.0.5 &&\
@@ -127,9 +133,9 @@ library(dplyr)
 library(gridExtra)
 
 # import data
-vec <- read.table("./samples.QC.impute2_plink2.allfiles.king_mind1_maf01_geno05.pca.eigenvec", header=F)
-phenotypes <- read.csv("./phenotypes/samples_gwas.csv", header=T, sep = "," )
-pheno <- phenotypes %>% select(V1, V2, age.days, study.site, gender, ethnicity)
+vec <- read.table("./samples.filt.pca.eigenvec", header=F)
+phenotypes <- read.csv("./phenotypes/samples_pheno.csv", header=T, sep = "," )
+pheno <- phenotypes %>% select(V1, V2, age.days, study.site, gender)
 vec_pheno <- merge(x=vec, y=pheno, by=c("V1", "V2"), all=TRUE)
 
 # Set plot style
