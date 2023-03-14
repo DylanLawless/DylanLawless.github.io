@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>AI - From Complex Requests to Simple Fixes</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="post">
+Reading time 2 minutes
+<h1 id="ai---from-complex-requests-to-simple-fixes">AI - From Complex Requests to Simple Fixes</h1>
+<p class="meta">18 Jan 2022</p>
+
+<p>I see a lot of people giving their opinions about chat AI without much examples of real-world application. 
+So here is my concrete experience. 
+In two weeks I have rewritten, from scratch, one of my genomics pipelines which can analyse 1000 clinical exomes is a few hours.</p>
+
+<p>It included:</p>
+<ul>
+  <li>42 scripts/programs.</li>
+  <li>3694 lines of code.</li>
+  <li>Several languages.</li>
+</ul>
+
+<p>It works to:</p>
+<ul>
+  <li>Process raw fastq up to germline variant calling.</li>
+  <li>Using high-performance computing cluster.</li>
+  <li>Process vcf into clinical variant interpretation.</li>
+  <li>Options for custom filtering strategies.</li>
+  <li>Statistical analysis and logs.</li>
+  <li>Replaced several mainstream tools that are difficult to manage.</li>
+</ul>
+
+<p><strong>Final results:</strong></p>
+<ol>
+  <li>My work was ~6-10x times faster.</li>
+  <li>I probably would not have rewritten this better version as it would have taken too long.</li>
+  <li>Instead of getting stuck at any difficult impasse I can get context-specific alternatives and testable example code.</li>
+</ol>
+
+<p>I use chatGPT plus as a paid member for access without restriction. 
+Instead of googling for keywords that match, I either post a code example and ask for specific fixes or simply describe the request. 
+Here is a very simple example, but I have done some very complex request with great success.</p>
+
+<p><strong>Example:</strong></p>
+
+<blockquote>
+  <ul>
+    <li>I have an R dataframe “df” with columns “genotype” “variant” “gene” “sample” “inheritance_model”.</li>
+    <li>Add a new column “flag”.</li>
+    <li>Group by “gene” and “sample”,</li>
+    <li>then add the value 1 to “flag” for rows where “genotype” &gt; 1 and “inheritance_model” == AR.</li>
+  </ul>
+</blockquote>
+
+<p><strong>Result:</strong></p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">group_by</span><span class="p">(</span><span class="n">gene</span><span class="p">,</span><span class="w"> </span><span class="n">sample</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">mutate</span><span class="p">(</span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ifelse</span><span class="p">(</span><span class="n">genotype</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">inheritance_model</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"AR"</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<p>My real-world use is usually far more complex than this and uses relatively large sets of code.
+However, my queries are broken up or pre-empted with an introductory discussion such that, in context, the final request is as simple as the one above.</p>
+
+<p><strong>Final thought</strong></p>
+
+<p>Whatever sales reps or armchair philosophers say about the rapidly approaching era of AI, 
+if you start using these tools now you will rapidly understand how powerful they will become in many aspects of life.</p>
+
+<p>(ChatGPT also picked this nice blogpost title for me when I fed it this blogpost and asked for a suggestion).</p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li>
+<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_tell_me_about_precision_medicine_genomics.html">AI, tell me about precision medicine genomics</a>
+</li>
+    
+      <li>
+<span>30 Jun 2022</span> » <a href="/2022/06/30/we-need-a-nice-rare-disease-database.html">We need a nice rare disease database</a>
+</li>
+    
+      <li>
+<span>24 Jun 2022</span> » <a href="/2022/06/24/KZNF_protein_pathway_regulation.html">KZNF protein pathway regulation</a>
+</li>
+    
+  </ul>
+</div>
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

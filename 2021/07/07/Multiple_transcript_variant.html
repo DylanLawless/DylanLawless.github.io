@@ -91,15 +91,15 @@
 <!-- MAIN START -------------------------------------------------------- -->
 <div class="sitewidth">
 	<div id="post">
-Reading time 2 minutes
+Reading time 3 minutes
 <h1 id="multiple-transcript-variant">Multiple transcript variant</h1>
 
 <p class="meta">07 July 2021</p>
 
 <h2 id="introduction">Introduction</h2>
 <p>A colleague asked me about why there are multiple mRNA transcripts with different variant positions from a single variant in human genomic DNA.
-Here is a short summary to answer that question (forgiving over-simiplifications).
-First, a quick recap of how DNA is used to protuce proteins.
+Here is a short summary to answer that question (forgiving over-simplifications).
+First, a quick recap of how DNA is used to produce proteins.
 Then an example of a gene where the mRNA could be spliced more than one way by the splisosome complex.</p>
 
 <h2 id="dna-to-protein">DNA to protein</h2>
@@ -111,15 +111,22 @@ Then an example of a gene where the mRNA could be spliced more than one way by t
   <li>Peptide chain folds into protein.</li>
 </ol>
 
-<p>Genomic DNA is transcripted over and over, in every cell (ignoring tissue-speicif expression, dynamics, etc.).
+<p>Genomic DNA is transcribed over and over, in every cell (ignoring tissue-specific expression, dynamics, etc.).
 When the pre-mRNA is spliced, there may be multiple versions produced.
 It all depends on how the splicing complex recognizes the intron/exon sequences. 
 This also explains why <em>splice mutations</em> occur in 4-5 the nucleotides around the junction between exon and intron. 
 The is the part of the sequence that is recognised by the splisosome.</p>
 
-<p><a href="https://www.researchgate.net/profile/Alen-Faiz/publication/224006658/figure/fig3/AS:203040918380546@1425420135624/Transcripts-from-a-single-gene-can-undergo-different-splicing-events-When-mRNA-is_W840.jpg">image0</a></p>
+<p><img src="/images/posts/multiple_transcript_variant/Transcripts-from-a-single-gene-can-undergo-different-splicing-events-When-mRNA-is_W840.jpg" width="80%"></p>
 
-<p><a href="http://fig.cox.miami.edu/~cmallery/255/255hist/mcb4.1.dogma.jpg">image1</a></p>
+<p><strong>Figure 1: Transcripts from a single gene undergo different splicing events.</strong> This figure illustrate why one single variant in genomic DNA can result in several different variants in the RNA transcript / protein isoforms. 
+E.g. a variant in exon 2 will be present in 3 of the 4 protein isoforms and its amino acid position (nomenclature) will vary.
+Note for simplicity when reporting a variant, we often report just the genomic position or the <em>canonical</em> transcript position (in cDNA) instead of reporting all possible outcomes (description of cDNA below). 
+HGVS has guidelines on nomenclature - <a href="http://varnomen.hgvs.org">varnomen.hgvs.org</a>.</p>
+
+<p><img src="/images/posts/multiple_transcript_variant/dna_rna_codon.jpeg" width="80%"></p>
+
+<p><strong>Figure 2: DNA to RNA, splicing, and translation to protein.</strong></p>
 
 <h2 id="transcript-example">Transcript example</h2>
 <p>Transcript [1]
@@ -140,6 +147,10 @@ The is the part of the sequence that is recognised by the splisosome.</p>
   <li>position start 73,878,862	end 73,878,808.</li>
 </ul>
 
+<p><img src="/images/posts/multiple_transcript_variant/ensemble_transcripts.png" width="100%"></p>
+
+<p><strong>Figure 3: Screenshots from the Ensembl link listed above, showing two different transcripts based on the genomic DNA from one gene.</strong></p>
+
 <h2 id="mutation-example">Mutation example</h2>
 <p>A DNA mutation at position g.73,878,863 A&gt;T</p>
 
@@ -154,8 +165,13 @@ and protein position p.Met1Leu.</p>
 We assume the parts of genomic DNA that will remain after splicing (introns and upstream/downstream sequences removed), and call this the coding DNA (cDNA).
 We can physically create cDNA when we collect mRNA from a cell and do reverse Transcription PCR (RT-PCR) to make a DNA copy.</p>
 
-<p><a href="https://www.mun.ca/biology/desmid/brian/BIOL2060/BIOL2060-21/21_22.jpg">image2</a>
-<a href="https://i.servimg.com/u/f21/17/30/76/23/splice10.png">image3</a></p>
+<p><img src="/images/posts/multiple_transcript_variant/splice10.png" width="100%"></p>
+
+<p><strong>Figure 4: mRNA splicing in more detail.</strong></p>
+
+<p><img src="/images/posts/multiple_transcript_variant/reverse_transcription.png" width="100%"></p>
+
+<p><strong>Figure 5. Simplified illustration of reverse transcription from an already-spliced RNA transcript to cDNA as used in the lab or performed by some (RNA genome) viruses.</strong></p>
 
 </div>
 
@@ -164,15 +180,15 @@ We can physically create cDNA when we collect mRNA from a cell and do reverse Tr
   <ul class="posts">
     
       <li>
+<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a>
+</li>
+    
+      <li>
+<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_tell_me_about_precision_medicine_genomics.html">AI, tell me about precision medicine genomics</a>
+</li>
+    
+      <li>
 <span>30 Jun 2022</span> » <a href="/2022/06/30/we-need-a-nice-rare-disease-database.html">We need a nice rare disease database</a>
-</li>
-    
-      <li>
-<span>24 Jun 2022</span> » <a href="/2022/06/24/KZNF_protein_pathway_regulation.html">KZNF protein pathway regulation</a>
-</li>
-    
-      <li>
-<span>31 Jan 2022</span> » <a href="/2022/01/31/reference-genome-choice.html">Reference genome choice</a>
 </li>
     
   </ul>

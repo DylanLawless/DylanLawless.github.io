@@ -1,3 +1,6 @@
+exclude:
+    - node_modules
+
 markdown: kramdown
 kramdown: 
   toc_levels: "2..6"
@@ -6,6 +9,8 @@ kramdown:
      query: "@*"
      bibliography: references.bib
      # style: apa
+
+
 
 collections:
     topic:

@@ -7,6 +7,143 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>AI - From Complex Requests to Simple Fixes</title>
+        <description>&lt;h1 id=&quot;ai---from-complex-requests-to-simple-fixes&quot;&gt;AI - From Complex Requests to Simple Fixes&lt;/h1&gt;
+&lt;p class=&quot;meta&quot;&gt;18 Jan 2022&lt;/p&gt;
+
+&lt;p&gt;I see a lot of people giving their opinions about chat AI without much examples of real-world application. 
+So here is my concrete experience. 
+In two weeks I have rewritten, from scratch, one of my genomics pipelines which can analyse 1000 clinical exomes is a few hours.&lt;/p&gt;
+
+&lt;p&gt;It included:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;42 scripts/programs.&lt;/li&gt;
+  &lt;li&gt;3694 lines of code.&lt;/li&gt;
+  &lt;li&gt;Several languages.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It works to:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Process raw fastq up to germline variant calling.&lt;/li&gt;
+  &lt;li&gt;Using high-performance computing cluster.&lt;/li&gt;
+  &lt;li&gt;Process vcf into clinical variant interpretation.&lt;/li&gt;
+  &lt;li&gt;Options for custom filtering strategies.&lt;/li&gt;
+  &lt;li&gt;Statistical analysis and logs.&lt;/li&gt;
+  &lt;li&gt;Replaced several mainstream tools that are difficult to manage.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Final results:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;My work was ~6-10x times faster.&lt;/li&gt;
+  &lt;li&gt;I probably would not have rewritten this better version as it would have taken too long.&lt;/li&gt;
+  &lt;li&gt;Instead of getting stuck at any difficult impasse I can get context-specific alternatives and testable example code.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I use chatGPT plus as a paid member for access without restriction. 
+Instead of googling for keywords that match, I either post a code example and ask for specific fixes or simply describe the request. 
+Here is a very simple example, but I have done some very complex request with great success.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;I have an R dataframe “df” with columns “genotype” “variant” “gene” “sample” “inheritance_model”.&lt;/li&gt;
+    &lt;li&gt;Add a new column “flag”.&lt;/li&gt;
+    &lt;li&gt;Group by “gene” and “sample”,&lt;/li&gt;
+    &lt;li&gt;then add the value 1 to “flag” for rows where “genotype” &amp;gt; 1 and “inheritance_model” == AR.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-R highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dplyr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group_by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&amp;gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mutate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ifelse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;genotype&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inheritance_model&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;My real-world use is usually far more complex than this and uses relatively large sets of code.
+However, my queries are broken up or pre-empted with an introductory discussion such that, in context, the final request is as simple as the one above.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Final thought&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Whatever sales reps or armchair philosophers say about the rapidly approaching era of AI, 
+if you start using these tools now you will rapidly understand how powerful they will become in many aspects of life.&lt;/p&gt;
+
+&lt;p&gt;(ChatGPT also picked this nice blogpost title for me when I fed it this blogpost and asked for a suggestion).&lt;/p&gt;
+</description>
+        <pubDate>Wed, 18 Jan 2023 01:00:01 +0100</pubDate>
+        <link>http://localhost:4000//2023/01/18/ai_from_complex_requests_to_simple_fixes.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2023/01/18/ai_from_complex_requests_to_simple_fixes.html</guid>
+      </item>
+    
+      <item>
+        <title>AI, tell me about precision medicine genomics</title>
+        <description>&lt;h1 id=&quot;ai-tell-me-about-precision-medicine-genomics&quot;&gt;AI, tell me about precision medicine genomics&lt;/h1&gt;
+&lt;p class=&quot;meta&quot;&gt;18 Jan 2022&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#tell-me-about-precision-medicine-genomics&quot; id=&quot;markdown-toc-tell-me-about-precision-medicine-genomics&quot;&gt;Tell me about precision medicine genomics.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#tell-me-how-ai-can-be-used-in-this-context&quot; id=&quot;markdown-toc-tell-me-how-ai-can-be-used-in-this-context&quot;&gt;Tell me how AI can be used in this context.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#in-this-context-is-ai-better-than-classical-statistical-analysis-and-machine-learning&quot; id=&quot;markdown-toc-in-this-context-is-ai-better-than-classical-statistical-analysis-and-machine-learning&quot;&gt;In this context, is AI better than classical statistical analysis and machine learning?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#summarize-all-of-the-previous-answers-into-one-paragraph&quot; id=&quot;markdown-toc-summarize-all-of-the-previous-answers-into-one-paragraph&quot;&gt;Summarize all of the previous answers into one paragraph.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#thank-you&quot; id=&quot;markdown-toc-thank-you&quot;&gt;Thank you.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The following is a conversation with ChatGPT.&lt;/p&gt;
+
+&lt;h2 id=&quot;tell-me-about-precision-medicine-genomics&quot;&gt;Tell me about precision medicine genomics.&lt;/h2&gt;
+
+&lt;p&gt;“Precision medicine genomics is a medical approach that uses genetic information to tailor medical treatment to the individual patient. This approach is based on the understanding that genetic variations can affect a person’s response to certain drugs and susceptibility to certain diseases. By identifying these genetic variations, doctors can select the most effective treatment options for each patient and potentially avoid harmful side effects.&lt;/p&gt;
+
+&lt;p&gt;“One important aspect of precision medicine genomics is the use of genetic testing to identify specific mutations or variations in a patient’s DNA. This information can be used to guide treatment decisions, such as selecting the most appropriate drug or dosage. For example, if a patient has a specific genetic mutation that is known to cause resistance to a certain drug, the doctor may choose to prescribe a different drug instead.&lt;/p&gt;
+
+&lt;p&gt;“Another important aspect of precision medicine genomics is the use of large-scale genomic data to identify new targets for drug development and to develop new diagnostic tests. By analyzing the genomic data of large numbers of patients, researchers can identify genetic variations that are associated with specific diseases or drug responses. This information can be used to develop new drugs or diagnostic tests that are tailored to the specific genetic makeup of individual patients.&lt;/p&gt;
+
+&lt;p&gt;“Precision medicine genomics is still in its early stages and there are still many challenges to be overcome, such as the high cost of genetic testing and the need for more research to fully understand the implications of genetic variations on disease and drug response. However, as the field continues to evolve, it has the potential to revolutionize the way medicine is practiced, leading to more effective and personalized treatments for patients.”&lt;/p&gt;
+
+&lt;h2 id=&quot;tell-me-how-ai-can-be-used-in-this-context&quot;&gt;Tell me how AI can be used in this context.&lt;/h2&gt;
+
+&lt;p&gt;“Artificial intelligence (AI) can be used in various ways to support precision medicine genomics. Some examples include:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Genetic variant analysis: AI algorithms can be used to analyze large amounts of genomic data to identify genetic variations that are associated with specific diseases or drug responses. This can help researchers identify new targets for drug development and develop new diagnostic tests.&lt;/li&gt;
+  &lt;li&gt;Drug discovery: AI can be used to analyze large amounts of data on drug interactions and side effects to identify new drug candidates that have a high likelihood of being effective and safe.&lt;/li&gt;
+  &lt;li&gt;Predictive modeling: AI algorithms can be used to create predictive models that can identify patients who are most likely to respond to specific treatments based on their genetic profile. This can help doctors make more informed treatment decisions.&lt;/li&gt;
+  &lt;li&gt;Personalized medicine: AI can be used to analyze a patient’s genetic data, medical history, and other relevant information to create a personalized treatment plan.&lt;/li&gt;
+  &lt;li&gt;Natural Language Processing (NLP) : AI-based NLP can help in extracting insights from unstructured data sources such as electronic medical records, clinical notes, and scientific literature.&lt;/li&gt;
+  &lt;li&gt;Imaging analysis : AI can be used to analyze medical images such as CT scans, MRI’s and X-rays to identify and classify disease patterns.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;“AI is still in early stages of development in the field of precision medicine genomics, but it has the potential to revolutionize the field by making it possible to analyze and interpret large amounts of data quickly and accurately. This can help to improve the accuracy of diagnoses and treatment decisions, leading to better outcomes for patients.”&lt;/p&gt;
+
+&lt;h2 id=&quot;in-this-context-is-ai-better-than-classical-statistical-analysis-and-machine-learning&quot;&gt;In this context, is AI better than classical statistical analysis and machine learning?&lt;/h2&gt;
+
+&lt;p&gt;“In the context of precision medicine genomics, AI can be considered as an extension of classical statistical analysis and machine learning. It can be used to analyze and interpret large amounts of data quickly and accurately, which can make it a useful tool for precision medicine genomics. However, it is important to note that AI is not always better than classical statistical analysis and machine learning. The choice of method depends on the specific use case and the data being analyzed.&lt;/p&gt;
+
+&lt;p&gt;“AI can be particularly useful for analyzing large amounts of complex data, such as genomic data, which can be difficult to analyze using traditional methods. For example, AI can be used to identify patterns in the data that might not be apparent using classical statistical analysis. Additionally, AI can be used to create predictive models that can identify patients who are most likely to respond to specific treatments based on their genetic profile, which can be difficult to do using traditional methods.&lt;/p&gt;
+
+&lt;p&gt;“On the other hand, classical statistical analysis and machine learning still have their own advantages in specific scenarios. For example, traditional statistical analysis methods are well established and have been widely used in the field of medical research for decades. They are also relatively easy to understand and interpret. Additionally, classical statistical analysis is often more computationally efficient than AI, which can make it a better choice in certain cases.&lt;/p&gt;
+
+&lt;p&gt;“In summary, AI can be a valuable tool in precision medicine genomics, but it is not always better than classical statistical analysis and machine learning. The choice of method depends on the specific use case and the data being analyzed.”&lt;/p&gt;
+
+&lt;h2 id=&quot;summarize-all-of-the-previous-answers-into-one-paragraph&quot;&gt;Summarize all of the previous answers into one paragraph.&lt;/h2&gt;
+
+&lt;p&gt;“Precision medicine genomics is a medical approach that uses genetic information to tailor medical treatment to the individual patient. Genetic testing can be used to identify specific mutations or variations in a patient’s DNA. Artificial intelligence (AI) can be used to analyze large amounts of genomic data to identify genetic variations that are associated with specific diseases or drug responses. AI can be used to analyze large amounts of data on drug interactions and side effects to identify new drug candidates that have a high likelihood of being effective and safe. AI can be used to create predictive models that can identify patients who are most likely to respond to specific treatments based on their genetic profile. However, it is important to note that AI is not always better than classical statistical analysis and machine learning, the choice of method depends on the specific use case and the data being analyzed.”&lt;/p&gt;
+
+&lt;h2 id=&quot;thank-you&quot;&gt;Thank you.&lt;/h2&gt;
+
+&lt;p&gt;“You’re welcome! I’m glad I could help. Let me know if you have any other questions.”&lt;/p&gt;
+
+&lt;!-- &lt;ol class=&quot;bibliography&quot;&gt;&lt;/ol&gt; --&gt;
+</description>
+        <pubDate>Wed, 18 Jan 2023 01:00:01 +0100</pubDate>
+        <link>http://localhost:4000//2023/01/18/ai_tell_me_about_precision_medicine_genomics.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2023/01/18/ai_tell_me_about_precision_medicine_genomics.html</guid>
+      </item>
+    
+      <item>
         <title>We need a nice rare disease database</title>
         <description>&lt;h1 id=&quot;we-need-a-nice-rare-disease-database&quot;&gt;We need a nice rare disease database&lt;/h1&gt;
 &lt;p class=&quot;meta&quot;&gt;30 June 2022&lt;/p&gt;
@@ -1067,66 +1204,6 @@ The R code that I used for this process is included.&lt;/p&gt;
         <pubDate>Mon, 16 Aug 2021 00:00:00 +0200</pubDate>
         <link>http://localhost:4000//2021/08/16/weeknotes_12.html</link>
         <guid isPermaLink="true">http://localhost:4000//2021/08/16/weeknotes_12.html</guid>
-      </item>
-    
-      <item>
-        <title>Weeknotes</title>
-        <description>&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;02 Aug 2021&lt;/p&gt;
-
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Welcome new student in lab.&lt;/li&gt;
-  &lt;li&gt;Upgrate GATK pipeline.&lt;/li&gt;
-  &lt;li&gt;Testing automation for glm models to run custom test datasets.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Spent the weekend in Lauterbrunnen, Switzerland.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;The Honourable Schoolboy by John le Carré - &lt;a href=&quot;https://www.goodreads.com/book/show/18990.The_Honourable_Schoolboy&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Mon, 02 Aug 2021 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000//2021/08/02/weeknotes_10.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2021/08/02/weeknotes_10.html</guid>
-      </item>
-    
-      <item>
-        <title>Weeknotes</title>
-        <description>&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;26 July 2021&lt;/p&gt;
-
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Writing paper on &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&amp;amp;VirusLineage_ss=Human%20orthopneumovirus,%20taxid:11250&quot;&gt;viral association genetics&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Compaing species alignments for close and distant samples.&lt;/li&gt;
-  &lt;li&gt;Prepare student project work.&lt;/li&gt;
-  &lt;li&gt;Present lab meeting.&lt;/li&gt;
-  &lt;li&gt;Stat review with specialist.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;Reviewing Altman &amp;amp; Bland papers from &lt;a href=&quot;https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm&quot;&gt;Statistics Notes in the British Medical Journal&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;The Honourable Schoolboy by John le Carré - &lt;a href=&quot;https://www.goodreads.com/book/show/18990.The_Honourable_Schoolboy&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-</description>
-        <pubDate>Mon, 26 Jul 2021 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000//2021/07/26/weeknotes_9.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2021/07/26/weeknotes_9.html</guid>
       </item>
     
 		
