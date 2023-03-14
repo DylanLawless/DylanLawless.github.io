@@ -11,6 +11,15 @@ subject: meetings
 
 Public conferences attending or participating in:
 
+[2nd Joint Personalized Health Day Switzerland and National Data Streams (NDS) breakout session](https://sphn.ch/event/2nd-joint-personalized-health-day/) 2022 - Bern, Switzerland
+> <img src="{{ site.baseurl }}{% link images/meetings/bonn.jpg %}" width="80%">
+
+[European Society for Immunodeficiencies ESID](https://esidmeeting.org) 2022 - Gothenburg
+
+[Global Health Institute scientific retreat](https://www.epfl.ch/schools/sv/ghi/) - 2022 Grindelwald
+
+<img src="{{ site.baseurl }}{% link images/meetings/grindelwald.JPG %}" width="80%">
+
 [The European Society of Human Genetics (ESHG)](https://2020.eshg.org) - 2020 Berlin
 
 <img src="{{ site.baseurl }}{% link images/meetings/berlin.jpg %}" width="80%">
@@ -63,3 +72,5 @@ Autoimmunity & Inflammation in PID
 [Annual meeting German Society for Immunology](http://www.immunology-conference.de) 2014 - Bonn, Germany
 
 <img src="{{ site.baseurl }}{% link images/meetings/bonn.jpg %}" width="80%">
+
+

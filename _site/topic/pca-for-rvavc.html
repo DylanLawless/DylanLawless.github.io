@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>PCA during rare variant analysis with variant collapse</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time 5 minutes
+<h1 id="pca-during-rare-variant-analysis-with-variant-collapse">PCA during rare variant analysis with variant collapse</h1>
+<p class="meta">13 Mar 2023</p>
+
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#method" id="markdown-toc-method">Method</a></li>
+  <li><a href="#grmsh" id="markdown-toc-grmsh">grm.sh</a></li>
+  <li><a href="#pca_plotr" id="markdown-toc-pca_plotr">pca_plot.R</a></li>
+  <li><a href="#understanding-the-output-of-grm-in-gcta" id="markdown-toc-understanding-the-output-of-grm-in-gcta">Understanding the output of GRM in GCTA</a></li>
+  <li><a href="#understanding-the-output-of-pca-in-gcta" id="markdown-toc-understanding-the-output-of-pca-in-gcta">Understanding the output of PCA in GCTA</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Population structure can be a confounding factor in genetic association studies, including rare variant analysis with variant collapse. 
+One approach to address this issue is to use principal component analysis (PCA) to capture the underlying population structure and include the top principal components (PCs) as covariates in the analysis.</p>
+
+<p>It is worth noting that if the variant allele frequency is already filtered quite low, for example to MAF \(&lt;0.005\), then I do not think that PCA is useful as a covariate during analysis. 
+However, empirical testing would be ideal.</p>
+
+<p>A study (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851819/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5851819/</a>) recommends performing PCA on all variants (rare + common) and including the top 10 PCs as covariates. 
+The eigenvec table generated from the PCA contains rows for each sample and columns for each PC, providing a value for how similar each individual is to others in the population. 
+All samples - case and control - should be included.</p>
+
+<p>To perform PCA, plink2 (<a href="https://www.cog-genomics.org/plink/2.0/">https://www.cog-genomics.org/plink/2.0/</a>) and GCTA (<a href="https://yanglab.westlake.edu.cn/software/gcta/#PCA">https://yanglab.westlake.edu.cn/software/gcta/#PCA</a>) can be used.
+It is recommended to prune the data to variants that best represent the linkage disequilibrium (LD) structure before running PCA.</p>
+
+<h2 id="method">Method</h2>
+
+<p>Here are the steps to use PCA as a covariate in rare variant analysis:</p>
+
+<ol>
+  <li>Start with a joint genotyped cohort VCF. Convert VCF to plink format using the command <code class="language-plaintext highlighter-rouge">plink2 --vcf samples.filt.vcf --make-bed samples.filt</code>. This will create three output files with extensions <code class="language-plaintext highlighter-rouge">.bed</code>, <code class="language-plaintext highlighter-rouge">.bim</code>, and <code class="language-plaintext highlighter-rouge">.fam</code>. This binary fileset will contain information about the SNPs and samples in the VCF file, including SNP names, positions, alleles, and genotypes, as well as sample IDs, phenotypes, and family information.</li>
+  <li>Use plink2 to filter variants based on LD and other criteria, and exclude any known regions of high LD. For example, a script may exclude regions using a list of known ranges (e.g., <code class="language-plaintext highlighter-rouge">exclusion_regions_hg19.txt</code>) and name the dataset <code class="language-plaintext highlighter-rouge">samples.filt</code>.</li>
+  <li>Use GCTA to generate a Genetic Relationship Matrix (GRM) from all samples.</li>
+  <li>Use GCTA to perform PCA on the pruned GRM dataset, including all samples. This will output an eigenvec table containing rows for each sample and columns for each PC.</li>
+  <li>Include the top PCs (e.g., PC1-10) as covariates in rare variant analysis using SKAT.</li>
+</ol>
+
+<p>Some useful resources for understanding and implementing PCA in rare variant analysis include:</p>
+
+<ol>
+  <li>A Biostars post with helpful answers on PCA and variant collapse: <a href="https://www.biostars.org/p/186479/">https://www.biostars.org/p/186479/</a>
+</li>
+  <li>A study that describes PCA and other approaches to addressing population structure in rare variant analysis: <a href="https://pubmed.ncbi.nlm.nih.gov/29484742/">https://pubmed.ncbi.nlm.nih.gov/29484742/</a>
+</li>
+  <li>A seminal paper from early GWAS days that discusses PCA and other methods for controlling for population stratification: <a href="https://www.nature.com/articles/ng1847">https://www.nature.com/articles/ng1847</a>
+</li>
+  <li>A Biostars post with an example of how PCA can be used in rare variant analysis: <a href="https://www.biostars.org/p/335605/">https://www.biostars.org/p/335605/</a>
+</li>
+</ol>
+
+<p>An example script for performing PCA on plink-formatted GWAS data, pruning the data, and generating a plot of the results can be found below at <code class="language-plaintext highlighter-rouge">grm.sh</code> and <code class="language-plaintext highlighter-rouge">pca_plot.R</code>:</p>
+
+<h2 id="grmsh">grm.sh</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c">#SBATCH --job-name=grm</span>
+<span class="c">#SBATCH --nodes=1</span>
+<span class="c">#SBATCH --ntasks-per-node=24</span>
+<span class="c">#SBATCH --time=03:00:00</span>
+<span class="c">#SBATCH --mem=60gb</span>
+<span class="c">#SBATCH -o ./log/2.4_grm.%J.out</span>
+<span class="c">#SBATCH -e ./log/2.4_grm.%J.err</span>
+
+<span class="nv">processed</span><span class="o">=</span>/work/user/data/processed
+<span class="nv">wdir</span><span class="o">=</span><span class="nv">$processed</span>/combined
+
+<span class="c">#==============================================================================</span>
+<span class="c"># Starting with a VCF file of joint genotyped cohort</span>
+<span class="c"># Make GRM and PCA</span>
+<span class="c"># Prune known and cohort-specific LD regions for the grm</span>
+<span class="c">#==============================================================================</span>
+
+<span class="c"># Plink2 &lt;https://www.cog-genomics.org/plink/2.0/&gt;</span>
+<span class="c"># Convert VCF to plink format</span>
+plink2 <span class="se">\</span>
+	<span class="nt">--vcf</span> <span class="nv">$wdir</span>/geno/samples.filt.vcf <span class="se">\</span>
+	<span class="nt">--make-bed</span> <span class="nv">$wdir</span>/geno/samples.filt
+
+<span class="c"># Removing long-range LD regions for PCA</span>
+plink2 <span class="se">\</span>
+    <span class="nt">--bfile</span> <span class="nv">$wdir</span>/geno/samples.filt <span class="se">\</span>
+    <span class="nt">--exclude</span> range <span class="nv">$processed</span>/exclusion_regions_hg19.txt <span class="se">\</span>
+    <span class="nt">--make-bed</span> <span class="se">\</span>
+    <span class="nt">--out</span> <span class="nv">$wdir</span>/grm/samples.filt.no_lrldr
+
+<span class="c"># Produce a pruned subset of markers that are in approximate</span>
+<span class="c"># linkage equilibrium with each other</span>
+<span class="c"># Writes the IDs to plink.prune.in</span>
+<span class="c"># (and the IDs of all excluded variants to plink.prune.out)</span>
+plink2 <span class="se">\</span>
+    <span class="nt">--bfile</span> <span class="nv">$wdir</span>/grm/samples.filt.no_lrldr <span class="se">\</span>
+    <span class="nt">--indep-pairwise</span> 50 5 0.5 <span class="se">\</span>
+    <span class="nt">--out</span> <span class="nv">$wdir</span>/grm/samples.filt.no_lrldr
+
+<span class="c"># Extract the pruned subset of markers</span>
+<span class="c"># Extract the pruned subset of markers</span>
+plink2 <span class="se">\</span>
+    <span class="nt">--bfile</span> <span class="nv">$wdir</span>/grm/samples.filt.no_lrldr <span class="se">\</span>
+    <span class="nt">--extract</span> <span class="nv">$wdir</span>/grm/samples.filt.no_lrldr.prune.in <span class="se">\</span>
+    <span class="nt">--make-bed</span> <span class="nt">--out</span> <span class="nv">$wdir</span>/grm/samples.filt.no_lrldr.pruned
+
+<span class="c"># PCA</span>
+<span class="c"># this takes apporx 10 minutes on 32 threads, 70 minutes on this dataset on ~18 thread</span>
+
+<span class="c"># GCTA &lt;https://yanglab.westlake.edu.cn/software/gcta/#Download&gt;</span>
+/work/user/tool/gcta64 <span class="se">\</span>
+    <span class="nt">--bfile</span> <span class="nv">$wdir</span>/grm/samples.filt.no_lrldr.pruned <span class="se">\</span>
+    <span class="nt">--autosome</span> <span class="nt">--make-grm</span> <span class="se">\</span>
+    <span class="nt">--out</span> <span class="nv">$wdir</span>/grm/samples.filt.grm <span class="se">\</span>
+    <span class="nt">--thread-num</span> 24
+
+/work/user/tool/gcta64 <span class="se">\</span>
+    <span class="nt">--grm</span> <span class="nv">$wdir</span>/grm/samples.filt.grm <span class="se">\</span>
+    <span class="nt">--pca</span> 20 <span class="se">\</span>
+    <span class="nt">--out</span> <span class="nv">$wdir</span>/grm/samples.filt.pca <span class="se">\</span>
+    <span class="nt">--thread-num</span> 24
+
+<span class="c"># # have a look at the PCA in grm/plotpca.pdf</span>
+<span class="c"># module load intel/18.0.5 &amp;&amp;\</span>
+<span class="c"># module load intel-mkl/2018.5.274 &amp;&amp;\</span>
+<span class="c"># module load r/3.6.0 &amp;&amp;\</span>
+<span class="c">#</span>
+<span class="c"># cd $wdir/grm/</span>
+<span class="c">#      Rscript pca.R</span>
+
+<span class="o">(</span>END<span class="o">)</span>
+</code></pre></div></div>
+
+<h2 id="pca_plotr">pca_plot.R</h2>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># import data</span><span class="w">
+</span><span class="n">vec</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.table</span><span class="p">(</span><span class="s2">"./samples.filt.pca.eigenvec"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="o">=</span><span class="nb">F</span><span class="p">)</span><span class="w">
+</span><span class="n">phenotypes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"./phenotypes/samples_pheno.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="o">=</span><span class="nb">T</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">","</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span><span class="n">pheno</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">phenotypes</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">select</span><span class="p">(</span><span class="n">V1</span><span class="p">,</span><span class="w"> </span><span class="n">V2</span><span class="p">,</span><span class="w"> </span><span class="n">age.days</span><span class="p">,</span><span class="w"> </span><span class="n">study.site</span><span class="p">,</span><span class="w"> </span><span class="n">gender</span><span class="p">)</span><span class="w">
+</span><span class="n">vec_pheno</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">pheno</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"V1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"V2"</span><span class="p">),</span><span class="w"> </span><span class="n">all</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Set plot style</span><span class="w">
+</span><span class="n">theme_set</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">theme</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="s2">"bold"</span><span class="p">),</span><span class="w"> </span><span class="n">legend.position</span><span class="o">=</span><span class="s2">"none"</span><span class="p">,</span><span class="w"> </span><span class="n">panel.background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_rect</span><span class="p">(</span><span class="s2">"#F7F7F7"</span><span class="p">))</span><span class="w">
+</span><span class="n">geom_set</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">geom_point</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ethnicity</span><span class="p">),</span><span class="w"> </span><span class="n">shape</span><span class="o">=</span><span class="m">21</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Loop to create plots and store them in a list</span><span class="w">
+</span><span class="n">plots</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">()</span><span class="w">
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">17</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">x_col</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">paste0</span><span class="p">(</span><span class="s2">"V"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="m">+2</span><span class="p">)</span><span class="w">
+  </span><span class="n">y_col</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">paste0</span><span class="p">(</span><span class="s2">"V"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="m">+3</span><span class="p">)</span><span class="w">
+  </span><span class="n">labs_set</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">labs</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="s2">"PC"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">paste0</span><span class="p">(</span><span class="s2">"PC"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="m">+1</span><span class="p">))</span><span class="w">
+  </span><span class="n">p</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vec_pheno</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">get</span><span class="p">(</span><span class="n">x_col</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">get</span><span class="p">(</span><span class="n">y_col</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">geom_set</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">labs_set</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theme_set</span><span class="w">
+  </span><span class="n">plots</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">p</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1"># Arrange plots using grid.arrange function</span><span class="w">
+</span><span class="n">grid.arrange</span><span class="p">(</span><span class="n">grobs</span><span class="o">=</span><span class="n">plots</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">top</span><span class="o">=</span><span class="s2">"Cohort Principal component analysis"</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span><span class="w">
+
+</span><span class="p">(</span><span class="n">END</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="understanding-the-output-of-grm-in-gcta">Understanding the output of GRM in GCTA</h2>
+
+<p>Making a Genetic Relationship Matrix (GRM) is a method to estimate the genetic relatedness between individuals based on their genomic similarity. 
+The GCTA-GRM software can be used to generate a GRM from Single Nucleotide Polymorphism (SNP) data. 
+The GRM is a square matrix where each element represents the genetic covariance between two individuals, and the diagonal elements represent the proportion of genetic variance accounted for by each individual.</p>
+
+<p>The GCTA-GRM method uses a set of SNPs to estimate the covariance matrix, and the SNPs can be filtered for various quality control criteria such as minor allele frequency (MAF) or linkage disequilibrium (LD). 
+The resulting GRM can be used to examine the genetic relatedness between individuals and to control for population stratification in downstream analyses.</p>
+
+<h2 id="understanding-the-output-of-pca-in-gcta">Understanding the output of PCA in GCTA</h2>
+
+<p>After generating a Genetic Relationship Matrix (GRM) using GCTA, the software can be used to run Principal Component Analysis (PCA) on the genetic data. 
+Running PCA on the GRM generates two output files: the eigenvalue file (ending in “.eigenval”) and the eigenvector file (ending in “.eigenvec”).
+These are equivalent to those calculated by the program EIGENSTRAT.
+The eigenvalue file contains a single column of numbers, one for each principal component (PC), which represents the magnitude of the corresponding eigenvector. 
+The eigenvalue measures the amount of variation in the data captured by each PC and is the factor by which the corresponding eigenvector is scaled. 
+The higher the eigenvalue, the more important the corresponding PC is in explaining the variation in the data.</p>
+
+<p>It is worth noting that the sum of all eigenvalues is equal to the total variance in the data. 
+Thus, the proportion of variance explained by each PC can be calculated by dividing each eigenvalue by the sum of all eigenvalues. 
+The eigenvector file contains a table with rows for each sample and columns for each PC, with each value in the table representing the sample’s contribution to that particular PC, scaled by the corresponding eigenvalue. 
+These eigenvector values can be used as covariates in downstream analyses to control for population structure and other confounding factors.</p>
+
+<p>The sum of all eigenvalues is equal to the total variance in the data, and the proportion of variance explained by each PC can be calculated by dividing each eigenvalue by the sum of all eigenvalues. 
+The eigenvector file provides sample-specific contributions to each PC, scaled by the corresponding eigenvalue, which can be used as covariates in downstream analyses to control for population structure and other confounding factors.</p>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

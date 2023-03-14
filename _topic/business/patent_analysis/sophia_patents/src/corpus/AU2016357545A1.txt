@@ -1,0 +1,209 @@
+on
+
+invention
+According to an aspect of the disclosure, a method for matching variants of a subject genome with variants of a known reference genome is disclosed. The method comprises obtaining a string of nucleotides associated with a subject genome, the string of nucleotides including one or more variants, expressing the string of nucleotides in a plurality of different formats to obtain a plurality of alternative nucleotide strings, and comparing the plurality of alternative nucleotide strings with at least one nucleotide string of the known reference genome to identify similarities and/or differences between the plurality of alternative nucleotide strings and the at least one nucleotide sequence of the known reference genome. The subject genome may the genome of a patient or person being tested.
+The plurality of different formats may be alternative notations for representing nucleotides. The at least one nucleotide sequence of the known reference genome may be a variant indicative of a characteristic of the known reference genome. The characteristic may be indicative of a strength or weakness of the genome. The at least one nucleotide string of the known reference genome may be stored in a database of known reference genomes.
+The obtaining a string of nucleotides may comprise obtaining a plurality of segments of a sequence of nucleotides associated with a subject genome, the plurality of segments including one or more variants. It may further comprise determining a plurality of alternative alignments of the variants. Each of the plurality of alternative alignments may define one way of aligning the plurality of segments to form the string of nucleotides. The obtaining a string of nucleotides may further comprise scoring the plurality of alternative alignments. It may further comprise selecting one of the plurality of alternative alignments based on the score, wherein the string of nucleotides is derived from the selected one of the plurality of alternative alignments. The derivation may be that the string of nucleotides forms part of the alignment. The derivation may alternatively be that the string of nucleotides is the whole of the alignment.
+The obtained plurality of segments may be reads of the subject genome. The subject genome may be the genome of a patient or person being tested. The method may further comprise placing each variant on a phase of a chromosome prior to determining the plurality of alternative alignments. The method may further comprise introducing a break into the chromosome if it cannot be determined whether or not two variants are on the same phase. When phases of variants are not known, variants may be included on all phases. When phases of variants are not known, a plurality of alternatives of the chromosome may be
+WO 2017/085459
+PCT/GB2016/053429 provided, each one with the variant positioned on one of the phases. The method may further comprise converting the one or more variants into a regular form by inserting one or more gaps into the variant sequence prior to determining the alternative alignments. A regular form may be a known or standardised form for representing variants and/or strings of nucleotides. The one or more gaps may be inserted to increase the number of matching nucleotides between the variant sequence and a reference sequence. The reference sequence may be a known genome sequence, which is used as a means of comparison.
+The one or more gaps may be inserted when a nucleotide has either been inserted or deleted in the sequence. An alignment with a minimum number of gaps may be used for further processing. The method may further comprise left aligning the plurality of alternative alignments prior to scoring the plurality of alternative alignments. The alignments may be scored based on the number of variants. The selected one of the plurality of alternative alignments may be the alignment with the fewest variants.
+According to another aspect of the disclosure computer readable media is provided including computer readable instructions which are operable, in use, to instruct a computer system to perform any method disclosed herein.
+According to yet another aspect of the disclosure apparatus is provided comprising a memory arranged to store computer readable instructions arranged to instruct a computer to perform any method disclosed herein and a processor arranged to process the computer readable instructions.
+Brief Description of the Drawings
+Exemplary arrangements of the disclosure shall now be described with reference to the drawings in which:
+Figure 1 illustrates the process of the present disclosure; and
+Figure 2 illustrates the system arranged to perform the process of Figure 1.
+Throughout the description and the drawings, like reference numerals refer to like parts.
+WO 2017/085459
+PCT/GB2016/053429
+Specific Description
+Described herein is a process for determining whether reference reads of a human genome sequence include variants with respect to a reference human genome. When variants are identified they may be indicative of a cause of a rare disease or a pathogenic variant.
+Hence, it is important to accurately identify variants.
+The standard alignment method used in aligning biological sequences is based on the Smith-Waterman algorithm with an affine gap penalty model. Although it is usual to obtain a single alignment using this algorithm it has been shown that it can be extended to obtain multiple alignments each with the same cumulative distance as the minimum distance, for example using algorithms such as Gotoh scan.
+The process described herein firstly compares variants in nucleotide sequences of patient reads. This is carried out in order to ensure that the reads are correctly aligned by ensuring correct phasing and proximity. Once the reads are aligned variant matching with reference databases can be performed to identify relevant variants in the human genome sequence.
+In particular, a variant is identified where a section of a nucleotide sequence differs from the corresponding section in the reference human genome.
+In order to achieve the above-functionality in an efficient and accurate manner, an already known algorithm which shall be called the equal-best algorithm is utilised for both comparing the variants in the nucleotide sequence and performing the variant matching with reference databases. As used herein, the term “equal-best algorithm” refers to known algorithm processes that can be used to obtain multiple alignments each with the same cumulative distance as the minimum distance.
+The process briefly introduced above shall now be discussed in detail with reference to Figure 1.
+Firstly, at step 1, reads of a subject genome are obtained. The reads are short relative to the length of the genome and it is therefore necessary to align the phasings of each of the reads. This process is discussed in detail below.
+At step 10, a phasing algorithm is applied to identify phase couplings as well as phase breaks to create phased sections. While this step in the process is optional, phasing
+WO 2017/085459
+PCT/GB2016/053429 information allows accurate analysis and the application of a phasing algorithm is recommended for the most accurate analysis. Various mathematical models are used to determine the most likely phase to which the variants should be aligned. This process therefore provides a more accurate determination of the linked arrangement of variants on either the paternal or maternal chromosome. Numerous phasing algorithms can optionally be applied, including but not limited to hapcut and probHap.
+In the arrangements being discussed in respect of Figure 1, the phasing algorithm places each variant in one of the phases of the chromosome. If the analysis is germ-line then there are only two phases. If the algorithm is somatic then there may be more than two phases at different sections in the chromosome.
+The phasing algorithm may introduce a “break” from time to time. A break is placed when the algorithm is not able to determine if two adjacent variants are on the same phase or different phases. This can be due to various factors including proximity to other variants as well as lack of read evidences.
+In the absence of phasing information there are two possible ways of continuing the processing of variants.
+In one mode an aggressive approach can be taken where adjacent variants are allowed to take both phases: in-phase as well as out-of-phase. So for a cluster of variants all possible phase combinations are analysed. The results of such an analysis can only be regarded as “possible” phases.
+The second approach is conservative where two adjacent variants for whom no phasing information is available are treated as separate and not combined. Results obtained this way are “definite” - but the inability to combine adjacent variants often lead to missing some matches in the database or between two sets of variants. The conservative mode is more commonly used because the eventual results are definite matches.
+Once the phasing is complete, phase sections are combined into analysis sections by applying proximity considerations, at step 20. Proximity considerations allow the long sequence to be broken up into many smaller sequences. The proximity consideration is simply based on how far apart two adjacent variances in a sequence are.
+WO 2017/085459
+PCT/GB2016/053429
+In conservative mode, each phase section is broken down into smaller sections. If phasing information is available, each smaller section will correspond to a phased section. If no phasing information is available then each section will correspond to one variant. Note that some padding will be applied when extracting the variant sequences - usually up to the adjacent variant on either side.
+In aggressive mode, all variant combinations are calculated for each section if no phasing information is available. If phasing information is available then all phase combinations for the section will be calculated. This mode will have a number of enumerations to analyse instead of just one for the conservative mode.
+The full set of enumerations is obtained taking all possible combinations into account.
+At step 30, a pre-processing step is performed by converting the first variant into a form where the variants are marked differently including deletions. Pre-processing is applied prior to the application of the segmental variant comparison algorithm in order to place the data in the best form for obtaining accurate results.
+To convert a first variant to a variant marked form, gaps are introduced into the variant sequence to increase the number of matching nucleotides between the variant sequence and the reference sequence. A gap is inserted when a residue has either been deleted or inserted in the sequence. Sequences are aligned to provide the minimum “gapped edit distance” with respect to the reference sequence. Each variant within a segment should be converted into a minimum distance form. The minimum distance form is one where the alignment produces the lowest match distance. The alignment model used in the affine gap penalty alignment algorithm as proposed by Smith & Waterman and Gotoh.
+An example of converting to the variant marked form is provided below for the variant which is a deletion of GCTC:
+Reference seq Variant seq: Variant seq: Variant seq: Variant seq:
+AGCTCGCTCGCTCGCTCGCTCA AGCTCGCTCGCTCGCTC—-A.. AGCTCGCTCGCTCGCTC A..
+A GCTCGCTCGCTCGCTCA.. A—-GCTCGCTCGCTCGCTCA..
+variant, marked sequence, no marking left shifted gap left shifted, marked
+WO 2017/085459
+PCT/GB2016/053429
+The pre-processing is then complete. Variants that have been pre-processed therefore have the following two properties:
+1. Minimum “gapped edit distance” with respect to the reference sequence
+2. Variants left aligned as much as possible whilst preserving the minimum “gapped edit distance”
+This shall be called the reference sequence.
+At step 40, the segmental variant comparison algorithm is applied to each enumerated section and a comparison result obtained. The segmental variant comparison algorithm uses the equal-best algorithm to compare two sets of variants and to determine which variants in a first segment are matched by the variants in a second segment. The approach is based on using the equal-best algorithm to align the two nucleotide sequences to obtain all the different alignments/interpretations of the second segment with respect to the first segment such that the different interpretations all have the same “gapped edit distance” which is also the optimum distance. The equal-best algorithm can detect single nucleotide polymorphisms (SNPs), insertions, deletions as well as mixed variants.
+Each alternative alignment from the equal-best algorithm is then converted to a variant marked in the same as the first variant was pre-processed.
+Each variant marked sequence is then compared to the reference sequence. A score is calculated for each alignment subject to the following function by directly comparing the marked nucleotides with the reference sequence:
+f(TP, FN, FP) = k1 * (TP - FN) - k2 * FP, k1 = 1, k2 = 3 where counting nucleotides (bases).
+Where:
+TP is the number of true positives (the number of positives that are correctly identified as such)
+FN is the number of false negatives (the number of negatives that are incorrectly identified as such)
+FP is the number of false positives (the number of positives that are incorrectly identified as such)
+WO 2017/085459
+PCT/GB2016/053429 k1, k2 and k3 are “a priori” coefficients.
+Among those alignments that still offer the best score, an alignment is selected that involves the fewest of variants when written down. It is still possible to get more than one alignment (or set of variants) with the same minimum distance. In such cases it is acceptable to just pick one of the remaining.
+Matching variants in a database
+Publicly available databases record reports of variants in patient samples and record useful associated data such as clinical significance. Examples of such publicly available databases are Clinvar and dbSNP. It is useful to compare a variant in a patient variant call format (VCF) with known variants in databases to provide further information regarding the variant, including its clinical significance. Variants in the database can be pre-processed in the same way as described previously for variants in the subject sequence.
+The matching of variants is complicated by the multiple forms in which variants can be written. Various different notations are well known in the art. The representation of the same variant in a patient variant file may not match the entry as written in the dbSNP due to various mitigating circumstances such as the complexity of the variants as well as the presence of other variants in nearby positions in the chromosome. Variant matching is complicated by the different forms that a variation can be represented by insertions and deletions can be left-aligned, right-aligned or in-between. The variant can be enlarged to show the surrounding context. Complex variants can be written as a single variant or as a number of simple variants.
+The equal-best algorithm for database matching uses the reference genome along with the patient VCF (and any phasing information in the VCF file) to reconstruct the nucleotide sequence for a region. This allows for a more complete discovery of known variants.
+The variants in a corresponding region are processed so that a minimal distance and leftaligned form of each variant replaces the original entry. This is done by extending the region around each variant using the reference genome and aligning the extended reference sequence to the extended alternate sequence using Smith Waterman and Gotoh algorithm. Variants that have been pre-processed therefore have the following two properties:
+WO 2017/085459
+PCT/GB2016/053429
+1. Minimum “gapped edit distance” with respect to the reference sequence
+2. Variants left aligned as much as possible whilst preserving the minimum “gapped edit distance”
+In some arrangements, this may have been performed before the variants are stored within the database. Variants are re-expressed from the database in a 'regularized' form before matching with the patient variants.
+It is important that the same gap open and gap extend parameters are used when running the equal-best algorithm on the patient variants and when running the regularization on the database variants. In a different implementation the pre-processing can be done depending on the corresponding patient variant sections positions and not on the whole database.
+The equal-best algorithm is the applied to each enumerated variant section. Along with the original variants from the patient, the new variants produced by equal-best are matched against the processed database using chromosome, position, reference and alternate. If during the process of regularisation one variant splits into two or more, all of the component variants have to be matched for the corresponding database entry to be deemed a match. Any suitable database of genetic variation may be used. Examples of such databases are DBSNP and Clinvar. An example entry in the DBSNP database is as follows containing the chromosome, position, an ID, variants and information about the variant:
+10019 rs775809821 TA T . . RS=775809821 ;RSPOS= 10020;...
+Finally, once the matching has taken place, it is possible to identify potential differences in the two genetic sequences, which is the final output of the process at step 60.
+An example is provided below illustrating the different steps involved in the comparing two variants (note these steps do not apply to database matching).
+Input:
+REF CTGTGGG
+V1
+CTGTGtGtG
+WO 2017/085459
+PCT/GB2016/053429
+V2 CTGTGtG
+1. Re-representation step applied to variant 1:
+REF CTGTG-G-G
+V1 CTGTGtGtG
+2: Equal-best algorithm applied to Variant 2: Note no variants marked (align nucleotides and mark variants)
+V1 CTGTGTGTG
+V2 CTGTGTGV2 CTGTG-TG
+V2 CTG-TGTG
+V2 C-TGTGTG
+3: Scoring step: Variants marked, matched and scored (align marked variants, gaps as well as unmodified nucleotides)
+REF	CTGTG-G-G		
+V1	CTGTGtGtG		
+V2	CTGTGtG-	1 TP 1 FN 1	FP : score = -3
+V2	CTGTG-tG	1 TP 1 FN 1	FP : score = -3
+V2	CTG-tGtG	2TP2 FP	: score = -4
+V2	C-TGtGtG	2TP2 FP	: score = -
+4: Scoring step: minimum base representation
+REF CTGTG-G-G
+V1
+CTGTGtGtG
+WO 2017/085459
+PCT/GB2016/053429
+V2 CTGTGtG- G/GT G/GT GG/G : 3
+V2 CTGTG-tG G/GT G/GT GG/G : 3
+Output: one of two below
+REF CTGTG-G-G
+V1 CTGTGtGtG
+V2 CTGTGtG-, or
+REF CTGTG-G-G
+V1 CTGTGtGtG
+V2 CTGTG-tG,
+Comparison result:
+TP 1 FN 1 FP, G/GT G/GT GG/G
+An example is provided below illustrating the different steps involved in a database matching procedure:
+DBSNP entries:
+Chromosome 11, position 102398434 ref C altT tag rs17884405
+Chromosome 11, position 102398436 ref C alt CT tag rs398097780
+Variants from VCF file:
+Chromosome 11, position 102398433 ref C alt CT
+Chromosome 11, position 102398436 ref C alt T
+1: Constructing the variant sequence
+REF
+VAR
+TGTTTGAC-CCCTGG
+TGTTTGACtCCtTGG
+WO 2017/085459
+PCT/GB2016/053429
+2: Running equal-best algorithm output 1 of 2
+POS 678901234567890
+REF TGTTTGAC-CCCTGG
+VAR TGTTTGACtCCtTGG output 2 of 2
+POS 678901234567890
+REF TGTTTGACCC-TGG
+VAR TGTTTGACtCCtTGG
+3: Extracting variants from alignments output 1 of 2
+Chromosome 11, position 102398433 ref C alt CT
+Chromosome 11, position 102398436 ref C alt T output 2 of 2
+Chromosome 11, position 102398434 ref C alt T
+Chromosome 11, position 102398436 ref C alt CT
+4: Matching variants
+Chromosome 11, position 102398434 ref C altT tag rs17884405
+Chromosome 11, position 102398436 ref C alt CT tag rs398097780
+Figure 2 illustrates the system used to implement the process of Figure 1. The process itself is carried out by a computer system 100. The process is performed by software stored in memory 120, which is run by processor 110. The computer system includes an input 130 arranged to receive chromosome reads. This input could be a network connection for uploading the reads that have been performed by another system, a direct link to a system that has carried out the reads, or any other means for importing data into a computer system. The system then has an output 140, which outputs the genetic matches that are identified at the end of the process. The output may be the display of the results on a computer screen. The computer system 100 is arranged to communicate with a database on a server 200, which stores all of the known genetic variants with which the patient’s variants are being compared. Whilst Figure 2 illustrates the database on server 200, it may
+WO 2017/085459
+PCT/GB2016/053429 be that in alternative arrangements the database is stored in the memory 120 of the computer system 100.
+The various methods described above may be implemented by one or more computer program products or computer readable media provided on one or more devices. The computer program product or computer readable media may include computer code arranged to instruct a computer or a plurality of computers to perform the functions of one or more of the various methods described above. The computer program and/or the code for performing such methods may be provided to an apparatus, such as a computer, on a computer readable medium or computer program product. The computer readable medium may be transitory or non-transitory. The computer readable medium could be, for example, an electronic, magnetic, optical, electromagnetic, infrared, or semiconductor system, ora propagation medium for data transmission, for example for downloading the code over the Internet. Alternatively, the computer readable medium could take the form of a physical computer readable medium such as semiconductor or solid state memory, magnetic tape, a removable computer diskette, a random access memory (RAM), a read-only memory (ROM), a rigid magnetic disc, and an optical disk, such as a CD-ROM, CD-R/W or DVD.
+An apparatus such as a computer may be configured in accordance with such code to perform one or more processes in accordance with the various methods discussed herein. Such an apparatus may take the form of a data processing system. Such a data processing system may be a distributed system. For example, such a data processing system may be distributed across a network. Some of the processes may be performed by software on a user device, while other processes may be performed by software on a server, or a combination thereof.
+WO 2017/085459
+PCT/GB2016/053429
+
+
+Claims (19)
+Hide Dependent 
+
+Claims
+1. A method for matching variants of a subject genome with variants of a known reference genome, the method comprising:
+obtaining a string of nucleotides associated with a subject genome, the string of nucleotides including one or more variants;
+expressing the string of nucleotides in a plurality of different formats to obtain a plurality of alternative nucleotide strings; and comparing the plurality of alternative nucleotide strings with at least one nucleotide string of the known reference genome to identify similarities and/or differences between the plurality of alternative nucleotide strings and the at least one nucleotide sequence of the known reference genome.
+2. The method according to claim 1 wherein the plurality of different formats are alternative notations for representing nucleotides.
+3. The method according to claim 1 or claim 2, wherein the at least one nucleotide sequence of the known reference genome is a variant indicative of a characteristic of the known reference genome.
+4. The method according claim 3, wherein the characteristic is indicative of a strength or weakness of the genome.
+5. The method according to any preceding claim, wherein the at least one nucleotide string of the known reference genome is stored in a database of known reference genomes.
+6. The method according to any preceding claim, wherein the obtaining a string of nucleotides comprises:
+obtaining a plurality of segments of a sequence of nucleotides associated with a subject genome, the plurality of segments including one or more variants;
+WO 2017/085459
+PCT/GB2016/053429 determining a plurality of alternative alignments of the variants, wherein each of the plurality of alternative alignments defines one way of aligning the plurality of segments to form the string of nucleotides;
+scoring the plurality of alternative alignments; and selecting one of the plurality of alternative alignments based on the score, wherein the string of nucleotides is derived from the selected one of the plurality of alternative alignments.
+7. The method according to claim 6, wherein the obtained plurality of segments are reads of the subject genome.
+8. The method according to claim 6 or claim 7 further comprising placing each variant on a phase of a chromosome prior to determining the plurality of alternative alignments.
+9. The method according to claim 8, further comprising introducing a break into the chromosome if it cannot be determined whether or not two variants are on the same phase.
+10. The method according to claim 9, wherein when phases of variants are not known, variants are included on all phases.
+11. The method according to claim 9, wherein when phases of variants are not known, a plurality of alternatives of the chromosome are provided, each one with the variant positioned on one of the phases.
+12. The method according to any one of claims 6 to 11, further comprising converting the one or more variants into a regular form by inserting one or more gaps into the variant sequence prior to determining the alternative alignments.
+13. The method according to claim 12, wherein the one or more gaps are inserted to increase the number of matching nucleotides between the variant sequence and a reference sequence.
+14. The method according to claim 12 or claim 13, wherein the one or more gaps are inserted when a nucleotide has either been inserted or deleted in the sequence.
+WO 2017/085459
+PCT/GB2016/053429
+15. The method according to any one of claims 12, 13 or 14, wherein an alignment with a minimum number of gaps is used for further processing.
+16. The method according to any one of claims 12 to 15, further comprising left aligning the plurality of alternative alignments prior to scoring the plurality of alternative alignments.
+17. The method according to any one of claims 6 to 16, wherein the alignments are scored based on the number of variants and the selected one of the plurality of alternative alignments is the alignment with the fewest variants.
+18. Computer readable media including computer readable instructions which are operable, in use, to instruct a computer system to perform the method of any preceding claim.
+19. Apparatus comprising a memory arranged to store computer readable instructions arranged to instruct a computer to perform the method of any one of claims 1 to 17 and a processor arranged to process the computer readable instructions.
+WO 2017/085459
+PCT/GB2016/053429
+1/2
+4 Reads of subject chromosome
+Segmental variant comparison algorithm
+- Align variant against reference sequence
+- Apply equal-best algorithm
+I
+Compare with database entries
+I
+Identify potential strengths or weaknesses in subjects DNA
+Figure 1
+WO 2017/085459
+PCT/GB2016/053429
+2/2 nput chromosome reads
+130
+Computer System Processor 110 Memory 120 100
+140
+Output
+Figure 2

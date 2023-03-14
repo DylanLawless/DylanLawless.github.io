@@ -59,6 +59,9 @@ title: LawlessGenomics
 </div>
 <br>
 
+<!-- > A man walks into hospital. The doctors says "We were expecting you. -->
+<!-- > "Yesterday we diagnosed your illness and have prepared your treatment plan." -->
+
 Statistical methods, best practices, and pertinent research techniques for both large-scale and individual diagnosis.
 Focused on novel discoveries in human health 
 with specialities in 
@@ -140,6 +143,16 @@ in continuous development.
 	</div>
 
 	<div class="subjects">
+		<h1>Bench to market</h1>
+		<ul class="topic">
+		{% assign sorted-topic = site.topic | where: "subject","business" %}
+		{% for topic in sorted-topic %}
+		<a href="{{ topic.url }}">{{ topic.title }}</a><br />
+		{% endfor %}
+		</ul>
+	</div>
+
+	<div class="subjects">
 		<h1>Public presentation</h1>
 		<ul class="topic">
 		{% assign sorted-topic = site.topic | where: "subject","meetings" %}
@@ -149,12 +162,12 @@ in continuous development.
 		</ul>
 	</div>
 
-	<div class="subjects">
-		<h1>Weeknotes</h1>
-		<ul class="topic">
-		<a href="/weeknotes/">List of all weeknotes</a>
-		</ul>
-	</div>
+	<!-- <div class="subjects"> -->
+	<!-- 	<h1>Weeknotes</h1> -->
+	<!-- 	<ul class="topic"> -->
+	<!-- 	<a href="/weeknotes/">List of all weeknotes</a> -->
+	<!-- 	</ul> -->
+	<!-- </div> -->
 
 	<div class="subjects">
 		<h1>Portfolio</h1>

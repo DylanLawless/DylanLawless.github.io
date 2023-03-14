@@ -1,0 +1,222 @@
+  Patents
+ 
+ 
+
+Method to provide personalized medical data
+
+Abstract
+
+A method to provide personalized data of a patient includes obtaining at least one first personal data for a non-modifiable risk factor, obtaining at least one second personal data for a modifiable risk factor, and normalizing the first and second data using a lookup table, said normalized data representing an increase or decrease versus a neutral value. The method also includes adding the normalized data representing a decrease to a positive parameter, adding the normalized data representing an increase to a negative parameter, displaying the positive and the negative parameters in two distinct colors in a pie shape, the surface of each pie being proportional to the value of each parameter, and displaying in association with the pie shape, the portion of the negative parameter that results from the second personal data.
+Images (4)
+
+      
+Classifications
+
+ G16H50/30 ICT specially adapted for medical diagnosis, medical simulation or medical data mining; ICT specially adapted for detecting, monitoring or modelling epidemics or pandemics for calculating health indices; for individual health risk assessment
+View 1 more classifications
+US20220037028A1
+United States
+ Download PDF  Find Prior Art   Similar
+Inventor David CoxGilbert Perrin Current Assignee Sophia Genetics SA
+Worldwide applications
+2019  WO US
+Application US17/280,330 events 
+2018-09-28
+Priority to US201862738028P
+2019-09-28
+Application filed by Sophia Genetics SA
+2019-09-28
+Priority to PCT/EP2019/076335
+2019-09-28
+Priority to US17/280,330
+2022-02-03
+Publication of US20220037028A1
+Status
+Pending
+Info Patent citations (1) Legal events Similar documents Priority and Related Applications External links USPTOUSPTO PatentCenterUSPTO AssignmentEspacenetGlobal DossierDiscuss
+Description
+
+INTRODUCTION
+[0001]
+Various public health strategies have been developed worldwide to increase prevention of certain medical pathologies, such as cardiovascular disease, chronic respiratory disease, unintentional injuries, diabetes, certain infectious diseases, and cancers. A large part of the deaths caused by these diseases are indeed due to inadequate lifestyle such as poor diet or lack of exercise. In addition to awareness campaigns, early detection measures such as regular medical check-ups have also been put in place in many countries to identify any anomalies such as biomarkers as early indicators of disease onset. A major issue of this medical approach is that it is global, and does not take into account the specific parameters of the patient, such as his/her lifestyle elements as well as his/her genetic predisposition. There is therefore a need for more personalized medical advice to adapt prevention recommendations, including the need for specialized examination (screening), to the specifics of each patient. In general, the risk factors may be classified along two main categories:
+[0002]
+1. Nonmodifiable risk factors for instance age, height, genome, family history, age of menopause onset i.e. the risks for which the patient has no control
+[0003]
+2. Modifiable risk factors for instance alcohol intake, smoking, diet, exercise, weight, sun exposure, stress, menopausal hormone therapy intake i.e. the risk that the patient behavior can impact this risk
+[0004]
+In the case of breast cancer prevention, it has been recently evaluated that modifiable factors significantly impact the risk for some categories of patients, as described for instance in Breast Cancer Risk From Modifiable and Nonmodifiable Risk Factors Among White Women in the United States by Maas et al. JAMA Oncol. 2016 Oct. 1; 2(10): 1295 1302. doi:10.1001/jamaonco1.2016.1025. How much risk can be decreased by modifiable factors also depends on the individual characteristics of the patient. For instance, while most countries recommend regular screening mammography for women above 50, some women may benefit from earlier screening, depending on their individual parameters for multiple factors. There is therefore a need for better determining and presenting this information in individual medical counseling. Moreover, for women with a significant contribution of modifiable factors to their personal risk assessment, there is a need for better presenting the evolution of this data in later individual medical counseling so that the benefit of e.g. lifestyle changes impacting modifiable factors can be pointed out to the patient.
+BRIEF DESCRIPTION
+[0005]
+The proposed solution comprises two main phases, the first phase being the determination of the values and the second step being the particular display arrangement of these values in a comprehensive way.
+[0006]
+It is proposed a method to provide personalized data of a patient comprising:
+obtaining at least one first personal data for a non-modifiable risk factor,
+obtaining at least one second personal data for a modifiable risk factor,
+normalizing the first and second data using a lookup table, said normalized data representing an increase or decrease versus a neutral value,
+adding the normalized data representing a decrease to a positive parameter,
+adding the normalized data representing an increase to a negative parameter,
+displaying the positive and the negative parameters in two distinct colors in a pie shape, the surface of each pie being proportional to the value of each parameter,
+displaying in association with the pie shape, the portion of the negative parameter that results from the second personal data.
+BRIEF DESCRIPTION OF THE FIGURES
+[0014]
+The present invention will be better understood with the help of the attached figures in which:
+[0015]
+FIG. 1 illustrates a conversion table used to normalize the patient data,
+[0016]
+FIG. 2 illustrates the first section of the display with the pie shape results,
+[0017]
+FIG. 3 illustrates the section 1 and section 2 of the patient's result,
+[0018]
+FIG. 4 illustrates the same as FIG. 3 for another patient.
+DETAILED DESCRIPTION
+[0019]
+The object of the present disclosure is to provide a tool for a practitioner to present in a comprehensive way the risk situation of a patient.
+[0020]
+The first step is to acquire the personal data for a patient. This is made usually in reference to a particular risk. By risk we understand health risk such as breast cancer, diabetes, osteoporosis, prostate cancer, etc.
+[0021]
+For a given risk, a set of patient data is acquired and entered into the system of the present invention. For the present disclosure, we will take the example of breast cancer.
+[0022]
+In FIG. 1, we have a table showing the influence of a given risk factor on the global risk factor. This is in the form of a lookup table with an input and an output. According to the first example of the FIG. 1, the age of the patent of her first menstruation is evaluated. On the left column, we have the age and in the right column the normalized data. In this example, it was decided that the value 1, as normalized data, is neutral, i.e. will not increase or decrease the risk. A value below 1 means that this factor reduces the global risk. Conversely, a value above 1 represents an increase risk factor.
+[0023]
+This is more apparent in the second example for the age of the menopause. Depending of the age of the patient at menopause, the normalized data below 1 is considered positive (i.e. reducing the risk factor) or above 1 is considered negative, (i.e. increasing the risk factor).
+[0024]
+Once all patient data are acquired and normalized, the present system calculates the current variation (CV) of the risk factor for said patient.
+[0025]
+This is achieved by adding the natural logarithm of each normalized risk factor (nrf):
+
+CV=ln(nrf)
+[0026]
+The positive normalized patient data (nrf+) are added to form the positive current variation PCV=ln(nrf+) and the negative normalized patient data (nrf−) are added to from the negative current variation NCV=ln(nrf−).
+[0027]
+Various other methods are also proposed in the frame of the present disclosure to determine the normalized risk factor. In an alternate embodiment, the FIG. 1 can contain directly the natural logarithm of the value of the tables so that the positive factors are expressed by a positive number and the negative factor are expressed by a negative number.
+[0028]
+The system produces a representation of these two values in a pie shape, representing the positive (PCV) and the negative (NCV) current variation in two distinct colors. The pie is illustrated in FIG. 2. The portion 1 illustrates the increasing factors and the portion 3 illustrates the reducing factors.
+[0029]
+The risks are organized in at least two categories, the non-modifiable risk factors and the modifiable risk factors. The non-modifiable risk factors are the factors for which the patient has no control of, for example the age of menarche. The modifiable risk factors are the factors for which the patient has an influence. This is the case for example for alcohol consumption, smoking etc.
+[0030]
+The system then calculates the portion (PV) of the negative current variation only linked with the modifiable risk factors. The value PV represents 0 to 100% or the negative current variation.
+[0031]
+In the FIG. 2, the section 2 represents the portion of the modifiable risk factors of the portion 1. The ring around the pie indicates the portion of the modifiable and non-modifiable risk factors. Other embodiments can be used to represent this information such as altering the texture of a part of the section 1 according to the impact of the modifiable risk factors.
+[0032]
+The resulting image is a direct understanding of the overall risk, the repartition in positive and negative risk factors in the pie shape and the highlighting the part of the negative factors that result of modifiable risk factors. In the example of the FIG. 2, approximately 80% of the negative risk factors are the result of modifiable risk factors.
+[0033]
+The complement the representation in pie shape, the system generates the details of the normalized value for each factor. Section 4 of FIG. 2 illustrates each factor organized around a vertical line 5. If the normalized version of the risk factor is positive (i.e. reducing the risk), the corresponding value is represented on the right side of the bar and if the normalized version of the risk factor is negative, it is represented on the life side of the bar.
+[0034]
+According to a particular embodiment, a first color is selected for the non-modifiable risk factor and a second color is selected for the modifiable risk factor.
+[0035]
+In order to determine the global risk factor, as illustrated in the left corner of the FIGS. 3 and 4, the system should determine the reference risk factor of said patient. This is executed by accessing a lookup table comprising for each age, the reference risk factor. Based on the age of the patient, the current standard risk factor is then determined.
+[0036]
+In order to calculate the global risk factor, the reference risk factor is added to the current variation CV.
+[0037]
+In the portion 6 of the FIG. 3 (and FIG. 4), the line P represents the standard risk factor from 30 to 75 years.
+[0038]
+In the example of the FIG. 3, the age of the patient is 48 and the current standard risk factor (for a given population) is 2.4%. In this example the current variation for this patient represents 0.8% meaning that this patient is 0.8% higher than the standard risk. The global risk factor (or current risk as represented in the FIG. 4) is therefore 3.2%.
+[0039]
+The system then determines the standard screening age which is dependent of the standard risk factor. For the breast cancer, it was determined that the screening has to be executed for a risk factor of 2.5% (see horizontal dotted line). This corresponds to the age of 50 in the standard population (see line S in FIGS. 3 and 4). However, at 48, this patient is already above this level and should therefore start the screening immediately.
+[0040]
+In the example of the FIG. 4, the patient is represented by the line P which is below the standard risk for a given population (line S). The system then determines the age at which this patient will be at 2.5% and the system determine the age of 50 for the first screening (based on current medical knowledge).
+[0041]
+The present method is executed on a system comprising at least one processing and at least one memory. The memory stores the general data common to all patients such as the lookup tables. For each specific risk, as defined above, a lookup table is stored and used to determine the risk factor related to a given patient for a given risk.
+[0042]
+The processor receives the input data for a patient and calculates the risk factor. The processor sorts the information in order to present the result in a comprehensive way. In the example of the FIG. 2, the risk factors are presented in a list for which the first risk factor on top of the list is the risk factor having the highest absolute value. In this way, the highest value draws the attention of the operator.
+[0043]
+The system comprises a graphical interface to prepare the data for the display.
+[0044]
+Although specific advantages have been enumerated above, various embodiments may include some, none, or all of the enumerated advantages.
+[0045]
+Other technical advantages may become readily apparent to one of ordinary skill in the art after review of the following figures and description.
+[0046]
+It should be understood at the outset that, although exemplary embodiments are illustrated in the figures and described below, the principles of the present disclosure may be implemented using any number of techniques, whether currently known or not. The present disclosure should in no way be limited to the exemplary implementations and techniques illustrated in the drawings and described below.
+[0047]
+Unless otherwise specifically noted, articles depicted in the drawings are not necessarily drawn to scale.
+[0048]
+Modifications, additions, or omissions may be made to the systems, apparatuses, and methods described herein without departing from the scope of the disclosure. For example, the components of the systems and apparatuses may be integrated or separated. Moreover, the operations of the systems and apparatuses disclosed herein may be performed by more, fewer, or other components and the methods described may include more, fewer, or other steps. Additionally, steps may be performed in any suitable order. As used in this document, each refers to each member of a set or each member of a subset of a set.
+Claims (5)
+Hide Dependent 
+
+1. A method to provide personalized data of a patient comprising:
+obtaining at least one first personal data for a non-modifiable risk factor,
+obtaining at least one second personal data for a modifiable risk factor,
+normalizing the first and second data using at least a lookup table, said normalized data representing an increase or decrease versus a neutral value,
+adding the normalized data representing a decrease to a positive risk factor,
+adding the normalized data representing an increase to a negative risk factor,
+displaying the positive and the negative risk factors in two distinct colors in a pie shape, the surface of each portion of the pie being proportional to the value of each parameter,
+determining the part of the negative risk factor related to the modifiable risk factor,
+displaying in association with the pie shape, said part that results from the second personal data.
+2. The method of claim 1, further comprising:
+displaying the first and the second normalized data personal data with a reference of the description of the first and second risk factor.
+3. The method of claim 2, further comprising:
+sorting the first and the second normalized data personal according to their respective absolute value, the highest absolute value being placed on top of a list,
+displaying the list of normalized personal data with a reference of a description of their respective risk factor.
+4. The method of claim 1, further comprising:
+calculating a current variation risk factor by adding the natural logarithm of each normalized risk factor,
+displaying the current risk factor.
+5. The method of claim 5, further comprising:
+extracting from a reference table, the reference risk factor based on one personalized data of a patient,
+determining a current variation (CV) of the risk factors according to CV=Σ ln(nrf) in which each nrf is the normalized risk factor,
+determining a global risk factor by adding current variation (CV) to the reference risk factor,
+displaying the global risk factor.
+Patent Citations (1)
+
+Publication number	Priority date	Publication date	Assignee	Title
+Family To Family Citations				
+US20150234999A1 *	2014-02-18	2015-08-20	Biosignia, Inc.	Systems, methods and computer program products for determining a consolidated disease risk score from risk factors and a level of composite risk
+* Cited by examiner, † Cited by third party
+Similar Documents
+
+Publication	Publication Date	Title
+Graudal et al.	2014	Compared with usual sodium intake, low-and excessive-sodium diets are associated with increased mortality: a meta-analysis
+JP5054984B2	2012-10-24	Individual health guidance support system
+Margolies et al.	2016	Digital mammography and screening for coronary artery disease
+Koh et al.	2001	A simple tool to identify Asian women at increased risk of osteoporosis
+Bushe et al.	2009	Schizophrenia and breast cancer incidence: a systematic review of clinical studies
+Coltman et al.	2017	Breast volume is affected by body mass index but not age
+Zheng et al.	2012	Increased mortality risk among the visually impaired: the roles of mental well-being and preventive care practices
+Mann et al.	2010	Comparative validity of 3 diabetes mellitus risk prediction scoring models in a multiethnic US cohort: the Multi-Ethnic Study of Atherosclerosis
+RU2640000C2	2017-12-25	Breast image processing and display
+Kharazmi et al.	2014	Effect of multiplicity, laterality, and age at onset of breast cancer on familial risk of breast cancer: a nationwide prospective cohort study
+Metintas et al.	2010	Menopause Rating Scale as a screening tool in rural Turkey
+Wilson et al.	2013	Population attributable risk of modifiable risk factors associated with invasive breast cancer in women aged 45–69 years in Queensland, Australia
+Li et al.	2014	Refractive error and risk of early or late age-related macular degeneration: a systematic review and meta-analysis
+CN103455699A	2013-12-18	Method and system for generating personalized lifestyle intervention scheme automatically
+CN109859168A	2019-06-07	A kind of X-ray rabat picture quality determines method and device
+Cheddad et al.	2014	Enhancement of mammographic density measures in breast cancer risk prediction
+Whelton et al.	2014	Sodium and cardiovascular disease: what the data show
+Shafiee et al.	2018	Appendicular skeletal muscle mass reference values and the peak muscle mass to identify sarcopenia among Iranian healthy population
+US20220037028A1	2022-02-03	Method to provide personalized medical data
+US11205265B2	2021-12-21	System and method for assessing breast cancer risk using imagery
+Meybodi et al.	2011	Association between anthropometric measures and bone mineral density: population-based study
+US20070161868A1	2007-07-12	Method and system for determining whether additional laboratory tests will yield values beyond a threshold level
+Chen et al.	2020	Association between vitamin D receptor BsmI, FokI, and Cdx2 polymorphisms and osteoporosis risk: an updated meta-analysis
+US10169851B2	2019-01-01	Methods for color enhanced detection of bone density from CT images and methods for opportunistic screening using same
+Dennett et al.	2018	Cancer survivors awaiting rehabilitation rarely meet recommended physical activity levels: an observational study
+Priority And Related Applications
+
+Priority Applications (3)
+
+Application	Priority date	Filing date	Title
+US201862738028P	2018-09-28	2018-09-28	US Provisional Application
+PCT/EP2019/076335	2018-09-28	2019-09-28	Method to provide personalized medical data
+US17/280,330	2018-09-28	2019-09-28	Method to provide personalized medical data
+Applications Claiming Priority (1)
+
+Application	Filing date	Title
+US17/280,330	2019-09-28	Method to provide personalized medical data
+Legal Events
+
+Date	Code	Title	Description
+2021-11-18	STPP	Information on status: patent application and granting procedure in general	
+Free format text: DOCKETED NEW CASE - READY FOR EXAMINATION
+
+Concepts
+
+machine-extracted
+ Download
+Filter table 
+Name	Image	Sections	Count	Query match
+ pies		claims,abstract,description	15	0.000
+ colorant		claims,abstract,description	4	0.000
+ neutralization		claims,abstract,description	4	0.000
+Show all concepts from the description section
+Data provided by IFI CLAIMS Patent Services
+About Send Feedback Public Datasets Terms Privacy Policy
