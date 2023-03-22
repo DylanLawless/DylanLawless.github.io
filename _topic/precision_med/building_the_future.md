@@ -13,9 +13,9 @@ subject: Precision medicine
 {:toc}
 
 # A collection of inspiration sources
-To build the infrastructure of actional clinical genomics and precision medicine, I am working on our automated results platforms.
-An imprtart part is the translation of results to users, such as doctors and patients.
-This page host some examples of viz inspo that I draw from.
+To build the infrastructure of actionable clinical genomics and precision medicine, I am working on our automated results platforms.
+An important requirement is the translation of results to users, such as doctors and patients.
+This page hosts some examples of viz inspo that I draw from.
 Some pages or links may be dead - this repo is for design reference.
 
 ## St. Jude cloud
