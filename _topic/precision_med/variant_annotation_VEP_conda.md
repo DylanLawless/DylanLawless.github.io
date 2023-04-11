@@ -1,0 +1,176 @@
+---
+layout: topic
+title: Variant annotation with VEP conda
+date: 2023-04-10 00:00:01
+tags: genomics
+subject: Precision medicine
+---
+{{ page.title }}
+================
+<!-- bibliography: -->
+<!-- - '../tail/bibliography.bib' -->
+
+<p class="meta">10 Apr 2023 - last update</p>
+
+## How I use ensembl VEP for annotation 
+<http://www.ensembl.org/info/docs/tools/vep/index.html>.
+Using ensembl VEP is made easier by way of conda <https://anaconda.org/bioconda/ensembl-vep>.
+A requirement is to have samtools, bcftools, htslib (all at <http://www.htslib.org/>) also installed with conda. 
+The conda env will allow VEP to run, but we must also have the plugins/databases installed. 
+[View a list of databases that I recommend during annotation]({{ site.baseurl }}{% link _topic/precision_med/variant_annotation_table_main.html %}).
+Alternatives:
+* NIRVANA <https://illumina.github.io/NirvanaDocumentation/>
+* ANNOVAR <https://annovar.openbioinformatics.org/en/latest/>
+
+## Install with conda
+
+Here is my installation and directions note which I refer to when running VEP with conda.
+
+```
+$ user@cluster:/work/group/user/project/exome/src/joint$ cat conda_vep.txt
+I copied this
+<https://gist.github.com/ckandoth/d6de7eff889e8860dd5f3f3dd234c045>
+but also used conda:
+
+# ###########
+# Set up ----
+# ###########
+
+mamba create -n vep
+conda activate vep
+
+conda install -y -c conda-forge -c bioconda -c defaults ensembl-vep==106.0 htslib==1.14 bcftools==1.14 samtools==1.14
+
+conda deactivate
+
+# ###############
+# Set up end ----
+# ###############
+
+conda list
+conda env list
+conda --info envs
+
+# #############
+# Reattach ----
+# #############
+
+conda activate vep
+vep --help
+conda deactivate
+
+# ###############
+# Work end ----
+# ###############
+```
+
+## Running VEP with conda
+
+Here is an example script for annotating a VCF output after the GATK SNV pipeline. 
+The major annotation information comes from default VEP data ("--everything" flag).
+Several plugins are also used, including dbNSFP which for SNVs (but not indel) adds >100 columns of annotation data. 
+After completion I refer back to conda_vep.txt notes to deactivate conda (although automated within the pipeline).
+
+I run it using:
+
+``` 
+conda activate vep
+sbatch annotation_conda.sh
+``` 
+
+However, I would have this in a workflow pipeline that might have other parameters which would change the structure. 
+This is the basic requirements:
+
+```
+$ user@cluster:/work/group/user/project/src/joint/annotation_conda.sh
+
+#!/bin/bash
+#SBATCH --nodes 1
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 24
+#SBATCH --mem 30G
+#SBATCH --time 03:00:00
+#SBATCH --job-name=vep
+#SBATCH --output=./log/vep/vep_%J.out
+#SBATCH --error=./log/vep/vep_%J.err
+#SBATCH --comment="cost" # custom for cluster
+
+# CONDA ENV
+# activate before submission
+# conda activate vep
+
+echo "START AT $(date)"
+set -e
+source ./variables.txt
+module load intel # jed
+
+# Path
+INPUT_DIR="${WORK_DIR}/pre_annotation_output"
+OUTPUT_DIR="${WORK_DIR}/annotation"
+
+# db
+DATABASES="/work/group/databases"
+REF="/work/group/user/Reference_Genome/GRCH38_no_alt/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa.gz"
+GTF="/work/group/user/Reference_Genome/GRCH38_no_alt/gtf_and_gff/GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation.gtf.gz"
+GFF="/work/group/user/Reference_Genome/GRCH38_no_alt/gtf_and_gff/GCA_000001405.15_GRCh38_full_analysis_set.refseq_annotation_for_vep.gff.gz"
+PLUGINS="${DATABASES}/vep_hg38/plugins"
+LOFTEE="${DATABASES}/vep_hg38/loftee"
+CACHE="${DATABASES}/vep_hg38/cache_hg38_ensembl"
+CLINVAR="${DATABASES}/clinvar/hg38/20220730/clinvar_20220730.vcf.gz"
+CADD_DIR="${DATABASES}/CADD_v1.6_GRCH38_hg38"
+REVEL="${DATABASES}/revel/new_tabbed_revel_grch38.tsv.gz"
+GNOMAD="/scratch/user/gnomad/gnomad.exomes.r2.0.1.sites.GRCh38.noVEP.vcf.gz"
+G2P_PANNEL="/work/group/user/panels/Primary_immunodeficiency.csv"
+dbNSFP="/work/group/user/database/dbNSFP/data/dbNSFP4.2a_grch38.gz"
+IntAct="/work/group/user/database/intact"
+# GNOMAD="${DATABASES}/gnomAD_GRCh38_sites/gnomad.exomes.r2.0.1.sites.GRCh38.noVEP.vcf.gz"
+# GNOMAD="${DATABASES}/gnomAD_GRCh38_sites/gnomad.exomes.r2.1.1.sites.liftover_grch38_PASS.vcf.gz"
+
+# VEP
+vep \
+--fasta $REF \
+--offline \
+--use_given_ref \
+--everything \
+--vcf \
+--cache \
+--dir_cache $CACHE \
+--canonical \
+--hgvs \
+--symbol \
+--mane \
+--cache_version 104 \
+--dir_plugins ${PLUGINS} \
+--plugin SpliceConsensus \
+--plugin CADD,${CADD_DIR}/whole_genome_SNVs.tsv.gz,${CADD_DIR}/gnomad.genomes.r3.0.indel.tsv.gz \
+--plugin dbNSFP,${dbNSFP},ALL \
+--custom ${CLINVAR},ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN \
+--plugin IntAct,mutation_file=${IntAct}/mutations.tsv,mapping_file=${IntAct}/mutation_gc_map.txt.gz \
+--plugin IntAct,mutation_file=${IntAct}/mutations.tsv,mapping_file=${IntAct}/mutation_gc_map.txt.gz,minimal=1 \
+-i ${INPUT_DIR}/bcftools_gatk_norm.vcf.gz \
+-o ${OUTPUT_DIR}/bcftools_gatk_norm_vep_conda_plug.vcf \
+--fork 24 \
+--force_overwrite
+
+# # vep custom annotation
+# ./vep [...] --custom Filename , Short_name , File_type , Annotation_type , Force_report_coordinates , VCF_fields
+# # For multiple custom files, use:
+# ./vep [...] --custom clinvar.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN \
+#             --custom TOPMED_GRCh38_20180418.vcf.gz,topmed_20180418,vcf,exact,0,TOPMED \
+#             --custom UK10K_COHORT.20160215.sites.GRCh38.vcf.gz,uk10k,vcf,exact,0,AF_ALSPAC
+## Where the selected ClinVar INFO fields (from the ClinVar VCF file) are:
+# - CLNSIG:     Clinical significance for this single variant
+# - CLNREVSTAT: ClinVar review status for the Variation ID
+# - CLNDN:      ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB
+# Of course you can select the INFO fields you want in the ClinVar VCF file.
+# --flag_pick \
+# --stats_file ${OUTPUT_DIR}/vep_cache_ensembl_flagpick.html \
+
+echo "END AT $(date)"
+```
+
+## Resulting output 
+The new IFNO columns will contain annotation data that is then used for further filtering, ranking, application of ACMG criteria, etc. for clinical reporting and assigning variant classification:
+
+sample	Inheritance	genotype	SYMBOL	HGVSp	HGVSc	SNP	ClinVar_CLNSIG	ClinVar_CLNDN	ClinVar_CLNREVSTAT	genotype_call	Consequence	IMPACT	rownames	AC	AF.x	AN	BaseQRankSum	DB	DP	END	ExcessHet	FS	InbreedingCoeff	MLEAC	MLEAF	MQ	MQRankSum	NEGATIVE_TRAIN_SITE	PG	POSITIVE_TRAIN_SITE	QD	RAW_MQandDP	ReadPosRankSum	SOR	VQSLOD	culprit	OLD_MULTIALLELIC	OLD_VARIANT	seqnames	start	end	width	strand	Allele	Gene	Feature_type	Feature	BIOTYPE	EXON	INTRON	cDNA_position	CDS_position	Protein_position	Amino_acids	Codons	Existing_variation	DISTANCE	STRAND	FLAGS	VARIANT_CLASS	SYMBOL_SOURCE	HGNC_ID	CANONICAL	MANE_SELECT	MANE_PLUS_CLINICAL	TSL	APPRIS	CCDS	ENSP	SWISSPROT	TREMBL	UNIPARC	UNIPROT_ISOFORM	SOURCE	GENE_PHENO	SIFT	PolyPhen	DOMAINS	miRNA	HGVS_OFFSET	AF.y	AFR_AF	AMR_AF	EAS_AF	EUR_AF	SAS_AF	AA_AF	EA_AF	gnomAD_AF	gnomAD_AFR_AF	gnomAD_AMR_AF	gnomAD_ASJ_AF	gnomAD_EAS_AF	gnomAD_FIN_AF	gnomAD_NFE_AF	gnomAD_OTH_AF	gnomAD_SAS_AF	MAX_AF	MAX_AF_POPS	CLIN_SIG	SOMATIC	PHENO	PUBMED	MOTIF_NAME	MOTIF_POS	HIGH_INF_POS	MOTIF_SCORE_CHANGE	TRANSCRIPTION_FACTORS	SPLICE_CONSENSUS	CADD_PHRED	CADD_RAW	X1000Gp3_AC	X1000Gp3_AF	X1000Gp3_AFR_AC	X1000Gp3_AFR_AF	X1000Gp3_AMR_AC	X1000Gp3_AMR_AF	X1000Gp3_EAS_AC	X1000Gp3_EAS_AF	X1000Gp3_EUR_AC	X1000Gp3_EUR_AF	X1000Gp3_SAS_AC	X1000Gp3_SAS_AF	ALSPAC_AC	ALSPAC_AF	APPRIS.1	Aloft_Confidence	Aloft_Fraction_transcripts_affected	Aloft_pred	Aloft_prob_Dominant	Aloft_prob_Recessive	Aloft_prob_Tolerant	AltaiNeandertal	Ancestral_allele	BayesDel_addAF_pred	BayesDel_addAF_rankscore	BayesDel_addAF_score	BayesDel_noAF_pred	BayesDel_noAF_rankscore	BayesDel_noAF_score	CADD_phred	CADD_phred_hg19	CADD_raw	CADD_raw_hg19	CADD_raw_rankscore	CADD_raw_rankscore_hg19	ClinPred_pred	ClinPred_rankscore	ClinPred_score	DANN_rankscore	DANN_score	DEOGEN2_pred	DEOGEN2_rankscore	DEOGEN2_score	Denisova	ESP6500_AA_AC	ESP6500_AA_AF	ESP6500_EA_AC	ESP6500_EA_AF	Eigen.PC.phred_coding	Eigen.PC.raw_coding	Eigen.PC.raw_coding_rankscore	Eigen.phred_coding	Eigen.raw_coding	Eigen.raw_coding_rankscore	Ensembl_geneid	Ensembl_proteinid	Ensembl_transcriptid	ExAC_AC	ExAC_AF	ExAC_AFR_AC	ExAC_AFR_AF	ExAC_AMR_AC	ExAC_AMR_AF	ExAC_Adj_AC	ExAC_Adj_AF	ExAC_EAS_AC	ExAC_EAS_AF	ExAC_FIN_AC	ExAC_FIN_AF	ExAC_NFE_AC	ExAC_NFE_AF	ExAC_SAS_AC	ExAC_SAS_AF	ExAC_nonTCGA_AC	ExAC_nonTCGA_AF	ExAC_nonTCGA_AFR_AC	ExAC_nonTCGA_AFR_AF	ExAC_nonTCGA_AMR_AC	ExAC_nonTCGA_AMR_AF	ExAC_nonTCGA_Adj_AC	ExAC_nonTCGA_Adj_AF	ExAC_nonTCGA_EAS_AC	ExAC_nonTCGA_EAS_AF	ExAC_nonTCGA_FIN_AC	ExAC_nonTCGA_FIN_AF	ExAC_nonTCGA_NFE_AC	ExAC_nonTCGA_NFE_AF	ExAC_nonTCGA_SAS_AC	ExAC_nonTCGA_SAS_AF	ExAC_nonpsych_AC	ExAC_nonpsych_AF	ExAC_nonpsych_AFR_AC	ExAC_nonpsych_AFR_AF	ExAC_nonpsych_AMR_AC	ExAC_nonpsych_AMR_AF	ExAC_nonpsych_Adj_AC	ExAC_nonpsych_Adj_AF	ExAC_nonpsych_EAS_AC	ExAC_nonpsych_EAS_AF	ExAC_nonpsych_FIN_AC	ExAC_nonpsych_FIN_AF	ExAC_nonpsych_NFE_AC	ExAC_nonpsych_NFE_AF	ExAC_nonpsych_SAS_AC	ExAC_nonpsych_SAS_AF	FATHMM_converted_rankscore	FATHMM_pred	FATHMM_score	GENCODE_basic	GERP.._NR	GERP.._RS	GERP.._RS_rankscore	GM12878_confidence_value	GM12878_fitCons_rankscore	GM12878_fitCons_score	GTEx_V8_gene	GTEx_V8_tissue	GenoCanyon_rankscore	GenoCanyon_score	Geuvadis_eQTL_target_gene	H1.hESC_confidence_value	H1.hESC_fitCons_rankscore	H1.hESC_fitCons_score	HGVSc_ANNOVAR	HGVSc_VEP	HGVSc_snpEff	HGVSp_ANNOVAR	HGVSp_VEP	HGVSp_snpEff	HUVEC_confidence_value	HUVEC_fitCons_rankscore	HUVEC_fitCons_score	Interpro_domain	LINSIGHT	LINSIGHT_rankscore	LIST.S2_pred	LIST.S2_rankscore	LIST.S2_score	LRT_Omega	LRT_converted_rankscore	LRT_pred	LRT_score	M.CAP_pred	M.CAP_rankscore	M.CAP_score	MPC_rankscore	MPC_score	MVP_rankscore	MVP_score	MetaLR_pred	MetaLR_rankscore	MetaLR_score	MetaRNN_pred	MetaRNN_rankscore	MetaRNN_score	MetaSVM_pred	MetaSVM_rankscore	MetaSVM_score	MutPred_AAchange	MutPred_Top5features	MutPred_protID	MutPred_rankscore	MutPred_score	MutationAssessor_pred	MutationAssessor_rankscore	MutationAssessor_score	MutationTaster_AAE	MutationTaster_converted_rankscore	MutationTaster_model	MutationTaster_pred	MutationTaster_score	PROVEAN_converted_rankscore	PROVEAN_pred	PROVEAN_score	Polyphen2_HDIV_pred	Polyphen2_HDIV_rankscore	Polyphen2_HDIV_score	Polyphen2_HVAR_pred	Polyphen2_HVAR_rankscore	Polyphen2_HVAR_score	PrimateAI_pred	PrimateAI_rankscore	PrimateAI_score	REVEL_rankscore	REVEL_score	Reliability_index	SIFT4G_converted_rankscore	SIFT4G_pred	SIFT4G_score	SIFT_converted_rankscore	SIFT_pred	SIFT_score	SiPhy_29way_logOdds	SiPhy_29way_logOdds_rankscore	SiPhy_29way_pi	TSL.1	TWINSUK_AC	TWINSUK_AF	UK10K_AC	UK10K_AF	Uniprot_acc	Uniprot_entry	VEP_canonical	VEST4_rankscore	VEST4_score	VindijiaNeandertal	aaalt	aapos	aaref	alt	bStatistic	bStatistic_converted_rankscore	cds_strand	chr	clinvar_MedGen_id	clinvar_OMIM_id	clinvar_Orphanet_id	clinvar_clnsig	clinvar_hgvs	clinvar_id	clinvar_review	clinvar_trait	clinvar_var_source	codon_degeneracy	codonpos	fathmm.MKL_coding_group	fathmm.MKL_coding_pred	fathmm.MKL_coding_rankscore	fathmm.MKL_coding_score	fathmm.XF_coding_pred	fathmm.XF_coding_rankscore	fathmm.XF_coding_score	genename	gnomAD_exomes_AC	gnomAD_exomes_AF	gnomAD_exomes_AFR_AC	gnomAD_exomes_AFR_AF	gnomAD_exomes_AFR_AN	gnomAD_exomes_AFR_nhomalt	gnomAD_exomes_AMR_AC	gnomAD_exomes_AMR_AF	gnomAD_exomes_AMR_AN	gnomAD_exomes_AMR_nhomalt	gnomAD_exomes_AN	gnomAD_exomes_ASJ_AC	gnomAD_exomes_ASJ_AF	gnomAD_exomes_ASJ_AN	gnomAD_exomes_ASJ_nhomalt	gnomAD_exomes_EAS_AC	gnomAD_exomes_EAS_AF	gnomAD_exomes_EAS_AN	gnomAD_exomes_EAS_nhomalt	gnomAD_exomes_FIN_AC	gnomAD_exomes_FIN_AF	gnomAD_exomes_FIN_AN	gnomAD_exomes_FIN_nhomalt	gnomAD_exomes_NFE_AC	gnomAD_exomes_NFE_AF	gnomAD_exomes_NFE_AN	gnomAD_exomes_NFE_nhomalt	gnomAD_exomes_POPMAX_AC	gnomAD_exomes_POPMAX_AF	gnomAD_exomes_POPMAX_AN	gnomAD_exomes_POPMAX_nhomalt	gnomAD_exomes_SAS_AC	gnomAD_exomes_SAS_AF	gnomAD_exomes_SAS_AN	gnomAD_exomes_SAS_nhomalt	gnomAD_exomes_controls_AC	gnomAD_exomes_controls_AF	gnomAD_exomes_controls_AFR_AC	gnomAD_exomes_controls_AFR_AF	gnomAD_exomes_controls_AFR_AN	gnomAD_exomes_controls_AFR_nhomalt	gnomAD_exomes_controls_AMR_AC	gnomAD_exomes_controls_AMR_AF	gnomAD_exomes_controls_AMR_AN	gnomAD_exomes_controls_AMR_nhomalt	gnomAD_exomes_controls_AN	gnomAD_exomes_controls_ASJ_AC	gnomAD_exomes_controls_ASJ_AF	gnomAD_exomes_controls_ASJ_AN	gnomAD_exomes_controls_ASJ_nhomalt	gnomAD_exomes_controls_EAS_AC	gnomAD_exomes_controls_EAS_AF	gnomAD_exomes_controls_EAS_AN	gnomAD_exomes_controls_EAS_nhomalt	gnomAD_exomes_controls_FIN_AC	gnomAD_exomes_controls_FIN_AF	gnomAD_exomes_controls_FIN_AN	gnomAD_exomes_controls_FIN_nhomalt	gnomAD_exomes_controls_NFE_AC	gnomAD_exomes_controls_NFE_AF	gnomAD_exomes_controls_NFE_AN	gnomAD_exomes_controls_NFE_nhomalt	gnomAD_exomes_controls_POPMAX_AC	gnomAD_exomes_controls_POPMAX_AF	gnomAD_exomes_controls_POPMAX_AN	gnomAD_exomes_controls_POPMAX_nhomalt	gnomAD_exomes_controls_SAS_AC	gnomAD_exomes_controls_SAS_AF	gnomAD_exomes_controls_SAS_AN	gnomAD_exomes_controls_SAS_nhomalt	gnomAD_exomes_controls_nhomalt	gnomAD_exomes_flag	gnomAD_exomes_nhomalt	gnomAD_exomes_non_cancer_AC	gnomAD_exomes_non_cancer_AF	gnomAD_exomes_non_cancer_AFR_AC	gnomAD_exomes_non_cancer_AFR_AF	gnomAD_exomes_non_cancer_AFR_AN	gnomAD_exomes_non_cancer_AFR_nhomalt	gnomAD_exomes_non_cancer_AMR_AC	gnomAD_exomes_non_cancer_AMR_AF	gnomAD_exomes_non_cancer_AMR_AN	gnomAD_exomes_non_cancer_AMR_nhomalt	gnomAD_exomes_non_cancer_AN	gnomAD_exomes_non_cancer_ASJ_AC	gnomAD_exomes_non_cancer_ASJ_AF	gnomAD_exomes_non_cancer_ASJ_AN	gnomAD_exomes_non_cancer_ASJ_nhomalt	gnomAD_exomes_non_cancer_EAS_AC	gnomAD_exomes_non_cancer_EAS_AF	gnomAD_exomes_non_cancer_EAS_AN	gnomAD_exomes_non_cancer_EAS_nhomalt	gnomAD_exomes_non_cancer_FIN_AC	gnomAD_exomes_non_cancer_FIN_AF	gnomAD_exomes_non_cancer_FIN_AN	gnomAD_exomes_non_cancer_FIN_nhomalt	gnomAD_exomes_non_cancer_NFE_AC	gnomAD_exomes_non_cancer_NFE_AF	gnomAD_exomes_non_cancer_NFE_AN	gnomAD_exomes_non_cancer_NFE_nhomalt	gnomAD_exomes_non_cancer_POPMAX_AC	gnomAD_exomes_non_cancer_POPMAX_AF	gnomAD_exomes_non_cancer_POPMAX_AN	gnomAD_exomes_non_cancer_POPMAX_nhomalt	gnomAD_exomes_non_cancer_SAS_AC	gnomAD_exomes_non_cancer_SAS_AF	gnomAD_exomes_non_cancer_SAS_AN	gnomAD_exomes_non_cancer_SAS_nhomalt	gnomAD_exomes_non_cancer_nhomalt	gnomAD_exomes_non_neuro_AC	gnomAD_exomes_non_neuro_AF	gnomAD_exomes_non_neuro_AFR_AC	gnomAD_exomes_non_neuro_AFR_AF	gnomAD_exomes_non_neuro_AFR_AN	gnomAD_exomes_non_neuro_AFR_nhomalt	gnomAD_exomes_non_neuro_AMR_AC	gnomAD_exomes_non_neuro_AMR_AF	gnomAD_exomes_non_neuro_AMR_AN	gnomAD_exomes_non_neuro_AMR_nhomalt	gnomAD_exomes_non_neuro_AN	gnomAD_exomes_non_neuro_ASJ_AC	gnomAD_exomes_non_neuro_ASJ_AF	gnomAD_exomes_non_neuro_ASJ_AN	gnomAD_exomes_non_neuro_ASJ_nhomalt	gnomAD_exomes_non_neuro_EAS_AC	gnomAD_exomes_non_neuro_EAS_AF	gnomAD_exomes_non_neuro_EAS_AN	gnomAD_exomes_non_neuro_EAS_nhomalt	gnomAD_exomes_non_neuro_FIN_AC	gnomAD_exomes_non_neuro_FIN_AF	gnomAD_exomes_non_neuro_FIN_AN	gnomAD_exomes_non_neuro_FIN_nhomalt	gnomAD_exomes_non_neuro_NFE_AC	gnomAD_exomes_non_neuro_NFE_AF	gnomAD_exomes_non_neuro_NFE_AN	gnomAD_exomes_non_neuro_NFE_nhomalt	gnomAD_exomes_non_neuro_POPMAX_AC	gnomAD_exomes_non_neuro_POPMAX_AF	gnomAD_exomes_non_neuro_POPMAX_AN	gnomAD_exomes_non_neuro_POPMAX_nhomalt	gnomAD_exomes_non_neuro_SAS_AC	gnomAD_exomes_non_neuro_SAS_AF	gnomAD_exomes_non_neuro_SAS_AN	gnomAD_exomes_non_neuro_SAS_nhomalt	gnomAD_exomes_non_neuro_nhomalt	gnomAD_exomes_non_topmed_AC	gnomAD_exomes_non_topmed_AF	gnomAD_exomes_non_topmed_AFR_AC	gnomAD_exomes_non_topmed_AFR_AF	gnomAD_exomes_non_topmed_AFR_AN	gnomAD_exomes_non_topmed_AFR_nhomalt	gnomAD_exomes_non_topmed_AMR_AC	gnomAD_exomes_non_topmed_AMR_AF	gnomAD_exomes_non_topmed_AMR_AN	gnomAD_exomes_non_topmed_AMR_nhomalt	gnomAD_exomes_non_topmed_AN	gnomAD_exomes_non_topmed_ASJ_AC	gnomAD_exomes_non_topmed_ASJ_AF	gnomAD_exomes_non_topmed_ASJ_AN	gnomAD_exomes_non_topmed_ASJ_nhomalt	gnomAD_exomes_non_topmed_EAS_AC	gnomAD_exomes_non_topmed_EAS_AF	gnomAD_exomes_non_topmed_EAS_AN	gnomAD_exomes_non_topmed_EAS_nhomalt	gnomAD_exomes_non_topmed_FIN_AC	gnomAD_exomes_non_topmed_FIN_AF	gnomAD_exomes_non_topmed_FIN_AN	gnomAD_exomes_non_topmed_FIN_nhomalt	gnomAD_exomes_non_topmed_NFE_AC	gnomAD_exomes_non_topmed_NFE_AF	gnomAD_exomes_non_topmed_NFE_AN	gnomAD_exomes_non_topmed_NFE_nhomalt	gnomAD_exomes_non_topmed_POPMAX_AC	gnomAD_exomes_non_topmed_POPMAX_AF	gnomAD_exomes_non_topmed_POPMAX_AN	gnomAD_exomes_non_topmed_POPMAX_nhomalt	gnomAD_exomes_non_topmed_SAS_AC	gnomAD_exomes_non_topmed_SAS_AF	gnomAD_exomes_non_topmed_SAS_AN	gnomAD_exomes_non_topmed_SAS_nhomalt	gnomAD_exomes_non_topmed_nhomalt	gnomAD_genomes_AC	gnomAD_genomes_AF	gnomAD_genomes_AFR_AC	gnomAD_genomes_AFR_AF	gnomAD_genomes_AFR_AN	gnomAD_genomes_AFR_nhomalt	gnomAD_genomes_AMI_AC	gnomAD_genomes_AMI_AF	gnomAD_genomes_AMI_AN	gnomAD_genomes_AMI_nhomalt	gnomAD_genomes_AMR_AC	gnomAD_genomes_AMR_AF	gnomAD_genomes_AMR_AN	gnomAD_genomes_AMR_nhomalt	gnomAD_genomes_AN	gnomAD_genomes_ASJ_AC	gnomAD_genomes_ASJ_AF	gnomAD_genomes_ASJ_AN	gnomAD_genomes_ASJ_nhomalt	gnomAD_genomes_EAS_AC	gnomAD_genomes_EAS_AF	gnomAD_genomes_EAS_AN	gnomAD_genomes_EAS_nhomalt	gnomAD_genomes_FIN_AC	gnomAD_genomes_FIN_AF	gnomAD_genomes_FIN_AN	gnomAD_genomes_FIN_nhomalt	gnomAD_genomes_MID_AC	gnomAD_genomes_MID_AF	gnomAD_genomes_MID_AN	gnomAD_genomes_MID_nhomalt	gnomAD_genomes_NFE_AC	gnomAD_genomes_NFE_AF	gnomAD_genomes_NFE_AN	gnomAD_genomes_NFE_nhomalt	gnomAD_genomes_POPMAX_AC	gnomAD_genomes_POPMAX_AF	gnomAD_genomes_POPMAX_AN	gnomAD_genomes_POPMAX_nhomalt	gnomAD_genomes_SAS_AC	gnomAD_genomes_SAS_AF	gnomAD_genomes_SAS_AN	gnomAD_genomes_SAS_nhomalt	gnomAD_genomes_controls_and_biobanks_AC	gnomAD_genomes_controls_and_biobanks_AF	gnomAD_genomes_controls_and_biobanks_AFR_AC	gnomAD_genomes_controls_and_biobanks_AFR_AF	gnomAD_genomes_controls_and_biobanks_AFR_AN	gnomAD_genomes_controls_and_biobanks_AFR_nhomalt	gnomAD_genomes_controls_and_biobanks_AMI_AC	gnomAD_genomes_controls_and_biobanks_AMI_AF	gnomAD_genomes_controls_and_biobanks_AMI_AN	gnomAD_genomes_controls_and_biobanks_AMI_nhomalt	gnomAD_genomes_controls_and_biobanks_AMR_AC	gnomAD_genomes_controls_and_biobanks_AMR_AF	gnomAD_genomes_controls_and_biobanks_AMR_AN	gnomAD_genomes_controls_and_biobanks_AMR_nhomalt	gnomAD_genomes_controls_and_biobanks_AN	gnomAD_genomes_controls_and_biobanks_ASJ_AC	gnomAD_genomes_controls_and_biobanks_ASJ_AF	gnomAD_genomes_controls_and_biobanks_ASJ_AN	gnomAD_genomes_controls_and_biobanks_ASJ_nhomalt	gnomAD_genomes_controls_and_biobanks_EAS_AC	gnomAD_genomes_controls_and_biobanks_EAS_AF	gnomAD_genomes_controls_and_biobanks_EAS_AN	gnomAD_genomes_controls_and_biobanks_EAS_nhomalt	gnomAD_genomes_controls_and_biobanks_FIN_AC	gnomAD_genomes_controls_and_biobanks_FIN_AF	gnomAD_genomes_controls_and_biobanks_FIN_AN	gnomAD_genomes_controls_and_biobanks_FIN_nhomalt	gnomAD_genomes_controls_and_biobanks_MID_AC	gnomAD_genomes_controls_and_biobanks_MID_AF	gnomAD_genomes_controls_and_biobanks_MID_AN	gnomAD_genomes_controls_and_biobanks_MID_nhomalt	gnomAD_genomes_controls_and_biobanks_NFE_AC	gnomAD_genomes_controls_and_biobanks_NFE_AF	gnomAD_genomes_controls_and_biobanks_NFE_AN	gnomAD_genomes_controls_and_biobanks_NFE_nhomalt	gnomAD_genomes_controls_and_biobanks_SAS_AC	gnomAD_genomes_controls_and_biobanks_SAS_AF	gnomAD_genomes_controls_and_biobanks_SAS_AN	gnomAD_genomes_controls_and_biobanks_SAS_nhomalt	gnomAD_genomes_controls_and_biobanks_nhomalt	gnomAD_genomes_flag	gnomAD_genomes_nhomalt	gnomAD_genomes_non_cancer_AC	gnomAD_genomes_non_cancer_AF	gnomAD_genomes_non_cancer_AFR_AC	gnomAD_genomes_non_cancer_AFR_AF	gnomAD_genomes_non_cancer_AFR_AN	gnomAD_genomes_non_cancer_AFR_nhomalt	gnomAD_genomes_non_cancer_AMI_AC	gnomAD_genomes_non_cancer_AMI_AF	gnomAD_genomes_non_cancer_AMI_AN	gnomAD_genomes_non_cancer_AMI_nhomalt	gnomAD_genomes_non_cancer_AMR_AC	gnomAD_genomes_non_cancer_AMR_AF	gnomAD_genomes_non_cancer_AMR_AN	gnomAD_genomes_non_cancer_AMR_nhomalt	gnomAD_genomes_non_cancer_AN	gnomAD_genomes_non_cancer_ASJ_AC	gnomAD_genomes_non_cancer_ASJ_AF	gnomAD_genomes_non_cancer_ASJ_AN	gnomAD_genomes_non_cancer_ASJ_nhomalt	gnomAD_genomes_non_cancer_EAS_AC	gnomAD_genomes_non_cancer_EAS_AF	gnomAD_genomes_non_cancer_EAS_AN	gnomAD_genomes_non_cancer_EAS_nhomalt	gnomAD_genomes_non_cancer_FIN_AC	gnomAD_genomes_non_cancer_FIN_AF	gnomAD_genomes_non_cancer_FIN_AN	gnomAD_genomes_non_cancer_FIN_nhomalt	gnomAD_genomes_non_cancer_MID_AC	gnomAD_genomes_non_cancer_MID_AF	gnomAD_genomes_non_cancer_MID_AN	gnomAD_genomes_non_cancer_MID_nhomalt	gnomAD_genomes_non_cancer_NFE_AC	gnomAD_genomes_non_cancer_NFE_AF	gnomAD_genomes_non_cancer_NFE_AN	gnomAD_genomes_non_cancer_NFE_nhomalt	gnomAD_genomes_non_cancer_SAS_AC	gnomAD_genomes_non_cancer_SAS_AF	gnomAD_genomes_non_cancer_SAS_AN	gnomAD_genomes_non_cancer_SAS_nhomalt	gnomAD_genomes_non_cancer_nhomalt	gnomAD_genomes_non_neuro_AC	gnomAD_genomes_non_neuro_AF	gnomAD_genomes_non_neuro_AFR_AC	gnomAD_genomes_non_neuro_AFR_AF	gnomAD_genomes_non_neuro_AFR_AN	gnomAD_genomes_non_neuro_AFR_nhomalt	gnomAD_genomes_non_neuro_AMI_AC	gnomAD_genomes_non_neuro_AMI_AF	gnomAD_genomes_non_neuro_AMI_AN	gnomAD_genomes_non_neuro_AMI_nhomalt	gnomAD_genomes_non_neuro_AMR_AC	gnomAD_genomes_non_neuro_AMR_AF	gnomAD_genomes_non_neuro_AMR_AN	gnomAD_genomes_non_neuro_AMR_nhomalt	gnomAD_genomes_non_neuro_AN	gnomAD_genomes_non_neuro_ASJ_AC	gnomAD_genomes_non_neuro_ASJ_AF	gnomAD_genomes_non_neuro_ASJ_AN	gnomAD_genomes_non_neuro_ASJ_nhomalt	gnomAD_genomes_non_neuro_EAS_AC	gnomAD_genomes_non_neuro_EAS_AF	gnomAD_genomes_non_neuro_EAS_AN	gnomAD_genomes_non_neuro_EAS_nhomalt	gnomAD_genomes_non_neuro_FIN_AC	gnomAD_genomes_non_neuro_FIN_AF	gnomAD_genomes_non_neuro_FIN_AN	gnomAD_genomes_non_neuro_FIN_nhomalt	gnomAD_genomes_non_neuro_MID_AC	gnomAD_genomes_non_neuro_MID_AF	gnomAD_genomes_non_neuro_MID_AN	gnomAD_genomes_non_neuro_MID_nhomalt	gnomAD_genomes_non_neuro_NFE_AC	gnomAD_genomes_non_neuro_NFE_AF	gnomAD_genomes_non_neuro_NFE_AN	gnomAD_genomes_non_neuro_NFE_nhomalt	gnomAD_genomes_non_neuro_SAS_AC	gnomAD_genomes_non_neuro_SAS_AF	gnomAD_genomes_non_neuro_SAS_AN	gnomAD_genomes_non_neuro_SAS_nhomalt	gnomAD_genomes_non_neuro_nhomalt	gnomAD_genomes_non_topmed_AC	gnomAD_genomes_non_topmed_AF	gnomAD_genomes_non_topmed_AFR_AC	gnomAD_genomes_non_topmed_AFR_AF	gnomAD_genomes_non_topmed_AFR_AN	gnomAD_genomes_non_topmed_AFR_nhomalt	gnomAD_genomes_non_topmed_AMI_AC	gnomAD_genomes_non_topmed_AMI_AF	gnomAD_genomes_non_topmed_AMI_AN	gnomAD_genomes_non_topmed_AMI_nhomalt	gnomAD_genomes_non_topmed_AMR_AC	gnomAD_genomes_non_topmed_AMR_AF	gnomAD_genomes_non_topmed_AMR_AN	gnomAD_genomes_non_topmed_AMR_nhomalt	gnomAD_genomes_non_topmed_AN	gnomAD_genomes_non_topmed_ASJ_AC	gnomAD_genomes_non_topmed_ASJ_AF	gnomAD_genomes_non_topmed_ASJ_AN	gnomAD_genomes_non_topmed_ASJ_nhomalt	gnomAD_genomes_non_topmed_EAS_AC	gnomAD_genomes_non_topmed_EAS_AF	gnomAD_genomes_non_topmed_EAS_AN	gnomAD_genomes_non_topmed_EAS_nhomalt	gnomAD_genomes_non_topmed_FIN_AC	gnomAD_genomes_non_topmed_FIN_AF	gnomAD_genomes_non_topmed_FIN_AN	gnomAD_genomes_non_topmed_FIN_nhomalt	gnomAD_genomes_non_topmed_MID_AC	gnomAD_genomes_non_topmed_MID_AF	gnomAD_genomes_non_topmed_MID_AN	gnomAD_genomes_non_topmed_MID_nhomalt	gnomAD_genomes_non_topmed_NFE_AC	gnomAD_genomes_non_topmed_NFE_AF	gnomAD_genomes_non_topmed_NFE_AN	gnomAD_genomes_non_topmed_NFE_nhomalt	gnomAD_genomes_non_topmed_SAS_AC	gnomAD_genomes_non_topmed_SAS_AF	gnomAD_genomes_non_topmed_SAS_AN	gnomAD_genomes_non_topmed_SAS_nhomalt	gnomAD_genomes_non_topmed_nhomalt	hg18_chr	hg18_pos.1.based.	hg19_chr	hg19_pos.1.based.	integrated_confidence_value	integrated_fitCons_rankscore	integrated_fitCons_score	phastCons100way_vertebrate	phastCons100way_vertebrate_rankscore	phastCons17way_primate	phastCons17way_primate_rankscore	phastCons30way_mammalian	phastCons30way_mammalian_rankscore	phyloP100way_vertebrate	phyloP100way_vertebrate_rankscore	phyloP17way_primate	phyloP17way_primate_rankscore	phyloP30way_mammalian	phyloP30way_mammalian_rankscore	pos.1.based.	ref	refcodon	rs_dbSNP	Condel	IntAct_feature_type	IntAct_interaction_ac	IntAct_interaction_ac.1	ClinVar.y	
+
