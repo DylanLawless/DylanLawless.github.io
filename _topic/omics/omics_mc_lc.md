@@ -35,12 +35,12 @@ Besides their identification, those metabolites and lipids can be quantified (no
 
 ## The Method
 
-Untargeted metabolite and lipid analysis is performed on a wide range of samples, from cells to biological fluids or tissues, with minimum sample handling and relatively easy protocols. Most commonly, we recommend an extraction with 80% methanol, but the protocols can be optimized to enhance the recovery of certain types of metabolites. For LC-MS analysis, the FGCZ has established two SOPs:
+Untargeted metabolite and lipid analysis is performed on a wide range of samples, from cells to biological fluids or tissues, with minimum sample handling and relatively easy protocols. Most commonly, FGCZ recommend an extraction with 80% methanol, but the protocols can be optimized to enhance the recovery of certain types of metabolites. For LC-MS analysis, the FGCZ has established two SOPs:
 
 1. One tailored for the global screening of polar metabolites
 2. The other for hydrophobic metabolites, mainly lipids
 
-We have two instrumentations in place for LC-MS metabolomics:
+FGCZ have two instrumentations in place for LC-MS metabolomics:
 
 - Q-TOF SYNAPT G2 HDMS (Waters)
 - Q-Exactive (Thermo)

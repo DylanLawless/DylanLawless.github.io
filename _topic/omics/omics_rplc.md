@@ -24,7 +24,13 @@ Lipid profiling aims to measure, in an unbiased fashion, as many compounds as po
 
 ## The Method
 
-C18 based RPLC. We have 3 different SOPs in place to cover the whole range of hydrophobicity. The results are semi-quantitative, providing relative differences between samples. Depending on the sample, we can identify between 1000 and 5000 lipid species on MS1 level and acquiring MS2 for several hundred most abundant ones. Reference standards covering the most important lipid classes are measured routinely as QC alongside.
+C18 based RPLC. 
+* FGCZ have 3 different SOPs in place to cover the whole range of hydrophobicity. 
+* The results are semi-quantitative, providing relative differences between samples. 
+* Depending on the sample, FGCZ can:
+	- identify between 1000 and 5000 lipid species on MS1 level
+	- and acquire MS2 for several hundred most abundant ones. 
+* Reference standards covering the most important lipid classes are measured routinely as QC alongside.
 
 ![image1](https://fgcz.ch/omics_areas/met/applications/gct_1-standard-metabolite-profiling2/_jcr_content/par/fullwidthimage/image.imageformat.1286.1933603290.png)
 ![image2](https://fgcz.ch/omics_areas/met/applications/gct_1-standard-metabolite-profiling2/_jcr_content/par/fullwidthimage_1727928184/image.imageformat.1286.663528636.png)
