@@ -297,13 +297,20 @@ pre {
 
 ul {
 	list-style-position: outside;
+	list-style-type: disc;
 	margin: 0;
 	padding-left: 1rem;
 }
 
+ul ul {
+	list-style-position: outside;
+	list-style-type: square;
+	/* list-style: circle inside; */
+}
+
 ol {
-  list-style-position: outside;
-  padding:1rem;
+	list-style-position: outside;
+	padding:1rem;
 }
 
 #header {
@@ -558,7 +565,7 @@ td{
 
 /* Table of contents */
 #markdown-toc ul {
-    list-style: decimal;
+    /* list-style: decimal; */
 	}
 
 #markdown-toc {
@@ -567,7 +574,7 @@ td{
 	padding-left: 2.5rem;
 	display: inline-block;
 	background: #eeeeee;
-	list-style: decimal;
+	/* list-style: decimal; */
 	}
 
 blockquote {

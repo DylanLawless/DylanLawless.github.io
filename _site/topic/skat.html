@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Sequence kernel association test (SKAT)</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time  26 minutes
+<h1 id="sequence-kernel-association-test-skat">Sequence kernel association test (SKAT)</h1>
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#why-use-skat-instead-of-glm" id="markdown-toc-why-use-skat-instead-of-glm">Why use SKAT instead of glm?</a></li>
+  <li>
+<a href="#kernel-functions-and-test-methods" id="markdown-toc-kernel-functions-and-test-methods">Kernel functions and test methods</a>    <ul>
+      <li><a href="#kernel-functions" id="markdown-toc-kernel-functions">Kernel Functions:</a></li>
+      <li><a href="#test-methods" id="markdown-toc-test-methods">Test Methods:</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#examples-of-skat-versus-glm" id="markdown-toc-examples-of-skat-versus-glm">Examples of SKAT versus GLM</a>    <ul>
+      <li><a href="#using-glm-function" id="markdown-toc-using-glm-function">Using glm function:</a></li>
+      <li><a href="#using-skat" id="markdown-toc-using-skat">Using SKAT:</a></li>
+    </ul>
+  </li>
+  <li><a href="#skat-is-for-joint-analysis" id="markdown-toc-skat-is-for-joint-analysis">SKAT is for joint analysis</a></li>
+  <li><a href="#interesting-details" id="markdown-toc-interesting-details">Interesting details</a></li>
+  <li>
+<a href="#skat-r-package-by-leelabsg" id="markdown-toc-skat-r-package-by-leelabsg">SKAT R-package by leelabsg</a>    <ul>
+      <li><a href="#main-functions-and-key-references" id="markdown-toc-main-functions-and-key-references">Main Functions and key references</a></li>
+      <li><a href="#link" id="markdown-toc-link">Link</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#skat-r-package-skat_logisticr" id="markdown-toc-skat-r-package-skat_logisticr">SKAT R-package: skat_logistic.R</a>    <ul>
+      <li><a href="#simplified-description" id="markdown-toc-simplified-description">Simplified description</a></li>
+      <li><a href="#description-with-full-variables" id="markdown-toc-description-with-full-variables">Description with full variables</a></li>
+      <li><a href="#original-code-skat_logisticr" id="markdown-toc-original-code-skat_logisticr">Original code: skat_logistic.R</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#skat-r-package-kernelr" id="markdown-toc-skat-r-package-kernelr">SKAT R-package: Kernel.R</a>    <ul>
+      <li><a href="#simplified-description-kernalr" id="markdown-toc-simplified-description-kernalr">Simplified description: Kernal.R</a></li>
+      <li><a href="#original-code-kernelr" id="markdown-toc-original-code-kernelr">Original code: Kernel.R</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#related-topics" id="markdown-toc-related-topics">Related topics</a>    <ul>
+      <li><a href="#other-statistics-topics" id="markdown-toc-other-statistics-topics">Other statistics topics</a></li>
+      <li><a href="#other-fundamental-topics" id="markdown-toc-other-fundamental-topics">Other fundamental topics</a></li>
+      <li><a href="#other-bayesian-topics" id="markdown-toc-other-bayesian-topics">Other Bayesian topics</a></li>
+      <li><a href="#other-joint-analysis-topics" id="markdown-toc-other-joint-analysis-topics">Other joint analysis topics</a></li>
+    </ul>
+  </li>
+  <li><a href="#odds-ratios-or-betas" id="markdown-toc-odds-ratios-or-betas">Odds ratios or betas</a></li>
+  <li><a href="#variants-used-in-test" id="markdown-toc-variants-used-in-test">Variants used in test</a></li>
+  <li><a href="#weighing-variants-based-on-deleteriousness" id="markdown-toc-weighing-variants-based-on-deleteriousness">Weighing variants based on deleteriousness</a></li>
+</ul>
+
+<p class="meta">21 Apr 2023 - last update</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The Sequence Kernel Association Test (SKAT) is a statistical method used to evaluate the association between a set of genetic variants and a phenotype, such as a disease status. This method is particularly useful for analyzing datasets containing a genotype matrix for a group of cases and controls, a phenotype file, and other covariate files. In simple terms, the SKAT method works by fitting a logistic regression model to the data, accounting for the phenotype, genotype, and other covariates. The model’s residuals and other intermediate values are then computed, and different test methods (e.g., “liu”, “liu.mod”, or “davies”) are applied based on the specific kernel function used. Finally, the method returns a list of test results, which provides insights into the association between the genetic variants and the phenotype.</p>
+
+<hr>
+<h2 id="why-use-skat-instead-of-glm">Why use SKAT instead of glm?</h2>
+
+<p>The glm (Generalized Linear Model) function in R is a more general statistical tool used to fit various types of linear models, such as logistic regression, Poisson regression, and others, depending on the chosen distribution family. The glm function can be applied to a wide range of problems, not just limited to genetic data analysis.</p>
+
+<p>In contrast, the Sequence Kernel Association Test (SKAT) method is specifically designed for genetic data analysis and aims to assess the joint effect of multiple genetic variants on a phenotype. While SKAT does utilize logistic regression (which can be performed using the glm function) as a part of its process, it goes beyond just fitting a single model. SKAT incorporates kernel functions and different test methods to evaluate the association between sets of genetic variants and phenotypes.</p>
+
+<p>In summary, the key difference between using the R glm function and the SKAT method is their scope and purpose. The glm function is a general-purpose tool for fitting linear models, while the SKAT method is a specialized approach for analyzing the association between genetic variants and phenotypes by leveraging kernel functions and test methods in addition to logistic regression.</p>
+
+<hr>
+<h2 id="kernel-functions-and-test-methods">Kernel functions and test methods</h2>
+
+<p>kernel functions and different test methods are essential components of the Sequence Kernel Association Test (SKAT) method, as they help to capture and quantify the association between sets of genetic variants and phenotypes.</p>
+
+<h3 id="kernel-functions">Kernel Functions:</h3>
+
+<p>A kernel function is a mathematical function that measures the similarity or association between two data points in a high-dimensional space. In the context of SKAT, kernel functions are used to compute the association between genetic variants, considering their joint effects on the phenotype. Some commonly used kernel functions in SKAT are:</p>
+
+<ol>
+  <li>Linear kernel: This kernel measures the linear relationship between genetic variants. It is the simplest form and is calculated as the dot product of the input data points.</li>
+  <li>Linear weighted kernel: Similar to the linear kernel, but it incorporates weights, allowing for the adjustment of the importance of each genetic variant in the analysis.</li>
+  <li>Other kernels: Depending on the study, researchers can also use other kernel functions, such as the polynomial, Gaussian (RBF), or exponential kernels, which might better capture the underlying relationships in the data.</li>
+</ol>
+
+<p>There is a brilliant explanation here: <a href="https://stats.stackexchange.com/questions/152897/how-to-intuitively-explain-what-a-kernel-is">https://stats.stackexchange.com/questions/152897/how-to-intuitively-explain-what-a-kernel-is</a></p>
+<blockquote>
+  <p>If we could find a higher dimensional space in which these points were linearly separable, then we could do the following:</p>
+  <ul>
+    <li>Map the original features to the higher, transformer space (feature mapping)</li>
+    <li>Perform linear SVM in this higher space</li>
+    <li>Obtain a set of weights corresponding to the decision boundary hyperplane</li>
+    <li>Map this hyperplane back into the original 2D space to obtain a non linear decision boundary</li>
+  </ul>
+</blockquote>
+
+<p><img src="/images/kernel_1.png" width="60%" style="display: block; margin: auto;"></p>
+
+<blockquote>
+  <p>Visualizing the feature map and the resulting boundary line</p>
+  <ul>
+    <li>Left-hand side plot shows the points plotted in the transformed space together with the SVM linear boundary hyperplane</li>
+    <li>Right-hand side plot shows the result in the original 2-D space</li>
+  </ul>
+</blockquote>
+
+<p><img src="/images/kernel_2.png" width="100%"></p>
+
+<h3 id="test-methods">Test Methods:</h3>
+
+<p>Test methods in SKAT are statistical approaches used to compute the p-values for the association between the sets of genetic variants and the phenotype. These p-values indicate the significance of the association. Some common test methods used in SKAT are:</p>
+
+<ol>
+  <li>Liu method: This method uses a moment-matching technique to approximate the null distribution of the test statistic. It is computationally efficient and provides accurate p-values for most scenarios.</li>
+  <li>Liu modified method (liu.mod): A modified version of the Liu method, which improves the accuracy of the p-value estimation in certain cases.</li>
+  <li>Davies method: This method computes the p-value using the characteristic function of the null distribution of the test statistic. While it can be more accurate than the Liu method, it is computationally more intensive and might not be suitable for large-scale datasets.</li>
+</ol>
+
+<p>In summary, kernel functions and test methods are integral parts of the SKAT method, helping to model the complex relationships between genetic variants and phenotypes and providing statistical significance measures for the associations.</p>
+
+<hr>
+<h2 id="examples-of-skat-versus-glm">Examples of SKAT versus GLM</h2>
+
+<p><em>NOTE: simplified code which will not run as-is.</em></p>
+
+<p>In this example, we will compare the use of the SKAT method with the glm function for a dataset consisting of a genotype matrix, phenotype file, and other covariates. For simplicity, we will assume that the dataset has already been loaded and processed into the appropriate format.</p>
+
+<h3 id="using-glm-function">Using glm function:</h3>
+
+<p>First, we will fit a logistic regression model for each genetic variant in the genotype matrix, adjusting for covariates, and compute a p-value for each variant.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Load the required libraries</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">glm</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Assume 'genotype_matrix', 'phenotype', and 'covariates' are already loaded and pre-processed</span><span class="w">
+
+</span><span class="c1"># Initialize a vector to store p-values for each genetic variant</span><span class="w">
+</span><span class="n">p_values</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">numeric</span><span class="p">(</span><span class="n">ncol</span><span class="p">(</span><span class="n">genotype_matrix</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># Fit a logistic regression model for each genetic variant and compute p-values</span><span class="w">
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">ncol</span><span class="p">(</span><span class="n">genotype_matrix</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">glm</span><span class="p">(</span><span class="n">phenotype</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">genotype_matrix</span><span class="p">[,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">covariates</span><span class="p">,</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"binomial"</span><span class="p">)</span><span class="w">
+  </span><span class="n">p_values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1"># Now 'p_values' contains the p-values for each genetic variant</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="using-skat">Using SKAT:</h3>
+
+<p>Next, we will use the SKAT method to assess the joint effect of multiple genetic variants on the phenotype, adjusting for covariates.</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Load the required libraries</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">SKAT</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Assume 'genotype_matrix', 'phenotype', and 'covariates' are already loaded and pre-processed</span><span class="w">
+
+</span><span class="c1"># Fit a SKAT logistic model for the genotype matrix, adjusting for covariates</span><span class="w">
+</span><span class="n">skat_result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">SKAT_Logistic</span><span class="p">(</span><span class="n">Z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">genotype_matrix</span><span class="p">,</span><span class="w"> 
+                             </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phenotype</span><span class="p">,</span><span class="w">
+                             </span><span class="n">X1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">covariates</span><span class="p">,</span><span class="w"> 
+                             </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"linear"</span><span class="p">,</span><span class="w">
+                             </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"liu"</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Extract the p-value for the association between genetic variants and phenotype</span><span class="w">
+</span><span class="n">skat_p_value</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">skat_result</span><span class="o">$</span><span class="n">p.value</span><span class="w">
+</span></code></pre></div></div>
+
+<p>In this example, the glm approach computes a p-value for each genetic variant individually, without considering their joint effects on the phenotype. On the other hand, the SKAT method evaluates the association between a set of genetic variants and the phenotype, taking into account their joint effects, which may provide more insights into the complex relationships between genetic variants and phenotypes.</p>
+
+<hr>
+<h2 id="skat-is-for-joint-analysis">SKAT is for joint analysis</h2>
+
+<p>SKAT does not analyze each variant independently and report a p-value for each variant like a single-variant analysis approach would. Instead, SKAT evaluates the joint effects of multiple genetic variants on the phenotype and reports a single p-value for the association between the set of genetic variants and the phenotype.</p>
+
+<p>SKAT is designed to detect the cumulative effects of multiple rare and common variants within a gene or a genomic region, which could be missed in single-variant analyses due to the low frequency or small effect size of individual variants. By testing the joint effects of multiple variants, SKAT can potentially identify associations that would be difficult to detect in a single-variant analysis.</p>
+
+<p>If you group variants by genes, SKAT will perform a joint analysis of all variants within each gene and report a gene-level p-value. This approach allows you to assess the combined effects of multiple genetic variants within a gene on the phenotype, which can be particularly helpful for identifying associations driven by rare and common variants with small individual effects that may not be detected in single-variant analyses.</p>
+
+<p>Adding a gene term to the glm model is not equivalent to a gene-level SKAT analysis. When you include a gene term in a glm model, you are assuming that all variants within the same gene have the same effect on the phenotype, which might not be the case, especially when considering complex traits or diseases.</p>
+
+<p>SKAT, on the other hand, takes into account the joint effects of multiple genetic variants within a gene on the phenotype, without assuming that all variants have the same effect. It assesses the association between a set of genetic variants and the phenotype by considering different weights for each variant (based on the kernel function) and their combined effects.</p>
+
+<p>Thus, while a glm model with a gene term can provide an overall assessment of the association between a gene and the phenotype, it does not account for the individual effects and potential interactions between variants within the gene. In contrast, SKAT’s gene-level analysis can provide a more comprehensive understanding of the combined effects of genetic variants within a gene on the phenotype.</p>
+
+<hr>
+<h2 id="interesting-details">Interesting details</h2>
+<p>We have covered the major concepts and applications of SKAT, but a statistics expert may be interested in considering the following additional technical details:</p>
+
+<ol>
+  <li>
+<strong>Choice of kernel function</strong>: The choice of kernel function can influence the results of SKAT. While the linear kernel is the default choice and widely used, other kernel functions like the “linear.weighted” kernel, which assigns weights to variants based on their minor allele frequency, can be more powerful in certain scenarios. Selecting an appropriate kernel function depends on the specific study and the underlying genetic architecture.</li>
+  <li>
+<strong>Rare variant analysis</strong>: SKAT is particularly useful for rare variant analysis, where traditional single-variant methods often lack power due to the low frequency of rare variants. By aggregating the effects of multiple rare variants within a gene or genomic region, SKAT can detect associations that may be missed by single-variant approaches.</li>
+  <li>
+<strong>Adjusting for population stratification</strong>: Like other genetic association tests, SKAT results can be confounded by population stratification. It is important to consider and adjust for potential population stratification by including principal components or other relevant covariates in the analysis to control for the confounding effects.</li>
+  <li>
+<strong>Multiple testing correction</strong>: When performing SKAT on multiple genes or genomic regions, it is essential to correct for multiple testing to control the false positive rate. Methods like Bonferroni correction, false discovery rate (FDR) control, or family-wise error rate (FWER) control can be used to account for multiple testing and adjust the p-values accordingly.</li>
+  <li>
+<strong>Gene-gene interactions and other extensions</strong>: While the standard implementation of SKAT tests for the joint effects of genetic variants within a single gene or genomic region, researchers may also be interested in exploring gene-gene interactions or more complex relationships between genetic variants and phenotypes.</li>
+  <li>
+<strong>Extensions of SKAT</strong>, like SKAT-O (Optimal) or other multivariate methods, can be used to analyze more complex models and relationships in genetic data.
+These technical details can be relevant for a statistics expert when designing, conducting, and interpreting the results of SKAT analyses in genetic studies.</li>
+</ol>
+
+<hr>
+<h2 id="skat-r-package-by-leelabsg">SKAT R-package by leelabsg</h2>
+<p>The following discussions are code are based on the github repo</p>
+<ul>
+  <li>
+<a href="https://github.com/leelabsg/SKAT">https://github.com/leelabsg/SKAT</a>
+While all the functions in the SKAT package have specific roles in various aspects of the analysis, here are some of the key functions that may be particularly important to note for the usage of SKAT:</li>
+</ul>
+
+<ol>
+  <li>
+<code class="language-plaintext highlighter-rouge">MAIN.R</code>: This file contains the main SKAT function for continuous phenotypes, SKAT(). It is the primary function for conducting SKAT on continuous outcomes.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">SKAT_Logistic.R</code>: We will discuss this in detail. This file contains the main function for binary phenotypes, SKAT.logistic(). It is the primary function for conducting SKAT on binary outcomes, such as case-control studies.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">SKAT_Optimal.R</code>: This file contains the implementation of the SKAT-O (Optimal) method, which is an extension of SKAT that adaptively combines the burden test and SKAT to achieve optimal power across a wider range of scenarios.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Null_Model.R</code>: This file contains the functions to fit the null model that is used as a reference in the association test. It is important because it provides the baseline model for the association tests and helps control for potential confounders.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">SSD.R</code>: This file contains functions related to the SSD (Sequence Kernel Association Test Set-based Single variant Data) format, which is a compact file format designed to store genotype and phenotype data for SKAT analyses. It is useful for handling large-scale genetic data efficiently.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Kernel.R</code>: We will discuss this in detail. This file contains functions to compute different kernel matrices for SKAT. The choice of kernel function can impact the test’s performance, and understanding the available kernel functions can help in selecting the appropriate one for a specific analysis.</li>
+</ol>
+
+<p>These functions are essential for various aspects of SKAT analysis, and users should be familiar with them to effectively use the SKAT package. However, depending on the specific needs of a study, other functions in the package might also be relevant.</p>
+
+<h3 id="main-functions-and-key-references">Main Functions and key references</h3>
+<p>Following are main functions and key references. For details, please refer the package <a href="https://cran.r-project.org/web/packages/SKAT/SKAT.pdf">manual</a> and <a href="https://cran.r-project.org/web/packages/SKAT/vignettes/SKAT.pdf">vignettes</a>.</p>
+
+<ol>
+  <li>SKAT function: Burden test, SKAT, and SKAT-O
+    <ul>
+      <li>Lee, S., Emond, M.J., …, and Lin, X. (2012). Optimal unified approach for rare variant association testing with application to small sample case-control whole-exome sequencing studies. <em>AJHG</em>, 91, 224-237.</li>
+      <li>Lee, S., Wu, M. and Lin, X. (2012). Optimal tests for rare variant effects in sequencing association studies. <em>Biostatistics</em>, 13, 762-775</li>
+      <li>Wu, M., Lee, S., Cai, T., Li, Y., Boehnke, M. and Lin, X. (2011). Rare Variant Association Testing for Sequencing Data Using the Sequence Kernel Association Test (SKAT). <em>AJHG</em>, 89, 82-93.</li>
+    </ul>
+  </li>
+  <li>Robust approaches functions for binary traits: SKATBinary_Robust and SKAT_CommonRare_Robust
+    <ul>
+      <li>Zhao, Z., Bi, W., Zhou, W., VanderHaar, P., Fritsche, L.G., Lee, S. (2020) UK Biobank Whole-Exome Sequence Binary Phenome Analysis with Robust Region-based Rare-Variant Test. <em>AJHG</em>, 2020, 3-12.</li>
+    </ul>
+  </li>
+  <li>SKATBinary function: Burden test, SKAT, and SKAT-O with efficient resampling for binary traits
+    <ul>
+      <li>Lee, S., Fuchsberger, C., Kim, S., Scott, L. (2016) An efficient resampling method for calibrating single and gene-based rare variant association analysis in case-control studies, <em>Biostatistics</em>, 17, 1-15.</li>
+    </ul>
+  </li>
+  <li>SKAT_CommonRare function: joint test for common and rare variants
+    <ul>
+      <li>Ionita-Laza, I., Lee, S., Makarov, V., Buxbaum, J. Lin, X. (2013). Sequence kernel association tests for the combined effect of rare and common variants. <em>AJHG</em>, 92, 841-853.</li>
+    </ul>
+  </li>
+  <li>SKAT_ChrX function: X-chromosome test
+    <ul>
+      <li>Ma, C., Boehnke, M., Lee, S. and the GoT2D investigators (2015) Evaluating the calibration and power of three gene-based association tests for the X chromosome, <em>Genetic Epidemiology</em>, 39, 499-508.</li>
+    </ul>
+  </li>
+  <li>SKAT_NULL_emmaX function: Kinship adjustment</li>
+  <li>SSD functions: plink binary file related functions</li>
+  <li>Power_Continuous, …: power calculation functions</li>
+</ol>
+
+<h3 id="link">Link</h3>
+<ul>
+  <li>SKAT CRAN: <a href="https://cran.r-project.org/web/packages/SKAT/index.html">Link</a>
+</li>
+  <li>SKAT google group: <a href="https://groups.google.com/forum/#!forum/skat_slee">Link</a>
+</li>
+  <li>Example dataset: <a href="https://github.com/leelabsg/SKAT/blob/master/vignettes/Example.zip">Link</a><br>
+The following description is based on one of the main SKAT functions - <code class="language-plaintext highlighter-rouge">SKAT_Logistic.R</code> which is most likely to be used.</li>
+</ul>
+
+<hr>
+<h2 id="skat-r-package-skat_logisticr">SKAT R-package: skat_logistic.R</h2>
+<p>The following discussions are code are based on the github repo</p>
+<ul>
+  <li>
+<a href="https://github.com/leelabsg/SKAT">https://github.com/leelabsg/SKAT</a>.</li>
+  <li><a href="https://github.com/leelabsg/SKAT/blob/master/R/skat_logistic.r">https://github.com/leelabsg/SKAT/blob/master/R/skat_logistic.r</a></li>
+</ul>
+
+<h3 id="simplified-description">Simplified description</h3>
+
+<ol>
+  <li>Function definition: <code class="language-plaintext highlighter-rouge">SKAT.logistic.Linear</code>:
+    <ul>
+      <li>Takes input parameters and calls appropriate functions based on conditions</li>
+    </ul>
+  </li>
+  <li>Function definition: <code class="language-plaintext highlighter-rouge">KMTest.logistic.Linear</code>:
+    <ul>
+      <li>Processes input based on kernel, weights, and correlation parameter</li>
+      <li>Computes test statistic <code class="language-plaintext highlighter-rouge">Q</code>
+</li>
+      <li>Computes resampling test statistic if required</li>
+      <li>Computes weight matrix</li>
+      <li>Calls the appropriate test method</li>
+      <li>Returns test results in a list</li>
+    </ul>
+  </li>
+  <li>Function definition: <code class="language-plaintext highlighter-rouge">SKAT.logistic.Other</code>:
+    <ul>
+      <li>Computes kernel matrix if not provided</li>
+      <li>Computes test statistic <code class="language-plaintext highlighter-rouge">Q</code>
+</li>
+      <li>Computes resampling test statistic if required</li>
+      <li>Computes weight matrix based on the method</li>
+      <li>Calls the appropriate test method</li>
+      <li>Returns test results in a list</li>
+    </ul>
+  </li>
+  <li>Main function definition: <code class="language-plaintext highlighter-rouge">SKAT.logistic</code>:
+    <ul>
+      <li>Fits a logistic regression model using <code class="language-plaintext highlighter-rouge">glm</code>
+</li>
+      <li>Computes residuals, probabilities, and other intermediate values</li>
+      <li>Calls appropriate functions based on conditions</li>
+      <li>Returns test results in a list</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="description-with-full-variables">Description with full variables</h3>
+
+<ol>
+  <li>Function definition: <code class="language-plaintext highlighter-rouge">SKAT.logistic.Linear</code>. The function takes the following input parameters:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">res</code>: Residuals</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">Z</code>: Genotype matrix</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">X1</code>: Covariate matrix</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">kernel</code>: Kernel function</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">weights</code>: Optional weights for kernel</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">pi_1</code>: Vector of probabilities</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">method</code>: Test method, e.g., “liu”, “liu.mod”, “davies”</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">res.out</code>: Residuals for resampling</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">n.Resampling</code>: Number of resampling iterations</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">r.corr</code>: Correlation parameter</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">IsMeta</code>: Boolean flag for MetaSKAT</li>
+    </ul>
+  </li>
+  <li>Check the conditions and call appropriate functions:
+    <ul>
+      <li>If <code class="language-plaintext highlighter-rouge">IsMeta</code> is TRUE, call the <code class="language-plaintext highlighter-rouge">SKAT_RunFrom_MetaSKAT</code> function</li>
+      <li>If the length of <code class="language-plaintext highlighter-rouge">r.corr</code> is 1, call the <code class="language-plaintext highlighter-rouge">KMTest.logistic.Linear function</code>
+</li>
+      <li>Otherwise, call the <code class="language-plaintext highlighter-rouge">SKAT_Optimal_Logistic</code> function</li>
+    </ul>
+  </li>
+  <li>Function definition: <code class="language-plaintext highlighter-rouge">KMTest.logistic.Linear</code>:
+    <ul>
+      <li>Similar input parameters as <code class="language-plaintext highlighter-rouge">SKAT.logistic.Linear</code>
+</li>
+      <li>Process the input based on the provided kernel, weights, and correlation parameter</li>
+      <li>Compute the test statistic <code class="language-plaintext highlighter-rouge">Q</code>
+</li>
+      <li>Compute the resampling test statistic <code class="language-plaintext highlighter-rouge">Q.res</code> if <code class="language-plaintext highlighter-rouge">n.Resampling</code> is greater than 0</li>
+      <li>Compute the weight matrix <code class="language-plaintext highlighter-rouge">W.1</code>
+</li>
+      <li>Call the appropriate test method: “liu”, “liu.mod”, or “davies”</li>
+      <li>Return the test results in a list</li>
+    </ul>
+  </li>
+  <li>Function definition: <code class="language-plaintext highlighter-rouge">SKAT.logistic.Other</code>:
+    <ul>
+      <li>Similar input parameters as <code class="language-plaintext highlighter-rouge">SKAT.logistic.Linear</code>
+</li>
+      <li>Compute the kernel matrix <code class="language-plaintext highlighter-rouge">K</code> if not provided</li>
+      <li>Compute the test statistic <code class="language-plaintext highlighter-rouge">Q</code>
+</li>
+      <li>Compute the resampling test statistic <code class="language-plaintext highlighter-rouge">Q.res</code> if <code class="language-plaintext highlighter-rouge">n.Resampling</code> is greater than 0</li>
+      <li>Compute the weight matrix <code class="language-plaintext highlighter-rouge">W</code> based on the method</li>
+      <li>Call the appropriate test method: “liu”, “liu.mod”, or “davies”</li>
+      <li>Return the test results in a list</li>
+    </ul>
+  </li>
+  <li>Main function definition: <code class="language-plaintext highlighter-rouge">SKAT.logistic</code>:
+    <ul>
+      <li>The function takes the following input parameters:
+        <ul>
+          <li>
+<code class="language-plaintext highlighter-rouge">Z</code>: Genotype matrix</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">y</code>: Phenotype vector</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">X1</code>: Covariate matrix</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">kernel</code>: Kernel function</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">weights</code>: Optional weights for kernel</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">method</code>: Test method, e.g., “liu”, “liu.mod”, “davies”</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">res.out</code>: Residuals for resampling</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">n.Resampling</code>: Number of resampling iterations</li>
+          <li>
+<code class="language-plaintext highlighter-rouge">r.corr</code>: Correlation parameter</li>
+        </ul>
+      </li>
+      <li>Fit a logistic regression model using the <code class="language-plaintext highlighter-rouge">glm</code> function</li>
+      <li>Compute residuals, probabilities, and other intermediate values</li>
+      <li>If method is “var.match”, call the <code class="language-plaintext highlighter-rouge">KMTest.logistic.Linear.VarMatching</code> function</li>
+      <li>If the kernel is “linear” or “linear.weighted” and the number of samples is greater than the number of variables, call the <code class="language-plaintext highlighter-rouge">SKAT.logistic.Linear</code> function</li>
+      <li>Otherwise, call the <code class="language-plaintext highlighter-rouge">SKAT.logistic.Other</code> function</li>
+      <li>Return the test results in a list</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="original-code-skat_logisticr">Original code: skat_logistic.R</h3>
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="n">SKAT.logistic.Linear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="n">res.out</span><span class="p">,</span><span class="n">n.Resampling</span><span class="p">,</span><span class="n">r.corr</span><span class="p">,</span><span class="w"> </span><span class="n">IsMeta</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">){</span><span class="w">
+
+	
+	</span><span class="k">if</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">r.corr</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nf">dim</span><span class="p">(</span><span class="n">Z</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">){</span><span class="w">
+		</span><span class="n">r.corr</span><span class="o">=</span><span class="m">0</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+
+	</span><span class="k">if</span><span class="p">(</span><span class="n">IsMeta</span><span class="p">){</span><span class="w">
+	
+		</span><span class="n">re</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SKAT_RunFrom_MetaSKAT</span><span class="p">(</span><span class="n">res</span><span class="o">=</span><span class="n">res</span><span class="p">,</span><span class="n">Z</span><span class="o">=</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">X1</span><span class="o">=</span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="o">=</span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="o">=</span><span class="n">pi_1</span><span class="w">
+		</span><span class="p">,</span><span class="w"> </span><span class="n">out_type</span><span class="o">=</span><span class="s2">"D"</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">res.out</span><span class="o">=</span><span class="n">res.out</span><span class="p">,</span><span class="w"> </span><span class="n">n.Resampling</span><span class="o">=</span><span class="n">n.Resampling</span><span class="p">,</span><span class="w"> </span><span class="n">r.corr</span><span class="o">=</span><span class="n">r.corr</span><span class="p">)</span><span class="w">
+	
+	</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">r.corr</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">){</span><span class="w">
+
+		</span><span class="n">re</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KMTest.logistic.Linear</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w">
+		</span><span class="p">,</span><span class="w"> </span><span class="n">res.out</span><span class="p">,</span><span class="w"> </span><span class="n">n.Resampling</span><span class="p">,</span><span class="w"> </span><span class="n">r.corr</span><span class="p">)</span><span class="w">
+
+	</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+		
+		</span><span class="n">re</span><span class="w"> </span><span class="o">=</span><span class="n">SKAT_Optimal_Logistic</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w">
+		</span><span class="p">,</span><span class="w"> </span><span class="n">res.out</span><span class="p">,</span><span class="w"> </span><span class="n">n.Resampling</span><span class="p">,</span><span class="w"> </span><span class="n">r.corr</span><span class="p">)</span><span class="w">
+
+	</span><span class="p">}</span><span class="w">
+
+	</span><span class="nf">return</span><span class="p">(</span><span class="n">re</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1">#</span><span class="w">
+</span><span class="c1">#	Modified by Seunggeun Lee - Ver 0.1</span><span class="w">
+</span><span class="c1">#</span><span class="w">
+
+</span><span class="n">KMTest.logistic.Linear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="n">res.out</span><span class="p">,</span><span class="n">n.Resampling</span><span class="p">,</span><span class="n">r.corr</span><span class="p">){</span><span class="w">
+
+  </span><span class="c1"># Weighted Linear Kernel </span><span class="w">
+  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"linear.weighted"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">Z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">weights</span><span class="p">))</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="c1"># r.corr</span><span class="w">
+  </span><span class="k">if</span><span class="p">(</span><span class="n">r.corr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">){</span><span class="w">
+  	</span><span class="n">Z</span><span class="o">&lt;-</span><span class="n">cbind</span><span class="p">(</span><span class="n">rowSums</span><span class="p">(</span><span class="n">Z</span><span class="p">))</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">r.corr</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">){</span><span class="w">
+
+   	</span><span class="n">p.m</span><span class="o">&lt;-</span><span class="nf">dim</span><span class="p">(</span><span class="n">Z</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span><span class="w">	
+	</span><span class="n">R.M</span><span class="o">&lt;-</span><span class="n">diag</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">r.corr</span><span class="p">,</span><span class="n">p.m</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="n">r.corr</span><span class="p">,</span><span class="n">p.m</span><span class="o">*</span><span class="n">p.m</span><span class="p">),</span><span class="n">ncol</span><span class="o">=</span><span class="n">p.m</span><span class="p">)</span><span class="w">
+	</span><span class="n">L</span><span class="o">&lt;-</span><span class="n">chol</span><span class="p">(</span><span class="n">R.M</span><span class="p">,</span><span class="n">pivot</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+	</span><span class="n">Z</span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Z</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="w"> 
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="c1"># Get temp</span><span class="w">
+  </span><span class="n">Q.Temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="o">%*%</span><span class="n">Z</span><span class="w">
+  </span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Q.Temp</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">Q.Temp</span><span class="p">)</span><span class="o">/</span><span class="m">2</span><span class="w">
+
+  </span><span class="n">Q.res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="w">
+  </span><span class="k">if</span><span class="p">(</span><span class="n">n.Resampling</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">){</span><span class="w">
+  	</span><span class="n">Q.Temp.res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">res.out</span><span class="p">)</span><span class="o">%*%</span><span class="n">Z</span><span class="w">
+  	</span><span class="n">Q.res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rowSums</span><span class="p">(</span><span class="n">rbind</span><span class="p">(</span><span class="n">Q.Temp.res</span><span class="o">^</span><span class="m">2</span><span class="p">))</span><span class="o">/</span><span class="m">2</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="c1">#gg = X1%*%solve(t(X1)%*%(X1 * pi_1))%*%t(X1 * pi_1)  ### Just a holder... not all that useful by itself</span><span class="w">
+  </span><span class="c1">#P0 = D-(gg * pi_1)      ### This is the P0 or P in Zhang and Lin</span><span class="w">
+  </span><span class="c1"># P0 = D-D%*%gg  </span><span class="w">
+  </span><span class="c1"># P0 = D- D%*%X1%*%solve(t(X1)%*%(X1 * pi_1))%*%t(X1) %*% D</span><span class="w">
+
+  </span><span class="c1">#W = P0%*%K</span><span class="w">
+  </span><span class="c1">#W = K * pi_1 - (X1 *pi_1) %*%solve(t(X1)%*%(X1 * pi_1))%*% ( t(X1 * pi_1) %*% K) </span><span class="w">
+  </span><span class="c1">#muq  = sum(diag(W))/2   # this is the same as e-tilde</span><span class="w">
+
+  </span><span class="c1"># tr(W W) = tr(P0 K P0 K ) = tr ( Z^T P0 Z Z^T P0 Z ) = tr( P0 Z Z^T P0 Z Z^T )</span><span class="w">
+  </span><span class="c1"># tr(P0 K P0)</span><span class="w">
+  </span><span class="c1"># tr(A B) = tr(A * t(B))</span><span class="w">
+  
+  </span><span class="n">W.1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="p">(</span><span class="n">Z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="n">X1</span><span class="p">)</span><span class="o">%*%</span><span class="n">solve</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span><span class="o">%*%</span><span class="p">(</span><span class="n">X1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">))</span><span class="o">%*%</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="p">(</span><span class="n">Z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">))</span><span class="w"> </span><span class="c1"># t(Z) P0 Z</span><span class="w">
+
+
+  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"liu"</span><span class="w"> </span><span class="p">){</span><span class="w">
+	</span><span class="n">out</span><span class="o">&lt;-</span><span class="n">Get_Liu_PVal</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">W.1</span><span class="p">,</span><span class="w"> </span><span class="n">Q.res</span><span class="p">)</span><span class="w">    
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"liu.mod"</span><span class="w"> </span><span class="p">){</span><span class="w">
+	</span><span class="n">out</span><span class="o">&lt;-</span><span class="n">Get_Liu_PVal.MOD</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">W.1</span><span class="p">,</span><span class="w"> </span><span class="n">Q.res</span><span class="p">)</span><span class="w">    
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"davies"</span><span class="w"> </span><span class="p">){</span><span class="w">
+	</span><span class="n">out</span><span class="o">&lt;-</span><span class="n">Get_Davies_PVal</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">W.1</span><span class="p">,</span><span class="w"> </span><span class="n">Q.res</span><span class="p">)</span><span class="w">    
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">stop</span><span class="p">(</span><span class="s2">"Invalid Method!"</span><span class="p">)</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+
+  </span><span class="n">re</span><span class="o">&lt;-</span><span class="nf">list</span><span class="p">(</span><span class="n">p.value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="o">$</span><span class="n">p.value</span><span class="p">,</span><span class="w"> </span><span class="n">p.value.resampling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="o">$</span><span class="n">p.value.resampling</span><span class="p">,</span><span class="w"> </span><span class="n">Test.Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Q</span><span class="p">,</span><span class="w">  </span><span class="n">Q.resampling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Q.res</span><span class="p">,</span><span class="w"> </span><span class="n">param</span><span class="o">=</span><span class="n">out</span><span class="o">$</span><span class="n">param</span><span class="w"> </span><span class="p">)</span><span class="w">  
+  </span><span class="nf">return</span><span class="p">(</span><span class="n">re</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+
+</span><span class="n">SKAT.logistic.Other</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="n">res.out</span><span class="p">,</span><span class="n">n.Resampling</span><span class="p">){</span><span class="w">
+  
+  </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"> 
+  </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ncol</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w">   
+  
+  </span><span class="c1"># If m &gt;&gt; p and ( linear or linear.weight) kernel than call </span><span class="w">
+  </span><span class="c1"># Linear function</span><span class="w">
+
+  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Check_Class</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="s2">"matrix"</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kernel</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lskmTest.GetKernel</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+
+  </span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="o">%*%</span><span class="n">K</span><span class="o">%*%</span><span class="n">res</span><span class="o">/</span><span class="m">2</span><span class="w">
+  </span><span class="n">Q.res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="w">
+  </span><span class="k">if</span><span class="p">(</span><span class="n">n.Resampling</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">){</span><span class="w">
+	</span><span class="n">Q.res</span><span class="o">&lt;-</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">n.Resampling</span><span class="p">)</span><span class="w">
+	</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n.Resampling</span><span class="p">){</span><span class="w">
+  		</span><span class="n">Q.res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">res.out</span><span class="p">[,</span><span class="n">i</span><span class="p">])</span><span class="o">%*%</span><span class="n">K</span><span class="o">%*%</span><span class="n">res.out</span><span class="p">[,</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="m">2</span><span class="w">
+  	</span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="n">D</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">diag</span><span class="p">(</span><span class="n">pi_1</span><span class="p">)</span><span class="w">   
+  </span><span class="n">gg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X1</span><span class="o">%*%</span><span class="n">solve</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span><span class="o">%*%</span><span class="p">(</span><span class="n">X1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">))</span><span class="o">%*%</span><span class="n">t</span><span class="p">(</span><span class="n">X1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">)</span><span class="w">  </span><span class="c1">### Just a holder... not all that useful by itself</span><span class="w">
+  </span><span class="n">P0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="o">-</span><span class="p">(</span><span class="n">gg</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">)</span><span class="w">      </span><span class="c1">### This is the P0 or P in Zhang and Lin</span><span class="w">
+  </span><span class="c1"># P0 = D-D%*%gg  </span><span class="w">
+
+  </span><span class="k">if</span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"davies"</span><span class="p">){</span><span class="w">
+  	</span><span class="n">P0_half</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get_Matrix_Square.1</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="w">
+	</span><span class="c1">#print(dim(P0_half))</span><span class="w">
+	</span><span class="n">W1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">P0_half</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">P0_half</span><span class="p">)</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="c1">#W    = P0%*%K</span><span class="w">
+  	</span><span class="n">W</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">X1</span><span class="w"> </span><span class="o">*</span><span class="n">pi_1</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="n">solve</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span><span class="o">%*%</span><span class="p">(</span><span class="n">X1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">))</span><span class="o">%*%</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">t</span><span class="p">(</span><span class="n">X1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi_1</span><span class="p">)</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="n">K</span><span class="p">)</span><span class="w"> 
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"liu"</span><span class="w"> </span><span class="p">){</span><span class="w">
+	</span><span class="n">out</span><span class="o">&lt;-</span><span class="n">Get_Liu_PVal</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">,</span><span class="w"> </span><span class="n">Q.res</span><span class="p">)</span><span class="w">    
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"liu.mod"</span><span class="w"> </span><span class="p">){</span><span class="w">
+	</span><span class="n">out</span><span class="o">&lt;-</span><span class="n">Get_Liu_PVal.MOD</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">,</span><span class="w"> </span><span class="n">Q.res</span><span class="p">)</span><span class="w">   
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"davies"</span><span class="w"> </span><span class="p">){</span><span class="w">
+	</span><span class="n">out</span><span class="o">&lt;-</span><span class="n">Get_Davies_PVal</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">W1</span><span class="p">,</span><span class="w"> </span><span class="n">Q.res</span><span class="p">)</span><span class="w">    
+  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+	</span><span class="n">stop</span><span class="p">(</span><span class="s2">"Invalid Method!"</span><span class="p">)</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  
+  </span><span class="n">re</span><span class="o">&lt;-</span><span class="nf">list</span><span class="p">(</span><span class="n">p.value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="o">$</span><span class="n">p.value</span><span class="p">,</span><span class="w"> </span><span class="n">p.value.resampling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">out</span><span class="o">$</span><span class="n">p.value.resampling</span><span class="p">,</span><span class="w"> </span><span class="n">Test.Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Q</span><span class="p">,</span><span class="w"> </span><span class="n">param</span><span class="o">=</span><span class="n">out</span><span class="o">$</span><span class="n">param</span><span class="w"> </span><span class="p">)</span><span class="w">  
+  </span><span class="nf">return</span><span class="p">(</span><span class="n">re</span><span class="p">)</span><span class="w">
+ 
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1">#</span><span class="w">
+</span><span class="c1">#	Modified by Seunggeun Lee - Ver 0.3</span><span class="w">
+</span><span class="c1"># 	method : satterth, liu</span><span class="w">
+
+</span><span class="n">SKAT.logistic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"linear"</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="s2">"liu"</span><span class="w">
+</span><span class="p">,</span><span class="w"> </span><span class="n">res.out</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">n.Resampling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">r.corr</span><span class="o">=</span><span class="n">r.corr</span><span class="p">){</span><span class="w">
+
+
+	</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"> 
+	</span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ncol</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w"> 
+
+	</span><span class="n">glmfit</span><span class="o">=</span><span class="w"> </span><span class="n">glm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">X1</span><span class="w"> </span><span class="m">-1</span><span class="p">,</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"binomial"</span><span class="p">)</span><span class="w">
+ 	</span><span class="n">betas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glmfit</span><span class="o">$</span><span class="n">coef</span><span class="w">
+  	</span><span class="n">mu</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">glmfit</span><span class="o">$</span><span class="n">fitted.values</span><span class="w">
+  	</span><span class="n">eta</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">glmfit</span><span class="o">$</span><span class="n">linear.predictors</span><span class="w">
+
+	</span><span class="n">mu</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">glmfit</span><span class="o">$</span><span class="n">fitted.values</span><span class="w">  
+	</span><span class="n">pi_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="w">
+  	</span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="o">-</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">eta</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">+</span><span class="nf">exp</span><span class="p">(</span><span class="n">eta</span><span class="p">))</span><span class="w">
+
+	</span><span class="k">if</span><span class="p">(</span><span class="n">method</span><span class="o">==</span><span class="s2">"var.match"</span><span class="p">){</span><span class="w">
+		</span><span class="n">re</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KMTest.logistic.Linear.VarMatching</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="n">res.out</span><span class="p">,</span><span class="n">n.Resampling</span><span class="p">,</span><span class="n">r.corr</span><span class="p">,</span><span class="w"> </span><span class="n">mu</span><span class="p">)</span><span class="w">
+		</span><span class="nf">return</span><span class="p">(</span><span class="n">re</span><span class="p">)</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+
+	</span><span class="c1"># If m &gt;&gt; p and ( linear or linear.weight) kernel than call </span><span class="w">
+	</span><span class="c1"># Linear function</span><span class="w">
+	</span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="s2">"linear"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"linear.weighted"</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">){</span><span class="w">
+		</span><span class="n">re</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SKAT.logistic.Linear</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="p">,</span><span class="n">method</span><span class="p">,</span><span class="n">res.out</span><span class="p">,</span><span class="n">n.Resampling</span><span class="p">,</span><span class="n">r.corr</span><span class="o">=</span><span class="n">r.corr</span><span class="p">)</span><span class="w">
+	</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  
+		</span><span class="n">re</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SKAT.logistic.Other</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">X1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="p">,</span><span class="w"> </span><span class="n">pi_1</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="n">res.out</span><span class="p">,</span><span class="n">n.Resampling</span><span class="p">)</span><span class="w">  
+	</span><span class="p">}</span><span class="w">
+
+	</span><span class="nf">return</span><span class="p">(</span><span class="n">re</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<hr>
+<h2 id="skat-r-package-kernelr">SKAT R-package: Kernel.R</h2>
+<p>The following discussions are code are based on the github repo</p>
+<ul>
+  <li>
+<a href="https://github.com/leelabsg/SKAT">https://github.com/leelabsg/SKAT</a>.</li>
+  <li><a href="https://github.com/leelabsg/SKAT/blob/master/R/Kernel.R">https://github.com/leelabsg/SKAT/blob/master/R/Kernel.R</a></li>
+</ul>
+
+<h3 id="simplified-description-kernalr">Simplified description: Kernal.R</h3>
+
+<ol>
+  <li>Define helper function <code class="language-plaintext highlighter-rouge">K1_Help</code> for 2-way interaction kernel</li>
+  <li>Define function <code class="language-plaintext highlighter-rouge">call_Kernel_IBS</code> to calculate Identity-By-State (IBS) kernel</li>
+  <li>Define function <code class="language-plaintext highlighter-rouge">call_Kernel_IBS_Weight</code> to calculate weighted IBS kernel</li>
+  <li>Define function <code class="language-plaintext highlighter-rouge">call_Kernel_2wayIX</code> to calculate 2-way interaction kernel</li>
+  <li>Define main function <code class="language-plaintext highlighter-rouge">lskmTest.GetKernel</code> to calculate kernel matrix based on specified kernel type:
+    <ol>
+      <li>If kernel is “quadratic”, compute quadratic kernel matrix</li>
+      <li>If kernel is “IBS”, compute IBS kernel matrix using <code class="language-plaintext highlighter-rouge">call_Kernel_IBS</code>
+</li>
+      <li>If kernel is “IBS.weighted”, compute weighted IBS kernel matrix using <code class="language-plaintext highlighter-rouge">call_Kernel_IBS_Weight</code>
+</li>
+      <li>If kernel is “2wayIX”, compute 2-way interaction kernel matrix using <code class="language-plaintext highlighter-rouge">call_Kernel_2wayIX</code>
+</li>
+      <li>If kernel is “IBS.weighted_OLD”, compute weighted IBS kernel matrix using an older method</li>
+      <li>If kernel is “IBS_OLD”, compute IBS kernel matrix using an older method</li>
+      <li>If kernel is “2wayIX_OLD”, compute 2-way interaction kernel matrix using an older method</li>
+    </ol>
+  </li>
+  <li>Return the computed kernel matrix</li>
+</ol>
+
+<h3 id="original-code-kernelr">Original code: Kernel.R</h3>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="n">K1_Help</span><span class="o">=</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">){</span><span class="w">
+  </span><span class="c1"># Helper function for 2 way interaction kernel</span><span class="w">
+  </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="w">
+  </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">cumsum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w">
+  </span><span class="nf">return</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="o">-</span><span class="n">p</span><span class="p">]))</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">call_Kernel_IBS</span><span class="o">&lt;-</span><span class="k">function</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">){</span><span class="w">
+
+	</span><span class="c1">#Kernel_IBS(double * Z, int * pn, int * pp, double * Kernel)</span><span class="w">
+	</span><span class="n">K</span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="p">),</span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">	
+	</span><span class="n">temp</span><span class="o">&lt;-</span><span class="n">.C</span><span class="p">(</span><span class="s2">"Kernel_IBS"</span><span class="p">,</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">as.vector</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">))),</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">as.integer</span><span class="p">(</span><span class="n">p</span><span class="p">),</span><span class="nf">as.double</span><span class="p">(</span><span class="n">as.vector</span><span class="p">(</span><span class="n">K</span><span class="p">)))[[</span><span class="m">4</span><span class="p">]]</span><span class="w">
+	</span><span class="n">matrix</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">nrow</span><span class="o">=</span><span class="n">n</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">call_Kernel_IBS_Weight</span><span class="o">&lt;-</span><span class="k">function</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">weights</span><span class="p">){</span><span class="w">
+
+	</span><span class="c1">#Kernel_IBS_Weight(int * Z, int * pn, int * pp, int *UseGivenWeight ,  double * weight, double * Kernel)</span><span class="w">
+	</span><span class="n">given_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w">
+	</span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="nf">is.null</span><span class="p">(</span><span class="n">weights</span><span class="p">)){</span><span class="w">
+		</span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">p</span><span class="p">);</span><span class="w">
+		</span><span class="n">given_weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w">
+	</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="c1"># change!!</span><span class="w">
+		</span><span class="n">weights</span><span class="o">&lt;-</span><span class="n">weights</span><span class="o">^</span><span class="m">2</span><span class="p">;</span><span class="w">
+	</span><span class="p">}</span><span class="w">
+	</span><span class="n">K</span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="p">),</span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">	
+	</span><span class="n">temp</span><span class="o">&lt;-</span><span class="n">.C</span><span class="p">(</span><span class="s2">"Kernel_IBS_Weight"</span><span class="p">,</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">as.vector</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">))),</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">as.integer</span><span class="p">(</span><span class="n">p</span><span class="p">),</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">given_weight</span><span class="p">),</span><span class="w">
+	</span><span class="nf">as.double</span><span class="p">(</span><span class="n">weights</span><span class="p">),</span><span class="nf">as.double</span><span class="p">(</span><span class="n">as.vector</span><span class="p">(</span><span class="n">K</span><span class="p">)))[[</span><span class="m">6</span><span class="p">]]</span><span class="w">
+	</span><span class="n">matrix</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">nrow</span><span class="o">=</span><span class="n">n</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">call_Kernel_2wayIX</span><span class="o">&lt;-</span><span class="k">function</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">){</span><span class="w">
+
+	</span><span class="c1">#Kernel_IBS(double * Z, int * pn, int * pp, double * Kernel)</span><span class="w">
+	</span><span class="n">K</span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="p">),</span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">	
+	</span><span class="n">temp</span><span class="o">&lt;-</span><span class="n">.C</span><span class="p">(</span><span class="s2">"Kernel_2wayIX"</span><span class="p">,</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">as.vector</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">))),</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">as.integer</span><span class="p">(</span><span class="n">p</span><span class="p">),</span><span class="nf">as.double</span><span class="p">(</span><span class="n">as.vector</span><span class="p">(</span><span class="n">K</span><span class="p">)))[[</span><span class="m">4</span><span class="p">]]</span><span class="w">
+	</span><span class="n">matrix</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">nrow</span><span class="o">=</span><span class="n">n</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">lskmTest.GetKernel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">kernel</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">){</span><span class="w">
+
+    	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"quadratic"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      		</span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Z</span><span class="o">%*%</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="m">+1</span><span class="p">)</span><span class="o">**</span><span class="m">2</span><span class="w">
+    	</span><span class="p">}</span><span class="w">
+
+
+	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"IBS"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      		</span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">call_Kernel_IBS</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="w">
+    	</span><span class="p">}</span><span class="w">
+    	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"IBS.weighted"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+      		</span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">call_Kernel_IBS_Weight</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">weights</span><span class="p">)</span><span class="w">
+    	</span><span class="p">}</span><span class="w">
+  	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"2wayIX"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      		</span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">call_Kernel_2wayIX</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="w">
+    	</span><span class="p">}</span><span class="w">  
+   	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"IBS.weighted_OLD"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      		</span><span class="c1">#K = matrix(nrow = n, ncol = n)</span><span class="w">
+      		</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">is.null</span><span class="p">(</span><span class="n">weights</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+        		</span><span class="n">qs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="p">)</span><span class="w">
+        		</span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">qs</span><span class="p">)</span><span class="w">
+      		</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="n">weights</span><span class="o">&lt;-</span><span class="n">weights</span><span class="o">^</span><span class="m">2</span><span class="w">
+		</span><span class="p">}</span><span class="w">
+      		</span><span class="n">K1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">
+      		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        		</span><span class="n">K1</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">-</span><span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">,])</span><span class="o">*</span><span class="n">weights</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">)</span><span class="w">
+      		</span><span class="p">}</span><span class="w">
+      		</span><span class="n">K</span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">-</span><span class="p">(</span><span class="n">K1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="nf">sum</span><span class="p">(</span><span class="n">weights</span><span class="p">))</span><span class="w">
+    	</span><span class="p">}</span><span class="w">
+
+    	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"IBS_OLD"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      		</span><span class="n">K1</span><span class="o">=</span><span class="n">matrix</span><span class="p">(</span><span class="n">nrow</span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="n">ncol</span><span class="o">=</span><span class="n">n</span><span class="p">)</span><span class="w">
+      		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        		</span><span class="n">K1</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="o">-</span><span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">,]),</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">)</span><span class="w">
+      		</span><span class="p">}</span><span class="w">
+      		</span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">m</span><span class="o">-</span><span class="n">K1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="w">
+    	</span><span class="p">}</span><span class="w">
+   	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"2wayIX_OLD"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      		</span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">+</span><span class="n">Z</span><span class="o">%*%</span><span class="n">t</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span><span class="w">
+      		</span><span class="n">N1</span><span class="o">=</span><span class="w">  </span><span class="n">matrix</span><span class="p">(</span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">
+      		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">){</span><span class="w">
+        		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">i</span><span class="o">:</span><span class="n">n</span><span class="p">){</span><span class="w">
+	    			</span><span class="n">N1</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K1_Help</span><span class="p">(</span><span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">,],</span><span class="w"> </span><span class="n">Z</span><span class="p">[</span><span class="n">j</span><span class="p">,])</span><span class="w">
+	  		</span><span class="p">}</span><span class="w">
+      		</span><span class="p">}</span><span class="w">
+      		</span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">K</span><span class="o">+</span><span class="n">N1</span><span class="w">
+    	</span><span class="p">}</span><span class="w">
+	</span><span class="nf">return</span><span class="p">(</span><span class="n">K</span><span class="p">)</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1">#.First.lib &lt;- function(lib, pkg) { library.dynam('SKAT', pkg, lib) } </span><span class="w">
+
+</span></code></pre></div></div>
+
+<hr>
+<h2 id="related-topics">Related topics</h2>
+<h3 id="other-statistics-topics">Other statistics topics</h3>
+<p>The methods used in SKAT have their roots in more general statistical protocols. 
+The foundation of SKAT lies in kernel machine regression, which is a versatile and powerful statistical method that can be applied to various fields outside genetics. 
+Kernel methods are a class of algorithms for pattern analysis and are particularly useful for capturing complex, non-linear relationships in data.</p>
+
+<p>Some of the background concepts that contribute to the development of kernel methods and, by extension, SKAT, include:</p>
+
+<ol>
+  <li>
+<strong>Regression analysis</strong>: A fundamental concept in statistics, regression analysis is used to model and analyze relationships between variables. Linear regression is a simple, widely-used form of regression analysis that models the relationship between a dependent variable and one or more independent variables.</li>
+  <li>
+<strong>Generalized linear models (GLMs)</strong>: GLMs are a class of flexible regression models that extend linear regression by allowing the dependent variable to follow a distribution other than the normal distribution. This flexibility makes GLMs particularly useful for analyzing different types of data, including binary, count, and continuous data.</li>
+  <li>
+<strong>Kernel functions</strong>: Kernel functions play a crucial role in kernel methods. They are used to map data from an original lower-dimensional space to a higher-dimensional space, which often reveals complex relationships that are not apparent in the original space. Common kernel functions include the linear, polynomial, radial basis function (RBF), and sigmoid kernels.</li>
+  <li>
+<strong>Support Vector Machines (SVMs)</strong>: SVMs are a class of supervised learning models that have been widely applied in classification and regression tasks. They use kernel functions to transform input data into a higher-dimensional space and find the optimal decision boundary (hyperplane) to separate different classes or predict the target variable.</li>
+  <li>
+<strong>Regularization techniques</strong>: Regularization techniques, such as ridge regression and LASSO, are used to prevent overfitting in regression models by adding a penalty term to the model’s loss function. Regularization helps to constrain the model complexity and make it more generalizable to unseen data.</li>
+</ol>
+
+<p>These general statistical concepts, along with the specific needs and challenges of genetic association studies, have shaped the development of the Sequence Kernel Association Test (SKAT) and made it a powerful and flexible tool for analyzing rare variant associations in genetic data.</p>
+
+<h3 id="other-fundamental-topics">Other fundamental topics</h3>
+<p>There are several fundamental statistical and mathematical concepts that underlie the development of kernel methods and their applications, including SKAT. 
+Some of these foundational concepts include:</p>
+
+<p><strong>Probability theory</strong>: Probability theory is a branch of mathematics that deals with the analysis of random phenomena. It provides the basis for understanding and modeling uncertainty in data and is a fundamental concept in statistical analysis.
+<strong>Bayesian statistics</strong>: Bayesian statistics is an approach to statistical inference that incorporates prior knowledge about the parameters of interest. It relies on Bayes’ theorem to update the probabilities of different hypotheses as new data is observed. Bayesian methods have been influential in the development of many machine learning algorithms, including kernel methods.
+<strong>Linear algebra</strong>: Linear algebra deals with vector spaces and linear mappings between them. It provides the foundation for understanding and manipulating high-dimensional data, which is often required in kernel methods.
+<strong>Optimization</strong>: Optimization is the process of finding the best solution to a problem, often by minimizing or maximizing a particular function. Many machine learning algorithms, including kernel methods, rely on optimization techniques to find the best model parameters given the observed data.
+<strong>Matrix factorization and decomposition</strong>: Techniques such as singular value decomposition (SVD) and eigenvalue decomposition play a crucial role in dimensionality reduction, a common preprocessing step in machine learning and data analysis. These techniques help to reveal the underlying structure in data and can improve the performance of kernel methods.
+<strong>Functional analysis</strong>: Functional analysis is a branch of mathematics that deals with the study of spaces of functions and the operators acting upon them. It provides the theoretical basis for understanding the behavior of kernel functions and their properties, which is critical for the development and application of kernel methods.
+These foundational concepts have shaped the development of kernel methods and their applications in various fields, including genetics, where they have been adapted and extended to address specific challenges in the analysis of rare variant associations.</p>
+
+<h3 id="other-bayesian-topics">Other Bayesian topics</h3>
+<p>Bayesian statistics has interesting opportunities - but note SKAT itself is not directly based on this. 
+Instead, it is a frequentist method that uses kernel machine regression models to perform gene-based tests for the association between genetic variants and a phenotype of interest. 
+The method relies on combining variant-level information by constructing a kernel matrix representing the similarity between individuals and then using a variance component score test to evaluate the association.</p>
+
+<p>Bayesian statistics was mentioned as part of the general background for kernel methods, but it is not a direct component of SKAT. 
+However, Bayesian statistical methods have been applied to other gene-based tests and genetic association studies. 
+These methods can incorporate prior knowledge and model complex structures in the data, but they are not specifically used in the context of SKAT.</p>
+
+<p>it is possible to develop a Bayesian counterpart to the SKAT method. While SKAT itself is based on frequentist statistics, the underlying idea of aggregating variant-level information and testing the association between genetic variants and a phenotype can be adapted to a Bayesian framework.</p>
+
+<p>To do so, you would need to:</p>
+
+<ol>
+  <li>Define a Bayesian hierarchical model for the genetic data, which includes specifying prior distributions for the model parameters (e.g., effect sizes, variance components).</li>
+  <li>Develop a method to aggregate the variant-level information within genes or genomic regions, which could involve designing a suitable kernel function or another way to combine variant effects.</li>
+  <li>Use Bayesian inference techniques (such as Markov Chain Monte Carlo or Variational Inference) to estimate the posterior distributions of the model parameters, given the observed data.</li>
+  <li>Compute posterior probabilities or Bayes factors to assess the strength of the association between the genetic variants and the phenotype of interest.</li>
+</ol>
+
+<p>While this would be a different method than SKAT, it would share the same goal of conducting gene-based tests for genetic association studies. Keep in mind that developing and implementing a Bayesian version of SKAT would be a non-trivial task and could involve additional computational challenges. However, it could potentially offer benefits such as incorporating prior knowledge and providing more interpretable measures of evidence for the associations.</p>
+
+<h3 id="other-joint-analysis-topics">Other joint analysis topics</h3>
+<p>There are several methods for joint analysis of genetic variants in genomics besides SKAT. Each method has its own strengths and weaknesses, and their performances may vary depending on the specific genetic architecture of the traits being studied. Some popular methods include:</p>
+
+<ol>
+  <li>
+<strong>Burden tests</strong>: These methods collapse variants within a gene or genomic region into a single genetic score and then test for an association between the score and the phenotype. Examples of burden tests include the Cohort Allelic Sums Test (CAST), the Combined Multivariate and Collapsing (CMC) method, and the Variable Threshold (VT) method.</li>
+  <li>
+<strong>Sequence kernel association test (SKAT-O)</strong>: SKAT-O is an extension of the SKAT method that combines both burden and dispersion components to improve power across different scenarios. It provides a unified test that adaptively weighs the contributions of rare and common variants, making it more robust to various genetic architectures.</li>
+  <li>
+<strong>Adaptive Sum of Powered Score (aSPU) test</strong>: aSPU is a flexible gene-based test that uses an adaptive combination of score tests with different weights for rare and common variants. This method allows for improved power across a wide range of genetic architectures.</li>
+  <li>
+<strong>Rare variant generalized linear mixed model (rvGLMM)</strong>: This method is based on generalized linear mixed models and is designed to handle rare variant data. It can accommodate various types of phenotypes and allows for both gene-based and variant-based association tests.</li>
+  <li>
+<strong>Bayesian methods</strong>: Bayesian methods like the Bayesian variable selection regression (BVSR) or Bayesian group lasso can be used for joint analysis of genetic variants. These methods incorporate prior knowledge and allow for simultaneous estimation of the effect sizes of multiple genetic variants while accounting for complex genetic architectures.</li>
+</ol>
+
+<p>The choice of the method depends on the specific research question, the genetic architecture of the trait, and the type of genomic data being analyzed. Comparing the performance of different methods using simulation studies or cross-validation can help identify the most suitable approach for a given study.</p>
+
+<hr>
+<h2 id="odds-ratios-or-betas">Odds ratios or betas</h2>
+
+<p><em>NOTE: code not tested - still in work.</em></p>
+
+<p>A on the user forum, someone asks if it is possible to obtain odds ratios or betas.
+<a href="https://groups.google.com/g/skat_slee/c/9BklI9n-H1w">https://groups.google.com/g/skat_slee/c/9BklI9n-H1w</a>
+While it’s not possible directly from the SKAT package, you can still estimate them under the burden test framework using a genotype matrix.</p>
+
+<p>The Burden test framework collapses the genotype matrix for each gene into a single genetic score. To calculate the betas or odds ratios for each gene, you can follow these steps:</p>
+
+<ol>
+  <li>Collapse the genotype matrix into a genetic score for each gene.</li>
+  <li>Use logistic regression (for case-control data) or linear regression (for quantitative trait data) to model the phenotype using the genetic score and covariates.</li>
+  <li>Obtain the betas (for linear regression) or odds ratios (for logistic regression) from the regression model.</li>
+</ol>
+
+<p>Here’s an example of how you could calculate the betas for the burden test using R:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Assuming you have a genotype matrix `G`, a phenotype vector `Y`, and a covariate matrix `C`</span><span class="w">
+
+</span><span class="c1"># Collapse the genotype matrix for each gene into a single genetic score</span><span class="w">
+</span><span class="n">genetic_score</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rowSums</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Perform linear regression</span><span class="w">
+</span><span class="n">linear_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lm</span><span class="p">(</span><span class="n">Y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">genetic_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Obtain the betas for each gene</span><span class="w">
+</span><span class="n">beta</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">coef</span><span class="p">(</span><span class="n">linear_model</span><span class="p">)[</span><span class="s2">"genetic_score"</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>And for calculating the odds ratios for case-control data:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Assuming you have a genotype matrix `G`, a binary phenotype vector `Y`, and a covariate matrix `C`</span><span class="w">
+
+</span><span class="c1"># Collapse the genotype matrix for each gene into a single genetic score</span><span class="w">
+</span><span class="n">genetic_score</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rowSums</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Perform logistic regression</span><span class="w">
+</span><span class="n">logistic_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">glm</span><span class="p">(</span><span class="n">Y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">genetic_score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial</span><span class="p">())</span><span class="w">
+
+</span><span class="c1"># Obtain the odds ratio for each gene</span><span class="w">
+</span><span class="n">odds_ratio</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">coef</span><span class="p">(</span><span class="n">logistic_model</span><span class="p">)[</span><span class="s2">"genetic_score"</span><span class="p">])</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p>Please note that the burden test framework makes some simplifying assumptions about the effects of genetic variants, and the estimated betas or odds ratios might not accurately capture the true effect sizes for each gene.</p>
+
+<p>Since the result is calculated from a set of variants in one variant group (e.g. gene-level), it might also be reasonable to also get the OR for each individual variant.
+However, keep in mind that these ORs will represent the effect of each variant separately, rather than the joint effect of all variants in a group (e.g., a gene). 
+To calculate the ORs for individual variants, you can perform logistic regression for case-control data on each variant independently, using the phenotype vector and covariate matrix.</p>
+
+<p>Here’s an example of how you could calculate ORs for each individual variant using R:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Assuming you have a genotype matrix `G`, a binary phenotype vector `Y`, and a covariate matrix `C`</span><span class="w">
+
+</span><span class="c1"># Create an empty vector to store the odds ratios for each variant</span><span class="w">
+</span><span class="n">odds_ratios</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">numeric</span><span class="p">(</span><span class="n">ncol</span><span class="p">(</span><span class="n">G</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># Perform logistic regression for each variant</span><span class="w">
+</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">ncol</span><span class="p">(</span><span class="n">G</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">logistic_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">glm</span><span class="p">(</span><span class="n">Y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">G</span><span class="p">[,</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">binomial</span><span class="p">())</span><span class="w">
+  </span><span class="n">odds_ratios</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">exp</span><span class="p">(</span><span class="n">coef</span><span class="p">(</span><span class="n">logistic_model</span><span class="p">)[</span><span class="s2">"G[, i]"</span><span class="p">])</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1"># Now `odds_ratios` contains the odds ratio for each individual variant</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Keep in mind that calculating ORs for individual variants does not take into account the joint effect of multiple variants, which is one of the main benefits of methods like SKAT. 
+Estimating ORs for individual variants might not accurately capture the true effect sizes when multiple variants jointly contribute to the phenotype.</p>
+
+<h2 id="variants-used-in-test">Variants used in test</h2>
+
+<blockquote>
+  <p>If the default setting was used, monomorphic or high-missing rates SNPs are excluded. Currently, the package does not report which variants are used. S Lee said he will consider implementing this in the next version.  One way you can check is to read genotypes using Get_Genotypes_SSD to see which variants are monomorphic and high-missing rates. - Shawn Lee</p>
+</blockquote>
+
+<h2 id="weighing-variants-based-on-deleteriousness">Weighing variants based on deleteriousness</h2>
+
+<blockquote>
+  <p>You can use functional information by providing it as a custom weight. For this, you can use weights parameter in SKAT function. There are recently developed methods which use multipe different weights. For this, you can refer the following package: <a href="https://cran.r-project.org/web/packages/FSTpackage/">https://cran.r-project.org/web/packages/FSTpackage/</a>. - Shawn Lee</p>
+</blockquote>
+
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
