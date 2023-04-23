@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Principal Components Analysis 2</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time 3 minutes
+<h1 id="principal-components-analysis-2">Principal Components Analysis 2</h1>
+<ul id="markdown-toc">
+  <li>
+<a href="#exploring-principal-components-analysis" id="markdown-toc-exploring-principal-components-analysis">Exploring Principal Components Analysis</a>    <ul>
+      <li><a href="#understanding-multivariate-methods" id="markdown-toc-understanding-multivariate-methods">Understanding Multivariate Methods</a></li>
+      <li><a href="#what-is-principal-components-analysis-pca" id="markdown-toc-what-is-principal-components-analysis-pca">What is Principal Components Analysis (PCA)?</a></li>
+      <li><a href="#how-pca-works" id="markdown-toc-how-pca-works">How PCA Works</a></li>
+      <li><a href="#pca-equations" id="markdown-toc-pca-equations">PCA Equations</a></li>
+      <li><a href="#practical-aspects" id="markdown-toc-practical-aspects">Practical Aspects</a></li>
+      <li><a href="#interpreting-principal-components" id="markdown-toc-interpreting-principal-components">Interpreting Principal Components</a></li>
+      <li><a href="#example-pca-in-lung-function-tests" id="markdown-toc-example-pca-in-lung-function-tests">Example: PCA in Lung Function Tests</a></li>
+      <li><a href="#advantages-and-disadvantages-of-pca" id="markdown-toc-advantages-and-disadvantages-of-pca">Advantages and Disadvantages of PCA</a></li>
+    </ul>
+  </li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
+
+<p>This material is reproduced based on the examples from:
+Oxford handbook of medical statistics (Janet Peacock Philip J Peacock) [1].</p>
+
+<h2 id="exploring-principal-components-analysis">Exploring Principal Components Analysis</h2>
+
+<h3 id="understanding-multivariate-methods">Understanding Multivariate Methods</h3>
+<ul>
+  <li>Used to analyze multiple outcome variables at once, as opposed to single outcome variables</li>
+  <li>Aims to simplify complex datasets for easier interpretation</li>
+</ul>
+
+<h3 id="what-is-principal-components-analysis-pca">What is Principal Components Analysis (PCA)?</h3>
+<ul>
+  <li>Reduces datasets with many inter-correlated variables to a smaller set of uncorrelated variables</li>
+  <li>Also known as ‘reducing the dimensionality of a dataset’</li>
+  <li>The smaller set of variables is used in subsequent analyses</li>
+</ul>
+
+<h3 id="how-pca-works">How PCA Works</h3>
+<ul>
+  <li>Generates a set of principal components (PCs), each being a linear combination of original variables</li>
+  <li>Maximum of <em>n</em> PCs can be computed for <em>n</em> variables</li>
+  <li>PCs explain a proportion of total variability, with the first PC explaining the maximum amount, and subsequent PCs explaining progressively smaller amounts</li>
+</ul>
+
+<h3 id="pca-equations">PCA Equations</h3>
+<ul>
+  <li>Original variables: \(x_1, x_2, x_3, \dots, x_p\)</li>
+  <li>PCA generates <em>p</em> principal components: \(y_1, y_2, y_3, \dots, y_p\)</li>
+  <li>PCs are defined as:
+    <ul>
+      <li>
+\[y_1 = b_{11}x_1 + b_{12}x_2 + \dots + b_{1p}x_p\]
+      </li>
+      <li>
+\[y_2 = b_{21}x_1 + b_{22}x_2 + \dots + b_{2p}x_p\]
+      </li>
+      <li>
+\[y_p = b_{p1}x_1 + b_{p2}x_2 + \dots + b_{pp}x_p\]
+      </li>
+    </ul>
+  </li>
+  <li>\(b_{11}, b_{12}\), etc., are coefficients</li>
+</ul>
+
+<h3 id="practical-aspects">Practical Aspects</h3>
+<ul>
+  <li>Common practice to include enough PCs to explain at least 80% of total variability, often just two or three</li>
+  <li>PCA generates a single value for each PC for each subject, creating new variables</li>
+  <li>These new variables are used in further analyses like other variables</li>
+</ul>
+
+<h3 id="interpreting-principal-components">Interpreting Principal Components</h3>
+<ul>
+  <li>Specific PCs may represent an overarching theme with contributions from several original variables</li>
+</ul>
+
+<h3 id="example-pca-in-lung-function-tests">Example: PCA in Lung Function Tests</h3>
+
+<p>Researchers wanted to identify important features of six lung function tests in 458 coalminers [1]. 
+They used PCA and reduced the six tests to three meaningful respiratory components. The results are summarized in the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>1st</th>
+      <th>2nd</th>
+      <th>3rd</th>
+      <th>4th</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FEV1</td>
+      <td>-0.46</td>
+      <td>0.18</td>
+      <td>0.23</td>
+      <td>-0.26</td>
+    </tr>
+    <tr>
+      <td>FVC</td>
+      <td>-0.38</td>
+      <td>0.58</td>
+      <td>-0.22</td>
+      <td>-0.24</td>
+    </tr>
+    <tr>
+      <td>FEV1/FVC</td>
+      <td>-0.38</td>
+      <td>-0.57</td>
+      <td>-0.24</td>
+      <td>-0.52</td>
+    </tr>
+    <tr>
+      <td>Vmax50</td>
+      <td>-0.44</td>
+      <td>-0.32</td>
+      <td>0.12</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <td>Vmax25</td>
+      <td>-0.43</td>
+      <td>-0.21</td>
+      <td>0.17</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <td>TLCO</td>
+      <td>-0.35</td>
+      <td>0.41</td>
+      <td>-0.83</td>
+      <td>0.14</td>
+    </tr>
+    <tr>
+      <td>% Variability</td>
+      <td>74%</td>
+      <td>15%</td>
+      <td>7%</td>
+      <td>3%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="advantages-and-disadvantages-of-pca">Advantages and Disadvantages of PCA</h3>
+<ul>
+  <li>Replaces inter-correlated variables with a smaller set of independent components, capturing key features of original data</li>
+  <li>Overcomes colinearity problems in complex predictor variables, making it easier to examine possible predictor variables</li>
+  <li>Each component is a new variable, which is a linear combination of the original variables, making actual component values harder to interpret</li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<ol>
+  <li>Oxford handbook of medical statistics (Janet Peacock Philip J Peacock).
+Cowie H, Lloyd MH, Soutar CA. Study of lung function data by principal components analysis. Thorax 1985; 40(6):438–43.</li>
+</ol>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

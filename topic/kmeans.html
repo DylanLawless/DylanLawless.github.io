@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Upervised learning K-Means clustering</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time  7 minutes
+<h1 id="upervised-learning-k-means-clustering">Upervised learning K-Means clustering</h1>
+<ul id="markdown-toc">
+  <li><a href="#major-requirements" id="markdown-toc-major-requirements">Major Requirements</a></li>
+  <li>
+<a href="#k-means-algorithm" id="markdown-toc-k-means-algorithm">K-Means Algorithm</a>    <ul>
+      <li><a href="#major-requirements-1" id="markdown-toc-major-requirements-1">Major Requirements</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#interpreting-the-clusters" id="markdown-toc-interpreting-the-clusters">Interpreting the Clusters</a>    <ul>
+      <li><a href="#major-requirements-2" id="markdown-toc-major-requirements-2">Major Requirements</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#selecting-the-number-of-clusters" id="markdown-toc-selecting-the-number-of-clusters">Selecting the Number of Clusters</a>    <ul>
+      <li><a href="#major-requirements-3" id="markdown-toc-major-requirements-3">Major Requirements</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#evaluating-the-number-of-clusters" id="markdown-toc-evaluating-the-number-of-clusters">Evaluating the Number of Clusters</a>    <ul>
+      <li><a href="#major-requirements-4" id="markdown-toc-major-requirements-4">Major Requirements</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#hierarchical-clustering" id="markdown-toc-hierarchical-clustering">Hierarchical Clustering</a>    <ul>
+      <li><a href="#major-advantages" id="markdown-toc-major-advantages">Major Advantages</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>This post is based on reading and figures from: Practical Statistics for Data Scientists 50+ Essential Concepts Using R and Python by Peter Bruce, Andrew Bruce, Peter Gedeck.</p>
+
+<p>Clustering is a technique to divide data into different groups, where the records in each group are similar to one another. A goal of clustering is to identify significant and meaningful groups of data. The groups can be used directly, analyzed in more depth, or passed as a feature or an outcome to a predictive regression or classification model.</p>
+
+<p>K-means was the first clustering method to be developed; it is still widely used, owing its popularity to the relative simplicity of the algorithm and its ability to scale to large data sets. K-means divides the data into K clusters by minimizing the sum of the squared distances of each record to the mean of its assigned cluster. This is referred to as the within-cluster sum of squares or within-cluster SS. K-means does not ensure the clusters will have the same size but finds the clusters that are the best separated.</p>
+
+<h3 id="major-requirements">Major Requirements</h3>
+
+<ol>
+  <li>Divide data into different groups</li>
+  <li>Identify significant and meaningful groups of data</li>
+  <li>Minimize the sum of the squared distances of each record to the mean of its assigned cluster</li>
+  <li>Use within-cluster sum of squares or within-cluster SS</li>
+  <li>Find the clusters that are the best separated</li>
+</ol>
+
+<p>The sum of squares within a cluster is given by:</p>
+
+\[SS_k = \sum_{i \in Cluster_k} (x_i - x_k)^2 + (y_i - y_k)^2\]
+
+<p>In clustering records with multiple variables (the typical case), the term cluster mean refers not to a single number but to the vector of means of the variables.</p>
+
+<p>A typical use of clustering is to locate natural, separate clusters in the data. Another application is to divide the data into a predetermined number of separate groups, where clustering is used to ensure the groups are as different as possible from one another.</p>
+
+<p>For example, suppose we want to divide daily stock returns into four groups. K-means clustering can be used to separate the data into the best groupings. Note that daily stock returns are reported in a fashion that is, in effect, standardized, so we do not need to normalize the data.</p>
+
+<p>In R, K-means clustering can be performed using the kmeans function. For example, the following finds four clusters based on two variables—the daily stock returns for ExxonMobil (XOM) and Chevron (CVX):</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sp500_px</span><span class="p">[</span><span class="n">row.names</span><span class="p">(</span><span class="n">sp500_px</span><span class="p">)</span><span class="o">&gt;=</span><span class="s1">'2011-01-01'</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s1">'XOM'</span><span class="p">,</span><span class="w"> </span><span class="s1">'CVX'</span><span class="p">)]</span><span class="w">
+</span><span class="n">km</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kmeans</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">centers</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The cluster assignment for each record is returned as the cluster component (R):</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">cluster</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">km</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span><span class="w">
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="w">
+                      </span><span class="n">XOM</span><span class="w">        </span><span class="n">CVX</span><span class="w"> </span><span class="n">cluster</span><span class="w">
+    </span><span class="m">2011-01-03</span><span class="w"> </span><span class="m">0.73680496</span><span class="w">  </span><span class="m">0.2406809</span><span class="w">       </span><span class="m">2</span><span class="w">
+    </span><span class="m">2011-01-04</span><span class="w"> </span><span class="m">0.16866845</span><span class="w"> </span><span class="m">-0.5845157</span><span class="w">       </span><span class="m">1</span><span class="w">
+    </span><span class="m">2011-01-05</span><span class="w"> </span><span class="m">0.02663055</span><span class="w">  </span><span class="m">0.4469854</span><span class="w">       </span><span class="m">2</span><span class="w">
+    </span><span class="m">2011-01-06</span><span class="w"> </span><span class="m">0.24855834</span><span class="w"> </span><span class="m">-0.9197513</span><span class="w">       </span><span class="m">1</span><span class="w">
+    </span><span class="m">2011-01-07</span><span class="w"> </span><span class="m">0.33732892</span><span class="w">  </span><span class="m">0.1805111</span><span class="w">       </span><span class="m">2</span><span class="w">
+    </span><span class="m">2011-01-10</span><span class="w"> </span><span class="m">0.00000000</span><span class="w"> </span><span class="m">-0.4641675</span><span class="w">       </span><span class="m">1</span><span class="w">
+
+</span></code></pre></div></div>
+
+<p>The first six records are assigned to either cluster 1 or cluster 2. The means of the clusters are also returned (R):</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cluster</span><span class="w">        </span><span class="n">XOM</span><span class="w">        </span><span class="n">CVX</span><span class="w">
+      </span><span class="m">1</span><span class="w"> </span><span class="m">-0.3284864</span><span class="w"> </span><span class="m">-0.5669135</span><span class="w">
+      </span><span class="m">2</span><span class="w">  </span><span class="m">0.2410159</span><span class="w">  </span><span class="m">0.3342130</span><span class="w">
+      </span><span class="m">3</span><span class="w"> </span><span class="m">-1.1439800</span><span class="w"> </span><span class="m">-1.7502975</span><span class="w">
+      </span><span class="m">4</span><span class="w">  </span><span class="m">0.9568628</span><span class="w">  </span><span class="m">1.3708892</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Clusters 1 and 3 represent “down” markets, while clusters 2 and 4 represent “up markets.”</p>
+
+<p>As the K-means algorithm uses randomized starting points, the results may differ between subsequent runs and different implementations of the method. In general, you should check that the fluctuations aren’t too large.</p>
+
+<p>In this example, with just two variables, it is straightforward to visualize the clusters and their means:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">XOM</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">CVX</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="n">cluster</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="o">=</span><span class="n">cluster</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">.3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">centers</span><span class="p">,</span><span class="w">  </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">XOM</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">CVX</span><span class="p">),</span><span class="w"> </span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">stroke</span><span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The resulting plot shows the cluster assignments and the cluster means. Note that K-means will assign records to clusters, even if those clusters are not well separated (which can be useful if you need to optimally divide records into groups).</p>
+
+<p><img src="/images/kmeans_fig_1.png" width="100%"></p>
+
+<p>Figure 1. The clusters of K-means applied to daily stock returns for ExxonMobil and Chevron (the cluster centers are highlighted with black symbols)</p>
+
+<h2 id="k-means-algorithm">K-Means Algorithm</h2>
+
+<p>K-means is a clustering algorithm that can be applied to a data set with p variables X1, …, Xp. While the exact solution to K-means is computationally very difficult, heuristic algorithms provide an efficient way to compute a locally optimal solution.</p>
+
+<h3 id="major-requirements-1">Major Requirements</h3>
+
+<ol>
+  <li>Specify the number of clusters K and an initial set of cluster means</li>
+  <li>Assign each record to the nearest cluster mean as measured by squared distance</li>
+  <li>Compute the new cluster means based on the assignment of records</li>
+  <li>Iterate steps 2 and 3 until the assignment of records to clusters does not change</li>
+  <li>Specify an initial set of cluster means by randomly assigning each record to one of the K clusters and then finding the means of those clusters</li>
+  <li>Run the algorithm several times using different random samples to initialize the algorithm</li>
+  <li>Use the iteration that has the lowest within-cluster sum of squares to get the K-means result</li>
+</ol>
+
+<p>The sum of squares within a cluster is given by:</p>
+
+\[SS_k = \sum_{i \in Cluster_k} (x_i - x_k)^2 + (y_i - y_k)^2\]
+
+<p>The nstart parameter to the R function kmeans allows you to specify the number of random starts to try. For example, the following code runs K-means to find 5 clusters using 10 different starting cluster means:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">syms</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="w"> </span><span class="s1">'AAPL'</span><span class="p">,</span><span class="w"> </span><span class="s1">'MSFT'</span><span class="p">,</span><span class="w"> </span><span class="s1">'CSCO'</span><span class="p">,</span><span class="w"> </span><span class="s1">'INTC'</span><span class="p">,</span><span class="w"> </span><span class="s1">'CVX'</span><span class="p">,</span><span class="w"> </span><span class="s1">'XOM'</span><span class="p">,</span><span class="w"> </span><span class="s1">'SLB'</span><span class="p">,</span><span class="w"> </span><span class="s1">'COP'</span><span class="p">,</span><span class="w">
+           </span><span class="s1">'JPM'</span><span class="p">,</span><span class="w"> </span><span class="s1">'WFC'</span><span class="p">,</span><span class="w"> </span><span class="s1">'USB'</span><span class="p">,</span><span class="w"> </span><span class="s1">'AXP'</span><span class="p">,</span><span class="w"> </span><span class="s1">'WMT'</span><span class="p">,</span><span class="w"> </span><span class="s1">'TGT'</span><span class="p">,</span><span class="w"> </span><span class="s1">'HD'</span><span class="p">,</span><span class="w"> </span><span class="s1">'COST'</span><span class="p">)</span><span class="w">
+</span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sp500_px</span><span class="p">[</span><span class="n">row.names</span><span class="p">(</span><span class="n">sp500_px</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">'2011-01-01'</span><span class="p">,</span><span class="w"> </span><span class="n">syms</span><span class="p">]</span><span class="w">
+</span><span class="n">km</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">kmeans</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">centers</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">nstart</span><span class="o">=</span><span class="m">10</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<p>The function automatically returns the best solution out of the 10 different starting points. You can use the argument iter.max to set the maximum number of iterations the algorithm is allowed for each random start.</p>
+
+<h2 id="interpreting-the-clusters">Interpreting the Clusters</h2>
+
+<p>An important part of cluster analysis can involve the interpretation of the clusters. The two most important outputs from kmeans are the sizes of the clusters and the cluster means.</p>
+
+<h3 id="major-requirements-2">Major Requirements</h3>
+
+<ol>
+  <li>Check the sizes of the resulting clusters with <code class="language-plaintext highlighter-rouge">km$size</code>
+</li>
+  <li>Plot the centers of the clusters with ggplot and gather</li>
+</ol>
+
+<p>You can plot the centers of the clusters using the gather function in conjunction with ggplot:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">centers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">centers</span><span class="p">))</span><span class="w">
+</span><span class="nf">names</span><span class="p">(</span><span class="n">centers</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">paste</span><span class="p">(</span><span class="s2">"Cluster"</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w">
+</span><span class="n">centers</span><span class="o">$</span><span class="n">Symbol</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">row.names</span><span class="p">(</span><span class="n">centers</span><span class="p">)</span><span class="w">
+</span><span class="n">centers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">gather</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span><span class="w"> </span><span class="s1">'Cluster'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Mean'</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">Symbol</span><span class="p">)</span><span class="w">
+</span><span class="n">centers</span><span class="o">$</span><span class="n">Color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">centers</span><span class="o">$</span><span class="n">Mean</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Symbol</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">Mean</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">Color</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s1">'identity'</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="o">=</span><span class="s1">'identity'</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="m">.75</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">facet_grid</span><span class="p">(</span><span class="n">Cluster</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">scales</span><span class="o">=</span><span class="s1">'free_y'</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The resulting plot reveals the nature of each cluster. For example, clusters 4 and 5 correspond to days on which the market is down and up, respectively. Clusters 2 and 3 are characterized by up-market days for consumer stocks and down-market days for energy stocks, respectively. Finally, cluster 1 captures the days in which energy stocks were up and consumer stocks were down.</p>
+
+<p><img src="/images/kmeans_fig_2.png" width="100%"></p>
+
+<p>Figure 2.  The means of the variables in each cluster (cluster means).</p>
+
+<h2 id="selecting-the-number-of-clusters">Selecting the Number of Clusters</h2>
+
+<p>The K-means algorithm requires that you specify the number of clusters K. Sometimes the number of clusters is driven by the application, while in other cases a statistical approach can be used.</p>
+
+<h3 id="major-requirements-3">Major Requirements</h3>
+
+<ol>
+  <li>Use practical or managerial considerations to determine the number of desired clusters</li>
+  <li>Use a statistical approach such as the elbow method to find the “best” number of clusters</li>
+</ol>
+
+<p>A common approach, called the elbow method, is to identify when the set of clusters explains “most” of the variance in the data. Adding new clusters beyond this set contributes relatively little in the variance explained. The elbow is the point where the cumulative variance explained flattens out after rising steeply, hence the name of the method.</p>
+
+<p><img src="/images/kmeans_fig_3.png" width="100%"></p>
+
+<p>Figure 3 shows the cumulative percent of variance explained for the default data for the number of clusters ranging from 2 to 15. In this example, there is no obvious elbow point since the incremental increase in variance explained drops gradually. This is fairly typical in data that does not have well-defined clusters. This is perhaps a drawback of the elbow method, but it does reveal the nature of the data.</p>
+
+<h2 id="evaluating-the-number-of-clusters">Evaluating the Number of Clusters</h2>
+
+<p>In R, the kmeans function doesn’t provide a single command for applying the elbow method, but it can be readily applied from the output of kmeans. You can evaluate how many clusters to retain by considering the replicability of the clusters on new data and whether the clusters are interpretable and related to a general characteristic of the data.</p>
+
+<h3 id="major-requirements-4">Major Requirements</h3>
+
+<ol>
+  <li>Apply the elbow method to determine the optimal number of clusters</li>
+  <li>Use cross-validation to assess the replicability of the clusters on new data</li>
+  <li>Consider practical considerations in choosing the number of clusters since there is no statistically determined optimal number of clusters</li>
+</ol>
+
+<p>The algorithm iteratively assigns records to the nearest cluster mean until cluster assignments do not change, and the number of desired clusters, K, is chosen by the user.</p>
+
+<h2 id="hierarchical-clustering">Hierarchical Clustering</h2>
+
+<p>Hierarchical clustering is an alternative to K-means that can yield different clusters and is more sensitive in discovering outlying or aberrant groups or records. It allows the user to visualize the effect of specifying different numbers of clusters and lends itself to an intuitive graphical display for easier interpretation of the clusters.</p>
+
+<h3 id="major-advantages">Major Advantages</h3>
+
+<ol>
+  <li>Can yield different clusters than K-means</li>
+  <li>More sensitive in discovering outlying or aberrant groups or records</li>
+  <li>Allows visualization of the effect of specifying different numbers of clusters</li>
+  <li>Intuitive graphical display for easier interpretation of the clusters</li>
+</ol>
+
+<p>Hierarchical clustering involves a dendrogram that shows the relationships between clusters. The user can specify the desired number of clusters by cutting the dendrogram at a specific height.</p>
+
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
