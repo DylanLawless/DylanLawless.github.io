@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Principal Components Analysis 1</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time 3 minutes
+<h1 id="principal-components-analysis-1">Principal Components Analysis 1</h1>
+<ul id="markdown-toc">
+  <li><a href="#introduction-to-pca-and-svd" id="markdown-toc-introduction-to-pca-and-svd">Introduction to PCA and SVD</a></li>
+  <li><a href="#pca-from-1-d-to-multi-dimensional-data" id="markdown-toc-pca-from-1-d-to-multi-dimensional-data">PCA: From 1-D to multi-dimensional data</a></li>
+  <li><a href="#centering-the-data-and-fitting-a-line" id="markdown-toc-centering-the-data-and-fitting-a-line">Centering the data and fitting a line</a></li>
+  <li><a href="#quantifying-the-fit-of-the-line" id="markdown-toc-quantifying-the-fit-of-the-line">Quantifying the fit of the line</a></li>
+  <li><a href="#principal-components-pcs" id="markdown-toc-principal-components-pcs">Principal Components (PCs)</a></li>
+  <li><a href="#variation-eigenvalues-and-eigenvectors" id="markdown-toc-variation-eigenvalues-and-eigenvectors">Variation, Eigenvalues, and Eigenvectors</a></li>
+  <li><a href="#analyzing-the-variation-accounted-for-by-pcs" id="markdown-toc-analyzing-the-variation-accounted-for-by-pcs">Analyzing the variation accounted for by PCs</a></li>
+  <li><a href="#visualizing-pca-results" id="markdown-toc-visualizing-pca-results">Visualizing PCA results</a></li>
+  <li><a href="#example-r-code" id="markdown-toc-example-r-code">Example R code</a></li>
+</ul>
+
+<p><br></p>
+
+<h2 id="introduction-to-pca-and-svd">Introduction to PCA and SVD</h2>
+<ul>
+  <li>Principal Component Analysis (PCA) and Singular Value Decomposition (SVD) are powerful tools for data analysis</li>
+  <li>Useful for visualizing and understanding high-dimensional data</li>
+</ul>
+
+<h2 id="pca-from-1-d-to-multi-dimensional-data">PCA: From 1-D to multi-dimensional data</h2>
+<ul>
+  <li>Example: gene expression data with multiple variables</li>
+  <li>PCA can help reduce dimensions and visualize data in 2-D or 3-D space</li>
+  <li>It identifies most valuable measurements for clustering and assesses the accuracy of the reduced dimensions</li>
+</ul>
+
+<h2 id="centering-the-data-and-fitting-a-line">Centering the data and fitting a line</h2>
+<ul>
+  <li>Calculate the average values of variables to find the center of the data</li>
+  <li>Shift the plotted values to center the data on the origin (0,0)</li>
+  <li>Fit a line through the origin that best fits the data</li>
+</ul>
+
+<h2 id="quantifying-the-fit-of-the-line">Quantifying the fit of the line</h2>
+<ul>
+  <li>PCA projects the data onto the line</li>
+  <li>It can minimize the distance from the data to the line or maximize the distance from projected points to the origin</li>
+  <li>Both actions are equivalent and can be described by the Pythagorean theorem:</li>
+</ul>
+
+<p>\(a^2 = b^2 + c^2\).</p>
+
+<h2 id="principal-components-pcs">Principal Components (PCs)</h2>
+<ul>
+  <li>Find the line that maximizes the sum of squared distances from projected points to the origin</li>
+  <li>This line is the Principal Component 1 (PC1)</li>
+  <li>The slope of PC1 is a linear combination of the variables (e.g., gene 1 and gene 2)</li>
+  <li>Additional PCs can be found by following similar steps, ensuring that they are perpendicular to the previous PCs</li>
+  <li>The number of PCs is determined by the smallest number of variables or samples</li>
+</ul>
+
+<h2 id="variation-eigenvalues-and-eigenvectors">Variation, Eigenvalues, and Eigenvectors</h2>
+<ul>
+  <li>Calculate the variation around each PC using the sum of squared distances divided by (n-1)</li>
+  <li>The Eigenvalue for each PC is the squared sum of distances</li>
+  <li>The Eigenvector for each PC is the unit vector that defines the PC</li>
+  <li>Loading scores indicate the proportions of each variable in the PC</li>
+</ul>
+
+<h2 id="analyzing-the-variation-accounted-for-by-pcs">Analyzing the variation accounted for by PCs</h2>
+<ul>
+  <li>Scree plot shows the percentage of variation each PC accounts for</li>
+  <li>Can help decide how many PCs are useful for analysis</li>
+  <li>PCs can be used as individual covariates in further analysis, such as GWAS</li>
+</ul>
+
+<h2 id="visualizing-pca-results">Visualizing PCA results</h2>
+<ul>
+  <li>Project data onto the most important PCs (e.g., PC1 and PC2) to create plots</li>
+  <li>These plots can help understand the diversity within the dataset</li>
+</ul>
+
+<h2 id="example-r-code">Example R code</h2>
+
+<p>Here is a well-known example of PCA using the iris dataset, which is built into R. The iris dataset consists of 150 samples of iris flowers, each with four features (sepal length, sepal width, petal length, and petal width) and a species label (setosa, versicolor, or virginica).</p>
+
+<p><img src="/images/pca_fig_1.png" width="100%">
+<img src="/images/pca_fig_2.png" width="100%"></p>
+
+<p>This R script first visualizes the original iris dataset, showing the relationship between sepal length and sepal width for each species. It then performs PCA on the dataset and visualizes the PCA output, which separates the three species more clearly along the first two principal components (PC1 and PC2).</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Load required libraries</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Load the iris dataset</span><span class="w">
+</span><span class="n">data</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Visualize the original data (sepal length vs. sepal width)</span><span class="w">
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Length</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Width</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Original Data: Sepal Length vs. Sepal Width"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">theme_minimal</span><span class="p">()</span><span class="w">
+
+</span><span class="c1"># Perform PCA</span><span class="w">
+</span><span class="n">iris_pca</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">prcomp</span><span class="p">(</span><span class="n">iris</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">],</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">scale.</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Visualize the PCA output</span><span class="w">
+</span><span class="n">pca_scores</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="n">iris_pca</span><span class="o">$</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="n">pca_scores</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="w">
+
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">pca_scores</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PC1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PC2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"PCA Output"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+	</span><span class="n">theme_minimal</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

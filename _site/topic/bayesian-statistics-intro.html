@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Bayesian statistics introduction</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time  10 minutes
+<h1 id="bayesian-statistics-introduction">Bayesian statistics introduction</h1>
+<ul id="markdown-toc">
+  <li><a href="#bayes-theorem-formula" id="markdown-toc-bayes-theorem-formula">Bayes’ Theorem Formula</a></li>
+  <li>
+<a href="#bayesian-and-frequentist-methods-two-statistical-philosophies" id="markdown-toc-bayesian-and-frequentist-methods-two-statistical-philosophies">Bayesian and Frequentist Methods: Two Statistical Philosophies</a>    <ul>
+      <li><a href="#bayesian-approach" id="markdown-toc-bayesian-approach">Bayesian Approach</a></li>
+      <li><a href="#frequentist-approach" id="markdown-toc-frequentist-approach">Frequentist Approach</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#bayesian-methods-an-overview-and-examples" id="markdown-toc-bayesian-methods-an-overview-and-examples">Bayesian Methods: An Overview and Examples</a>    <ul>
+      <li>
+<a href="#how-bayesian-methods-work" id="markdown-toc-how-bayesian-methods-work">How Bayesian Methods Work</a>        <ul>
+          <li><a href="#example-1-estimating-prevalence" id="markdown-toc-example-1-estimating-prevalence">Example 1: Estimating Prevalence</a></li>
+          <li><a href="#example-2-using-bayes-theorem-to-update-estimates" id="markdown-toc-example-2-using-bayes-theorem-to-update-estimates">Example 2: Using Bayes’ Theorem to Update Estimates</a></li>
+        </ul>
+      </li>
+      <li><a href="#bayesian-terminology" id="markdown-toc-bayesian-terminology">Bayesian Terminology</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#prior-distributions-in-bayesian-methods" id="markdown-toc-prior-distributions-in-bayesian-methods">Prior Distributions in Bayesian Methods</a>    <ul>
+      <li><a href="#introduction-to-prior-distributions" id="markdown-toc-introduction-to-prior-distributions">Introduction to Prior Distributions</a></li>
+      <li><a href="#common-default-prior-distributions" id="markdown-toc-common-default-prior-distributions">Common ‘Default’ Prior Distributions</a></li>
+      <li><a href="#sensitivity-analyses" id="markdown-toc-sensitivity-analyses">Sensitivity Analyses</a></li>
+      <li><a href="#key-points-on-prior-distributions-5" id="markdown-toc-key-points-on-prior-distributions-5">Key Points on Prior Distributions [5]</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#likelihood-and-posterior-distributions-in-bayesian-methods" id="markdown-toc-likelihood-and-posterior-distributions-in-bayesian-methods">Likelihood and Posterior Distributions in Bayesian Methods</a>    <ul>
+      <li><a href="#likelihood" id="markdown-toc-likelihood">Likelihood</a></li>
+      <li><a href="#posterior-distribution" id="markdown-toc-posterior-distribution">Posterior Distribution</a></li>
+      <li><a href="#example-combining-prior-distribution-and-data" id="markdown-toc-example-combining-prior-distribution-and-data">Example: Combining Prior Distribution and Data</a></li>
+      <li><a href="#conjugate-distributions" id="markdown-toc-conjugate-distributions">Conjugate Distributions</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#summarizing-and-presenting-bayesian-results" id="markdown-toc-summarizing-and-presenting-bayesian-results">Summarizing and Presenting Bayesian Results</a>    <ul>
+      <li><a href="#estimates" id="markdown-toc-estimates">Estimates</a></li>
+      <li><a href="#posterior-probabilities" id="markdown-toc-posterior-probabilities">Posterior Probabilities</a></li>
+      <li><a href="#credible-intervals-posterior-interval" id="markdown-toc-credible-intervals-posterior-interval">Credible Intervals (Posterior Interval)</a></li>
+      <li><a href="#significance-tests" id="markdown-toc-significance-tests">Significance Tests</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#using-bayesian-analyses-in-medicine" id="markdown-toc-using-bayesian-analyses-in-medicine">Using Bayesian Analyses in Medicine</a>    <ul>
+      <li><a href="#example-great--a-bayesian-re-analysis" id="markdown-toc-example-great--a-bayesian-re-analysis">Example: GREAT – A Bayesian Re-analysis</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#using-bayesian-analyses" id="markdown-toc-using-bayesian-analyses">Using Bayesian Analyses</a>    <ul>
+      <li><a href="#paroxetine-and-suicide-attempts-a-bayesian-analysis" id="markdown-toc-paroxetine-and-suicide-attempts-a-bayesian-analysis">Paroxetine and Suicide Attempts: A Bayesian Analysis</a></li>
+      <li><a href="#posterior-distributions" id="markdown-toc-posterior-distributions">Posterior Distributions</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#bayesian-checklist" id="markdown-toc-bayesian-checklist">Bayesian Checklist</a>    <ul>
+      <li><a href="#robust-reporting-of-bayes-used-in-clinical-studies" id="markdown-toc-robust-reporting-of-bayes-used-in-clinical-studies">ROBUST (Reporting Of Bayes Used in Clinical STudies)</a></li>
+    </ul>
+  </li>
+  <li><a href="#comparison-of-bayesian-and-frequentist-methods" id="markdown-toc-comparison-of-bayesian-and-frequentist-methods">Comparison of Bayesian and Frequentist Methods</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<p>This material is reproduced based on the examples from:
+Oxford handbook of medical statistics (Janet Peacock Philip J Peacock) [1].</p>
+
+<h3 id="bayes-theorem-formula">Bayes’ Theorem Formula</h3>
+<ul>
+  <li>Describes the Bayesian approach to statistical analysis in contrast to the frequentist approach</li>
+  <li>Covers prior and posterior distributions, their roles, and choices</li>
+  <li>Discusses examples, pros and cons of Bayesian methods in medicine, and how to interpret them in medical literature</li>
+  <li>Developed by Reverend Thomas Bayes in 1763</li>
+  <li>Statement about conditional probabilities, used in many statistical areas</li>
+  <li>Events A and B:</li>
+  <li>\(Pr(A \mid B)\): ‘the probability of A happening given that B has already happened’</li>
+  <li>\(Pr(A \mid B)\) = \(\frac{Pr(B \mid A) \times Pr(A)}{Pr(B)}\)</li>
+</ul>
+
+<h3 id="bayesian-and-frequentist-methods-two-statistical-philosophies">Bayesian and Frequentist Methods: Two Statistical Philosophies</h3>
+<ul>
+  <li>Bayes’ theorem forms the basis for competing statistical philosophies: Bayesian and frequentist methods</li>
+  <li>They differ in their definitions of probability</li>
+</ul>
+
+<h4 id="bayesian-approach">Bayesian Approach</h4>
+<ul>
+  <li>Probability interpreted as degree of belief that an event will occur</li>
+  <li>Degree of belief comes from past data or experience</li>
+  <li>Unknown quantities (e.g., means, proportions) follow probability distributions expressing certainty about true value</li>
+  <li>Degree of belief can be updated with further information</li>
+</ul>
+
+<h4 id="frequentist-approach">Frequentist Approach</h4>
+<ul>
+  <li>Probability is the long-run frequency of events (r) that occur in n trials</li>
+  <li>Probabilities estimated directly from samples</li>
+  <li>Unknown quantities (e.g., means, proportions) considered fixed, estimated from data with confidence intervals</li>
+</ul>
+
+<h2 id="bayesian-methods-an-overview-and-examples">Bayesian Methods: An Overview and Examples</h2>
+
+<h3 id="how-bayesian-methods-work">How Bayesian Methods Work</h3>
+<ul>
+  <li>Combines anticipated values or distribution of values (prior) with new data</li>
+  <li>Updates the distribution of the true values</li>
+</ul>
+
+<h4 id="example-1-estimating-prevalence">Example 1: Estimating Prevalence</h4>
+<ol>
+  <li>Specify anticipated value or distribution for prevalence (prior) using national data</li>
+  <li>Collect regional data and calculate prevalence</li>
+  <li>Combine observed area prevalence with prior distribution to update the distribution of true prevalence in the region</li>
+</ol>
+
+\[\text{Prior} + \text{New data} = \text{Updated estimate}\]
+
+<h4 id="example-2-using-bayes-theorem-to-update-estimates">Example 2: Using Bayes’ Theorem to Update Estimates</h4>
+<ul>
+  <li>Study investigated new D-dimer test for diagnosing venous thromboembolism (VTE) in patients with suspicious symptoms [3]</li>
+  <li>Calculate updated probability that a patient has VTE given a positive D-dimer test result: \(\Pr(VTE+ \mid D+)\)</li>
+</ul>
+
+<p><strong>Using Bayes’ theorem:</strong></p>
+
+<ul>
+  <li>\(Pr(VTE^{+})\) = anticipated prevalence of VTE = 14% (0.14)</li>
+  <li>\(Pr(D^{+})\) = proportion who test positive on D-dimer = 32% (0.32)</li>
+  <li>\(Pr(D^{+} \mid VTE^{+})\) = probability of positive D-dimer test if the patient truly has VTE = 79% (0.79, sensitivity)</li>
+</ul>
+
+\[Pr(VTE+ \mid D+) = \frac{Pr(D+ \mid VTE+) \times Pr(VTE+)}{Pr(D+)} = \frac{0.79 \times 0.14}{0.32} = 0.346 = 34.6\%\]
+
+<ul>
+  <li>Updated probability that a patient testing positive on D-dimer has VTE is approximately 35%</li>
+  <li>Bayesian approach updates estimates, arguably providing better estimates</li>
+</ul>
+
+<h3 id="bayesian-terminology">Bayesian Terminology</h3>
+<ul>
+  <li>Prior beliefs: Prior distribution</li>
+  <li>New data: Likelihood</li>
+  <li>Updated estimate: Posterior distribution</li>
+</ul>
+
+<h2 id="prior-distributions-in-bayesian-methods">Prior Distributions in Bayesian Methods</h2>
+
+<h3 id="introduction-to-prior-distributions">Introduction to Prior Distributions</h3>
+<ul>
+  <li>Prior distribution: distribution of unknown quantity combined with new data to provide updated estimate</li>
+  <li>Three categories of prior distribution [4]:
+    <ol>
+      <li>Frequency distribution based on past data</li>
+      <li>Objective representation of reasonable beliefs about a quantity</li>
+      <li>Subjective measure of an individual’s beliefs</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="common-default-prior-distributions">Common ‘Default’ Prior Distributions</h3>
+<ol>
+  <li>Non-informative/reference priors: e.g., uniform distribution; used when range of values can be pre-specified but no clear opinion about which value is most likely</li>
+  <li>Informative-sceptical prior: used to express scepticism about the estimated quantity, reduces chances of spuriously large effects</li>
+  <li>Informative-enthusiastic prior: counterbalance of sceptical prior; used when positive effect is expected</li>
+  <li>Informative prior based on prior beliefs, which are formally elicited: shape of distribution varies by context, Normal distribution sometimes used</li>
+</ol>
+
+<h3 id="sensitivity-analyses">Sensitivity Analyses</h3>
+<ul>
+  <li>Choice of prior distribution can affect final estimate</li>
+  <li>Good practice to test sensitivity of assumptions by using different forms</li>
+  <li>If choice doesn’t affect updated estimate, results are more robust</li>
+  <li>If choice matters, present range of results to demonstrate sensitivity to the prior</li>
+</ul>
+
+<h3 id="key-points-on-prior-distributions-5">Key Points on Prior Distributions [5]</h3>
+<ul>
+  <li>Choice is based on judgement, subjectivity is unavoidable</li>
+  <li>Use a range of options to test sensitivity of choice</li>
+  <li>Clearly justify choice(s) of prior to make results credible to external consumers</li>
+</ul>
+
+<h2 id="likelihood-and-posterior-distributions-in-bayesian-methods">Likelihood and Posterior Distributions in Bayesian Methods</h2>
+
+<h3 id="likelihood">Likelihood</h3>
+<ul>
+  <li>Summary of evidence from new data</li>
+  <li>Combined with prior distribution to create updated posterior distribution</li>
+</ul>
+
+<h3 id="posterior-distribution">Posterior Distribution</h3>
+<ul>
+  <li>Updated probability distribution for unknown quantity</li>
+  <li>Reflects range of possible values and degree of belief associated with each value</li>
+  <li>Less uncertainty than prior distribution; tends to be narrower than prior distribution and likelihood</li>
+</ul>
+
+<h3 id="example-combining-prior-distribution-and-data">Example: Combining Prior Distribution and Data</h3>
+<!-- ![Bayesian Analysis Example](https://www.bmj.com/content/bmj/319/7208/508/F1.large.jpg) -->
+<ul>
+  <li>Prior distribution: evidence available before study</li>
+  <li>Likelihood: evidence from study itself</li>
+  <li>Posterior distribution: pools two sources of evidence by multiplying curves together [6]</li>
+  <li>Prior distribution pulls likelihood towards null value (0), making final result less extreme</li>
+</ul>
+
+<p><img src="/images/bayes_intro_fig1.png" width="100%"></p>
+
+<p><em>Figure 1. Illustration of how Bayesian analysis combines a prior distribution (top graph) with the data (‘likelihood’, middle graph) to give the posterior distribution (bottom graph). Reproduced from BMJ, Spiegelhalter et al, 319, 508  1999.</em></p>
+
+<h3 id="conjugate-distributions">Conjugate Distributions</h3>
+<ul>
+  <li>Common for prior and posterior distributions to be related (same distribution or family of distributions)</li>
+  <li>Makes calculations more feasible</li>
+</ul>
+
+<h2 id="summarizing-and-presenting-bayesian-results">Summarizing and Presenting Bayesian Results</h2>
+
+<h3 id="estimates">Estimates</h3>
+<ul>
+  <li>Summary measure (mean, median) often presented</li>
+  <li>Other estimates (standard deviation, interquartile range) depend on distribution shape and context</li>
+</ul>
+
+<h3 id="posterior-probabilities">Posterior Probabilities</h3>
+<ul>
+  <li>Posterior distribution is a probability distribution</li>
+  <li>Can calculate probabilities for a specific range of values for estimated quantity</li>
+  <li>Example: Probability that relative risk in a trial is greater than 1 (showing efficacy)</li>
+</ul>
+
+<h3 id="credible-intervals-posterior-interval">Credible Intervals (Posterior Interval)</h3>
+<ul>
+  <li>Commonly present 95% credible intervals for posterior estimates</li>
+  <li>Represents range within which true value lies with 95% probability</li>
+  <li>Different from 95% confidence intervals (based on sampling distribution, not probability distribution)</li>
+  <li>Easy to calculate for unimodal and symmetrical posterior probability distributions; more complex otherwise</li>
+</ul>
+
+<p><strong>95% Credible Interval vs. 95% Confidence Interval</strong></p>
+<ul>
+  <li>95% probability that true value lies within 95% credible interval</li>
+  <li>95% probability that a 95% confidence interval contains true value</li>
+  <li>Differences between the two are subtle and may not be practically significant for data interpretation</li>
+</ul>
+
+<h3 id="significance-tests">Significance Tests</h3>
+<ul>
+  <li>No formal place in Bayesian framework</li>
+  <li>Emphasis on distribution of estimates, not testing against a single value</li>
+  <li>Posterior probability distribution can be used to calculate probability that true value takes specific values</li>
+  <li>Bayesian approach provides information needed, rather than yes/no approach of significance testing</li>
+  <li>Both Bayesian and frequentist statisticians agree that single value or test against single value is of limited usefulness</li>
+</ul>
+
+<h2 id="using-bayesian-analyses-in-medicine">Using Bayesian Analyses in Medicine</h2>
+
+<p>Bayesian methods are used in various medical research areas:</p>
+<ul>
+  <li>Observational studies</li>
+  <li>Design, monitoring, and analysis of trials</li>
+  <li>Meta-analyses</li>
+  <li>Missing data imputation</li>
+  <li>Decision making</li>
+  <li>Health economics</li>
+</ul>
+
+<p>Applicable in situations similar to frequentist methods (single quantity estimation, regression analysis, multifactorial regression, multilevel models)</p>
+
+<h3 id="example-great--a-bayesian-re-analysis">Example: GREAT – A Bayesian Re-analysis</h3>
+
+<ul>
+  <li>Original GREAT trial examined effect of thrombolytic therapy on patients with suspected myocardial infarction</li>
+  <li>Frequentist analysis reported significant beneficial effect on mortality</li>
+  <li>Results challenged due to unexpected size, small trial, and more modest effect in unpublished bigger European trial</li>
+  <li>Pocock and Spiegelhalter conducted Bayesian re-analysis, constructing prior distribution to express plausible reduction in mortality</li>
+  <li>Bayesian analysis showed a reduction in mortality of 25% compared to 49% in frequentist analysis, suggesting over-optimistic trial results</li>
+  <li>Demonstrates how Bayesian analysis can be used to combine prior evidence and new data for more reasonable estimates in cases of unexpected results</li>
+</ul>
+
+<h2 id="using-bayesian-analyses">Using Bayesian Analyses</h2>
+
+<h3 id="paroxetine-and-suicide-attempts-a-bayesian-analysis">Paroxetine and Suicide Attempts: A Bayesian Analysis</h3>
+
+<ul>
+  <li>Meta-analysis examined the potential link between antidepressant drugs and increased suicides in adults [10]</li>
+  <li>Included unpublished data, corrected for duration of medication and placebo treatment</li>
+  <li>7 suicide attempts in patients taking the drug, 1 in patient taking placebo</li>
+  <li>Prior distribution assumed to be gamma</li>
+  <li>Three different prior distributions tested: pessimistic, slightly pessimistic, and slightly optimistic (Fig. 2)</li>
+</ul>
+
+<p><img src="/images/bayes_intro_fig2.png" width="100%"></p>
+
+<p><em>Figure 2. Three different prior distributions used in a meta-analysis of antidepressant drugs and suicide in adults. From Aursnes et al. [10]</em></p>
+
+<h3 id="posterior-distributions">Posterior Distributions</h3>
+
+<ul>
+  <li>Posterior distributions correspond to the three prior distributions</li>
+  <li>Majority of each distribution is greater than 0, indicating evidence in favor of an adverse effect of paroxetine on suicide risk</li>
+  <li>Authors reported relative risks of 2.46 (pessimistic prior), 2.20 (slightly pessimistic prior), and 2.34 (optimistic prior)</li>
+  <li>Bayesian approach supports recent meta-analyses results, suggesting increased risk of suicidal activity in adults taking certain antidepressant drugs</li>
+</ul>
+
+<p><img src="/images/bayes_intro_fig3.png" width="100%"></p>
+
+<p><em>Figure 3. Three posterior distributions corresponding to the three priors used in a meta-analysis of antidepressant drugs and suicide in adults. From Aursnes et al. [10]</em></p>
+
+<h2 id="bayesian-checklist">Bayesian Checklist</h2>
+
+<p>Sung et. al have generated a checklist of seven items (ROBUST) that should be included when a Bayesian analysis is reported[11]. These are helpful in interpreting a Bayesian analysis.</p>
+
+<h3 id="robust-reporting-of-bayes-used-in-clinical-studies">ROBUST (Reporting Of Bayes Used in Clinical STudies)</h3>
+
+<p>The box below lists the items included in ROBUST. The checklist can be scored to provide a measure of the quality of reporting, but here it is given as a guide to what points to check when reading an article where Bayesian methods have been used.</p>
+
+<ol>
+  <li>Prior distribution: specified</li>
+  <li>Prior distribution: justified</li>
+  <li>Prior distribution: sensitivity analysis</li>
+  <li>Analysis: statistical model</li>
+  <li>Analysis: analytical technique</li>
+  <li>Results: central tendency</li>
+  <li>Results: standard deviation or credible interval</li>
+</ol>
+
+<h2 id="comparison-of-bayesian-and-frequentist-methods">Comparison of Bayesian and Frequentist Methods</h2>
+
+<p>This table is adapted from Spiegelhalter et al. and gives a helpful summary of the two approaches.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Issue</strong></th>
+      <th><strong>Frequentist methods</strong></th>
+      <th><strong>Bayesian methods</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Prior information other than that in the study being analysed</td>
+      <td>Interpretation of the parameter of interest: Informally used when choosing a model/form of analysis, A fixed unknown value</td>
+      <td>Used formally by specifying a prior probability distribution, An unknown quantity which can have a probability distribution</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Basic statistical question</td>
+      <td>How likely are the data, given a particular value of the parameter?</td>
+      <td>How likely is the particular value of the parameter given the data?</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Presentation of results</td>
+      <td>P values, estimates, confidence intervals</td>
+      <td>Plots of posterior distribution of the parameter, calculation of specific posterior probabilities of interest, and use of the posterior distribution in formal decision analysis. Expected value and credible intervals</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Dealing with subsets in trials</td>
+      <td>Adjusted P values (e.g. Bonferroni)</td>
+      <td>Subset effects shrunk towards zero by a ‘sceptical’ prior</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Adapted from Spiegelhalter et al. 1999.</em></p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>Oxford handbook of medical statistics (Janet Peacock Philip J Peacock).</li>
+  <li>Bayes T. An essay towards solving a problem in the doctrine of chances. Philos Trans Roy Soc 1763; 53:370–418.</li>
+  <li>Kovacs MJ, Mackinnon KM, Anderson D, O’Rourke K, Keeney M, Kearon C et al. A comparison of three rapid D-dimer methods for the diagnosis of venous thromboembolism. Br J Haematol 2001; 115(1):140–4.</li>
+  <li>Ashby D. Bayesian statistics in medicine: a 25 year review. Stat Med 2006; 25(21):3589–631.</li>
+  <li>Spiegelhalter DJ, Abrams KR, Myles JP. Bayesian approaches to clinical trials and health-care evaluation. Chichester, West Sussex: Wiley, 2004.</li>
+  <li>Spiegelhalter DJ, Myles JP, Jones DR, Abrams KR. Methods in health service research: An introduction to Bayesian methods in health technology assessment. BMJ 1999; 319(7208):508–12.</li>
+  <li>Gelman A, Carlin John B, Stern Hal S, Rubin DB. Bayesian data analysis. 2nd ed. Boca Raton, FL: Chapman &amp; Hall/CRC, 2004.</li>
+  <li>GREAT group. Feasibility, safety, and efficacy of domiciliary thrombolysis by general practition- ers: Grampian Region Early Anistreplase Trial. GREAT Group. BMJ 1992; 305(6853):548–53.</li>
+  <li>Pocock SJ, Spiegelhalter DJ. Domiciliary thrombolysis by general practitioners. BMJ 1992; 305(6860):1015.</li>
+  <li>Aursnes I, Tvete IF, Gaasemyr J, Natvig B. Suicide attempts in clinical trials with paroxetine randomised against placebo. BMC Med 2005; 3:14.</li>
+  <li>Sung L, Hayden J, Greenberg ML, Koren G, Feldman BM, Tomlinson GA. Seven items were identified for inclusion when reporting a Bayesian analysis of a clinical study. J Clin Epidemiol 2005; 58(3):261–8.</li>
+</ol>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

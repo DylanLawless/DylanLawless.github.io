@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>McNemar's test for paired proportions</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time 3 minutes
+<h1 id="mcnemars-test-for-paired-proportions">McNemar’s test for paired proportions</h1>
+<ul id="markdown-toc">
+  <li><a href="#what-is-mcnemars-test" id="markdown-toc-what-is-mcnemars-test">What is McNemar’s Test?</a></li>
+  <li><a href="#the-null-hypothesis" id="markdown-toc-the-null-hypothesis">The Null Hypothesis</a></li>
+  <li><a href="#how-does-the-test-work" id="markdown-toc-how-does-the-test-work">How Does the Test Work?</a></li>
+  <li><a href="#test-assumptions" id="markdown-toc-test-assumptions">Test Assumptions</a></li>
+  <li><a href="#what-if-assumptions-arent-met" id="markdown-toc-what-if-assumptions-arent-met">What if Assumptions Aren’t Met?</a></li>
+  <li>
+<a href="#performing-mcnemars-test" id="markdown-toc-performing-mcnemars-test">Performing McNemar’s Test</a>    <ul>
+      <li><a href="#table-1-ab-matched-case-control-study-of-asthma-death-and-short-acting-b2-agonist-use-3-two-presentations" id="markdown-toc-table-1-ab-matched-case-control-study-of-asthma-death-and-short-acting-b2-agonist-use-3-two-presentations">Table 1 a,b: Matched Case-Control Study of Asthma Death and Short-Acting B2 Agonist Use [3] (Two Presentations)</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<p>This material is reproduced based on the examples from:
+Oxford handbook of medical statistics (Janet Peacock Philip J Peacock) [1].</p>
+
+<h2 id="what-is-mcnemars-test">What is McNemar’s Test?</h2>
+<ul>
+  <li>A statistical method to assess the association between two paired proportions</li>
+  <li>Applicable for matched case-control studies or ‘before and after’ studies</li>
+  <li>Based on the chi-squared distribution with 1 degree of freedom</li>
+  <li>Generates a P value, estimates, and a confidence interval</li>
+</ul>
+
+<p>See Bland, Chapter 13 [2].</p>
+
+<h2 id="the-null-hypothesis">The Null Hypothesis</h2>
+<ul>
+  <li>The prevalence in the population remains consistent under both conditions</li>
+</ul>
+
+<h2 id="how-does-the-test-work">How Does the Test Work?</h2>
+<ul>
+  <li>The test focuses on discordant pairs (yes/no, no/yes) where exposure differs</li>
+  <li>Concordant pairs (yes/yes, no/no) are disregarded since they don’t provide information on differences within pairs</li>
+  <li>Expected frequencies are calculated assuming no association (null hypothesis is true), meaning the frequencies are equal in both discordant pairs (yes/no, no/yes)</li>
+  <li>Observed frequencies are compared to expected values</li>
+  <li>If observed frequencies deviate significantly from expected values, this implies a real association</li>
+  <li>The test employs a formula based on the chi-squared distribution to calculate a P value</li>
+</ul>
+
+<h2 id="test-assumptions">Test Assumptions</h2>
+<ul>
+  <li>Requires a large sample</li>
+  <li>For the test to be valid, each expected frequency should be greater than 5</li>
+</ul>
+
+<h2 id="what-if-assumptions-arent-met">What if Assumptions Aren’t Met?</h2>
+<ul>
+  <li>The P value might be too small, resulting in potentially false significant outcomes</li>
+  <li>If numbers are small but the rule of thumb is satisfied, apply the version of the test with a continuity correction (see Bland, Chapter 13) [2]</li>
+</ul>
+
+<h2 id="performing-mcnemars-test">Performing McNemar’s Test</h2>
+<ul>
+  <li>Always use frequencies, not percentages, for calculations</li>
+  <li>The test is typically carried out using a computer program – the calculations following Table 1 demonstrate how the test operates.</li>
+</ul>
+
+<h3 id="table-1-ab-matched-case-control-study-of-asthma-death-and-short-acting-b2-agonist-use-3-two-presentations">Table 1 a,b: Matched Case-Control Study of Asthma Death and Short-Acting B2 Agonist Use [3] (Two Presentations)</h3>
+<p>(a)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Died (case)</th>
+      <th>Survived (control)</th>
+      <th>No. of pairs</th>
+      <th>Notation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No</td>
+      <td>No</td>
+      <td>411</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <td>Yes</td>
+      <td>No</td>
+      <td>69</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <td>No</td>
+      <td>Yes</td>
+      <td>45</td>
+      <td>c</td>
+    </tr>
+    <tr>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>7</td>
+      <td>d</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>(b) Results arranged as a 2x2 table</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Died (case)</th>
+      <th>Used β2 agonist</th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Survived</td>
+      <td>Yes</td>
+      <td>411</td>
+      <td>45</td>
+      <td>456</td>
+    </tr>
+    <tr>
+      <td>(control)</td>
+      <td>No</td>
+      <td>69</td>
+      <td>7</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td> </td>
+      <td>480</td>
+      <td>52</td>
+      <td>532</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Expected frequency = (b+c)/2 = (69+45)/2 = 57</li>
+  <li>Test statistic is:
+\(\frac{\sum_{\text{discordant cells}}(O - E)^2}{E} = \frac{(69 - 57)^2 + (45 - 57)^2}{57} = 5.05\)</li>
+</ul>
+
+<p>This follows a chi-squared distribution with 1 degree of freedom and has P=0.031, indicating a relationship between the use of short-acting $\beta$2 agonist and death from asthma.</p>
+
+<h2 id="references">References</h2>
+<ol>
+  <li>Oxford handbook of medical statistics (Janet Peacock Philip J Peacock).</li>
+  <li>Bland M. An introduction to medical statistics. 3rd ed. Oxford: Oxford University Press, 2000.</li>
+  <li>Anderson HR, Ayres JG, Sturdy PM, Bland JM, Butland BK, Peckitt C et al. Bronchodilator
+treatment and deaths from asthma: case-control study. BMJ 2005; 330(7483):117.</li>
+</ol>
+
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

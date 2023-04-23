@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Quick table unifactorial methods</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time 2 minutes
+<h1 id="quick-table-unifactorial-methods">Quick table unifactorial methods</h1>
+
+<p>This table is provided from Oxford handbook of medical statistics (Janet Peacock Philip J Peacock).</p>
+
+<h2 id="compare-two-independent-samples">COMPARE TWO INDEPENDENT SAMPLES</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Design or aim of study</strong></th>
+      <th><strong>Type of data/assumptions</strong></th>
+      <th><strong>Statistical method</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compare two means</td>
+      <td>Continuous, Normal distribution, same variance</td>
+      <td>t test for two independent means</td>
+    </tr>
+    <tr>
+      <td>Compare two proportions</td>
+      <td>Categorical, two categories, all expected values greater than 5</td>
+      <td>Chi-squared test</td>
+    </tr>
+    <tr>
+      <td>Compare two proportions</td>
+      <td>Categorical, two categories, some expected values less than 5</td>
+      <td>Fisher’s exact test</td>
+    </tr>
+    <tr>
+      <td>Compare distributions</td>
+      <td>Ordinal</td>
+      <td>Wilcoxon two-sample signed rank test equivalent to Mann Whitney U test</td>
+    </tr>
+    <tr>
+      <td>Compare time to an event (e.g. survival) in two groups</td>
+      <td>Continuous</td>
+      <td>Logrank test</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="compare-several-independent-samples">COMPARE SEVERAL INDEPENDENT SAMPLES</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Design or aim of study</strong></th>
+      <th><strong>Type of data/assumptions</strong></th>
+      <th><strong>Statistical method</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compare several means</td>
+      <td>Continuous, Normal distribution, same variance</td>
+      <td>One-way analysis of variance</td>
+    </tr>
+    <tr>
+      <td>Compare time to an event (e.g. survival) in several groups</td>
+      <td>Continuous</td>
+      <td>Logrank test</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="compare-differences-in-a-paired-sample">COMPARE DIFFERENCES IN A PAIRED SAMPLE</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Design or aim of study</strong></th>
+      <th><strong>Type of data/assumptions</strong></th>
+      <th><strong>Statistical method</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Test mean difference</td>
+      <td>Continuous, Normal distribution for differences</td>
+      <td>t test for two paired (matched) means</td>
+    </tr>
+    <tr>
+      <td>Compare two paired proportions</td>
+      <td>Categorical, two categories (binary)</td>
+      <td>McNemar’s test</td>
+    </tr>
+    <tr>
+      <td>Distribution of differences</td>
+      <td>Ordinal, symmetrical distribution</td>
+      <td>Wilcoxon matched pairs test</td>
+    </tr>
+    <tr>
+      <td>Distribution of differences</td>
+      <td>Ordinal</td>
+      <td>Sign test</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="relationships-between-two-variables">RELATIONSHIPS BETWEEN TWO VARIABLES</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Design or aim of study</strong></th>
+      <th><strong>Type of data/assumptions</strong></th>
+      <th><strong>Statistical method</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Test strength of linear relationship between two variables</td>
+      <td>Continuous, at least one has Normal distribution</td>
+      <td>Pearson’s correlation</td>
+    </tr>
+    <tr>
+      <td>Test strength of relationship between two variables</td>
+      <td>Ordinal</td>
+      <td>Spearman’s rank correlation, Kendall’s tau (if many ties)</td>
+    </tr>
+    <tr>
+      <td>Examine nature of linear relationship between two variables</td>
+      <td>Continuous, residuals from Normal distribution, constant variance</td>
+      <td>Simple linear regression</td>
+    </tr>
+    <tr>
+      <td>Test association between two categorical variables</td>
+      <td>Categorical, more than two categories for either or both variables, at least 80% of expected frequencies greater than 5</td>
+      <td>Chi-squared test</td>
+    </tr>
+    <tr>
+      <td>Test for trend in proportions</td>
+      <td>Categorical, one variable has two categories and the other has several categories which are ordered, sample greater than 30</td>
+      <td>Chi-squared test for trend</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
