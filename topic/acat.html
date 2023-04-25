@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Aggregated Cauchy Association Test (ACAT)</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time  8 minutes
+<h1 id="aggregated-cauchy-association-test-acat">Aggregated Cauchy Association Test (ACAT)</h1>
+<ul id="markdown-toc">
+  <li>
+<a href="#summary-of-this-topic" id="markdown-toc-summary-of-this-topic">Summary of this topic</a>    <ul>
+      <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
+    </ul>
+  </li>
+  <li><a href="#papers" id="markdown-toc-papers">Papers</a></li>
+  <li><a href="#step-by-step-explanation-of-acatr" id="markdown-toc-step-by-step-explanation-of-acatr">Step-by-step explanation of ACAT.R</a></li>
+  <li><a href="#applying-staar-o-for-multiple-annotation-weights" id="markdown-toc-applying-staar-o-for-multiple-annotation-weights">Applying STAAR-O for multiple annotation weights</a></li>
+  <li><a href="#non-gene-centric-analysis-using-dynamic-windows-with-scang-staar" id="markdown-toc-non-gene-centric-analysis-using-dynamic-windows-with-scang-staar">Non-gene-centric analysis using dynamic windows with SCANG-STAAR</a></li>
+  <li><a href="#multi-weight-annotation-analysis" id="markdown-toc-multi-weight-annotation-analysis">Multi-weight annotation analysis</a></li>
+  <li><a href="#main-equations-for-acat" id="markdown-toc-main-equations-for-acat">Main equations for ACAT</a></li>
+  <li><a href="#original-r-code-from-yaowuliu" id="markdown-toc-original-r-code-from-yaowuliu">Original R code from yaowuliu</a></li>
+</ul>
+
+<p class="meta">25 Apr 2023 - last update</p>
+
+<h2 id="summary-of-this-topic">Summary of this topic</h2>
+
+<h3 id="abbreviations">Abbreviations</h3>
+
+<ul>
+  <li>ACAT: Aggregated Cauchy Association Test</li>
+  <li>ACAT-V: Aggregated Cauchy Association Test - Variant level</li>
+  <li>ACAT-O: Aggregated Cauchy Association Test - Omnibus</li>
+  <li>SKAT: Sequence Kernel Association Test</li>
+  <li>ARIC: Atherosclerosis Risk in Communities</li>
+</ul>
+
+<p>I am interested in Aggregated Cauchy Association Test (ACAT) for rare variant analysis.
+First, here is a great talk by author of SKAT and other methods:</p>
+
+<p><a href="https://www.youtube.com/watch?v=URGJIAdRTi0&pp=ygUbU2VxdWVuY2Uga2VybmFsIGFzc29jaWF0aW9u">Watch on YouTube</a> 
+<strong>Dr. Xihong Lin</strong>:
+<em>Overview of Rare Variant Analysis of Whole Genome Sequencing Association Studies</em>.</p>
+
+<ul>
+  <li>The major part starts at time: <a href="https://youtu.be/URGJIAdRTi0?t=1344">22:30</a>
+</li>
+  <li>and the best is at: <a href="https://youtu.be/URGJIAdRTi0?t=1850">30:50</a> where she describes the aggregated Cauchy association test (ACAT) method for combining multiple annotations (like CADD score, MAF, etc.) to calculate the final P-value.</li>
+  <li>This is their annotation database discussed: <a href="https://favor.genohub.org">https://favor.genohub.org</a>
+</li>
+</ul>
+
+<h2 id="papers">Papers</h2>
+
+<ul>
+  <li>
+<a href="https://www.sciencedirect.com/science/article/pii/S0002929719300023?via%3Dihub">ACAT paper</a>, Yaowu Liu, et al AJGH 2019.</li>
+  <li>
+<a href="https://www.nature.com/articles/s41588-020-0676-4">Application of STAAR protocol to TOPMed</a>, Xihao Li, et al. NatGen 2020.</li>
+  <li>
+<a href="https://doi.org/10.1038/s41592-022-01640-x">STAAR pipeline methods paper</a>, Zilin Li, et al. NatMethods 2022.</li>
+  <li><a href="https://github.com/xihaoli/STAARpipeline">STAAR pipeline github</a></li>
+  <li>Controlling SKAT function: <a href="https://lawlessgenomics.com/topic/skat#skat-r-package-by-leelabsg">Here’s a summary of the SKAT package functions</a> - which are easier to understand than reading the notation in the SKAT papers. If you read the code you see each new implement is added sequentially and how weights work. Although, the ACAT git repo is independent.</li>
+  <li>ACAT git repo: <a href="https://github.com/yaowuliu/ACAT/blob/master/R/ACAT.R">https://github.com/yaowuliu/ACAT/blob/master/R/ACAT.R</a>
+</li>
+</ul>
+
+<h2 id="step-by-step-explanation-of-acatr">Step-by-step explanation of ACAT.R</h2>
+
+<p>This discussion refers to code in the main ACAT function found at <a href="https://github.com/yaowuliu/ACAT">https://github.com/yaowuliu/ACAT</a>.</p>
+
+<p><img src="/images/acat_fig_1.jpg" width="80%" style="display: block; margin: auto;"></p>
+
+<p><strong>Figure 1.</strong> Summary of the Proposed Methods ACAT, ACAT-V, and ACAT-O and the Relationship Among Them. From the ACAT paper</p>
+
+<ol>
+  <li>The R code defines several functions to perform the Aggregated Cauchy Association Test (ACAT) and the ACAT-V test.
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">ACAT</code>: This function combines p-values using the Cauchy distribution.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">ACAT_V</code>: A set-based test that uses ACAT to combine the variant-level p-values.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">NULL_Model</code>: Computes model parameters and residuals for ACAT-V.</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">Get.marginal.pval</code>: A helper function to calculate the marginal p-values for ACAT-V.</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ACAT</code> function
+    <ul>
+      <li>a. It accepts <code class="language-plaintext highlighter-rouge">Pvals</code> (p-values), <code class="language-plaintext highlighter-rouge">weights</code>, and an optional <code class="language-plaintext highlighter-rouge">is.check parameter</code> to validate the input.</li>
+      <li>b. Checks for NA, p-value range (0 to 1), and existence of both 0 and 1 p-values in the same column.</li>
+      <li>c. If weights are not provided, equal weights are used. Otherwise, user-supplied weights are validated and standardized.</li>
+      <li>d. The function calculates the Cauchy statistics and returns the ACAT p-value(s).</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ACAT_V</code> function
+    <ul>
+      <li>a. It accepts <code class="language-plaintext highlighter-rouge">G</code> (genotype matrix), <code class="language-plaintext highlighter-rouge">obj</code> (output object of <code class="language-plaintext highlighter-rouge">NULL_Model</code>), <code class="language-plaintext highlighter-rouge">weights.beta</code>, <code class="language-plaintext highlighter-rouge">weights</code>, and <code class="language-plaintext highlighter-rouge">mac.thresh</code>.</li>
+      <li>b. It checks for the validity of input weights.</li>
+      <li>c. Based on the <code class="language-plaintext highlighter-rouge">mac.thresh</code> value, it decides to use the Burden test, the Cauchy method, or a combination of both.</li>
+      <li>d. It calculates the final p-value and returns it.</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">NULL_Model</code> function
+    <ul>
+      <li>a. It accepts <code class="language-plaintext highlighter-rouge">Y</code> (outcome phenotypes) and <code class="language-plaintext highlighter-rouge">Z</code> (covariates).</li>
+      <li>b. It determines if <code class="language-plaintext highlighter-rouge">Y</code> is continuous or binary.</li>
+      <li>c. It fits a linear regression model if <code class="language-plaintext highlighter-rouge">Y</code> is continuous and a logistic model if <code class="language-plaintext highlighter-rouge">Y</code> is binary.</li>
+      <li>d. It returns an object with model parameters and residuals.</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Get.marginal.pval</code> function
+    <ul>
+      <li>a. It accepts <code class="language-plaintext highlighter-rouge">G</code> (genotype matrix) and <code class="language-plaintext highlighter-rouge">obj</code> (output object of <code class="language-plaintext highlighter-rouge">NULL_Model</code>).</li>
+      <li>b. It checks the validity of the <code class="language-plaintext highlighter-rouge">obj</code> input.</li>
+      <li>c. It calculates the marginal p-values and returns them.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>The Aggregated Cauchy Association Test (ACAT) is a powerful and computationally efficient method designed to improve the analysis of rare and low-frequency genetic variants in sequencing studies. Traditional set-based tests can experience power loss when only a small proportion of variants are causal, and their power can be sensitive to factors such as the number, effect sizes, and effect directions of causal variants, as well as weight choices.</p>
+
+<p>ACAT addresses these issues by combining variant-level p-values to create a set-based test called ACAT-V. ACAT-V is particularly powerful when there are only a few causal variants in a set, making it a valuable tool for genetic analysis. Additionally, ACAT can be used to create an omnibus test called ACAT-O by combining different variant-set-level p-values. ACAT-O incorporates the strengths of multiple complementary set-based tests, such as the burden test, sequence kernel association test (SKAT), and ACAT-V.</p>
+
+<p>By analyzing extensive simulated data and real-world data from the Atherosclerosis Risk in Communities (ARIC) study, it has been demonstrated that ACAT-V complements other tests like SKAT and the burden test. Furthermore, ACAT-O consistently delivers more robust and higher power than alternative tests, making it a valuable addition to the toolkit of researchers working with sequencing studies.</p>
+
+<p>ACAT is designed to combine p-values from multiple variants or tests rather than combining annotation scores directly. If you have p-values associated with each of the 5 annotation columns (CADD_score, MAF, GnomAD_AF, REVEL_score, ClinVar_score) for a single variant, you could potentially use ACAT to combine these p-values to obtain a single combined p-value for that variant. However, it’s essential to ensure that the p-values are valid and independent for ACAT to be effective.</p>
+
+<p>To do this see the STAAR framework for this.</p>
+
+<p><img src="/images/acat_fig_2.png" width="80%" style="display: block; margin: auto;"></p>
+
+<p><strong>Figure 2.</strong> Slide from presentation of ACAT method.</p>
+
+<h2 id="applying-staar-o-for-multiple-annotation-weights">Applying STAAR-O for multiple annotation weights</h2>
+
+<p>In the STAAR Nature Methods paper, the section <em>Gene-centric analysis of the noncoding genome</em> 
+shows how the STAAR method can indeed be used to capitalize on the ACAT method to obtain a combined p-value from a set of annotations for a single variant. The STAAR framework incorporates multiple functional annotation scores into the RVATs (rare-variant association tests) to increase the power of association analysis. In this context, it uses the STAAR-O test, an omnibus test that aggregates annotation-weighted burden test, SKAT, and ACAT-V within the STAAR framework.</p>
+
+<p>By incorporating multiple functional annotation scores, such as CADD, LINSIGHT, FATHMM-XF, and annotation principal components (aPCs), the STAAR method enhances the ability to detect associations between variants and traits of interest. Therefore, the STAAR framework can be used to leverage the strengths of the ACAT method and obtain a combined p-value from a set of annotations for a single variant or a set of variants.</p>
+
+<h2 id="non-gene-centric-analysis-using-dynamic-windows-with-scang-staar">Non-gene-centric analysis using dynamic windows with SCANG-STAAR</h2>
+
+<p>The SCANG-STAAR method is an improvement over the fixed-size sliding window RVAT in the STAAR framework. It proposes a dynamic window-based approach called SCANG-STAAR, which extends the SCANG procedure by incorporating multidimensional functional annotations. This method allows for flexible detection of locations and sizes of signal windows across the genome, as the locations of regions associated with a disease or trait are often unknown in advance, and their sizes may vary across the genome. Using a prespecified fixed-size sliding window for RVAT can lead to power loss if the prespecified window sizes do not align with the true locations of the signals.</p>
+
+<p>The SCANG-STAAR method has two main procedures: SCANG-STAAR-S and SCANG-STAAR-B. SCANG-STAAR-S extends the SCANG-SKAT (SCANG-S) procedure by calculating the STAAR-SKAT (STAAR-S) p-value in each overlapping window by incorporating multiple variant functional annotations, instead of using just the MAF-weight-based SKAT p-value. SCANG-STAAR-B is based on the STAAR-Burden p-value. SCANG-STAAR-S has two advantages over SCANG-STAAR-B in detecting noncoding associations using dynamic windows: first, the effects of causal variants in a neighborhood in the noncoding genome tend to be in different directions, especially in intergenic regions; second, due to the different correlation structures of the two test statistics for overlapping windows, the genome-wide significance threshold of SCANG-STAAR-B is lower than that of SCANG-STAAR-S.</p>
+
+<p>SCANG-STAAR also provides the SCANG-STAAR-O procedure, based on an omnibus p-value of SCANG-STAAR-S and SCANG-STAAR-B calculated by the ACAT method. However, unlike STAAR-O, the ACAT-V test is not incorporated into the omnibus test because it is designed for sparse alternatives, and as a result, it tends to detect the region with the smallest size that contains the most significant variant in the dynamic window procedure.</p>
+
+<p><img src="/images/acat_fig_3.png" width="80%" style="display: block; margin: auto;"></p>
+
+<p><strong>Figure 3.</strong> Slide from presentation of ACAT application in STAAR.</p>
+
+<h2 id="multi-weight-annotation-analysis">Multi-weight annotation analysis</h2>
+
+<p>The STAAR framework can be used to combine the p-values associated with each of the 5 annotation columns (CADD_score, MAF, GnomAD_AF, REVEL_score, ClinVar_score) for a single variant. STAAR incorporates multiple functional annotation scores as weights when constructing its statistics, making it suitable for combining p-values from different annotation columns to obtain a single combined p-value for that variant.</p>
+
+<h2 id="main-equations-for-acat">Main equations for ACAT</h2>
+
+<ol>
+  <li>ACAT test statistic:</li>
+</ol>
+
+\[T_{ACAT} = \sum_{i=1}^{k} w_i \tan{[(0.5 - p_i)\pi]}\]
+
+<p>where \(p_i\) are the p-values, and \(w_i\) are non-negative weights.</p>
+
+<ol>
+  <li>P-value calculation for the ACAT test statistic:</li>
+</ol>
+
+\[p \text{-value} \approx 1 - \frac{1}{2} + \frac{\arctan{(T_{ACAT} / w)}}{\pi}\]
+
+<p>where \(w = \sum_{i=1}^{k} w_i\).</p>
+
+<ol>
+  <li>ACAT is a general and flexible method of combining p-values, which can represent the statistical significance of different kinds of genetic variations in sequencing studies.</li>
+  <li>ACAT only aggregates p-values, so one can automatically control cryptic relatedness and/or population stratification by fitting appropriate models from which p-values are calculated through methods such as principal-component analysis or mixed models.</li>
+  <li>The null distribution of the test statistic $T_{ACAT}$ can be well approximated by a Cauchy distribution without the need for estimating and accounting for the correlation among p-values.</li>
+  <li>Calculating the p-value of ACAT requires almost negligible computation and is extremely fast.</li>
+  <li>The approximation is particularly accurate when ACAT has a very small p-value, which is useful in sequencing studies because only very small p-values can pass the stringent genome-wide significance threshold and are of particular interest.</li>
+</ol>
+
+<h2 id="original-r-code-from-yaowuliu">Original R code from yaowuliu</h2>
+
+<p>This code is the main ACAT function found at
+<a href="https://github.com/yaowuliu/ACAT">https://github.com/yaowuliu/ACAT</a></p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' Aggregated Cauchy Assocaition Test</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' A p-value combination method using the Cauchy distribution.</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' @param weights a numeric vector/matrix of non-negative weights for the combined p-values. When it is NULL, the equal weights are used.</span><span class="w">
+</span><span class="cd">#' @param Pvals a numeric vector/matrix of p-values. When it is a matrix, each column of p-values is combined by ACAT.</span><span class="w">
+</span><span class="cd">#' @param is.check logical. Should the validity of \emph{Pvals} (and \emph{weights}) be checked? When the size of \emph{Pvals} is large and one knows \emph{Pvals} is valid, then the checking part can be skipped to save memory.</span><span class="w">
+</span><span class="cd">#' @return The p-value(s) of ACAT.</span><span class="w">
+</span><span class="cd">#' @author Yaowu Liu</span><span class="w">
+</span><span class="cd">#' @examples p.values&lt;-c(2e-02,4e-04,0.2,0.1,0.8);ACAT(Pvals=p.values)</span><span class="w">
+</span><span class="cd">#' @examples ACAT(matrix(runif(1000),ncol=10))</span><span class="w">
+</span><span class="cd">#' @references Liu, Y., &amp; Xie, J. (2019). Cauchy combination test: a powerful test with analytic p-value calculation</span><span class="w">
+</span><span class="cd">#' under arbitrary dependency structures. \emph{Journal of American Statistical Association},115(529), 393-402. (\href{https://amstat.tandfonline.com/doi/abs/10.1080/01621459.2018.1554485}{pub})</span><span class="w">
+</span><span class="cd">#' @export</span><span class="w">
+</span><span class="n">ACAT</span><span class="o">&lt;-</span><span class="k">function</span><span class="p">(</span><span class="n">Pvals</span><span class="p">,</span><span class="n">weights</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="n">is.check</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">){</span><span class="w">
+    </span><span class="n">Pvals</span><span class="o">&lt;-</span><span class="n">as.matrix</span><span class="p">(</span><span class="n">Pvals</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is.check</span><span class="p">){</span><span class="w">
+        </span><span class="c1">#### check if there is NA</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">Pvals</span><span class="p">))</span><span class="o">&gt;</span><span class="m">0</span><span class="p">){</span><span class="w">
+            </span><span class="n">stop</span><span class="p">(</span><span class="s2">"Cannot have NAs in the p-values!"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="c1">#### check if Pvals are between 0 and 1</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="nf">sum</span><span class="p">(</span><span class="n">Pvals</span><span class="o">&lt;</span><span class="m">0</span><span class="p">)</span><span class="o">+</span><span class="nf">sum</span><span class="p">(</span><span class="n">Pvals</span><span class="o">&gt;</span><span class="m">1</span><span class="p">))</span><span class="o">&gt;</span><span class="m">0</span><span class="p">){</span><span class="w">
+            </span><span class="n">stop</span><span class="p">(</span><span class="s2">"P-values must be between 0 and 1!"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="c1">#### check if there are pvals that are either exactly 0 or 1.</span><span class="w">
+        </span><span class="n">is.zero</span><span class="o">&lt;-</span><span class="p">(</span><span class="n">colSums</span><span class="p">(</span><span class="n">Pvals</span><span class="o">==</span><span class="m">0</span><span class="p">)</span><span class="o">&gt;=</span><span class="m">1</span><span class="p">)</span><span class="w">
+        </span><span class="n">is.one</span><span class="o">&lt;-</span><span class="p">(</span><span class="n">colSums</span><span class="p">(</span><span class="n">Pvals</span><span class="o">==</span><span class="m">1</span><span class="p">)</span><span class="o">&gt;=</span><span class="m">1</span><span class="p">)</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">((</span><span class="n">is.zero</span><span class="o">+</span><span class="n">is.one</span><span class="p">)</span><span class="o">==</span><span class="m">2</span><span class="p">)</span><span class="o">&gt;</span><span class="m">0</span><span class="p">){</span><span class="w">
+            </span><span class="n">stop</span><span class="p">(</span><span class="s2">"Cannot have both 0 and 1 p-values in the same column!"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">is.zero</span><span class="p">)</span><span class="o">&gt;</span><span class="m">0</span><span class="p">){</span><span class="w">
+            </span><span class="n">warning</span><span class="p">(</span><span class="s2">"There are p-values that are exactly 0!"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">is.one</span><span class="p">)</span><span class="o">&gt;</span><span class="m">0</span><span class="p">){</span><span class="w">
+            </span><span class="n">warning</span><span class="p">(</span><span class="s2">"There are p-values that are exactly 1!"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">}</span><span class="w">
+    </span><span class="c1">#### Default: equal weights. If not, check the validity of the user supplied weights and standadize them.</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">is.null</span><span class="p">(</span><span class="n">weights</span><span class="p">)){</span><span class="w">
+        </span><span class="n">is.weights.null</span><span class="o">&lt;-</span><span class="kc">TRUE</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+        </span><span class="n">is.weights.null</span><span class="o">&lt;-</span><span class="kc">FALSE</span><span class="w">
+        </span><span class="n">weights</span><span class="o">&lt;-</span><span class="n">as.matrix</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span><span class="o">!=</span><span class="nf">dim</span><span class="p">(</span><span class="n">Pvals</span><span class="p">))</span><span class="o">&gt;</span><span class="m">0</span><span class="p">){</span><span class="w">
+            </span><span class="n">stop</span><span class="p">(</span><span class="s2">"The dimensions of weights and Pvals must be the same!"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is.check</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">weights</span><span class="o">&lt;</span><span class="m">0</span><span class="p">)</span><span class="o">&gt;</span><span class="m">0</span><span class="p">)){</span><span class="w">
+            </span><span class="n">stop</span><span class="p">(</span><span class="s2">"All the weights must be nonnegative!"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+            </span><span class="n">w.sum</span><span class="o">&lt;-</span><span class="n">colSums</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">w.sum</span><span class="o">&lt;=</span><span class="m">0</span><span class="p">)</span><span class="o">&gt;</span><span class="m">0</span><span class="p">){</span><span class="w">
+                </span><span class="n">stop</span><span class="p">(</span><span class="s2">"At least one weight should be positive in each column!"</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">ncol</span><span class="p">(</span><span class="n">weights</span><span class="p">)){</span><span class="w">
+                    </span><span class="n">weights</span><span class="p">[,</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;-</span><span class="n">weights</span><span class="p">[,</span><span class="n">j</span><span class="p">]</span><span class="o">/</span><span class="n">w.sum</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="c1">#### check if there are very small non-zero p values and calcuate the cauchy statistics</span><span class="w">
+    </span><span class="n">is.small</span><span class="o">&lt;-</span><span class="p">(</span><span class="n">Pvals</span><span class="o">&lt;</span><span class="m">1e-15</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is.weights.null</span><span class="p">){</span><span class="w">
+         </span><span class="n">Pvals</span><span class="p">[</span><span class="o">!</span><span class="n">is.small</span><span class="p">]</span><span class="o">&lt;-</span><span class="nf">tan</span><span class="p">((</span><span class="m">0.5</span><span class="o">-</span><span class="n">Pvals</span><span class="p">[</span><span class="o">!</span><span class="n">is.small</span><span class="p">])</span><span class="o">*</span><span class="nb">pi</span><span class="p">)</span><span class="w">
+         </span><span class="n">Pvals</span><span class="p">[</span><span class="n">is.small</span><span class="p">]</span><span class="o">&lt;</span><span class="m">-1</span><span class="o">/</span><span class="n">Pvals</span><span class="p">[</span><span class="n">is.small</span><span class="p">]</span><span class="o">/</span><span class="nb">pi</span><span class="w">
+         </span><span class="n">cct.stat</span><span class="o">&lt;-</span><span class="n">colMeans</span><span class="p">(</span><span class="n">Pvals</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+         </span><span class="n">Pvals</span><span class="p">[</span><span class="o">!</span><span class="n">is.small</span><span class="p">]</span><span class="o">&lt;-</span><span class="n">weights</span><span class="p">[</span><span class="o">!</span><span class="n">is.small</span><span class="p">]</span><span class="o">*</span><span class="nf">tan</span><span class="p">((</span><span class="m">0.5</span><span class="o">-</span><span class="n">Pvals</span><span class="p">[</span><span class="o">!</span><span class="n">is.small</span><span class="p">])</span><span class="o">*</span><span class="nb">pi</span><span class="p">)</span><span class="w">
+         </span><span class="n">Pvals</span><span class="p">[</span><span class="n">is.small</span><span class="p">]</span><span class="o">&lt;-</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="n">is.small</span><span class="p">]</span><span class="o">/</span><span class="n">Pvals</span><span class="p">[</span><span class="n">is.small</span><span class="p">])</span><span class="o">/</span><span class="nb">pi</span><span class="w">
+         </span><span class="n">cct.stat</span><span class="o">&lt;-</span><span class="n">colSums</span><span class="p">(</span><span class="n">Pvals</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="c1">#### return the ACAT p value(s).</span><span class="w">
+    </span><span class="n">pval</span><span class="o">&lt;-</span><span class="n">pcauchy</span><span class="p">(</span><span class="n">cct.stat</span><span class="p">,</span><span class="n">lower.tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">F</span><span class="p">)</span><span class="w">
+    </span><span class="nf">return</span><span class="p">(</span><span class="n">pval</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' A set-based test that uses ACAT to combine the variant-level p-values.</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' @param G a numeric matrix or dgCMatrix with each row as a different individual and each column as a separate gene/snp. Each genotype should be coded as 0, 1, 2.</span><span class="w">
+</span><span class="cd">#' @param obj an output object of the \code{\link{NULL_Model}} function.</span><span class="w">
+</span><span class="cd">#' @param weights.beta a numeric vector of parameters for the beta weights for the weighted kernels. If you want to use your own weights, please use the “weights” parameter. It will be ignored if “weights” parameter is not null.</span><span class="w">
+</span><span class="cd">#' @param weights a numeric vector of weights for the SNP p-values. When it is NULL, the beta weight with the “weights.beta” parameter is used.</span><span class="w">
+</span><span class="cd">#' @param mac.thresh a threshold of the minor allele count (MAC). The Burden test will be used to aggregate the SNPs with MAC less than this thrshold.</span><span class="w">
+</span><span class="cd">#' @return The p-value of ACAT-V.</span><span class="w">
+</span><span class="cd">#' @details The Burden test is first used to aggregate very rare variants with Minor Allele Count (MAC) &lt; \emph{mac.thresh} (e.g., 10), and a Burden p-value is obtained. For each of the variants with MAC &gt;= \emph{mac.thresh}, a variant-level p-value is calculated. Then, ACAT is used to combine the variant-level p-values and the Burden test p-value of very rare variants.</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' If \emph{weights.beta} is used, then the weight for the Burden test p-value is demetermined by the average Minor Allele Frequency (MAF) of the variants with MAC &lt; \emph{mac.thresh}; if the user-specified \emph{weights} is used, then the weight for the Burden test p-value is the average of \emph{weights} of the variants with MAC &lt; \emph{mac.thresh}.</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' Note that the \emph{weights} here are for the SNP p-vlaues. In SKAT, the weights are for the SNP score test statistics. To transfrom the SKAT weights to the \emph{weights} here, one can use the formula that \emph{weights} = (skat_weights)^2*MAF*(1-MAF).</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' @author Yaowu Liu</span><span class="w">
+</span><span class="cd">#' @references Liu, Y., et al. (2019). ACAT: A fast and powerful p value combination</span><span class="w">
+</span><span class="cd">#' method for rare-variant analysis in sequencing studies.</span><span class="w">
+</span><span class="cd">#' \emph{American Journal of Humann Genetics 104}(3), 410-421.</span><span class="w">
+</span><span class="cd">#' (\href{https://www.sciencedirect.com/science/article/pii/S0002929719300023}{pub})</span><span class="w">
+</span><span class="cd">#' @examples  library(Matrix)</span><span class="w">
+</span><span class="cd">#' @examples  data(Geno)</span><span class="w">
+</span><span class="cd">#' @examples  G&lt;-Geno[,1:100] # Geno is a dgCMatrix of genotypes</span><span class="w">
+</span><span class="cd">#' @examples  Y&lt;-rnorm(nrow(G)); Z&lt;-matrix(rnorm(nrow(G)*4),ncol=4)</span><span class="w">
+</span><span class="cd">#' @examples  obj&lt;-NULL_Model(Y,Z)</span><span class="w">
+</span><span class="cd">#' @examples  ACAT_V(G,obj)</span><span class="w">
+</span><span class="cd">#' @export</span><span class="w">
+</span><span class="n">ACAT_V</span><span class="o">&lt;-</span><span class="k">function</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">obj</span><span class="p">,</span><span class="n">weights.beta</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">25</span><span class="p">),</span><span class="n">weights</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span><span class="n">mac.thresh</span><span class="o">=</span><span class="m">10</span><span class="p">){</span><span class="w">
+    </span><span class="c1">### check weights</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nf">is.null</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span><span class="o">!=</span><span class="n">ncol</span><span class="p">(</span><span class="n">G</span><span class="p">)){</span><span class="w">
+        </span><span class="n">stop</span><span class="p">(</span><span class="s2">"The length of weights must equal to the number of variants!"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="n">mac</span><span class="o">&lt;-</span><span class="n">Matrix</span><span class="o">::</span><span class="n">colSums</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="w">
+    </span><span class="c1">### remove SNPs with mac=0</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">mac</span><span class="o">==</span><span class="m">0</span><span class="p">)</span><span class="o">&gt;</span><span class="m">0</span><span class="p">){</span><span class="w">
+        </span><span class="n">G</span><span class="o">&lt;-</span><span class="n">G</span><span class="p">[,</span><span class="n">mac</span><span class="o">&gt;</span><span class="m">0</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">]</span><span class="w">
+        </span><span class="n">weights</span><span class="o">&lt;-</span><span class="n">weights</span><span class="p">[</span><span class="n">mac</span><span class="o">&gt;</span><span class="m">0</span><span class="p">]</span><span class="w">
+        </span><span class="n">mac</span><span class="o">&lt;-</span><span class="n">mac</span><span class="p">[</span><span class="n">mac</span><span class="o">&gt;</span><span class="m">0</span><span class="p">]</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">mac</span><span class="p">)</span><span class="o">==</span><span class="m">0</span><span class="p">){</span><span class="w">
+            </span><span class="n">stop</span><span class="p">(</span><span class="s2">"The genotype matrix do not have non-zero element!"</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="c1">### p and n</span><span class="w">
+    </span><span class="n">p</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">mac</span><span class="p">)</span><span class="w">
+    </span><span class="n">n</span><span class="o">&lt;-</span><span class="n">nrow</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="w">
+    </span><span class="c1">###</span><span class="w">
+
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">mac</span><span class="o">&gt;</span><span class="n">mac.thresh</span><span class="p">)</span><span class="o">==</span><span class="m">0</span><span class="p">){</span><span class="w">  </span><span class="c1">## only Burden</span><span class="w">
+        </span><span class="n">pval</span><span class="o">&lt;-</span><span class="n">Burden</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">weights.beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weights.beta</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weights</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">mac</span><span class="o">&lt;=</span><span class="n">mac.thresh</span><span class="p">)</span><span class="o">==</span><span class="m">0</span><span class="p">){</span><span class="w"> </span><span class="c1">## only cauchy method</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">is.null</span><span class="p">(</span><span class="n">weights</span><span class="p">)){</span><span class="w">
+            </span><span class="n">MAF</span><span class="o">&lt;-</span><span class="n">mac</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="w">
+            </span><span class="n">W</span><span class="o">&lt;-</span><span class="p">(</span><span class="n">dbeta</span><span class="p">(</span><span class="n">MAF</span><span class="p">,</span><span class="n">weights.beta</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="n">weights.beta</span><span class="p">[</span><span class="m">2</span><span class="p">])</span><span class="o">/</span><span class="n">dbeta</span><span class="p">(</span><span class="n">MAF</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.5</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="w">
+        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+            </span><span class="n">W</span><span class="o">&lt;-</span><span class="n">weights</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+        </span><span class="n">Mpvals</span><span class="o">&lt;-</span><span class="n">Get.marginal.pval</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">obj</span><span class="p">)</span><span class="w">
+        </span><span class="n">pval</span><span class="o">&lt;-</span><span class="n">ACAT</span><span class="p">(</span><span class="n">Mpvals</span><span class="p">,</span><span class="n">W</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">  </span><span class="c1">## Burden + Cauchy method</span><span class="w">
+        </span><span class="n">is.very.rare</span><span class="o">&lt;-</span><span class="n">mac</span><span class="o">&lt;=</span><span class="n">mac.thresh</span><span class="w">
+        </span><span class="n">weights.sparse</span><span class="o">&lt;-</span><span class="n">weights</span><span class="p">[</span><span class="n">is.very.rare</span><span class="p">]</span><span class="w">
+        </span><span class="n">weights.dense</span><span class="o">&lt;-</span><span class="n">weights</span><span class="p">[</span><span class="o">!</span><span class="n">is.very.rare</span><span class="p">]</span><span class="w">
+        </span><span class="n">pval.dense</span><span class="o">&lt;-</span><span class="n">Burden</span><span class="p">(</span><span class="n">G</span><span class="p">[,</span><span class="n">is.very.rare</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">],</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">weights.beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weights.beta</span><span class="p">,</span><span class="w"> </span><span class="n">weights</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">weights.sparse</span><span class="p">)</span><span class="w">
+
+        </span><span class="n">Mpvals</span><span class="o">&lt;-</span><span class="n">Get.marginal.pval</span><span class="p">(</span><span class="n">G</span><span class="p">[,</span><span class="o">!</span><span class="n">is.very.rare</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">],</span><span class="n">obj</span><span class="p">)</span><span class="w">
+
+        </span><span class="n">Mpvals</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="n">Mpvals</span><span class="p">,</span><span class="n">pval.dense</span><span class="p">)</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">is.null</span><span class="p">(</span><span class="n">weights</span><span class="p">)){</span><span class="w">
+            </span><span class="n">MAF</span><span class="o">&lt;-</span><span class="n">mac</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="w">
+            </span><span class="n">mafs</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="n">MAF</span><span class="p">[</span><span class="o">!</span><span class="n">is.very.rare</span><span class="p">],</span><span class="n">mean</span><span class="p">(</span><span class="n">MAF</span><span class="p">[</span><span class="n">is.very.rare</span><span class="p">]))</span><span class="w"> </span><span class="c1">## maf for p-values</span><span class="w">
+            </span><span class="n">W</span><span class="o">&lt;-</span><span class="p">(</span><span class="n">dbeta</span><span class="p">(</span><span class="n">mafs</span><span class="p">,</span><span class="n">weights.beta</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="n">weights.beta</span><span class="p">[</span><span class="m">2</span><span class="p">])</span><span class="o">/</span><span class="n">dbeta</span><span class="p">(</span><span class="n">mafs</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.5</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="w">
+        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+            </span><span class="n">W</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="n">weights.dense</span><span class="p">,</span><span class="n">mean</span><span class="p">(</span><span class="n">weights.sparse</span><span class="p">))</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+
+        </span><span class="n">is.keep</span><span class="o">&lt;-</span><span class="nf">rep</span><span class="p">(</span><span class="nb">T</span><span class="p">,</span><span class="nf">length</span><span class="p">(</span><span class="n">Mpvals</span><span class="p">))</span><span class="w">
+        </span><span class="n">is.keep</span><span class="p">[</span><span class="n">which</span><span class="p">(</span><span class="n">Mpvals</span><span class="o">==</span><span class="m">1</span><span class="p">)]</span><span class="o">&lt;-</span><span class="nb">F</span><span class="w">  </span><span class="c1">## remove p-values of 1.</span><span class="w">
+        </span><span class="n">pval</span><span class="o">&lt;-</span><span class="n">ACAT</span><span class="p">(</span><span class="n">Mpvals</span><span class="p">[</span><span class="n">is.keep</span><span class="p">],</span><span class="n">W</span><span class="p">[</span><span class="n">is.keep</span><span class="p">])</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nf">return</span><span class="p">(</span><span class="n">pval</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' Get parameters and residuals from the NULL model</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' Compute model parameters and residuals for ACAT-V</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#'</span><span class="w">
+</span><span class="cd">#' @param Y a numeric vector of outcome phenotypes.</span><span class="w">
+</span><span class="cd">#' @param Z a numeric matrix of covariates. Z must be full-rank. Do not include intercept in Z. The intercept will be added automatically.</span><span class="w">
+</span><span class="cd">#' @return This function returns an object that has model parameters and residuals of the NULL model of no association between genetic variables and outcome phenotypes. After obtaining it, please use \code{\link{ACAT_V}} function to conduct the association test.</span><span class="w">
+</span><span class="cd">#' @details \emph{Y} could only be continuous or binary. If \emph{Y} is continuous, a linear regression model is fitted. If \emph{Y} is binary, it must be coded as 0,1 and a logistic model is fitted.</span><span class="w">
+</span><span class="cd">#' @author Yaowu Liu</span><span class="w">
+</span><span class="cd">#' @examples  Y&lt;-rnorm(10000)</span><span class="w">
+</span><span class="cd">#' @examples  Z&lt;-matrix(rnorm(10000*4),ncol=4)</span><span class="w">
+</span><span class="cd">#' @examples  obj&lt;-NULL_Model(Y,Z)</span><span class="w">
+</span><span class="cd">#' @export</span><span class="w">
+</span><span class="n">NULL_Model</span><span class="o">&lt;-</span><span class="k">function</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="o">=</span><span class="kc">NULL</span><span class="p">){</span><span class="w">
+    </span><span class="n">n</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span><span class="w">
+    </span><span class="c1">#### check the type of Y</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="nf">sum</span><span class="p">(</span><span class="n">Y</span><span class="o">==</span><span class="m">0</span><span class="p">)</span><span class="o">+</span><span class="nf">sum</span><span class="p">(</span><span class="n">Y</span><span class="o">==</span><span class="m">1</span><span class="p">))</span><span class="o">==</span><span class="n">n</span><span class="p">){</span><span class="w">
+        </span><span class="n">out_type</span><span class="o">&lt;-</span><span class="s2">"D"</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+        </span><span class="n">out_type</span><span class="o">&lt;-</span><span class="s2">"C"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="c1">#### Add intercept</span><span class="w">
+    </span><span class="n">Z.tilde</span><span class="o">&lt;-</span><span class="n">cbind</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="nf">length</span><span class="p">(</span><span class="n">Y</span><span class="p">)),</span><span class="n">Z</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"C"</span><span class="p">){</span><span class="w">
+        </span><span class="c1">#### estimate of sigma square</span><span class="w">
+        </span><span class="n">Z.med</span><span class="o">&lt;-</span><span class="n">Z.tilde</span><span class="o">%*%</span><span class="n">solve</span><span class="p">(</span><span class="n">chol</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z.tilde</span><span class="p">)</span><span class="o">%*%</span><span class="n">Z.tilde</span><span class="p">))</span><span class="w">   </span><span class="c1">## Z.med%*%t(Z.med) is the projection matrix of Z.tilde</span><span class="w">
+        </span><span class="n">Y.res</span><span class="o">&lt;-</span><span class="n">as.vector</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="p">(</span><span class="n">Y</span><span class="o">%*%</span><span class="n">Z.med</span><span class="p">)</span><span class="o">%*%</span><span class="n">t</span><span class="p">(</span><span class="n">Z.med</span><span class="p">))</span><span class="w">
+        </span><span class="n">sigma2</span><span class="o">&lt;-</span><span class="nf">sum</span><span class="p">(</span><span class="n">Y.res</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">ncol</span><span class="p">(</span><span class="n">Z.med</span><span class="p">))</span><span class="w">
+        </span><span class="c1">#### output</span><span class="w">
+        </span><span class="n">res</span><span class="o">&lt;-</span><span class="nf">list</span><span class="p">()</span><span class="w">
+        </span><span class="n">res</span><span class="p">[[</span><span class="s2">"out_type"</span><span class="p">]]</span><span class="o">&lt;-</span><span class="n">out_type</span><span class="w">
+        </span><span class="n">res</span><span class="p">[[</span><span class="s2">"Z.med"</span><span class="p">]]</span><span class="o">&lt;-</span><span class="n">Z.med</span><span class="w">
+        </span><span class="n">res</span><span class="p">[[</span><span class="s2">"Y.res"</span><span class="p">]]</span><span class="o">&lt;-</span><span class="n">Y.res</span><span class="w">
+        </span><span class="n">res</span><span class="p">[[</span><span class="s2">"sigma2"</span><span class="p">]]</span><span class="o">&lt;-</span><span class="n">sigma2</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"D"</span><span class="p">){</span><span class="w">
+        </span><span class="c1">#### fit null model</span><span class="w">
+        </span><span class="n">g</span><span class="o">&lt;-</span><span class="n">glm</span><span class="p">(</span><span class="n">Y</span><span class="o">~</span><span class="m">0</span><span class="o">+</span><span class="n">Z.tilde</span><span class="p">,</span><span class="n">family</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"binomial"</span><span class="p">)</span><span class="w">
+        </span><span class="n">prob.est</span><span class="o">&lt;-</span><span class="n">g</span><span class="p">[[</span><span class="s2">"fitted.values"</span><span class="p">]]</span><span class="w">
+        </span><span class="c1">#### unstandarized residuals</span><span class="w">
+        </span><span class="n">Y.res</span><span class="o">&lt;-</span><span class="p">(</span><span class="n">Y</span><span class="o">-</span><span class="n">prob.est</span><span class="p">)</span><span class="w">
+        </span><span class="c1">### Sigma when rho=0</span><span class="w">
+        </span><span class="n">sigma2.Y</span><span class="o">&lt;-</span><span class="n">prob.est</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">prob.est</span><span class="p">)</span><span class="w">  </span><span class="c1">### variance of each Y_i</span><span class="w">
+        </span><span class="c1">### output</span><span class="w">
+        </span><span class="n">res</span><span class="o">&lt;-</span><span class="nf">list</span><span class="p">()</span><span class="w">
+        </span><span class="n">res</span><span class="p">[[</span><span class="s2">"out_type"</span><span class="p">]]</span><span class="o">&lt;-</span><span class="n">out_type</span><span class="w">
+        </span><span class="n">res</span><span class="p">[[</span><span class="s2">"Z.tilde"</span><span class="p">]]</span><span class="o">&lt;-</span><span class="n">Z.tilde</span><span class="w">
+        </span><span class="n">res</span><span class="p">[[</span><span class="s2">"Y.res"</span><span class="p">]]</span><span class="o">&lt;-</span><span class="n">Y.res</span><span class="w">
+        </span><span class="n">res</span><span class="p">[[</span><span class="s2">"sigma2.Y"</span><span class="p">]]</span><span class="o">&lt;-</span><span class="n">sigma2.Y</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nf">return</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+
+
+</span><span class="n">Get.marginal.pval</span><span class="o">&lt;-</span><span class="k">function</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">obj</span><span class="p">){</span><span class="w">
+    </span><span class="c1">### check obj</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">obj</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span><span class="o">!=</span><span class="s2">"out_type"</span><span class="p">){</span><span class="w">
+        </span><span class="n">stop</span><span class="p">(</span><span class="s2">"obj is not calculated from MOAT_NULL_MODEL!"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+        </span><span class="n">out_type</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"out_type"</span><span class="p">]]</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"C"</span><span class="p">){</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">all.equal</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">obj</span><span class="p">)[</span><span class="m">2</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">obj</span><span class="p">)],</span><span class="nf">c</span><span class="p">(</span><span class="s2">"Z.med"</span><span class="p">,</span><span class="s2">"Y.res"</span><span class="p">,</span><span class="s2">"sigma2"</span><span class="p">))){</span><span class="w">
+                </span><span class="n">stop</span><span class="p">(</span><span class="s2">"obj is not calculated from MOAT_NULL_MODEL!"</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+                </span><span class="n">Z.med</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"Z.med"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">Y.res</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"Y.res"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">n</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">Y.res</span><span class="p">)</span><span class="w">
+                </span><span class="n">SST</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"sigma2"</span><span class="p">]]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">ncol</span><span class="p">(</span><span class="n">Z.med</span><span class="p">))</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"D"</span><span class="p">){</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">all.equal</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">obj</span><span class="p">)[</span><span class="m">2</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">obj</span><span class="p">)],</span><span class="nf">c</span><span class="p">(</span><span class="s2">"Z.tilde"</span><span class="p">,</span><span class="s2">"Y.res"</span><span class="p">,</span><span class="s2">"sigma2.Y"</span><span class="p">))){</span><span class="w">
+                </span><span class="n">stop</span><span class="p">(</span><span class="s2">"obj is not calculated from MOAT_NULL_MODEL!"</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+                </span><span class="n">Z.tilde</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"Z.tilde"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">Y.res</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"Y.res"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">sigma2.Y</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"sigma2.Y"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">n</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">Y.res</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">!=</span><span class="s2">"matrix"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nf">class</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">!=</span><span class="s2">"dgCMatrix"</span><span class="p">){</span><span class="w">
+        </span><span class="n">stop</span><span class="p">(</span><span class="s2">"The class of G must be matrix or dgCMatrix!"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"C"</span><span class="p">){</span><span class="w">
+        </span><span class="n">G_tX.med</span><span class="o">&lt;-</span><span class="n">as.matrix</span><span class="p">(</span><span class="n">Matrix</span><span class="o">::</span><span class="n">crossprod</span><span class="p">(</span><span class="n">Z.med</span><span class="p">,</span><span class="n">G</span><span class="p">))</span><span class="w">
+        </span><span class="c1">### Sigma^2 of G</span><span class="w">
+        </span><span class="n">Sigma2.G</span><span class="o">&lt;-</span><span class="n">Matrix</span><span class="o">::</span><span class="n">colSums</span><span class="p">(</span><span class="n">G</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">-</span><span class="n">Matrix</span><span class="o">::</span><span class="n">colSums</span><span class="p">(</span><span class="n">G_tX.med</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w">
+        </span><span class="n">SSR</span><span class="o">&lt;-</span><span class="n">as.vector</span><span class="p">((</span><span class="n">Y.res</span><span class="o">%*%</span><span class="n">G</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">Sigma2.G</span><span class="p">)</span><span class="w">
+        </span><span class="n">SSR</span><span class="p">[</span><span class="n">Sigma2.G</span><span class="o">&lt;=</span><span class="m">0</span><span class="p">]</span><span class="o">&lt;</span><span class="m">-0</span><span class="w">
+        </span><span class="n">df.2</span><span class="o">&lt;-</span><span class="n">n</span><span class="m">-1</span><span class="o">-</span><span class="n">ncol</span><span class="p">(</span><span class="n">Z.med</span><span class="p">)</span><span class="w">
+        </span><span class="n">t.stat</span><span class="o">&lt;-</span><span class="n">suppressWarnings</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">SSR</span><span class="o">/</span><span class="p">((</span><span class="n">SST</span><span class="o">-</span><span class="n">SSR</span><span class="p">)</span><span class="o">/</span><span class="n">df.2</span><span class="p">)))</span><span class="w">
+        </span><span class="n">marginal.pvals</span><span class="o">&lt;</span><span class="m">-2</span><span class="o">*</span><span class="n">pt</span><span class="p">(</span><span class="n">t.stat</span><span class="p">,(</span><span class="n">n</span><span class="m">-1</span><span class="o">-</span><span class="n">ncol</span><span class="p">(</span><span class="n">Z.med</span><span class="p">)),</span><span class="n">lower.tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"D"</span><span class="p">){</span><span class="w">
+        </span><span class="n">Z.stat0</span><span class="o">&lt;-</span><span class="n">as.vector</span><span class="p">(</span><span class="n">Y.res</span><span class="o">%*%</span><span class="n">G</span><span class="p">)</span><span class="w">
+        </span><span class="c1">### Sigma when rho=0</span><span class="w">
+        </span><span class="n">tG_X.tilde_sigma2</span><span class="o">&lt;-</span><span class="n">as.matrix</span><span class="p">(</span><span class="n">Matrix</span><span class="o">::</span><span class="n">crossprod</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">Z.tilde</span><span class="o">*</span><span class="n">sigma2.Y</span><span class="p">))</span><span class="w">
+        </span><span class="n">Sigma2.G</span><span class="o">&lt;-</span><span class="n">Matrix</span><span class="o">::</span><span class="n">colSums</span><span class="p">(</span><span class="n">G</span><span class="o">^</span><span class="m">2</span><span class="o">*</span><span class="n">sigma2.Y</span><span class="p">)</span><span class="o">-</span><span class="n">diag</span><span class="p">(</span><span class="n">tG_X.tilde_sigma2</span><span class="o">%*%</span><span class="n">solve</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z.tilde</span><span class="p">)</span><span class="o">%*%</span><span class="p">(</span><span class="n">Z.tilde</span><span class="o">*</span><span class="n">sigma2.Y</span><span class="p">))</span><span class="o">%*%</span><span class="n">t</span><span class="p">(</span><span class="n">tG_X.tilde_sigma2</span><span class="p">))</span><span class="w">
+        </span><span class="n">marginal.pvals</span><span class="o">&lt;</span><span class="m">-2</span><span class="o">*</span><span class="n">pnorm</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">Z.stat0</span><span class="p">)</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">Sigma2.G</span><span class="p">),</span><span class="n">lower.tail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="nf">return</span><span class="p">(</span><span class="n">marginal.pvals</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+</span><span class="n">Burden</span><span class="o">&lt;-</span><span class="k">function</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">obj</span><span class="p">,</span><span class="n">kernel</span><span class="o">=</span><span class="s2">"linear.weighted"</span><span class="p">,</span><span class="n">weights.beta</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">25</span><span class="p">),</span><span class="n">weights</span><span class="o">=</span><span class="kc">NULL</span><span class="p">){</span><span class="w">
+    </span><span class="c1">### check obj</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">obj</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span><span class="o">!=</span><span class="s2">"out_type"</span><span class="p">){</span><span class="w">
+        </span><span class="n">stop</span><span class="p">(</span><span class="s2">"obj is not calculated from NULL_MODEL!"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+        </span><span class="n">out_type</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"out_type"</span><span class="p">]]</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"C"</span><span class="p">){</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">all.equal</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">obj</span><span class="p">)[</span><span class="m">2</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">obj</span><span class="p">)],</span><span class="nf">c</span><span class="p">(</span><span class="s2">"Z.med"</span><span class="p">,</span><span class="s2">"Y.res"</span><span class="p">,</span><span class="s2">"sigma2"</span><span class="p">))){</span><span class="w">
+                </span><span class="n">stop</span><span class="p">(</span><span class="s2">"obj is not calculated from NULL_MODEL!"</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+                </span><span class="n">Z.med</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"Z.med"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">Y.res</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"Y.res"</span><span class="p">]]</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"sigma2"</span><span class="p">]])</span><span class="w">  </span><span class="c1">## rescaled residules</span><span class="w">
+                </span><span class="n">n</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">Y.res</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"D"</span><span class="p">){</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">all.equal</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">obj</span><span class="p">)[</span><span class="m">2</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">obj</span><span class="p">)],</span><span class="nf">c</span><span class="p">(</span><span class="s2">"Z.tilde"</span><span class="p">,</span><span class="s2">"Y.res"</span><span class="p">,</span><span class="s2">"sigma2.Y"</span><span class="p">))){</span><span class="w">
+                </span><span class="n">stop</span><span class="p">(</span><span class="s2">"obj is not calculated from NULL_MODEL!"</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+                </span><span class="n">Z.tilde</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"Z.tilde"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">Y.res</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"Y.res"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">sigma2.Y</span><span class="o">&lt;-</span><span class="n">obj</span><span class="p">[[</span><span class="s2">"sigma2.Y"</span><span class="p">]]</span><span class="w">
+                </span><span class="n">n</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">Y.res</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="c1">### MAF</span><span class="w">
+    </span><span class="n">MAF</span><span class="o">&lt;-</span><span class="n">Matrix</span><span class="o">::</span><span class="n">colSums</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="nf">dim</span><span class="p">(</span><span class="n">G</span><span class="p">)[</span><span class="m">1</span><span class="p">])</span><span class="w">
+    </span><span class="n">p</span><span class="o">&lt;-</span><span class="nf">length</span><span class="p">(</span><span class="n">MAF</span><span class="p">)</span><span class="w">
+    </span><span class="c1">#### weights</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="o">==</span><span class="s2">"linear.weighted"</span><span class="p">){</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">is.null</span><span class="p">(</span><span class="n">weights</span><span class="p">)){</span><span class="w">
+            </span><span class="n">W</span><span class="o">&lt;-</span><span class="n">dbeta</span><span class="p">(</span><span class="n">MAF</span><span class="p">,</span><span class="n">weights.beta</span><span class="p">[</span><span class="m">1</span><span class="p">],</span><span class="n">weights.beta</span><span class="p">[</span><span class="m">2</span><span class="p">])</span><span class="w">
+        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span><span class="o">==</span><span class="n">p</span><span class="p">){</span><span class="w">
+                </span><span class="n">W</span><span class="o">&lt;-</span><span class="n">weights</span><span class="w">
+            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+                </span><span class="n">stop</span><span class="p">(</span><span class="s2">"The length of weights must equal to the number of variants!"</span><span class="p">)</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernel</span><span class="o">==</span><span class="s2">"linear"</span><span class="p">){</span><span class="w">
+        </span><span class="n">W</span><span class="o">&lt;-</span><span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="n">p</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+        </span><span class="n">stop</span><span class="p">(</span><span class="s2">"The kernel name is not valid!"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="c1">###### if G is sparse or not</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">class</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">==</span><span class="s2">"matrix"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nf">class</span><span class="p">(</span><span class="n">G</span><span class="p">)</span><span class="o">==</span><span class="s2">"dgCMatrix"</span><span class="p">){</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"C"</span><span class="p">){</span><span class="w">
+            </span><span class="n">Z.stat.sum</span><span class="o">&lt;-</span><span class="n">as.vector</span><span class="p">((</span><span class="n">Y.res</span><span class="o">%*%</span><span class="n">G</span><span class="p">)</span><span class="o">%*%</span><span class="n">W</span><span class="p">)</span><span class="w">
+            </span><span class="n">Gw</span><span class="o">&lt;-</span><span class="n">G</span><span class="o">%*%</span><span class="n">W</span><span class="w">
+            </span><span class="n">sigma.z</span><span class="o">&lt;-</span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">Gw</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">-</span><span class="nf">sum</span><span class="p">((</span><span class="n">t</span><span class="p">(</span><span class="n">Z.med</span><span class="p">)</span><span class="o">%*%</span><span class="p">(</span><span class="n">Gw</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="p">))</span><span class="w">
+        </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_type</span><span class="o">==</span><span class="s2">"D"</span><span class="p">){</span><span class="w">
+            </span><span class="n">Z.stat.sum</span><span class="o">&lt;-</span><span class="n">as.vector</span><span class="p">((</span><span class="n">Y.res</span><span class="o">%*%</span><span class="n">G</span><span class="p">)</span><span class="o">%*%</span><span class="n">W</span><span class="p">)</span><span class="w">
+            </span><span class="n">Gw</span><span class="o">&lt;-</span><span class="n">as.vector</span><span class="p">(</span><span class="n">G</span><span class="o">%*%</span><span class="n">W</span><span class="p">)</span><span class="w">
+            </span><span class="n">sigma.z</span><span class="o">&lt;-</span><span class="nf">sum</span><span class="p">(</span><span class="n">Gw</span><span class="o">^</span><span class="m">2</span><span class="o">*</span><span class="n">sigma2.Y</span><span class="p">)</span><span class="o">-</span><span class="p">((</span><span class="n">Gw</span><span class="o">*</span><span class="n">sigma2.Y</span><span class="p">)</span><span class="o">%*%</span><span class="n">Z.tilde</span><span class="p">)</span><span class="o">%*%</span><span class="n">solve</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">Z.tilde</span><span class="p">)</span><span class="o">%*%</span><span class="p">(</span><span class="n">Z.tilde</span><span class="o">*</span><span class="n">sigma2.Y</span><span class="p">))</span><span class="o">%*%</span><span class="n">t</span><span class="p">((</span><span class="n">Gw</span><span class="o">*</span><span class="n">sigma2.Y</span><span class="p">)</span><span class="o">%*%</span><span class="n">Z.tilde</span><span class="p">)</span><span class="w">
+            </span><span class="n">sigma.z</span><span class="o">&lt;-</span><span class="n">as.vector</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">sigma.z</span><span class="p">))</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+        </span><span class="n">stop</span><span class="p">(</span><span class="s2">"The class of G must be matrix or dgCMatrix!"</span><span class="p">)</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="n">V</span><span class="o">&lt;-</span><span class="n">Z.stat.sum</span><span class="o">/</span><span class="n">sigma.z</span><span class="w">
+    </span><span class="n">Q</span><span class="o">&lt;-</span><span class="n">V</span><span class="o">^</span><span class="m">2</span><span class="w">   </span><span class="c1">## Q test statistic</span><span class="w">
+    </span><span class="n">pval</span><span class="o">&lt;</span><span class="m">-1</span><span class="o">-</span><span class="n">pchisq</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">df</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
+    </span><span class="nf">return</span><span class="p">(</span><span class="n">pval</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
