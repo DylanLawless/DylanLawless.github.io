@@ -1637,24 +1637,21 @@ The R code that I used for this process is included.&lt;/p&gt;
         <title>Aggregated Cauchy Association Test (ACAT)</title>
         <description>&lt;h1 id=&quot;aggregated-cauchy-association-test-acat&quot;&gt;Aggregated Cauchy Association Test (ACAT)&lt;/h1&gt;
 &lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#summary-of-this-topic&quot; id=&quot;markdown-toc-summary-of-this-topic&quot;&gt;Summary of this topic&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#abbreviations&quot; id=&quot;markdown-toc-abbreviations&quot;&gt;Abbreviations&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#abbreviations&quot; id=&quot;markdown-toc-abbreviations&quot;&gt;Abbreviations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#intro-to-this-topic&quot; id=&quot;markdown-toc-intro-to-this-topic&quot;&gt;Intro to this topic&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#papers&quot; id=&quot;markdown-toc-papers&quot;&gt;Papers&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#step-by-step-explanation-of-acatr&quot; id=&quot;markdown-toc-step-by-step-explanation-of-acatr&quot;&gt;Step-by-step explanation of ACAT.R&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#applying-staar-o-for-multiple-annotation-weights&quot; id=&quot;markdown-toc-applying-staar-o-for-multiple-annotation-weights&quot;&gt;Applying STAAR-O for multiple annotation weights&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#non-gene-centric-analysis-using-dynamic-windows-with-scang-staar&quot; id=&quot;markdown-toc-non-gene-centric-analysis-using-dynamic-windows-with-scang-staar&quot;&gt;Non-gene-centric analysis using dynamic windows with SCANG-STAAR&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#multi-weight-annotation-analysis&quot; id=&quot;markdown-toc-multi-weight-annotation-analysis&quot;&gt;Multi-weight annotation analysis&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#main-equations-for-acat&quot; id=&quot;markdown-toc-main-equations-for-acat&quot;&gt;Main equations for ACAT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#tan-and-pi&quot; id=&quot;markdown-toc-tan-and-pi&quot;&gt;tan and \(\pi\)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#original-r-code-from-yaowuliu&quot; id=&quot;markdown-toc-original-r-code-from-yaowuliu&quot;&gt;Original R code from yaowuliu&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p class=&quot;meta&quot;&gt;25 Apr 2023 - last update&lt;/p&gt;
 
-&lt;h2 id=&quot;summary-of-this-topic&quot;&gt;Summary of this topic&lt;/h2&gt;
-
-&lt;h3 id=&quot;abbreviations&quot;&gt;Abbreviations&lt;/h3&gt;
+&lt;h2 id=&quot;abbreviations&quot;&gt;Abbreviations&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;ACAT: Aggregated Cauchy Association Test&lt;/li&gt;
@@ -1664,8 +1661,11 @@ The R code that I used for this process is included.&lt;/p&gt;
   &lt;li&gt;ARIC: Atherosclerosis Risk in Communities&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I am interested in Aggregated Cauchy Association Test (ACAT) for rare variant analysis.
-First, here is a great talk by author of SKAT and other methods:&lt;/p&gt;
+&lt;h2 id=&quot;intro-to-this-topic&quot;&gt;Intro to this topic&lt;/h2&gt;
+
+&lt;p&gt;The Aggregated Cauchy Association Test (ACAT) is a statistical method used for rare-variant association tests (RVATs) in genetic studies. ACAT is designed to aggregate the association signals of multiple rare genetic variants within a genomic region or a gene, while accounting for the directions of the effects of these variants on the phenotype of interest. The ACAT method utilizes a Cauchy distribution, which allows for improved performance in identifying true associations, especially when the directions and magnitudes of variant effects are heterogeneous.&lt;/p&gt;
+
+&lt;p&gt;First, here is a great talk by author of SKAT and other methods:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=URGJIAdRTi0&amp;amp;pp=ygUbU2VxdWVuY2Uga2VybmFsIGFzc29jaWF0aW9u&quot;&gt;Watch on YouTube&lt;/a&gt; 
 &lt;strong&gt;Dr. Xihong Lin&lt;/strong&gt;:
@@ -1753,6 +1753,8 @@ First, here is a great talk by author of SKAT and other methods:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Figure 2.&lt;/strong&gt; Slide from presentation of ACAT method.&lt;/p&gt;
 
 &lt;h2 id=&quot;applying-staar-o-for-multiple-annotation-weights&quot;&gt;Applying STAAR-O for multiple annotation weights&lt;/h2&gt;
+&lt;p&gt;In a separate page, I discuss the STAAR method. 
+The following passages are included in both pages since they related.&lt;/p&gt;
 
 &lt;p&gt;In the STAAR Nature Methods paper, the section &lt;em&gt;Gene-centric analysis of the noncoding genome&lt;/em&gt; 
 shows how the STAAR method can indeed be used to capitalize on the ACAT method to obtain a combined p-value from a set of annotations for a single variant. The STAAR framework incorporates multiple functional annotation scores into the RVATs (rare-variant association tests) to increase the power of association analysis. In this context, it uses the STAAR-O test, an omnibus test that aggregates annotation-weighted burden test, SKAT, and ACAT-V within the STAAR framework.&lt;/p&gt;
@@ -1796,10 +1798,25 @@ shows how the STAAR method can indeed be used to capitalize on the ACAT method t
 &lt;ol&gt;
   &lt;li&gt;ACAT is a general and flexible method of combining p-values, which can represent the statistical significance of different kinds of genetic variations in sequencing studies.&lt;/li&gt;
   &lt;li&gt;ACAT only aggregates p-values, so one can automatically control cryptic relatedness and/or population stratification by fitting appropriate models from which p-values are calculated through methods such as principal-component analysis or mixed models.&lt;/li&gt;
-  &lt;li&gt;The null distribution of the test statistic $T_{ACAT}$ can be well approximated by a Cauchy distribution without the need for estimating and accounting for the correlation among p-values.&lt;/li&gt;
+  &lt;li&gt;The null distribution of the test statistic \(T_{ACAT}\) can be well approximated by a Cauchy distribution without the need for estimating and accounting for the correlation among p-values.&lt;/li&gt;
   &lt;li&gt;Calculating the p-value of ACAT requires almost negligible computation and is extremely fast.&lt;/li&gt;
   &lt;li&gt;The approximation is particularly accurate when ACAT has a very small p-value, which is useful in sequencing studies because only very small p-values can pass the stringent genome-wide significance threshold and are of particular interest.&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2 id=&quot;tan-and-pi&quot;&gt;tan and \(\pi\)&lt;/h2&gt;
+
+&lt;p&gt;In the ACAT method, the “tan” and “π” functions are used to transform the p-values in such a way that they follow a standard Cauchy distribution under the null hypothesis. 
+This transformation is essential to the ACAT method because it allows for an efficient and accurate combination of p-values, even when they are correlated.&lt;/p&gt;
+
+&lt;p&gt;The reason for using the tangent function (“tan”) specifically is because of its connection to the Cauchy distribution. 
+The Cauchy distribution has some unique properties, such as having a heavy tail, which make it suitable for handling correlated p-values in this context. 
+The transformation function used in the ACAT method, given by \(tan((0.5 - p_i) \pi)\), ensures that if the p-value \(p_i\) is from the null distribution, the transformed value will follow a standard Cauchy distribution.&lt;/p&gt;
+
+&lt;p&gt;The constant \(\pi\) (Pi) is used in the formula because it is a natural component of the tangent function. 
+In the context of the ACAT method,  \(\pi\) is used to scale the input of the tangent function, which is necessary to map the range of p-values (0 to 1) to the entire domain of the tangent function. 
+This ensures that the transformed values will follow the desired Cauchy distribution.&lt;/p&gt;
+
+&lt;p&gt;Therefore, the “tan” and \(\pi\) functions in the ACAT method are used to transform p-values so that they follow a standard Cauchy distribution under the null hypothesis, which allows for an efficient and accurate combination of correlated p-values.&lt;/p&gt;
 
 &lt;h2 id=&quot;original-r-code-from-yaowuliu&quot;&gt;Original R code from yaowuliu&lt;/h2&gt;
 

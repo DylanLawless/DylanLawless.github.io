@@ -91,28 +91,24 @@
 <!-- MAIN START -------------------------------------------------------- -->
 <div class="sitewidth">
 	<div id="topic">
-Reading time  8 minutes
+Reading time  10 minutes
 <h1 id="aggregated-cauchy-association-test-acat">Aggregated Cauchy Association Test (ACAT)</h1>
 <ul id="markdown-toc">
-  <li>
-<a href="#summary-of-this-topic" id="markdown-toc-summary-of-this-topic">Summary of this topic</a>    <ul>
-      <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
-    </ul>
-  </li>
+  <li><a href="#abbreviations" id="markdown-toc-abbreviations">Abbreviations</a></li>
+  <li><a href="#intro-to-this-topic" id="markdown-toc-intro-to-this-topic">Intro to this topic</a></li>
   <li><a href="#papers" id="markdown-toc-papers">Papers</a></li>
   <li><a href="#step-by-step-explanation-of-acatr" id="markdown-toc-step-by-step-explanation-of-acatr">Step-by-step explanation of ACAT.R</a></li>
   <li><a href="#applying-staar-o-for-multiple-annotation-weights" id="markdown-toc-applying-staar-o-for-multiple-annotation-weights">Applying STAAR-O for multiple annotation weights</a></li>
   <li><a href="#non-gene-centric-analysis-using-dynamic-windows-with-scang-staar" id="markdown-toc-non-gene-centric-analysis-using-dynamic-windows-with-scang-staar">Non-gene-centric analysis using dynamic windows with SCANG-STAAR</a></li>
   <li><a href="#multi-weight-annotation-analysis" id="markdown-toc-multi-weight-annotation-analysis">Multi-weight annotation analysis</a></li>
   <li><a href="#main-equations-for-acat" id="markdown-toc-main-equations-for-acat">Main equations for ACAT</a></li>
+  <li><a href="#tan-and-pi" id="markdown-toc-tan-and-pi">tan and \(\pi\)</a></li>
   <li><a href="#original-r-code-from-yaowuliu" id="markdown-toc-original-r-code-from-yaowuliu">Original R code from yaowuliu</a></li>
 </ul>
 
 <p class="meta">25 Apr 2023 - last update</p>
 
-<h2 id="summary-of-this-topic">Summary of this topic</h2>
-
-<h3 id="abbreviations">Abbreviations</h3>
+<h2 id="abbreviations">Abbreviations</h2>
 
 <ul>
   <li>ACAT: Aggregated Cauchy Association Test</li>
@@ -122,8 +118,11 @@ Reading time  8 minutes
   <li>ARIC: Atherosclerosis Risk in Communities</li>
 </ul>
 
-<p>I am interested in Aggregated Cauchy Association Test (ACAT) for rare variant analysis.
-First, here is a great talk by author of SKAT and other methods:</p>
+<h2 id="intro-to-this-topic">Intro to this topic</h2>
+
+<p>The Aggregated Cauchy Association Test (ACAT) is a statistical method used for rare-variant association tests (RVATs) in genetic studies. ACAT is designed to aggregate the association signals of multiple rare genetic variants within a genomic region or a gene, while accounting for the directions of the effects of these variants on the phenotype of interest. The ACAT method utilizes a Cauchy distribution, which allows for improved performance in identifying true associations, especially when the directions and magnitudes of variant effects are heterogeneous.</p>
+
+<p>First, here is a great talk by author of SKAT and other methods:</p>
 
 <p><a href="https://www.youtube.com/watch?v=URGJIAdRTi0&pp=ygUbU2VxdWVuY2Uga2VybmFsIGFzc29jaWF0aW9u">Watch on YouTube</a> 
 <strong>Dr. Xihong Lin</strong>:
@@ -225,6 +224,8 @@ First, here is a great talk by author of SKAT and other methods:</p>
 <p><strong>Figure 2.</strong> Slide from presentation of ACAT method.</p>
 
 <h2 id="applying-staar-o-for-multiple-annotation-weights">Applying STAAR-O for multiple annotation weights</h2>
+<p>In a separate page, I discuss the STAAR method. 
+The following passages are included in both pages since they related.</p>
 
 <p>In the STAAR Nature Methods paper, the section <em>Gene-centric analysis of the noncoding genome</em> 
 shows how the STAAR method can indeed be used to capitalize on the ACAT method to obtain a combined p-value from a set of annotations for a single variant. The STAAR framework incorporates multiple functional annotation scores into the RVATs (rare-variant association tests) to increase the power of association analysis. In this context, it uses the STAAR-O test, an omnibus test that aggregates annotation-weighted burden test, SKAT, and ACAT-V within the STAAR framework.</p>
@@ -268,10 +269,25 @@ shows how the STAAR method can indeed be used to capitalize on the ACAT method t
 <ol>
   <li>ACAT is a general and flexible method of combining p-values, which can represent the statistical significance of different kinds of genetic variations in sequencing studies.</li>
   <li>ACAT only aggregates p-values, so one can automatically control cryptic relatedness and/or population stratification by fitting appropriate models from which p-values are calculated through methods such as principal-component analysis or mixed models.</li>
-  <li>The null distribution of the test statistic $T_{ACAT}$ can be well approximated by a Cauchy distribution without the need for estimating and accounting for the correlation among p-values.</li>
+  <li>The null distribution of the test statistic \(T_{ACAT}\) can be well approximated by a Cauchy distribution without the need for estimating and accounting for the correlation among p-values.</li>
   <li>Calculating the p-value of ACAT requires almost negligible computation and is extremely fast.</li>
   <li>The approximation is particularly accurate when ACAT has a very small p-value, which is useful in sequencing studies because only very small p-values can pass the stringent genome-wide significance threshold and are of particular interest.</li>
 </ol>
+
+<h2 id="tan-and-pi">tan and \(\pi\)</h2>
+
+<p>In the ACAT method, the “tan” and “π” functions are used to transform the p-values in such a way that they follow a standard Cauchy distribution under the null hypothesis. 
+This transformation is essential to the ACAT method because it allows for an efficient and accurate combination of p-values, even when they are correlated.</p>
+
+<p>The reason for using the tangent function (“tan”) specifically is because of its connection to the Cauchy distribution. 
+The Cauchy distribution has some unique properties, such as having a heavy tail, which make it suitable for handling correlated p-values in this context. 
+The transformation function used in the ACAT method, given by \(tan((0.5 - p_i) \pi)\), ensures that if the p-value \(p_i\) is from the null distribution, the transformed value will follow a standard Cauchy distribution.</p>
+
+<p>The constant \(\pi\) (Pi) is used in the formula because it is a natural component of the tangent function. 
+In the context of the ACAT method,  \(\pi\) is used to scale the input of the tangent function, which is necessary to map the range of p-values (0 to 1) to the entire domain of the tangent function. 
+This ensures that the transformed values will follow the desired Cauchy distribution.</p>
+
+<p>Therefore, the “tan” and \(\pi\) functions in the ACAT method are used to transform p-values so that they follow a standard Cauchy distribution under the null hypothesis, which allows for an efficient and accurate combination of correlated p-values.</p>
 
 <h2 id="original-r-code-from-yaowuliu">Original R code from yaowuliu</h2>
 

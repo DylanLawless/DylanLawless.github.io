@@ -13,9 +13,8 @@ subject: statistics
 
 <p class="meta">25 Apr 2023 - last update</p>
 
-## Summary of this topic
 
-### Abbreviations
+## Abbreviations
 
 * ACAT: Aggregated Cauchy Association Test
 * ACAT-V: Aggregated Cauchy Association Test - Variant level
@@ -23,7 +22,10 @@ subject: statistics
 * SKAT: Sequence Kernel Association Test
 * ARIC: Atherosclerosis Risk in Communities
 
-I am interested in Aggregated Cauchy Association Test (ACAT) for rare variant analysis.
+## Intro to this topic
+
+The Aggregated Cauchy Association Test (ACAT) is a statistical method used for rare-variant association tests (RVATs) in genetic studies. ACAT is designed to aggregate the association signals of multiple rare genetic variants within a genomic region or a gene, while accounting for the directions of the effects of these variants on the phenotype of interest. The ACAT method utilizes a Cauchy distribution, which allows for improved performance in identifying true associations, especially when the directions and magnitudes of variant effects are heterogeneous.
+
 First, here is a great talk by author of SKAT and other methods:
 
 [Watch on YouTube](https://www.youtube.com/watch?v=URGJIAdRTi0&pp=ygUbU2VxdWVuY2Uga2VybmFsIGFzc29jaWF0aW9u) 
@@ -34,7 +36,6 @@ _Overview of Rare Variant Analysis of Whole Genome Sequencing Association Studie
 * and the best is at: [30:50](https://youtu.be/URGJIAdRTi0?t=1850) where she describes the aggregated Cauchy association test (ACAT) method for combining multiple annotations (like CADD score, MAF, etc.) to calculate the final P-value.
 * This is their annotation database discussed: <https://favor.genohub.org>
 
-
 ## Papers
 
 * [ACAT paper](https://www.sciencedirect.com/science/article/pii/S0002929719300023?via%3Dihub), Yaowu Liu, et al AJGH 2019.
@@ -43,7 +44,6 @@ _Overview of Rare Variant Analysis of Whole Genome Sequencing Association Studie
 * [STAAR pipeline github](https://github.com/xihaoli/STAARpipeline)
 * Controlling SKAT function: [Here's a summary of the SKAT package functions](https://lawlessgenomics.com/topic/skat#skat-r-package-by-leelabsg) - which are easier to understand than reading the notation in the SKAT papers. If you read the code you see each new implement is added sequentially and how weights work. Although, the ACAT git repo is independent.
 *  ACAT git repo: <https://github.com/yaowuliu/ACAT/blob/master/R/ACAT.R>
-
 
 ##  Step-by-step explanation of ACAT.R
 
@@ -94,6 +94,8 @@ To do this see the STAAR framework for this.
 **Figure 2.** Slide from presentation of ACAT method.
 
 ## Applying STAAR-O for multiple annotation weights
+In a separate page, I discuss the STAAR method. 
+The following passages are included in both pages since they related.
 
 In the STAAR Nature Methods paper, the section _Gene-centric analysis of the noncoding genome_ 
 shows how the STAAR method can indeed be used to capitalize on the ACAT method to obtain a combined p-value from a set of annotations for a single variant. The STAAR framework incorporates multiple functional annotation scores into the RVATs (rare-variant association tests) to increase the power of association analysis. In this context, it uses the STAAR-O test, an omnibus test that aggregates annotation-weighted burden test, SKAT, and ACAT-V within the STAAR framework.
@@ -134,13 +136,26 @@ $$
 
 where $$w = \sum_{i=1}^{k} w_i$$.
 
-
-
 1. ACAT is a general and flexible method of combining p-values, which can represent the statistical significance of different kinds of genetic variations in sequencing studies.
 2. ACAT only aggregates p-values, so one can automatically control cryptic relatedness and/or population stratification by fitting appropriate models from which p-values are calculated through methods such as principal-component analysis or mixed models.
-3. The null distribution of the test statistic $T_{ACAT}$ can be well approximated by a Cauchy distribution without the need for estimating and accounting for the correlation among p-values.
+3. The null distribution of the test statistic $$T_{ACAT}$$ can be well approximated by a Cauchy distribution without the need for estimating and accounting for the correlation among p-values.
 4. Calculating the p-value of ACAT requires almost negligible computation and is extremely fast.
 5. The approximation is particularly accurate when ACAT has a very small p-value, which is useful in sequencing studies because only very small p-values can pass the stringent genome-wide significance threshold and are of particular interest.
+
+## tan and $$\pi$$ 
+
+In the ACAT method, the "tan" and "π" functions are used to transform the p-values in such a way that they follow a standard Cauchy distribution under the null hypothesis. 
+This transformation is essential to the ACAT method because it allows for an efficient and accurate combination of p-values, even when they are correlated.
+
+The reason for using the tangent function ("tan") specifically is because of its connection to the Cauchy distribution. 
+The Cauchy distribution has some unique properties, such as having a heavy tail, which make it suitable for handling correlated p-values in this context. 
+The transformation function used in the ACAT method, given by $$tan((0.5 - p_i) \pi)$$, ensures that if the p-value $$p_i$$ is from the null distribution, the transformed value will follow a standard Cauchy distribution.
+
+The constant $$\pi$$ (Pi) is used in the formula because it is a natural component of the tangent function. 
+In the context of the ACAT method,  $$\pi$$ is used to scale the input of the tangent function, which is necessary to map the range of p-values (0 to 1) to the entire domain of the tangent function. 
+This ensures that the transformed values will follow the desired Cauchy distribution.
+
+Therefore, the "tan" and $$\pi$$ functions in the ACAT method are used to transform p-values so that they follow a standard Cauchy distribution under the null hypothesis, which allows for an efficient and accurate combination of correlated p-values.
 
 ## Original R code from yaowuliu
 
