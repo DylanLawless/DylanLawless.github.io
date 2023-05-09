@@ -18,7 +18,7 @@
 	
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
-	<title>Reference genome choice</title>
+	<title>What I want from genomic data centers</title>
 	<meta name="author" content="LawlessGenomics">
 	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
@@ -91,20 +91,50 @@
 <!-- MAIN START -------------------------------------------------------- -->
 <div class="sitewidth">
 	<div id="post">
-Reading time 30 seconds
-<h1 id="reference-genome-choice">Reference genome choice</h1>
-<p>Reference genome choice is discussed succinctly in many difference places.
-Therefore, I will not write a long piece on it but instead add links for what I think are usefule sources.</p>
+Reading time 2 minutes
+<h1 id="what-i-want-from-genomic-data-centers">What I want from genomic data centers</h1>
 
-<h2 id="heng-li---which-human-reference-genome-to-use">Heng Li - Which human reference genome to use?</h2>
-<p><a href="https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use">https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use</a></p>
+<p class="meta">09 May 2023</p>
 
-<h2 id="illumina-review">Illumina review</h2>
-<p><a href="https://www.illumina.com/science/genomics-research/articles/dragen-demystifying-reference-genomes.html">https://www.illumina.com/science/genomics-research/articles/dragen-demystifying-reference-genomes.html</a></p>
+<p>No one asked, but here are some things that would make me love a genomic data center.</p>
 
-<h2 id="references">References</h2>
+<ol>
+  <li>
+    <p><strong>Sensible file naming</strong>: Require a certain ID format before submission. Ensure that the sequencing center and customers use consistent file naming conventions. 
+Sequencing typical requires output like: SAMPLEID_MACHINE_RUNID.
+However, if a customer provides a sample ID like “ABC-001”, the sequencing center should NOT be returning “ABC_001_XYZ0001_001234”.
+Avoid discrepancies between the customer’s original ID and the sequencing center’s modified ID.
+If modifications are required, ensure that the customer does first it on their side by submitting “ABC_001”.</p>
+  </li>
+  <li>
+    <p><strong>Protocol file</strong>: Provide a summary file that lists the number of samples, batch IDs, sample handling steps (e.g. library preparation kit used, sequencing lane, sequencer machine used), and any alignment or reference genome information. The customer should be responsible for recording what they have ordered but we must assume that they will loose it if it is not included in the data pack which they are returned.</p>
+  </li>
+  <li>
+<strong>Alignment</strong>: If you can provide it as an option, align the data to the most commonly accepted reference genome, such as GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz. For more refer to <a href="https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use">Heng Li</a> and <a href="https://www.illumina.com/science/genomics-research/articles/dragen-demystifying-reference-genomes.html">Illumina</a>. Assume that the customer has no idea which to use unless they specific it. Include a note in the protocol file with advice on alternative reference genomes, such as:
+    <blockquote>
+      <p>If you map reads to GRCh37 or hg19, use hs37-1kg:
+ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/reference/human_g1k_v37.fasta.gz.
+If you map to GRCh37 and believe decoy sequences help with better variant calling, use hs37d5:
+ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz.
+If you map reads to GRCh38 or hg38, use the following:
+ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>Variant calling</strong>: If providing variant calling services, such as using GATK best-practices, include a summary of the protocol.</p>
+  </li>
+  <li>
+<strong>Reporting prioritization</strong>: Focus on implementing the most important reporting methods first, such as:
+    <ol>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/25741868/">ACMG recommendations for SNV and short INDEL variants</a></li>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/31690835/">ACMG recommendations for CNV</a></li>
+      <li><a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/acmg/">ACMG recommendations for secondary findings</a></li>
+    </ol>
+  </li>
+</ol>
 
-<ol class="bibliography"></ol>
+<p>Producing a simple report will be valuable for the majority of customers. 
+Avoid reporting overly complex information.</p>
 
 </div>
 
@@ -113,15 +143,15 @@ Therefore, I will not write a long piece on it but instead add links for what I 
   <ul class="posts">
     
       <li>
-<span>09 May 2023</span> » <a href="/2023/05/09/what_i_want_from_genome_center.html">What I want from genomic data centers</a>
-</li>
-    
-      <li>
 <span>05 Apr 2023</span> » <a href="/2023/04/05/worlds_simplest_gwas.html">Worlds simplest GWAS</a>
 </li>
     
       <li>
 <span>18 Jan 2023</span> » <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a>
+</li>
+    
+      <li>
+<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_tell_me_about_precision_medicine_genomics.html">AI, tell me about precision medicine genomics</a>
 </li>
     
   </ul>
