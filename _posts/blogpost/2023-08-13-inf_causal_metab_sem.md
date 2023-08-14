@@ -16,7 +16,20 @@ Chen, S., Lin, Z., Shen, X., Li, L., & Pan, W. (2023). Inference of causal metab
 <https://doi.org/10.1002/gepi.22535>,
 {% cite chen2023inference %}.
 
-## Abstract
+Briefly, this paper is about using instrumental variables (SNPs) in causal inference with applications to genome-wide association studies (GWAS).
+
+- **Exposure:**
+    - Metabolites: They serve as intermediate phenotypes connecting genetic variants to clinical outcomes and play a crucial role in biological processes.
+- **Instrumental Variable (IV):**
+    - SNPs (Single Nucleotide Polymorphisms): These are used as instrumental variables to isolate the variability in metabolites that is independent of confounders.
+- **Outcome:**
+    - Clinical outcomes: These are affected by metabolites, which in turn are influenced by SNPs. The causal effect of metabolites on clinical outcomes is what the study aims to determine.
+
+For a more gradual background jump down to the "In context" section.
+
+---
+
+## Abstract summary
 Structural equation models (SEMs) for inferring causal networks in metabolites and other complex traits. The method:
 1. Performs causal analysis to discover relationships among multiple traits.
 2. Accounts for potential invalid IVs.
@@ -25,7 +38,9 @@ Structural equation models (SEMs) for inferring causal networks in metabolites a
 
 The approach uses a stepwise selection to identify invalid IVs, and demonstrates its superior performance using both real and simulated GWAS data.
 
-## METHODS
+---
+
+## Key methods summary
 
 ### 2.1 One-sample data
 
@@ -61,6 +76,8 @@ For one-sample GWAS individual-level data:
 - $${B}_{i}={({\beta }_{1i},{\beta }_{2i},{\rm{\ldots }},{\beta }_{p_{0i}i})}^{T}$$ represents the direct or (horizontal) pleiotropic effects of the invalid IVs on trait $$i=1,2,{\rm{\ldots }},M$$.
 - The linear SEM for trait i is represented as: $${y}_{1}{\gamma }_{1i}+\cdots +{y}_{i}{\gamma }_{ii}+\cdots +{y}_{M}{\gamma }_{Mi}+{z}_{1}{\beta }_{1i}+\cdots +{z}_{p_{0}i}{\beta }_{p_{0i}i}+{e}_{i}=0,$$.
 - $$\gamma$$'s and $$\beta$$'s are unknown parameters in the model.
+
+---
 
 ## Code
 ### onesample mvstepIV
@@ -143,6 +160,62 @@ The function `onesample_mvstepIV_ind` performs one-sample stepwise IV for indepe
 - `beta_se`: Standard error of beta estimates.
 - `invalid IVs`: Indices of invalid IVs.
 - `no. of invalid IV`: Number of invalid IVs.
+
+---
+
+## In context
+Recap:
+- **Exposure:**
+    - Metabolites: They serve as intermediate phenotypes connecting genetic variants to clinical outcomes and play a crucial role in biological processes.
+- **Instrumental Variable (IV):**
+    - SNPs (Single Nucleotide Polymorphisms): These are used as instrumental variables to isolate the variability in metabolites that is independent of confounders.
+- **Outcome:**
+    - Clinical outcomes: These are affected by metabolites, which in turn are influenced by SNPs. The causal effect of metabolites on clinical outcomes is what the study aims to determine.
+
+### Background
+In GWAS, associations are generally sought between single nucleotide polymorphisms (SNPs) and a single trait. 
+But GWAS data can also be used to analyze multiple related traits, leading to improved power and new biological insights. 
+Specifically, network analysis of multiple traits is gaining interest, especially when it comes to causal network analysis. 
+This is pivotal for elucidating relationships among multiple traits, such as in gene network and protein network analyses. 
+Metabolite network analysis, the focal point of this research, posits that metabolites are integral parts of many biological processes, often interacting with each other in regulatory networks. 
+By inferring these networks, we can gain insight into relationships among metabolites in biological processes.
+
+In causal networks, traits, including metabolites, proteins, and genes, serve as the nodes. 
+Their causal relationships are represented by directed edges connecting them. 
+SNPs are utilized as instrumental variables (IVs). 
+To model these intricate biological networks, structural equation models (SEMs) have been adopted.
+
+### What is an Instrumental Variable (IV)?
+An instrumental variable is associated with the exposure but does not have a direct association with the outcome, except through its relationship with the exposure. 
+Its role is to isolate the variability in the exposure that is independent of the confounders.
+
+### Key Assumptions
+- **Relevance:** The IV is correlated with the exposure.
+- **Exclusion:** The IV only affects the outcome through its effect on the exposure.
+- **Exchangeability:** The IV is not associated with unobserved confounders.
+
+### How Does It Work?
+IV analysis uses the variation in the exposure explained by the instrument to estimate the causal effect of the exposure on the outcome.
+
+### Why is it Necessary for Causal Inference?
+- **Control for Unmeasured Confounding:** IVs can provide unbiased estimates of causal effects when unmeasured or unobserved confounding is present.
+- **Endogeneity:** IVs can solve the problem of endogeneity.
+- **Natural Experiments:** IVs can be employed in "natural experiments" where random assignment of treatments is not feasible.
+
+### Usage
+In the context of GWAS and metabolite network analysis, IV methods are crucial. They help determine causal relationships in complex biological processes, especially when metabolites, which do not function in isolation, interact within metabolite regulatory networks.
+
+### Limitations
+- **Weak Instruments:** Weak correlation between the IV and exposure can lead to biased IV estimates.
+- **Violations of Assumptions:** IV estimates can be biased if any core assumptions are violated.
+- **Interpretability:** The causal effect estimated through IV is often specific to a particular population, reducing generalizability.
+
+### Summary
+Instrumental Variables are a pivotal tool in causal inference, especially in genome-wide association studies (GWAS). 
+When utilized properly, they can provide valuable insights into causal relationships in settings laden with confounding and endogeneity. 
+However, they come with their own assumptions and potential limitations.
+
+---
 
 ## References
 
