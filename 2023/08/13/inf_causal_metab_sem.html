@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Summary - inference of causal metabolite networks</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="post">
+Reading time  6 minutes
+<h1 id="summary---inference-of-causal-metabolite-networks">Summary - inference of causal metabolite networks</h1>
+
+<p class="meta">13 Aug 2023</p>
+
+<p>A summary of: 
+Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal metabolite networks in the presence of invalid instrumental variables with GWAS summary data. Genetic Epidemiology, 1–15,
+<a href="https://doi.org/10.1002/gepi.22535">https://doi.org/10.1002/gepi.22535</a>,
+<a class="citation" href="#chen2023inference">(Chen et al., n.d.)</a>.</p>
+
+<h2 id="abstract">Abstract</h2>
+<p>Structural equation models (SEMs) for inferring causal networks in metabolites and other complex traits. The method:</p>
+<ol>
+  <li>Performs causal analysis to discover relationships among multiple traits.</li>
+  <li>Accounts for potential invalid IVs.</li>
+  <li>Allows for data analysis using only GWAS summary statistics.</li>
+  <li>Considers bidirectional relationships between traits.</li>
+</ol>
+
+<p>The approach uses a stepwise selection to identify invalid IVs, and demonstrates its superior performance using both real and simulated GWAS data.</p>
+
+<h2 id="methods">METHODS</h2>
+
+<h3 id="21-one-sample-data">2.1 One-sample data</h3>
+
+<p>For one-sample GWAS individual-level data:</p>
+<ul>
+  <li>For each of \(n\) individuals:
+    <ul>
+      <li>We have \(p\) SNPs as IVs and \(M\) traits.</li>
+      <li>Traits are denoted by an \(n x M\) matrix \(Y = [y_1, y_2, ... , y_M]\).
+        <ul>
+          <li>Where \(y_i = (y_1i, y_2i, ..., y_ni)^T\) is the vector of \(n\) observations for trait \(i = 1, 2, ..., M\).</li>
+        </ul>
+      </li>
+      <li>IVs are denoted as \(Z = [z_1, ... , z_p]\).
+        <ul>
+          <li>Where \(z_j = (z_1j, ..., z_nj)^T\) is the vector of the \(n\) observations for IV \(j = 1, 2, ..., p\).</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="22-sem-with-individual-level-data">2.2 SEM with individual-level data</h3>
+<ul>
+  <li>SEM is used as a tool for multivariate causal inference in this framework.</li>
+  <li>The analysis is based on one-sample GWAS individual-level data.</li>
+  <li>The system considers linear equations for the ‘n’ individuals in the sample.</li>
+  <li>Notations follow Wang et al. 2016.</li>
+  <li>The model has random errors denoted by a ‘n x M’ matrix.</li>
+  <li>The matrix ‘E’ consists of vectors for the ‘n’ random errors for each trait from 1 to M.</li>
+  <li>The assumption is made that the expected value of error ‘e_i’ is 0.</li>
+  <li>For each trait, the error follows a normal distribution with mean 0 and variance ‘σ_i^2’.</li>
+  <li>The matrix ‘M x M’ denotes the coefficients for the traits, represented by ‘Γ’.</li>
+  <li>The coefficients for each trait ‘i’ range from 1 to M.</li>
+  <li>The linear model for the ‘i-th’ trait is represented by an equation where traits are connected linearly and the sum is 0.</li>
+</ul>
+
+<h3 id="23-sem-with-some-invalid-ivs">2.3 SEM with some invalid IVs</h3>
+<ul>
+  <li>Discusses the scenario when some IVs may be invalid.</li>
+  <li>Violation of one or more of the three valid IV Assumptions (A1)–(A3).</li>
+  <li>Proposes a method to account for invalid IVs in SEM.</li>
+  <li>For trait i, the first \({p}_{0i}\) IVs are considered invalid IVs.</li>
+  <li>Represents the matrix of invalid IVs with \({Z}_{ {\mathscr{A}}_{i}}=[{z}_{1},{\rm{\ldots }},{z}_{p_{0i}}]\).</li>
+  <li>\({z}_{j}={({z}_{1j},{\rm{\ldots }},{z}_{nj})}^{T}\) is the vector for the n observations of IV \(j=1,2,{\rm{\ldots }},{p}_{0i}\).</li>
+  <li>\(M\) vectors are present for the coefficients of invalid IVs: \({B}_{1},{\rm{\ldots }},{B}_{M}\).</li>
+  <li>\({B}_{i}={({\beta }_{1i},{\beta }_{2i},{\rm{\ldots }},{\beta }_{p_{0i}i})}^{T}\) represents the direct or (horizontal) pleiotropic effects of the invalid IVs on trait \(i=1,2,{\rm{\ldots }},M\).</li>
+  <li>The linear SEM for trait i is represented as: \({y}_{1}{\gamma }_{1i}+\cdots +{y}_{i}{\gamma }_{ii}+\cdots +{y}_{M}{\gamma }_{Mi}+{z}_{1}{\beta }_{1i}+\cdots +{z}_{p_{0}i}{\beta }_{p_{0i}i}+{e}_{i}=0,\).</li>
+  <li>\(\gamma\)’s and \(\beta\)’s are unknown parameters in the model.</li>
+</ul>
+
+<h2 id="code">Code</h2>
+<h3 id="onesample-mvstepiv">onesample mvstepIV</h3>
+
+<p>The original source code is here:
+<a href="https://github.com/chen-siyi7/one-sample-stepwise-IV-selection/blob/main/one-sample%20stepwise%20IV%20code.R">https://github.com/chen-siyi7/one-sample-stepwise-IV-selection/blob/main/one-sample%20stepwise%20IV%20code.R</a></p>
+
+<p>The function <code class="language-plaintext highlighter-rouge">onesample_mvstepIV</code> conducts one-sample stepwise IV.</p>
+
+<p><strong>Input Parameters:</strong></p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">p</code>: Total number of predictors.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">R</code>: Correlation matrix.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">betaZX</code>: Regression coefficients for predictors.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">betaZY</code>: Regression coefficients for outcomes.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">se_betaZY</code>: Standard error of <code class="language-plaintext highlighter-rouge">betaZY</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">n</code>: Sample size.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">gamma_hat</code>: Gamma hat values (prior information).</li>
+</ul>
+
+<p><strong>Main Computations:</strong></p>
+<ol>
+  <li>Initialize <code class="language-plaintext highlighter-rouge">ZTZ</code> using <code class="language-plaintext highlighter-rouge">R</code> as:
+\(ZTZ = R\)</li>
+  <li>Compute <code class="language-plaintext highlighter-rouge">ZTY</code> as the element-wise product of <code class="language-plaintext highlighter-rouge">ZTZ</code> diagonal and <code class="language-plaintext highlighter-rouge">betaZY</code>: \(ZTY = \text{diag}(ZTZ) \times \beta{ZY}\)</li>
+  <li>Calculate the median of <code class="language-plaintext highlighter-rouge">YTY</code> for each predictor <code class="language-plaintext highlighter-rouge">SNP</code> as: \(YTY[SNP] = (n-1) \times ZTZ[SNP,SNP] \times (se_\beta{ZY}^2)[SNP] + ZTY[SNP] \times \beta{ZY}[SNP]\), excluding NA values.</li>
+  <li>Compute Bayesian Information Criterion (<code class="language-plaintext highlighter-rouge">BIC</code>) for each predictor. For each predictor <code class="language-plaintext highlighter-rouge">i</code>:
+    <ul>
+      <li>a. Create a matrix <code class="language-plaintext highlighter-rouge">test11</code> with diagonal element <code class="language-plaintext highlighter-rouge">i</code> set to 1.</li>
+      <li>b. Create matrix <code class="language-plaintext highlighter-rouge">W1</code> by combining <code class="language-plaintext highlighter-rouge">test11</code> and <code class="language-plaintext highlighter-rouge">gamma_hat</code>.</li>
+      <li>c. Solve for <code class="language-plaintext highlighter-rouge">W1</code> using: \(\text{solve.W1} = W1^T \times ZTZ \times W1\)</li>
+      <li>d. Compute beta estimates <code class="language-plaintext highlighter-rouge">beta1</code> as: \(\beta1 = (solve.W1^{-1} \times W1^T \times ZTY)\)</li>
+      <li>e. Calculate <code class="language-plaintext highlighter-rouge">BIC</code> as: \(testbic[i] = n \times \log(YTY - \beta1^T \times W1^T \times ZTY) + \log(n) \times \sum_{i} \text{diag}(test11)\)</li>
+    </ul>
+  </li>
+  <li>Determine the optimal instrument variables (<code class="language-plaintext highlighter-rouge">IVs</code>) based on <code class="language-plaintext highlighter-rouge">BIC</code>:
+    <ul>
+      <li>a. For each iteration <code class="language-plaintext highlighter-rouge">j</code>, select the predictor <code class="language-plaintext highlighter-rouge">i</code> with the smallest <code class="language-plaintext highlighter-rouge">BIC</code>.</li>
+      <li>b. Repeat the process by adding one predictor at a time.</li>
+      <li>c. Stop if the current and previous <code class="language-plaintext highlighter-rouge">IV</code> are the same.</li>
+    </ul>
+  </li>
+  <li>Compute the final beta estimates using the invalid IVs:
+    <ul>
+      <li>a. Extract the invalid IVs from <code class="language-plaintext highlighter-rouge">whichIV</code> and set their diagonal elements in <code class="language-plaintext highlighter-rouge">test11</code> to 1.</li>
+      <li>b. Compute beta estimates <code class="language-plaintext highlighter-rouge">beta1</code> as: \(\beta1 = (solve.W1^{-1} \times W1^T \times ZTY)\)</li>
+      <li>c. Calculate variance of beta <code class="language-plaintext highlighter-rouge">Varbeta</code> as: \(\text{Var\beta} = \text{diag}(solve.W1 \times n) \times \sigma_u2\) where \(\sigma_u2 = YTY - \beta1^T \times W1^T \times ZTY\).</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Output:</strong></p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">invalidIV</code>: Indices of invalid IVs.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">beta_est</code>: Estimated beta values.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">beta_se</code>: Standard error of beta estimates.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">K</code>: Number of invalid IVs.</li>
+</ul>
+
+<h3 id="onesample-mvstepiv-ind">onesample mvstepIV ind</h3>
+<p>The original source code is here:
+<a href="https://github.com/chen-siyi7/one-sample-stepwise-IV-selection/blob/main/onesample_mvstepIV_ind%20code.R">https://github.com/chen-siyi7/one-sample-stepwise-IV-selection/blob/main/onesample_mvstepIV_ind%20code.R</a></p>
+
+<p>The function <code class="language-plaintext highlighter-rouge">onesample_mvstepIV_ind</code> performs one-sample stepwise IV for independent SNPs.</p>
+
+<p><strong>Input Parameters:</strong></p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">Y</code>: Response variable.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">Z</code>: Predictor matrix.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">n</code>: Sample size.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">gamma_hat</code>: Gamma hat values (prior information).</li>
+</ul>
+
+<p><strong>Main Computations:</strong></p>
+<ol>
+  <li>Initialize <code class="language-plaintext highlighter-rouge">testbic</code> for Bayesian Information Criterion.</li>
+  <li>For each predictor <code class="language-plaintext highlighter-rouge">i</code>:
+    <ul>
+      <li>a. Initialize a zero vector <code class="language-plaintext highlighter-rouge">l</code> with length <code class="language-plaintext highlighter-rouge">dim(Z)[2]</code> and set the <code class="language-plaintext highlighter-rouge">i</code>th element to 1.</li>
+      <li>b. Modify matrix <code class="language-plaintext highlighter-rouge">Z22</code> such that for each row <code class="language-plaintext highlighter-rouge">j</code>, <code class="language-plaintext highlighter-rouge">Z22[j,]</code> is <code class="language-plaintext highlighter-rouge">Z[j,]*l</code>.</li>
+      <li>c. Perform a linear regression (<code class="language-plaintext highlighter-rouge">lm_stage2</code>) of <code class="language-plaintext highlighter-rouge">Y</code> on <code class="language-plaintext highlighter-rouge">Z22</code> and <code class="language-plaintext highlighter-rouge">Z*gamma_hat</code>.</li>
+      <li>d. Calculate <code class="language-plaintext highlighter-rouge">BIC</code> for this predictor using: \(testbic[i] = n \times \log\left(\frac{\sum(lm\_stage2\text{residuals}^2)}{n}\right) + \log(n) \times \sum(l)\)</li>
+    </ul>
+  </li>
+  <li>Determine the optimal instrument variables (<code class="language-plaintext highlighter-rouge">IVs</code>) based on <code class="language-plaintext highlighter-rouge">BIC</code>:
+    <ul>
+      <li>a. For each iteration <code class="language-plaintext highlighter-rouge">j</code>, select the predictor <code class="language-plaintext highlighter-rouge">i</code> with the smallest <code class="language-plaintext highlighter-rouge">BIC</code>.</li>
+      <li>b. Modify matrix <code class="language-plaintext highlighter-rouge">Z22</code> for the selected predictors and add one predictor at a time.</li>
+      <li>c. Repeat the linear regression and calculate <code class="language-plaintext highlighter-rouge">BIC</code> as in step 2.</li>
+      <li>d. Stop if the current and previous <code class="language-plaintext highlighter-rouge">IV</code> are the same.</li>
+    </ul>
+  </li>
+  <li>Extract the invalid IVs, <code class="language-plaintext highlighter-rouge">which.invalid</code>, from <code class="language-plaintext highlighter-rouge">whichIV</code> and sort them to obtain <code class="language-plaintext highlighter-rouge">K</code>.</li>
+  <li>Compute the final beta estimates using the invalid IVs:
+    <ul>
+      <li>a. Extract columns <code class="language-plaintext highlighter-rouge">K</code> from <code class="language-plaintext highlighter-rouge">Z</code> to form <code class="language-plaintext highlighter-rouge">Z22</code>.</li>
+      <li>b. Perform linear regression (<code class="language-plaintext highlighter-rouge">lm_stage2</code>) of <code class="language-plaintext highlighter-rouge">Y</code> on <code class="language-plaintext highlighter-rouge">Z22</code> and <code class="language-plaintext highlighter-rouge">Z*gamma_hat</code>.</li>
+      <li>c. Calculate beta estimates <code class="language-plaintext highlighter-rouge">betaest</code> as: \(\beta{est} = \text{summary}(lm\_stage2)\text{coef[,1]}\)</li>
+      <li>d. Calculate variance of residuals <code class="language-plaintext highlighter-rouge">sigma_u2</code> as: \(\sigma_u2 = \frac{\sum(lm\_stage2\text{residuals}^2)}{n}\)</li>
+      <li>e. Calculate variance of beta <code class="language-plaintext highlighter-rouge">Varbeta</code> using: \(\text{Varbeta} = \text{diag}(ginv(X^TX)) \times \sigma_u2\) where \(X = \text{cbind}(Z22, Dhat)\) and \(Dhat = Z*gamma\_hat\).</li>
+      <li>f. Compute the standard error <code class="language-plaintext highlighter-rouge">betase</code> as: \(\beta{se} = \sqrt{\text{Varbeta}}\)</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Output:</strong></p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">beta_est</code>: Estimated beta values.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">beta_se</code>: Standard error of beta estimates.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">invalid IVs</code>: Indices of invalid IVs.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">no. of invalid IV</code>: Number of invalid IVs.</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="chen2023inference">Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. Inference of causal metabolite networks in the presence of invalid instrumental variables with GWAS summary data. <i>Genetic Epidemiology</i>, <i>n/a</i>(n/a). https://doi.org/https://doi.org/10.1002/gepi.22535</span></li></ol>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li>
+<span>09 May 2023</span> » <a href="/2023/05/09/what_i_want_from_genome_center.html">What I want from genomic data centers</a>
+</li>
+    
+      <li>
+<span>05 Apr 2023</span> » <a href="/2023/04/05/worlds_simplest_gwas.html">Worlds simplest GWAS</a>
+</li>
+    
+      <li>
+<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a>
+</li>
+    
+  </ul>
+</div>
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

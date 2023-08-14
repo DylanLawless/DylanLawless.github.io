@@ -7,6 +7,201 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Summary - inference of causal metabolite networks</title>
+        <description>&lt;h1 id=&quot;summary---inference-of-causal-metabolite-networks&quot;&gt;Summary - inference of causal metabolite networks&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;13 Aug 2023&lt;/p&gt;
+
+&lt;p&gt;A summary of: 
+Chen, S., Lin, Z., Shen, X., Li, L., &amp;amp; Pan, W. (2023). Inference of causal metabolite networks in the presence of invalid instrumental variables with GWAS summary data. Genetic Epidemiology, 1–15,
+&lt;a href=&quot;https://doi.org/10.1002/gepi.22535&quot;&gt;https://doi.org/10.1002/gepi.22535&lt;/a&gt;,
+&lt;a class=&quot;citation&quot; href=&quot;#chen2023inference&quot;&gt;(Chen et al., n.d.)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Structural equation models (SEMs) for inferring causal networks in metabolites and other complex traits. The method:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Performs causal analysis to discover relationships among multiple traits.&lt;/li&gt;
+  &lt;li&gt;Accounts for potential invalid IVs.&lt;/li&gt;
+  &lt;li&gt;Allows for data analysis using only GWAS summary statistics.&lt;/li&gt;
+  &lt;li&gt;Considers bidirectional relationships between traits.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The approach uses a stepwise selection to identify invalid IVs, and demonstrates its superior performance using both real and simulated GWAS data.&lt;/p&gt;
+
+&lt;h2 id=&quot;methods&quot;&gt;METHODS&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-one-sample-data&quot;&gt;2.1 One-sample data&lt;/h3&gt;
+
+&lt;p&gt;For one-sample GWAS individual-level data:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;For each of \(n\) individuals:
+    &lt;ul&gt;
+      &lt;li&gt;We have \(p\) SNPs as IVs and \(M\) traits.&lt;/li&gt;
+      &lt;li&gt;Traits are denoted by an \(n x M\) matrix \(Y = [y_1, y_2, ... , y_M]\).
+        &lt;ul&gt;
+          &lt;li&gt;Where \(y_i = (y_1i, y_2i, ..., y_ni)^T\) is the vector of \(n\) observations for trait \(i = 1, 2, ..., M\).&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;IVs are denoted as \(Z = [z_1, ... , z_p]\).
+        &lt;ul&gt;
+          &lt;li&gt;Where \(z_j = (z_1j, ..., z_nj)^T\) is the vector of the \(n\) observations for IV \(j = 1, 2, ..., p\).&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22-sem-with-individual-level-data&quot;&gt;2.2 SEM with individual-level data&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;SEM is used as a tool for multivariate causal inference in this framework.&lt;/li&gt;
+  &lt;li&gt;The analysis is based on one-sample GWAS individual-level data.&lt;/li&gt;
+  &lt;li&gt;The system considers linear equations for the ‘n’ individuals in the sample.&lt;/li&gt;
+  &lt;li&gt;Notations follow Wang et al. 2016.&lt;/li&gt;
+  &lt;li&gt;The model has random errors denoted by a ‘n x M’ matrix.&lt;/li&gt;
+  &lt;li&gt;The matrix ‘E’ consists of vectors for the ‘n’ random errors for each trait from 1 to M.&lt;/li&gt;
+  &lt;li&gt;The assumption is made that the expected value of error ‘e_i’ is 0.&lt;/li&gt;
+  &lt;li&gt;For each trait, the error follows a normal distribution with mean 0 and variance ‘σ_i^2’.&lt;/li&gt;
+  &lt;li&gt;The matrix ‘M x M’ denotes the coefficients for the traits, represented by ‘Γ’.&lt;/li&gt;
+  &lt;li&gt;The coefficients for each trait ‘i’ range from 1 to M.&lt;/li&gt;
+  &lt;li&gt;The linear model for the ‘i-th’ trait is represented by an equation where traits are connected linearly and the sum is 0.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;23-sem-with-some-invalid-ivs&quot;&gt;2.3 SEM with some invalid IVs&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Discusses the scenario when some IVs may be invalid.&lt;/li&gt;
+  &lt;li&gt;Violation of one or more of the three valid IV Assumptions (A1)–(A3).&lt;/li&gt;
+  &lt;li&gt;Proposes a method to account for invalid IVs in SEM.&lt;/li&gt;
+  &lt;li&gt;For trait i, the first \({p}_{0i}\) IVs are considered invalid IVs.&lt;/li&gt;
+  &lt;li&gt;Represents the matrix of invalid IVs with \({Z}_{ {\mathscr{A}}_{i}}=[{z}_{1},{\rm{\ldots }},{z}_{p_{0i}}]\).&lt;/li&gt;
+  &lt;li&gt;\({z}_{j}={({z}_{1j},{\rm{\ldots }},{z}_{nj})}^{T}\) is the vector for the n observations of IV \(j=1,2,{\rm{\ldots }},{p}_{0i}\).&lt;/li&gt;
+  &lt;li&gt;\(M\) vectors are present for the coefficients of invalid IVs: \({B}_{1},{\rm{\ldots }},{B}_{M}\).&lt;/li&gt;
+  &lt;li&gt;\({B}_{i}={({\beta }_{1i},{\beta }_{2i},{\rm{\ldots }},{\beta }_{p_{0i}i})}^{T}\) represents the direct or (horizontal) pleiotropic effects of the invalid IVs on trait \(i=1,2,{\rm{\ldots }},M\).&lt;/li&gt;
+  &lt;li&gt;The linear SEM for trait i is represented as: \({y}_{1}{\gamma }_{1i}+\cdots +{y}_{i}{\gamma }_{ii}+\cdots +{y}_{M}{\gamma }_{Mi}+{z}_{1}{\beta }_{1i}+\cdots +{z}_{p_{0}i}{\beta }_{p_{0i}i}+{e}_{i}=0,\).&lt;/li&gt;
+  &lt;li&gt;\(\gamma\)’s and \(\beta\)’s are unknown parameters in the model.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
+&lt;h3 id=&quot;onesample-mvstepiv&quot;&gt;onesample mvstepIV&lt;/h3&gt;
+
+&lt;p&gt;The original source code is here:
+&lt;a href=&quot;https://github.com/chen-siyi7/one-sample-stepwise-IV-selection/blob/main/one-sample%20stepwise%20IV%20code.R&quot;&gt;https://github.com/chen-siyi7/one-sample-stepwise-IV-selection/blob/main/one-sample%20stepwise%20IV%20code.R&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onesample_mvstepIV&lt;/code&gt; conducts one-sample stepwise IV.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input Parameters:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p&lt;/code&gt;: Total number of predictors.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt;: Correlation matrix.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;betaZX&lt;/code&gt;: Regression coefficients for predictors.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;betaZY&lt;/code&gt;: Regression coefficients for outcomes.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;se_betaZY&lt;/code&gt;: Standard error of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;betaZY&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt;: Sample size.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gamma_hat&lt;/code&gt;: Gamma hat values (prior information).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Main Computations:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Initialize &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ZTZ&lt;/code&gt; using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt; as:
+\(ZTZ = R\)&lt;/li&gt;
+  &lt;li&gt;Compute &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ZTY&lt;/code&gt; as the element-wise product of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ZTZ&lt;/code&gt; diagonal and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;betaZY&lt;/code&gt;: \(ZTY = \text{diag}(ZTZ) \times \beta{ZY}\)&lt;/li&gt;
+  &lt;li&gt;Calculate the median of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YTY&lt;/code&gt; for each predictor &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SNP&lt;/code&gt; as: \(YTY[SNP] = (n-1) \times ZTZ[SNP,SNP] \times (se_\beta{ZY}^2)[SNP] + ZTY[SNP] \times \beta{ZY}[SNP]\), excluding NA values.&lt;/li&gt;
+  &lt;li&gt;Compute Bayesian Information Criterion (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BIC&lt;/code&gt;) for each predictor. For each predictor &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;a. Create a matrix &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test11&lt;/code&gt; with diagonal element &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; set to 1.&lt;/li&gt;
+      &lt;li&gt;b. Create matrix &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;W1&lt;/code&gt; by combining &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test11&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gamma_hat&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;c. Solve for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;W1&lt;/code&gt; using: \(\text{solve.W1} = W1^T \times ZTZ \times W1\)&lt;/li&gt;
+      &lt;li&gt;d. Compute beta estimates &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;beta1&lt;/code&gt; as: \(\beta1 = (solve.W1^{-1} \times W1^T \times ZTY)\)&lt;/li&gt;
+      &lt;li&gt;e. Calculate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BIC&lt;/code&gt; as: \(testbic[i] = n \times \log(YTY - \beta1^T \times W1^T \times ZTY) + \log(n) \times \sum_{i} \text{diag}(test11)\)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Determine the optimal instrument variables (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IVs&lt;/code&gt;) based on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BIC&lt;/code&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;a. For each iteration &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt;, select the predictor &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; with the smallest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BIC&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;b. Repeat the process by adding one predictor at a time.&lt;/li&gt;
+      &lt;li&gt;c. Stop if the current and previous &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IV&lt;/code&gt; are the same.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Compute the final beta estimates using the invalid IVs:
+    &lt;ul&gt;
+      &lt;li&gt;a. Extract the invalid IVs from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;whichIV&lt;/code&gt; and set their diagonal elements in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;test11&lt;/code&gt; to 1.&lt;/li&gt;
+      &lt;li&gt;b. Compute beta estimates &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;beta1&lt;/code&gt; as: \(\beta1 = (solve.W1^{-1} \times W1^T \times ZTY)\)&lt;/li&gt;
+      &lt;li&gt;c. Calculate variance of beta &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Varbeta&lt;/code&gt; as: \(\text{Var\beta} = \text{diag}(solve.W1 \times n) \times \sigma_u2\) where \(\sigma_u2 = YTY - \beta1^T \times W1^T \times ZTY\).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;invalidIV&lt;/code&gt;: Indices of invalid IVs.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;beta_est&lt;/code&gt;: Estimated beta values.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;beta_se&lt;/code&gt;: Standard error of beta estimates.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;K&lt;/code&gt;: Number of invalid IVs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;onesample-mvstepiv-ind&quot;&gt;onesample mvstepIV ind&lt;/h3&gt;
+&lt;p&gt;The original source code is here:
+&lt;a href=&quot;https://github.com/chen-siyi7/one-sample-stepwise-IV-selection/blob/main/onesample_mvstepIV_ind%20code.R&quot;&gt;https://github.com/chen-siyi7/one-sample-stepwise-IV-selection/blob/main/onesample_mvstepIV_ind%20code.R&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onesample_mvstepIV_ind&lt;/code&gt; performs one-sample stepwise IV for independent SNPs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input Parameters:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Y&lt;/code&gt;: Response variable.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z&lt;/code&gt;: Predictor matrix.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n&lt;/code&gt;: Sample size.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gamma_hat&lt;/code&gt;: Gamma hat values (prior information).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Main Computations:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Initialize &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;testbic&lt;/code&gt; for Bayesian Information Criterion.&lt;/li&gt;
+  &lt;li&gt;For each predictor &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;a. Initialize a zero vector &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;l&lt;/code&gt; with length &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dim(Z)[2]&lt;/code&gt; and set the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt;th element to 1.&lt;/li&gt;
+      &lt;li&gt;b. Modify matrix &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z22&lt;/code&gt; such that for each row &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z22[j,]&lt;/code&gt; is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z[j,]*l&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;c. Perform a linear regression (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lm_stage2&lt;/code&gt;) of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Y&lt;/code&gt; on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z22&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z*gamma_hat&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;d. Calculate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BIC&lt;/code&gt; for this predictor using: \(testbic[i] = n \times \log\left(\frac{\sum(lm\_stage2\text{residuals}^2)}{n}\right) + \log(n) \times \sum(l)\)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Determine the optimal instrument variables (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IVs&lt;/code&gt;) based on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BIC&lt;/code&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;a. For each iteration &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;j&lt;/code&gt;, select the predictor &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; with the smallest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BIC&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;b. Modify matrix &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z22&lt;/code&gt; for the selected predictors and add one predictor at a time.&lt;/li&gt;
+      &lt;li&gt;c. Repeat the linear regression and calculate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BIC&lt;/code&gt; as in step 2.&lt;/li&gt;
+      &lt;li&gt;d. Stop if the current and previous &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IV&lt;/code&gt; are the same.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Extract the invalid IVs, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;which.invalid&lt;/code&gt;, from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;whichIV&lt;/code&gt; and sort them to obtain &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;K&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Compute the final beta estimates using the invalid IVs:
+    &lt;ul&gt;
+      &lt;li&gt;a. Extract columns &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;K&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z&lt;/code&gt; to form &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z22&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;b. Perform linear regression (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lm_stage2&lt;/code&gt;) of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Y&lt;/code&gt; on &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z22&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Z*gamma_hat&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;c. Calculate beta estimates &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;betaest&lt;/code&gt; as: \(\beta{est} = \text{summary}(lm\_stage2)\text{coef[,1]}\)&lt;/li&gt;
+      &lt;li&gt;d. Calculate variance of residuals &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sigma_u2&lt;/code&gt; as: \(\sigma_u2 = \frac{\sum(lm\_stage2\text{residuals}^2)}{n}\)&lt;/li&gt;
+      &lt;li&gt;e. Calculate variance of beta &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Varbeta&lt;/code&gt; using: \(\text{Varbeta} = \text{diag}(ginv(X^TX)) \times \sigma_u2\) where \(X = \text{cbind}(Z22, Dhat)\) and \(Dhat = Z*gamma\_hat\).&lt;/li&gt;
+      &lt;li&gt;f. Compute the standard error &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;betase&lt;/code&gt; as: \(\beta{se} = \sqrt{\text{Varbeta}}\)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;beta_est&lt;/code&gt;: Estimated beta values.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;beta_se&lt;/code&gt;: Standard error of beta estimates.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;invalid IVs&lt;/code&gt;: Indices of invalid IVs.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;no. of invalid IV&lt;/code&gt;: Number of invalid IVs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;chen2023inference&quot;&gt;Chen, S., Lin, Z., Shen, X., Li, L., &amp;amp; Pan, W. Inference of causal metabolite networks in the presence of invalid instrumental variables with GWAS summary data. &lt;i&gt;Genetic Epidemiology&lt;/i&gt;, &lt;i&gt;n/a&lt;/i&gt;(n/a). https://doi.org/https://doi.org/10.1002/gepi.22535&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 13 Aug 2023 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000//2023/08/13/inf_causal_metab_sem.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2023/08/13/inf_causal_metab_sem.html</guid>
+      </item>
+    
+      <item>
         <title>What I want from genomic data centers</title>
         <description>&lt;h1 id=&quot;what-i-want-from-genomic-data-centers&quot;&gt;What I want from genomic data centers&lt;/h1&gt;
 
@@ -1610,41 +1805,6 @@ The R code that I used for this process is included.&lt;/p&gt;
         <pubDate>Mon, 13 Sep 2021 00:00:00 +0200</pubDate>
         <link>http://localhost:4000//2021/09/13/weeknotes_16.html</link>
         <guid isPermaLink="true">http://localhost:4000//2021/09/13/weeknotes_16.html</guid>
-      </item>
-    
-      <item>
-        <title>Weeknotes</title>
-        <description>&lt;h1 id=&quot;weeknotes&quot;&gt;Weeknotes&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;6 Sept 2021&lt;/p&gt;
-
-&lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;Writing paper on viral infections.&lt;/li&gt;
-  &lt;li&gt;Review grant.&lt;/li&gt;
-  &lt;li&gt;Prep for incoming student projects.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;personal&quot;&gt;Personal&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;Working on astro biology projects.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;reading&quot;&gt;Reading&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;A Short History of the Middle East: From Ancient Empires to Islamic State by Gordon Kerr &lt;a href=&quot;https://www.goodreads.com/book/show/29456677-a-short-history-of-the-middle-east&quot;&gt;link&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Smiley’s People by John le Carré - &lt;a href=&quot;https://www.goodreads.com/book/show/18999.Smiley_s_People&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;other-media&quot;&gt;Other media&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;Podcast - Afropop Worldwide &lt;a href=&quot;https://afropop.org/audio-programs/new-moves-in-afro-jazz&quot;&gt;New Moves in Afro-Jazz&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Podcast - Afropop Worldwide &lt;a href=&quot;https://afropop.org/audio-programs/hip-deep-angola-4-the-cuban-intervention-in-angola&quot;&gt;Hip Deep Angola 4: The Cuban Intervention in Angola&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 06 Sep 2021 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000//2021/09/06/weeknotes_15.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2021/09/06/weeknotes_15.html</guid>
       </item>
     
 		
