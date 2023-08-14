@@ -91,7 +91,7 @@
 <!-- MAIN START -------------------------------------------------------- -->
 <div class="sitewidth">
 	<div id="post">
-Reading time  6 minutes
+Reading time  9 minutes
 <h1 id="summary---inference-of-causal-metabolite-networks">Summary - inference of causal metabolite networks</h1>
 
 <p class="meta">13 Aug 2023</p>
@@ -101,7 +101,34 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 <a href="https://doi.org/10.1002/gepi.22535">https://doi.org/10.1002/gepi.22535</a>,
 <a class="citation" href="#chen2023inference">(Chen et al., n.d.)</a>.</p>
 
-<h2 id="abstract">Abstract</h2>
+<p>Briefly, this paper is about using instrumental variables (SNPs) in causal inference with applications to genome-wide association studies (GWAS).</p>
+
+<ul>
+  <li>
+<strong>Exposure:</strong>
+    <ul>
+      <li>Metabolites: They serve as intermediate phenotypes connecting genetic variants to clinical outcomes and play a crucial role in biological processes.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Instrumental Variable (IV):</strong>
+    <ul>
+      <li>SNPs (Single Nucleotide Polymorphisms): These are used as instrumental variables to isolate the variability in metabolites that is independent of confounders.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Outcome:</strong>
+    <ul>
+      <li>Clinical outcomes: These are affected by metabolites, which in turn are influenced by SNPs. The causal effect of metabolites on clinical outcomes is what the study aims to determine.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For a more gradual background jump down to the “In context” section.</p>
+
+<hr>
+
+<h2 id="abstract-summary">Abstract summary</h2>
 <p>Structural equation models (SEMs) for inferring causal networks in metabolites and other complex traits. The method:</p>
 <ol>
   <li>Performs causal analysis to discover relationships among multiple traits.</li>
@@ -112,7 +139,9 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 
 <p>The approach uses a stepwise selection to identify invalid IVs, and demonstrates its superior performance using both real and simulated GWAS data.</p>
 
-<h2 id="methods">METHODS</h2>
+<hr>
+
+<h2 id="key-methods-summary">Key methods summary</h2>
 
 <h3 id="21-one-sample-data">2.1 One-sample data</h3>
 
@@ -163,6 +192,8 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
   <li>The linear SEM for trait i is represented as: \({y}_{1}{\gamma }_{1i}+\cdots +{y}_{i}{\gamma }_{ii}+\cdots +{y}_{M}{\gamma }_{Mi}+{z}_{1}{\beta }_{1i}+\cdots +{z}_{p_{0}i}{\beta }_{p_{0i}i}+{e}_{i}=0,\).</li>
   <li>\(\gamma\)’s and \(\beta\)’s are unknown parameters in the model.</li>
 </ul>
+
+<hr>
 
 <h2 id="code">Code</h2>
 <h3 id="onesample-mvstepiv">onesample mvstepIV</h3>
@@ -294,6 +325,91 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
   <li>
 <code class="language-plaintext highlighter-rouge">no. of invalid IV</code>: Number of invalid IVs.</li>
 </ul>
+
+<hr>
+
+<h2 id="in-context">In context</h2>
+<p>Recap:</p>
+<ul>
+  <li>
+<strong>Exposure:</strong>
+    <ul>
+      <li>Metabolites: They serve as intermediate phenotypes connecting genetic variants to clinical outcomes and play a crucial role in biological processes.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Instrumental Variable (IV):</strong>
+    <ul>
+      <li>SNPs (Single Nucleotide Polymorphisms): These are used as instrumental variables to isolate the variability in metabolites that is independent of confounders.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Outcome:</strong>
+    <ul>
+      <li>Clinical outcomes: These are affected by metabolites, which in turn are influenced by SNPs. The causal effect of metabolites on clinical outcomes is what the study aims to determine.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="background">Background</h3>
+<p>In GWAS, associations are generally sought between single nucleotide polymorphisms (SNPs) and a single trait. 
+But GWAS data can also be used to analyze multiple related traits, leading to improved power and new biological insights. 
+Specifically, network analysis of multiple traits is gaining interest, especially when it comes to causal network analysis. 
+This is pivotal for elucidating relationships among multiple traits, such as in gene network and protein network analyses. 
+Metabolite network analysis, the focal point of this research, posits that metabolites are integral parts of many biological processes, often interacting with each other in regulatory networks. 
+By inferring these networks, we can gain insight into relationships among metabolites in biological processes.</p>
+
+<p>In causal networks, traits, including metabolites, proteins, and genes, serve as the nodes. 
+Their causal relationships are represented by directed edges connecting them. 
+SNPs are utilized as instrumental variables (IVs). 
+To model these intricate biological networks, structural equation models (SEMs) have been adopted.</p>
+
+<h3 id="what-is-an-instrumental-variable-iv">What is an Instrumental Variable (IV)?</h3>
+<p>An instrumental variable is associated with the exposure but does not have a direct association with the outcome, except through its relationship with the exposure. 
+Its role is to isolate the variability in the exposure that is independent of the confounders.</p>
+
+<h3 id="key-assumptions">Key Assumptions</h3>
+<ul>
+  <li>
+<strong>Relevance:</strong> The IV is correlated with the exposure.</li>
+  <li>
+<strong>Exclusion:</strong> The IV only affects the outcome through its effect on the exposure.</li>
+  <li>
+<strong>Exchangeability:</strong> The IV is not associated with unobserved confounders.</li>
+</ul>
+
+<h3 id="how-does-it-work">How Does It Work?</h3>
+<p>IV analysis uses the variation in the exposure explained by the instrument to estimate the causal effect of the exposure on the outcome.</p>
+
+<h3 id="why-is-it-necessary-for-causal-inference">Why is it Necessary for Causal Inference?</h3>
+<ul>
+  <li>
+<strong>Control for Unmeasured Confounding:</strong> IVs can provide unbiased estimates of causal effects when unmeasured or unobserved confounding is present.</li>
+  <li>
+<strong>Endogeneity:</strong> IVs can solve the problem of endogeneity.</li>
+  <li>
+<strong>Natural Experiments:</strong> IVs can be employed in “natural experiments” where random assignment of treatments is not feasible.</li>
+</ul>
+
+<h3 id="usage">Usage</h3>
+<p>In the context of GWAS and metabolite network analysis, IV methods are crucial. They help determine causal relationships in complex biological processes, especially when metabolites, which do not function in isolation, interact within metabolite regulatory networks.</p>
+
+<h3 id="limitations">Limitations</h3>
+<ul>
+  <li>
+<strong>Weak Instruments:</strong> Weak correlation between the IV and exposure can lead to biased IV estimates.</li>
+  <li>
+<strong>Violations of Assumptions:</strong> IV estimates can be biased if any core assumptions are violated.</li>
+  <li>
+<strong>Interpretability:</strong> The causal effect estimated through IV is often specific to a particular population, reducing generalizability.</li>
+</ul>
+
+<h3 id="summary">Summary</h3>
+<p>Instrumental Variables are a pivotal tool in causal inference, especially in genome-wide association studies (GWAS). 
+When utilized properly, they can provide valuable insights into causal relationships in settings laden with confounding and endogeneity. 
+However, they come with their own assumptions and potential limitations.</p>
+
+<hr>
 
 <h2 id="references">References</h2>
 
