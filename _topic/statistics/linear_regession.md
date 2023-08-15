@@ -265,7 +265,7 @@ Cosma Rohilla Shalizi in
 [Advanced Data Analysis from an Elementary Point of View](
 http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/)
 _Chapter 2 The Truth about Linear Regression_
-``2.2.1.1 R2: Distraction or Nuisance?''. 
+"2.2.1.1 R2: Distraction or Nuisance?". 
 The short summary following just covers the basic "normal" usage, rather getting into the statistica weeds. 
 
 
