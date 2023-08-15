@@ -5726,7 +5726,7 @@ The value calculated in eqn \ref{eq12} will become smaller when the estimate and
 Cosma Rohilla Shalizi in
 &lt;a href=&quot;http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/&quot;&gt;Advanced Data Analysis from an Elementary Point of View&lt;/a&gt;
 &lt;em&gt;Chapter 2 The Truth about Linear Regression&lt;/em&gt;
-``2.2.1.1 R2: Distraction or Nuisance?’’. 
+“2.2.1.1 R2: Distraction or Nuisance?”. 
 The short summary following just covers the basic “normal” usage, rather getting into the statistica weeds.&lt;/p&gt;
 
 &lt;h2 id=&quot;multiple-linear-regression&quot;&gt;Multiple linear regression&lt;/h2&gt;
