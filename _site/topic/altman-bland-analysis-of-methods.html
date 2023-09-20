@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Analysis of methods</title>
+	<meta name="author" content="LawlessGenomics">
+	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/resume">About</a>
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time 5 minutes
+<h1 id="analysis-of-methods">Analysis of methods</h1>
+
+<ul id="markdown-toc">
+  <li>
+<a href="#the-fianl-comparison-results" id="markdown-toc-the-fianl-comparison-results">The fianl comparison results</a>    <ul>
+      <li><a href="#scores-per-sample-and-bland-altman-plot" id="markdown-toc-scores-per-sample-and-bland-altman-plot">Scores per sample and Bland-Altman plot</a></li>
+      <li><a href="#correlation-test-result-and-repeatability-coefficients" id="markdown-toc-correlation-test-result-and-repeatability-coefficients">Correlation test result and repeatability coefficients</a></li>
+    </ul>
+  </li>
+  <li><a href="#code" id="markdown-toc-code">Code</a></li>
+  <li><a href="#summary-of-the-analysis-of-method-comparison-studies" id="markdown-toc-summary-of-the-analysis-of-method-comparison-studies">Summary of the analysis of method comparison studies</a></li>
+</ul>
+
+<p>Altman, D. G., and J. M. Bland. “Measurement in Medicine: The Analysis of Method Comparison Studies.” Journal of the Royal Statistical Society. Series D (The Statistician), vol. 32, no. 3, 1983, pp. 307–17. JSTOR, <a href="https://doi.org/10.2307/2987937">https://doi.org/10.2307/2987937</a>.</p>
+
+<p>The paper is a pivotal guide discussing the analysis of method comparison studies, particularly in the field of medicine.
+It proposes a pragmatic approach to analyze such studies, stressing the importance of simplicity especially when the results need to be explained to non-statisticians.
+I work through it here to compare if a new methods is as good or better than an existing one for clinical sepsis scores with example data.</p>
+
+<p>For more similar papers see the series of BMJ statistical notes by Altman &amp; Bland
+(<a href="https://github.com/DylanLawless/notes/blob/main/202106291417-lit-altman_bland.md"> lit-altman_bland.md </a>).</p>
+
+<h2 id="the-fianl-comparison-results">The fianl comparison results</h2>
+<h3 id="scores-per-sample-and-bland-altman-plot">Scores per sample and Bland-Altman plot</h3>
+
+<p><img src="/images/altman_bland_analysis_of_methods.png" width="100%">
+<strong>Figure 1.</strong> Scores per sample and Bland-Altman plot as produced by the provided R code.</p>
+
+<h3 id="correlation-test-result-and-repeatability-coefficients">Correlation test result and repeatability coefficients</h3>
+<p>Results of the analysis as produced by the provided R code:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">$</span><span class="n">Repeatability_Score1</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">4.674812</span><span class="w">
+
+</span><span class="o">$</span><span class="n">Repeatability_Score2</span><span class="w">
+</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="m">4.267645</span><span class="w">
+
+</span><span class="o">$</span><span class="n">Correlation_Test</span><span class="w">
+
+	</span><span class="n">Pearson</span><span class="err">'</span><span class="n">s</span><span class="w"> </span><span class="n">product</span><span class="o">-</span><span class="n">moment</span><span class="w"> </span><span class="n">correlation</span><span class="w">
+
+</span><span class="n">data</span><span class="o">:</span><span class="w">  </span><span class="n">df</span><span class="o">$</span><span class="n">score1</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">score2</span><span class="w">
+</span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">21.693</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">197</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">2.2e-16</span><span class="w">
+</span><span class="n">alternative</span><span class="w"> </span><span class="n">hypothesis</span><span class="o">:</span><span class="w"> </span><span class="n">true</span><span class="w"> </span><span class="n">correlation</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">equal</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="m">95</span><span class="w"> </span><span class="n">percent</span><span class="w"> </span><span class="n">confidence</span><span class="w"> </span><span class="n">interval</span><span class="o">:</span><span class="w">
+ </span><span class="m">0.7931229</span><span class="w"> </span><span class="m">0.8763442</span><span class="w">
+</span><span class="n">sample</span><span class="w"> </span><span class="n">estimates</span><span class="o">:</span><span class="w">
+      </span><span class="n">cor</span><span class="w"> 
+</span><span class="m">0.8395928</span><span class="w"> 
+</span></code></pre></div></div>
+
+<p><strong>Repeatability Scores:</strong></p>
+
+<ul>
+  <li>
+<strong>Repeatability Score 1:</strong> 4.674812</li>
+  <li>
+<strong>Repeatability Score 2:</strong> 4.267645</li>
+</ul>
+
+<p>The repeatability scores are measures of how consistent each method is. In this case, both methods seem to have fairly similar repeatability scores, indicating a similar level of consistency or reliability within each method. Without context or a benchmark to compare to, it’s challenging to definitively say whether these scores are good or not, but the similarity suggests comparable repeatability.</p>
+
+<p><strong>Correlation Test:</strong></p>
+
+<ul>
+  <li>
+<strong>Pearson’s Correlation Coefficient (r):</strong> 0.8395928</li>
+  <li>
+<strong>95% Confidence Interval for r:</strong> [0.7931229, 0.8763442]</li>
+  <li>
+<strong>P-value:</strong> \(&lt; 2.2e-16\)</li>
+</ul>
+
+<p>The Pearson’s correlation coefficient is quite high, indicating a strong positive linear relationship between the scores from the two methods. The nearly zero p-value (less than 2.2e-16) strongly suggests that this correlation is statistically significant, and it’s highly unlikely that this observed correlation occurred by chance.</p>
+
+<p><strong>Conclusion:</strong></p>
+
+<p>Considering the high correlation coefficient and the comparable repeatability scores, it seems that the new method is quite similar to the old one in terms of both reliability (as indicated by the repeatability scores) and agreement (as indicated by the correlation coefficient).</p>
+
+<h2 id="code">Code</h2>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Here is a really cool set of notes in BMJ about all kinds of clinical data analysis.</span><span class="w">
+</span><span class="c1"># https://www-users.york.ac.uk/~mb55/pubs/pbstnote.htm</span><span class="w">
+
+</span><span class="c1"># For example, if you every like to go further with the score that you working on, this paper is very famous for showing how to compare two such clinical score methods to show if the new one performs better. </span><span class="w">
+
+</span><span class="c1"># https://sci-hub.hkvisa.net/10.2307/2987937</span><span class="w">
+</span><span class="c1"># (Measurement in Medicine: The Analysis of Method Comparison Studies Author(s): D. G. Altman and J. M. Bland 1983)</span><span class="w">
+
+</span><span class="c1"># Example ----</span><span class="w">
+</span><span class="c1"># psofa.score - Total number of organ failures according to 2017 pSOFA definitions (Matics et al. (2017) (PMID 28783810)). The classification of organ failures is based on the worst vital signs and the worst lab values during the first 7 days from blood culture sampling.</span><span class="w">
+
+</span><span class="c1"># pelod.score - Total number of organ failures according to PELOD-2 definitions (Leteurtre et al. (2013) (PMID 23685639)). The classification of organ failures is based on the worst vital signs and the worst lab values during the first 7 days from blood culture sampling.</span><span class="w">
+
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">patchwork</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Read data</span><span class="w">
+</span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"../data/example_sepsis_scores.tsv"</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">" "</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Take 200 rows as an example</span><span class="w">
+</span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
+
+</span><span class="c1"># Renaming columns and adding index column</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">score1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">psofa.score</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">score2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">pelod.score</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rownames</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Adding a small amount of random noise to each value</span><span class="w">
+</span><span class="c1"># NOTE: THIS WOULD BE USED FOR ADDING SOME NOISE TO MAKE THE DATA MORE ANONYMOUS FOR PUBLISHING AN EXAMPLE FIGURE</span><span class="w">
+</span><span class="n">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span><span class="w"> </span><span class="c1"># Setting a seed to ensure reproducibility</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">score1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">score1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rnorm</span><span class="p">(</span><span class="n">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">),</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">score2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">score2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rnorm</span><span class="p">(</span><span class="n">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">),</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Calculate necessary statistics: the average and the difference of score1 and score2.</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">means</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">score1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">score2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="n">df</span><span class="o">$</span><span class="n">diffs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">score1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">score2</span><span class="w">
+
+</span><span class="c1"># Compute repeatability coefficients for each method separately</span><span class="w">
+</span><span class="n">repeatability_score1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sd</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">score1</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span><span class="n">repeatability_score2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sd</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">score2</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Compute correlation to check independence of repeatability from the size of the measurements</span><span class="w">
+</span><span class="n">cor_test</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cor.test</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">score1</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="o">$</span><span class="n">score2</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"pearson"</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Average difference (aka the bias)</span><span class="w">
+</span><span class="n">bias</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">diffs</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> 
+
+</span><span class="c1"># Sample standard deviation</span><span class="w">
+</span><span class="n">sd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sd</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">diffs</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> 
+
+</span><span class="c1"># Limits of agreement</span><span class="w">
+</span><span class="n">upper_loa</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bias</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1.96</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sd</span><span class="w">
+</span><span class="n">lower_loa</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bias</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1.96</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sd</span><span class="w">
+
+</span><span class="c1"># Additional statistics for confidence intervals</span><span class="w">
+</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nrow</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="w">
+</span><span class="n">conf_int</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.95</span><span class="w">
+</span><span class="n">t1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">qt</span><span class="p">((</span><span class="m">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">conf_int</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="n">t2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">qt</span><span class="p">((</span><span class="n">conf_int</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w">
+</span><span class="n">var</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sd</span><span class="o">^</span><span class="m">2</span><span class="w">
+</span><span class="n">se_bias</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="n">var</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">
+</span><span class="n">se_loas</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="m">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">var</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w">
+</span><span class="n">upper_loa_ci_lower</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">upper_loa</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">se_loas</span><span class="w">
+</span><span class="n">upper_loa_ci_upper</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">upper_loa</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">se_loas</span><span class="w">
+</span><span class="n">bias_ci_lower</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bias</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">se_bias</span><span class="w">
+</span><span class="n">bias_ci_upper</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bias</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">se_bias</span><span class="w">
+</span><span class="n">lower_loa_ci_lower</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lower_loa</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">se_loas</span><span class="w">
+</span><span class="n">lower_loa_ci_upper</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lower_loa</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">se_loas</span><span class="w">
+
+</span><span class="c1"># Create Bland-Altman plot</span><span class="w">
+</span><span class="n">p1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">|&gt;</span><span class="w">
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">means</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">diffs</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Bland-Altman plot for PELOD and pSOFA scores"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">ylab</span><span class="p">(</span><span class="s2">"Difference between\ntwo scores"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">xlab</span><span class="p">(</span><span class="s2">"Average of two scores"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">lower_loa</span><span class="p">,</span><span class="w"> </span><span class="n">bias</span><span class="p">,</span><span class="w"> </span><span class="n">upper_loa</span><span class="p">),</span><span class="w"> </span><span class="n">linetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"solid"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">lower_loa_ci_lower</span><span class="p">,</span><span class="w"> </span><span class="n">lower_loa_ci_upper</span><span class="p">,</span><span class="w"> </span><span class="n">upper_loa_ci_lower</span><span class="p">,</span><span class="w"> </span><span class="n">upper_loa_ci_upper</span><span class="p">),</span><span class="w"> </span><span class="n">linetype</span><span class="o">=</span><span class="s2">"dotted"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">se_bias</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Create scatter plot with a line of equality</span><span class="w">
+</span><span class="n">p2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">|&gt;</span><span class="w">
+  </span><span class="n">ggplot</span><span class="p">(</span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">score1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">score2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_abline</span><span class="p">(</span><span class="n">intercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">slope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">ggtitle</span><span class="p">(</span><span class="s2">"PELOD and pSOFA scores per sample"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">ylab</span><span class="p">(</span><span class="s2">"pelod.score"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+  </span><span class="n">xlab</span><span class="p">(</span><span class="s2">"psofa.score"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="c1"># Combine plots</span><span class="w">
+</span><span class="n">patch1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">p2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">plot_annotation</span><span class="p">(</span><span class="n">tag_levels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'A'</span><span class="p">)</span><span class="w">
+</span><span class="n">patch1</span><span class="w">
+
+</span><span class="c1"># Output the correlation test result and repeatability coefficients</span><span class="w">
+</span><span class="nf">list</span><span class="p">(</span><span class="w">
+  </span><span class="n">Repeatability_Score1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repeatability_score1</span><span class="p">,</span><span class="w">
+  </span><span class="n">Repeatability_Score2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">repeatability_score2</span><span class="p">,</span><span class="w">
+  </span><span class="n">Correlation_Test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cor_test</span><span class="w">
+</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="summary-of-the-analysis-of-method-comparison-studies">Summary of the analysis of method comparison studies</h2>
+
+<p>In their landmark paper, D.G. Altman and J.M. Bland outline a structured approach to evaluating whether a new method of medical measurement is as good as or better than an existing one. 
+The approach encapsulates several critical components, emphasizing not only statistical analyses but also the importance of effective communication, especially to non-expert audiences. 
+Key points from the paper:</p>
+
+<ol>
+  <li>
+<strong>Bland-Altman Plot</strong>
+    <ul>
+      <li>Introduced as a graphical method to assess the agreement between two different measurement techniques. This method involves plotting the difference between two methods against their mean, which assists in identifying any biases and analyzing the limits of agreement between the two methods.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Bias and Limits of Agreement</strong>
+    <ul>
+      <li>The authors recommend calculating the bias (the mean difference between two methods) and limits of agreement (bias ± 1.96 times the standard deviation of the differences) to quantify the agreement between the two methods. A smaller bias and narrower limits of agreement generally indicate that a new method might be comparable or superior to the existing one.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Investigating Relationship with Measurement Magnitude</strong>
+    <ul>
+      <li>Encourages the investigation of whether the differences between the methods relate to the measurement’s magnitude. Transformations or regression approaches might be necessary depending on the observed association, to correct for it.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Repeatability</strong>
+    <ul>
+      <li>
+<strong>Assessment</strong>: It’s crucial to assess repeatability for each method separately using replicated measurements on a sample of subjects. This analysis derives from the within-subject standard deviation of the replicates.</li>
+      <li>
+<strong>Graphical Methods and Correlation Tests</strong>: Apart from Bland-Altman plots, graphical methods (like plotting standard deviation against the mean) and correlation coefficient tests are suggested for examining the independence of repeatability from the size of measurements.</li>
+      <li>
+<strong>Potential Influences</strong>: It highlights the possible influences on measurements, such as observer variability, time of day, or the position of the subject, and differentiates between repeatability and reproducibility (agreement of results under different conditions).</li>
+    </ul>
+  </li>
+  <li>
+<strong>Comparison of Methods</strong>
+    <ul>
+      <li>The core emphasis is on directly comparing results obtained by different methods to determine if one can replace another without compromising accuracy for the intended purpose of the measurement. Initial data plotting is encouraged, ideally plotting the difference between methods against the average of the methods, providing insight into disagreement, outliers, and potential trends. Testing for independence between method differences and the size of measurements is necessary, as it can influence the analysis and interpretation of bias and error.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Addressing Alternative Analyses</strong>
+    <ul>
+      <li>The paper discusses alternative approaches like least squares regression, principal component analysis, and regression models with errors in both variables, but finds them to generally add complexity without necessarily improving the simple comparison intended.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Effective Communication</strong>
+    <ul>
+      <li>The authors emphasize the importance of communicating results effectively to non-experts, such as clinicians, to facilitate practical application of the findings.</li>
+    </ul>
+  </li>
+  <li>
+<strong>Challenges in Method Comparison Studies</strong>
+    <ul>
+      <li>The paper highlights the challenges faced in method comparison studies, primarily due to the lack of professional statistical expertise and reliance on incorrect methods replicated from existing literature. It calls for improved awareness among statisticians about this issue and encourages journals to foster the use of appropriate techniques through peer review.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Thus, we can perform an objective evaluation of whether a new measurement method is as good or potentially better than an existing one by assessing agreement, bias, and repeatability, among other factors.</p>
+
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<a href="/resume">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>
