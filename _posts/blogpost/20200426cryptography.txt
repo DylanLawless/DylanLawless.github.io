@@ -1,13 +1,12 @@
----
-layout: post
-title: Cryptography
-created: 27 Feb 2012
-tags: statistics
-status: finished
----
+<!-- --- -->
+<!-- title: Cryptography -->
+<!-- created: 27 Feb 2012 -->
+<!-- tags: statistics -->
+<!-- status: finished -->
+<!-- --- -->
 
-{{ page.title }}
-================
+<!-- {{ page.title }} -->
+<!-- ================ -->
 
 <p class="meta">26 Apr 2020</p>
 
