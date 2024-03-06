@@ -91,23 +91,30 @@
 <!-- MAIN START -------------------------------------------------------- -->
 <div class="sitewidth">
 	<div id="topic">
-Reading time  40 minutes
+Reading time  22 minutes
 <h1 id="pharmacogenomics-for-personal-medicine">Pharmacogenomics for personal medicine</h1>
-<p class="meta">01 Jan 2019</p>
+<p class="meta">06 Mar 2024</p>
 
 <ul id="markdown-toc">
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
-  <li><a href="#preparing-an-example-vcf" id="markdown-toc-preparing-an-example-vcf">Preparing an example VCF</a></li>
+  <li><a href="#download-vcf-data" id="markdown-toc-download-vcf-data">Download VCF data</a></li>
+  <li><a href="#annotate-vcf-data" id="markdown-toc-annotate-vcf-data">Annotate VCF data</a></li>
+  <li><a href="#annotating-a-full-vcf" id="markdown-toc-annotating-a-full-vcf">Annotating a full VCF</a></li>
   <li>
 <a href="#comparing-annotated-genetic-data-to-drug-lists" id="markdown-toc-comparing-annotated-genetic-data-to-drug-lists">Comparing annotated genetic data to drug lists</a>    <ul>
       <li><a href="#drug-gene-list" id="markdown-toc-drug-gene-list">Drug-gene list</a></li>
-      <li><a href="#small-example-check-of-gene-list-versus-drug-gene-list" id="markdown-toc-small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</a></li>
+      <li><a href="#example-of-how-to-check-gene-list-versus-drug-gene-list" id="markdown-toc-example-of-how-to-check-gene-list-versus-drug-gene-list">Example of how to check gene list versus drug-gene list</a></li>
     </ul>
   </li>
-  <li><a href="#a-real-example-of-merging-genetic-and-pharmacogenomic-data" id="markdown-toc-a-real-example-of-merging-genetic-and-pharmacogenomic-data">A real example of merging genetic and pharmacogenomic data</a></li>
-  <li><a href="#drug-indication" id="markdown-toc-drug-indication">Drug indication</a></li>
+  <li><a href="#full-scale-merging-genetic-and-pharmacogenomic-data" id="markdown-toc-full-scale-merging-genetic-and-pharmacogenomic-data">Full-scale merging genetic and pharmacogenomic data</a></li>
+  <li><a href="#downstream-interpretation" id="markdown-toc-downstream-interpretation">Downstream interpretation</a></li>
   <li>
-<a href="#annotation" id="markdown-toc-annotation">Annotation</a>    <ul>
+<a href="#drug-indication" id="markdown-toc-drug-indication">Drug indication</a>    <ul>
+      <li><a href="#is-the-gene-drug-interaction-good-or-bad" id="markdown-toc-is-the-gene-drug-interaction-good-or-bad">Is the gene-drug interaction good or bad?</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#understanding-variant-annotation" id="markdown-toc-understanding-variant-annotation">Understanding variant annotation</a>    <ul>
       <li><a href="#optimising-vcf-annotation" id="markdown-toc-optimising-vcf-annotation">Optimising VCF annotation</a></li>
       <li><a href="#how-to-get-coordinates-for-a-gene-list" id="markdown-toc-how-to-get-coordinates-for-a-gene-list">How to get coordinates for a gene list</a></li>
       <li><a href="#extracting-regions-from-a-vcf-using-a-bed-file" id="markdown-toc-extracting-regions-from-a-vcf-using-a-bed-file">Extracting regions from a VCF using a bed file</a></li>
@@ -130,96 +137,83 @@ Reading time  40 minutes
     </ul>
   </li>
   <li><a href="#cytochrome-p450-cyp-genes-for-known-pgx" id="markdown-toc-cytochrome-p450-cyp-genes-for-known-pgx">Cytochrome P450 (CYP) genes for known PGx</a></li>
-  <li>
-<a href="#dna-regulation-and-the-3d-genome" id="markdown-toc-dna-regulation-and-the-3d-genome">DNA regulation and the 3D genome</a>    <ul>
-      <li><a href="#3d-genome-variation" id="markdown-toc-3d-genome-variation">3D genome variation</a></li>
-      <li><a href="#noncoding-dna-regulation" id="markdown-toc-noncoding-dna-regulation">Noncoding DNA regulation</a></li>
-      <li><a href="#chromatin-regulation" id="markdown-toc-chromatin-regulation">Chromatin regulation</a></li>
-      <li><a href="#chromatin-regulation-and-mutation" id="markdown-toc-chromatin-regulation-and-mutation">Chromatin regulation and mutation</a></li>
-    </ul>
-  </li>
-  <li><a href="#pca-and-ld" id="markdown-toc-pca-and-ld">PCA and LD</a></li>
-  <li><a href="#more-questions" id="markdown-toc-more-questions">More questions</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
 <p>With the popularisation of commercial genetics services, more and more people are now able to “decode” their genetic data.
 Questions that might arise from this information include “do I have potentially disease-causing variants that can be treated with a drug?”, or “am I taking a drug that will be affected by my genetics?”.
-To tackle such questions with an example, we use public data in combination with pharmacogenomics.
-Outside of genotype data (offered by <a href="https://www.23andme.com">23andMe</a> for example), the most common file type will be VCF:
+To tackle such questions with an example, we use public data in combination with pharmacogenomics.</p>
+
+<!-- Outside of genotype data (offered by [23andMe](https://www.23andme.com) for example), -->
+<p>The most common file type for storing DNA variant data is the VCF format:
 <a href="https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format">What is a vcf and how should I interpret it?</a>.</p>
 
-<p>As an example input, try download Craig Venter’s genome VCF:
-<a href="ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz">ftp://ftp.ensembl.org/pub/release-75/variation/vcf/homo_sapiens/Venter.vcf.gz</a>.</p>
-
-<p>When I wrote this post, I used a data source with different genetic data files;
-<a href="https://my.pgp-hms.org/public_genetic_data">https://my.pgp-hms.org/public_genetic_data</a> and 
-I searched under “All data types”.</p>
-
-<p>To check that it works OK, I tried a quick version of this challenge.
-I picked the first whole genome VCF file that I saw:</p>
-
+<h2 id="download-vcf-data">Download VCF data</h2>
+<p>Example VCF from <a href="https://my.pgp-hms.org/public_genetic_data">https://my.pgp-hms.org/public_genetic_data</a>:</p>
 <ul>
-  <li>
+  <li>A randomly selected whole genome VCF file:
+    <ul>
+      <li>
 <a href="https://my.pgp-hms.org/profile/hu24385B">https://my.pgp-hms.org/profile/hu24385B</a>:</li>
-  <li>hu24385B 2019-04-07.vcf.gz</li>
-  <li>Dante Labs Whole Genome</li>
-  <li>147 MB</li>
-</ul>
-
-<p>Here are a few more that might work, but I have not tested:</p>
-
-<ul>
-  <li>[1] VCF from Dante Labs vs GRCh37 (246 MB)</li>
-  <li><a href="https://my.pgp-hms.org/profile/hu1D5A29">https://my.pgp-hms.org/profile/hu1D5A29</a></li>
-  <li>[2] WGS 30x filtered SNP VCF (325 MB)</li>
-  <li><a href="https://my.pgp-hms.org/profile/hu1C1368">https://my.pgp-hms.org/profile/hu1C1368</a></li>
-  <li>[3] 60820188474283.snp.vcf.gz (222 MB)</li>
-  <li><a href="https://my.pgp-hms.org/profile/hu6ABACE">https://my.pgp-hms.org/profile/hu6ABACE</a></li>
+      <li>filename: hu24385B 2019-04-07.vcf.gz</li>
+      <li>sequence provider: Dante Labs Whole Genome</li>
+      <li>size: 147 MB</li>
+    </ul>
+  </li>
+  <li>Additional examples - not tested:
+    <ul>
+      <li>[1] VCF from Dante Labs vs GRCh37 (246 MB) <a href="https://my.pgp-hms.org/profile/hu1D5A29">https://my.pgp-hms.org/profile/hu1D5A29</a>
+</li>
+      <li>[2] WGS 30x filtered SNP VCF (325 MB) <a href="https://my.pgp-hms.org/profile/hu1C1368">https://my.pgp-hms.org/profile/hu1C1368</a>
+</li>
+      <li>[3] 60820188474283.snp.vcf.gz (222 MB) <a href="https://my.pgp-hms.org/profile/hu6ABACE">https://my.pgp-hms.org/profile/hu6ABACE</a>
+</li>
+    </ul>
+  </li>
 </ul>
 
 <p>The “hu24385B” VCF has 3,461,639 variants.
 VCF files can contain a large range of information for each variant, however only the first 7 column are strictly neccessary; Chromosome, position, ID, Reference, Alternate, Qulaity, Filter, info. 
-<a href="https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it">The details are explained on this GATK forum post</a>.
-Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
-Therefore the most common input source may be lacking gene symbols.
-To get the gene names of a single file, the simplest way was is to upload a VCF (or a part of it) to <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a> to get the gene symbol (and any other information that you wish).</p>
+<a href="https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it">The details are explained on this GATK forum post</a>.</p>
 
-<p><img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.45.png" width="100%"></p>
+<p><img src="/images/vcf_header.png" width="100%"></p>
 
-<p><img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.58.png" width="100%"></p>
+<p><img src="/images/vcf_body.png" width="100%"></p>
 
-<p>To reduce the time and output you can limit the options.
-Split the file and run in batches to save time.
-Here I tried the first ~1800 variants.</p>
+<h2 id="annotate-vcf-data">Annotate VCF data</h2>
+<p>Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
+To get the gene names, the simplest way was is to upload a VCF (or a part of it) to <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor</a>.
+This will supply the gene symbol (and any other information about each DNA variant).</p>
 
-<p><br>
-<code class="language-plaintext highlighter-rouge">head -2000 56001801068861_WGZ.snp.vcf &gt; test.vcf</code></p>
-
-<p><br>
-And then annotated that extract with <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor.</a>
-The results would be retained by a URL address such as this, for a few days, but will be deleted by the time your read this.<br>
+<p>To reduce the time and output you can limit the options:</p>
+<ul>
+  <li>Split the file and run in batches to save time.</li>
+  <li>Test the first ~1800 variants:
 <br>
-<a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700">http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/Results?db=core;tl=jNYYW5ONeVFYnaMM-5265700</a> <br>
+<code class="language-plaintext highlighter-rouge">head -2000 56001801068861_WGZ.snp.vcf &gt; test.vcf</code>
 <br>
-<img src="https://dylanlawlessblog.files.wordpress.com/2019/05/screenshot-2019-05-07-at-17.01.10.png" width="100%"><br>
-<br>
-Make certain that you use the same reference genome as used on the input data.
-The VCF file was made using reference genome GRCh37.
-Therefore the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).</p>
+</li>
+  <li>
+    <p>Then annotate with <a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor.</a>
+<img src="/images/vcf_vep.png" width="100%"></p>
+  </li>
+  <li>Make certain that you use the same reference genome as used on the input data.</li>
+  <li>The VCF file was made using reference genome GRCh37.</li>
+  <li>Therefore, the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).</li>
+</ul>
 
-<h2 id="preparing-an-example-vcf">Preparing an example VCF</h2>
-<p>If you would like to try this using a whole genome using the Ensembl web 
-interface you will need to split your VCF into smaller block first.
-For routine usage the command-line version of VEP and it’s databases should be 
-installed on run locally.
-There are several bioinformatics tools that are commonly used for manipulating 
-genetic file formats such as VCFtools. 
-To get a real understanding of the data type, I inlcude here a method using 
-command line bash to split a VCF file into smaller blocks. 
-A bash script is printed below where I use very mainstream traditional 
-command-line tools to wrangle data, including 
+<h2 id="annotating-a-full-vcf">Annotating a full VCF</h2>
+<ul>
+  <li>One <em>could</em> annotate a whole genome using the Ensembl web interface.</li>
+  <li>However, one would need to split your VCF into smaller block first.</li>
+  <li>For routine usage the command-line version of VEP and it’s databases should be installed on run locally.</li>
+  <li><strong>I will provide a completed annotated VCF for you.</strong></li>
+</ul>
+
+<p>There are several bioinformatics tools that are commonly used for manipulating  genetic file formats such as VCFtools. 
+However, to get a real understanding of the data type, here is a method using command line bash to split a VCF file into smaller blocks. 
+A bash script is printed below where I use very mainstream traditional command-line tools to wrangle data, including 
 <a href="https://en.wikipedia.org/wiki/Gzip">gunzip</a>
 to unzip compressed files, 
 <a href="https://en.wikipedia.org/wiki/wc_(Unix)">wc</a>
@@ -232,9 +226,9 @@ to read the top of a file,
 to edit lines, 
 <a href="https://en.wikipedia.org/wiki/AWK">awk</a>
 for data extraction, and
-<a href="https://en.wikipedia.org/wiki/Grep">grep</a>
-which is not used here but it fits well with these other tools - for text search.
-Creating a file containing the code below and ending with the filename extension with “.sh” will allow it to be run by your terminal, in this case using the bash language.
+<a href="https://en.wikipedia.org/wiki/Grep">grep</a> for text search (not used).</p>
+
+<p>Putting the code below into a file with the filename extension with “.sh” will allow it to be run by your terminal, in this case using the bash language.
 I encourage you to read each line and figure out what should happen. If it makes sense then it is reasonable to swap such a manual method with a more efficient specialised tool.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
@@ -296,71 +290,93 @@ I encourage you to read each line and figure out what should happen. If it makes
 </code></pre></div></div>
 
 <h2 id="comparing-annotated-genetic-data-to-drug-lists">Comparing annotated genetic data to drug lists</h2>
-<p>Uploading either a small example or your split-whole-genome example, VEP will process the data and annotate it will whatever features you require, including gene names, variant consequence, pahtnogenicy prediction, etc.
-The next aim will be to see if any of your output genes are also present in your drug-gene database.
-The method will require merging both dataset (gene and drug datasets) based on shared features. 
-A simple sanity test would be useful first:</p>
+<ul>
+  <li>We now assume that we have a VCF where VEP annotated each variant.</li>
+  <li>The features can include gene names, variant consequence, pahtnogenicy prediction, etc.</li>
+  <li>The next aim is to see if any output genes are also present in your drug-gene database.</li>
+  <li>The method will require merging both dataset (gene and drug datasets) based on shared features.</li>
+  <li>A simple sanity test would be useful first.</li>
+</ul>
 
 <h3 id="drug-gene-list">Drug-gene list</h3>
-<p>Here is a similar drug-gene list that can be used for a case-study:
-<a href="https://lawlessgenomics.com/pages/drugbank_all_interaction.txt">notdrugbank_all_interaction.txt</a></p>
+<p>Here is a drug-gene list “similar” to the private version from DrugBank:</p>
+<ul>
+  <li><a href="https://lawlessgenomics.com/pages/drugbank_all_interaction.txt">notdrugbank_all_interaction.txt</a></li>
+</ul>
 
-<p>Drugbank has changed their access policy and now requires access applications. If you want the up-to-date DrugBank data I believe you can apply for non-commercial use (and wait a few days). 
+<p>Drugbank has changed their access policy and now requires access applications. 
+If you want the up-to-date DrugBank data I believe you can apply for non-commercial use (and wait a few days). 
 The data can then be found at:
 <a href="https://go.drugbank.com/releases/latest#protein-identifiers">https://go.drugbank.com/releases/latest#protein-identifiers</a>, 
 “protein-identifiers” tab, “Drug Target Identifiers” section, “All” file.</p>
 
-<h3 id="small-example-check-of-gene-list-versus-drug-gene-list">Small example check of gene list versus drug-gene list</h3>
-<p>From the VEP output I extracted the gene symbols column and compared against a list of druggable target genes from 
-<a href="https://www.drugbank.ca">DrugBank</a> 
-(because I happen to have their data on hand, FDA may be more reliable).
-I used another command-line method to do this efficienctly:</p>
+<h3 id="example-of-how-to-check-gene-list-versus-drug-gene-list">Example of how to check gene list versus drug-gene list</h3>
+<ul>
+  <li>Extract the gene symbols column from VEP output</li>
+  <li>Compare gene symbols to a list of druggable target genes from 
+<a href="https://www.drugbank.ca">DrugBank</a>.</li>
+</ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cut</span> <span class="nt">-f1</span> <span class="nt">-d</span> <span class="s2">","</span> vep_output_file.csv - <span class="nb">uniq</span> <span class="o">&gt;</span> unique.genes.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get a list of unique gene symbols</span>
+<span class="nb">cut</span> <span class="nt">-f1</span> <span class="nt">-d</span> <span class="s2">","</span> vep_output_file.csv - <span class="nb">uniq</span> <span class="o">&gt;</span> unique.genes.txt
+
+<span class="c"># - Cut column 1 (f1) </span>
+<span class="c"># - with a delimiter comma (,) </span>
+<span class="c"># - from the vep output csv file (or tsv, or text file)</span>
+<span class="c"># - then pipe (\|) that result into another program (sort) to sort the result in alphabetic order</span>
+<span class="c"># - pipe (\|) again this result into(uniq) </span>
+<span class="c"># - so that only one unique gene name is output</span>
+<span class="c"># - then (&gt;) write the output into the new file "unique.genes.txt".  </span>
 </code></pre></div></div>
+<p><br></p>
 
 <ul>
-  <li>Cut column 1 (f1)</li>
-  <li>with a delimiter comma (,)</li>
-  <li>from the vep output csv file (or tsv, or text file)</li>
-  <li>then pipe (|) that result into another program (sort) to sort the result in alphabetic order</li>
-  <li>pipe (|) again this result into(uniq)</li>
-  <li>so that only one unique gene name is output</li>
-  <li>then (&gt;) write the output into the new file “unique.genes.txt”.<br>
-<br>
-Repeat the same type of method on the DrugBank dataset to get a list of the gene names contained in DrugBank into a file called “unique.druggable.txt”
-The next command will then compare both lists.
+  <li>Repeat the same method on the DrugBank dataset</li>
+  <li>Output the gene names from DrugBank to “unique.druggable.txt”
 <br>
 </li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sort </span>unique.genes.txt unique.druggable.txt - <span class="nb">uniq</span> <span class="nt">-c</span> <span class="nt">-i</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'1 '</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get a list of gene symbols which are present in both datasets</span>
+<span class="nb">sort </span>unique.genes.txt unique.druggable.txt - <span class="nb">uniq</span> <span class="nt">-c</span> <span class="nt">-i</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'1 '</span>
 </code></pre></div></div>
 
 <p>This command also used “uniq -c” to count how many times each gen name occurs and then “grep -v ‘1 ‘” meaning ignore genes that are only present 1 time. 
-We want the genes that are present twice, once in each list.
-The genes which were in present in both the variant list and DrugBank list are:
-From a 2,000 line VCF file:
-<a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,
-<a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,
-<a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a><br>
-From a 10,000 VCF line file = 
-<a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,
-<a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,
-<a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a>,
-<a href="https://www.drugbank.ca/bio_entities/BE0008994">TP73</a>.</p>
-
-<h2 id="a-real-example-of-merging-genetic-and-pharmacogenomic-data">A real example of merging genetic and pharmacogenomic data</h2>
-<p>Now that a small example has shown us the logic of the process, we can try a more complex real-world example. 
-The following R language script is used to merge the VEP annotated VCF file with a DrugBank database based on the gene names that are common to both datasets.
-Read each line and try to understand the process. 
-The are many alternative ways to do the same thing in different programming languages. 
-This example is done using R. 
-I recommending installing R and then installing R studio to edit and run your commands.</p>
+We want the genes that are present twice, once in each list.</p>
 
 <ul>
-  <li>If you need a copy of the data and code used in the following example, email me and ask for: “r_merge.zip”</li>
+  <li>The genes which were in present in both the variant list and DrugBank list are:</li>
+  <li>From a 2,000 line VCF file:
+    <ul>
+      <li>
+<a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,</li>
+      <li>
+<a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,</li>
+      <li><a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a></li>
+    </ul>
+  </li>
+  <li>From a 10,000 VCF line file:
+    <ul>
+      <li>
+<a href="https://www.drugbank.ca/bio_entities/BE0003599">GABRD</a>,</li>
+      <li>
+<a href="https://www.drugbank.ca/bio_entities/BE0004895">PRKCZ</a>,</li>
+      <li>
+<a href="https://www.drugbank.ca/bio_entities/BE0000495">SCNN1D</a>,</li>
+      <li>
+<a href="https://www.drugbank.ca/bio_entities/BE0008994">TP73</a>.</li>
+    </ul>
+  </li>
 </ul>
+
+<h2 id="full-scale-merging-genetic-and-pharmacogenomic-data">Full-scale merging genetic and pharmacogenomic data</h2>
+<!-- The previos section showed a small example the logic of the process, we can try a more complex real-world example. -->
+<p>The following R language script is used to merge the VEP annotated VCF file with a DrugBank database based on the gene names that are common to both datasets.
+Read each line and try to understand the process. 
+<!-- The are many alternative ways to do the same thing in different programming languages. --> 
+I recommending installing R and then installing R studio to edit and run your commands.</p>
+
+<!-- * If you need a copy of the data and code used in the following example, email me and ask for: "r_merge.zip" -->
 
 <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Comment lines are ignored because of "#" symbol.</span><span class="w">
 </span><span class="c1"># Command lines are run by clicking "Run" or "command+enter" on Mac</span><span class="w">
@@ -423,7 +439,6 @@ I recommending installing R and then installing R studio to edit and run your co
                 </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drugs</span><span class="p">,</span><span class="w">
                 </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Gene.Name"</span><span class="p">,</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span><span class="w">
 
-
 </span><span class="c1"># Remove empty data "NA"</span><span class="w">
 </span><span class="c1"># Install packeges once (comment out then)</span><span class="w">
 </span><span class="c1"># Load library each time to use "%&gt;%" (command join) and filtering</span><span class="w">
@@ -448,21 +463,28 @@ I recommending installing R and then installing R studio to edit and run your co
 </span></code></pre></div></div>
 
 <p>If you complete this process the output will contain a perfectly merged dataset.
-So in this simple example it takes just 5 minutes to get from a real genome VCF to possibly druggable target genes (see further note on <em>drug indication</em> below).
-The difficulty lies downstream in interpreting which variants can have an effect that would justify the use of the drug.
-Anyone implementing a usable version of this method will incur several obstacles;
-e.g. are non-coding or synonymous variants worth reporting?, genes have multiple transcripts which means one variant can be both coding and non-coding depending on transcript splicing, etc.
-Other sources of sequence data, including the sequences of Watson and Venter;<br>
-<a href="http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/">http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/</a><br>
-23andMe open snp data; <a href="https://opensnp.org/genotypes">https://opensnp.org/genotypes</a>.
-There are many layers to a this problem to create a usable product.
-For example, how to integrate pharmacodynamics, covariats to drug response, contraindications, variant pathogenicity, etc.
-However, this is a good start as a learning experience.</p>
+<!-- So in this simple example it takes just 5 minutes to get from a real genome VCF to possibly druggable target genes (see further note on _drug indication_ below). --></p>
+
+<h2 id="downstream-interpretation">Downstream interpretation</h2>
+<p>The next challenge lies downstream in interpreting which variants can have an effect that would justify the use of the drug.</p>
+
+<ul>
+  <li>Are non-coding or synonymous variants worth reporting?</li>
+  <li>Genes have multiple transcripts which means one variant can be both coding and non-coding depending on transcript splicing, etc.</li>
+  <li>How can we integrate pharmacodynamics, covariates to drug response, contraindications, variant pathogenicity, etc.
+<!-- Other sources of sequence data, including the sequences of Watson and Venter; --><br>
+<!-- [http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/) --><br>
+<!-- 23andMe open snp data; [https://opensnp.org/genotypes](https://opensnp.org/genotypes). -->
+<!-- There are many layers to a this problem to create a usable product. -->
+</li>
+</ul>
 
 <h2 id="drug-indication">Drug indication</h2>
-<p>My example used <a href="https://www.drugbank.ca">DrugBank</a> for pharmacogenomic information.
-However, it may be safest to use the <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">FDA information</a> as the primary source, but including <a href="https://www.drugbank.ca">DrugBank</a> info is no problem.
-Drugs might be either a treatment for a genetic determinant, or a warning for drug usage in someone who also has a genetic variation that might effect their treatment.
+<p>My example used <a href="https://www.drugbank.ca">DrugBank</a> for pharmacogenomic information. 
+Another option is to use the <a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">FDA information</a> as the primary source.</p>
+
+<h3 id="is-the-gene-drug-interaction-good-or-bad">Is the gene-drug interaction good or bad?</h3>
+<p>Drugs might be either a treatment for a genetic determinant, or a warning for drug usage in someone who also has a genetic variation that might effect their treatment.
 The “Labelling Section” listed by FDA might offer the best information.</p>
 
 <p><a href="https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/</a>
@@ -493,7 +515,7 @@ With this in mind, perhaps an application doing this job could work two ways.
 (1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
 (2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.</p>
 
-<h2 id="annotation">Annotation</h2>
+<h2 id="understanding-variant-annotation">Understanding variant annotation</h2>
 <p><a href="http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/">Variant Effect Predictor (VEP)</a> is very useful.
 During variant annotation, VEP supplies a “consequence” column.
 Consequences are general and based on translation of genetic code in humans. 
@@ -803,163 +825,146 @@ Similar resource include the <a href="https://www.pharmgkb.org">Pharmacogenomic 
 and the <a href="https://cpicpgx.org">Clinical Pharmacogenetic Implementation Consortium</a>.
 You can <a href="https://lawlessgenomics.com/topic/stargazing">read more in this post</a> on one example of pharmacogenomic analysis using these resources.</p>
 
-<h2 id="dna-regulation-and-the-3d-genome">DNA regulation and the 3D genome</h2>
-<p>There is a collection of reviews on <a href="https://www.nature.com/collections/rsxlmsyslk">the 3D genome Nature Reviews 2019</a>. 
-From this, I have collected some illustrations to remind us about the combination of biochemical and physical structure that DNA takes inside each cell.</p>
+<!-- ## DNA regulation and the 3D genome -->
+<!-- There is a collection of reviews on [the 3D genome Nature Reviews 2019](https://www.nature.com/collections/rsxlmsyslk). -->
+<!-- From this, I have collected some illustrations to remind us about the combination of biochemical and physical structure that DNA takes inside each cell. -->
 
-<h3 id="3d-genome-variation">3D genome variation</h3>
-<p>DNA is not only a simple string of nucleotides. 
-It is constantly wrapped up around proteins which affect its shape and accessibility.
-This means that genes encoded on the DNA may take different lengths of time to be expressed and produce proteins.
-Some DNA regions may physically cluster together and are labelled as topologically associating domains (TADs).
-<a class="citation" href="#spielmann2018structural">(Spielmann et al., 2018)</a>
-<a href="https://www.nature.com/articles/s41576-018-0007-0">https://doi.org/10.1038/s41576-018-0007-0</a></p>
+<!-- ### 3D genome variation -->
+<!-- DNA is not only a simple string of nucleotides. -->
+<!-- It is constantly wrapped up around proteins which affect its shape and accessibility. -->
+<!-- This means that genes encoded on the DNA may take different lengths of time to be expressed and produce proteins. -->
+<!-- Some DNA regions may physically cluster together and are labelled as topologically associating domains (TADs). -->
+<!-- <!-1- <a class="citation" href="#spielmann2018structural">(Spielmann et al., 2018)</a> -1-> -->
+<!-- [https://doi.org/10.1038/s41576-018-0007-0](https://www.nature.com/articles/s41576-018-0007-0) -->
 
-<p><img src="/images/3d_genome/spielmann2018structural_Box1.webp" width="50%"></p>
-<blockquote>
-  <p><a class="citation" href="#spielmann2018structural">(Spielmann et al., 2018)</a> <em>Box 1 Chromatin organization  from the 3D nucleus to the linear genome.</em></p>
-</blockquote>
+<!-- <img src="/images/3d_genome/spielmann2018structural_Box1.webp" width="50%"> -->
+<!-- <!-1- > <a class="citation" href="#spielmann2018structural">(Spielmann et al., 2018)</a> -1-> -->
+<!-- > _Box 1 Chromatin organization  from the 3D nucleus to the linear genome._ -->
 
-<p>In coding regions, a “damaging” DNA variant will affect the function of a protein, or cause complete loss of that protein.
-In some cases, a single gene defect can cause a specific disease.
-Similarly, changing the expression of DNA (even if the gene has no damaging coding variants) could cause the same outcome.
-Therefore, regions of DNA that control the expression of surrounding genes are just as important as coding variants. 
-Historically, effects due to DNA accessibility and expression have been very difficult to understand biologically, but the methods and evidence is improving.</p>
+<!-- In coding regions, a "damaging" DNA variant will affect the function of a protein, or cause complete loss of that protein. -->
+<!-- In some cases, a single gene defect can cause a specific disease. -->
+<!-- Similarly, changing the expression of DNA (even if the gene has no damaging coding variants) could cause the same outcome. -->
+<!-- Therefore, regions of DNA that control the expression of surrounding genes are just as important as coding variants. -->
+<!-- Historically, effects due to DNA accessibility and expression have been very difficult to understand biologically, but the methods and evidence is improving. -->
 
-<p><img src="/images/3d_genome/spielmann2018structural_Fig2.webp" width="50%"></p>
-<blockquote>
-  <p><a class="citation" href="#spielmann2018structural">(Spielmann et al., 2018)</a> <em>Fig. 2: Clinical examples of structural variations in the 3D genome. a - Duplications of enhancer elements at the IHH locus that occur within topologically associating domains (intra-TAD) cause tissue-specific misregulation and are associated with synpolydactyly of the feet89. For examples see REFS97,104,107,137,138. b - Duplication of a TAD boundary at the SOX9 locus causes neo-TAD formation and is associated with Cooks syndrome, short digits and nail aplasia63. For examples see REFS117,121. c - Deletion of a TAD boundary at the LMNB1 locus causes enhancer adoption and adult-onset demyelinating leukodystrophy139. For examples see REFS117,121,140. d - Inversions of an enhancer cluster at the EPHA4 locus cause enhancer adoption and misregulation of WNT6 and are associated with F-syndrome, syndactyly of thumb and index finger76. For examples see REFS102,114,141. e - Balanced translocations at the MEF2C locus cause a regulator loss of function and are associated with anomalies of the brain (including callosum hypoplasia142) and developmental delay116. For examples see REFS99,104,143. PRS, element associated with Pierre Robin sequence; RevSex, element associated with disorders of sex development. Part c is adapted with permission from REF.113, Elsevier. Part e is adapted with permission from Shimojima, K. et al. De novo microdeletion of 5q14.3 excluding MEF2C in a patient with infantile spasms, microcephaly, and agenesis of the corpus callosum. Am. J. Med. Genet. Part A, REF.142, Copyright 2011 Wiley Periodicals, Inc.</em></p>
-</blockquote>
+<!-- <img src="/images/3d_genome/spielmann2018structural_Fig2.webp" width="50%"> -->
+<!-- <!-1- > <a class="citation" href="#spielmann2018structural">(Spielmann et al., 2018)</a> -1-> -->
+<!-- > _Fig. 2: Clinical examples of structural variations in the 3D genome. a - Duplications of enhancer elements at the IHH locus that occur within topologically associating domains (intra-TAD) cause tissue-specific misregulation and are associated with synpolydactyly of the feet89. For examples see REFS97,104,107,137,138. b - Duplication of a TAD boundary at the SOX9 locus causes neo-TAD formation and is associated with Cooks syndrome, short digits and nail aplasia63. For examples see REFS117,121. c - Deletion of a TAD boundary at the LMNB1 locus causes enhancer adoption and adult-onset demyelinating leukodystrophy139. For examples see REFS117,121,140. d - Inversions of an enhancer cluster at the EPHA4 locus cause enhancer adoption and misregulation of WNT6 and are associated with F-syndrome, syndactyly of thumb and index finger76. For examples see REFS102,114,141. e - Balanced translocations at the MEF2C locus cause a regulator loss of function and are associated with anomalies of the brain (including callosum hypoplasia142) and developmental delay116. For examples see REFS99,104,143. PRS, element associated with Pierre Robin sequence; RevSex, element associated with disorders of sex development. Part c is adapted with permission from REF.113, Elsevier. Part e is adapted with permission from Shimojima, K. et al. De novo microdeletion of 5q14.3 excluding MEF2C in a patient with infantile spasms, microcephaly, and agenesis of the corpus callosum. Am. J. Med. Genet. Part A, REF.142, Copyright 2011 Wiley Periodicals, Inc._ -->
 
-<p>There are a huge number of methods to quantify 3D genome structure, DNA regulation and expression, mutation within 3D regions, large rearrangements in DNA, etc.
-The following figure illustrates one technique. 
-We will not discuss all the possibilities here as the technologies are rapidly increasing.
-Each large biotech company offers dozens/hundreds of options. 
-<a class="citation" href="#de2017capturing">(de Wit, 2017)</a>
-<a href="https://www.nature.com/articles/nsmb.3404">https://doi.org/10.1038/nsmb.3404</a></p>
+<!-- There are a huge number of methods to quantify 3D genome structure, DNA regulation and expression, mutation within 3D regions, large rearrangements in DNA, etc. -->
+<!-- The following figure illustrates one technique. -->
+<!-- We will not discuss all the possibilities here as the technologies are rapidly increasing. -->
+<!-- Each large biotech company offers dozens/hundreds of options. -->
+<!-- <a class="citation" href="#de2017capturing">(de Wit, 2017)</a> -->
+<!-- [https://doi.org/10.1038/nsmb.3404](https://www.nature.com/articles/nsmb.3404) -->
 
-<p><img src="/images/3d_genome/de2017capturing_fig1.webp" width="50%"></p>
-<blockquote>
-  <p><a class="citation" href="#de2017capturing">(de Wit, 2017)</a> <em>Figure 1: Single-cell models of chromosomes reveal principle characteristics of nuclear organization. (a) Single-cell Hi-C is performed to identify contacts between chromosomal regions (1). The contacts are sequenced using Illumina paired-end sequencing (2) and used as restraints in performing computational modeling of 3D genome structures (3). (b) Genome structures recapitulate known features of nuclear organization. Images of genome structures are adapted from ref. 13. (c) Structures of TADs show that they can exist in both compacted and elongated conformations. (d) Schematic representation of the loop-extrusion model. A chromatin region is captured by an extrusion complex forming a tiny loop (2), which is actively extended, leading to the formation of larger loops (3). Ultimately, the extrusion complex releases the chromatin, leading to the dissolving of the loop (4).</em></p>
-</blockquote>
+<!-- <img src="/images/3d_genome/de2017capturing_fig1.webp" width="50%"> -->
+<!-- <!-1- > <a class="citation" href="#de2017capturing">(de Wit, 2017)</a> -1-> -->
+<!-- > _Figure 1: Single-cell models of chromosomes reveal principle characteristics of nuclear organization. (a) Single-cell Hi-C is performed to identify contacts between chromosomal regions (1). The contacts are sequenced using Illumina paired-end sequencing (2) and used as restraints in performing computational modeling of 3D genome structures (3). (b) Genome structures recapitulate known features of nuclear organization. Images of genome structures are adapted from ref. 13. (c) Structures of TADs show that they can exist in both compacted and elongated conformations. (d) Schematic representation of the loop-extrusion model. A chromatin region is captured by an extrusion complex forming a tiny loop (2), which is actively extended, leading to the formation of larger loops (3). Ultimately, the extrusion complex releases the chromatin, leading to the dissolving of the loop (4)._ -->
 
-<h3 id="noncoding-dna-regulation">Noncoding DNA regulation</h3>
-<p>It is useful to understand the mechanisms causing DNA regulation more specifically.
-If you want a good understanding of the topic, one of the best resources today is the 
-The Genotype-Tissue Expression (GTEx) project
-<a class="citation" href="#gtex2020gtex">(Consortium, 2020)</a>
-<a href="https://www.science.org/doi/10.1126/science.aaz1776">https://doi.org/10.1126/science.aaz1776</a>.
-GTEx include WGS, WES, and RNA-Seq data.
-This paper has an excellent overview, and their web interface is informative
-<a href="https://www.gtexportal.org/home/">https://www.gtexportal.org/home/</a>.</p>
+<!-- ### Noncoding DNA regulation -->
+<!-- It is useful to understand the mechanisms causing DNA regulation more specifically. -->
+<!-- If you want a good understanding of the topic, one of the best resources today is the -->
+<!-- The Genotype-Tissue Expression (GTEx) project -->
+<!-- <!-1- <a class="citation" href="#gtex2020gtex">(Consortium, 2020)</a> -1-> -->
+<!-- [https://doi.org/10.1126/science.aaz1776](https://www.science.org/doi/10.1126/science.aaz1776). -->
+<!-- GTEx include WGS, WES, and RNA-Seq data. -->
+<!-- This paper has an excellent overview, and their web interface is informative -->
+<!-- [https://www.gtexportal.org/home/](https://www.gtexportal.org/home/). -->
 
-<p>One of the most common uses of GTEx is as follows:</p>
+<!-- One of the most common uses of GTEx is as follows: -->
 
-<ul>
-  <li>When an association between genetic variant and a phenotype is found (e.g. a common DNA variant and heart disease), it is often not due to a coding variant but instead due to a non-coding variant.</li>
-  <li>To understand how this can cause disease, we match DNA and RNA from the same individuals to see how this variant affects the expression level of downstream genes.</li>
-  <li>If the DNA variant is correlated with a change in RNA expression (and subsequently protein level) we can determine its regulatory effect.</li>
-  <li>We quantify the RNA expression and its affect on trait (phenotype) within this DNA loci (gene or group of genes): expression quantitative trait loci (eQTL).</li>
-  <li>There are other types of QTL, but eQTL are a fine example.</li>
-</ul>
+<!-- * When an association between genetic variant and a phenotype is found (e.g. a common DNA variant and heart disease), it is often not due to a coding variant but instead due to a non-coding variant. -->
+<!-- * To understand how this can cause disease, we match DNA and RNA from the same individuals to see how this variant affects the expression level of downstream genes. -->
+<!-- * If the DNA variant is correlated with a change in RNA expression (and subsequently protein level) we can determine its regulatory effect. -->
+<!-- * We quantify the RNA expression and its affect on trait (phenotype) within this DNA loci (gene or group of genes): expression quantitative trait loci (eQTL). -->
+<!-- * There are other types of QTL, but eQTL are a fine example. -->
 
-<p>The following two figures from
-<a class="citation" href="#elkon2017characterization">(Elkon &amp; Agami, 2017)</a>
-<a href="https://www.nature.com/articles/nbt.3863">https://doi.org/10.1038/nbt.3863</a>
-can help to visualise an example of the process.</p>
+<!-- The following two figures from -->
+<!-- <!-1- <a class="citation" href="#elkon2017characterization">(Elkon &amp; Agami, 2017)</a> -1-> -->
+<!-- [https://doi.org/10.1038/nbt.3863](https://www.nature.com/articles/nbt.3863) -->
+<!-- can help to visualise an example of the process. -->
 
-<ul>
-  <li>In the second figure (labelled Figure 4b) we consider one gene with a certain nucleotide position, having either G or A (2 chromosomes gives possibilites of GG, GA, or AA).</li>
-  <li>We can see how one genotype may have lower RNA expression (and less protein produced) for people with two copies of the gene with nucleotide G.</li>
-  <li>However, people with one or two copies of this gene with an A nucleotide at the same position may have higher RNA expression levels (and more protein).</li>
-  <li>If this gene is used in drug metabolism, then perhaps they should receive a personalised drug dosage.</li>
-</ul>
+<!-- * In the second figure (labelled Figure 4b) we consider one gene with a certain nucleotide position, having either G or A (2 chromosomes gives possibilites of GG, GA, or AA). -->
+<!-- * We can see how one genotype may have lower RNA expression (and less protein produced) for people with two copies of the gene with nucleotide G. -->
+<!-- * However, people with one or two copies of this gene with an A nucleotide at the same position may have higher RNA expression levels (and more protein). -->
+<!-- * If this gene is used in drug metabolism, then perhaps they should receive a personalised drug dosage. -->
 
-<p><img src="/images/3d_genome/elkon2017characterization_Fig1.webp" width="50%"></p>
-<blockquote>
-  <p><a class="citation" href="#elkon2017characterization">(Elkon &amp; Agami, 2017)</a> <em>Figure 1: Genome-wide identification of candidate regulatory regions. (a) The conditions in which each gene is expressed are determined by a complex interplay between cis-regulatory DNA elements embedded near the gene’s transcription start site (TSS) (the gene’s promoter region, typically taken as 1,000 bp upstream to 200 bp downstream of the TSS) and distal enhancer elements located far (along the linear genomic DNA) from the gene’s TSS. These DNA elements are bound by TFs that modulated the efficiency by which RNA polymerase is recruited to the gene’s TSS to initiate transcription. Image adapted with permission from Figure 1, ref. 21, Springer Nature. (b) Distinct chromatin marks correlate with different regulatory states. Thus, epigenomic profiling of chromatin accessibility, histone modifications and TF binding in large panels of cell lines and tissues predicts comprehensive maps of putative regulatory elements across the genome and indicates the conditions under which each element is active. Reprinted from Figure 2, ref. 157, Mol. Cell., 55, Plank, J.L. &amp; Dean, A., Enhancer function: mechanistic and genome-wide insights come together. 5–14 (2014), with permission from Elsevier. (c) Bidirectional production of eRNAs emerges as an effective mark of active enhancers. Thus, expression profiling of eRNAs is used on top of the epigenomic layers to improve the identification of enhancers and delineate the conditions in which they are activated. This cartoon shows tracks for epigenetic hallmarks of enhancers (DHS, histone marks and TF binding sites (TF BS) in addition to bidirectional production of eRNAs (as detected by GRO-seq)).</em></p>
-</blockquote>
+<!-- <img src="/images/3d_genome/elkon2017characterization_Fig1.webp" width="50%"> -->
+<!-- <!-1- > <a class="citation" href="#elkon2017characterization">(Elkon &amp; Agami, 2017)</a> -1-> -->
+<!-- > _Figure 1: Genome-wide identification of candidate regulatory regions. (a) The conditions in which each gene is expressed are determined by a complex interplay between cis-regulatory DNA elements embedded near the gene's transcription start site (TSS) (the gene's promoter region, typically taken as 1,000 bp upstream to 200 bp downstream of the TSS) and distal enhancer elements located far (along the linear genomic DNA) from the gene's TSS. These DNA elements are bound by TFs that modulated the efficiency by which RNA polymerase is recruited to the gene's TSS to initiate transcription. Image adapted with permission from Figure 1, ref. 21, Springer Nature. (b) Distinct chromatin marks correlate with different regulatory states. Thus, epigenomic profiling of chromatin accessibility, histone modifications and TF binding in large panels of cell lines and tissues predicts comprehensive maps of putative regulatory elements across the genome and indicates the conditions under which each element is active. Reprinted from Figure 2, ref. 157, Mol. Cell., 55, Plank, J.L. & Dean, A., Enhancer function: mechanistic and genome-wide insights come together. 5–14 (2014), with permission from Elsevier. (c) Bidirectional production of eRNAs emerges as an effective mark of active enhancers. Thus, expression profiling of eRNAs is used on top of the epigenomic layers to improve the identification of enhancers and delineate the conditions in which they are activated. This cartoon shows tracks for epigenetic hallmarks of enhancers (DHS, histone marks and TF binding sites (TF BS) in addition to bidirectional production of eRNAs (as detected by GRO-seq))._ -->
 
-<p><img src="/images/3d_genome/elkon2017characterization_Fig4.webp" width="50%"></p>
-<blockquote>
-  <p><a class="citation" href="#elkon2017characterization">(Elkon &amp; Agami, 2017)</a> <em>Figure 4: Inference of enhancer-promoter links. (a) Enhancer-promoter (E-P) interactions are predicted based on their correlated activation pattern measured over a large panel of cells and tissues. Activation pattern could be measured by epigenetic marks, DHS or transcriptional activity (e.g., mRNA and eRNA levels). (b) Top: eQTL analysis detects associations between SNP genotypes and expression level of target genes. In this example, individuals who are homozygous for the reference allele (GG) show significantly lower expression of the target gene than individuals who are homozygous for the alternative allele (AA). Heterozygous individuals show an intermediate expression level. If either the eQTL SNP itself or any other SNP that is in strong linkage disequilibrium with it is located within a regulatory element, then a putative functional link between that enhancer and the promoter of the associated gene is predicted. Bottom: allele-specific expression analysis requires the presence of a heterozygous SNP within the target RNA (in the figure, the SNP with the T/C alleles), and tests for imbalanced expression from the two copies (maternal and paternal copies) of the gene. Imbalanced expression of the two copies implies that the individual is also heterozygous for another SNP that modulates the activity of a cis-regulatory element that controls the expression of the target gene. The A allele of the SNP located within the enhancer increases the enhancer activity and thus causes elevated expression of the copy of the gene encoded on the same chromosome (the copy of the gene that carries the C allele).</em></p>
-</blockquote>
+<!-- <img src="/images/3d_genome/elkon2017characterization_Fig4.webp" width="50%"> -->
+<!-- <!-1- > <a class="citation" href="#elkon2017characterization">(Elkon &amp; Agami, 2017)</a> -1-> -->
+<!-- > _Figure 4: Inference of enhancer-promoter links. (a) Enhancer-promoter (E-P) interactions are predicted based on their correlated activation pattern measured over a large panel of cells and tissues. Activation pattern could be measured by epigenetic marks, DHS or transcriptional activity (e.g., mRNA and eRNA levels). (b) Top: eQTL analysis detects associations between SNP genotypes and expression level of target genes. In this example, individuals who are homozygous for the reference allele (GG) show significantly lower expression of the target gene than individuals who are homozygous for the alternative allele (AA). Heterozygous individuals show an intermediate expression level. If either the eQTL SNP itself or any other SNP that is in strong linkage disequilibrium with it is located within a regulatory element, then a putative functional link between that enhancer and the promoter of the associated gene is predicted. Bottom: allele-specific expression analysis requires the presence of a heterozygous SNP within the target RNA (in the figure, the SNP with the T/C alleles), and tests for imbalanced expression from the two copies (maternal and paternal copies) of the gene. Imbalanced expression of the two copies implies that the individual is also heterozygous for another SNP that modulates the activity of a cis-regulatory element that controls the expression of the target gene. The A allele of the SNP located within the enhancer increases the enhancer activity and thus causes elevated expression of the copy of the gene encoded on the same chromosome (the copy of the gene that carries the C allele)._ -->
 
-<h3 id="chromatin-regulation">Chromatin regulation</h3>
-<p>This paper is not very important to read in detail. However, thee figure is nice for our discussion
-<a class="citation" href="#keung2015chromatin">(Keung et al., 2015)</a>
-<a href="https://www.nature.com/articles/nrg3900#citeas">https://doi.org/10.1038/nrg3900</a></p>
+<!-- ### Chromatin regulation -->
+<!-- This paper is not very important to read in detail. However, thee figure is nice for our discussion -->
+<!-- <!-1- <a class="citation" href="#keung2015chromatin">(Keung et al., 2015)</a> -1-> -->
+<!-- [https://doi.org/10.1038/nrg3900](https://www.nature.com/articles/nrg3900#citeas) -->
 
-<p><img src="/images/3d_genome/keung2015chromatin_fig1.webp" width="50%"></p>
-<blockquote>
-  <p><a class="citation" href="#keung2015chromatin">(Keung et al., 2015)</a> <em>Figure 1: Regulatory features of chromatin at multiple length scales. a - The amino termini of histone proteins have numerous amino acid residues that can be biochemically modified, such as by the addition of methyl (Me), acetyl (Ac), ubiquitin (Ub) and phosphate (P) groups. These modifications influence the binding of DNA and regulatory proteins26. b - Genomic DNA, which itself can be methylated on cytosine residues, is wound around 4 pairs of histone proteins, which collectively comprise a nucleosome15. c - The positioning of nucleosomes on DNA influences the accessibility of transcription factors to regions such as the promoter. Regulatory proteins (orange, blue, red and purple) bind to nucleosomes, DNA and transcribed non-coding RNA (ncRNA). Histone marks (red circles) often appear in large spatial domains; their occupancy as a function of genomic position (red histogram) can be quantified using chromatin immunoprecipitation followed by DNA sequencing (ChIP–seq)19,21. d - Chromosomes exist in spatial territories in the nucleus. There are interactions within and between chromosomes, as well as between chromosomes and nuclear structures such as the nuclear pore, inner nuclear membrane and nuclear lamina18.</em></p>
-</blockquote>
+<!-- <img src="/images/3d_genome/keung2015chromatin_fig1.webp" width="50%"> -->
+<!-- > <a class="citation" href="#keung2015chromatin">(Keung et al., 2015)</a> _Figure 1: Regulatory features of chromatin at multiple length scales. a - The amino termini of histone proteins have numerous amino acid residues that can be biochemically modified, such as by the addition of methyl (Me), acetyl (Ac), ubiquitin (Ub) and phosphate (P) groups. These modifications influence the binding of DNA and regulatory proteins26. b - Genomic DNA, which itself can be methylated on cytosine residues, is wound around 4 pairs of histone proteins, which collectively comprise a nucleosome15. c - The positioning of nucleosomes on DNA influences the accessibility of transcription factors to regions such as the promoter. Regulatory proteins (orange, blue, red and purple) bind to nucleosomes, DNA and transcribed non-coding RNA (ncRNA). Histone marks (red circles) often appear in large spatial domains; their occupancy as a function of genomic position (red histogram) can be quantified using chromatin immunoprecipitation followed by DNA sequencing (ChIP–seq)19,21. d - Chromosomes exist in spatial territories in the nucleus. There are interactions within and between chromosomes, as well as between chromosomes and nuclear structures such as the nuclear pore, inner nuclear membrane and nuclear lamina18._ -->
 
-<h3 id="chromatin-regulation-and-mutation">Chromatin regulation and mutation</h3>
-<p>Briefly, we might also consider how to improve our methods over time.
-The 3D genome structure also affects how likely mutation is to occur due to the probability of physical biochemical events occurring.
-Very simply, “random” mutations occur frequently in DNA. They are either “repaired” or passed on and subject to natural selection.</p>
+<!-- ### Chromatin regulation and mutation -->
+<!-- Briefly, we might also consider how to improve our methods over time. -->
+<!-- The 3D genome structure also affects how likely mutation is to occur due to the probability of physical biochemical events occurring. -->
+<!-- Very simply, "random" mutations occur frequently in DNA. They are either "repaired" or passed on and subject to natural selection. -->
 
-<ul>
-  <li>Consider the variable frequency of variants across the genome throughout the human population.</li>
-  <li>Also consider that progression towards old age can lead to an increase in such random mutation within a single person (leaving out many citations here).</li>
-</ul>
+<!-- * Consider the variable frequency of variants across the genome throughout the human population. -->
+<!-- * Also consider that progression towards old age can lead to an increase in such random mutation within a single person (leaving out many citations here). -->
 
-<p>The paper by <a class="citation" href="#makova2015effects">(Makova &amp; Hardison, 2015)</a> 
-<a href="https://www.nature.com/articles/nrg3890">https://doi.org/10.1038/nrg3890</a>
-is not important to read - however, their figure is a nice illustration for our discussion.</p>
+<!-- The paper by <a class="citation" href="#makova2015effects">(Makova &amp; Hardison, 2015)</a> -->
+<!-- [https://doi.org/10.1038/nrg3890](https://www.nature.com/articles/nrg3890) -->
+<!-- is not important to read - however, their figure is a nice illustration for our discussion. -->
 
-<p><img src="/images/3d_genome/makova2015effects_fig2.webp" width="50%"></p>
-<blockquote>
-  <p><a class="citation" href="#makova2015effects">(Makova &amp; Hardison, 2015)</a> <em>Figure 2: Aspects of chromatin organization that can affect evolutionary rates. A portion of a chromatin fibre is shown to illustrate closed versus open chromatin and the different types of mutations that occur at higher or lower rates in each case. The closed state can represent quiescent chromatin with little dynamic histone modification or with the repressive modifications histone H3 lysine 9 trimethylation (H3K9me3; associated with heterochromatin) or H3K27me3. Actively transcribed and regulated DNA tends to be in open chromatin marked by DNase-hypersensitive sites, transcription factor occupancy and activating histone modifications such as H3K4me1 (associated with enhancers), H3K4me3 (associated with promoters), H3K36me3 (associated with transcribed chromatin), H3K27 acetylation (H3K27ac) and H4ac (both associated with enhancers and promoters). D, deletion; I, insertion; indel, insertion and deletion; Pol II, RNA polymerase II; S, substitution.</em></p>
-</blockquote>
+<!-- <img src="/images/3d_genome/makova2015effects_fig2.webp" width="50%"> -->
+<!-- <!-1- > <a class="citation" href="#makova2015effects">(Makova &amp; Hardison, 2015)</a> -1-> -->
+<!-- > _Figure 2: Aspects of chromatin organization that can affect evolutionary rates. A portion of a chromatin fibre is shown to illustrate closed versus open chromatin and the different types of mutations that occur at higher or lower rates in each case. The closed state can represent quiescent chromatin with little dynamic histone modification or with the repressive modifications histone H3 lysine 9 trimethylation (H3K9me3; associated with heterochromatin) or H3K27me3. Actively transcribed and regulated DNA tends to be in open chromatin marked by DNase-hypersensitive sites, transcription factor occupancy and activating histone modifications such as H3K4me1 (associated with enhancers), H3K4me3 (associated with promoters), H3K36me3 (associated with transcribed chromatin), H3K27 acetylation (H3K27ac) and H4ac (both associated with enhancers and promoters). D, deletion; I, insertion; indel, insertion and deletion; Pol II, RNA polymerase II; S, substitution._ -->
 
-<h2 id="pca-and-ld">PCA and LD</h2>
-<p>The following paper is relatively old now. 
-However, it illustrates population structure nicely.
-As parent pass one their DNA down to children, rearrangements occur. 
-However, the DNA rearrangements occur as relatively large stretches of DNA.
-Therefore, within a related population most people will have very similar blocks of DNA (including common variants) and only small numbers of novel (rare) variants.</p>
+<!-- ## PCA and LD -->
+<!-- The following paper is relatively old now. -->
+<!-- However, it illustrates population structure nicely. -->
+<!-- As parent pass one their DNA down to children, rearrangements occur. -->
+<!-- However, the DNA rearrangements occur as relatively large stretches of DNA. -->
+<!-- Therefore, within a related population most people will have very similar blocks of DNA (including common variants) and only small numbers of novel (rare) variants. -->
 
-<ol>
-  <li>Common variants might be most useful for pharmacogenomics in general since so many people share the same sets of variants / affected gene-drug interactions.</li>
-  <li>Each individual rare variant only affect a minority. However, they might be rare because they may cause an unusual phenotype which is not as likely to survive natural selection. This unique gene-phenotype might lead to a new discovery in biological mechanism.</li>
-  <li>If we share large stretches of DNA in a population, having one common variant means that you are likely to also have the second common variant on the same stretch of DNA. The nature of DNA <a href="https://en.wikipedia.org/wiki/Linkage_disequilibrium">linkage disequilibrium</a> (LD) allows us to make statistical inferences that are very powerful for genetic analysis. For example, only sequencing a small number of SNPs across the genome which represent each DNA LD block allows us define genetic ancestry (23andMe, forensic genetics, GWAS, etc).</li>
-</ol>
+<!-- 1. Common variants might be most useful for pharmacogenomics in general since so many people share the same sets of variants / affected gene-drug interactions. -->
+<!-- 2. Each individual rare variant only affect a minority. However, they might be rare because they may cause an unusual phenotype which is not as likely to survive natural selection. This unique gene-phenotype might lead to a new discovery in biological mechanism. -->
+<!-- 3. If we share large stretches of DNA in a population, having one common variant means that you are likely to also have the second common variant on the same stretch of DNA. The nature of DNA [linkage disequilibrium](https://en.wikipedia.org/wiki/Linkage_disequilibrium) (LD) allows us to make statistical inferences that are very powerful for genetic analysis. For example, only sequencing a small number of SNPs across the genome which represent each DNA LD block allows us define genetic ancestry (23andMe, forensic genetics, GWAS, etc). -->
 
-<p><a class="citation" href="#novembre2008genes">(Novembre et al., 2008)</a>
-<a href="https://www.nature.com/articles/nature07331">https://doi.org/10.1038/nature07331</a> illustrates how analysis DNA in this way, using principal component analysis (PCA), shows that geographic location and genetic ancestry strongly overlap. 
-It also illustrates how tailored medical treatments would generally apply to different people based on their genetic ancestry.
-Very few people are likely to require a treatment that is unique only to them. 
-Although treatment with a combination of drugs and different gene-drug interactions will increase the level of unique tailoring.</p>
+<!-- <!-1- <a class="citation" href="#novembre2008genes">(Novembre et al., 2008)</a> -1-> -->
+<!-- [https://doi.org/10.1038/nature07331](https://www.nature.com/articles/nature07331) illustrates how analysis DNA in this way, using principal component analysis (PCA), shows that geographic location and genetic ancestry strongly overlap. -->
+<!-- It also illustrates how tailored medical treatments would generally apply to different people based on their genetic ancestry. -->
+<!-- Very few people are likely to require a treatment that is unique only to them. -->
+<!-- Although treatment with a combination of drugs and different gene-drug interactions will increase the level of unique tailoring. -->
 
-<p><img src="/images/3d_genome/novembre2008genes_fig1.webp" width="50%"></p>
+<!-- <img src="/images/3d_genome/novembre2008genes_fig1.webp" width="50%"> -->
 
-<blockquote>
-  <p><a class="citation" href="#novembre2008genes">(Novembre et al., 2008)</a> <em>Figure 1: Population structure within Europe. a, A statistical summary of genetic data from 1,387 Europeans based on principal component axis one (PC1) and axis two (PC2). Small coloured labels represent individuals and large coloured points represent median PC1 and PC2 values for each country. The inset map provides a key to the labels. The PC axes are rotated to emphasize the similarity to the geographic map of Europe. AL, Albania; AT, Austria; BA, Bosnia-Herzegovina; BE, Belgium; BG, Bulgaria; CH, Switzerland; CY, Cyprus; CZ, Czech Republic; DE, Germany; DK, Denmark; ES, Spain; FI, Finland; FR, France; GB, United Kingdom; GR, Greece; HR, Croatia; HU, Hungary; IE, Ireland; IT, Italy; KS, Kosovo; LV, Latvia; MK, Macedonia; NO, Norway; NL, Netherlands; PL, Poland; PT, Portugal; RO, Romania; RS, Serbia and Montenegro; RU, Russia, Sct, Scotland; SE, Sweden; SI, Slovenia; SK, Slovakia; TR, Turkey; UA, Ukraine; YG, Yugoslavia. b, A magnification of the area around Switzerland from a showing differentiation within Switzerland by language. c, Genetic similarity versus geographic distance. Median genetic correlation between pairs of individuals as a function of geographic distance between their respective populations.</em></p>
-</blockquote>
+<!-- <!-1- > <a class="citation" href="#novembre2008genes">(Novembre et al., 2008)</a> -1-> -->
+<!-- > _Figure 1: Population structure within Europe. a, A statistical summary of genetic data from 1,387 Europeans based on principal component axis one (PC1) and axis two (PC2). Small coloured labels represent individuals and large coloured points represent median PC1 and PC2 values for each country. The inset map provides a key to the labels. The PC axes are rotated to emphasize the similarity to the geographic map of Europe. AL, Albania; AT, Austria; BA, Bosnia-Herzegovina; BE, Belgium; BG, Bulgaria; CH, Switzerland; CY, Cyprus; CZ, Czech Republic; DE, Germany; DK, Denmark; ES, Spain; FI, Finland; FR, France; GB, United Kingdom; GR, Greece; HR, Croatia; HU, Hungary; IE, Ireland; IT, Italy; KS, Kosovo; LV, Latvia; MK, Macedonia; NO, Norway; NL, Netherlands; PL, Poland; PT, Portugal; RO, Romania; RS, Serbia and Montenegro; RU, Russia, Sct, Scotland; SE, Sweden; SI, Slovenia; SK, Slovakia; TR, Turkey; UA, Ukraine; YG, Yugoslavia. b, A magnification of the area around Switzerland from a showing differentiation within Switzerland by language. c, Genetic similarity versus geographic distance. Median genetic correlation between pairs of individuals as a function of geographic distance between their respective populations._ -->
 
-<h2 id="more-questions">More questions</h2>
+<!-- ## More questions -->
 
-<p>Q: Do we have to infer that in the future everybody will have his genome sequenced ?<br>
-You do not have to assume this. It may become true. There could be privacy concerns or social problems arising from genetic prejudice, etc.</p>
+<!-- Q: Do we have to infer that in the future everybody will have his genome sequenced ? -->
+<!-- You do not have to assume this. It may become true. There could be privacy concerns or social problems arising from genetic prejudice, etc. -->
 
-<p>Q: Before using our algorithm, patient will have to sequence a part of their genome and thus this is a weakness of our algorithm?<br>
-Your tool will provide a service based on genetics.<br>
-Option [1] One has their genetics already and will use it for personal medicine.<br>
-Option [2] they are prescribed a drug and want to only sequence the genes of interest that could affect this drug.<br>
-Option [3] they do not want any genetic info and therefor your product is irrelevant.<br>
-Option [4] they do not want their personal genetics, but are willing to estimate their relatedness to others in a genetic database and therefore calculate a probability of accuracy for this drug-gene information. e.g. both parents are Swiss and therefore based on the population they have probability of X that their genotype is Y.</p>
+<!-- Q: Before using our algorithm, patient will have to sequence a part of their genome and thus this is a weakness of our algorithm? -->
+<!-- Your tool will provide a service based on genetics. -->
+<!-- Option [1] One has their genetics already and will use it for personal medicine. -->
+<!-- Option [2] they are prescribed a drug and want to only sequence the genes of interest that could affect this drug. -->
+<!-- Option [3] they do not want any genetic info and therefor your product is irrelevant. -->
+<!-- Option [4] they do not want their personal genetics, but are willing to estimate their relatedness to others in a genetic database and therefore calculate a probability of accuracy for this drug-gene information. e.g. both parents are Swiss and therefore based on the population they have probability of X that their genotype is Y. -->
 
-<p>Q: Is it realistic to assume that it will be feasible based on the fact that the sequencing cost is decreasing ?<br>
-Irrelevant in this case, but yes, whole genome seq is sometimes below 200CHF will likely be common soon.</p>
+<!-- Q: Is it realistic to assume that it will be feasible based on the fact that the sequencing cost is decreasing ? -->
+<!-- Irrelevant in this case, but yes, whole genome seq is sometimes below 200CHF will likely be common soon. -->
 
-<p>Q:  We plan to use polyphen and/or sift in order to discriminate between those types of variants. Is that a good idea?<br>
-That is a good start. CADD score is also pretty well known among physicians.
-In my opinion, I do not trust the scores often.
-However, it is common that for processing a large amount of data, such prediction tools are useful in general.
-For example, I might [1] rank first on VEP variant “consequences”; stop mutations with most importance.
-[2] Then rank secondly with these values since you cannot interpret most with consequence = missense variant.</p>
+<!-- Q:  We plan to use polyphen and/or sift in order to discriminate between those types of variants. Is that a good idea? -->
+<!-- That is a good start. CADD score is also pretty well known among physicians. -->
+<!-- In my opinion, I do not trust the scores often. -->
+<!-- However, it is common that for processing a large amount of data, such prediction tools are useful in general. -->
+<!-- For example, I might [1] rank first on VEP variant "consequences"; stop mutations with most importance. -->
+<!-- [2] Then rank secondly with these values since you cannot interpret most with consequence = missense variant. -->
 
 <h2 id="references">References</h2>
 <ul>
@@ -970,15 +975,13 @@ For example, I might [1] rank first on VEP variant “consequences”; stop muta
   <li>David R. Adams, M.D., Ph.D.,  and Christine M. Eng, M.D. Next-Generation Sequencing to Diagnose Suspected Genetic Disorders N Engl J Med Oct 2018 doi: 10.1056/NEJMra1711801</li>
 </ul>
 
-<ol class="bibliography">
-<li><span id="spielmann2018structural">Spielmann, M., Lupiáñez Darı́o G, &amp; Mundlos, S. (2018). Structural variation in the 3D genome. <i>Nature Reviews Genetics</i>, <i>19</i>(7), 453–467.</span></li>
+<!-- <ol class="bibliography"><li><span id="spielmann2018structural">Spielmann, M., Lupiáñez Darı́o G, &amp; Mundlos, S. (2018). Structural variation in the 3D genome. <i>Nature Reviews Genetics</i>, <i>19</i>(7), 453–467.</span></li>
 <li><span id="de2017capturing">de Wit, E. (2017). Capturing heterogeneity: single-cell structures of the 3D genome. <i>Nature Structural &amp; Molecular Biology</i>, <i>24</i>(5), 437–438.</span></li>
 <li><span id="gtex2020gtex">Consortium, G. T. E. (2020). The GTEx Consortium atlas of genetic regulatory effects across human tissues. <i>Science</i>, <i>369</i>(6509), 1318–1330.</span></li>
 <li><span id="elkon2017characterization">Elkon, R., &amp; Agami, R. (2017). Characterization of noncoding regulatory DNA in the human genome. <i>Nature Biotechnology</i>, <i>35</i>(8), 732–746.</span></li>
 <li><span id="keung2015chromatin">Keung, A. J., Joung, J. K., Khalil, A. S., &amp; Collins, J. J. (2015). Chromatin regulation at the frontier of synthetic biology. <i>Nature Reviews Genetics</i>, <i>16</i>(3), 159–171.</span></li>
 <li><span id="makova2015effects">Makova, K. D., &amp; Hardison, R. C. (2015). The effects of chromatin organization on variation in mutation rates in the genome. <i>Nature Reviews Genetics</i>, <i>16</i>(4), 213–223.</span></li>
-<li><span id="novembre2008genes">Novembre, J., Johnson, T., Bryc, K., Kutalik, Z., Boyko, A. R., Auton, A., Indap, A., King, K. S., Bergmann, S., Nelson, M. R., &amp; others. (2008). Genes mirror geography within Europe. <i>Nature</i>, <i>456</i>(7218), 98–101.</span></li>
-</ol>
+<li><span id="novembre2008genes">Novembre, J., Johnson, T., Bryc, K., Kutalik, Z., Boyko, A. R., Auton, A., Indap, A., King, K. S., Bergmann, S., Nelson, M. R., &amp; others. (2008). Genes mirror geography within Europe. <i>Nature</i>, <i>456</i>(7218), 98–101.</span></li></ol> -->
 
 
 </div>

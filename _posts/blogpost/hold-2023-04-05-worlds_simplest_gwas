@@ -1,14 +1,15 @@
 ---
 layout: post
 title: Worlds simplest GWAS
-date: 2023-04-05 00:00:01
+created: 05 Apr 2023
 tags: genomics
 status: finished
 ---
 
 {{ page.title }}
 ================
-<p class="meta">18 Jan 2022</p>
+
+<p class="meta">05 Apr 2023</p>
 
 * TOC
 {:toc}
@@ -73,7 +74,7 @@ Here is an example using R. It has
 
 It runs an association test (linear regression) between the SNP (nucleotide A or T) and protein level (0.2-0.9).
 
-### glm_loop.R
+### glm-loop.R
 ```R
 library(dplyr)
 
@@ -127,7 +128,6 @@ l <- lapply(split(df, df$SNP), function(x)
 					))[, 'Pr(>|t|)'])
 
 as.data.frame(l) # X1 = SNP1. 
-
 ```
 
 #### Result

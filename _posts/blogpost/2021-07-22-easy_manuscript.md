@@ -2,7 +2,7 @@
 layout: post
 title: Easy manuscript
 created: 22 July 2021
-tags: 
+tags: writing
 status: finished
 ---
 
