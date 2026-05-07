@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<!-- link to MathJax for LaTeX stlye eqn -->
+	 <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+	 
+	 <!-- https://realfavicongenerator.net -->
+	 <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/favicon_package_v0.16_bw/apple-touch-icon.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon_package_v0.16_bw/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="/images/logos/favicon_package_v0.16_bw/favicon-16x16.png">
+	 <link rel="manifest" href="/images/logos/favicon_package_v0.16_bw/site.webmanifest">
+	 <meta name="msapplication-TileColor" content="#da532c">
+	 <meta name="theme-color" content="#ffffff">
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description"
+content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<title>Pharmacogenomics from a VCF file</title>
+	<meta name="author" content="LawlessGenomics" />
+	<link href='https://lawlessgenomics.com/feed.xml' rel='alternate' title="LawlessGenomics" type='application/atom+xml'>
+	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
+	
+	<!-- include a google font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+	
+	<!-- Homepage CSS -->
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+	
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+	
+	<!-- Typekit -->
+	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<!-- Logo and navigation bar -->
+
+
+
+<!-- SITE START --------------------------------------------------------- -->
+<div class="site">
+
+<!-- NAV START --------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="title">
+		<div class="nav-container">
+			<nav>
+
+			<div class="logoimage">
+				<a href="/">
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
+				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
+			</div>
+
+			<div class="logo">
+				<a href="/">LawlessGenomics</a>
+			</div>
+
+				<input type="checkbox" id="nav-toggle">
+					<label for="nav-toggle" class="gg-menu"></label>
+					<div class="right-menu">
+						<a href="/about">About</a>
+						<!-- <a href="/resume">About</a> -->
+						<a href="/">Home</a>
+					</div>
+			</nav>
+		</div>
+	</div>
+
+
+
+</div>
+<!-- NAV END ----------------------------------------------------------- -->
+
+<!-- MAIN START -------------------------------------------------------- -->
+<div class="sitewidth">
+	<div id="topic">
+Reading time  12 minutes
+<h1 id="pharmacogenomics-from-a-vcf-file">Pharmacogenomics from a VCF file</h1>
+
+<p class="meta">Updated 07 May 2026</p>
+
+<ul id="markdown-toc">
+  <li><a href="#audience" id="markdown-toc-audience">Audience</a></li>
+  <li><a href="#what-pharmacogenomics-asks" id="markdown-toc-what-pharmacogenomics-asks">What pharmacogenomics asks</a></li>
+  <li><a href="#what-this-workflow-produces" id="markdown-toc-what-this-workflow-produces">What this workflow produces</a></li>
+  <li><a href="#input-files" id="markdown-toc-input-files">Input files</a></li>
+  <li><a href="#resources-used" id="markdown-toc-resources-used">Resources used</a></li>
+  <li><a href="#example-vcf" id="markdown-toc-example-vcf">Example VCF</a></li>
+  <li><a href="#inspect-the-vcf" id="markdown-toc-inspect-the-vcf">Inspect the VCF</a></li>
+  <li><a href="#check-the-reference-genome" id="markdown-toc-check-the-reference-genome">Check the reference genome</a></li>
+  <li><a href="#annotate-variants-with-vep" id="markdown-toc-annotate-variants-with-vep">Annotate variants with VEP</a></li>
+  <li><a href="#split-a-vcf-for-web-annotation" id="markdown-toc-split-a-vcf-for-web-annotation">Split a VCF for web annotation</a></li>
+  <li><a href="#run-vep-locally" id="markdown-toc-run-vep-locally">Run VEP locally</a></li>
+  <li><a href="#clean-the-vep-output" id="markdown-toc-clean-the-vep-output">Clean the VEP output</a></li>
+  <li><a href="#build-a-small-pharmacogene-list" id="markdown-toc-build-a-small-pharmacogene-list">Build a small pharmacogene list</a></li>
+  <li><a href="#compare-vcf-genes-with-pharmacogenes" id="markdown-toc-compare-vcf-genes-with-pharmacogenes">Compare VCF genes with pharmacogenes</a></li>
+  <li><a href="#filter-vep-rows-to-pharmacogenes" id="markdown-toc-filter-vep-rows-to-pharmacogenes">Filter VEP rows to pharmacogenes</a></li>
+  <li><a href="#reduce-the-vcf-before-annotation" id="markdown-toc-reduce-the-vcf-before-annotation">Reduce the VCF before annotation</a></li>
+  <li><a href="#prepare-a-drug-gene-table" id="markdown-toc-prepare-a-drug-gene-table">Prepare a drug-gene table</a></li>
+  <li><a href="#merge-vep-and-drug-gene-data-in-r" id="markdown-toc-merge-vep-and-drug-gene-data-in-r">Merge VEP and drug-gene data in R</a></li>
+  <li><a href="#merge-vep-and-drug-gene-data-in-python" id="markdown-toc-merge-vep-and-drug-gene-data-in-python">Merge VEP and drug-gene data in Python</a></li>
+  <li><a href="#read-the-candidate-table" id="markdown-toc-read-the-candidate-table">Read the candidate table</a></li>
+  <li><a href="#consequence-is-not-interpretation" id="markdown-toc-consequence-is-not-interpretation">Consequence is not interpretation</a></li>
+  <li><a href="#known-pharmacogenomic-alleles" id="markdown-toc-known-pharmacogenomic-alleles">Known pharmacogenomic alleles</a></li>
+  <li><a href="#zygosity-and-dosage" id="markdown-toc-zygosity-and-dosage">Zygosity and dosage</a></li>
+  <li><a href="#drug-gene-relationship-types" id="markdown-toc-drug-gene-relationship-types">Drug-gene relationship types</a></li>
+  <li><a href="#unknown-variants" id="markdown-toc-unknown-variants">Unknown variants</a></li>
+  <li><a href="#limits-of-the-first-principles-workflow" id="markdown-toc-limits-of-the-first-principles-workflow">Limits of the first-principles workflow</a></li>
+  <li><a href="#practical-summary" id="markdown-toc-practical-summary">Practical summary</a></li>
+  <li><a href="#references-and-resources" id="markdown-toc-references-and-resources">References and resources</a></li>
+</ul>
+
+<h2 id="audience">Audience</h2>
+
+<p>This page is written for a postgraduate class on precision medicine.</p>
+
+<p>The aim is to understand how a pharmacogenomics analysis works under the hood. Professional laboratories and clinical systems usually use validated software, curated databases, quality-controlled pipelines, and formal reporting rules. Those systems are necessary for real use.</p>
+
+<p>The exercise here is different. We start with a VCF file and build the logic ourselves. The point is to see the file types, the columns, the joins, the assumptions, and the failure points. Once those are clear, packages and pipelines become easier to judge.</p>
+
+<h2 id="what-pharmacogenomics-asks">What pharmacogenomics asks</h2>
+
+<p>Pharmacogenomics studies how genetic variation affects drug metabolism, toxicity, dosing, and response.</p>
+
+<p>A pharmacogenomic result usually connects five things:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gene</td>
+      <td>CYP2C19</td>
+    </tr>
+    <tr>
+      <td>Allele or genotype</td>
+      <td>CYP2C19<em>2/</em>17</td>
+    </tr>
+    <tr>
+      <td>Drug</td>
+      <td>Clopidogrel</td>
+    </tr>
+    <tr>
+      <td>Phenotype</td>
+      <td>Intermediate metaboliser</td>
+    </tr>
+    <tr>
+      <td>Recommendation source</td>
+      <td>CPIC or DPWG guideline</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A variant in a drug-related gene is not automatically pharmacogenomic evidence. A drug may bind a protein, a gene may encode a metabolising enzyme, or a variant may be present in a pharmacogene. These are different facts.</p>
+
+<p>This distinction matters throughout the analysis.</p>
+
+<h2 id="what-this-workflow-produces">What this workflow produces</h2>
+
+<p>The workflow produces a candidate table.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VCF
+  ↓
+variant annotation
+  ↓
+gene and consequence extraction
+  ↓
+pharmacogene matching
+  ↓
+drug-gene annotation
+  ↓
+candidate table
+</code></pre></div></div>
+
+<p>The candidate table can show that a person has variants in genes connected to drugs. It does not, by itself, provide a clinical pharmacogenomic report.</p>
+
+<p>A clinical report requires validated allele calling, diplotype interpretation, quality control, guideline mapping, and clinical review.</p>
+
+<h2 id="input-files">Input files</h2>
+
+<p>The exercise uses five file types.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">input.vcf.gz</code></td>
+      <td>Genetic variants from one genome or exome</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">annotated_vep.tsv</code></td>
+      <td>VEP annotation table</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pharmacogenes.txt</code></td>
+      <td>Genes of interest</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">drug_gene_table.tsv</code></td>
+      <td>Drug-gene relationships</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">candidate_output.tsv</code></td>
+      <td>Merged candidate table</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A real workflow may also use BED files, reference FASTA files, VEP cache files, gene panels, PharmVar allele definitions, CPIC tables, and FDA drug labels.</p>
+
+<h2 id="resources-used">Resources used</h2>
+
+<p>Each resource answers a different part of the pharmacogenomic question.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ensembl VEP</td>
+      <td>Converts genomic coordinates into gene and transcript annotations</td>
+    </tr>
+    <tr>
+      <td>MANE Select</td>
+      <td>Defines preferred matched Ensembl and RefSeq transcripts</td>
+    </tr>
+    <tr>
+      <td>PharmVar</td>
+      <td>Defines star alleles for pharmacogenes</td>
+    </tr>
+    <tr>
+      <td>CPIC</td>
+      <td>Provides clinical pharmacogenetic implementation guidelines</td>
+    </tr>
+    <tr>
+      <td>PharmGKB</td>
+      <td>Curates drug-gene evidence, annotations, labels, and pathways</td>
+    </tr>
+    <tr>
+      <td>DPWG</td>
+      <td>Provides pharmacogenetic dosing recommendations</td>
+    </tr>
+    <tr>
+      <td>FDA pharmacogenomic biomarker table</td>
+      <td>Links drug labels to pharmacogenomic biomarkers</td>
+    </tr>
+    <tr>
+      <td>DrugBank</td>
+      <td>Lists drug targets, enzymes, carriers, transporters, and drug metadata</td>
+    </tr>
+    <tr>
+      <td>ClinVar</td>
+      <td>Curated variant-level clinical assertions</td>
+    </tr>
+    <tr>
+      <td>gnomAD</td>
+      <td>Population allele frequencies</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>DrugBank is useful for drug-target relationships. CPIC, PharmGKB, PharmVar, and DPWG are closer to clinical pharmacogenomic interpretation.</p>
+
+<h2 id="example-vcf">Example VCF</h2>
+
+<p>Public example genomes are available from the Personal Genome Project.</p>
+
+<p>The original classroom exercise used:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Profile: hu24385B
+Source: Personal Genome Project
+File: hu24385B 2019-04-07.vcf.gz
+Sequencing provider: Dante Labs Whole Genome
+Approximate size: 147 MB
+Approximate variants: 3.46 million
+</code></pre></div></div>
+
+<p>A VCF is a structured text file. It contains metadata, a column header, and one row per variant.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CHROM</td>
+      <td>Chromosome or contig</td>
+    </tr>
+    <tr>
+      <td>POS</td>
+      <td>Position on the reference genome</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>Variant identifier, often rsID</td>
+    </tr>
+    <tr>
+      <td>REF</td>
+      <td>Reference allele</td>
+    </tr>
+    <tr>
+      <td>ALT</td>
+      <td>Alternate allele</td>
+    </tr>
+    <tr>
+      <td>QUAL</td>
+      <td>Variant quality score</td>
+    </tr>
+    <tr>
+      <td>FILTER</td>
+      <td>Pass or filter status</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>Variant-level annotations</td>
+    </tr>
+    <tr>
+      <td>FORMAT</td>
+      <td>Genotype field definitions</td>
+    </tr>
+    <tr>
+      <td>Sample column</td>
+      <td>Genotype-level data for one sample</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/images/vcf_header.png" width="100%" /></p>
+
+<p><img src="/images/vcf_body.png" width="100%" /></p>
+
+<h2 id="inspect-the-vcf">Inspect the VCF</h2>
+
+<p>Keep the original compressed file unchanged.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-lh</span> hu24385B.vcf.gz
+</code></pre></div></div>
+
+<p>Count the number of variant rows.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zgrep <span class="nt">-vc</span> <span class="s1">'^#'</span> hu24385B.vcf.gz
+</code></pre></div></div>
+
+<p>Inspect the metadata.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zgrep <span class="s1">'^##'</span> hu24385B.vcf.gz | <span class="nb">head</span> <span class="nt">-40</span>
+</code></pre></div></div>
+
+<p>Inspect the column header.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zgrep <span class="s1">'^#CHROM'</span> hu24385B.vcf.gz
+</code></pre></div></div>
+
+<p>Inspect the first variant rows.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zgrep <span class="nt">-v</span> <span class="s1">'^#'</span> hu24385B.vcf.gz | <span class="nb">head</span>
+</code></pre></div></div>
+
+<p>The first useful skill is recognising the difference between metadata lines, the VCF header, and variant rows.</p>
+
+<h2 id="check-the-reference-genome">Check the reference genome</h2>
+
+<p>Genomic coordinates depend on the reference genome.</p>
+
+<p>A variant reported at one coordinate in GRCh37 may have a different coordinate in GRCh38. Annotation databases must match the reference build used to generate the VCF.</p>
+
+<p>Check the reference metadata.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zgrep <span class="s1">'^##reference='</span> hu24385B.vcf.gz
+</code></pre></div></div>
+
+<p>Check chromosome naming.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zgrep <span class="s1">'^##contig='</span> hu24385B.vcf.gz | <span class="nb">head</span>
+</code></pre></div></div>
+
+<p>A VCF using <code class="language-plaintext highlighter-rouge">1</code> will not automatically match a BED file using <code class="language-plaintext highlighter-rouge">chr1</code>. Coordinate systems and chromosome naming must be consistent before filtering or annotation.</p>
+
+<h2 id="annotate-variants-with-vep">Annotate variants with VEP</h2>
+
+<p>A raw VCF usually contains coordinates, alleles, genotype fields, and variant quality information. It does not necessarily contain gene symbols, transcript consequences, protein changes, ClinVar terms, or population frequencies.</p>
+
+<p>Ensembl Variant Effect Predictor, or VEP, adds these fields.</p>
+
+<p>Useful VEP fields include:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>VEP field</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SYMBOL</td>
+      <td>HGNC gene symbol</td>
+    </tr>
+    <tr>
+      <td>Gene</td>
+      <td>Ensembl gene ID</td>
+    </tr>
+    <tr>
+      <td>Feature</td>
+      <td>Transcript ID</td>
+    </tr>
+    <tr>
+      <td>Consequence</td>
+      <td>Predicted variant consequence</td>
+    </tr>
+    <tr>
+      <td>HGVSc</td>
+      <td>Coding DNA change</td>
+    </tr>
+    <tr>
+      <td>HGVSp</td>
+      <td>Protein change</td>
+    </tr>
+    <tr>
+      <td>IMPACT</td>
+      <td>Broad consequence severity</td>
+    </tr>
+    <tr>
+      <td>MANE_SELECT</td>
+      <td>MANE Select transcript flag</td>
+    </tr>
+    <tr>
+      <td>Existing_variation</td>
+      <td>Known variant ID, often rsID</td>
+    </tr>
+    <tr>
+      <td>CLIN_SIG</td>
+      <td>ClinVar clinical significance where available</td>
+    </tr>
+    <tr>
+      <td>gnomAD_AF</td>
+      <td>Population allele frequency where available</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/images/vcf_vep.png" width="100%" /></p>
+
+<p>For a small example, the VEP web interface is acceptable. For a whole genome or repeated analysis, run VEP locally with a matching cache.</p>
+
+<h2 id="split-a-vcf-for-web-annotation">Split a VCF for web annotation</h2>
+
+<p>The VEP web interface has file-size limits. Splitting a VCF is useful for a classroom example. It is not a good production strategy.</p>
+
+<p>The header must be preserved in every split file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="nb">set</span> <span class="nt">-euo</span> pipefail
+
+<span class="nv">input</span><span class="o">=</span><span class="s2">"hu24385B.vcf.gz"</span>
+<span class="nv">outdir</span><span class="o">=</span><span class="s2">"split_vcf"</span>
+<span class="nv">lines_per_file</span><span class="o">=</span>150000
+
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="s2">"</span><span class="nv">$outdir</span><span class="s2">"</span>
+
+zgrep <span class="s1">'^#'</span> <span class="s2">"</span><span class="nv">$input</span><span class="s2">"</span> <span class="o">&gt;</span> <span class="s2">"</span><span class="nv">$outdir</span><span class="s2">/header.vcf"</span>
+
+zgrep <span class="nt">-v</span> <span class="s1">'^#'</span> <span class="s2">"</span><span class="nv">$input</span><span class="s2">"</span> | <span class="nb">split</span> <span class="nt">-l</span> <span class="s2">"</span><span class="nv">$lines_per_file</span><span class="s2">"</span> - <span class="s2">"</span><span class="nv">$outdir</span><span class="s2">/block_"</span>
+
+<span class="k">for </span>block <span class="k">in</span> <span class="s2">"</span><span class="nv">$outdir</span><span class="s2">"</span>/block_<span class="k">*</span><span class="p">;</span> <span class="k">do
+  </span><span class="nb">cat</span> <span class="s2">"</span><span class="nv">$outdir</span><span class="s2">/header.vcf"</span> <span class="s2">"</span><span class="nv">$block</span><span class="s2">"</span> <span class="o">&gt;</span> <span class="s2">"</span><span class="k">${</span><span class="nv">block</span><span class="k">}</span><span class="s2">.vcf"</span>
+  <span class="nb">rm</span> <span class="s2">"</span><span class="nv">$block</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p>Each <code class="language-plaintext highlighter-rouge">block_*.vcf</code> file now contains the original metadata, the VCF column header, and a subset of variant rows.</p>
+
+<h2 id="run-vep-locally">Run VEP locally</h2>
+
+<p>A local VEP command for a GRCh37 VCF might look like this.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vep <span class="se">\</span>
+  <span class="nt">--input_file</span> hu24385B.vcf.gz <span class="se">\</span>
+  <span class="nt">--output_file</span> hu24385B.vep.tsv <span class="se">\</span>
+  <span class="nt">--cache</span> <span class="se">\</span>
+  <span class="nt">--offline</span> <span class="se">\</span>
+  <span class="nt">--assembly</span> GRCh37 <span class="se">\</span>
+  <span class="nt">--tab</span> <span class="se">\</span>
+  <span class="nt">--symbol</span> <span class="se">\</span>
+  <span class="nt">--canonical</span> <span class="se">\</span>
+  <span class="nt">--mane</span> <span class="se">\</span>
+  <span class="nt">--hgvs</span> <span class="se">\</span>
+  <span class="nt">--protein</span> <span class="se">\</span>
+  <span class="nt">--variant_class</span> <span class="se">\</span>
+  <span class="nt">--sift</span> b <span class="se">\</span>
+  <span class="nt">--polyphen</span> b <span class="se">\</span>
+  <span class="nt">--af_gnomad</span> <span class="se">\</span>
+  <span class="nt">--clin_sig</span> <span class="se">\</span>
+  <span class="nt">--fork</span> 8
+</code></pre></div></div>
+
+<p>For GRCh38, change the assembly argument.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--assembly</span> GRCh38
+</code></pre></div></div>
+
+<p>The output file is a tab-separated table. It can be searched, filtered, joined, and imported into R or Python.</p>
+
+<h2 id="clean-the-vep-output">Clean the VEP output</h2>
+
+<p>VEP tabular output may include metadata lines beginning with <code class="language-plaintext highlighter-rouge">##</code>. Keep the main header and remove metadata lines.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">grep</span> <span class="nt">-v</span> <span class="s1">'^##'</span> hu24385B.vep.tsv <span class="o">&gt;</span> hu24385B.vep.clean.tsv
+</code></pre></div></div>
+
+<p>Print the column names as a numbered list.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">head</span> <span class="nt">-1</span> hu24385B.vep.clean.tsv | <span class="nb">tr</span> <span class="s1">'\t'</span> <span class="s1">'\n'</span> | <span class="nb">nl</span>
+</code></pre></div></div>
+
+<p>Find the <code class="language-plaintext highlighter-rouge">SYMBOL</code> column.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">head</span> <span class="nt">-1</span> hu24385B.vep.clean.tsv | <span class="nb">tr</span> <span class="s1">'\t'</span> <span class="s1">'\n'</span> | <span class="nb">nl</span> | <span class="nb">grep</span> <span class="s1">'SYMBOL'</span>
+</code></pre></div></div>
+
+<p>Suppose <code class="language-plaintext highlighter-rouge">SYMBOL</code> is column 14. Extract unique gene symbols.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">awk</span> <span class="nt">-F</span> <span class="s1">'\t'</span> <span class="s1">'NR &gt; 1 &amp;&amp; $14 != "" {print $14}'</span> hu24385B.vep.clean.tsv <span class="se">\</span>
+  | <span class="nb">sort</span> <span class="nt">-u</span> <span class="o">&gt;</span> genes_from_vcf.txt
+</code></pre></div></div>
+
+<p>This file contains genes with at least one annotated variant in the VCF.</p>
+
+<p>It is a screening file. It does not contain allele interpretation.</p>
+
+<h2 id="build-a-small-pharmacogene-list">Build a small pharmacogene list</h2>
+
+<p>Create a simple pharmacogene file.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CYP2D6
+CYP2C19
+CYP2C9
+VKORC1
+TPMT
+NUDT15
+DPYD
+UGT1A1
+SLCO1B1
+HLA-B
+HLA-A
+CFTR
+G6PD
+</code></pre></div></div>
+
+<p>Save it as:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pharmacogenes.txt
+</code></pre></div></div>
+
+<p>These genes illustrate several pharmacogenomic mechanisms.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gene</th>
+      <th>Common relevance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CYP2D6</td>
+      <td>Antidepressants, antipsychotics, opioids, beta blockers</td>
+    </tr>
+    <tr>
+      <td>CYP2C19</td>
+      <td>Clopidogrel, proton pump inhibitors, antidepressants</td>
+    </tr>
+    <tr>
+      <td>CYP2C9</td>
+      <td>Warfarin, NSAIDs, phenytoin</td>
+    </tr>
+    <tr>
+      <td>VKORC1</td>
+      <td>Warfarin dose</td>
+    </tr>
+    <tr>
+      <td>TPMT</td>
+      <td>Thiopurines</td>
+    </tr>
+    <tr>
+      <td>NUDT15</td>
+      <td>Thiopurines</td>
+    </tr>
+    <tr>
+      <td>DPYD</td>
+      <td>Fluoropyrimidines</td>
+    </tr>
+    <tr>
+      <td>UGT1A1</td>
+      <td>Irinotecan and atazanavir</td>
+    </tr>
+    <tr>
+      <td>SLCO1B1</td>
+      <td>Statin-associated myopathy risk</td>
+    </tr>
+    <tr>
+      <td>HLA-B</td>
+      <td>Abacavir and allopurinol hypersensitivity</td>
+    </tr>
+    <tr>
+      <td>HLA-A</td>
+      <td>Carbamazepine hypersensitivity in some populations</td>
+    </tr>
+    <tr>
+      <td>CFTR</td>
+      <td>CFTR modulator eligibility</td>
+    </tr>
+    <tr>
+      <td>G6PD</td>
+      <td>Haemolysis risk with oxidant drugs</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The list is deliberately small. A complete clinical pharmacogenomics system would use curated allele definitions and guideline tables.</p>
+
+<h2 id="compare-vcf-genes-with-pharmacogenes">Compare VCF genes with pharmacogenes</h2>
+
+<p>Sort both gene lists.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sort</span> <span class="nt">-u</span> genes_from_vcf.txt <span class="o">&gt;</span> genes_from_vcf.sorted.txt
+<span class="nb">sort</span> <span class="nt">-u</span> pharmacogenes.txt <span class="o">&gt;</span> pharmacogenes.sorted.txt
+</code></pre></div></div>
+
+<p>Find genes present in both.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">comm</span> <span class="nt">-12</span> genes_from_vcf.sorted.txt pharmacogenes.sorted.txt <span class="se">\</span>
+  <span class="o">&gt;</span> pharmacogene_hits.txt
+</code></pre></div></div>
+
+<p>Inspect the result.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>pharmacogene_hits.txt
+</code></pre></div></div>
+
+<p>This step answers one question only:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Which pharmacogenes contain at least one annotated variant in this VCF?
+</code></pre></div></div>
+
+<p>It does not answer:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Does this person have an actionable pharmacogenomic allele?
+</code></pre></div></div>
+
+<h2 id="filter-vep-rows-to-pharmacogenes">Filter VEP rows to pharmacogenes</h2>
+
+<p>Use the pharmacogene list to retain only VEP rows in relevant genes.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">awk</span> <span class="s1">'NR==FNR {genes[$1]; next}
+     FNR==1 {print; next}
+     $14 in genes {print}'</span> <span class="se">\</span>
+     pharmacogenes.txt <span class="se">\</span>
+     hu24385B.vep.clean.tsv <span class="se">\</span>
+     <span class="o">&gt;</span> hu24385B.pharmacogene_variants.tsv
+</code></pre></div></div>
+
+<p>This assumes <code class="language-plaintext highlighter-rouge">SYMBOL</code> is column 14. Change <code class="language-plaintext highlighter-rouge">$14</code> if your VEP output uses another column position.</p>
+
+<p>Count the remaining rows.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">wc</span> <span class="nt">-l</span> hu24385B.pharmacogene_variants.tsv
+</code></pre></div></div>
+
+<p>Inspect the first rows.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">head </span>hu24385B.pharmacogene_variants.tsv
+</code></pre></div></div>
+
+<h2 id="reduce-the-vcf-before-annotation">Reduce the VCF before annotation</h2>
+
+<p>A full genome contains millions of variants. If the question is limited to pharmacogenes, reduce the VCF first.</p>
+
+<p>A BED file defines genomic intervals.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chr10   94762681    94855547    CYP2C19
+chr22   42126499    42130865    CYP2D6
+chr7    117120016   117308718   CFTR
+</code></pre></div></div>
+
+<p>A BED file usually has at least three columns:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>chrom</td>
+      <td>Chromosome</td>
+    </tr>
+    <tr>
+      <td>chromStart</td>
+      <td>Start coordinate</td>
+    </tr>
+    <tr>
+      <td>chromEnd</td>
+      <td>End coordinate</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The BED file must match the VCF reference genome and chromosome naming.</p>
+
+<p>Using <code class="language-plaintext highlighter-rouge">bcftools</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bcftools view <span class="se">\</span>
+  <span class="nt">-R</span> pharmacogenes.GRCh37.bed <span class="se">\</span>
+  <span class="nt">-Oz</span> <span class="se">\</span>
+  <span class="nt">-o</span> hu24385B.pharmacogenes.vcf.gz <span class="se">\</span>
+  hu24385B.vcf.gz
+
+bcftools index hu24385B.pharmacogenes.vcf.gz
+</code></pre></div></div>
+
+<p>Using <code class="language-plaintext highlighter-rouge">vcftools</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vcftools <span class="se">\</span>
+  <span class="nt">--gzvcf</span> hu24385B.vcf.gz <span class="se">\</span>
+  <span class="nt">--bed</span> pharmacogenes.GRCh37.bed <span class="se">\</span>
+  <span class="nt">--recode</span> <span class="se">\</span>
+  <span class="nt">--keep-INFO-all</span> <span class="se">\</span>
+  <span class="nt">--out</span> hu24385B.pharmacogenes
+</code></pre></div></div>
+
+<p>The reduced VCF is faster to annotate and easier to inspect.</p>
+
+<h2 id="prepare-a-drug-gene-table">Prepare a drug-gene table</h2>
+
+<p>A simple drug-gene table can be stored as tab-separated text.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Gene.Name   Drug.ID Drug.Name   Relationship    Source  Evidence
+CYP2C19 DB00758 Clopidogrel metabolism  CPIC    guideline
+CYP2D6  DB00472 Fluoxetine  metabolism  PharmGKB    curated
+SLCO1B1 DB00641 Simvastatin toxicity    CPIC    guideline
+DPYD    DB00544 Fluorouracil    toxicity    CPIC    guideline
+CFTR    DB08820 Ivacaftor   target  FDA label
+</code></pre></div></div>
+
+<p>This file is a teaching substitute for a curated pharmacogenomic database.</p>
+
+<p>In a professional setting, the equivalent table would be assembled from controlled sources such as CPIC, PharmGKB, PharmVar, DPWG, FDA labels, and internal validation records.</p>
+
+<h2 id="merge-vep-and-drug-gene-data-in-r">Merge VEP and drug-gene data in R</h2>
+
+<p>Import the VEP output and drug-gene table.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vep</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.delim</span><span class="p">(</span><span class="w">
+  </span><span class="s2">"hu24385B.vep.clean.tsv"</span><span class="p">,</span><span class="w">
+  </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w">
+  </span><span class="n">check.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="n">drug_genes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.delim</span><span class="p">(</span><span class="w">
+  </span><span class="s2">"drug_gene_table.tsv"</span><span class="p">,</span><span class="w">
+  </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w">
+  </span><span class="n">check.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="w">
+</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Rename the VEP gene symbol column to match the drug-gene table.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">names</span><span class="p">(</span><span class="n">vep</span><span class="p">)[</span><span class="nf">names</span><span class="p">(</span><span class="n">vep</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"SYMBOL"</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"Gene.Name"</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Remove rows without a gene symbol.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">vep</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vep</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">vep</span><span class="o">$</span><span class="n">Gene.Name</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">vep</span><span class="o">$</span><span class="n">Gene.Name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Merge by gene name.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">merged</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merge</span><span class="p">(</span><span class="w">
+  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vep</span><span class="p">,</span><span class="w">
+  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">drug_genes</span><span class="p">,</span><span class="w">
+  </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Gene.Name"</span><span class="p">,</span><span class="w">
+  </span><span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="w">
+</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Remove low-information variant consequences for this exercise.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">low_information</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">paste</span><span class="p">(</span><span class="w">
+  </span><span class="nf">c</span><span class="p">(</span><span class="w">
+    </span><span class="s2">"synonymous_variant"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"intron_variant"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"upstream_gene_variant"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"downstream_gene_variant"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"UTR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"non_coding_transcript"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"NMD_transcript_variant"</span><span class="w">
+  </span><span class="p">),</span><span class="w">
+  </span><span class="n">collapse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"|"</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="n">keep</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">!</span><span class="n">grepl</span><span class="p">(</span><span class="n">low_information</span><span class="p">,</span><span class="w"> </span><span class="n">merged</span><span class="o">$</span><span class="n">Consequence</span><span class="p">)</span><span class="w">
+</span><span class="n">merged_filtered</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">merged</span><span class="p">[</span><span class="n">keep</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Write the candidate table.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">write.table</span><span class="p">(</span><span class="w">
+  </span><span class="n">merged_filtered</span><span class="p">,</span><span class="w">
+  </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"pharmacogene_variant_drug_matches.tsv"</span><span class="p">,</span><span class="w">
+  </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"\t"</span><span class="p">,</span><span class="w">
+  </span><span class="n">quote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w">
+  </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="w">
+</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The output table links annotated variants to drug-gene records.</p>
+
+<p>It is still a candidate table. Interpretation comes later.</p>
+
+<h2 id="merge-vep-and-drug-gene-data-in-python">Merge VEP and drug-gene data in Python</h2>
+
+<p>The same join can be written in Python using <code class="language-plaintext highlighter-rouge">pandas</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">vep</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">hu24385B.vep.clean.tsv</span><span class="sh">"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sh">"</span><span class="se">\t</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">drug_genes</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">drug_gene_table.tsv</span><span class="sh">"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sh">"</span><span class="se">\t</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">vep</span> <span class="o">=</span> <span class="n">vep</span><span class="p">.</span><span class="nf">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">SYMBOL</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Gene.Name</span><span class="sh">"</span><span class="p">})</span>
+<span class="n">vep</span> <span class="o">=</span> <span class="n">vep</span><span class="p">[</span><span class="n">vep</span><span class="p">[</span><span class="sh">"</span><span class="s">Gene.Name</span><span class="sh">"</span><span class="p">].</span><span class="nf">notna</span><span class="p">()</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">vep</span><span class="p">[</span><span class="sh">"</span><span class="s">Gene.Name</span><span class="sh">"</span><span class="p">]</span> <span class="o">!=</span> <span class="sh">""</span><span class="p">)]</span>
+
+<span class="n">merged</span> <span class="o">=</span> <span class="n">vep</span><span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="n">drug_genes</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="sh">"</span><span class="s">Gene.Name</span><span class="sh">"</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="sh">"</span><span class="s">inner</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">low_information</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sh">"</span><span class="s">synonymous_variant|</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">intron_variant|</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">upstream_gene_variant|</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">downstream_gene_variant|</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">UTR|</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">non_coding_transcript|</span><span class="sh">"</span>
+    <span class="sh">"</span><span class="s">NMD_transcript_variant</span><span class="sh">"</span>
+<span class="p">)</span>
+
+<span class="n">merged_filtered</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span>
+    <span class="o">~</span><span class="n">merged</span><span class="p">[</span><span class="sh">"</span><span class="s">Consequence</span><span class="sh">"</span><span class="p">].</span><span class="nf">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">).</span><span class="nb">str</span><span class="p">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">low_information</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">merged_filtered</span><span class="p">.</span><span class="nf">to_csv</span><span class="p">(</span>
+    <span class="sh">"</span><span class="s">pharmacogene_variant_drug_matches.tsv</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">sep</span><span class="o">=</span><span class="sh">"</span><span class="se">\t</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="bp">False</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>The Python version is shorter. The Bash and R versions make more of the file mechanics visible.</p>
+
+<h2 id="read-the-candidate-table">Read the candidate table</h2>
+
+<p>The candidate table should contain enough fields to show the chain from variant to drug relationship.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gene.Name</td>
+      <td>HGNC gene symbol</td>
+    </tr>
+    <tr>
+      <td>Location or Uploaded_variation</td>
+      <td>Variant coordinate or VEP variant ID</td>
+    </tr>
+    <tr>
+      <td>Allele</td>
+      <td>Alternate allele</td>
+    </tr>
+    <tr>
+      <td>Consequence</td>
+      <td>VEP consequence</td>
+    </tr>
+    <tr>
+      <td>HGVSc</td>
+      <td>Coding change</td>
+    </tr>
+    <tr>
+      <td>HGVSp</td>
+      <td>Protein change</td>
+    </tr>
+    <tr>
+      <td>Existing_variation</td>
+      <td>Known ID such as rsID</td>
+    </tr>
+    <tr>
+      <td>CLIN_SIG</td>
+      <td>ClinVar assertion where available</td>
+    </tr>
+    <tr>
+      <td>Drug.ID</td>
+      <td>Drug identifier</td>
+    </tr>
+    <tr>
+      <td>Drug.Name</td>
+      <td>Drug name</td>
+    </tr>
+    <tr>
+      <td>Relationship</td>
+      <td>Metabolism, toxicity, efficacy, target, biomarker, or warning</td>
+    </tr>
+    <tr>
+      <td>Source</td>
+      <td>CPIC, PharmGKB, FDA, DrugBank, or other</td>
+    </tr>
+    <tr>
+      <td>Evidence</td>
+      <td>Guideline, label, curated evidence, prediction, or candidate match</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A candidate row does not mean that a drug should be given or avoided. It means the row has enough structure for review.</p>
+
+<h2 id="consequence-is-not-interpretation">Consequence is not interpretation</h2>
+
+<p>VEP consequence terms describe predicted molecular effect.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Consequence</th>
+      <th>Typical meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stop_gained</td>
+      <td>Creates a premature stop codon</td>
+    </tr>
+    <tr>
+      <td>frameshift_variant</td>
+      <td>Changes the reading frame</td>
+    </tr>
+    <tr>
+      <td>splice_acceptor_variant</td>
+      <td>Affects a canonical splice acceptor</td>
+    </tr>
+    <tr>
+      <td>splice_donor_variant</td>
+      <td>Affects a canonical splice donor</td>
+    </tr>
+    <tr>
+      <td>start_lost</td>
+      <td>Alters the start codon</td>
+    </tr>
+    <tr>
+      <td>missense_variant</td>
+      <td>Changes one amino acid</td>
+    </tr>
+    <tr>
+      <td>synonymous_variant</td>
+      <td>Does not change the amino acid sequence</td>
+    </tr>
+    <tr>
+      <td>intron_variant</td>
+      <td>Located in an intron</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/images/VEP_consequences.jpg" width="100%" /></p>
+
+<p>A high-impact consequence can support interpretation. It is not automatically pathogenic. A missense variant can be benign, damaging, uncertain, or irrelevant to the drug response.</p>
+
+<p>Transcript choice also matters. A variant can be coding on one transcript and non-coding on another. MANE Select transcripts are often preferred for clinical reporting where available.</p>
+
+<h2 id="known-pharmacogenomic-alleles">Known pharmacogenomic alleles</h2>
+
+<p>Many pharmacogenomic results are not interpreted from single VCF rows.</p>
+
+<p>They are often interpreted as star alleles, diplotypes, copy number states, repeat genotypes, or HLA alleles.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gene</th>
+      <th>Result type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CYP2D6</td>
+      <td>Star alleles, copy number, hybrid alleles</td>
+    </tr>
+    <tr>
+      <td>CYP2C19</td>
+      <td>Star alleles</td>
+    </tr>
+    <tr>
+      <td>CYP2C9</td>
+      <td>Star alleles</td>
+    </tr>
+    <tr>
+      <td>TPMT</td>
+      <td>Star alleles or named variants</td>
+    </tr>
+    <tr>
+      <td>NUDT15</td>
+      <td>Named alleles</td>
+    </tr>
+    <tr>
+      <td>HLA-B</td>
+      <td>HLA allele, such as HLA-B*57:01</td>
+    </tr>
+    <tr>
+      <td>UGT1A1</td>
+      <td>Repeat genotype, such as UGT1A1*28</td>
+    </tr>
+    <tr>
+      <td>SLCO1B1</td>
+      <td>Specific variant or haplotype</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A standard SNV VCF can miss important pharmacogenomic structure.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Tools or resources</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CYP2D6 calling</td>
+      <td>Aldy, Stargazer, Cyrius, Astrolabe</td>
+    </tr>
+    <tr>
+      <td>HLA typing</td>
+      <td>OptiType, HLA-HD, HISAT-genotype</td>
+    </tr>
+    <tr>
+      <td>Pharmacogenomic annotation</td>
+      <td>PharmCAT</td>
+    </tr>
+    <tr>
+      <td>Star allele definitions</td>
+      <td>PharmVar</td>
+    </tr>
+    <tr>
+      <td>Clinical recommendations</td>
+      <td>CPIC, DPWG</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Gene-level matching is the first pass. Allele-level interpretation is required before a pharmacogenomic conclusion.</p>
+
+<h2 id="zygosity-and-dosage">Zygosity and dosage</h2>
+
+<p>Genotype affects interpretation.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Heterozygous</td>
+      <td>One alternate allele</td>
+    </tr>
+    <tr>
+      <td>Homozygous</td>
+      <td>Two alternate alleles</td>
+    </tr>
+    <tr>
+      <td>Hemizygous</td>
+      <td>One copy of the region</td>
+    </tr>
+    <tr>
+      <td>Compound heterozygous</td>
+      <td>Two different variants in the same gene</td>
+    </tr>
+    <tr>
+      <td>Copy number change</td>
+      <td>Deletion or duplication of a gene or region</td>
+    </tr>
+    <tr>
+      <td>Mosaic</td>
+      <td>Variant present in only some cells</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Pharmacogenomic reports often translate genotype into a functional phenotype, such as poor, intermediate, normal, rapid, or ultrarapid metaboliser.</p>
+
+<p>CYP2D6 shows why dosage matters. A person may carry inactive alleles, reduced-function alleles, gene duplications, or hybrid alleles. A simple SNV table cannot always resolve that structure.</p>
+
+<h2 id="drug-gene-relationship-types">Drug-gene relationship types</h2>
+
+<p>A drug-gene match can mean several things.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Relationship</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Metabolism</td>
+      <td>The gene product affects drug exposure</td>
+    </tr>
+    <tr>
+      <td>Toxicity</td>
+      <td>The genotype changes adverse event risk</td>
+    </tr>
+    <tr>
+      <td>Efficacy</td>
+      <td>The genotype changes probability of response</td>
+    </tr>
+    <tr>
+      <td>Target</td>
+      <td>The drug binds the gene product</td>
+    </tr>
+    <tr>
+      <td>Biomarker</td>
+      <td>The gene or variant is part of a labelled indication</td>
+    </tr>
+    <tr>
+      <td>Warning</td>
+      <td>The genotype or disease state changes risk</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A drug target is not the same as a prescribing rule.</p>
+
+<p>A drug may bind a protein encoded by a gene, but inherited variation in that gene may have no known treatment effect. A pharmacogenomic variant may affect metabolism of many drugs without being part of the drug target.</p>
+
+<p>The FDA pharmacogenomic biomarker table and drug prescribing information help distinguish these categories.</p>
+
+<h2 id="unknown-variants">Unknown variants</h2>
+
+<p>Most variants in a genome are not actionable.</p>
+
+<p>A rare missense variant in a pharmacogene may be known, benign, uncertain, technical, or research-only.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interpretation</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Known actionable allele</td>
+      <td>Evidence supports a drug-specific recommendation</td>
+    </tr>
+    <tr>
+      <td>Known benign or tolerated variant</td>
+      <td>No action expected</td>
+    </tr>
+    <tr>
+      <td>Variant of uncertain significance</td>
+      <td>Insufficient evidence</td>
+    </tr>
+    <tr>
+      <td>Technical artefact</td>
+      <td>Variant call is not reliable</td>
+    </tr>
+    <tr>
+      <td>Research candidate</td>
+      <td>Interesting, but not clinically interpretable</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Prediction tools can help rank variants. They do not define clinical action.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CADD</td>
+      <td>General deleteriousness score</td>
+    </tr>
+    <tr>
+      <td>REVEL</td>
+      <td>Missense variant prediction</td>
+    </tr>
+    <tr>
+      <td>AlphaMissense</td>
+      <td>Missense effect prediction</td>
+    </tr>
+    <tr>
+      <td>SIFT</td>
+      <td>Protein tolerance prediction</td>
+    </tr>
+    <tr>
+      <td>PolyPhen-2</td>
+      <td>Missense effect prediction</td>
+    </tr>
+    <tr>
+      <td>SpliceAI</td>
+      <td>Splice effect prediction</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Predicted effects should remain labelled as predictions.</p>
+
+<h2 id="limits-of-the-first-principles-workflow">Limits of the first-principles workflow</h2>
+
+<p>The workflow explains the mechanics of a simple pharmacogenomics analysis. It does not replace a validated clinical pipeline.</p>
+
+<p>Special caution is needed for:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gene or region</th>
+      <th>Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CYP2D6</td>
+      <td>Copy number, hybrid alleles, and complex haplotypes</td>
+    </tr>
+    <tr>
+      <td>HLA genes</td>
+      <td>High polymorphism and specialised typing requirements</td>
+    </tr>
+    <tr>
+      <td>UGT1A1</td>
+      <td>Repeat alleles may not be represented in simple VCFs</td>
+    </tr>
+    <tr>
+      <td>Structural variants</td>
+      <td>Often absent from SNV-focused VCFs</td>
+    </tr>
+    <tr>
+      <td>Low coverage regions</td>
+      <td>Negative results may be uninformative</td>
+    </tr>
+    <tr>
+      <td>Direct-to-consumer data</td>
+      <td>Often incomplete for clinical PGx</td>
+    </tr>
+    <tr>
+      <td>Transcript ambiguity</td>
+      <td>Consequence can change by transcript</td>
+    </tr>
+    <tr>
+      <td>Reference mismatch</td>
+      <td>Coordinates and annotations can become incorrect</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The most common error is treating a matched gene as an interpreted result.</p>
+
+<p>The correct interpretation chain is stricter.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>variant call
+  ↓
+quality check
+  ↓
+correct reference build
+  ↓
+correct transcript or allele definition
+  ↓
+validated pharmacogenomic allele
+  ↓
+drug-specific guideline or label
+  ↓
+clinical interpretation
+</code></pre></div></div>
+
+<h2 id="practical-summary">Practical summary</h2>
+
+<p>This exercise builds a candidate pharmacogenomics table from first principles.</p>
+
+<p>It uses:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VCF
+VEP annotation
+gene extraction
+pharmacogene matching
+drug-gene joining
+consequence filtering
+candidate review
+</code></pre></div></div>
+
+<p>The file operations are straightforward. The interpretation is not.</p>
+
+<p>A candidate table can show where to look. A pharmacogenomic conclusion requires allele-level evidence, drug-specific guidance, and quality-controlled genotyping.</p>
+
+<h2 id="references-and-resources">References and resources</h2>
+
+<ul>
+  <li>CPIC: Clinical Pharmacogenetics Implementation Consortium, <a href="https://cpicpgx.org">https://cpicpgx.org</a></li>
+  <li>PharmGKB: Pharmacogenomics Knowledgebase, <a href="https://www.pharmgkb.org">https://www.pharmgkb.org</a></li>
+  <li>PharmVar: Pharmacogene Variation Consortium, <a href="https://www.pharmvar.org">https://www.pharmvar.org</a></li>
+  <li>DPWG: Dutch Pharmacogenetics Working Group, <a href="https://www.pharmgkb.org/page/dpwg">https://www.pharmgkb.org/page/dpwg</a></li>
+  <li>FDA pharmacogenomic biomarkers in drug labelling, <a href="https://www.fda.gov/drugs/science-and-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling">https://www.fda.gov/drugs/science-and-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling</a></li>
+  <li>Ensembl Variant Effect Predictor, <a href="https://www.ensembl.org/info/docs/tools/vep/index.html">https://www.ensembl.org/info/docs/tools/vep/index.html</a></li>
+  <li>MANE Select, <a href="https://www.ncbi.nlm.nih.gov/refseq/MANE/">https://www.ncbi.nlm.nih.gov/refseq/MANE/</a></li>
+  <li>DrugBank, <a href="https://go.drugbank.com">https://go.drugbank.com</a></li>
+  <li>gnomAD, <a href="https://gnomad.broadinstitute.org">https://gnomad.broadinstitute.org</a></li>
+  <li>ClinVar, <a href="https://www.ncbi.nlm.nih.gov/clinvar">https://www.ncbi.nlm.nih.gov/clinvar</a></li>
+  <li>Relling MV, Evans WE. Pharmacogenomics in the clinic. Nature. 2015;526:343-350. doi: 10.1038/nature15817</li>
+  <li>Yip VL, Hawcutt DB, Pirmohamed M. Pharmacogenetic markers of drug efficacy and toxicity. Clin Pharmacol Ther. 2015;98:61-70. doi: 10.1002/cpt.135</li>
+  <li>Adams DR, Eng CM. Next-generation sequencing to diagnose suspected genetic disorders. N Engl J Med. 2018. doi: 10.1056/NEJMra1711801</li>
+</ul>
+
+</div>
+
+<!--
+
+<div id="related">
+  <h2>Related Topics</h2>
+  <ul class="topics">
+    
+  </ul>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- # MAIN END ---------------------------------------------------------- -->
+
+<!-- FOOT START -------------------------------------------------------- -->
+<div class="sitewidthnav">
+	<div class="footer">
+		<div class="foot-container">
+				<a href="/" class="logo-foot">
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
+					<div class="right-root">
+						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
+						<!-- <a href="/resume">Resume</a> -->
+						<a href="https://lawless.ch">Resume</a>
+						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
+						<a href='https://lawlessgenomics.com/feed.xml'>RSS feed</a>
+						</p>
+					</div>
+		</div>
+	</div>
+</div>
+<!-- FOOT END ---------------------------------------------------------- -->
+
+</div>
+<!-- SITE END ----------------------------------------------------------- -->
+
+
+<!-- Banner on top right corner linking to github
+<a href="https://github.com/mojombo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+-->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='https://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+</script>
+<!-- ClickTale end of Bottom part -->
+
+<!-- Google Analytics -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+-->
+<!-- Google Analytics end -->
+
+</body>
+</html>

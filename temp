@@ -1,0 +1,188 @@
+.
+├── 404.html
+├── CNAME
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── Rakefile
+├── _bibliography
+│   ├── references.bib
+│   └── tmp_references.bib
+├── _config.yml
+├── _includes
+│   ├── data_usage_net_plot_custom.html
+│   └── head.html
+├── _layouts
+│   ├── default.html
+│   ├── page.html
+│   ├── post.html
+│   ├── section.html
+│   └── topic.html
+├── _plugins
+│   ├── ext.rb
+│   └── jekyll-reading-time
+├── _posts
+│   ├── blogpost
+│   ├── journal_club
+│   └── weeknotes
+├── _sass
+│   ├── _highlights.scss
+│   └── _variables.scss
+├── _site
+│   ├── 2019
+│   ├── 2020
+│   ├── 2021
+│   ├── 2022
+│   ├── 2023
+│   ├── 404.html
+│   ├── CNAME
+│   ├── README.md
+│   ├── Rakefile
+│   ├── about
+│   ├── build
+│   ├── css
+│   ├── data_usage_net_plot_custom.png
+│   ├── data_usage_network.html
+│   ├── equations
+│   ├── feed.xml
+│   ├── fonts
+│   ├── genetic_ticker
+│   ├── images
+│   ├── index.html
+│   ├── jek.2.sh
+│   ├── jek.build.sh
+│   ├── jek.quick.sh
+│   ├── jek.sh
+│   ├── jek.test.sh
+│   ├── kill_serve.sh
+│   ├── linktypes.txt
+│   ├── minard_napoleon_1812_custom.png
+│   ├── notes_font.txt
+│   ├── pages
+│   ├── portfolio.html
+│   ├── random
+│   ├── reference_replace.sh
+│   ├── robots.txt
+│   ├── script.js
+│   ├── sitemap.xml
+│   ├── size.sh
+│   ├── size.txt
+│   ├── style.css
+│   ├── style.scss
+│   ├── topic
+│   ├── trash
+│   ├── update_bib.sh
+│   ├── uses.html
+│   └── weeknotes
+├── _topic
+│   ├── Annual\ Review\ of\ Genomics\ and\ Human\ Genetics\ Thinking\ About\ the\ Evolution\ of\ Complex\ Traits\ in\ the\ Era\ of\ Genome-Wide\ Association\ Studies.pdf
+│   ├── business
+│   ├── cryptography
+│   ├── genomic_analysis
+│   ├── immunology
+│   ├── meetings.md
+│   ├── omics
+│   ├── precision_med
+│   └── statistics
+├── build
+│   ├── Gemfile
+│   ├── Gemfile_test
+│   ├── config_build.yml
+│   └── config_test.yml
+├── css
+│   ├── screen.css
+│   └── syntax.css
+├── data_usage_net_plot_custom.png
+├── equations
+│   ├── lr
+│   ├── pdflatex
+│   └── svg.latex.svg
+├── feed.xml
+├── fonts
+│   └── HardingText-Regular-Web.woff2
+├── genetic_ticker
+│   ├── current.html
+│   └── style.css
+├── images
+│   ├── 3d_genome
+│   ├── CYP2D6.png
+│   ├── FigS27.png
+│   ├── FigS28.png
+│   ├── GO_enrich.png
+│   ├── VEP_consequences.jpg
+│   ├── VEP_example.png
+│   ├── acat_fig_1.jpg
+│   ├── acat_fig_2.png
+│   ├── acat_fig_3.png
+│   ├── altman_bland_analysis_of_methods.png
+│   ├── altman_bland_repeated_observations.png
+│   ├── bayes_intro_fig1.png
+│   ├── bayes_intro_fig2.png
+│   ├── bayes_intro_fig3.png
+│   ├── bioinfo
+│   ├── brand_images
+│   ├── ge_panel_app.png
+│   ├── haplotype.jpeg
+│   ├── inspo
+│   ├── kernel_1.png
+│   ├── kernel_2.png
+│   ├── kmeans_fig_1.png
+│   ├── kmeans_fig_2.png
+│   ├── kmeans_fig_3.png
+│   ├── logos
+│   ├── meetings
+│   ├── menu.jpg
+│   ├── national-cancer-institute-ct10qdGv1hQ-unsplash-2_shiftz2.png
+│   ├── net_analysis
+│   ├── pca_fig_1.png
+│   ├── pca_fig_2.png
+│   ├── plof_enrichment_eg.png
+│   ├── posts
+│   ├── receiver_operating_characteristic_curve.png
+│   ├── receiver_operating_characteristic_plots.png
+│   ├── rss.png
+│   ├── slideshow
+│   ├── staar_fig_1.png
+│   ├── vcf_body.png
+│   ├── vcf_header.png
+│   └── vcf_vep.png
+├── index.html
+├── jek.2.sh
+├── jek.build.sh
+├── jek.quick.sh
+├── jek.sh
+├── jek.test.sh
+├── kill_serve.sh
+├── linktypes.txt
+├── minard_napoleon_1812_custom.png
+├── notes_font.txt
+├── pages
+│   ├── about.ch
+│   ├── about_this_site.md
+│   ├── drugbank_all_interaction.txt
+│   ├── michelle_birthday
+│   ├── naples
+│   ├── port.html
+│   ├── portfolio
+│   ├── portfolio_live
+│   ├── portfolio_rsv
+│   ├── sophia
+│   ├── usage_examples
+│   └── weeknotes_index.html
+├── random
+│   └── canvas_rotated_textfill.html
+├── reference_replace.sh
+├── script.js
+├── size.sh
+├── size.txt
+├── style.css
+├── style.scss
+├── temp
+├── trash
+│   ├── CNAME
+│   ├── add_new_pages
+│   ├── x.Gemfile
+│   └── x.Gemfile.lock
+└── update_bib.sh
+
+63 directories, 122 files

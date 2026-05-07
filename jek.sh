@@ -1,12 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
+
 cp ./build/config_build.yml _config.yml
 cp ./build/Gemfile Gemfile
-sleep 1
 
-# I do not know why but now fails without specifying encoding first:
-LC_ALL="en_US.UTF-8" bundle exec jekyll serve &
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+bundle check || bundle install
+
+bundle exec jekyll serve &
+
 sleep 3
-
 open -a Safari http://127.0.0.1:4000
 
 # To view build times

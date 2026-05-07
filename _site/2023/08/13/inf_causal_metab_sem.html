@@ -2,7 +2,8 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -16,27 +17,28 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description"
+content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
 	<title>Summary - inference of causal metabolite networks</title>
-	<meta name="author" content="LawlessGenomics">
-	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<meta name="author" content="LawlessGenomics" />
+	<link href='https://lawlessgenomics.com/feed.xml' rel='alternate' title="LawlessGenomics" type='application/atom+xml'>
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 	
 	<!-- Google font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com"> 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -65,7 +67,9 @@
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
 				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
 			</div>
 
@@ -76,7 +80,8 @@
 				<input type="checkbox" id="nav-toggle">
 					<label for="nav-toggle" class="gg-menu"></label>
 					<div class="right-menu">
-						<a href="/resume">About</a>
+						<a href="/about">About</a>
+						<!-- <a href="/resume">About</a> -->
 						<a href="/">Home</a>
 					</div>
 			</nav>
@@ -104,20 +109,17 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 <p>Briefly, this paper is about using instrumental variables (SNPs) in causal inference with applications to genome-wide association studies (GWAS).</p>
 
 <ul>
-  <li>
-<strong>Exposure:</strong>
+  <li><strong>Exposure:</strong>
     <ul>
       <li>Metabolites: They serve as intermediate phenotypes connecting genetic variants to clinical outcomes and play a crucial role in biological processes.</li>
     </ul>
   </li>
-  <li>
-<strong>Instrumental Variable (IV):</strong>
+  <li><strong>Instrumental Variable (IV):</strong>
     <ul>
       <li>SNPs (Single Nucleotide Polymorphisms): These are used as instrumental variables to isolate the variability in metabolites that is independent of confounders.</li>
     </ul>
   </li>
-  <li>
-<strong>Outcome:</strong>
+  <li><strong>Outcome:</strong>
     <ul>
       <li>Clinical outcomes: These are affected by metabolites, which in turn are influenced by SNPs. The causal effect of metabolites on clinical outcomes is what the study aims to determine.</li>
     </ul>
@@ -126,7 +128,7 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 
 <p>For a more gradual background jump down to the “In context” section.</p>
 
-<hr>
+<hr />
 
 <h2 id="abstract-summary">Abstract summary</h2>
 <p>Structural equation models (SEMs) for inferring causal networks in metabolites and other complex traits. The method:</p>
@@ -139,7 +141,7 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 
 <p>The approach uses a stepwise selection to identify invalid IVs, and demonstrates its superior performance using both real and simulated GWAS data.</p>
 
-<hr>
+<hr />
 
 <h2 id="key-methods-summary">Key methods summary</h2>
 
@@ -193,7 +195,7 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
   <li>\(\gamma\)’s and \(\beta\)’s are unknown parameters in the model.</li>
 </ul>
 
-<hr>
+<hr />
 
 <h2 id="code">Code</h2>
 <h3 id="onesample-mvstepiv">onesample mvstepIV</h3>
@@ -205,20 +207,13 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 
 <p><strong>Input Parameters:</strong></p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">p</code>: Total number of predictors.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">R</code>: Correlation matrix.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">betaZX</code>: Regression coefficients for predictors.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">betaZY</code>: Regression coefficients for outcomes.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">se_betaZY</code>: Standard error of <code class="language-plaintext highlighter-rouge">betaZY</code>.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">n</code>: Sample size.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">gamma_hat</code>: Gamma hat values (prior information).</li>
+  <li><code class="language-plaintext highlighter-rouge">p</code>: Total number of predictors.</li>
+  <li><code class="language-plaintext highlighter-rouge">R</code>: Correlation matrix.</li>
+  <li><code class="language-plaintext highlighter-rouge">betaZX</code>: Regression coefficients for predictors.</li>
+  <li><code class="language-plaintext highlighter-rouge">betaZY</code>: Regression coefficients for outcomes.</li>
+  <li><code class="language-plaintext highlighter-rouge">se_betaZY</code>: Standard error of <code class="language-plaintext highlighter-rouge">betaZY</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">n</code>: Sample size.</li>
+  <li><code class="language-plaintext highlighter-rouge">gamma_hat</code>: Gamma hat values (prior information).</li>
 </ul>
 
 <p><strong>Main Computations:</strong></p>
@@ -254,14 +249,10 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 
 <p><strong>Output:</strong></p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">invalidIV</code>: Indices of invalid IVs.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">beta_est</code>: Estimated beta values.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">beta_se</code>: Standard error of beta estimates.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">K</code>: Number of invalid IVs.</li>
+  <li><code class="language-plaintext highlighter-rouge">invalidIV</code>: Indices of invalid IVs.</li>
+  <li><code class="language-plaintext highlighter-rouge">beta_est</code>: Estimated beta values.</li>
+  <li><code class="language-plaintext highlighter-rouge">beta_se</code>: Standard error of beta estimates.</li>
+  <li><code class="language-plaintext highlighter-rouge">K</code>: Number of invalid IVs.</li>
 </ul>
 
 <h3 id="onesample-mvstepiv-ind">onesample mvstepIV ind</h3>
@@ -272,14 +263,10 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 
 <p><strong>Input Parameters:</strong></p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">Y</code>: Response variable.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">Z</code>: Predictor matrix.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">n</code>: Sample size.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">gamma_hat</code>: Gamma hat values (prior information).</li>
+  <li><code class="language-plaintext highlighter-rouge">Y</code>: Response variable.</li>
+  <li><code class="language-plaintext highlighter-rouge">Z</code>: Predictor matrix.</li>
+  <li><code class="language-plaintext highlighter-rouge">n</code>: Sample size.</li>
+  <li><code class="language-plaintext highlighter-rouge">gamma_hat</code>: Gamma hat values (prior information).</li>
 </ul>
 
 <p><strong>Main Computations:</strong></p>
@@ -316,35 +303,28 @@ Chen, S., Lin, Z., Shen, X., Li, L., &amp; Pan, W. (2023). Inference of causal m
 
 <p><strong>Output:</strong></p>
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">beta_est</code>: Estimated beta values.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">beta_se</code>: Standard error of beta estimates.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">invalid IVs</code>: Indices of invalid IVs.</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">no. of invalid IV</code>: Number of invalid IVs.</li>
+  <li><code class="language-plaintext highlighter-rouge">beta_est</code>: Estimated beta values.</li>
+  <li><code class="language-plaintext highlighter-rouge">beta_se</code>: Standard error of beta estimates.</li>
+  <li><code class="language-plaintext highlighter-rouge">invalid IVs</code>: Indices of invalid IVs.</li>
+  <li><code class="language-plaintext highlighter-rouge">no. of invalid IV</code>: Number of invalid IVs.</li>
 </ul>
 
-<hr>
+<hr />
 
 <h2 id="in-context">In context</h2>
 <p>Recap:</p>
 <ul>
-  <li>
-<strong>Exposure:</strong>
+  <li><strong>Exposure:</strong>
     <ul>
       <li>Metabolites: They serve as intermediate phenotypes connecting genetic variants to clinical outcomes and play a crucial role in biological processes.</li>
     </ul>
   </li>
-  <li>
-<strong>Instrumental Variable (IV):</strong>
+  <li><strong>Instrumental Variable (IV):</strong>
     <ul>
       <li>SNPs (Single Nucleotide Polymorphisms): These are used as instrumental variables to isolate the variability in metabolites that is independent of confounders.</li>
     </ul>
   </li>
-  <li>
-<strong>Outcome:</strong>
+  <li><strong>Outcome:</strong>
     <ul>
       <li>Clinical outcomes: These are affected by metabolites, which in turn are influenced by SNPs. The causal effect of metabolites on clinical outcomes is what the study aims to determine.</li>
     </ul>
@@ -370,12 +350,9 @@ Its role is to isolate the variability in the exposure that is independent of th
 
 <h3 id="key-assumptions">Key Assumptions</h3>
 <ul>
-  <li>
-<strong>Relevance:</strong> The IV is correlated with the exposure.</li>
-  <li>
-<strong>Exclusion:</strong> The IV only affects the outcome through its effect on the exposure.</li>
-  <li>
-<strong>Exchangeability:</strong> The IV is not associated with unobserved confounders.</li>
+  <li><strong>Relevance:</strong> The IV is correlated with the exposure.</li>
+  <li><strong>Exclusion:</strong> The IV only affects the outcome through its effect on the exposure.</li>
+  <li><strong>Exchangeability:</strong> The IV is not associated with unobserved confounders.</li>
 </ul>
 
 <h3 id="how-does-it-work">How Does It Work?</h3>
@@ -383,12 +360,9 @@ Its role is to isolate the variability in the exposure that is independent of th
 
 <h3 id="why-is-it-necessary-for-causal-inference">Why is it Necessary for Causal Inference?</h3>
 <ul>
-  <li>
-<strong>Control for Unmeasured Confounding:</strong> IVs can provide unbiased estimates of causal effects when unmeasured or unobserved confounding is present.</li>
-  <li>
-<strong>Endogeneity:</strong> IVs can solve the problem of endogeneity.</li>
-  <li>
-<strong>Natural Experiments:</strong> IVs can be employed in “natural experiments” where random assignment of treatments is not feasible.</li>
+  <li><strong>Control for Unmeasured Confounding:</strong> IVs can provide unbiased estimates of causal effects when unmeasured or unobserved confounding is present.</li>
+  <li><strong>Endogeneity:</strong> IVs can solve the problem of endogeneity.</li>
+  <li><strong>Natural Experiments:</strong> IVs can be employed in “natural experiments” where random assignment of treatments is not feasible.</li>
 </ul>
 
 <h3 id="usage">Usage</h3>
@@ -396,12 +370,9 @@ Its role is to isolate the variability in the exposure that is independent of th
 
 <h3 id="limitations">Limitations</h3>
 <ul>
-  <li>
-<strong>Weak Instruments:</strong> Weak correlation between the IV and exposure can lead to biased IV estimates.</li>
-  <li>
-<strong>Violations of Assumptions:</strong> IV estimates can be biased if any core assumptions are violated.</li>
-  <li>
-<strong>Interpretability:</strong> The causal effect estimated through IV is often specific to a particular population, reducing generalizability.</li>
+  <li><strong>Weak Instruments:</strong> Weak correlation between the IV and exposure can lead to biased IV estimates.</li>
+  <li><strong>Violations of Assumptions:</strong> IV estimates can be biased if any core assumptions are violated.</li>
+  <li><strong>Interpretability:</strong> The causal effect estimated through IV is often specific to a particular population, reducing generalizability.</li>
 </ul>
 
 <h3 id="summary">Summary</h3>
@@ -409,7 +380,7 @@ Its role is to isolate the variability in the exposure that is independent of th
 When utilized properly, they can provide valuable insights into causal relationships in settings laden with confounding and endogeneity. 
 However, they come with their own assumptions and potential limitations.</p>
 
-<hr>
+<hr />
 
 <h2 id="references">References</h2>
 
@@ -421,17 +392,11 @@ However, they come with their own assumptions and potential limitations.</p>
   <h2>Related Posts</h2>
   <ul class="posts">
     
-      <li>
-<span>09 May 2023</span> » <a href="/2023/05/09/what_i_want_from_genome_center.html">What I want from genomic data centers</a>
-</li>
+      <li><span>09 May 2023</span> &raquo; <a href="/2023/05/09/what_i_want_from_genome_center.html">What I want from genomic data centers</a></li>
     
-      <li>
-<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a>
-</li>
+      <li><span>18 Jan 2023</span> &raquo; <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a></li>
     
-      <li>
-<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_tell_me_about_precision_medicine_genomics.html">AI, tell me about precision medicine genomics</a>
-</li>
+      <li><span>18 Jan 2023</span> &raquo; <a href="/2023/01/18/ai_tell_me_about_precision_medicine_genomics.html">AI, tell me about precision medicine genomics</a></li>
     
   </ul>
 </div>
@@ -445,12 +410,15 @@ However, they come with their own assumptions and potential limitations.</p>
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
 					<div class="right-root">
 						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
-						<a href="/resume">Resume</a>
+						<!-- <a href="/resume">Resume</a> -->
+						<a href="https://lawless.ch">Resume</a>
 						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
-						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						<a href='https://lawlessgenomics.com/feed.xml'>RSS feed</a>
 						</p>
 					</div>
 		</div>

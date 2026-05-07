@@ -8,7 +8,9 @@ status: finished
 
 {{ page.title }}
 ================
-<p class="meta">18 Jan 2022</p>
+<p class="meta">18 Jan 2023</p>
+
+_Edit 2026: This post was written two months after the public launch of OpenAI's chatGPT (Nov 2021). It seems rather basic now but it is a small reminder of the turning point and shows how blown away we were with this new tech._
 
 I see a lot of people giving their opinions about chat AI without much examples of real-world application. 
 So here is my concrete experience. 

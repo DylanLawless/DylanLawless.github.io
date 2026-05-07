@@ -1,775 +1,798 @@
 ---
 layout: topic
-title: Pharmacogenomics for personal medicine 
-date: 2019-01-01 00:00:01
-tags: genomics
+title: Pharmacogenomics from a VCF file
+date: 2026-05-07 00:00:01
+tags: genomics pharmacogenomics precision-medicine VCF DNA sequencing variant-annotation
 subject: Precision medicine
+description: A first-principles postgraduate guide to pharmacogenomics from a VCF file, using Bash, R, VEP, CPIC, PharmGKB, PharmVar, FDA labels, DrugBank, and core variant annotation concepts.
+permalink: /topic/pharmacogenomics/
 ---
-{{ page.title }}
-================
-<p class="meta">06 Mar 2024</p>
+
+# Pharmacogenomics from a VCF file
+
+<p class="meta">Updated 07 May 2026</p>
 
 * TOC
 {:toc}
 
-## Introduction
-With the popularisation of commercial genetics services, more and more people are now able to "decode" their genetic data.
-Questions that might arise from this information include "do I have potentially disease-causing variants that can be treated with a drug?", or "am I taking a drug that will be affected by my genetics?".
-To tackle such questions with an example, we use public data in combination with pharmacogenomics.
+## Audience
 
-<!-- Outside of genotype data (offered by [23andMe](https://www.23andme.com) for example), --> 
-The most common file type for storing DNA variant data is the VCF format:
-[What is a vcf and how should I interpret it?](https://gatk.broadinstitute.org/hc/en-us/articles/360035531692-VCF-Variant-Call-Format).
+This page is written for a postgraduate class on precision medicine.
 
-## Download VCF data
-Example VCF from [https://my.pgp-hms.org/public_genetic_data](https://my.pgp-hms.org/public_genetic_data):
-* A randomly selected whole genome VCF file:
-    * [https://my.pgp-hms.org/profile/hu24385B](https://my.pgp-hms.org/profile/hu24385B): 
-    * filename: hu24385B 2019-04-07.vcf.gz
-    * sequence provider: Dante Labs Whole Genome
-    * size: 147 MB
+The aim is to understand how a pharmacogenomics analysis works under the hood. Professional laboratories and clinical systems usually use validated software, curated databases, quality-controlled pipelines, and formal reporting rules. Those systems are necessary for real use.
 
-* Additional examples - not tested:
-    * [1] VCF from Dante Labs vs GRCh37 (246 MB) [https://my.pgp-hms.org/profile/hu1D5A29](https://my.pgp-hms.org/profile/hu1D5A29)
-    * [2] WGS 30x filtered SNP VCF (325 MB) [https://my.pgp-hms.org/profile/hu1C1368](https://my.pgp-hms.org/profile/hu1C1368)
-    * [3] 60820188474283.snp.vcf.gz (222 MB) [https://my.pgp-hms.org/profile/hu6ABACE](https://my.pgp-hms.org/profile/hu6ABACE)
+The exercise here is different. We start with a VCF file and build the logic ourselves. The point is to see the file types, the columns, the joins, the assumptions, and the failure points. Once those are clear, packages and pipelines become easier to judge.
 
-The "hu24385B" VCF has 3,461,639 variants.
-VCF files can contain a large range of information for each variant, however only the first 7 column are strictly neccessary; Chromosome, position, ID, Reference, Alternate, Qulaity, Filter, info. 
-[The details are explained on this GATK forum post](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it).
+## What pharmacogenomics asks
+
+Pharmacogenomics studies how genetic variation affects drug metabolism, toxicity, dosing, and response.
+
+A pharmacogenomic result usually connects five things:
+
+| Component | Example |
+|---|---|
+| Gene | CYP2C19 |
+| Allele or genotype | CYP2C19*2/*17 |
+| Drug | Clopidogrel |
+| Phenotype | Intermediate metaboliser |
+| Recommendation source | CPIC or DPWG guideline |
+
+A variant in a drug-related gene is not automatically pharmacogenomic evidence. A drug may bind a protein, a gene may encode a metabolising enzyme, or a variant may be present in a pharmacogene. These are different facts.
+
+This distinction matters throughout the analysis.
+
+## What this workflow produces
+
+The workflow produces a candidate table.
+
+```text
+VCF
+  ↓
+variant annotation
+  ↓
+gene and consequence extraction
+  ↓
+pharmacogene matching
+  ↓
+drug-gene annotation
+  ↓
+candidate table
+```
+
+The candidate table can show that a person has variants in genes connected to drugs. It does not, by itself, provide a clinical pharmacogenomic report.
+
+A clinical report requires validated allele calling, diplotype interpretation, quality control, guideline mapping, and clinical review.
+
+## Input files
+
+The exercise uses five file types.
+
+| File | Purpose |
+|---|---|
+| `input.vcf.gz` | Genetic variants from one genome or exome |
+| `annotated_vep.tsv` | VEP annotation table |
+| `pharmacogenes.txt` | Genes of interest |
+| `drug_gene_table.tsv` | Drug-gene relationships |
+| `candidate_output.tsv` | Merged candidate table |
+
+A real workflow may also use BED files, reference FASTA files, VEP cache files, gene panels, PharmVar allele definitions, CPIC tables, and FDA drug labels.
+
+## Resources used
+
+Each resource answers a different part of the pharmacogenomic question.
+
+| Resource | Role |
+|---|---|
+| Ensembl VEP | Converts genomic coordinates into gene and transcript annotations |
+| MANE Select | Defines preferred matched Ensembl and RefSeq transcripts |
+| PharmVar | Defines star alleles for pharmacogenes |
+| CPIC | Provides clinical pharmacogenetic implementation guidelines |
+| PharmGKB | Curates drug-gene evidence, annotations, labels, and pathways |
+| DPWG | Provides pharmacogenetic dosing recommendations |
+| FDA pharmacogenomic biomarker table | Links drug labels to pharmacogenomic biomarkers |
+| DrugBank | Lists drug targets, enzymes, carriers, transporters, and drug metadata |
+| ClinVar | Curated variant-level clinical assertions |
+| gnomAD | Population allele frequencies |
+
+DrugBank is useful for drug-target relationships. CPIC, PharmGKB, PharmVar, and DPWG are closer to clinical pharmacogenomic interpretation.
+
+## Example VCF
+
+Public example genomes are available from the Personal Genome Project.
+
+The original classroom exercise used:
+
+```text
+Profile: hu24385B
+Source: Personal Genome Project
+File: hu24385B 2019-04-07.vcf.gz
+Sequencing provider: Dante Labs Whole Genome
+Approximate size: 147 MB
+Approximate variants: 3.46 million
+```
+
+A VCF is a structured text file. It contains metadata, a column header, and one row per variant.
+
+| Column | Meaning |
+|---|---|
+| CHROM | Chromosome or contig |
+| POS | Position on the reference genome |
+| ID | Variant identifier, often rsID |
+| REF | Reference allele |
+| ALT | Alternate allele |
+| QUAL | Variant quality score |
+| FILTER | Pass or filter status |
+| INFO | Variant-level annotations |
+| FORMAT | Genotype field definitions |
+| Sample column | Genotype-level data for one sample |
 
 <img src="{{ site.baseurl }}{% link images/vcf_header.png %}" width="100%">
 
 <img src="{{ site.baseurl }}{% link images/vcf_body.png %}" width="100%">
 
-## Annotate VCF data
-Annotation information about the gene name (or related diseases) is often not present when the VCF is generated and only added later.
-To get the gene names, the simplest way was is to upload a VCF (or a part of it) to [Variant Effect Predictor](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/).
-This will supply the gene symbol (and any other information about each DNA variant).
+## Inspect the VCF
 
-To reduce the time and output you can limit the options:
-* Split the file and run in batches to save time.
-* Test the first ~1800 variants:
-<br/>
-`head -2000 56001801068861_WGZ.snp.vcf > test.vcf`
-<br/>
-* Then annotate with [Variant Effect Predictor.](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/)
+Keep the original compressed file unchanged.
+
+```bash
+ls -lh hu24385B.vcf.gz
+```
+
+Count the number of variant rows.
+
+```bash
+zgrep -vc '^#' hu24385B.vcf.gz
+```
+
+Inspect the metadata.
+
+```bash
+zgrep '^##' hu24385B.vcf.gz | head -40
+```
+
+Inspect the column header.
+
+```bash
+zgrep '^#CHROM' hu24385B.vcf.gz
+```
+
+Inspect the first variant rows.
+
+```bash
+zgrep -v '^#' hu24385B.vcf.gz | head
+```
+
+The first useful skill is recognising the difference between metadata lines, the VCF header, and variant rows.
+
+## Check the reference genome
+
+Genomic coordinates depend on the reference genome.
+
+A variant reported at one coordinate in GRCh37 may have a different coordinate in GRCh38. Annotation databases must match the reference build used to generate the VCF.
+
+Check the reference metadata.
+
+```bash
+zgrep '^##reference=' hu24385B.vcf.gz
+```
+
+Check chromosome naming.
+
+```bash
+zgrep '^##contig=' hu24385B.vcf.gz | head
+```
+
+A VCF using `1` will not automatically match a BED file using `chr1`. Coordinate systems and chromosome naming must be consistent before filtering or annotation.
+
+## Annotate variants with VEP
+
+A raw VCF usually contains coordinates, alleles, genotype fields, and variant quality information. It does not necessarily contain gene symbols, transcript consequences, protein changes, ClinVar terms, or population frequencies.
+
+Ensembl Variant Effect Predictor, or VEP, adds these fields.
+
+Useful VEP fields include:
+
+| VEP field | Meaning |
+|---|---|
+| SYMBOL | HGNC gene symbol |
+| Gene | Ensembl gene ID |
+| Feature | Transcript ID |
+| Consequence | Predicted variant consequence |
+| HGVSc | Coding DNA change |
+| HGVSp | Protein change |
+| IMPACT | Broad consequence severity |
+| MANE_SELECT | MANE Select transcript flag |
+| Existing_variation | Known variant ID, often rsID |
+| CLIN_SIG | ClinVar clinical significance where available |
+| gnomAD_AF | Population allele frequency where available |
+
 <img src="{{ site.baseurl }}{% link images/vcf_vep.png %}" width="100%">
 
-* Make certain that you use the same reference genome as used on the input data.
-* The VCF file was made using reference genome GRCh37.
-* Therefore, the Ensembl/VEP website URL should be for that genome build (grch37, not the default GRCh38).
+For a small example, the VEP web interface is acceptable. For a whole genome or repeated analysis, run VEP locally with a matching cache.
 
-## Annotating a full VCF
-* One _could_ annotate a whole genome using the Ensembl web interface.
-* However, one would need to split your VCF into smaller block first.
-* For routine usage the command-line version of VEP and it's databases should be installed on run locally.
-* **I will provide a completed annotated VCF for you.**
+## Split a VCF for web annotation
 
-There are several bioinformatics tools that are commonly used for manipulating  genetic file formats such as VCFtools. 
-However, to get a real understanding of the data type, here is a method using command line bash to split a VCF file into smaller blocks. 
-A bash script is printed below where I use very mainstream traditional command-line tools to wrangle data, including 
-[gunzip](https://en.wikipedia.org/wiki/Gzip)
-to unzip compressed files, 
-[wc](https://en.wikipedia.org/wiki/wc_(Unix))
-to count lines, 
-[cat](https://en.wikipedia.org/wiki/Cat_(Unix))
-to print a file, 
-[head](https://en.wikipedia.org/wiki/Head_(Unix))
-to read the top of a file, 
-[sed](https://en.wikipedia.org/wiki/Sed)
-to edit lines, 
-[awk](https://en.wikipedia.org/wiki/AWK)
-for data extraction, and
-[grep](https://en.wikipedia.org/wiki/Grep) for text search (not used).
+The VEP web interface has file-size limits. Splitting a VCF is useful for a classroom example. It is not a good production strategy.
 
-Putting the code below into a file with the filename extension with ".sh" will allow it to be run by your terminal, in this case using the bash language.
-I encourage you to read each line and figure out what should happen. If it makes sense then it is reasonable to swap such a manual method with a more efficient specialised tool. 
+The header must be preserved in every split file.
 
-``` bash
-#!/bin/bash
-# VEP accept files of <50MB size.
-# We will split our large VCF into smaller files.
-# Each file requires the same original 
-# headers and file extension ".vcf"
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Unzip the VCF.gz
-gunzip 56001801068861_WGZ.snp.vcf.gz
+input="hu24385B.vcf.gz"
+outdir="split_vcf"
+lines_per_file=150000
 
-# Count the number of lines in vcf
-wc -l 56001801068861_WGZ.snp.vcf
+mkdir -p "$outdir"
 
-# How should a vcf file look?
-# See the links posted in this tutorial above
+zgrep '^#' "$input" > "$outdir/header.vcf"
 
-# Take a look at the header
-# This VCF has 140 lines of header metadata (beginning with "#")
-# Line 141 shows the column headers: CHROM	POS	ID	REF	ALT...
-# Line 142 starts with the first variant
-head -142 56001801068861_WGZ.snp.vcf
+zgrep -v '^#' "$input" | split -l "$lines_per_file" - "$outdir/block_"
 
-# Print the header to a new file for later
-head -141 56001801068861_WGZ.snp.vcf > header
-# Print everything else (the body) to 
-# a new file that we will then split.
-sed '1,141d' 56001801068861_WGZ.snp.vcf > body.vcf
-
-# Make a new directory for the next step
-mkdir split_files
-# Move the large file inside
-mv body.vcf split_files/
-cd split_files
-# Now split the body.vcf into smaller 
-# files of 200,000 lines each
-split -l 150000 body.vcf
-
-# You will now how ~10 files "xaa, xab, etc."
-# Add the header back onto all of these files to make them VCFs again.
-# This "for loop" will do the following for each file:
-# Print the header and the vcf body to 
-# a file with the same name, 
-# adding a file extension ".vcf".
-# Then remove the vcf body file that 
-# does not have the ".vcf" extension
-# leaving you with the original whole genome VCF split
-# into smaller files, each with the same headers.
-
-for file in ./x* ; 
-    do cat ../header $file >> $file.vcf && rm $file ;
+for block in "$outdir"/block_*; do
+  cat "$outdir/header.vcf" "$block" > "${block}.vcf"
+  rm "$block"
 done
-
-# These should be small enough to run on VEP online.
-# You could edit the split command to make a 
-# reasonable number of files, 
-# uploading >10 is not efficient.
-
 ```
 
-## Comparing annotated genetic data to drug lists
-* We now assume that we have a VCF where VEP annotated each variant.
-* The features can include gene names, variant consequence, pahtnogenicy prediction, etc.
-* The next aim is to see if any output genes are also present in your drug-gene database.
-* The method will require merging both dataset (gene and drug datasets) based on shared features. 
-* A simple sanity test would be useful first.
+Each `block_*.vcf` file now contains the original metadata, the VCF column header, and a subset of variant rows.
 
-### Drug-gene list
-Here is a drug-gene list "similar" to the private version from DrugBank:
-* [notdrugbank_all_interaction.txt](https://lawlessgenomics.com/pages/drugbank_all_interaction.txt)
+## Run VEP locally
 
-Drugbank has changed their access policy and now requires access applications. 
-If you want the up-to-date DrugBank data I believe you can apply for non-commercial use (and wait a few days). 
-The data can then be found at:
-[https://go.drugbank.com/releases/latest#protein-identifiers](https://go.drugbank.com/releases/latest#protein-identifiers), 
-"protein-identifiers" tab, "Drug Target Identifiers" section, "All" file.
+A local VEP command for a GRCh37 VCF might look like this.
 
-### Example of how to check gene list versus drug-gene list
-* Extract the gene symbols column from VEP output
-* Compare gene symbols to a list of druggable target genes from 
-[DrugBank](https://www.drugbank.ca).
-
-``` bash
-# Get a list of unique gene symbols
-cut -f1 -d "," vep_output_file.csv - uniq > unique.genes.txt
-
-# - Cut column 1 (f1) 
-# - with a delimiter comma (,) 
-# - from the vep output csv file (or tsv, or text file)
-# - then pipe (\|) that result into another program (sort) to sort the result in alphabetic order
-# - pipe (\|) again this result into(uniq) 
-# - so that only one unique gene name is output
-# - then (>) write the output into the new file "unique.genes.txt".  
-```
-<br/>
-
-* Repeat the same method on the DrugBank dataset 
-* Output the gene names from DrugBank to "unique.druggable.txt"
-<br/>
-
-``` bash
-# Get a list of gene symbols which are present in both datasets
-sort unique.genes.txt unique.druggable.txt - uniq -c -i | grep -v '1 '
+```bash
+vep \
+  --input_file hu24385B.vcf.gz \
+  --output_file hu24385B.vep.tsv \
+  --cache \
+  --offline \
+  --assembly GRCh37 \
+  --tab \
+  --symbol \
+  --canonical \
+  --mane \
+  --hgvs \
+  --protein \
+  --variant_class \
+  --sift b \
+  --polyphen b \
+  --af_gnomad \
+  --clin_sig \
+  --fork 8
 ```
 
-This command also used "uniq -c" to count how many times each gen name occurs and then "grep -v '1 '" meaning ignore genes that are only present 1 time. 
-We want the genes that are present twice, once in each list.
+For GRCh38, change the assembly argument.
 
-* The genes which were in present in both the variant list and DrugBank list are:
-* From a 2,000 line VCF file:
-    * [GABRD](https://www.drugbank.ca/bio_entities/BE0003599),
-    * [PRKCZ](https://www.drugbank.ca/bio_entities/BE0004895),
-    * [SCNN1D](https://www.drugbank.ca/bio_entities/BE0000495)  
-* From a 10,000 VCF line file:
-    * [GABRD](https://www.drugbank.ca/bio_entities/BE0003599),
-    * [PRKCZ](https://www.drugbank.ca/bio_entities/BE0004895),
-    * [SCNN1D](https://www.drugbank.ca/bio_entities/BE0000495),
-    * [TP73](https://www.drugbank.ca/bio_entities/BE0008994).
-
-## Full-scale merging genetic and pharmacogenomic data
-<!-- The previos section showed a small example the logic of the process, we can try a more complex real-world example. --> 
-The following R language script is used to merge the VEP annotated VCF file with a DrugBank database based on the gene names that are common to both datasets.
-Read each line and try to understand the process. 
-<!-- The are many alternative ways to do the same thing in different programming languages. --> 
-I recommending installing R and then installing R studio to edit and run your commands.
-
-<!-- * If you need a copy of the data and code used in the following example, email me and ask for: "r_merge.zip" -->
-
-``` R
-# Comment lines are ignored because of "#" symbol.
-# Command lines are run by clicking "Run" or "command+enter" on Mac
-
-# csv = comma sep file
-# tsv = tab spaced
-# txt = white space
-
-#///////////////////////////////
-# To do
-#///////////////////////////////
-# Files: vepfile, drugs
-# merge based on Gene symbol
-
-#///////////////////////////////
-# import the VEP file
-#///////////////////////////////
-
-# Important note:
-# The VEP file will start with a header line 
-# that begins with "#" symbol. But this is being ignored by R.
-# Open the file with text edit and remove that symbol.
-# Maybe there is an R command to do this on import, whatever is faster.
-
-# Split vcf into ~ 10 files. 
-# file 1 "xaa" was anylised on VEP, 
-# download the TXT version, 
-# or unzip my provided example one - cfKJCLRm0eKXsaEG.txt.zip
-# https://grch37.ensembl.org/Homo_sapiens/Tools/VEP/
-
-# Import the VEP output
-vepfile <- read.table(
-  file="cfKJCLRm0eKXsaEG.txt",
-  na.strings=c("", "NA"),
-  sep="\t",
-  header=TRUE)
-
-# Import drugbank table
-# the "fill=TRUE" is needed because not all 
-# file lines have the same number of elements.
-drugs <- read.table(
-  file="drugbank_all_interaction.txt",
-  na.strings=c("", "NA"),
-  sep="\t",
-  header=TRUE,
-  fill = TRUE )
-
-
-# We can merge these two files based on 1 common column.
-# However, the gene name column does not have the same name.
-# One of them needs to be renamed:
-# vepfile="SYMBOL"
-# drugs="Gene.Name"
-
-# colnames(df)[colnames(df) == 'oldName'] <- 'newName'
-colnames(vepfile)[colnames(vepfile) == "SYMBOL"] <- "Gene.Name"
-
-# Merge keeping only matches
-merged <- merge(x = vepfile,
-                y = drugs,
-                by = "Gene.Name", all = FALSE)
-
-# Remove empty data "NA"
-# Install packeges once (comment out then)
-# Load library each time to use "%>%" (command join) and filtering
-install.packages("tidyr")
-library(tidyr)
-install.packages("dplyr")
-library(dplyr)
-df1 <- merged %>% drop_na(Drug.IDs)
-
-# Make a list of benign variant types that should be removed
-filter_out <- 
-    'synonymous_variant|UTR|NMD_transcript\
-	|non_coding|downstream|upstream\
-	|intron|mature_miRNA_variant'
-
-# Then filter out anything matching these terms.
-df2 <- df1 %>% filter_all(all_vars(!grepl(filter_out,.)))
-
-# Save an output tsv file for Excel, etc.
-write.table((df2), file='./output.tsv', sep="\t", \
-quote=FALSE, row.names=FALSE)
+```bash
+--assembly GRCh38
 ```
 
-If you complete this process the output will contain a perfectly merged dataset.
-<!-- So in this simple example it takes just 5 minutes to get from a real genome VCF to possibly druggable target genes (see further note on _drug indication_ below). -->
+The output file is a tab-separated table. It can be searched, filtered, joined, and imported into R or Python.
 
-## Downstream interpretation
-The next challenge lies downstream in interpreting which variants can have an effect that would justify the use of the drug.
+## Clean the VEP output
 
-* Are non-coding or synonymous variants worth reporting?
-* Genes have multiple transcripts which means one variant can be both coding and non-coding depending on transcript splicing, etc.
-* How can we integrate pharmacodynamics, covariates to drug response, contraindications, variant pathogenicity, etc.
-<!-- Other sources of sequence data, including the sequences of Watson and Venter; -->  
-<!-- [http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/) -->  
-<!-- 23andMe open snp data; [https://opensnp.org/genotypes](https://opensnp.org/genotypes). -->
-<!-- There are many layers to a this problem to create a usable product. -->
+VEP tabular output may include metadata lines beginning with `##`. Keep the main header and remove metadata lines.
 
-## Drug indication
-My example used [DrugBank](https://www.drugbank.ca) for pharmacogenomic information. 
-Another option is to use the [FDA information](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling) as the primary source.
+```bash
+grep -v '^##' hu24385B.vep.tsv > hu24385B.vep.clean.tsv
+```
 
-### Is the gene-drug interaction good or bad?
-Drugs might be either a treatment for a genetic determinant, or a warning for drug usage in someone who also has a genetic variation that might effect their treatment.
-The "Labelling Section" listed by FDA might offer the best information.
+Print the column names as a numbered list.
 
-[https://www.fda.gov/drugs/](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)
-For example, if we go and check the Prescribing Information PDF to compare two drugs we see that
+```bash
+head -1 hu24385B.vep.clean.tsv | tr '\t' '\n' | nl
+```
 
-<br/>
-**(1)** One is used to directly block a gene product,  
-**(2)** The second warns about use with certain genetic complications.  
+Find the `SYMBOL` column.
 
-<br/>
-**Drug 1**: [Atezolizumab](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&varApplNo=761034) (1),  
-**Gene**: [_CD274_](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling) [(PD-L1)](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)  
-**Labeling**: Indications and Usage  
-**PRESCRIBING** **INFORMATION**: TECENTRIQ (Atezolizumab) is a programmed death-ligand 1 (PD-L1) blocking antibody indicated for the treatment of patients with...
-[linked PDF](https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/761034Orig1s000lbl.pdf).  
-**Explained**: Genetic disorder and the drug to treat it, exactly what you want.  
+```bash
+head -1 hu24385B.vep.clean.tsv | tr '\t' '\n' | nl | grep 'SYMBOL'
+```
 
-<br/>
-**Drug 2**: Avatrombopag (3)  
-**Gene**: [_PROC_](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)  
-**Labeling**: Warnings and Precautions  
-**PRESCRIBING INFORMATION**: Thrombotic/Thromboembolic Complications: DOPTELET is a thrombopoietin (TPO) receptor agonist... Monitor platelet counts and for thromboembolic events
-[linked PDF](https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/210238s002lbl.pdf).  
-**Explained**: Atezolizumab is used to treat thrombocytopenia (low levels of thrombocytes).  
-You _do not want to give_ this to someone who has [_PROC_](https://omim.org/entry/176860?search=proc&highlight=proc)[ deficiency](https://omim.org/entry/176860?search=proc&highlight=proc);
-their disease is [Thrombophilia](https://en.wikipedia.org/wiki/Thrombophilia) (hypercoagulability, or [thrombosis](https://en.wikipedia.org/wiki/Thrombosis)).
-With this in mind, perhaps an application doing this job could work two ways.
-(1) If someone has a genetic disorder, the drug, gene, and Indicated usage appears.
-(2) If someone is prescribed a drug a suggestion appears to check their genetics, with a link to the gene and Warnings and Precautions.
+Suppose `SYMBOL` is column 14. Extract unique gene symbols.
 
-## Understanding variant annotation
-[Variant Effect Predictor (VEP)](http://grch37.ensembl.org/Homo_sapiens/Tools/VEP/) is very useful.
-During variant annotation, VEP supplies a "consequence" column.
-Consequences are general and based on translation of genetic code in humans. 
-The Loss-of-function (LoF) consequence is the simplest example (splice, stop mutations).
-The variant consequence may be one of the defining criteria by which variants can 
-be included in analysis since they are _interpretable_ or of ostensibly _known significance_.
-_Note: Using this alone could introduce spurious results so it is  best to have a solid criteria 
-for selecting consequences of interest_.
-The consequences provided by VEP are too long to discuss in detail here.
-The table from the ensembl website is worth reading; the HIGH impact variants 
-might be a simple method for selecting candidates:
-[Ensembl Variation - Calculated variant consequences](https://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences).\
+```bash
+awk -F '\t' 'NR > 1 && $14 != "" {print $14}' hu24385B.vep.clean.tsv \
+  | sort -u > genes_from_vcf.txt
+```
+
+This file contains genes with at least one annotated variant in the VCF.
+
+It is a screening file. It does not contain allele interpretation.
+
+## Build a small pharmacogene list
+
+Create a simple pharmacogene file.
+
+```text
+CYP2D6
+CYP2C19
+CYP2C9
+VKORC1
+TPMT
+NUDT15
+DPYD
+UGT1A1
+SLCO1B1
+HLA-B
+HLA-A
+CFTR
+G6PD
+```
+
+Save it as:
+
+```text
+pharmacogenes.txt
+```
+
+These genes illustrate several pharmacogenomic mechanisms.
+
+| Gene | Common relevance |
+|---|---|
+| CYP2D6 | Antidepressants, antipsychotics, opioids, beta blockers |
+| CYP2C19 | Clopidogrel, proton pump inhibitors, antidepressants |
+| CYP2C9 | Warfarin, NSAIDs, phenytoin |
+| VKORC1 | Warfarin dose |
+| TPMT | Thiopurines |
+| NUDT15 | Thiopurines |
+| DPYD | Fluoropyrimidines |
+| UGT1A1 | Irinotecan and atazanavir |
+| SLCO1B1 | Statin-associated myopathy risk |
+| HLA-B | Abacavir and allopurinol hypersensitivity |
+| HLA-A | Carbamazepine hypersensitivity in some populations |
+| CFTR | CFTR modulator eligibility |
+| G6PD | Haemolysis risk with oxidant drugs |
+
+The list is deliberately small. A complete clinical pharmacogenomics system would use curated allele definitions and guideline tables.
+
+
+## Compare VCF genes with pharmacogenes
+
+Sort both gene lists.
+
+```bash
+sort -u genes_from_vcf.txt > genes_from_vcf.sorted.txt
+sort -u pharmacogenes.txt > pharmacogenes.sorted.txt
+```
+
+Find genes present in both.
+
+```bash
+comm -12 genes_from_vcf.sorted.txt pharmacogenes.sorted.txt \
+  > pharmacogene_hits.txt
+```
+
+Inspect the result.
+
+```bash
+cat pharmacogene_hits.txt
+```
+
+This step answers one question only:
+
+```text
+Which pharmacogenes contain at least one annotated variant in this VCF?
+```
+
+It does not answer:
+
+```text
+Does this person have an actionable pharmacogenomic allele?
+```
+
+## Filter VEP rows to pharmacogenes
+
+Use the pharmacogene list to retain only VEP rows in relevant genes.
+
+```bash
+awk 'NR==FNR {genes[$1]; next}
+     FNR==1 {print; next}
+     $14 in genes {print}' \
+     pharmacogenes.txt \
+     hu24385B.vep.clean.tsv \
+     > hu24385B.pharmacogene_variants.tsv
+```
+
+This assumes `SYMBOL` is column 14. Change `$14` if your VEP output uses another column position.
+
+Count the remaining rows.
+
+```bash
+wc -l hu24385B.pharmacogene_variants.tsv
+```
+
+Inspect the first rows.
+
+```bash
+head hu24385B.pharmacogene_variants.tsv
+```
+
+## Reduce the VCF before annotation
+
+A full genome contains millions of variants. If the question is limited to pharmacogenes, reduce the VCF first.
+
+A BED file defines genomic intervals.
+
+```text
+chr10   94762681    94855547    CYP2C19
+chr22   42126499    42130865    CYP2D6
+chr7    117120016   117308718   CFTR
+```
+
+A BED file usually has at least three columns:
+
+| Column | Meaning |
+|---|---|
+| chrom | Chromosome |
+| chromStart | Start coordinate |
+| chromEnd | End coordinate |
+
+The BED file must match the VCF reference genome and chromosome naming.
+
+Using `bcftools`:
+
+```bash
+bcftools view \
+  -R pharmacogenes.GRCh37.bed \
+  -Oz \
+  -o hu24385B.pharmacogenes.vcf.gz \
+  hu24385B.vcf.gz
+
+bcftools index hu24385B.pharmacogenes.vcf.gz
+```
+
+Using `vcftools`:
+
+```bash
+vcftools \
+  --gzvcf hu24385B.vcf.gz \
+  --bed pharmacogenes.GRCh37.bed \
+  --recode \
+  --keep-INFO-all \
+  --out hu24385B.pharmacogenes
+```
+
+The reduced VCF is faster to annotate and easier to inspect.
+
+## Prepare a drug-gene table
+
+A simple drug-gene table can be stored as tab-separated text.
+
+```text
+Gene.Name   Drug.ID Drug.Name   Relationship    Source  Evidence
+CYP2C19 DB00758 Clopidogrel metabolism  CPIC    guideline
+CYP2D6  DB00472 Fluoxetine  metabolism  PharmGKB    curated
+SLCO1B1 DB00641 Simvastatin toxicity    CPIC    guideline
+DPYD    DB00544 Fluorouracil    toxicity    CPIC    guideline
+CFTR    DB08820 Ivacaftor   target  FDA label
+```
+
+This file is a teaching substitute for a curated pharmacogenomic database.
+
+In a professional setting, the equivalent table would be assembled from controlled sources such as CPIC, PharmGKB, PharmVar, DPWG, FDA labels, and internal validation records.
+
+## Merge VEP and drug-gene data in R
+
+Import the VEP output and drug-gene table.
+
+```r
+vep <- read.delim(
+  "hu24385B.vep.clean.tsv",
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+
+drug_genes <- read.delim(
+  "drug_gene_table.tsv",
+  stringsAsFactors = FALSE,
+  check.names = FALSE
+)
+```
+
+Rename the VEP gene symbol column to match the drug-gene table.
+
+```r
+names(vep)[names(vep) == "SYMBOL"] <- "Gene.Name"
+```
+
+Remove rows without a gene symbol.
+
+```r
+vep <- vep[!is.na(vep$Gene.Name) & vep$Gene.Name != "", ]
+```
+
+Merge by gene name.
+
+```r
+merged <- merge(
+  x = vep,
+  y = drug_genes,
+  by = "Gene.Name",
+  all = FALSE
+)
+```
+
+Remove low-information variant consequences for this exercise.
+
+```r
+low_information <- paste(
+  c(
+    "synonymous_variant",
+    "intron_variant",
+    "upstream_gene_variant",
+    "downstream_gene_variant",
+    "UTR",
+    "non_coding_transcript",
+    "NMD_transcript_variant"
+  ),
+  collapse = "|"
+)
+
+keep <- !grepl(low_information, merged$Consequence)
+merged_filtered <- merged[keep, ]
+```
+
+Write the candidate table.
+
+```r
+write.table(
+  merged_filtered,
+  file = "pharmacogene_variant_drug_matches.tsv",
+  sep = "\t",
+  quote = FALSE,
+  row.names = FALSE
+)
+```
+
+The output table links annotated variants to drug-gene records.
+
+It is still a candidate table. Interpretation comes later.
+
+## Merge VEP and drug-gene data in Python
+
+The same join can be written in Python using `pandas`.
+
+```python
+import pandas as pd
+
+vep = pd.read_csv("hu24385B.vep.clean.tsv", sep="\t")
+drug_genes = pd.read_csv("drug_gene_table.tsv", sep="\t")
+
+vep = vep.rename(columns={"SYMBOL": "Gene.Name"})
+vep = vep[vep["Gene.Name"].notna() & (vep["Gene.Name"] != "")]
+
+merged = vep.merge(drug_genes, on="Gene.Name", how="inner")
+
+low_information = (
+    "synonymous_variant|"
+    "intron_variant|"
+    "upstream_gene_variant|"
+    "downstream_gene_variant|"
+    "UTR|"
+    "non_coding_transcript|"
+    "NMD_transcript_variant"
+)
+
+merged_filtered = merged[
+    ~merged["Consequence"].astype(str).str.contains(low_information, regex=True)
+]
+
+merged_filtered.to_csv(
+    "pharmacogene_variant_drug_matches.tsv",
+    sep="\t",
+    index=False
+)
+```
+
+The Python version is shorter. The Bash and R versions make more of the file mechanics visible.
+
+## Read the candidate table
+
+The candidate table should contain enough fields to show the chain from variant to drug relationship.
+
+| Column | Meaning |
+|---|---|
+| Gene.Name | HGNC gene symbol |
+| Location or Uploaded_variation | Variant coordinate or VEP variant ID |
+| Allele | Alternate allele |
+| Consequence | VEP consequence |
+| HGVSc | Coding change |
+| HGVSp | Protein change |
+| Existing_variation | Known ID such as rsID |
+| CLIN_SIG | ClinVar assertion where available |
+| Drug.ID | Drug identifier |
+| Drug.Name | Drug name |
+| Relationship | Metabolism, toxicity, efficacy, target, biomarker, or warning |
+| Source | CPIC, PharmGKB, FDA, DrugBank, or other |
+| Evidence | Guideline, label, curated evidence, prediction, or candidate match |
+
+A candidate row does not mean that a drug should be given or avoided. It means the row has enough structure for review.
+
+## Consequence is not interpretation
+
+VEP consequence terms describe predicted molecular effect.
+
+| Consequence | Typical meaning |
+|---|---|
+| stop_gained | Creates a premature stop codon |
+| frameshift_variant | Changes the reading frame |
+| splice_acceptor_variant | Affects a canonical splice acceptor |
+| splice_donor_variant | Affects a canonical splice donor |
+| start_lost | Alters the start codon |
+| missense_variant | Changes one amino acid |
+| synonymous_variant | Does not change the amino acid sequence |
+| intron_variant | Located in an intron |
+
 <img src="{{ site.baseurl }}{% link images/VEP_consequences.jpg %}" width="100%">
 
-_Note: For a real product, the code should be run offline (a perl program with a few local library dependencies). The databases/cache that it uses are a bit too large to include on in a user software. In the real world you would have to send anonymised packets from the user via an API for accessing the genomic databases hosted on your servers. Make sure to check their license to see if you can use oftware and databases in a commercial product_.
-[http://www.ensembl.org/info/about/legal/code_licence.html](http://www.ensembl.org/info/about/legal/code_licence.html) 
+A high-impact consequence can support interpretation. It is not automatically pathogenic. A missense variant can be benign, damaging, uncertain, or irrelevant to the drug response.
 
-Running the software:
+Transcript choice also matters. A variant can be coding on one transcript and non-coding on another. MANE Select transcripts are often preferred for clinical reporting where available.
 
-* Using VEP is a vital part of converting the DNA variant information (genome position and nucleotide change) into annotated variant effects (protein coding change, gene name, predicted pathogenicity).
-* It requires the VEP code to run and requires a copy of the database files (reference genome, gene information, etc.).
-* You can upload a small number of variants to the online VEP web server to do this, or you can download the database and code to run on your own computer/server.
+## Known pharmacogenomic alleles
 
-So to process your customer/patient data, you have to choose one of these methods:
+Many pharmacogenomic results are not interpreted from single VCF rows.
 
-1. Customer must upload their entire file to your server that runs VEP (1GB - 30GB per individual genome data).
-2. Customer must download the database and VEP code to run on their own computer (complex and large download for them, not recommended).
+They are often interpreted as star alleles, diplotypes, copy number states, repeat genotypes, or HLA alleles.
 
-Number 1 is better. But sending one large file often has problems.
-If they have a VCF file, you could:
+| Gene | Result type |
+|---|---|
+| CYP2D6 | Star alleles, copy number, hybrid alleles |
+| CYP2C19 | Star alleles |
+| CYP2C9 | Star alleles |
+| TPMT | Star alleles or named variants |
+| NUDT15 | Named alleles |
+| HLA-B | HLA allele, such as HLA-B*57:01 |
+| UGT1A1 | Repeat genotype, such as UGT1A1*28 |
+| SLCO1B1 | Specific variant or haplotype |
 
-* Break it into small equal sized blocks to upload the data to you. Anonymisation is normal for all internet connections now, but you could just mention that some method of anonymising these blocks is important since someone "hacker" might try to steal information if most of the network data being sent to you contains small VCF format files.
-* You could also run a very small piece of code on the cusotmers software application that could extract just the main parts of the VCF file that you need, instead of sending everything. This is explained in sections 7-9. You could say this, but don't need to actually have working. i.e. the drugbank information only includes a certain number of human genes so perhaps you could just extract these using a list of genome coordinates before processing with VEP.
+A standard SNV VCF can miss important pharmacogenomic structure.
 
-For the license:
+| Task | Tools or resources |
+|---|---|
+| CYP2D6 calling | Aldy, Stargazer, Cyrius, Astrolabe |
+| HLA typing | OptiType, HLA-HD, HISAT-genotype |
+| Pharmacogenomic annotation | PharmCAT |
+| Star allele definitions | PharmVar |
+| Clinical recommendations | CPIC, DPWG |
 
-* Anyone is free to download and use VEP code.
-* However, if you modify or reuse the code commercially it might affect the possibility of getting a patent for your product.
-* Your product uses VEP as an intermediate step, so you probably only need to include credit, or other legal info to say you have used it.
-* If there were a reason to prevent you using the software commercially, you might be able to make a simple replacement that could give the minimum outputs that you need - gene name and mutation type. If the topic happens to interest you, you can read about [reverse engineering software](https://en.wikipedia.org/wiki/Reverse_engineering#Software).
-* As an aside, you could also decide that you don't want to commercialise and offer this tool for free which would prevent bigger companies (like Google) from offering this service in return for harvesting the public's genetic data.
+Gene-level matching is the first pass. Allele-level interpretation is required before a pharmacogenomic conclusion.
 
-### Optimising VCF annotation
-The slowest part of the method is VCF annotation.
-You can significantly increase the speed by first reducing the input to contain only regions of interst.
-That is, prepare a list of coordinates for each gene, and select for those regions in your input VCF or genotype data before annotation (VEP).
+## Zygosity and dosage
 
-### How to get coordinates for a gene list
-Use Biomart.
-Their main server was down when I tried, so I went via Ensembl, data access section:  
-[http://www.ensembl.org/info/data/biomart/index.html](http://www.ensembl.org/info/data/biomart/index.html)  
-Then to use the BioMart data mining tool  
-[http://www.ensembl.org/biomart/martview/](http://www.ensembl.org/biomart/martview/28fdaf82da6c02dc5892f99b757e2c44)  
-I actually needed the positions using GRCh37 (rather than 38), so I switched to the old Ensembl using  
-[http://www.ensembl.org/info/website/tutorials/grch37.html](http://www.ensembl.org/info/website/tutorials/grch37.html)  
-to get to [http://grch37.ensembl.org/index.html](http://grch37.ensembl.org/index.html) 
-then the Biomart section  
-[http://grch37.ensembl.org/biomart/martview/](http://grch37.ensembl.org/biomart/martview/04f009257dadbafbe595155ba910eb5e)
+Genotype affects interpretation.
 
-Choose DataBase: Genes 93 Dataset: Human Filter -> Gene -> Input external ref ID list -> (change dropdown) Gene
-Name paste your list.
-e.g. VPS45 PSMB8 BLNK NEFL NLRP7 SMAD4 PSMB9  
-To set the output type: Attributes -> Gene -> select "gene start", "gene stop", "gene name", or anything extra.
-Select the "Results" button at the top and export.
-The results can be tsv or csv.
-You would have to figure out how to extract the regions from the vcf (sed, grep, awk, R code, etc.).
-When I needed this, I used my own tools which required converting to format like this "X:1-2000", and ordered by number and alphabetic (some positions in the reference genome were patches added later and have an alphanumeric instead of the normal chromosome).
-If you use this list to extract regions from a VCF, remember to include all the original VCF header information.
+| State | Meaning |
+|---|---|
+| Heterozygous | One alternate allele |
+| Homozygous | Two alternate alleles |
+| Hemizygous | One copy of the region |
+| Compound heterozygous | Two different variants in the same gene |
+| Copy number change | Deletion or duplication of a gene or region |
+| Mosaic | Variant present in only some cells |
 
-### Extracting regions from a VCF using a bed file
-The early part of this tutorial shows how old-school command line tools can be used to extract data. 
-Indeed, this may be computationally most efficient but there are some specialised tools that make the process easier in general.
-You can use VCFtools to extract specified regions.  
-[https://vcftools.github.io/man_latest.html](https://vcftools.github.io/man_latest.html)  
-You could use a list of defined genome position to reduce the size of your dataset. 
-The defined genomic coordinates are generally supplied in a file format called the (BED file](https://en.wikipedia.org/wiki/BED_(file_format))
-Note that sometimes the bed file "chrom" ID - the name of the chromosome (e.g. chr3) does not match if the VCF file uses "3" instead of "chr3".
-You might need to edit the bed.
-My bed file was like this:  
-(tab spaced), ref.bed  
-<br/>
-chrom    chromStart    chromEnd  
-1    3549    13555  
-<br/>
-And this command ran OK for me to give "output_prefix.recode.vcf"<br/>
-``` bash
-$:~/tools/vcftools_0.1.13/bin \
-./vcftools \
---vcf ~/input.vcf \
---bed ~/ref.bed \
---out output_prefix \
---recode --keep-INFO-all
-```
+Pharmacogenomic reports often translate genotype into a functional phenotype, such as poor, intermediate, normal, rapid, or ultrarapid metaboliser.
 
-This new VCF will now only contain gene regions that are potentially "druggable", or at least included on the FDA list.
-VCF annotation will be _much faster_ than annotation of the whole genome.
+CYP2D6 shows why dosage matters. A person may carry inactive alleles, reduced-function alleles, gene duplications, or hybrid alleles. A simple SNV table cannot always resolve that structure.
+
+## Drug-gene relationship types
+
+A drug-gene match can mean several things.
+
+| Relationship | Meaning |
+|---|---|
+| Metabolism | The gene product affects drug exposure |
+| Toxicity | The genotype changes adverse event risk |
+| Efficacy | The genotype changes probability of response |
+| Target | The drug binds the gene product |
+| Biomarker | The gene or variant is part of a labelled indication |
+| Warning | The genotype or disease state changes risk |
+
+A drug target is not the same as a prescribing rule.
+
+A drug may bind a protein encoded by a gene, but inherited variation in that gene may have no known treatment effect. A pharmacogenomic variant may affect metabolism of many drugs without being part of the drug target.
+
+The FDA pharmacogenomic biomarker table and drug prescribing information help distinguish these categories.
 
 ## Unknown variants
-In the majority of situations you will be stuck with _variants of unknown significance_.
-In the absence of tailored analysis and interpretation of each invidual variant, one must often rank unknown variants based on a predicted pathogenicity.
-Carefully consider that predictions can be completed wrong and address how such an annotation should be presented. 
-One can rank unknown variants based on PHRED-scaled CADD score, highest being more predicted pathogenic.
-https://cadd.gs.washington.edu/info  
-[Polyphen](http://genetics.bwh.harvard.edu/pph2/) gives a predicted outcome label and a probability score 0-1 from benign to probably damaging.
-See what other pathogenicity prediction tools you can find and estimate how widespread/accepted their usage is.
 
-## Gene dosage
-An important cosideration of variant effect depends on gene dosage.
-A [dominant gene](https://en.wikipedia.org/wiki/Dominance_(genetics)) may be affected by a single heterozgous variant while a recessive gene may be able to compensate against the negative effect of a heterozyous variant due the presence of a second functional gene copy.
-Therefore, the presence of heterozygous or homozygous allele is an important consideration.
-Some genes may be sensitive to a [hemizygous](https://en.wikipedia.org/wiki/Zygosity) effect, low frequency [somatic variants](https://en.wikipedia.org/wiki/Somatic_(biology)),
-[mosaisism](https://en.wikipedia.org/wiki/Mosaic_(genetics)), etc.
-[SNV calling in NGS](https://en.wikipedia.org/wiki/SNV_calling_from_NGS_data) is a broad topic, but it is safe to say that at least the allele dosage (generally heterozygous or homozygous) should be included in result summary.
-If possible, when a gene is linked to a specific disease then the [inheritance type](https://en.wikipedia.org/wiki/Heredity) associated with that gene-disease should also be included. 
-For example, [https://www.omim.org](https://www.omim.org) is a good place to see examles.
-The genetic disease [cystic fibrosis](https://www.omim.org/entry/219700?search=cystic%20fibrosis&highlight=cystic%20fibrosi) is shown with an inheritance type AR (autosomal recessive) meaning that damaging variants on both gene alleles are required to cause disease. 
-The gene _cftr_, which is the genetic determinant of cystic fibrosis, also has an [OMIM page _cftr_](https://www.omim.org/entry/602421?search=cftr&highlight=cftr) that also lists AR inheritance.
-An excellent resource for matching gene to disease is the [https://panelapp.genomicsengland.co.uk](https://panelapp.genomicsengland.co.uk).
-Individual genes can be explored, or "panels" of disease-specific gene lists can be explored. For example, here is the "[Bleeding and platelet disorders](https://panelapp.genomicsengland.co.uk/panels/545/)" panel. 
-This shows the "Mode of inheritance" and colour-coded confidence in the disease-gene relationship.
-Integrating this type of expert-curated open datasets can be extremely useful.
+Most variants in a genome are not actionable.
 
+A rare missense variant in a pharmacogene may be known, benign, uncertain, technical, or research-only.
 
-## Drug indication
-The indication or warning can be difficult to automate.
-For the example drug  
-[https://www.drugbank.ca/drugs/DB11595](https://www.drugbank.ca/drugs/DB11595)  
-the section "Pharmacology" "Indication" has the Indication info.  
-The FDA label is contained as a PDF attachment in the section "REFERENCES" FDA label Download (245 KB).
-If I had to automate the process I would add a URL link for each drug:  
-for gene name CD274  
-the drugbank column Drug IDs has these:  
-DB11595; DB11714; DB11945  
-and for each ID you could append the ID onto the drugbank URL to link to the webpage
-[https://www.drugbank.ca/drugs/](https://www.drugbank.ca/drugs/).
-You can do this in R with some technical how-to reading, or do it manually for a quick example like this and removing space to create a web URL.  
-URL				Drug IDs  
-https://www.drugbank.ca/drugs/	DB00303  
-https://www.drugbank.ca/drugs/	DB00114  
-https://www.drugbank.ca/drugs/	DB00142  
-https://www.drugbank.ca/drugs/	DB01839  
-https://www.drugbank.ca/drugs/	DB00125  
+| Interpretation | Meaning |
+|---|---|
+| Known actionable allele | Evidence supports a drug-specific recommendation |
+| Known benign or tolerated variant | No action expected |
+| Variant of uncertain significance | Insufficient evidence |
+| Technical artefact | Variant call is not reliable |
+| Research candidate | Interesting, but not clinically interpretable |
 
-## A large scale example summary
-I do not suggest this for a small project, but if I was to automate subsection requests for real:  
-- [1] Download the whole database (probably a big table sized >100MB) and  
-- [2] For every query (the Drug ID) extract the sections of interest (indication,  Biologic Classification, Description,  FDA label, etc.)  
-- [3] Display each section as additional columns in candidate genes table.  
-<br/>
-- [1] Would be here: [https://www.drugbank.ca/releases/latest](https://www.drugbank.ca/releases/latest)  
-- [2] Would be like this: [https://www.w3schools.com/xml/default.asp](https://www.w3schools.com/xml/default.asp)  
-Look at example 2, your database request might be something like:
-[get food name = Belgian Waffles, description] or
-[get drug ID = DB11595, indication,  Biologic Classification, Description,  FDA label.]
-The database request problem can be tricky to optimise but not especially difficult with some experience in SQL-type management. 
-- [3] For every line in the gene candidate table, do this query request and output the result into the same row.  
-The final table would be something that includes colunm headers like:  
-Gene, consequence, variant, amino acid, genome position, CADD, DrugBank ID, Description, Indication, FDA label PDF link, etc.
-This table could be ranked based on consequence, CADD score.
-The top couple of rows then might be converted into a more readable format like a PDF.
+Prediction tools can help rank variants. They do not define clinical action.
 
-## Funding strategy
-University-based start-ups ususally follow a plan with three or four funding stages before coming to market. 
-It is also possible to get investors from day 1, but it is more usual to follow 
-the steps outlined here.
-It is also possible to partner with early investors for their guidance rather 
-than for financial investment.
+| Tool | Use |
+|---|---|
+| CADD | General deleteriousness score |
+| REVEL | Missense variant prediction |
+| AlphaMissense | Missense effect prediction |
+| SIFT | Protein tolerance prediction |
+| PolyPhen-2 | Missense effect prediction |
+| SpliceAI | Splice effect prediction |
 
-#### Example funding stages:
+Predicted effects should remain labelled as predictions.
 
-* A - Fundamental research (e.g. SNSF)
-* B - Tech development (gap between the basic research and usable product)
-* C - Product development (e.g. industry, Innosuisse funding)
+## Limits of the first-principles workflow
 
-#### Example funding sources per stage:
+The workflow explains the mechanics of a simple pharmacogenomics analysis. It does not replace a validated clinical pipeline.
 
-1. [A] Ignite grant
-	- <https://www.epfl.ch/innovation/startup/grants/ignition-grants/>
-	- 30K - 6 month, salary/consumables
+Special caution is needed for:
 
-2. [A] Innogrant
-	- <https://www.epfl.ch/innovation/startup/grants/innogrants/
-	- 100K - 1 year, salary for startup founder.
+| Gene or region | Reason |
+|---|---|
+| CYP2D6 | Copy number, hybrid alleles, and complex haplotypes |
+| HLA genes | High polymorphism and specialised typing requirements |
+| UGT1A1 | Repeat alleles may not be represented in simple VCFs |
+| Structural variants | Often absent from SNV-focused VCFs |
+| Low coverage regions | Negative results may be uninformative |
+| Direct-to-consumer data | Often incomplete for clinical PGx |
+| Transcript ambiguity | Consequence can change by transcript |
+| Reference mismatch | Coordinates and annotations can become incorrect |
 
-3. [B] BRIDGE Proof of concept
-	- <https://www.bridge.ch/en/proof-of-concept/>
-	- 130K - 1 year
+The most common error is treating a matched gene as an interpreted result.
 
-4. [B] BRIDGE Discovery 
-	- <https://www.bridge.ch/en/discovery/>
-	- (alternative to Proof of concept, more for experienced researchers).
+The correct interpretation chain is stricter.
 
-5. [C] Innosuisse 
-	- Federal funding for startups of social benefit, etc. 
-	- <https://www.innosuisse.ch/inno/en/home/start-and-grow-your-business/startup-coaching.html>
+```text
+variant call
+  ↓
+quality check
+  ↓
+correct reference build
+  ↓
+correct transcript or allele definition
+  ↓
+validated pharmacogenomic allele
+  ↓
+drug-specific guideline or label
+  ↓
+clinical interpretation
+```
 
-6. [C] Other investors, venture capital, or investing from big companies like J&J, Pfizer, &c. For example, in a recent J&J meeting the start-up-related experts discussed how they work with startups. 
-<https://advancesindrugdiscovery.splashthat.com>
-Basically, the "innovation" department experts help you to figure out what stage you are at. You can contact them as soon as you can disclose your tech non-confidentially (either you have patent protection or do not need it). If you were taking this path you would probably have competed steps 1-4. 
+## Practical summary
 
-## Legal requirements
-#### Swiss law
-I include both the English and French translations here as the original source does not always include full English translation. 
-Swiss law contains specific provisions on genetic testing in humans.
-The Federal Council is divided into [7 departments](https://www.admin.ch/gov/fr/accueil.html) and one chancellory. 
-Each department contains their relevant offices (usually fewer than 10). 
-For our interests, the governing hierarchy order is as follows:
+This exercise builds a candidate pharmacogenomics table from first principles.
 
-* Le Conseil fédéral
-* The Federal Council
-	-  Département fédéral de l'intérieur (DFI), 
-	- Federal Department of Home Affair (FDHI),
-		- Office fédéral de la santé publique (OFSP).
-		- Federal Office of Public Health (FOPH).
+It uses:
 
-This office is then responsible for their relevant ordinances as organised under internal law: 
-<https://www.fedlex.admin.ch/en/cc/internal-law/8>.
-A direct weblink to our area of interest is available on [Législation Analyses génétiques](https://www.bag.admin.ch/bag/fr/home/gesetze-und-bewilligungen/gesetzgebung/gesetzgebung-mensch-gesundheit/gesetzgebung-genetische-untersuchungen.html), 
-but it is useful to view the legal framework in context instead of abstractly.
+```text
+VCF
+VEP annotation
+gene extraction
+pharmacogene matching
+drug-gene joining
+consequence filtering
+candidate review
+```
 
-* Internal law (1-9 sec)
-* Droite interne (1-9 sec)
-* Sec 8..: (81-86 subsections) Health - Employment - Social security 
-* Sec 8..: (81-86 subsections) Santé - Travail - Sécurité sociale
-* Sec 81.: Health: (810-819 subsubsections)
-* Sec 81.: Santé: (810-819 subsubsections)
-* Sec 810: Medicine and human dignity
-* Sec 810: Médecine et dignité humaine
-* Sec 810.1: Medically assisted reproduction and genetic engineering in the human field
-* Sec 810.1: Procréation médicalement assistée et génie génétique dans le domaine humain
-* Sec 810.12: Federal Act of 8 October 2004 on Human Genetic Testing (HGTA)
-* Sec 810.12: Loi fédérale du 8 octobre 2004 sur l'analyse génétique humaine (LAGH)\
-This contains section (810.12) contains 10 sections with 44 articles covering the initial regulations.
+The file operations are straightforward. The interpretation is not.
 
-Three ordinance then include further details (with several sections, articles, or annexes each):
+A candidate table can show where to look. A pharmacogenomic conclusion requires allele-level evidence, drug-specific guidance, and quality-controlled genotyping.
 
-* Sec 810.122.1: Ordinance of 14 February 2007 on Human Genetic Analysis (OAGH)
-* Sec 810.122.1: Ordonnance du 14 février 2007 sur l'analyse génétique humaine (OAGH)
-* Sec 810.122.122: Ordinance of the Federal Department of Home Affairs of February 14, 2007 on Human Genetic Analysis (OAGH-DFI)
-* Sec 810.122.122: Ordonnance du DFI du 14 février 2007 sur l'analyse génétique humaine (OAGH-DFI)
-* Sec 810.122.2: Ordinance of February 14, 2007 on DNA profiling in civil and administrative matters (OACA)
-* Sec 810.122.2: Ordonnance du 14 février 2007 sur l'établissement de profils d'ADN en matière civile et administrative (OACA)
+## References and resources
 
-The details are then listed individually at:
-<https://www.fedlex.admin.ch/fr/cc/internal-law/81#810.12>
-and as stated, includes authorisation of "Pharmacogenetic tests performed to determine the effects of a planned therapy", 
-"analyses pharmacogénétiques effectuées dans le but de déterminer les effets d’une thérapie prévue".
-
-#### Accreditation
-[ISO 15189](https://www.iso.org/standard/56115.html) is a commonly sought standard accreditation for genetic analysis labs, 
-which is carried out by recognized accreditation services like [FINAS](https://www.finas.fi/Sivut/default.aspx).
-Here it is mentioned for the Geneva health 2030 genome center for clinical grade sequencing:
-<https://www.health2030genome.ch/dna-sequencing-platform/>.
-Other additional ISO accreditation standard concern 
-[Genomic information representation](https://www.iso.org/search.html?q=Genomic%20information%20representation&hPP=10&idx=all_en&p=0&hFR%5Bcategory%5D%5B0%5D=standard),
-including
-[23092-4 Reference software](https://www.iso.org/standard/75859.html) or 
-[23092 Transport and storage of genomic information](https://www.iso.org/standard/79882.html).
-
-GA4GH provides other information about many [legal and ethic topics](https://www.ga4gh.org/genomic-data-toolkit/regulatory-ethics-toolkit/).
-BlueprintGenomics is a good example company for comparison:
-<https://blueprintgenetics.com/certifications/>.
-
-## Cytochrome P450 (CYP) genes for known PGx
-[Cytochrome P450](https://en.wikipedia.org/wiki/Cytochrome_P450) monooxygenases are a group of genes encoding proteins that catalyze the oxidation and metabolism of a large number of xenobiotics and endogenous compounds. 
-Therefore these genes/proteins are important for drug metabolism. 
-Furthermore, common genetic variants are known for many of these genes which affect how the protein interacts with drugs.
-The [Pharmacogene Variation (PharmVar)](https://www.pharmvar.org) consortium repository is used to label human cytochrome P450 (CYP) genes for known PGx variation.
-The major focus of PharmVar is to catalogue allelic variation of genes impacting drug metabolism, disposition and response and provide a unifying designation system (nomenclature) for the global pharmacogenetic/genomic community. 
-Similar resource include the [Pharmacogenomic KnowledgeBase](https://www.pharmgkb.org), 
-and the [Clinical Pharmacogenetic Implementation Consortium](https://cpicpgx.org).
-You can [read more in this post](https://lawlessgenomics.com/topic/stargazing) on one example of pharmacogenomic analysis using these resources.
-
-<!-- ## DNA regulation and the 3D genome -->
-<!-- There is a collection of reviews on [the 3D genome Nature Reviews 2019](https://www.nature.com/collections/rsxlmsyslk). --> 
-<!-- From this, I have collected some illustrations to remind us about the combination of biochemical and physical structure that DNA takes inside each cell. -->
-
-<!-- ### 3D genome variation -->
-<!-- DNA is not only a simple string of nucleotides. --> 
-<!-- It is constantly wrapped up around proteins which affect its shape and accessibility. -->
-<!-- This means that genes encoded on the DNA may take different lengths of time to be expressed and produce proteins. -->
-<!-- Some DNA regions may physically cluster together and are labelled as topologically associating domains (TADs). -->
-<!-- <!-1- {% cite spielmann2018structural %} -1-> -->
-<!-- [https://doi.org/10.1038/s41576-018-0007-0](https://www.nature.com/articles/s41576-018-0007-0) -->
-
-<!-- <img src="{{ site.baseurl }}{% link images/3d_genome/spielmann2018structural_Box1.webp %}" width="50%"> -->
-<!-- <!-1- > {% cite spielmann2018structural %} -1-> --> 
-<!-- > _Box 1 Chromatin organization  from the 3D nucleus to the linear genome._ -->
-
-<!-- In coding regions, a "damaging" DNA variant will affect the function of a protein, or cause complete loss of that protein. -->
-<!-- In some cases, a single gene defect can cause a specific disease. -->
-<!-- Similarly, changing the expression of DNA (even if the gene has no damaging coding variants) could cause the same outcome. -->
-<!-- Therefore, regions of DNA that control the expression of surrounding genes are just as important as coding variants. --> 
-<!-- Historically, effects due to DNA accessibility and expression have been very difficult to understand biologically, but the methods and evidence is improving. --> 
-
-<!-- <img src="{{ site.baseurl }}{% link images/3d_genome/spielmann2018structural_Fig2.webp %}" width="50%"> -->
-<!-- <!-1- > {% cite spielmann2018structural %} -1-> --> 
-<!-- > _Fig. 2: Clinical examples of structural variations in the 3D genome. a - Duplications of enhancer elements at the IHH locus that occur within topologically associating domains (intra-TAD) cause tissue-specific misregulation and are associated with synpolydactyly of the feet89. For examples see REFS97,104,107,137,138. b - Duplication of a TAD boundary at the SOX9 locus causes neo-TAD formation and is associated with Cooks syndrome, short digits and nail aplasia63. For examples see REFS117,121. c - Deletion of a TAD boundary at the LMNB1 locus causes enhancer adoption and adult-onset demyelinating leukodystrophy139. For examples see REFS117,121,140. d - Inversions of an enhancer cluster at the EPHA4 locus cause enhancer adoption and misregulation of WNT6 and are associated with F-syndrome, syndactyly of thumb and index finger76. For examples see REFS102,114,141. e - Balanced translocations at the MEF2C locus cause a regulator loss of function and are associated with anomalies of the brain (including callosum hypoplasia142) and developmental delay116. For examples see REFS99,104,143. PRS, element associated with Pierre Robin sequence; RevSex, element associated with disorders of sex development. Part c is adapted with permission from REF.113, Elsevier. Part e is adapted with permission from Shimojima, K. et al. De novo microdeletion of 5q14.3 excluding MEF2C in a patient with infantile spasms, microcephaly, and agenesis of the corpus callosum. Am. J. Med. Genet. Part A, REF.142, Copyright 2011 Wiley Periodicals, Inc._ -->
-
-<!-- There are a huge number of methods to quantify 3D genome structure, DNA regulation and expression, mutation within 3D regions, large rearrangements in DNA, etc. -->
-<!-- The following figure illustrates one technique. --> 
-<!-- We will not discuss all the possibilities here as the technologies are rapidly increasing. -->
-<!-- Each large biotech company offers dozens/hundreds of options. --> 
-<!-- {% cite de2017capturing %} -->
-<!-- [https://doi.org/10.1038/nsmb.3404](https://www.nature.com/articles/nsmb.3404) -->
-
-<!-- <img src="{{ site.baseurl }}{% link images/3d_genome/de2017capturing_fig1.webp %}" width="50%"> -->
-<!-- <!-1- > {% cite de2017capturing %} -1-> --> 
-<!-- > _Figure 1: Single-cell models of chromosomes reveal principle characteristics of nuclear organization. (a) Single-cell Hi-C is performed to identify contacts between chromosomal regions (1). The contacts are sequenced using Illumina paired-end sequencing (2) and used as restraints in performing computational modeling of 3D genome structures (3). (b) Genome structures recapitulate known features of nuclear organization. Images of genome structures are adapted from ref. 13. (c) Structures of TADs show that they can exist in both compacted and elongated conformations. (d) Schematic representation of the loop-extrusion model. A chromatin region is captured by an extrusion complex forming a tiny loop (2), which is actively extended, leading to the formation of larger loops (3). Ultimately, the extrusion complex releases the chromatin, leading to the dissolving of the loop (4)._ -->
-
-<!-- ### Noncoding DNA regulation -->
-<!-- It is useful to understand the mechanisms causing DNA regulation more specifically. -->
-<!-- If you want a good understanding of the topic, one of the best resources today is the --> 
-<!-- The Genotype-Tissue Expression (GTEx) project -->
-<!-- <!-1- {% cite gtex2020gtex %} -1-> -->
-<!-- [https://doi.org/10.1126/science.aaz1776](https://www.science.org/doi/10.1126/science.aaz1776). -->
-<!-- GTEx include WGS, WES, and RNA-Seq data. -->
-<!-- This paper has an excellent overview, and their web interface is informative -->
-<!-- [https://www.gtexportal.org/home/](https://www.gtexportal.org/home/). -->
-
-<!-- One of the most common uses of GTEx is as follows: -->
-
-<!-- * When an association between genetic variant and a phenotype is found (e.g. a common DNA variant and heart disease), it is often not due to a coding variant but instead due to a non-coding variant. --> 
-<!-- * To understand how this can cause disease, we match DNA and RNA from the same individuals to see how this variant affects the expression level of downstream genes. --> 
-<!-- * If the DNA variant is correlated with a change in RNA expression (and subsequently protein level) we can determine its regulatory effect. -->
-<!-- * We quantify the RNA expression and its affect on trait (phenotype) within this DNA loci (gene or group of genes): expression quantitative trait loci (eQTL). -->
-<!-- * There are other types of QTL, but eQTL are a fine example. --> 
-
-<!-- The following two figures from -->
-<!-- <!-1- {% cite elkon2017characterization %} -1-> -->
-<!-- [https://doi.org/10.1038/nbt.3863](https://www.nature.com/articles/nbt.3863) -->
-<!-- can help to visualise an example of the process. -->
-
-<!-- * In the second figure (labelled Figure 4b) we consider one gene with a certain nucleotide position, having either G or A (2 chromosomes gives possibilites of GG, GA, or AA). -->
-<!-- * We can see how one genotype may have lower RNA expression (and less protein produced) for people with two copies of the gene with nucleotide G. -->
-<!-- * However, people with one or two copies of this gene with an A nucleotide at the same position may have higher RNA expression levels (and more protein). -->
-<!-- * If this gene is used in drug metabolism, then perhaps they should receive a personalised drug dosage. -->
-
-<!-- <img src="{{ site.baseurl }}{% link images/3d_genome/elkon2017characterization_Fig1.webp %}" width="50%"> -->
-<!-- <!-1- > {% cite elkon2017characterization %} -1-> --> 
-<!-- > _Figure 1: Genome-wide identification of candidate regulatory regions. (a) The conditions in which each gene is expressed are determined by a complex interplay between cis-regulatory DNA elements embedded near the gene's transcription start site (TSS) (the gene's promoter region, typically taken as 1,000 bp upstream to 200 bp downstream of the TSS) and distal enhancer elements located far (along the linear genomic DNA) from the gene's TSS. These DNA elements are bound by TFs that modulated the efficiency by which RNA polymerase is recruited to the gene's TSS to initiate transcription. Image adapted with permission from Figure 1, ref. 21, Springer Nature. (b) Distinct chromatin marks correlate with different regulatory states. Thus, epigenomic profiling of chromatin accessibility, histone modifications and TF binding in large panels of cell lines and tissues predicts comprehensive maps of putative regulatory elements across the genome and indicates the conditions under which each element is active. Reprinted from Figure 2, ref. 157, Mol. Cell., 55, Plank, J.L. & Dean, A., Enhancer function: mechanistic and genome-wide insights come together. 5–14 (2014), with permission from Elsevier. (c) Bidirectional production of eRNAs emerges as an effective mark of active enhancers. Thus, expression profiling of eRNAs is used on top of the epigenomic layers to improve the identification of enhancers and delineate the conditions in which they are activated. This cartoon shows tracks for epigenetic hallmarks of enhancers (DHS, histone marks and TF binding sites (TF BS) in addition to bidirectional production of eRNAs (as detected by GRO-seq))._ -->
-
-<!-- <img src="{{ site.baseurl }}{% link images/3d_genome/elkon2017characterization_Fig4.webp %}" width="50%"> -->
-<!-- <!-1- > {% cite elkon2017characterization %} -1-> --> 
-<!-- > _Figure 4: Inference of enhancer-promoter links. (a) Enhancer-promoter (E-P) interactions are predicted based on their correlated activation pattern measured over a large panel of cells and tissues. Activation pattern could be measured by epigenetic marks, DHS or transcriptional activity (e.g., mRNA and eRNA levels). (b) Top: eQTL analysis detects associations between SNP genotypes and expression level of target genes. In this example, individuals who are homozygous for the reference allele (GG) show significantly lower expression of the target gene than individuals who are homozygous for the alternative allele (AA). Heterozygous individuals show an intermediate expression level. If either the eQTL SNP itself or any other SNP that is in strong linkage disequilibrium with it is located within a regulatory element, then a putative functional link between that enhancer and the promoter of the associated gene is predicted. Bottom: allele-specific expression analysis requires the presence of a heterozygous SNP within the target RNA (in the figure, the SNP with the T/C alleles), and tests for imbalanced expression from the two copies (maternal and paternal copies) of the gene. Imbalanced expression of the two copies implies that the individual is also heterozygous for another SNP that modulates the activity of a cis-regulatory element that controls the expression of the target gene. The A allele of the SNP located within the enhancer increases the enhancer activity and thus causes elevated expression of the copy of the gene encoded on the same chromosome (the copy of the gene that carries the C allele)._ -->
-
-<!-- ### Chromatin regulation -->
-<!-- This paper is not very important to read in detail. However, thee figure is nice for our discussion -->
-<!-- <!-1- {% cite keung2015chromatin %} -1-> -->
-<!-- [https://doi.org/10.1038/nrg3900](https://www.nature.com/articles/nrg3900#citeas) -->
-
-<!-- <img src="{{ site.baseurl }}{% link images/3d_genome/keung2015chromatin_fig1.webp %}" width="50%"> -->
-<!-- > {% cite keung2015chromatin %} _Figure 1: Regulatory features of chromatin at multiple length scales. a - The amino termini of histone proteins have numerous amino acid residues that can be biochemically modified, such as by the addition of methyl (Me), acetyl (Ac), ubiquitin (Ub) and phosphate (P) groups. These modifications influence the binding of DNA and regulatory proteins26. b - Genomic DNA, which itself can be methylated on cytosine residues, is wound around 4 pairs of histone proteins, which collectively comprise a nucleosome15. c - The positioning of nucleosomes on DNA influences the accessibility of transcription factors to regions such as the promoter. Regulatory proteins (orange, blue, red and purple) bind to nucleosomes, DNA and transcribed non-coding RNA (ncRNA). Histone marks (red circles) often appear in large spatial domains; their occupancy as a function of genomic position (red histogram) can be quantified using chromatin immunoprecipitation followed by DNA sequencing (ChIP–seq)19,21. d - Chromosomes exist in spatial territories in the nucleus. There are interactions within and between chromosomes, as well as between chromosomes and nuclear structures such as the nuclear pore, inner nuclear membrane and nuclear lamina18._ -->
-
-<!-- ### Chromatin regulation and mutation -->
-<!-- Briefly, we might also consider how to improve our methods over time. -->
-<!-- The 3D genome structure also affects how likely mutation is to occur due to the probability of physical biochemical events occurring. -->
-<!-- Very simply, "random" mutations occur frequently in DNA. They are either "repaired" or passed on and subject to natural selection. -->
-
-<!-- * Consider the variable frequency of variants across the genome throughout the human population. --> 
-<!-- * Also consider that progression towards old age can lead to an increase in such random mutation within a single person (leaving out many citations here). -->
-
-<!-- The paper by {% cite makova2015effects %} --> 
-<!-- [https://doi.org/10.1038/nrg3890](https://www.nature.com/articles/nrg3890) -->
-<!-- is not important to read - however, their figure is a nice illustration for our discussion. -->
-
-<!-- <img src="{{ site.baseurl }}{% link images/3d_genome/makova2015effects_fig2.webp %}" width="50%"> -->
-<!-- <!-1- > {% cite makova2015effects %} -1-> --> 
-<!-- > _Figure 2: Aspects of chromatin organization that can affect evolutionary rates. A portion of a chromatin fibre is shown to illustrate closed versus open chromatin and the different types of mutations that occur at higher or lower rates in each case. The closed state can represent quiescent chromatin with little dynamic histone modification or with the repressive modifications histone H3 lysine 9 trimethylation (H3K9me3; associated with heterochromatin) or H3K27me3. Actively transcribed and regulated DNA tends to be in open chromatin marked by DNase-hypersensitive sites, transcription factor occupancy and activating histone modifications such as H3K4me1 (associated with enhancers), H3K4me3 (associated with promoters), H3K36me3 (associated with transcribed chromatin), H3K27 acetylation (H3K27ac) and H4ac (both associated with enhancers and promoters). D, deletion; I, insertion; indel, insertion and deletion; Pol II, RNA polymerase II; S, substitution._ -->
-
-<!-- ## PCA and LD -->
-<!-- The following paper is relatively old now. --> 
-<!-- However, it illustrates population structure nicely. -->
-<!-- As parent pass one their DNA down to children, rearrangements occur. --> 
-<!-- However, the DNA rearrangements occur as relatively large stretches of DNA. -->
-<!-- Therefore, within a related population most people will have very similar blocks of DNA (including common variants) and only small numbers of novel (rare) variants. -->
-
-<!-- 1. Common variants might be most useful for pharmacogenomics in general since so many people share the same sets of variants / affected gene-drug interactions. -->
-<!-- 2. Each individual rare variant only affect a minority. However, they might be rare because they may cause an unusual phenotype which is not as likely to survive natural selection. This unique gene-phenotype might lead to a new discovery in biological mechanism. --> 
-<!-- 3. If we share large stretches of DNA in a population, having one common variant means that you are likely to also have the second common variant on the same stretch of DNA. The nature of DNA [linkage disequilibrium](https://en.wikipedia.org/wiki/Linkage_disequilibrium) (LD) allows us to make statistical inferences that are very powerful for genetic analysis. For example, only sequencing a small number of SNPs across the genome which represent each DNA LD block allows us define genetic ancestry (23andMe, forensic genetics, GWAS, etc). -->
-
-<!-- <!-1- {% cite novembre2008genes %} -1-> -->
-<!-- [https://doi.org/10.1038/nature07331](https://www.nature.com/articles/nature07331) illustrates how analysis DNA in this way, using principal component analysis (PCA), shows that geographic location and genetic ancestry strongly overlap. --> 
-<!-- It also illustrates how tailored medical treatments would generally apply to different people based on their genetic ancestry. -->
-<!-- Very few people are likely to require a treatment that is unique only to them. --> 
-<!-- Although treatment with a combination of drugs and different gene-drug interactions will increase the level of unique tailoring. -->
-
-<!-- <img src="{{ site.baseurl }}{% link images/3d_genome/novembre2008genes_fig1.webp %}" width="50%"> -->
-
-<!-- <!-1- > {% cite novembre2008genes %} -1-> --> 
-<!-- > _Figure 1: Population structure within Europe. a, A statistical summary of genetic data from 1,387 Europeans based on principal component axis one (PC1) and axis two (PC2). Small coloured labels represent individuals and large coloured points represent median PC1 and PC2 values for each country. The inset map provides a key to the labels. The PC axes are rotated to emphasize the similarity to the geographic map of Europe. AL, Albania; AT, Austria; BA, Bosnia-Herzegovina; BE, Belgium; BG, Bulgaria; CH, Switzerland; CY, Cyprus; CZ, Czech Republic; DE, Germany; DK, Denmark; ES, Spain; FI, Finland; FR, France; GB, United Kingdom; GR, Greece; HR, Croatia; HU, Hungary; IE, Ireland; IT, Italy; KS, Kosovo; LV, Latvia; MK, Macedonia; NO, Norway; NL, Netherlands; PL, Poland; PT, Portugal; RO, Romania; RS, Serbia and Montenegro; RU, Russia, Sct, Scotland; SE, Sweden; SI, Slovenia; SK, Slovakia; TR, Turkey; UA, Ukraine; YG, Yugoslavia. b, A magnification of the area around Switzerland from a showing differentiation within Switzerland by language. c, Genetic similarity versus geographic distance. Median genetic correlation between pairs of individuals as a function of geographic distance between their respective populations._ -->
-
-<!-- ## More questions -->
-
-<!-- Q: Do we have to infer that in the future everybody will have his genome sequenced ? -->  
-<!-- You do not have to assume this. It may become true. There could be privacy concerns or social problems arising from genetic prejudice, etc. -->
-
-<!-- Q: Before using our algorithm, patient will have to sequence a part of their genome and thus this is a weakness of our algorithm? -->  
-<!-- Your tool will provide a service based on genetics. -->  
-<!-- Option [1] One has their genetics already and will use it for personal medicine. -->  
-<!-- Option [2] they are prescribed a drug and want to only sequence the genes of interest that could affect this drug. -->  
-<!-- Option [3] they do not want any genetic info and therefor your product is irrelevant. -->  
-<!-- Option [4] they do not want their personal genetics, but are willing to estimate their relatedness to others in a genetic database and therefore calculate a probability of accuracy for this drug-gene information. e.g. both parents are Swiss and therefore based on the population they have probability of X that their genotype is Y. -->  
-
-<!-- Q: Is it realistic to assume that it will be feasible based on the fact that the sequencing cost is decreasing ? -->  
-<!-- Irrelevant in this case, but yes, whole genome seq is sometimes below 200CHF will likely be common soon. -->
-
-<!-- Q:  We plan to use polyphen and/or sift in order to discriminate between those types of variants. Is that a good idea? -->  
-<!-- That is a good start. CADD score is also pretty well known among physicians. -->
-<!-- In my opinion, I do not trust the scores often. -->
-<!-- However, it is common that for processing a large amount of data, such prediction tools are useful in general. -->
-<!-- For example, I might [1] rank first on VEP variant "consequences"; stop mutations with most importance. -->
-<!-- [2] Then rank secondly with these values since you cannot interpret most with consequence = missense variant. --> 
-
-## References
-- [https://www.fda.gov/drugs/science-research-drugs/](https://www.fda.gov/drugs/science-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling)
-- [https://www.pharmgkb.org/view/drug-labels.do](https://www.pharmgkb.org/view/drug-labels.do)
-- Mary V. Relling & William E. Evans. Pharmacogenomics in the clinic. _Nature_ 2015; 526, 343–350\. doi: 10.1038/nature15817
-- Yip VL, Hawcutt DB, Pirmohamed M. Pharmacogenetic Markers of Drug Efficacy and Toxicity. _Clin Pharmacol Ther._ 2015;98(1):61-70\. doi: 10.1002/cpt.135.
-- David R. Adams, M.D., Ph.D.,  and Christine M. Eng, M.D. Next-Generation Sequencing to Diagnose Suspected Genetic Disorders N Engl J Med Oct 2018 doi: 10.1056/NEJMra1711801
-
-<!-- {% bibliography --cited %} -->
-
-
+- CPIC: Clinical Pharmacogenetics Implementation Consortium, <https://cpicpgx.org>
+- PharmGKB: Pharmacogenomics Knowledgebase, <https://www.pharmgkb.org>
+- PharmVar: Pharmacogene Variation Consortium, <https://www.pharmvar.org>
+- DPWG: Dutch Pharmacogenetics Working Group, <https://www.pharmgkb.org/page/dpwg>
+- FDA pharmacogenomic biomarkers in drug labelling, <https://www.fda.gov/drugs/science-and-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling>
+- Ensembl Variant Effect Predictor, <https://www.ensembl.org/info/docs/tools/vep/index.html>
+- MANE Select, <https://www.ncbi.nlm.nih.gov/refseq/MANE/>
+- DrugBank, <https://go.drugbank.com>
+- gnomAD, <https://gnomad.broadinstitute.org>
+- ClinVar, <https://www.ncbi.nlm.nih.gov/clinvar>
+- Relling MV, Evans WE. Pharmacogenomics in the clinic. Nature. 2015;526:343-350. doi: 10.1038/nature15817
+- Yip VL, Hawcutt DB, Pirmohamed M. Pharmacogenetic markers of drug efficacy and toxicity. Clin Pharmacol Ther. 2015;98:61-70. doi: 10.1002/cpt.135
+- Adams DR, Eng CM. Next-generation sequencing to diagnose suspected genetic disorders. N Engl J Med. 2018. doi: 10.1056/NEJMra1711801
