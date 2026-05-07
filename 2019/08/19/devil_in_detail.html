@@ -2,7 +2,8 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -16,27 +17,28 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description"
+content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
 	<title>The devil is in the detail</title>
-	<meta name="author" content="LawlessGenomics">
-	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<meta name="author" content="LawlessGenomics" />
+	<link href='https://lawlessgenomics.com/feed.xml' rel='alternate' title="LawlessGenomics" type='application/atom+xml'>
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 	
 	<!-- Google font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com"> 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -65,7 +67,9 @@
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
 				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
 			</div>
 
@@ -76,7 +80,8 @@
 				<input type="checkbox" id="nav-toggle">
 					<label for="nav-toggle" class="gg-menu"></label>
 					<div class="right-menu">
-						<a href="/resume">About</a>
+						<a href="/about">About</a>
+						<!-- <a href="/resume">About</a> -->
 						<a href="/">Home</a>
 					</div>
 			</nav>
@@ -106,7 +111,7 @@ the other side, after publication.</p>
 paper every time a secret message needed to be encoded for public transmission, 
 but maybe it could be done!</p>
 
-<p><img src="/images/posts/editor_paper_rag.png" width="101%"></p>
+<p><img src="/images/posts/editor_paper_rag.png" width="101%" /></p>
 
 <p>The secret message was imported into <a href="https://www.r-project.org">R</a> from plain text. 
 It was encoded into a png file that was to be a supplemental figure in our paper 
@@ -127,11 +132,11 @@ After peer review of the paper, publisher proceessing and publication,
 the secret message was successfully decoded from the protein structure figure 
 “F_E4_Structure.png” and was printed to the console:</p>
 
-<p><img src="/images/posts/r_steg_decode.png" width="100%"></p>
+<p><img src="/images/posts/r_steg_decode.png" width="100%" /></p>
 
 <p>This exercise looks like a bit of fun, 
 but was done to demonstrate the unavoidable 
-risks that exist in sensitive data research.<sup id="fnref:foot" role="doc-noteref"><a href="#fn:foot" class="footnote" rel="footnote">1</a></sup>
+risks that exist in sensitive data research.<sup id="fnref:foot"><a href="#fn:foot" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>
 Today, protected data enclaves are used for processing sensitive data 
 and usually allow summary results or figures to be exported.
 These are therefore basically a trust based system and are otherwise only security theatre.</p>
@@ -159,8 +164,8 @@ Download
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:foot" role="doc-endnote">
-      <p><a href="/topic/medical-espionage">Medical espionage</a>. <a href="#fnref:foot" class="reversefootnote" role="doc-backlink">↩</a></p>
+    <li id="fn:foot">
+      <p><a href="/topic/cryptography/medical_espionage/">Medical espionage</a>. <a href="#fnref:foot" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
@@ -171,17 +176,11 @@ Download
   <h2>Related Posts</h2>
   <ul class="posts">
     
-      <li>
-<span>13 Aug 2023</span> » <a href="/2023/08/13/inf_causal_metab_sem.html">Summary - inference of causal metabolite networks</a>
-</li>
+      <li><span>13 Aug 2023</span> &raquo; <a href="/2023/08/13/inf_causal_metab_sem.html">Summary - inference of causal metabolite networks</a></li>
     
-      <li>
-<span>09 May 2023</span> » <a href="/2023/05/09/what_i_want_from_genome_center.html">What I want from genomic data centers</a>
-</li>
+      <li><span>09 May 2023</span> &raquo; <a href="/2023/05/09/what_i_want_from_genome_center.html">What I want from genomic data centers</a></li>
     
-      <li>
-<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a>
-</li>
+      <li><span>18 Jan 2023</span> &raquo; <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a></li>
     
   </ul>
 </div>
@@ -195,12 +194,15 @@ Download
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
 					<div class="right-root">
 						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
-						<a href="/resume">Resume</a>
+						<!-- <a href="/resume">Resume</a> -->
+						<a href="https://lawless.ch">Resume</a>
 						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
-						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						<a href='https://lawlessgenomics.com/feed.xml'>RSS feed</a>
 						</p>
 					</div>
 		</div>

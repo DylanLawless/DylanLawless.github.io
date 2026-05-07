@@ -2,7 +2,8 @@
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<!-- link to MathJax for LaTeX stlye eqn -->
-	 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	 <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
 	 
@@ -16,27 +17,28 @@
 	
 	 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta name="description" content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description"
+content="A home for topics in human precision medicine, genomic analysis, and data visualisation.">
 	<title>KZNF protein pathway regulation</title>
-	<meta name="author" content="LawlessGenomics">
-	<link href="https://lawlessgenomics.com/feed.xml" rel="alternate" title="LawlessGenomics" type="application/atom+xml">
+	<meta name="author" content="LawlessGenomics" />
+	<link href='https://lawlessgenomics.com/feed.xml' rel='alternate' title="LawlessGenomics" type='application/atom+xml'>
 	<!-- <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/> -->
 	
 	<!-- include a google font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto+Slab:300%7CRoboto:500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab:300|Roboto:500" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	
 	<!-- syntax highlighting CSS -->
-	<link rel="stylesheet" href="/css/syntax.css" type="text/css">
+	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 	
 	<!-- Homepage CSS -->
-	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 	
 	<!-- Google font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com"> 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
 	
 	<!-- Typekit -->
 	<script type="text/javascript" src="https://use.typekit.com/jpd0pfm.js"></script>
@@ -65,7 +67,9 @@
 
 			<div class="logoimage">
 				<a href="/">
-				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
 				<!-- alt="Logo image" width="35.7" height="55" /></a> -->
 			</div>
 
@@ -76,7 +80,8 @@
 				<input type="checkbox" id="nav-toggle">
 					<label for="nav-toggle" class="gg-menu"></label>
 					<div class="right-menu">
-						<a href="/resume">About</a>
+						<a href="/about">About</a>
+						<!-- <a href="/resume">About</a> -->
 						<a href="/">Home</a>
 					</div>
 			</nav>
@@ -96,16 +101,13 @@ Reading time  8 minutes
 <p class="meta">24 June 2022</p>
 <ul id="markdown-toc">
   <li><a href="#exec-summary" id="markdown-toc-exec-summary">Exec summary</a></li>
-  <li>
-<a href="#background" id="markdown-toc-background">Background</a>    <ul>
+  <li><a href="#background" id="markdown-toc-background">Background</a>    <ul>
       <li><a href="#typical-approach" id="markdown-toc-typical-approach">Typical approach</a></li>
       <li><a href="#new-approach" id="markdown-toc-new-approach">New approach</a></li>
     </ul>
   </li>
-  <li>
-<a href="#case-study" id="markdown-toc-case-study">Case study</a>    <ul>
-      <li>
-<a href="#protocol" id="markdown-toc-protocol">Protocol</a>        <ul>
+  <li><a href="#case-study" id="markdown-toc-case-study">Case study</a>    <ul>
+      <li><a href="#protocol" id="markdown-toc-protocol">Protocol</a>        <ul>
           <li><a href="#0-select-a-pli-znf-pilot-study" id="markdown-toc-0-select-a-pli-znf-pilot-study">0. Select a pLI ZNF (pilot study)</a></li>
           <li><a href="#1-make-a-znf-in-vitro-assay" id="markdown-toc-1-make-a-znf-in-vitro-assay">1. Make a ZNF in vitro assay</a></li>
           <li><a href="#2-chip-seq" id="markdown-toc-2-chip-seq">2. Chip-seq</a></li>
@@ -119,8 +121,7 @@ Reading time  8 minutes
     </ul>
   </li>
   <li><a href="#summary" id="markdown-toc-summary">Summary</a></li>
-  <li>
-<a href="#code-used" id="markdown-toc-code-used">Code used</a>    <ul>
+  <li><a href="#code-used" id="markdown-toc-code-used">Code used</a>    <ul>
       <li><a href="#1unzipsh" id="markdown-toc-1unzipsh">1.unzip.sh</a></li>
       <li><a href="#2scansh" id="markdown-toc-2scansh">2.scan.sh</a></li>
       <li><a href="#3analyser" id="markdown-toc-3analyser">3.analyse.R</a></li>
@@ -146,7 +147,7 @@ Reading time  8 minutes
 
 <p>I will go thorough the steps to get to this final summary image:</p>
 
-<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot.jpg" width="100%"></p>
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot.jpg" width="100%" /></p>
 
 <h2 id="background">Background</h2>
 
@@ -230,8 +231,7 @@ We consider pLI ≥ 0.9 as an extremely intolerant set of transcripts.
 <a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a>.</p>
 
 <ul>
-  <li>Methods in <a href="#1unzipsh">Code block 1</a>
-</li>
+  <li>Methods in <a href="#1unzipsh">Code block 1</a></li>
 </ul>
 
 <p>To find ZNF genes with pLI &gt;0.9 I used</p>
@@ -239,18 +239,15 @@ We consider pLI ≥ 0.9 as an extremely intolerant set of transcripts.
   <li><a href="https://gnomad.broadinstitute.org/downloads">https://gnomad.broadinstitute.org/downloads</a></li>
   <li>Section “Constraint”</li>
   <li>File “pLoF Metrics by Gene TSV”</li>
-  <li>Ref <a href="https://www.nature.com/articles/s41586-020-2308-7">https://www.nature.com/articles/s41586-020-2308-7</a>
-</li>
-  <li>
-<a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a>.</li>
+  <li>Ref <a href="https://www.nature.com/articles/s41586-020-2308-7">https://www.nature.com/articles/s41586-020-2308-7</a></li>
+  <li><a class="citation" href="#lek2016analysis">(Lek et al., 2016)</a>.</li>
 </ul>
 
 <p>Handling requires installation of samtools <a href="https://www.htslib.org">https://www.htslib.org</a> (Samtools, BCFtools, HTSlib).
 Uncompress the data with bgzip.</p>
 
 <ul>
-  <li>Methods in <a href="#2scansh">Code block 2</a>
-</li>
+  <li>Methods in <a href="#2scansh">Code block 2</a></li>
 </ul>
 
 <p>Query the whole genoe pLI score for all ZNF genes.
@@ -258,14 +255,13 @@ Clean the dataset to extract the data of interest:
 Gene name, numbers of observed/expected LoF, pLI score, etc.</p>
 
 <ul>
-  <li>Methods in <a href="#3analyser">Code block 3</a>
-</li>
+  <li>Methods in <a href="#3analyser">Code block 3</a></li>
 </ul>
 
 <p>The R code performs a lot of formatting and cleaning to interpret the dataset.
 We find all genes wiht pLI &gt; 0.9.</p>
 
-<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_A.jpg" width="100%"></p>
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_A.jpg" width="100%" /></p>
 
 <p>I have pre-emptively shown ZNF777 in red. I will show in the next section why I chose this as a pilot study.</p>
 
@@ -306,19 +302,16 @@ The first match was ZNF777, which has pLI 0.99 (as shown in Figure 1).</p>
 <a class="citation" href="#feng2011using">(Feng et al., 2011)</a>.
 <a href="https://hbctraining.github.io/Intro-to-ChIPseq/lessons/05_peak_calling_macs.html">What is MACS? - ref 2</a></p>
 
-<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_B.jpg" width="100%"></p>
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_B.jpg" width="100%" /></p>
 
 <h4 id="4-cluster-all-target-genes-into-their-protein-pathways">4. Cluster all target genes into their protein pathways</h4>
 
 <ul>
-  <li>Methods in <a href="#4chipsh">Code block 4</a>
-</li>
-  <li>Methods in <a href="#5genelistsh">Code block 5</a>
-</li>
+  <li>Methods in <a href="#4chipsh">Code block 4</a></li>
+  <li>Methods in <a href="#5genelistsh">Code block 5</a></li>
   <li>Methods in <a href="#6mclplofsh">Code block 6</a>
 (The data contained genomic coordinates so I needed to gene coding region protein for further steps.)</li>
-  <li>Methods in <a href="#3analyser">Code block 3</a>
-</li>
+  <li>Methods in <a href="#3analyser">Code block 3</a></li>
 </ul>
 
 <p>The genes “affected” by ZNF777 were clustered into their best-fit protein pathways using <a href="https://string-db.org">STRING-db</a>.
@@ -345,13 +338,12 @@ I instead cluster these proteins into the best-fitting pathways.</p>
 
 <p>Now we have a set of distinct protein pathways.</p>
 
-<p><img src="/images/posts/KZNF_protein_pathway_regulation/img1-2_merged.jpg" width="100%"></p>
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img1-2_merged.jpg" width="100%" /></p>
 
 <h4 id="5-identify-pathways-with-pli">5. Identify pathways with pLI</h4>
 
 <ul>
-  <li>Methods in <a href="#3analyser">Code block 3</a>
-</li>
+  <li>Methods in <a href="#3analyser">Code block 3</a></li>
 </ul>
 
 <p>Next, since we started with a ZNF that is intolerant to LoF, we also believe that the target genes must also be</p>
@@ -369,11 +361,10 @@ I instead cluster these proteins into the best-fitting pathways.</p>
 
 <p>Figure 3 shows the top 5 largest pathways.</p>
 
-<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_C.jpg" width="100%"></p>
+<p><img src="/images/posts/KZNF_protein_pathway_regulation/img3_main_plot_C.jpg" width="100%" /></p>
 
 <ul>
-  <li>
-<strong>Key:</strong> We can see that rahter than focusing on a cluster of genes within one genomic region, we interpret genes according to their protein pthway.</li>
+  <li><strong>Key:</strong> We can see that rahter than focusing on a cluster of genes within one genomic region, we interpret genes according to their protein pthway.</li>
   <li>Some protein pathways will have high pLI scores and may be considered the major ZNF targets.</li>
   <li>Some protein pathways can tolerate LoF and maybe considered by-standers.</li>
 </ul>
@@ -763,12 +754,10 @@ done &lt; gene_names_mcl_top5.csv  |\
 
 <h2 id="references">References</h2>
 
-<ol class="bibliography">
-<li><span id="lek2016analysis">Lek, M., Karczewski, K. J., Minikel, E. V., Samocha, K. E., Banks, E., Fennell, T., O’Donnell-Luria, A. H., Ware, J. S., Hill, A. J., Cummings, B. B., &amp; others. (2016). Analysis of protein-coding genetic variation in 60,706 humans. <i>Nature</i>, <i>536</i>(7616), 285.</span></li>
+<ol class="bibliography"><li><span id="lek2016analysis">Lek, M., Karczewski, K. J., Minikel, E. V., Samocha, K. E., Banks, E., Fennell, T., O’Donnell-Luria, A. H., Ware, J. S., Hill, A. J., Cummings, B. B., &amp; others. (2016). Analysis of protein-coding genetic variation in 60,706 humans. <i>Nature</i>, <i>536</i>(7616), 285.</span></li>
 <li><span id="imbeault2017krab">Imbeault, M., Helleboid, P.-Y., &amp; Trono, D. (2017). KRAB zinc-finger proteins contribute to the evolution of gene regulatory networks. <i>Nature</i>, <i>543</i>(7646), 550–554.</span></li>
 <li><span id="feng2011using">Feng, J., Liu, T., &amp; Zhang, Y. (2011). Using MACS to identify peaks from ChIP-Seq data. <i>Current Protocols in Bioinformatics</i>, <i>34</i>(1), 2–14.</span></li>
-<li><span id="van2000graph">Van Dongen, S. M. (2000). <i>Graph clustering by flow simulation</i> [PhD thesis].</span></li>
-</ol>
+<li><span id="van2000graph">Van Dongen, S. M. (2000). <i>Graph clustering by flow simulation</i> [PhD thesis].</span></li></ol>
 
 
 </div>
@@ -777,17 +766,11 @@ done &lt; gene_names_mcl_top5.csv  |\
   <h2>Related Posts</h2>
   <ul class="posts">
     
-      <li>
-<span>13 Aug 2023</span> » <a href="/2023/08/13/inf_causal_metab_sem.html">Summary - inference of causal metabolite networks</a>
-</li>
+      <li><span>13 Aug 2023</span> &raquo; <a href="/2023/08/13/inf_causal_metab_sem.html">Summary - inference of causal metabolite networks</a></li>
     
-      <li>
-<span>09 May 2023</span> » <a href="/2023/05/09/what_i_want_from_genome_center.html">What I want from genomic data centers</a>
-</li>
+      <li><span>09 May 2023</span> &raquo; <a href="/2023/05/09/what_i_want_from_genome_center.html">What I want from genomic data centers</a></li>
     
-      <li>
-<span>18 Jan 2023</span> » <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a>
-</li>
+      <li><span>18 Jan 2023</span> &raquo; <a href="/2023/01/18/ai_from_complex_requests_to_simple_fixes.html">AI - From Complex Requests to Simple Fixes</a></li>
     
   </ul>
 </div>
@@ -801,12 +784,15 @@ done &lt; gene_names_mcl_top5.csv  |\
 	<div class="footer">
 		<div class="foot-container">
 				<a href="/" class="logo-foot">
-				<img style="margin-bottom:-16px" src="/images/logos/logo4.2_150ppi.png" alt="Logo image" width="25" height="38.5"></a>
+				<img style="margin-bottom:-16px" 
+				src="/images/logos/logo4.2_150ppi.png" 
+				alt="Logo image" width="25" height="38.5" /></a>
 					<div class="right-root">
 						<p><a href="https://github.com/DylanLawless/DylanLawless.github.io/tree/source">Maintained</a> by Dylan Lawless. Scientist at <a href="https://people.epfl.ch/dylan.lawless">EPFL</a>.
-						<a href="/resume">Resume</a>
+						<!-- <a href="/resume">Resume</a> -->
+						<a href="https://lawless.ch">Resume</a>
 						and <a href="https://scholar.google.com/citations?user=RPBxP1wAAAAJ&hl=en&oi=ao">Google scholar</a>.
-						<a href="https://lawlessgenomics.com/feed.xml">RSS feed</a>
+						<a href='https://lawlessgenomics.com/feed.xml'>RSS feed</a>
 						</p>
 					</div>
 		</div>
